@@ -1,5 +1,5 @@
 [project]
-name = "coingecko-python"
+name = "coingecko_python"
 version = "0.0.1-alpha.0"
 description = "The official Python library for the coingecko API"
 dynamic = ["readme"]
