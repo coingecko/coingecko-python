@@ -32,6 +32,9 @@ class Data(BaseModel):
     ended_icos: Optional[float] = None
     """number of ended icos"""
 
+    market_cap_change_percentage_24h_usd: Optional[float] = None
+    """cryptocurrencies market cap change percentage in 24 hours in usd"""
+
     market_cap_percentage: Optional[DataMarketCapPercentage] = None
     """cryptocurrencies market cap percentage"""
 
@@ -50,11 +53,8 @@ class Data(BaseModel):
     upcoming_icos: Optional[float] = None
     """number of upcoming icos"""
 
+    updated_at: Optional[float] = None
+
 
 class GlobalGetResponse(BaseModel):
     data: Optional[Data] = None
-
-    market_cap_change_percentage_24h_usd: Optional[float] = None
-    """cryptocurrencies market cap change percentage in 24 hours in usd"""
-
-    updated_at: Optional[float] = None

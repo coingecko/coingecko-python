@@ -1,15 +1,11 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List, Optional
+from typing import Optional
 from datetime import datetime
 
 from ..._models import BaseModel
 
-__all__ = ["MarketGetResponse", "SparklineIn7d"]
-
-
-class SparklineIn7d(BaseModel):
-    price: Optional[List[float]] = None
+__all__ = ["MarketGetResponse"]
 
 
 class MarketGetResponse(BaseModel):
@@ -76,16 +72,10 @@ class MarketGetResponse(BaseModel):
     price_change_24h: Optional[float] = None
     """coin 24hr price change in currency"""
 
-    price_change_percentage_1h: Optional[float] = None
-    """coin 1h price change in percentage"""
-
     price_change_percentage_24h: Optional[float] = None
     """coin 24hr price change in percentage"""
 
     roi: Optional[str] = None
-
-    sparkline_in_7d: Optional[SparklineIn7d] = None
-    """coin price sparkline in 7 days"""
 
     symbol: Optional[str] = None
     """coin symbol"""
