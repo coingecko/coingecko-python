@@ -2,90 +2,58 @@
 
 from typing import List, Optional
 
-from pydantic import Field as FieldInfo
-
 from ...._models import BaseModel
 
 __all__ = [
     "InfoRecentlyUpdatedGetResponse",
     "Data",
     "DataAttributes",
-    "DataAttributesGtScoreDetails",
-    "DataAttributesHolders",
-    "DataAttributesHoldersDistributionPercentage",
+    "DataRelationships",
+    "DataRelationshipsNetwork",
+    "DataRelationshipsNetworkData",
 ]
-
-
-class DataAttributesGtScoreDetails(BaseModel):
-    creation: Optional[float] = None
-
-    holders: Optional[float] = None
-
-    info: Optional[float] = None
-
-    pool: Optional[float] = None
-
-    transaction: Optional[float] = None
-
-
-class DataAttributesHoldersDistributionPercentage(BaseModel):
-    api_11_30: Optional[float] = FieldInfo(alias="11_30", default=None)
-
-    api_31_50: Optional[float] = FieldInfo(alias="31_50", default=None)
-
-    rest: Optional[float] = None
-
-    top_10: Optional[float] = None
-
-
-class DataAttributesHolders(BaseModel):
-    count: Optional[int] = None
-
-    distribution_percentage: Optional[DataAttributesHoldersDistributionPercentage] = None
-
-    last_updated: Optional[str] = None
 
 
 class DataAttributes(BaseModel):
     address: Optional[str] = None
 
-    categories: Optional[List[str]] = None
-
     coingecko_coin_id: Optional[str] = None
 
     description: Optional[str] = None
 
-    discord_url: Optional[str] = None
-
-    freeze_authority: Optional[str] = None
-
-    gt_categories_id: Optional[List[str]] = None
-
     gt_score: Optional[float] = None
-
-    gt_score_details: Optional[DataAttributesGtScoreDetails] = None
-
-    holders: Optional[DataAttributesHolders] = None
 
     image_url: Optional[str] = None
 
-    mint_authority: Optional[str] = None
+    metadata_updated_at: Optional[str] = None
 
     name: Optional[str] = None
 
     symbol: Optional[str] = None
 
-    telegram_handle: Optional[str] = None
-
-    twitter_handle: Optional[str] = None
-
     websites: Optional[List[str]] = None
+
+
+class DataRelationshipsNetworkData(BaseModel):
+    id: Optional[str] = None
+
+    type: Optional[str] = None
+
+
+class DataRelationshipsNetwork(BaseModel):
+    data: Optional[DataRelationshipsNetworkData] = None
+
+
+class DataRelationships(BaseModel):
+    network: Optional[DataRelationshipsNetwork] = None
 
 
 class Data(BaseModel):
     id: Optional[str] = None
 
     attributes: Optional[DataAttributes] = None
+
+    relationships: Optional[DataRelationships] = None
 
     type: Optional[str] = None
 
