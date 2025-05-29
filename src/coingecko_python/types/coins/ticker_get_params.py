@@ -14,6 +14,12 @@ class TickerGetParams(TypedDict, total=False):
     `cost_to_move_up_usd` and `cost_to_move_down_usd` Default: false
     """
 
+    dex_pair_format: Literal["contract_address", "symbol"]
+    """
+    set to `symbol` to display DEX pair base and target as symbols, default:
+    `contract_address`
+    """
+
     exchange_ids: str
     """exchange ID \\**refers to [`/exchanges/list`](/reference/exchanges-list)."""
 

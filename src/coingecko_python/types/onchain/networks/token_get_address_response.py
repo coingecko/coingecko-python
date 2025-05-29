@@ -51,6 +51,8 @@ class DataAttributes(BaseModel):
 
     name: Optional[str] = None
 
+    normalized_total_supply: Optional[str] = None
+
     price_usd: Optional[str] = None
 
     symbol: Optional[str] = None

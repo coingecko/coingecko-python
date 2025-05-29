@@ -49,6 +49,7 @@ class TickersResource(SyncAPIResource):
         *,
         coin_ids: str | NotGiven = NOT_GIVEN,
         depth: bool | NotGiven = NOT_GIVEN,
+        dex_pair_format: Literal["contract_address", "symbol"] | NotGiven = NOT_GIVEN,
         include_exchange_logo: bool | NotGiven = NOT_GIVEN,
         order: Literal["trust_score_desc", "trust_score_asc", "volume_desc", "volume_asc", "base_target"]
         | NotGiven = NOT_GIVEN,
@@ -69,6 +70,10 @@ class TickersResource(SyncAPIResource):
 
           depth: include 2% orderbook depth (Example: cost_to_move_up_usd &
               cost_to_move_down_usd),default: false
+
+          dex_pair_format:
+              set to `symbol` to display DEX pair base and target as symbols, default:
+              `contract_address`
 
           include_exchange_logo: include exchange logo, default: false
 
@@ -97,6 +102,7 @@ class TickersResource(SyncAPIResource):
                     {
                         "coin_ids": coin_ids,
                         "depth": depth,
+                        "dex_pair_format": dex_pair_format,
                         "include_exchange_logo": include_exchange_logo,
                         "order": order,
                         "page": page,
@@ -134,6 +140,7 @@ class AsyncTickersResource(AsyncAPIResource):
         *,
         coin_ids: str | NotGiven = NOT_GIVEN,
         depth: bool | NotGiven = NOT_GIVEN,
+        dex_pair_format: Literal["contract_address", "symbol"] | NotGiven = NOT_GIVEN,
         include_exchange_logo: bool | NotGiven = NOT_GIVEN,
         order: Literal["trust_score_desc", "trust_score_asc", "volume_desc", "volume_asc", "base_target"]
         | NotGiven = NOT_GIVEN,
@@ -154,6 +161,10 @@ class AsyncTickersResource(AsyncAPIResource):
 
           depth: include 2% orderbook depth (Example: cost_to_move_up_usd &
               cost_to_move_down_usd),default: false
+
+          dex_pair_format:
+              set to `symbol` to display DEX pair base and target as symbols, default:
+              `contract_address`
 
           include_exchange_logo: include exchange logo, default: false
 
@@ -182,6 +193,7 @@ class AsyncTickersResource(AsyncAPIResource):
                     {
                         "coin_ids": coin_ids,
                         "depth": depth,
+                        "dex_pair_format": dex_pair_format,
                         "include_exchange_logo": include_exchange_logo,
                         "order": order,
                         "page": page,

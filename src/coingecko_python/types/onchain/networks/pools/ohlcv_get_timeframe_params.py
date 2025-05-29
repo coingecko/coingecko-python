@@ -31,5 +31,8 @@ class OhlcvGetTimeframeParams(TypedDict, total=False):
     currency: Literal["usd", "token"]
     """return OHLCV in USD or quote token Default value: usd"""
 
+    include_empty_intervals: bool
+    """include empty intervals with no trade data, default: false"""
+
     limit: int
     """number of OHLCV results to return, maximum 1000 Default value: 100"""

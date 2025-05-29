@@ -38,6 +38,7 @@ class TestOhlcv:
             aggregate="aggregate",
             before_timestamp=0,
             currency="usd",
+            include_empty_intervals=True,
             limit=0,
         )
         assert_matches_type(OhlcvGetTimeframeResponse, ohlcv, path=["response"])
@@ -114,6 +115,7 @@ class TestAsyncOhlcv:
             aggregate="aggregate",
             before_timestamp=0,
             currency="usd",
+            include_empty_intervals=True,
             limit=0,
         )
         assert_matches_type(OhlcvGetTimeframeResponse, ohlcv, path=["response"])

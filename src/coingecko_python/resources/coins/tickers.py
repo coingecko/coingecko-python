@@ -48,6 +48,7 @@ class TickersResource(SyncAPIResource):
         id: str,
         *,
         depth: bool | NotGiven = NOT_GIVEN,
+        dex_pair_format: Literal["contract_address", "symbol"] | NotGiven = NOT_GIVEN,
         exchange_ids: str | NotGiven = NOT_GIVEN,
         include_exchange_logo: bool | NotGiven = NOT_GIVEN,
         order: Literal["trust_score_desc", "trust_score_asc", "volume_desc", "volume_asc"] | NotGiven = NOT_GIVEN,
@@ -66,6 +67,10 @@ class TickersResource(SyncAPIResource):
         Args:
           depth: include 2% orderbook depth, ie. `cost_to_move_up_usd` and
               `cost_to_move_down_usd` Default: false
+
+          dex_pair_format:
+              set to `symbol` to display DEX pair base and target as symbols, default:
+              `contract_address`
 
           exchange_ids: exchange ID \\**refers to [`/exchanges/list`](/reference/exchanges-list).
 
@@ -95,6 +100,7 @@ class TickersResource(SyncAPIResource):
                 query=maybe_transform(
                     {
                         "depth": depth,
+                        "dex_pair_format": dex_pair_format,
                         "exchange_ids": exchange_ids,
                         "include_exchange_logo": include_exchange_logo,
                         "order": order,
@@ -132,6 +138,7 @@ class AsyncTickersResource(AsyncAPIResource):
         id: str,
         *,
         depth: bool | NotGiven = NOT_GIVEN,
+        dex_pair_format: Literal["contract_address", "symbol"] | NotGiven = NOT_GIVEN,
         exchange_ids: str | NotGiven = NOT_GIVEN,
         include_exchange_logo: bool | NotGiven = NOT_GIVEN,
         order: Literal["trust_score_desc", "trust_score_asc", "volume_desc", "volume_asc"] | NotGiven = NOT_GIVEN,
@@ -150,6 +157,10 @@ class AsyncTickersResource(AsyncAPIResource):
         Args:
           depth: include 2% orderbook depth, ie. `cost_to_move_up_usd` and
               `cost_to_move_down_usd` Default: false
+
+          dex_pair_format:
+              set to `symbol` to display DEX pair base and target as symbols, default:
+              `contract_address`
 
           exchange_ids: exchange ID \\**refers to [`/exchanges/list`](/reference/exchanges-list).
 
@@ -179,6 +190,7 @@ class AsyncTickersResource(AsyncAPIResource):
                 query=await async_maybe_transform(
                     {
                         "depth": depth,
+                        "dex_pair_format": dex_pair_format,
                         "exchange_ids": exchange_ids,
                         "include_exchange_logo": include_exchange_logo,
                         "order": order,
