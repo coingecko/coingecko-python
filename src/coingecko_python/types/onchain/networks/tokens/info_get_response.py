@@ -13,6 +13,7 @@ __all__ = [
     "DataAttributesGtScoreDetails",
     "DataAttributesHolders",
     "DataAttributesHoldersDistributionPercentage",
+    "DataAttributesImage",
 ]
 
 
@@ -46,6 +47,14 @@ class DataAttributesHolders(BaseModel):
     last_updated: Optional[str] = None
 
 
+class DataAttributesImage(BaseModel):
+    large: Optional[str] = None
+
+    small: Optional[str] = None
+
+    thumb: Optional[str] = None
+
+
 class DataAttributes(BaseModel):
     address: Optional[str] = None
 
@@ -66,6 +75,8 @@ class DataAttributes(BaseModel):
     gt_score_details: Optional[DataAttributesGtScoreDetails] = None
 
     holders: Optional[DataAttributesHolders] = None
+
+    image: Optional[DataAttributesImage] = None
 
     image_url: Optional[str] = None
 

@@ -6,7 +6,7 @@ from typing_extensions import Literal
 
 import httpx
 
-from ...types import exchange_get_params, exchange_get_list_params
+from ...types import exchange_get_params, exchange_get_id_params, exchange_get_list_params
 from .tickers import (
     TickersResource,
     AsyncTickersResource,
@@ -120,6 +120,7 @@ class ExchangesResource(SyncAPIResource):
         self,
         id: str,
         *,
+        dex_pair_format: Literal["contract_address", "symbol"] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -133,6 +134,10 @@ class ExchangesResource(SyncAPIResource):
         ID**
 
         Args:
+          dex_pair_format:
+              set to `symbol` to display DEX pair base and target as symbols, default:
+              `contract_address`
+
           extra_headers: Send extra headers
 
           extra_query: Add additional query parameters to the request
@@ -146,7 +151,11 @@ class ExchangesResource(SyncAPIResource):
         return self._get(
             f"/exchanges/{id}",
             options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+                extra_headers=extra_headers,
+                extra_query=extra_query,
+                extra_body=extra_body,
+                timeout=timeout,
+                query=maybe_transform({"dex_pair_format": dex_pair_format}, exchange_get_id_params.ExchangeGetIDParams),
             ),
             cast_to=ExchangeGetIDResponse,
         )
@@ -268,6 +277,7 @@ class AsyncExchangesResource(AsyncAPIResource):
         self,
         id: str,
         *,
+        dex_pair_format: Literal["contract_address", "symbol"] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -281,6 +291,10 @@ class AsyncExchangesResource(AsyncAPIResource):
         ID**
 
         Args:
+          dex_pair_format:
+              set to `symbol` to display DEX pair base and target as symbols, default:
+              `contract_address`
+
           extra_headers: Send extra headers
 
           extra_query: Add additional query parameters to the request
@@ -294,7 +308,13 @@ class AsyncExchangesResource(AsyncAPIResource):
         return await self._get(
             f"/exchanges/{id}",
             options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+                extra_headers=extra_headers,
+                extra_query=extra_query,
+                extra_body=extra_body,
+                timeout=timeout,
+                query=await async_maybe_transform(
+                    {"dex_pair_format": dex_pair_format}, exchange_get_id_params.ExchangeGetIDParams
+                ),
             ),
             cast_to=ExchangeGetIDResponse,
         )

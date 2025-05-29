@@ -15,3 +15,6 @@ class PoolGetAddressParams(TypedDict, total=False):
     attributes to include, comma-separated if more than one to include Available
     values: `base_token`, `quote_token`, `dex`
     """
+
+    include_volume_breakdown: bool
+    """include volume breakdown, default: false"""

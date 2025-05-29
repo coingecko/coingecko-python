@@ -33,6 +33,7 @@ class TestMulti:
             addresses="addresses",
             network="eth",
             include="include",
+            include_volume_breakdown=True,
         )
         assert_matches_type(MultiGetAddressesResponse, multi, path=["response"])
 
@@ -99,6 +100,7 @@ class TestAsyncMulti:
             addresses="addresses",
             network="eth",
             include="include",
+            include_volume_breakdown=True,
         )
         assert_matches_type(MultiGetAddressesResponse, multi, path=["response"])
 

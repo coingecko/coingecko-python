@@ -31,6 +31,7 @@ class TestTickers:
         ticker = client.coins.tickers.get(
             id="bitcoin",
             depth=True,
+            dex_pair_format="contract_address",
             exchange_ids="binance",
             include_exchange_logo=True,
             order="trust_score_desc",
@@ -90,6 +91,7 @@ class TestAsyncTickers:
         ticker = await async_client.coins.tickers.get(
             id="bitcoin",
             depth=True,
+            dex_pair_format="contract_address",
             exchange_ids="binance",
             include_exchange_logo=True,
             order="trust_score_desc",

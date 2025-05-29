@@ -30,6 +30,14 @@ from .pools import (
     PoolsResourceWithStreamingResponse,
     AsyncPoolsResourceWithStreamingResponse,
 )
+from .trades import (
+    TradesResource,
+    AsyncTradesResource,
+    TradesResourceWithRawResponse,
+    AsyncTradesResourceWithRawResponse,
+    TradesResourceWithStreamingResponse,
+    AsyncTradesResourceWithStreamingResponse,
+)
 from ....._types import NOT_GIVEN, Body, Query, Headers, NotGiven
 from ....._utils import maybe_transform, async_maybe_transform
 from ....._compat import cached_property
@@ -71,6 +79,10 @@ class TokensResource(SyncAPIResource):
     @cached_property
     def pools(self) -> PoolsResource:
         return PoolsResource(self._client)
+
+    @cached_property
+    def trades(self) -> TradesResource:
+        return TradesResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> TokensResourceWithRawResponse:
@@ -152,6 +164,10 @@ class AsyncTokensResource(AsyncAPIResource):
     @cached_property
     def pools(self) -> AsyncPoolsResource:
         return AsyncPoolsResource(self._client)
+
+    @cached_property
+    def trades(self) -> AsyncTradesResource:
+        return AsyncTradesResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> AsyncTokensResourceWithRawResponse:
@@ -241,6 +257,10 @@ class TokensResourceWithRawResponse:
     def pools(self) -> PoolsResourceWithRawResponse:
         return PoolsResourceWithRawResponse(self._tokens.pools)
 
+    @cached_property
+    def trades(self) -> TradesResourceWithRawResponse:
+        return TradesResourceWithRawResponse(self._tokens.trades)
+
 
 class AsyncTokensResourceWithRawResponse:
     def __init__(self, tokens: AsyncTokensResource) -> None:
@@ -265,6 +285,10 @@ class AsyncTokensResourceWithRawResponse:
     @cached_property
     def pools(self) -> AsyncPoolsResourceWithRawResponse:
         return AsyncPoolsResourceWithRawResponse(self._tokens.pools)
+
+    @cached_property
+    def trades(self) -> AsyncTradesResourceWithRawResponse:
+        return AsyncTradesResourceWithRawResponse(self._tokens.trades)
 
 
 class TokensResourceWithStreamingResponse:
@@ -291,6 +315,10 @@ class TokensResourceWithStreamingResponse:
     def pools(self) -> PoolsResourceWithStreamingResponse:
         return PoolsResourceWithStreamingResponse(self._tokens.pools)
 
+    @cached_property
+    def trades(self) -> TradesResourceWithStreamingResponse:
+        return TradesResourceWithStreamingResponse(self._tokens.trades)
+
 
 class AsyncTokensResourceWithStreamingResponse:
     def __init__(self, tokens: AsyncTokensResource) -> None:
@@ -315,3 +343,7 @@ class AsyncTokensResourceWithStreamingResponse:
     @cached_property
     def pools(self) -> AsyncPoolsResourceWithStreamingResponse:
         return AsyncPoolsResourceWithStreamingResponse(self._tokens.pools)
+
+    @cached_property
+    def trades(self) -> AsyncTradesResourceWithStreamingResponse:
+        return AsyncTradesResourceWithStreamingResponse(self._tokens.trades)

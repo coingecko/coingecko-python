@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing_extensions import Literal
+
 import httpx
 
 from .list import (
@@ -179,6 +181,7 @@ class CoinsResource(SyncAPIResource):
         *,
         community_data: bool | NotGiven = NOT_GIVEN,
         developer_data: bool | NotGiven = NOT_GIVEN,
+        dex_pair_format: Literal["contract_address", "symbol"] | NotGiven = NOT_GIVEN,
         localization: bool | NotGiven = NOT_GIVEN,
         market_data: bool | NotGiven = NOT_GIVEN,
         sparkline: bool | NotGiven = NOT_GIVEN,
@@ -200,6 +203,10 @@ class CoinsResource(SyncAPIResource):
           community_data: include community data, default: true
 
           developer_data: include developer data, default: true
+
+          dex_pair_format:
+              set to `symbol` to display DEX pair base and target as symbols, default:
+              `contract_address`
 
           localization: include all the localized languages in the response, default: true
 
@@ -230,6 +237,7 @@ class CoinsResource(SyncAPIResource):
                     {
                         "community_data": community_data,
                         "developer_data": developer_data,
+                        "dex_pair_format": dex_pair_format,
                         "localization": localization,
                         "market_data": market_data,
                         "sparkline": sparkline,
@@ -312,6 +320,7 @@ class AsyncCoinsResource(AsyncAPIResource):
         *,
         community_data: bool | NotGiven = NOT_GIVEN,
         developer_data: bool | NotGiven = NOT_GIVEN,
+        dex_pair_format: Literal["contract_address", "symbol"] | NotGiven = NOT_GIVEN,
         localization: bool | NotGiven = NOT_GIVEN,
         market_data: bool | NotGiven = NOT_GIVEN,
         sparkline: bool | NotGiven = NOT_GIVEN,
@@ -333,6 +342,10 @@ class AsyncCoinsResource(AsyncAPIResource):
           community_data: include community data, default: true
 
           developer_data: include developer data, default: true
+
+          dex_pair_format:
+              set to `symbol` to display DEX pair base and target as symbols, default:
+              `contract_address`
 
           localization: include all the localized languages in the response, default: true
 
@@ -363,6 +376,7 @@ class AsyncCoinsResource(AsyncAPIResource):
                     {
                         "community_data": community_data,
                         "developer_data": developer_data,
+                        "dex_pair_format": dex_pair_format,
                         "localization": localization,
                         "market_data": market_data,
                         "sparkline": sparkline,
