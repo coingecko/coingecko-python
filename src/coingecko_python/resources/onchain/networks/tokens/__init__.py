@@ -32,6 +32,14 @@ from .tokens import (
     TokensResourceWithStreamingResponse,
     AsyncTokensResourceWithStreamingResponse,
 )
+from .trades import (
+    TradesResource,
+    AsyncTradesResource,
+    TradesResourceWithRawResponse,
+    AsyncTradesResourceWithRawResponse,
+    TradesResourceWithStreamingResponse,
+    AsyncTradesResourceWithStreamingResponse,
+)
 from .top_holders import (
     TopHoldersResource,
     AsyncTopHoldersResource,
@@ -66,6 +74,12 @@ __all__ = [
     "AsyncPoolsResourceWithRawResponse",
     "PoolsResourceWithStreamingResponse",
     "AsyncPoolsResourceWithStreamingResponse",
+    "TradesResource",
+    "AsyncTradesResource",
+    "TradesResourceWithRawResponse",
+    "AsyncTradesResourceWithRawResponse",
+    "TradesResourceWithStreamingResponse",
+    "AsyncTradesResourceWithStreamingResponse",
     "TokensResource",
     "AsyncTokensResource",
     "TokensResourceWithRawResponse",

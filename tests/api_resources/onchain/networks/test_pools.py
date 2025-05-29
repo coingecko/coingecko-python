@@ -89,6 +89,7 @@ class TestPools:
             address="0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
             network="eth",
             include="include",
+            include_volume_breakdown=True,
         )
         assert_matches_type(PoolGetAddressResponse, pool, path=["response"])
 
@@ -208,6 +209,7 @@ class TestAsyncPools:
             address="0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
             network="eth",
             include="include",
+            include_volume_breakdown=True,
         )
         assert_matches_type(PoolGetAddressResponse, pool, path=["response"])
 

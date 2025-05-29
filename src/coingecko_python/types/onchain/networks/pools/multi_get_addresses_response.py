@@ -146,6 +146,10 @@ class DataAttributes(BaseModel):
 
     pool_created_at: Optional[str] = None
 
+    pool_fee_percentage: Optional[str] = None
+
+    pool_name: Optional[str] = None
+
     price_change_percentage: Optional[DataAttributesPriceChangePercentage] = None
 
     quote_token_price_base_token: Optional[str] = None

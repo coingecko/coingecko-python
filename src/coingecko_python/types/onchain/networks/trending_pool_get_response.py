@@ -21,8 +21,6 @@ __all__ = [
     "DataRelationshipsBaseTokenData",
     "DataRelationshipsDex",
     "DataRelationshipsDexData",
-    "DataRelationshipsNetwork",
-    "DataRelationshipsNetworkData",
     "DataRelationshipsQuoteToken",
     "DataRelationshipsQuoteTokenData",
     "Included",
@@ -164,16 +162,6 @@ class DataRelationshipsDex(BaseModel):
     data: Optional[DataRelationshipsDexData] = None
 
 
-class DataRelationshipsNetworkData(BaseModel):
-    id: Optional[str] = None
-
-    type: Optional[str] = None
-
-
-class DataRelationshipsNetwork(BaseModel):
-    data: Optional[DataRelationshipsNetworkData] = None
-
-
 class DataRelationshipsQuoteTokenData(BaseModel):
     id: Optional[str] = None
 
@@ -188,8 +176,6 @@ class DataRelationships(BaseModel):
     base_token: Optional[DataRelationshipsBaseToken] = None
 
     dex: Optional[DataRelationshipsDex] = None
-
-    network: Optional[DataRelationshipsNetwork] = None
 
     quote_token: Optional[DataRelationshipsQuoteToken] = None
 

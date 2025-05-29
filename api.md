@@ -253,7 +253,7 @@ from coingecko_python.types import (
 Methods:
 
 - <code title="get /exchanges">client.exchanges.<a href="./src/coingecko_python/resources/exchanges/exchanges.py">get</a>(\*\*<a href="src/coingecko_python/types/exchange_get_params.py">params</a>) -> <a href="./src/coingecko_python/types/exchange_get_response.py">ExchangeGetResponse</a></code>
-- <code title="get /exchanges/{id}">client.exchanges.<a href="./src/coingecko_python/resources/exchanges/exchanges.py">get_id</a>(id) -> <a href="./src/coingecko_python/types/exchange_get_id_response.py">ExchangeGetIDResponse</a></code>
+- <code title="get /exchanges/{id}">client.exchanges.<a href="./src/coingecko_python/resources/exchanges/exchanges.py">get_id</a>(id, \*\*<a href="src/coingecko_python/types/exchange_get_id_params.py">params</a>) -> <a href="./src/coingecko_python/types/exchange_get_id_response.py">ExchangeGetIDResponse</a></code>
 - <code title="get /exchanges/list">client.exchanges.<a href="./src/coingecko_python/resources/exchanges/exchanges.py">get_list</a>(\*\*<a href="src/coingecko_python/types/exchange_get_list_params.py">params</a>) -> <a href="./src/coingecko_python/types/exchange_get_list_response.py">ExchangeGetListResponse</a></code>
 
 ## Tickers
@@ -580,6 +580,18 @@ from coingecko_python.types.onchain.networks.tokens import PoolGetResponse
 Methods:
 
 - <code title="get /onchain/networks/{network}/tokens/{token_address}/pools">client.onchain.networks.tokens.pools.<a href="./src/coingecko_python/resources/onchain/networks/tokens/pools.py">get</a>(token_address, \*, network, \*\*<a href="src/coingecko_python/types/onchain/networks/tokens/pool_get_params.py">params</a>) -> <a href="./src/coingecko_python/types/onchain/networks/tokens/pool_get_response.py">PoolGetResponse</a></code>
+
+#### Trades
+
+Types:
+
+```python
+from coingecko_python.types.onchain.networks.tokens import TradeGetResponse
+```
+
+Methods:
+
+- <code title="get /onchain/networks/{network}/tokens/{token_address}/trades">client.onchain.networks.tokens.trades.<a href="./src/coingecko_python/resources/onchain/networks/tokens/trades.py">get</a>(token_address, \*, network, \*\*<a href="src/coingecko_python/types/onchain/networks/tokens/trade_get_params.py">params</a>) -> <a href="./src/coingecko_python/types/onchain/networks/tokens/trade_get_response.py">TradeGetResponse</a></code>
 
 ## Pools
 

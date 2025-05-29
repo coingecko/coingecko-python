@@ -20,6 +20,12 @@ class TickerGetParams(TypedDict, total=False):
     cost_to_move_down_usd),default: false
     """
 
+    dex_pair_format: Literal["contract_address", "symbol"]
+    """
+    set to `symbol` to display DEX pair base and target as symbols, default:
+    `contract_address`
+    """
+
     include_exchange_logo: bool
     """include exchange logo, default: false"""
 

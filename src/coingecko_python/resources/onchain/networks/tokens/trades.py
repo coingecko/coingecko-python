@@ -15,55 +15,51 @@ from ....._response import (
     async_to_streamed_response_wrapper,
 )
 from ....._base_client import make_request_options
-from .....types.onchain.networks.pools import multi_get_addresses_params
-from .....types.onchain.networks.pools.multi_get_addresses_response import MultiGetAddressesResponse
+from .....types.onchain.networks.tokens import trade_get_params
+from .....types.onchain.networks.tokens.trade_get_response import TradeGetResponse
 
-__all__ = ["MultiResource", "AsyncMultiResource"]
+__all__ = ["TradesResource", "AsyncTradesResource"]
 
 
-class MultiResource(SyncAPIResource):
+class TradesResource(SyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> MultiResourceWithRawResponse:
+    def with_raw_response(self) -> TradesResourceWithRawResponse:
         """
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/coingecko/coingecko-python#accessing-raw-response-data-eg-headers
         """
-        return MultiResourceWithRawResponse(self)
+        return TradesResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> MultiResourceWithStreamingResponse:
+    def with_streaming_response(self) -> TradesResourceWithStreamingResponse:
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
         For more information, see https://www.github.com/coingecko/coingecko-python#with_streaming_response
         """
-        return MultiResourceWithStreamingResponse(self)
+        return TradesResourceWithStreamingResponse(self)
 
-    def get_addresses(
+    def get(
         self,
-        addresses: str,
+        token_address: str,
         *,
         network: str,
-        include: str | NotGiven = NOT_GIVEN,
-        include_volume_breakdown: bool | NotGiven = NOT_GIVEN,
+        trade_volume_in_usd_greater_than: float | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> MultiGetAddressesResponse:
+    ) -> TradeGetResponse:
         """
-        This endpoint allows you to **query multiple pools based on the provided network
-        and pool address**
+        This endpoint allows you to **query the last 300 trades in the past 24 hours
+        based on the provided token contract address on a network**
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
-
-          include_volume_breakdown: include volume breakdown, default: false
+          trade_volume_in_usd_greater_than: filter trades by trade volume in USD greater than this value Default value: 0
 
           extra_headers: Send extra headers
 
@@ -75,70 +71,63 @@ class MultiResource(SyncAPIResource):
         """
         if not network:
             raise ValueError(f"Expected a non-empty value for `network` but received {network!r}")
-        if not addresses:
-            raise ValueError(f"Expected a non-empty value for `addresses` but received {addresses!r}")
+        if not token_address:
+            raise ValueError(f"Expected a non-empty value for `token_address` but received {token_address!r}")
         return self._get(
-            f"/onchain/networks/{network}/pools/multi/{addresses}",
+            f"/onchain/networks/{network}/tokens/{token_address}/trades",
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
                 extra_body=extra_body,
                 timeout=timeout,
                 query=maybe_transform(
-                    {
-                        "include": include,
-                        "include_volume_breakdown": include_volume_breakdown,
-                    },
-                    multi_get_addresses_params.MultiGetAddressesParams,
+                    {"trade_volume_in_usd_greater_than": trade_volume_in_usd_greater_than},
+                    trade_get_params.TradeGetParams,
                 ),
             ),
-            cast_to=MultiGetAddressesResponse,
+            cast_to=TradeGetResponse,
         )
 
 
-class AsyncMultiResource(AsyncAPIResource):
+class AsyncTradesResource(AsyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> AsyncMultiResourceWithRawResponse:
+    def with_raw_response(self) -> AsyncTradesResourceWithRawResponse:
         """
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/coingecko/coingecko-python#accessing-raw-response-data-eg-headers
         """
-        return AsyncMultiResourceWithRawResponse(self)
+        return AsyncTradesResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> AsyncMultiResourceWithStreamingResponse:
+    def with_streaming_response(self) -> AsyncTradesResourceWithStreamingResponse:
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
         For more information, see https://www.github.com/coingecko/coingecko-python#with_streaming_response
         """
-        return AsyncMultiResourceWithStreamingResponse(self)
+        return AsyncTradesResourceWithStreamingResponse(self)
 
-    async def get_addresses(
+    async def get(
         self,
-        addresses: str,
+        token_address: str,
         *,
         network: str,
-        include: str | NotGiven = NOT_GIVEN,
-        include_volume_breakdown: bool | NotGiven = NOT_GIVEN,
+        trade_volume_in_usd_greater_than: float | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> MultiGetAddressesResponse:
+    ) -> TradeGetResponse:
         """
-        This endpoint allows you to **query multiple pools based on the provided network
-        and pool address**
+        This endpoint allows you to **query the last 300 trades in the past 24 hours
+        based on the provided token contract address on a network**
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
-
-          include_volume_breakdown: include volume breakdown, default: false
+          trade_volume_in_usd_greater_than: filter trades by trade volume in USD greater than this value Default value: 0
 
           extra_headers: Send extra headers
 
@@ -150,58 +139,55 @@ class AsyncMultiResource(AsyncAPIResource):
         """
         if not network:
             raise ValueError(f"Expected a non-empty value for `network` but received {network!r}")
-        if not addresses:
-            raise ValueError(f"Expected a non-empty value for `addresses` but received {addresses!r}")
+        if not token_address:
+            raise ValueError(f"Expected a non-empty value for `token_address` but received {token_address!r}")
         return await self._get(
-            f"/onchain/networks/{network}/pools/multi/{addresses}",
+            f"/onchain/networks/{network}/tokens/{token_address}/trades",
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
                 extra_body=extra_body,
                 timeout=timeout,
                 query=await async_maybe_transform(
-                    {
-                        "include": include,
-                        "include_volume_breakdown": include_volume_breakdown,
-                    },
-                    multi_get_addresses_params.MultiGetAddressesParams,
+                    {"trade_volume_in_usd_greater_than": trade_volume_in_usd_greater_than},
+                    trade_get_params.TradeGetParams,
                 ),
             ),
-            cast_to=MultiGetAddressesResponse,
+            cast_to=TradeGetResponse,
         )
 
 
-class MultiResourceWithRawResponse:
-    def __init__(self, multi: MultiResource) -> None:
-        self._multi = multi
+class TradesResourceWithRawResponse:
+    def __init__(self, trades: TradesResource) -> None:
+        self._trades = trades
 
-        self.get_addresses = to_raw_response_wrapper(
-            multi.get_addresses,
+        self.get = to_raw_response_wrapper(
+            trades.get,
         )
 
 
-class AsyncMultiResourceWithRawResponse:
-    def __init__(self, multi: AsyncMultiResource) -> None:
-        self._multi = multi
+class AsyncTradesResourceWithRawResponse:
+    def __init__(self, trades: AsyncTradesResource) -> None:
+        self._trades = trades
 
-        self.get_addresses = async_to_raw_response_wrapper(
-            multi.get_addresses,
+        self.get = async_to_raw_response_wrapper(
+            trades.get,
         )
 
 
-class MultiResourceWithStreamingResponse:
-    def __init__(self, multi: MultiResource) -> None:
-        self._multi = multi
+class TradesResourceWithStreamingResponse:
+    def __init__(self, trades: TradesResource) -> None:
+        self._trades = trades
 
-        self.get_addresses = to_streamed_response_wrapper(
-            multi.get_addresses,
+        self.get = to_streamed_response_wrapper(
+            trades.get,
         )
 
 
-class AsyncMultiResourceWithStreamingResponse:
-    def __init__(self, multi: AsyncMultiResource) -> None:
-        self._multi = multi
+class AsyncTradesResourceWithStreamingResponse:
+    def __init__(self, trades: AsyncTradesResource) -> None:
+        self._trades = trades
 
-        self.get_addresses = async_to_streamed_response_wrapper(
-            multi.get_addresses,
+        self.get = async_to_streamed_response_wrapper(
+            trades.get,
         )

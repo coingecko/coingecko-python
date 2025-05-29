@@ -14,6 +14,7 @@ from .search_get_response import SearchGetResponse as SearchGetResponse
 from .coin_get_id_response import CoinGetIDResponse as CoinGetIDResponse
 from .exchange_get_response import ExchangeGetResponse as ExchangeGetResponse
 from .nft_get_list_response import NFTGetListResponse as NFTGetListResponse
+from .exchange_get_id_params import ExchangeGetIDParams as ExchangeGetIDParams
 from .nft_get_markets_params import NFTGetMarketsParams as NFTGetMarketsParams
 from .derivative_get_response import DerivativeGetResponse as DerivativeGetResponse
 from .exchange_get_id_response import ExchangeGetIDResponse as ExchangeGetIDResponse

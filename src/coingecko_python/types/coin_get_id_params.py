@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing_extensions import TypedDict
+from typing_extensions import Literal, TypedDict
 
 __all__ = ["CoinGetIDParams"]
 
@@ -13,6 +13,12 @@ class CoinGetIDParams(TypedDict, total=False):
 
     developer_data: bool
     """include developer data, default: true"""
+
+    dex_pair_format: Literal["contract_address", "symbol"]
+    """
+    set to `symbol` to display DEX pair base and target as symbols, default:
+    `contract_address`
+    """
 
     localization: bool
     """include all the localized languages in the response, default: true"""

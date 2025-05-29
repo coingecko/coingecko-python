@@ -53,6 +53,7 @@ class OhlcvResource(SyncAPIResource):
         aggregate: str | NotGiven = NOT_GIVEN,
         before_timestamp: int | NotGiven = NOT_GIVEN,
         currency: Literal["usd", "token"] | NotGiven = NOT_GIVEN,
+        include_empty_intervals: bool | NotGiven = NOT_GIVEN,
         limit: int | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -76,6 +77,8 @@ class OhlcvResource(SyncAPIResource):
           before_timestamp: return OHLCV data before this timestamp (integer seconds since epoch)
 
           currency: return OHLCV in USD or quote token Default value: usd
+
+          include_empty_intervals: include empty intervals with no trade data, default: false
 
           limit: number of OHLCV results to return, maximum 1000 Default value: 100
 
@@ -106,6 +109,7 @@ class OhlcvResource(SyncAPIResource):
                         "aggregate": aggregate,
                         "before_timestamp": before_timestamp,
                         "currency": currency,
+                        "include_empty_intervals": include_empty_intervals,
                         "limit": limit,
                     },
                     ohlcv_get_timeframe_params.OhlcvGetTimeframeParams,
@@ -145,6 +149,7 @@ class AsyncOhlcvResource(AsyncAPIResource):
         aggregate: str | NotGiven = NOT_GIVEN,
         before_timestamp: int | NotGiven = NOT_GIVEN,
         currency: Literal["usd", "token"] | NotGiven = NOT_GIVEN,
+        include_empty_intervals: bool | NotGiven = NOT_GIVEN,
         limit: int | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -168,6 +173,8 @@ class AsyncOhlcvResource(AsyncAPIResource):
           before_timestamp: return OHLCV data before this timestamp (integer seconds since epoch)
 
           currency: return OHLCV in USD or quote token Default value: usd
+
+          include_empty_intervals: include empty intervals with no trade data, default: false
 
           limit: number of OHLCV results to return, maximum 1000 Default value: 100
 
@@ -198,6 +205,7 @@ class AsyncOhlcvResource(AsyncAPIResource):
                         "aggregate": aggregate,
                         "before_timestamp": before_timestamp,
                         "currency": currency,
+                        "include_empty_intervals": include_empty_intervals,
                         "limit": limit,
                     },
                     ohlcv_get_timeframe_params.OhlcvGetTimeframeParams,

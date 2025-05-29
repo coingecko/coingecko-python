@@ -153,6 +153,7 @@ class PoolsResource(SyncAPIResource):
         *,
         network: str,
         include: str | NotGiven = NOT_GIVEN,
+        include_volume_breakdown: bool | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -167,6 +168,8 @@ class PoolsResource(SyncAPIResource):
         Args:
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`
+
+          include_volume_breakdown: include volume breakdown, default: false
 
           extra_headers: Send extra headers
 
@@ -187,7 +190,13 @@ class PoolsResource(SyncAPIResource):
                 extra_query=extra_query,
                 extra_body=extra_body,
                 timeout=timeout,
-                query=maybe_transform({"include": include}, pool_get_address_params.PoolGetAddressParams),
+                query=maybe_transform(
+                    {
+                        "include": include,
+                        "include_volume_breakdown": include_volume_breakdown,
+                    },
+                    pool_get_address_params.PoolGetAddressParams,
+                ),
             ),
             cast_to=PoolGetAddressResponse,
         )
@@ -290,6 +299,7 @@ class AsyncPoolsResource(AsyncAPIResource):
         *,
         network: str,
         include: str | NotGiven = NOT_GIVEN,
+        include_volume_breakdown: bool | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -304,6 +314,8 @@ class AsyncPoolsResource(AsyncAPIResource):
         Args:
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`
+
+          include_volume_breakdown: include volume breakdown, default: false
 
           extra_headers: Send extra headers
 
@@ -324,7 +336,13 @@ class AsyncPoolsResource(AsyncAPIResource):
                 extra_query=extra_query,
                 extra_body=extra_body,
                 timeout=timeout,
-                query=await async_maybe_transform({"include": include}, pool_get_address_params.PoolGetAddressParams),
+                query=await async_maybe_transform(
+                    {
+                        "include": include,
+                        "include_volume_breakdown": include_volume_breakdown,
+                    },
+                    pool_get_address_params.PoolGetAddressParams,
+                ),
             ),
             cast_to=PoolGetAddressResponse,
         )
