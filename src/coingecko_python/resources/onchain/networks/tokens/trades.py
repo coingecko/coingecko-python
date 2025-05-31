@@ -55,8 +55,8 @@ class TradesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> TradeGetResponse:
         """
-        This endpoint allows you to **query the last 300 trades in the past 24 hours
-        based on the provided token contract address on a network**
+        This endpoint allows you to **query the last 300 trades in the past 24 hours,
+        across all pools, based on the provided token contract address on a network**
 
         Args:
           trade_volume_in_usd_greater_than: filter trades by trade volume in USD greater than this value Default value: 0
@@ -123,8 +123,8 @@ class AsyncTradesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> TradeGetResponse:
         """
-        This endpoint allows you to **query the last 300 trades in the past 24 hours
-        based on the provided token contract address on a network**
+        This endpoint allows you to **query the last 300 trades in the past 24 hours,
+        across all pools, based on the provided token contract address on a network**
 
         Args:
           trade_volume_in_usd_greater_than: filter trades by trade volume in USD greater than this value Default value: 0
