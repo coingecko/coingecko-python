@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.5 (2025-06-03)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/coingecko/coingecko-python/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
+
+### Features
+
+* **client:** add follow_redirects request option ([f01e996](https://github.com/coingecko/coingecko-python/commit/f01e99674f5b0e7d243395588ad6a87e88eda894))
+
+
+### Chores
+
+* **docs:** remove reference to rye shell ([5c72fbf](https://github.com/coingecko/coingecko-python/commit/5c72fbf675d06b2b8ccfd36604d01cc28ad9a637))
+
 ## 0.1.0-alpha.4 (2025-06-02)
 
 Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/coingecko/coingecko-python/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
