@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.6 (2025-06-07)
+
+Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/coingecko/coingecko-python/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
+
+### Features
+
+* **api:** api update ([9f7378c](https://github.com/coingecko/coingecko-python/commit/9f7378c9775aa51e345033dded23a26e65878b97))
+* **api:** New endpoints ([fd3b486](https://github.com/coingecko/coingecko-python/commit/fd3b486f6528d71be7df3a5a9186ace2742819bd))
+
 ## 0.1.0-alpha.5 (2025-06-03)
 
 Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/coingecko/coingecko-python/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
