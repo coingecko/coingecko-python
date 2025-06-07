@@ -16,6 +16,14 @@ from .multi import (
     MultiResourceWithStreamingResponse,
     AsyncMultiResourceWithStreamingResponse,
 )
+from .ohlcv import (
+    OhlcvResource,
+    AsyncOhlcvResource,
+    OhlcvResourceWithRawResponse,
+    AsyncOhlcvResourceWithRawResponse,
+    OhlcvResourceWithStreamingResponse,
+    AsyncOhlcvResourceWithStreamingResponse,
+)
 from .pools import (
     PoolsResource,
     AsyncPoolsResource,
@@ -48,6 +56,14 @@ from .top_holders import (
     TopHoldersResourceWithStreamingResponse,
     AsyncTopHoldersResourceWithStreamingResponse,
 )
+from .holders_chart import (
+    HoldersChartResource,
+    AsyncHoldersChartResource,
+    HoldersChartResourceWithRawResponse,
+    AsyncHoldersChartResourceWithRawResponse,
+    HoldersChartResourceWithStreamingResponse,
+    AsyncHoldersChartResourceWithStreamingResponse,
+)
 
 __all__ = [
     "MultiResource",
@@ -68,6 +84,18 @@ __all__ = [
     "AsyncTopHoldersResourceWithRawResponse",
     "TopHoldersResourceWithStreamingResponse",
     "AsyncTopHoldersResourceWithStreamingResponse",
+    "HoldersChartResource",
+    "AsyncHoldersChartResource",
+    "HoldersChartResourceWithRawResponse",
+    "AsyncHoldersChartResourceWithRawResponse",
+    "HoldersChartResourceWithStreamingResponse",
+    "AsyncHoldersChartResourceWithStreamingResponse",
+    "OhlcvResource",
+    "AsyncOhlcvResource",
+    "OhlcvResourceWithRawResponse",
+    "AsyncOhlcvResourceWithRawResponse",
+    "OhlcvResourceWithStreamingResponse",
+    "AsyncOhlcvResourceWithStreamingResponse",
     "PoolsResource",
     "AsyncPoolsResource",
     "PoolsResourceWithRawResponse",

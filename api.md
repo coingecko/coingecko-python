@@ -569,6 +569,30 @@ Methods:
 
 - <code title="get /onchain/networks/{network}/tokens/{address}/top_holders">client.onchain.networks.tokens.top_holders.<a href="./src/coingecko_python/resources/onchain/networks/tokens/top_holders.py">get</a>(address, \*, network, \*\*<a href="src/coingecko_python/types/onchain/networks/tokens/top_holder_get_params.py">params</a>) -> <a href="./src/coingecko_python/types/onchain/networks/tokens/top_holder_get_response.py">TopHolderGetResponse</a></code>
 
+#### HoldersChart
+
+Types:
+
+```python
+from coingecko_python.types.onchain.networks.tokens import HoldersChartGetResponse
+```
+
+Methods:
+
+- <code title="get /onchain/networks/{network}/tokens/{token_address}/holders_chart">client.onchain.networks.tokens.holders_chart.<a href="./src/coingecko_python/resources/onchain/networks/tokens/holders_chart.py">get</a>(token_address, \*, network, \*\*<a href="src/coingecko_python/types/onchain/networks/tokens/holders_chart_get_params.py">params</a>) -> <a href="./src/coingecko_python/types/onchain/networks/tokens/holders_chart_get_response.py">HoldersChartGetResponse</a></code>
+
+#### Ohlcv
+
+Types:
+
+```python
+from coingecko_python.types.onchain.networks.tokens import OhlcvGetTimeframeResponse
+```
+
+Methods:
+
+- <code title="get /onchain/networks/{network}/tokens/{token_address}/ohlcv/{timeframe}">client.onchain.networks.tokens.ohlcv.<a href="./src/coingecko_python/resources/onchain/networks/tokens/ohlcv.py">get_timeframe</a>(timeframe, \*, network, token_address, \*\*<a href="src/coingecko_python/types/onchain/networks/tokens/ohlcv_get_timeframe_params.py">params</a>) -> <a href="./src/coingecko_python/types/onchain/networks/tokens/ohlcv_get_timeframe_response.py">OhlcvGetTimeframeResponse</a></code>
+
 #### Pools
 
 Types:
