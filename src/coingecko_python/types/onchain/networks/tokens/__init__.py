@@ -9,5 +9,9 @@ from .pool_get_response import PoolGetResponse as PoolGetResponse
 from .trade_get_response import TradeGetResponse as TradeGetResponse
 from .top_holder_get_params import TopHolderGetParams as TopHolderGetParams
 from .top_holder_get_response import TopHolderGetResponse as TopHolderGetResponse
+from .holders_chart_get_params import HoldersChartGetParams as HoldersChartGetParams
+from .holders_chart_get_response import HoldersChartGetResponse as HoldersChartGetResponse
 from .multi_get_addresses_params import MultiGetAddressesParams as MultiGetAddressesParams
+from .ohlcv_get_timeframe_params import OhlcvGetTimeframeParams as OhlcvGetTimeframeParams
 from .multi_get_addresses_response import MultiGetAddressesResponse as MultiGetAddressesResponse
+from .ohlcv_get_timeframe_response import OhlcvGetTimeframeResponse as OhlcvGetTimeframeResponse
