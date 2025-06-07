@@ -22,6 +22,14 @@ from .multi import (
     MultiResourceWithStreamingResponse,
     AsyncMultiResourceWithStreamingResponse,
 )
+from .ohlcv import (
+    OhlcvResource,
+    AsyncOhlcvResource,
+    OhlcvResourceWithRawResponse,
+    AsyncOhlcvResourceWithRawResponse,
+    OhlcvResourceWithStreamingResponse,
+    AsyncOhlcvResourceWithStreamingResponse,
+)
 from .pools import (
     PoolsResource,
     AsyncPoolsResource,
@@ -56,6 +64,14 @@ from ....._response import (
     async_to_raw_response_wrapper,
     async_to_streamed_response_wrapper,
 )
+from .holders_chart import (
+    HoldersChartResource,
+    AsyncHoldersChartResource,
+    HoldersChartResourceWithRawResponse,
+    AsyncHoldersChartResourceWithRawResponse,
+    HoldersChartResourceWithStreamingResponse,
+    AsyncHoldersChartResourceWithStreamingResponse,
+)
 from ....._base_client import make_request_options
 from .....types.onchain.networks import token_get_address_params
 from .....types.onchain.networks.token_get_address_response import TokenGetAddressResponse
@@ -75,6 +91,14 @@ class TokensResource(SyncAPIResource):
     @cached_property
     def top_holders(self) -> TopHoldersResource:
         return TopHoldersResource(self._client)
+
+    @cached_property
+    def holders_chart(self) -> HoldersChartResource:
+        return HoldersChartResource(self._client)
+
+    @cached_property
+    def ohlcv(self) -> OhlcvResource:
+        return OhlcvResource(self._client)
 
     @cached_property
     def pools(self) -> PoolsResource:
@@ -160,6 +184,14 @@ class AsyncTokensResource(AsyncAPIResource):
     @cached_property
     def top_holders(self) -> AsyncTopHoldersResource:
         return AsyncTopHoldersResource(self._client)
+
+    @cached_property
+    def holders_chart(self) -> AsyncHoldersChartResource:
+        return AsyncHoldersChartResource(self._client)
+
+    @cached_property
+    def ohlcv(self) -> AsyncOhlcvResource:
+        return AsyncOhlcvResource(self._client)
 
     @cached_property
     def pools(self) -> AsyncPoolsResource:
@@ -254,6 +286,14 @@ class TokensResourceWithRawResponse:
         return TopHoldersResourceWithRawResponse(self._tokens.top_holders)
 
     @cached_property
+    def holders_chart(self) -> HoldersChartResourceWithRawResponse:
+        return HoldersChartResourceWithRawResponse(self._tokens.holders_chart)
+
+    @cached_property
+    def ohlcv(self) -> OhlcvResourceWithRawResponse:
+        return OhlcvResourceWithRawResponse(self._tokens.ohlcv)
+
+    @cached_property
     def pools(self) -> PoolsResourceWithRawResponse:
         return PoolsResourceWithRawResponse(self._tokens.pools)
 
@@ -281,6 +321,14 @@ class AsyncTokensResourceWithRawResponse:
     @cached_property
     def top_holders(self) -> AsyncTopHoldersResourceWithRawResponse:
         return AsyncTopHoldersResourceWithRawResponse(self._tokens.top_holders)
+
+    @cached_property
+    def holders_chart(self) -> AsyncHoldersChartResourceWithRawResponse:
+        return AsyncHoldersChartResourceWithRawResponse(self._tokens.holders_chart)
+
+    @cached_property
+    def ohlcv(self) -> AsyncOhlcvResourceWithRawResponse:
+        return AsyncOhlcvResourceWithRawResponse(self._tokens.ohlcv)
 
     @cached_property
     def pools(self) -> AsyncPoolsResourceWithRawResponse:
@@ -312,6 +360,14 @@ class TokensResourceWithStreamingResponse:
         return TopHoldersResourceWithStreamingResponse(self._tokens.top_holders)
 
     @cached_property
+    def holders_chart(self) -> HoldersChartResourceWithStreamingResponse:
+        return HoldersChartResourceWithStreamingResponse(self._tokens.holders_chart)
+
+    @cached_property
+    def ohlcv(self) -> OhlcvResourceWithStreamingResponse:
+        return OhlcvResourceWithStreamingResponse(self._tokens.ohlcv)
+
+    @cached_property
     def pools(self) -> PoolsResourceWithStreamingResponse:
         return PoolsResourceWithStreamingResponse(self._tokens.pools)
 
@@ -339,6 +395,14 @@ class AsyncTokensResourceWithStreamingResponse:
     @cached_property
     def top_holders(self) -> AsyncTopHoldersResourceWithStreamingResponse:
         return AsyncTopHoldersResourceWithStreamingResponse(self._tokens.top_holders)
+
+    @cached_property
+    def holders_chart(self) -> AsyncHoldersChartResourceWithStreamingResponse:
+        return AsyncHoldersChartResourceWithStreamingResponse(self._tokens.holders_chart)
+
+    @cached_property
+    def ohlcv(self) -> AsyncOhlcvResourceWithStreamingResponse:
+        return AsyncOhlcvResourceWithStreamingResponse(self._tokens.ohlcv)
 
     @cached_property
     def pools(self) -> AsyncPoolsResourceWithStreamingResponse:
