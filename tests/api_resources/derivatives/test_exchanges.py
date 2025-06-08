@@ -8,8 +8,8 @@ from typing import Any, cast
 import pytest
 
 from tests.utils import assert_matches_type
-from coingecko_python import Coingecko, AsyncCoingecko
-from coingecko_python.types.derivatives import (
+from coingecko_sdk import Coingecko, AsyncCoingecko
+from coingecko_sdk.types.derivatives import (
     ExchangeGetResponse,
     ExchangeGetIDResponse,
     ExchangeGetListResponse,

@@ -8,8 +8,8 @@ from typing import Any, TypeVar, Iterator, cast
 from datetime import date, datetime
 from typing_extensions import Literal, get_args, get_origin, assert_type
 
-from coingecko_python._types import Omit, NoneType
-from coingecko_python._utils import (
+from coingecko_sdk._types import Omit, NoneType
+from coingecko_sdk._utils import (
     is_dict,
     is_list,
     is_list_type,
@@ -18,8 +18,8 @@ from coingecko_python._utils import (
     is_annotated_type,
     is_type_alias_type,
 )
-from coingecko_python._compat import PYDANTIC_V2, field_outer_type, get_model_fields
-from coingecko_python._models import BaseModel
+from coingecko_sdk._compat import PYDANTIC_V2, field_outer_type, get_model_fields
+from coingecko_sdk._models import BaseModel
 
 BaseModelT = TypeVar("BaseModelT", bound=BaseModel)
 

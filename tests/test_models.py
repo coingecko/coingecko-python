@@ -7,9 +7,9 @@ import pytest
 import pydantic
 from pydantic import Field
 
-from coingecko_python._utils import PropertyInfo
-from coingecko_python._compat import PYDANTIC_V2, parse_obj, model_dump, model_json
-from coingecko_python._models import BaseModel, construct_type
+from coingecko_sdk._utils import PropertyInfo
+from coingecko_sdk._compat import PYDANTIC_V2, parse_obj, model_dump, model_json
+from coingecko_sdk._models import BaseModel, construct_type
 
 
 class BasicModel(BaseModel):
