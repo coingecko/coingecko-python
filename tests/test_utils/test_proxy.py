@@ -2,7 +2,7 @@ import operator
 from typing import Any
 from typing_extensions import override
 
-from coingecko_python._utils import LazyProxy
+from coingecko_sdk._utils import LazyProxy
 
 
 class RecursiveLazyProxy(LazyProxy[Any]):

@@ -4,8 +4,8 @@ from typing import Sequence
 
 import pytest
 
-from coingecko_python._types import FileTypes
-from coingecko_python._utils import extract_files
+from coingecko_sdk._types import FileTypes
+from coingecko_sdk._utils import extract_files
 
 
 def test_removes_files_from_input() -> None:

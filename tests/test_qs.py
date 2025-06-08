@@ -4,7 +4,7 @@ from urllib.parse import unquote
 
 import pytest
 
-from coingecko_python._qs import Querystring, stringify
+from coingecko_sdk._qs import Querystring, stringify
 
 
 def test_empty() -> None:

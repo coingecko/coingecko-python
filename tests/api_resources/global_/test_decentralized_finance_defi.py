@@ -8,8 +8,8 @@ from typing import Any, cast
 import pytest
 
 from tests.utils import assert_matches_type
-from coingecko_python import Coingecko, AsyncCoingecko
-from coingecko_python.types.global_ import DecentralizedFinanceDefiGetResponse
+from coingecko_sdk import Coingecko, AsyncCoingecko
+from coingecko_sdk.types.global_ import DecentralizedFinanceDefiGetResponse
 
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 
