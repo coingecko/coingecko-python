@@ -1,6 +1,6 @@
 # Coingecko Python API library
 
-[![PyPI version](https://img.shields.io/pypi/v/coingecko_python.svg)](https://pypi.org/project/coingecko_python/)
+[![PyPI version](https://img.shields.io/pypi/v/coingecko_sdk.svg)](https://pypi.org/project/coingecko_sdk/)
 
 The Coingecko Python library provides convenient access to the Coingecko REST API from any Python 3.8+
 application. The library includes type definitions for all request params and response fields,
@@ -20,7 +20,7 @@ pip install git+ssh://git@github.com/coingecko/coingecko-python.git
 ```
 
 > [!NOTE]
-> Once this package is [published to PyPI](https://app.stainless.com/docs/guides/publish), this will become: `pip install --pre coingecko_python`
+> Once this package is [published to PyPI](https://app.stainless.com/docs/guides/publish), this will become: `pip install --pre coingecko_sdk`
 
 ## Usage
 
@@ -28,7 +28,7 @@ The full API of this library can be found in [api.md](api.md).
 
 ```python
 import os
-from coingecko_python import Coingecko
+from coingecko_sdk import Coingecko
 
 client = Coingecko(
     pro_api_key=os.environ.get("COINGECKO_PRO_API_KEY"),  # This is the default and can be omitted
@@ -55,7 +55,7 @@ Simply import `AsyncCoingecko` instead of `Coingecko` and use `await` with each 
 ```python
 import os
 import asyncio
-from coingecko_python import AsyncCoingecko
+from coingecko_sdk import AsyncCoingecko
 
 client = AsyncCoingecko(
     pro_api_key=os.environ.get("COINGECKO_PRO_API_KEY"),  # This is the default and can be omitted
@@ -88,16 +88,16 @@ Typed requests and responses provide autocomplete and documentation within your 
 
 ## Handling errors
 
-When the library is unable to connect to the API (for example, due to network connection problems or a timeout), a subclass of `coingecko_python.APIConnectionError` is raised.
+When the library is unable to connect to the API (for example, due to network connection problems or a timeout), a subclass of `coingecko_sdk.APIConnectionError` is raised.
 
 When the API returns a non-success status code (that is, 4xx or 5xx
-response), a subclass of `coingecko_python.APIStatusError` is raised, containing `status_code` and `response` properties.
+response), a subclass of `coingecko_sdk.APIStatusError` is raised, containing `status_code` and `response` properties.
 
-All errors inherit from `coingecko_python.APIError`.
+All errors inherit from `coingecko_sdk.APIError`.
 
 ```python
-import coingecko_python
-from coingecko_python import Coingecko
+import coingecko_sdk
+from coingecko_sdk import Coingecko
 
 client = Coingecko()
 
@@ -106,12 +106,12 @@ try:
         vs_currencies="usd",
         ids="bitcoin",
     )
-except coingecko_python.APIConnectionError as e:
+except coingecko_sdk.APIConnectionError as e:
     print("The server could not be reached")
     print(e.__cause__)  # an underlying Exception, likely raised within httpx.
-except coingecko_python.RateLimitError as e:
+except coingecko_sdk.RateLimitError as e:
     print("A 429 status code was received; we should back off a bit.")
-except coingecko_python.APIStatusError as e:
+except coingecko_sdk.APIStatusError as e:
     print("Another non-200-range status code was received")
     print(e.status_code)
     print(e.response)
@@ -139,7 +139,7 @@ Connection errors (for example, due to a network connectivity problem), 408 Requ
 You can use the `max_retries` option to configure or disable retry settings:
 
 ```python
-from coingecko_python import Coingecko
+from coingecko_sdk import Coingecko
 
 # Configure the default for all requests:
 client = Coingecko(
@@ -160,7 +160,7 @@ By default requests time out after 1 minute. You can configure this with a `time
 which accepts a float or an [`httpx.Timeout`](https://www.python-httpx.org/advanced/#fine-tuning-the-configuration) object:
 
 ```python
-from coingecko_python import Coingecko
+from coingecko_sdk import Coingecko
 
 # Configure the default for all requests:
 client = Coingecko(
@@ -215,7 +215,7 @@ if response.my_field is None:
 The "raw" Response object can be accessed by prefixing `.with_raw_response.` to any HTTP method call, e.g.,
 
 ```py
-from coingecko_python import Coingecko
+from coingecko_sdk import Coingecko
 
 client = Coingecko()
 response = client.simple.price.with_raw_response.get(
@@ -228,9 +228,9 @@ price = response.parse()  # get the object that `simple.price.get()` would have 
 print(price.last_updated_at)
 ```
 
-These methods return an [`APIResponse`](https://github.com/coingecko/coingecko-python/tree/main/src/coingecko_python/_response.py) object.
+These methods return an [`APIResponse`](https://github.com/coingecko/coingecko-python/tree/main/src/coingecko_sdk/_response.py) object.
 
-The async client returns an [`AsyncAPIResponse`](https://github.com/coingecko/coingecko-python/tree/main/src/coingecko_python/_response.py) with the same structure, the only difference being `await`able methods for reading the response content.
+The async client returns an [`AsyncAPIResponse`](https://github.com/coingecko/coingecko-python/tree/main/src/coingecko_sdk/_response.py) with the same structure, the only difference being `await`able methods for reading the response content.
 
 #### `.with_streaming_response`
 
@@ -295,7 +295,7 @@ You can directly override the [httpx client](https://www.python-httpx.org/api/#c
 
 ```python
 import httpx
-from coingecko_python import Coingecko, DefaultHttpxClient
+from coingecko_sdk import Coingecko, DefaultHttpxClient
 
 client = Coingecko(
     # Or use the `COINGECKO_BASE_URL` env var
@@ -318,7 +318,7 @@ client.with_options(http_client=DefaultHttpxClient(...))
 By default the library closes underlying HTTP connections whenever the client is [garbage collected](https://docs.python.org/3/reference/datamodel.html#object.__del__). You can manually close the client using the `.close()` method if desired, or with a context manager that closes when exiting.
 
 ```py
-from coingecko_python import Coingecko
+from coingecko_sdk import Coingecko
 
 with Coingecko() as client:
   # make requests here
@@ -346,8 +346,8 @@ If you've upgraded to the latest version but aren't seeing any new features you 
 You can determine the version that is being used at runtime with:
 
 ```py
-import coingecko_python
-print(coingecko_python.__version__)
+import coingecko_sdk
+print(coingecko_sdk.__version__)
 ```
 
 ## Requirements

@@ -5,8 +5,8 @@ from typing import Iterator, AsyncIterator
 import httpx
 import pytest
 
-from coingecko_python import Coingecko, AsyncCoingecko
-from coingecko_python._streaming import Stream, AsyncStream, ServerSentEvent
+from coingecko_sdk import Coingecko, AsyncCoingecko
+from coingecko_sdk._streaming import Stream, AsyncStream, ServerSentEvent
 
 
 @pytest.mark.asyncio

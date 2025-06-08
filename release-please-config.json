@@ -61,6 +61,6 @@
   ],
   "release-type": "python",
   "extra-files": [
-    "src/coingecko_python/_version.py"
+    "src/coingecko_sdk/_version.py"
   ]
 }
