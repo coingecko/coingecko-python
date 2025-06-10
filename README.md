@@ -16,7 +16,7 @@ The REST API documentation can be found on [docs.coingecko.com](https://docs.coi
 
 ```sh
 # install from PyPI
-pip install --pre coingecko_sdk
+pip install coingecko_sdk
 ```
 
 ## Usage
