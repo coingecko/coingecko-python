@@ -15,12 +15,9 @@ The REST API documentation can be found on [docs.coingecko.com](https://docs.coi
 ## Installation
 
 ```sh
-# install from the production repo
-pip install git+ssh://git@github.com/coingecko/coingecko-python.git
+# install from PyPI
+pip install coingecko_sdk
 ```
-
-> [!NOTE]
-> Once this package is [published to PyPI](https://app.stainless.com/docs/guides/publish), this will become: `pip install --pre coingecko_sdk`
 
 ## Usage
 

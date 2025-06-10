@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0 (2025-06-10)
+
+Full Changelog: [v0.1.0-alpha.7...v1.0.0](https://github.com/coingecko/coingecko-python/compare/v0.1.0-alpha.7...v1.0.0)
+
+### Chores
+
+* update SDK settings ([4fd9a80](https://github.com/coingecko/coingecko-python/commit/4fd9a80c750f4de6facf297537ae9bb1b267ceca))
+
 ## 0.1.0-alpha.7 (2025-06-08)
 
 Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/coingecko/coingecko-python/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
