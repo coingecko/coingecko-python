@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.1 (2025-06-10)
+
+Full Changelog: [v1.0.0...v1.0.1](https://github.com/coingecko/coingecko-python/compare/v1.0.0...v1.0.1)
+
+### Chores
+
+* **internal:** version bump ([8773836](https://github.com/coingecko/coingecko-python/commit/87738364b7ecbf1c534528067548d5ad75282809))
+
 ## 1.0.0 (2025-06-10)
 
 Full Changelog: [v0.1.0-alpha.7...v1.0.0](https://github.com/coingecko/coingecko-python/compare/v0.1.0-alpha.7...v1.0.0)
