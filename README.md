@@ -37,7 +37,7 @@ price = client.simple.price.get(
     vs_currencies="usd",
     ids="bitcoin",
 )
-print(price.bitcoin.usd)
+print(price.bitcoin)
 ```
 
 While you can provide a `pro_api_key` keyword argument,
@@ -66,7 +66,7 @@ async def main() -> None:
         vs_currencies="usd",
         ids="bitcoin",
     )
-    print(price.bitcoin.usd)
+    print(price.bitcoin)
 
 
 asyncio.run(main())
@@ -222,7 +222,7 @@ response = client.simple.price.with_raw_response.get(
 print(response.headers.get('X-My-Header'))
 
 price = response.parse()  # get the object that `simple.price.get()` would have returned
-print(price.bitcoin.usd)
+print(price.bitcoin)
 ```
 
 These methods return an [`APIResponse`](https://github.com/coingecko/coingecko-python/tree/main/src/coingecko_sdk/_response.py) object.
