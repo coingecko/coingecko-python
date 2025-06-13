@@ -37,7 +37,7 @@ price = client.simple.price.get(
     vs_currencies="usd",
     ids="bitcoin",
 )
-print(price.last_updated_at)
+print(price.bitcoin)
 ```
 
 While you can provide a `pro_api_key` keyword argument,
@@ -66,7 +66,7 @@ async def main() -> None:
         vs_currencies="usd",
         ids="bitcoin",
     )
-    print(price.last_updated_at)
+    print(price.bitcoin)
 
 
 asyncio.run(main())
