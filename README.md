@@ -28,16 +28,16 @@ import os
 from coingecko_sdk import Coingecko
 
 client = Coingecko(
-    pro_api_key=os.environ.get("COINGECKO_PRO_API_KEY"),  # This is the default and can be omitted
-    # defaults to "pro".
-    environment="demo",
+    pro_api_key=os.environ.get("COINGECKO_PRO_API_KEY"),
+    # demo_api_key=os.environ.get("COINGECKO_DEMO_API_KEY"), # Optional, for Demo API access
+    environment="pro", # "demo" to initialize the client with Demo API access
 )
 
 price = client.simple.price.get(
     vs_currencies="usd",
     ids="bitcoin",
 )
-print(price.last_updated_at)
+print(price.bitcoin.usd)
 ```
 
 While you can provide a `pro_api_key` keyword argument,
@@ -55,9 +55,9 @@ import asyncio
 from coingecko_sdk import AsyncCoingecko
 
 client = AsyncCoingecko(
-    pro_api_key=os.environ.get("COINGECKO_PRO_API_KEY"),  # This is the default and can be omitted
-    # defaults to "pro".
-    environment="demo",
+    pro_api_key=os.environ.get("COINGECKO_PRO_API_KEY"),
+    # demo_api_key=os.environ.get("COINGECKO_DEMO_API_KEY"), # Optional, for Demo API access
+    environment="pro", # "demo" to initialize the client with Demo API access
 )
 
 
@@ -66,7 +66,7 @@ async def main() -> None:
         vs_currencies="usd",
         ids="bitcoin",
     )
-    print(price.last_updated_at)
+    print(price.bitcoin.usd)
 
 
 asyncio.run(main())
@@ -222,7 +222,7 @@ response = client.simple.price.with_raw_response.get(
 print(response.headers.get('X-My-Header'))
 
 price = response.parse()  # get the object that `simple.price.get()` would have returned
-print(price.last_updated_at)
+print(price.bitcoin.usd)
 ```
 
 These methods return an [`APIResponse`](https://github.com/coingecko/coingecko-python/tree/main/src/coingecko_sdk/_response.py) object.

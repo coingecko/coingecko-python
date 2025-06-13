@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.1.0 (2025-06-13)
+
+Full Changelog: [v1.0.1...v1.1.0](https://github.com/coingecko/coingecko-python/compare/v1.0.1...v1.1.0)
+
+### Features
+
+* **api:** Update example response ([ea77eac](https://github.com/coingecko/coingecko-python/commit/ea77eacb32e83b5adf9935eae92dc9bbe29e5a69))
+
+
+### Bug Fixes
+
+* **client:** correctly parse binary response | stream ([7df7dc4](https://github.com/coingecko/coingecko-python/commit/7df7dc4a59b037a167ed63c849c08436aac08bde))
+
+
+### Chores
+
+* **tests:** run tests in parallel ([115a0dc](https://github.com/coingecko/coingecko-python/commit/115a0dcd97d26d7005a72a47c24c49bc4b0713b3))
+
 ## 1.0.1 (2025-06-10)
 
 Full Changelog: [v1.0.0...v1.0.1](https://github.com/coingecko/coingecko-python/compare/v1.0.0...v1.0.1)
