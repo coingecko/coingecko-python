@@ -24,7 +24,6 @@ from pydantic import ValidationError
 from coingecko_sdk import Coingecko, AsyncCoingecko, APIResponseValidationError
 from coingecko_sdk._types import Omit
 from coingecko_sdk._models import BaseModel, FinalRequestOptions
-from coingecko_sdk._constants import RAW_RESPONSE_HEADER
 from coingecko_sdk._exceptions import APIStatusError, APITimeoutError, APIResponseValidationError
 from coingecko_sdk._base_client import (
     DEFAULT_TIMEOUT,
@@ -754,26 +753,21 @@ class TestCoingecko:
 
     @mock.patch("coingecko_sdk._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
-    def test_retrying_timeout_errors_doesnt_leak(self, respx_mock: MockRouter) -> None:
+    def test_retrying_timeout_errors_doesnt_leak(self, respx_mock: MockRouter, client: Coingecko) -> None:
         respx_mock.get("/simple/price").mock(side_effect=httpx.TimeoutException("Test timeout error"))
 
         with pytest.raises(APITimeoutError):
-            self.client.get(
-                "/simple/price", cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}}
-            )
+            client.simple.price.with_streaming_response.get(vs_currencies="vs_currencies").__enter__()
 
         assert _get_open_connections(self.client) == 0
 
     @mock.patch("coingecko_sdk._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
-    def test_retrying_status_errors_doesnt_leak(self, respx_mock: MockRouter) -> None:
+    def test_retrying_status_errors_doesnt_leak(self, respx_mock: MockRouter, client: Coingecko) -> None:
         respx_mock.get("/simple/price").mock(return_value=httpx.Response(500))
 
         with pytest.raises(APIStatusError):
-            self.client.get(
-                "/simple/price", cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}}
-            )
-
+            client.simple.price.with_streaming_response.get(vs_currencies="vs_currencies").__enter__()
         assert _get_open_connections(self.client) == 0
 
     @pytest.mark.parametrize("failures_before_success", [0, 2, 4])
@@ -1608,26 +1602,25 @@ class TestAsyncCoingecko:
 
     @mock.patch("coingecko_sdk._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
-    async def test_retrying_timeout_errors_doesnt_leak(self, respx_mock: MockRouter) -> None:
+    async def test_retrying_timeout_errors_doesnt_leak(
+        self, respx_mock: MockRouter, async_client: AsyncCoingecko
+    ) -> None:
         respx_mock.get("/simple/price").mock(side_effect=httpx.TimeoutException("Test timeout error"))
 
         with pytest.raises(APITimeoutError):
-            await self.client.get(
-                "/simple/price", cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}}
-            )
+            await async_client.simple.price.with_streaming_response.get(vs_currencies="vs_currencies").__aenter__()
 
         assert _get_open_connections(self.client) == 0
 
     @mock.patch("coingecko_sdk._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
-    async def test_retrying_status_errors_doesnt_leak(self, respx_mock: MockRouter) -> None:
+    async def test_retrying_status_errors_doesnt_leak(
+        self, respx_mock: MockRouter, async_client: AsyncCoingecko
+    ) -> None:
         respx_mock.get("/simple/price").mock(return_value=httpx.Response(500))
 
         with pytest.raises(APIStatusError):
-            await self.client.get(
-                "/simple/price", cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}}
-            )
-
+            await async_client.simple.price.with_streaming_response.get(vs_currencies="vs_currencies").__aenter__()
         assert _get_open_connections(self.client) == 0
 
     @pytest.mark.parametrize("failures_before_success", [0, 2, 4])
