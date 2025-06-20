@@ -1,5 +1,26 @@
 # Changelog
 
+## 1.2.1 (2025-06-19)
+
+Full Changelog: [v1.2.0...v1.2.1](https://github.com/coingecko/coingecko-python/compare/v1.2.0...v1.2.1)
+
+### Bug Fixes
+
+* **tests:** fix: tests which call HTTP endpoints directly with the example parameters ([f7d45a8](https://github.com/coingecko/coingecko-python/commit/f7d45a825ab455b05242e396da0dfce74eeed44c))
+
+
+### Chores
+
+* **ci:** enable for pull requests ([a0ed478](https://github.com/coingecko/coingecko-python/commit/a0ed4785eb7e04cbd2a948f31123f0981020c5eb))
+* **internal:** update conftest.py ([12b1700](https://github.com/coingecko/coingecko-python/commit/12b170018f682c36ef7b12c85eb66f368fd7a535))
+* **readme:** update badges ([815ee9f](https://github.com/coingecko/coingecko-python/commit/815ee9f4c7a155eca1ef5775e188a9d48f0418ea))
+* **tests:** add tests for httpx client instantiation & proxies ([352858a](https://github.com/coingecko/coingecko-python/commit/352858ae3fdb260cb638b23e745c1fb9e06dc6d1))
+
+
+### Documentation
+
+* **client:** fix httpx.Timeout documentation reference ([1b205fd](https://github.com/coingecko/coingecko-python/commit/1b205fd1bb9ca50eaef4ef5139f5a21f3fb4c655))
+
 ## 1.2.0 (2025-06-13)
 
 Full Changelog: [v1.1.0...v1.2.0](https://github.com/coingecko/coingecko-python/compare/v1.1.0...v1.2.0)
