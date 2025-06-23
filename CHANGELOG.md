@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.0 (2025-06-23)
+
+Full Changelog: [v1.3.0...v1.4.0](https://github.com/coingecko/coingecko-python/compare/v1.3.0...v1.4.0)
+
+### Features
+
+* **api:** api update ([cad480f](https://github.com/coingecko/coingecko-python/commit/cad480ff6c82385a647f9b4f8340e0e16588f7bb))
+
 ## 1.3.0 (2025-06-21)
 
 Full Changelog: [v1.2.1...v1.3.0](https://github.com/coingecko/coingecko-python/compare/v1.2.1...v1.3.0)
