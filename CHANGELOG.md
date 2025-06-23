@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.3.0 (2025-06-21)
+
+Full Changelog: [v1.2.1...v1.3.0](https://github.com/coingecko/coingecko-python/compare/v1.2.1...v1.3.0)
+
+### Features
+
+* **client:** add support for aiohttp ([f2c6437](https://github.com/coingecko/coingecko-python/commit/f2c64372ad045019cbc51c9f9abf3a9c3df8633e))
+
 ## 1.2.1 (2025-06-19)
 
 Full Changelog: [v1.2.0...v1.2.1](https://github.com/coingecko/coingecko-python/compare/v1.2.0...v1.2.1)
