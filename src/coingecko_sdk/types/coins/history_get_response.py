@@ -34,9 +34,6 @@ class CommunityData(BaseModel):
     reddit_subscribers: Optional[float] = None
     """coin reddit subscribers"""
 
-    twitter_followers: Optional[float] = None
-    """coin twitter followers"""
-
 
 class DeveloperDataCodeAdditionsDeletions4Weeks(BaseModel):
     additions: Optional[float] = None

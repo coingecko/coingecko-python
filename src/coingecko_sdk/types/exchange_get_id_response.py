@@ -165,12 +165,6 @@ class ExchangeGetIDResponse(BaseModel):
 
     trade_volume_24h_btc: Optional[float] = None
 
-    trade_volume_24h_btc_normalized: Optional[float] = None
-    """
-    normalized trading volume by traffic in BTC in 24 hours \\**refers to
-    [`this blog`](https://blog.coingecko.com/trust-score/).
-    """
-
     trust_score: Optional[float] = None
     """exchange trust score"""
 
