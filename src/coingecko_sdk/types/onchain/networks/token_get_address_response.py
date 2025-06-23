@@ -95,6 +95,10 @@ class IncludedAttributesPriceChangePercentage(BaseModel):
 
     h6: Optional[str] = None
 
+    m15: Optional[str] = None
+
+    m30: Optional[str] = None
+
     m5: Optional[str] = None
 
 
@@ -166,6 +170,10 @@ class IncludedAttributesVolumeUsd(BaseModel):
     h24: Optional[str] = None
 
     h6: Optional[str] = None
+
+    m15: Optional[str] = None
+
+    m30: Optional[str] = None
 
     m5: Optional[str] = None
 

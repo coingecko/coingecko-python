@@ -31,6 +31,10 @@ class DataAttributesPriceChangePercentage(BaseModel):
 
     h6: Optional[str] = None
 
+    m15: Optional[str] = None
+
+    m30: Optional[str] = None
+
     m5: Optional[str] = None
 
 
