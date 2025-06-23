@@ -62,9 +62,6 @@ class CommunityData(BaseModel):
     telegram_channel_user_count: Optional[float] = None
     """coin telegram channel user count"""
 
-    twitter_followers: Optional[float] = None
-    """coin twitter followers"""
-
 
 class DeveloperDataCodeAdditionsDeletions4Weeks(BaseModel):
     additions: Optional[float] = None
