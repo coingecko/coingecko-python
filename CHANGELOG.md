@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.4.1 (2025-06-28)
+
+Full Changelog: [v1.4.0...v1.4.1](https://github.com/coingecko/coingecko-python/compare/v1.4.0...v1.4.1)
+
+### Bug Fixes
+
+* **ci:** release-doctor — report correct token name ([62a033e](https://github.com/coingecko/coingecko-python/commit/62a033edbd1724b28675b56b93c30f2b08d774f1))
+
+
+### Chores
+
+* **ci:** only run for pushes and fork pull requests ([5db6eab](https://github.com/coingecko/coingecko-python/commit/5db6eab0f596f4e670280e231707f63ea82688b6))
+* **tests:** skip some failing tests on the latest python versions ([f5e4873](https://github.com/coingecko/coingecko-python/commit/f5e487351a37cca5de41139c656a1c48a09bf6ec))
+
 ## 1.4.0 (2025-06-23)
 
 Full Changelog: [v1.3.0...v1.4.0](https://github.com/coingecko/coingecko-python/compare/v1.3.0...v1.4.0)
