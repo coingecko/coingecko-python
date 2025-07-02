@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.4.2 (2025-07-02)
+
+Full Changelog: [v1.4.1...v1.4.2](https://github.com/coingecko/coingecko-python/compare/v1.4.1...v1.4.2)
+
+### Bug Fixes
+
+* **ci:** correct conditional ([7726945](https://github.com/coingecko/coingecko-python/commit/7726945a5743e28a4648e02bf4876f0a1b87f75c))
+
+
+### Chores
+
+* **ci:** change upload type ([2ef9872](https://github.com/coingecko/coingecko-python/commit/2ef9872675567a711712da5d1d097482898cd68d))
+
 ## 1.4.1 (2025-06-28)
 
 Full Changelog: [v1.4.0...v1.4.1](https://github.com/coingecko/coingecko-python/compare/v1.4.0...v1.4.1)
