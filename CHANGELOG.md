@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.3 (2025-07-08)
+
+Full Changelog: [v1.4.2...v1.4.3](https://github.com/coingecko/coingecko-python/compare/v1.4.2...v1.4.3)
+
+### Chores
+
+* **internal:** codegen related update ([248b684](https://github.com/coingecko/coingecko-python/commit/248b68401d0ec618acab47331b28e2b76fd8c4ce))
+
 ## 1.4.2 (2025-07-02)
 
 Full Changelog: [v1.4.1...v1.4.2](https://github.com/coingecko/coingecko-python/compare/v1.4.1...v1.4.2)
