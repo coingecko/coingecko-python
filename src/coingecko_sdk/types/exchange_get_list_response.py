@@ -1,15 +1,19 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Optional
+from typing import List
+from typing_extensions import TypeAlias
 
 from .._models import BaseModel
 
-__all__ = ["ExchangeGetListResponse"]
+__all__ = ["ExchangeGetListResponse", "ExchangeGetListResponseItem"]
 
 
-class ExchangeGetListResponse(BaseModel):
-    id: Optional[str] = None
+class ExchangeGetListResponseItem(BaseModel):
+    id: str
     """exchange ID"""
 
-    name: Optional[str] = None
+    name: str
     """exchange name"""
+
+
+ExchangeGetListResponse: TypeAlias = List[ExchangeGetListResponseItem]

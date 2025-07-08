@@ -105,7 +105,6 @@ async def main() -> None:
             vs_currencies="usd",
             ids="bitcoin",
         )
-        print(price.last_updated_at)
 
 
 asyncio.run(main())

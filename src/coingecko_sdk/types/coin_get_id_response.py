@@ -8,6 +8,7 @@ from .._models import BaseModel
 __all__ = [
     "CoinGetIDResponse",
     "CommunityData",
+    "DetailPlatforms",
     "DeveloperData",
     "DeveloperDataCodeAdditionsDeletions4Weeks",
     "Image",
@@ -61,6 +62,14 @@ class CommunityData(BaseModel):
 
     telegram_channel_user_count: Optional[float] = None
     """coin telegram channel user count"""
+
+
+class DetailPlatforms(BaseModel):
+    contract_address: Optional[str] = None
+    """contract address on the platform"""
+
+    decimal_place: Optional[float] = None
+    """decimal places for the token"""
 
 
 class DeveloperDataCodeAdditionsDeletions4Weeks(BaseModel):
@@ -570,7 +579,7 @@ class CoinGetIDResponse(BaseModel):
     description: Optional[Dict[str, str]] = None
     """coin description"""
 
-    detail_platforms: Optional[Dict[str, str]] = None
+    detail_platforms: Optional[Dict[str, DetailPlatforms]] = None
     """detailed coin asset platform and contract address"""
 
     developer_data: Optional[DeveloperData] = None
