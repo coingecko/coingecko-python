@@ -1,13 +1,14 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Optional
+from typing import Dict, Optional
+from typing_extensions import TypeAlias
 
 from ..._models import BaseModel
 
-__all__ = ["PriceGetResponse"]
+__all__ = ["PriceGetResponse", "PriceGetResponseItem"]
 
 
-class PriceGetResponse(BaseModel):
+class PriceGetResponseItem(BaseModel):
     last_updated_at: Optional[float] = None
     """last updated timestamp"""
 
@@ -22,3 +23,6 @@ class PriceGetResponse(BaseModel):
 
     usd_market_cap: Optional[float] = None
     """market cap in USD"""
+
+
+PriceGetResponse: TypeAlias = Dict[str, PriceGetResponseItem]
