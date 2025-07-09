@@ -240,6 +240,6 @@ class Included(BaseModel):
 
 
 class PoolGetAddressResponse(BaseModel):
-    data: Optional[List[Data]] = None
+    data: Optional[Data] = None
 
     included: Optional[List[Included]] = None
