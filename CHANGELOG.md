@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.5.0 (2025-07-09)
+
+Full Changelog: [v1.4.3...v1.5.0](https://github.com/coingecko/coingecko-python/compare/v1.4.3...v1.5.0)
+
+### Features
+
+* **api:** api update ([b41c660](https://github.com/coingecko/coingecko-python/commit/b41c660bac9c294c73b8a86de00df0880dafa01d))
+
+
+### Chores
+
+* **internal:** bump pinned h11 dep ([13baf6c](https://github.com/coingecko/coingecko-python/commit/13baf6ccd984b531b02c8db73fe068b992169895))
+* **package:** mark python 3.13 as supported ([8b2928d](https://github.com/coingecko/coingecko-python/commit/8b2928d3d25fb242e9e06c31c368f968c5926a2f))
+
 ## 1.4.3 (2025-07-08)
 
 Full Changelog: [v1.4.2...v1.4.3](https://github.com/coingecko/coingecko-python/compare/v1.4.2...v1.4.3)
