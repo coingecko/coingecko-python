@@ -1,14 +1,26 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Optional
+from typing import List, Optional
 from datetime import datetime
+from typing_extensions import TypeAlias
 
 from ..._models import BaseModel
 
-__all__ = ["MarketGetResponse"]
+__all__ = ["MarketGetResponse", "MarketGetResponseItem", "MarketGetResponseItemRoi"]
 
 
-class MarketGetResponse(BaseModel):
+class MarketGetResponseItemRoi(BaseModel):
+    currency: str
+    """ROI currency"""
+
+    percentage: float
+    """ROI percentage"""
+
+    times: float
+    """ROI multiplier"""
+
+
+class MarketGetResponseItem(BaseModel):
     id: Optional[str] = None
     """coin ID"""
 
@@ -75,7 +87,8 @@ class MarketGetResponse(BaseModel):
     price_change_percentage_24h: Optional[float] = None
     """coin 24hr price change in percentage"""
 
-    roi: Optional[str] = None
+    roi: Optional[MarketGetResponseItemRoi] = None
+    """return on investment data"""
 
     symbol: Optional[str] = None
     """coin symbol"""
@@ -85,3 +98,6 @@ class MarketGetResponse(BaseModel):
 
     total_volume: Optional[float] = None
     """coin total trading volume in currency"""
+
+
+MarketGetResponse: TypeAlias = List[MarketGetResponseItem]
