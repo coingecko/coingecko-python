@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.6.1 (2025-07-12)
+
+Full Changelog: [v1.6.0...v1.6.1](https://github.com/coingecko/coingecko-python/compare/v1.6.0...v1.6.1)
+
+### Bug Fixes
+
+* **parsing:** correctly handle nested discriminated unions ([8a4fd1d](https://github.com/coingecko/coingecko-python/commit/8a4fd1d567da36aa07c4ee0f1aa15ca007fa82a8))
+
+
+### Chores
+
+* **readme:** fix version rendering on pypi ([a0dbf14](https://github.com/coingecko/coingecko-python/commit/a0dbf14fddbd7cea8d2fa6f5e9f0c150852236bf))
+
 ## 1.6.0 (2025-07-09)
 
 Full Changelog: [v1.5.0...v1.6.0](https://github.com/coingecko/coingecko-python/compare/v1.5.0...v1.6.0)
