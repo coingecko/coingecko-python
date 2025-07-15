@@ -1,6 +1,6 @@
 [project]
 name = "coingecko_sdk"
-version = "1.6.1"
+version = "1.7.0"
 description = "The official Python library for the coingecko API"
 dynamic = ["readme"]
 license = "Apache-2.0"
