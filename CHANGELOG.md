@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.7.0 (2025-07-15)
+
+Full Changelog: [v1.6.1...v1.7.0](https://github.com/coingecko/coingecko-python/compare/v1.6.1...v1.7.0)
+
+### Features
+
+* clean up environment call outs ([f82dc91](https://github.com/coingecko/coingecko-python/commit/f82dc916f6a00151260d27cd2d31c2d6d3ebfd5f))
+
 ## 1.6.1 (2025-07-12)
 
 Full Changelog: [v1.6.0...v1.6.1](https://github.com/coingecko/coingecko-python/compare/v1.6.0...v1.6.1)
