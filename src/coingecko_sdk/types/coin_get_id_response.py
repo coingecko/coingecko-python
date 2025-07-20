@@ -636,5 +636,8 @@ class CoinGetIDResponse(BaseModel):
     tickers: Optional[List[Ticker]] = None
     """coin tickers"""
 
+    watchlist_portfolio_users: Optional[float] = None
+    """number of users watching this coin in portfolio"""
+
     web_slug: Optional[str] = None
     """coin web slug"""
