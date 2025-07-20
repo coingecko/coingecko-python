@@ -58,6 +58,7 @@ class MegafilterResource(SyncAPIResource):
         h24_volume_usd_max: float | NotGiven = NOT_GIVEN,
         h24_volume_usd_min: float | NotGiven = NOT_GIVEN,
         include: str | NotGiven = NOT_GIVEN,
+        include_unknown_honeypot_tokens: bool | NotGiven = NOT_GIVEN,
         networks: str | NotGiven = NOT_GIVEN,
         page: int | NotGiven = NOT_GIVEN,
         pool_created_hour_max: float | NotGiven = NOT_GIVEN,
@@ -121,6 +122,9 @@ class MegafilterResource(SyncAPIResource):
 
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`, `network`
+
+          include_unknown_honeypot_tokens: when `checks` includes `no_honeypot`, set to **`true`** to also include 'unknown
+              honeypot' tokens. Default value: `false`
 
           networks: filter pools by networks, comma-separated if more than one Network ID refers to
               [/networks](/reference/networks-list)
@@ -182,6 +186,7 @@ class MegafilterResource(SyncAPIResource):
                         "h24_volume_usd_max": h24_volume_usd_max,
                         "h24_volume_usd_min": h24_volume_usd_min,
                         "include": include,
+                        "include_unknown_honeypot_tokens": include_unknown_honeypot_tokens,
                         "networks": networks,
                         "page": page,
                         "pool_created_hour_max": pool_created_hour_max,
@@ -240,6 +245,7 @@ class AsyncMegafilterResource(AsyncAPIResource):
         h24_volume_usd_max: float | NotGiven = NOT_GIVEN,
         h24_volume_usd_min: float | NotGiven = NOT_GIVEN,
         include: str | NotGiven = NOT_GIVEN,
+        include_unknown_honeypot_tokens: bool | NotGiven = NOT_GIVEN,
         networks: str | NotGiven = NOT_GIVEN,
         page: int | NotGiven = NOT_GIVEN,
         pool_created_hour_max: float | NotGiven = NOT_GIVEN,
@@ -304,6 +310,9 @@ class AsyncMegafilterResource(AsyncAPIResource):
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`, `network`
 
+          include_unknown_honeypot_tokens: when `checks` includes `no_honeypot`, set to **`true`** to also include 'unknown
+              honeypot' tokens. Default value: `false`
+
           networks: filter pools by networks, comma-separated if more than one Network ID refers to
               [/networks](/reference/networks-list)
 
@@ -364,6 +373,7 @@ class AsyncMegafilterResource(AsyncAPIResource):
                         "h24_volume_usd_max": h24_volume_usd_max,
                         "h24_volume_usd_min": h24_volume_usd_min,
                         "include": include,
+                        "include_unknown_honeypot_tokens": include_unknown_honeypot_tokens,
                         "networks": networks,
                         "page": page,
                         "pool_created_hour_max": pool_created_hour_max,

@@ -53,6 +53,12 @@ class MegafilterGetParams(TypedDict, total=False):
     values: `base_token`, `quote_token`, `dex`, `network`
     """
 
+    include_unknown_honeypot_tokens: bool
+    """
+    when `checks` includes `no_honeypot`, set to **`true`** to also include 'unknown
+    honeypot' tokens. Default value: `false`
+    """
+
     networks: str
     """
     filter pools by networks, comma-separated if more than one Network ID refers to

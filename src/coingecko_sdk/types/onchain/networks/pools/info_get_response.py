@@ -80,6 +80,8 @@ class DataAttributes(BaseModel):
 
     image_url: Optional[str] = None
 
+    is_honeypot: Optional[bool] = None
+
     mint_authority: Optional[str] = None
 
     name: Optional[str] = None
