@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.8.1 (2025-07-22)
+
+Full Changelog: [v1.8.0...v1.8.1](https://github.com/coingecko/coingecko-python/compare/v1.8.0...v1.8.1)
+
+### Bug Fixes
+
+* **parsing:** ignore empty metadata ([7cb1ba9](https://github.com/coingecko/coingecko-python/commit/7cb1ba9af13b27b34b2f4456d7f2706ecc6d2dd1))
+
 ## 1.8.0 (2025-07-20)
 
 Full Changelog: [v1.7.0...v1.8.0](https://github.com/coingecko/coingecko-python/compare/v1.7.0...v1.8.0)
