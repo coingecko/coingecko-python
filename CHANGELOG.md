@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.8.2 (2025-07-25)
+
+Full Changelog: [v1.8.1...v1.8.2](https://github.com/coingecko/coingecko-python/compare/v1.8.1...v1.8.2)
+
+### Bug Fixes
+
+* **parsing:** parse extra field types ([7c699a8](https://github.com/coingecko/coingecko-python/commit/7c699a8cb5c3651cdf1fd329a51c57619d50339f))
+
+
+### Chores
+
+* **project:** add settings file for vscode ([7896645](https://github.com/coingecko/coingecko-python/commit/7896645442aee75fa284c9a26b65231ef7d4328e))
+
 ## 1.8.1 (2025-07-22)
 
 Full Changelog: [v1.8.0...v1.8.1](https://github.com/coingecko/coingecko-python/compare/v1.8.0...v1.8.1)
