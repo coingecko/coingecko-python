@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestMarketCapChart:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         market_cap_chart = client.global_.market_cap_chart.get(
@@ -25,7 +25,7 @@ class TestMarketCapChart:
         )
         assert_matches_type(MarketCapChartGetResponse, market_cap_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         market_cap_chart = client.global_.market_cap_chart.get(
@@ -34,7 +34,7 @@ class TestMarketCapChart:
         )
         assert_matches_type(MarketCapChartGetResponse, market_cap_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.global_.market_cap_chart.with_raw_response.get(
@@ -46,7 +46,7 @@ class TestMarketCapChart:
         market_cap_chart = response.parse()
         assert_matches_type(MarketCapChartGetResponse, market_cap_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.global_.market_cap_chart.with_streaming_response.get(
@@ -66,7 +66,7 @@ class TestAsyncMarketCapChart:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         market_cap_chart = await async_client.global_.market_cap_chart.get(
@@ -74,7 +74,7 @@ class TestAsyncMarketCapChart:
         )
         assert_matches_type(MarketCapChartGetResponse, market_cap_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         market_cap_chart = await async_client.global_.market_cap_chart.get(
@@ -83,7 +83,7 @@ class TestAsyncMarketCapChart:
         )
         assert_matches_type(MarketCapChartGetResponse, market_cap_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.global_.market_cap_chart.with_raw_response.get(
@@ -95,7 +95,7 @@ class TestAsyncMarketCapChart:
         market_cap_chart = await response.parse()
         assert_matches_type(MarketCapChartGetResponse, market_cap_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.global_.market_cap_chart.with_streaming_response.get(

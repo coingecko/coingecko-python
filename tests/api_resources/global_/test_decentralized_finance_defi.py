@@ -17,13 +17,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestDecentralizedFinanceDefi:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         decentralized_finance_defi = client.global_.decentralized_finance_defi.get()
         assert_matches_type(DecentralizedFinanceDefiGetResponse, decentralized_finance_defi, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.global_.decentralized_finance_defi.with_raw_response.get()
@@ -33,7 +33,7 @@ class TestDecentralizedFinanceDefi:
         decentralized_finance_defi = response.parse()
         assert_matches_type(DecentralizedFinanceDefiGetResponse, decentralized_finance_defi, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.global_.decentralized_finance_defi.with_streaming_response.get() as response:
@@ -51,13 +51,13 @@ class TestAsyncDecentralizedFinanceDefi:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         decentralized_finance_defi = await async_client.global_.decentralized_finance_defi.get()
         assert_matches_type(DecentralizedFinanceDefiGetResponse, decentralized_finance_defi, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.global_.decentralized_finance_defi.with_raw_response.get()
@@ -67,7 +67,7 @@ class TestAsyncDecentralizedFinanceDefi:
         decentralized_finance_defi = await response.parse()
         assert_matches_type(DecentralizedFinanceDefiGetResponse, decentralized_finance_defi, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.global_.decentralized_finance_defi.with_streaming_response.get() as response:

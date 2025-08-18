@@ -17,13 +17,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestInfoRecentlyUpdated:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         info_recently_updated = client.onchain.tokens.info_recently_updated.get()
         assert_matches_type(InfoRecentlyUpdatedGetResponse, info_recently_updated, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         info_recently_updated = client.onchain.tokens.info_recently_updated.get(
@@ -32,7 +32,7 @@ class TestInfoRecentlyUpdated:
         )
         assert_matches_type(InfoRecentlyUpdatedGetResponse, info_recently_updated, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.onchain.tokens.info_recently_updated.with_raw_response.get()
@@ -42,7 +42,7 @@ class TestInfoRecentlyUpdated:
         info_recently_updated = response.parse()
         assert_matches_type(InfoRecentlyUpdatedGetResponse, info_recently_updated, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.onchain.tokens.info_recently_updated.with_streaming_response.get() as response:
@@ -60,13 +60,13 @@ class TestAsyncInfoRecentlyUpdated:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         info_recently_updated = await async_client.onchain.tokens.info_recently_updated.get()
         assert_matches_type(InfoRecentlyUpdatedGetResponse, info_recently_updated, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         info_recently_updated = await async_client.onchain.tokens.info_recently_updated.get(
@@ -75,7 +75,7 @@ class TestAsyncInfoRecentlyUpdated:
         )
         assert_matches_type(InfoRecentlyUpdatedGetResponse, info_recently_updated, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.onchain.tokens.info_recently_updated.with_raw_response.get()
@@ -85,7 +85,7 @@ class TestAsyncInfoRecentlyUpdated:
         info_recently_updated = await response.parse()
         assert_matches_type(InfoRecentlyUpdatedGetResponse, info_recently_updated, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.onchain.tokens.info_recently_updated.with_streaming_response.get() as response:
