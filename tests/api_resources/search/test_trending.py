@@ -17,13 +17,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestTrending:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         trending = client.search.trending.get()
         assert_matches_type(TrendingGetResponse, trending, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         trending = client.search.trending.get(
@@ -31,7 +31,7 @@ class TestTrending:
         )
         assert_matches_type(TrendingGetResponse, trending, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.search.trending.with_raw_response.get()
@@ -41,7 +41,7 @@ class TestTrending:
         trending = response.parse()
         assert_matches_type(TrendingGetResponse, trending, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.search.trending.with_streaming_response.get() as response:
@@ -59,13 +59,13 @@ class TestAsyncTrending:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         trending = await async_client.search.trending.get()
         assert_matches_type(TrendingGetResponse, trending, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         trending = await async_client.search.trending.get(
@@ -73,7 +73,7 @@ class TestAsyncTrending:
         )
         assert_matches_type(TrendingGetResponse, trending, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.search.trending.with_raw_response.get()
@@ -83,7 +83,7 @@ class TestAsyncTrending:
         trending = await response.parse()
         assert_matches_type(TrendingGetResponse, trending, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.search.trending.with_streaming_response.get() as response:

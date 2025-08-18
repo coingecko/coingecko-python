@@ -21,7 +21,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestNFTs:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_id(self, client: Coingecko) -> None:
         nft = client.nfts.get_id(
@@ -29,7 +29,7 @@ class TestNFTs:
         )
         assert_matches_type(NFTGetIDResponse, nft, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get_id(self, client: Coingecko) -> None:
         response = client.nfts.with_raw_response.get_id(
@@ -41,7 +41,7 @@ class TestNFTs:
         nft = response.parse()
         assert_matches_type(NFTGetIDResponse, nft, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get_id(self, client: Coingecko) -> None:
         with client.nfts.with_streaming_response.get_id(
@@ -55,7 +55,7 @@ class TestNFTs:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_get_id(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -63,13 +63,13 @@ class TestNFTs:
                 "",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_list(self, client: Coingecko) -> None:
         nft = client.nfts.get_list()
         assert_matches_type(NFTGetListResponse, nft, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_list_with_all_params(self, client: Coingecko) -> None:
         nft = client.nfts.get_list(
@@ -79,7 +79,7 @@ class TestNFTs:
         )
         assert_matches_type(NFTGetListResponse, nft, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get_list(self, client: Coingecko) -> None:
         response = client.nfts.with_raw_response.get_list()
@@ -89,7 +89,7 @@ class TestNFTs:
         nft = response.parse()
         assert_matches_type(NFTGetListResponse, nft, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get_list(self, client: Coingecko) -> None:
         with client.nfts.with_streaming_response.get_list() as response:
@@ -101,13 +101,13 @@ class TestNFTs:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_markets(self, client: Coingecko) -> None:
         nft = client.nfts.get_markets()
         assert_matches_type(NFTGetMarketsResponse, nft, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_markets_with_all_params(self, client: Coingecko) -> None:
         nft = client.nfts.get_markets(
@@ -118,7 +118,7 @@ class TestNFTs:
         )
         assert_matches_type(NFTGetMarketsResponse, nft, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get_markets(self, client: Coingecko) -> None:
         response = client.nfts.with_raw_response.get_markets()
@@ -128,7 +128,7 @@ class TestNFTs:
         nft = response.parse()
         assert_matches_type(NFTGetMarketsResponse, nft, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get_markets(self, client: Coingecko) -> None:
         with client.nfts.with_streaming_response.get_markets() as response:
@@ -146,7 +146,7 @@ class TestAsyncNFTs:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_id(self, async_client: AsyncCoingecko) -> None:
         nft = await async_client.nfts.get_id(
@@ -154,7 +154,7 @@ class TestAsyncNFTs:
         )
         assert_matches_type(NFTGetIDResponse, nft, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get_id(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.nfts.with_raw_response.get_id(
@@ -166,7 +166,7 @@ class TestAsyncNFTs:
         nft = await response.parse()
         assert_matches_type(NFTGetIDResponse, nft, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get_id(self, async_client: AsyncCoingecko) -> None:
         async with async_client.nfts.with_streaming_response.get_id(
@@ -180,7 +180,7 @@ class TestAsyncNFTs:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_get_id(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -188,13 +188,13 @@ class TestAsyncNFTs:
                 "",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_list(self, async_client: AsyncCoingecko) -> None:
         nft = await async_client.nfts.get_list()
         assert_matches_type(NFTGetListResponse, nft, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_list_with_all_params(self, async_client: AsyncCoingecko) -> None:
         nft = await async_client.nfts.get_list(
@@ -204,7 +204,7 @@ class TestAsyncNFTs:
         )
         assert_matches_type(NFTGetListResponse, nft, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get_list(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.nfts.with_raw_response.get_list()
@@ -214,7 +214,7 @@ class TestAsyncNFTs:
         nft = await response.parse()
         assert_matches_type(NFTGetListResponse, nft, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get_list(self, async_client: AsyncCoingecko) -> None:
         async with async_client.nfts.with_streaming_response.get_list() as response:
@@ -226,13 +226,13 @@ class TestAsyncNFTs:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_markets(self, async_client: AsyncCoingecko) -> None:
         nft = await async_client.nfts.get_markets()
         assert_matches_type(NFTGetMarketsResponse, nft, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_markets_with_all_params(self, async_client: AsyncCoingecko) -> None:
         nft = await async_client.nfts.get_markets(
@@ -243,7 +243,7 @@ class TestAsyncNFTs:
         )
         assert_matches_type(NFTGetMarketsResponse, nft, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get_markets(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.nfts.with_raw_response.get_markets()
@@ -253,7 +253,7 @@ class TestAsyncNFTs:
         nft = await response.parse()
         assert_matches_type(NFTGetMarketsResponse, nft, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get_markets(self, async_client: AsyncCoingecko) -> None:
         async with async_client.nfts.with_streaming_response.get_markets() as response:
