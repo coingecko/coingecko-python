@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestTopGainersLosers:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         top_gainers_loser = client.coins.top_gainers_losers.get(
@@ -25,7 +25,7 @@ class TestTopGainersLosers:
         )
         assert_matches_type(TopGainersLoserGetResponse, top_gainers_loser, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         top_gainers_loser = client.coins.top_gainers_losers.get(
@@ -35,7 +35,7 @@ class TestTopGainersLosers:
         )
         assert_matches_type(TopGainersLoserGetResponse, top_gainers_loser, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.coins.top_gainers_losers.with_raw_response.get(
@@ -47,7 +47,7 @@ class TestTopGainersLosers:
         top_gainers_loser = response.parse()
         assert_matches_type(TopGainersLoserGetResponse, top_gainers_loser, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.coins.top_gainers_losers.with_streaming_response.get(
@@ -67,7 +67,7 @@ class TestAsyncTopGainersLosers:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         top_gainers_loser = await async_client.coins.top_gainers_losers.get(
@@ -75,7 +75,7 @@ class TestAsyncTopGainersLosers:
         )
         assert_matches_type(TopGainersLoserGetResponse, top_gainers_loser, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         top_gainers_loser = await async_client.coins.top_gainers_losers.get(
@@ -85,7 +85,7 @@ class TestAsyncTopGainersLosers:
         )
         assert_matches_type(TopGainersLoserGetResponse, top_gainers_loser, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.coins.top_gainers_losers.with_raw_response.get(
@@ -97,7 +97,7 @@ class TestAsyncTopGainersLosers:
         top_gainers_loser = await response.parse()
         assert_matches_type(TopGainersLoserGetResponse, top_gainers_loser, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.coins.top_gainers_losers.with_streaming_response.get(

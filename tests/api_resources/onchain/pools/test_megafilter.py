@@ -17,13 +17,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestMegafilter:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         megafilter = client.onchain.pools.megafilter.get()
         assert_matches_type(MegafilterGetResponse, megafilter, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         megafilter = client.onchain.pools.megafilter.get(
@@ -58,7 +58,7 @@ class TestMegafilter:
         )
         assert_matches_type(MegafilterGetResponse, megafilter, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.onchain.pools.megafilter.with_raw_response.get()
@@ -68,7 +68,7 @@ class TestMegafilter:
         megafilter = response.parse()
         assert_matches_type(MegafilterGetResponse, megafilter, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.onchain.pools.megafilter.with_streaming_response.get() as response:
@@ -86,13 +86,13 @@ class TestAsyncMegafilter:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         megafilter = await async_client.onchain.pools.megafilter.get()
         assert_matches_type(MegafilterGetResponse, megafilter, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         megafilter = await async_client.onchain.pools.megafilter.get(
@@ -127,7 +127,7 @@ class TestAsyncMegafilter:
         )
         assert_matches_type(MegafilterGetResponse, megafilter, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.onchain.pools.megafilter.with_raw_response.get()
@@ -137,7 +137,7 @@ class TestAsyncMegafilter:
         megafilter = await response.parse()
         assert_matches_type(MegafilterGetResponse, megafilter, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.onchain.pools.megafilter.with_streaming_response.get() as response:

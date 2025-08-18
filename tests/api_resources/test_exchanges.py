@@ -21,13 +21,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestExchanges:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         exchange = client.exchanges.get()
         assert_matches_type(ExchangeGetResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         exchange = client.exchanges.get(
@@ -36,7 +36,7 @@ class TestExchanges:
         )
         assert_matches_type(ExchangeGetResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.exchanges.with_raw_response.get()
@@ -46,7 +46,7 @@ class TestExchanges:
         exchange = response.parse()
         assert_matches_type(ExchangeGetResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.exchanges.with_streaming_response.get() as response:
@@ -58,7 +58,7 @@ class TestExchanges:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_id(self, client: Coingecko) -> None:
         exchange = client.exchanges.get_id(
@@ -66,7 +66,7 @@ class TestExchanges:
         )
         assert_matches_type(ExchangeGetIDResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_id_with_all_params(self, client: Coingecko) -> None:
         exchange = client.exchanges.get_id(
@@ -75,7 +75,7 @@ class TestExchanges:
         )
         assert_matches_type(ExchangeGetIDResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get_id(self, client: Coingecko) -> None:
         response = client.exchanges.with_raw_response.get_id(
@@ -87,7 +87,7 @@ class TestExchanges:
         exchange = response.parse()
         assert_matches_type(ExchangeGetIDResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get_id(self, client: Coingecko) -> None:
         with client.exchanges.with_streaming_response.get_id(
@@ -101,7 +101,7 @@ class TestExchanges:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_get_id(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -109,13 +109,13 @@ class TestExchanges:
                 id="",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_list(self, client: Coingecko) -> None:
         exchange = client.exchanges.get_list()
         assert_matches_type(ExchangeGetListResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_list_with_all_params(self, client: Coingecko) -> None:
         exchange = client.exchanges.get_list(
@@ -123,7 +123,7 @@ class TestExchanges:
         )
         assert_matches_type(ExchangeGetListResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get_list(self, client: Coingecko) -> None:
         response = client.exchanges.with_raw_response.get_list()
@@ -133,7 +133,7 @@ class TestExchanges:
         exchange = response.parse()
         assert_matches_type(ExchangeGetListResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get_list(self, client: Coingecko) -> None:
         with client.exchanges.with_streaming_response.get_list() as response:
@@ -151,13 +151,13 @@ class TestAsyncExchanges:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         exchange = await async_client.exchanges.get()
         assert_matches_type(ExchangeGetResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         exchange = await async_client.exchanges.get(
@@ -166,7 +166,7 @@ class TestAsyncExchanges:
         )
         assert_matches_type(ExchangeGetResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.exchanges.with_raw_response.get()
@@ -176,7 +176,7 @@ class TestAsyncExchanges:
         exchange = await response.parse()
         assert_matches_type(ExchangeGetResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.exchanges.with_streaming_response.get() as response:
@@ -188,7 +188,7 @@ class TestAsyncExchanges:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_id(self, async_client: AsyncCoingecko) -> None:
         exchange = await async_client.exchanges.get_id(
@@ -196,7 +196,7 @@ class TestAsyncExchanges:
         )
         assert_matches_type(ExchangeGetIDResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_id_with_all_params(self, async_client: AsyncCoingecko) -> None:
         exchange = await async_client.exchanges.get_id(
@@ -205,7 +205,7 @@ class TestAsyncExchanges:
         )
         assert_matches_type(ExchangeGetIDResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get_id(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.exchanges.with_raw_response.get_id(
@@ -217,7 +217,7 @@ class TestAsyncExchanges:
         exchange = await response.parse()
         assert_matches_type(ExchangeGetIDResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get_id(self, async_client: AsyncCoingecko) -> None:
         async with async_client.exchanges.with_streaming_response.get_id(
@@ -231,7 +231,7 @@ class TestAsyncExchanges:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_get_id(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -239,13 +239,13 @@ class TestAsyncExchanges:
                 id="",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_list(self, async_client: AsyncCoingecko) -> None:
         exchange = await async_client.exchanges.get_list()
         assert_matches_type(ExchangeGetListResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_list_with_all_params(self, async_client: AsyncCoingecko) -> None:
         exchange = await async_client.exchanges.get_list(
@@ -253,7 +253,7 @@ class TestAsyncExchanges:
         )
         assert_matches_type(ExchangeGetListResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get_list(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.exchanges.with_raw_response.get_list()
@@ -263,7 +263,7 @@ class TestAsyncExchanges:
         exchange = await response.parse()
         assert_matches_type(ExchangeGetListResponse, exchange, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get_list(self, async_client: AsyncCoingecko) -> None:
         async with async_client.exchanges.with_streaming_response.get_list() as response:
