@@ -20,7 +20,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestVolumeChart:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         volume_chart = client.exchanges.volume_chart.get(
@@ -29,7 +29,7 @@ class TestVolumeChart:
         )
         assert_matches_type(VolumeChartGetResponse, volume_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.exchanges.volume_chart.with_raw_response.get(
@@ -42,7 +42,7 @@ class TestVolumeChart:
         volume_chart = response.parse()
         assert_matches_type(VolumeChartGetResponse, volume_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.exchanges.volume_chart.with_streaming_response.get(
@@ -57,7 +57,7 @@ class TestVolumeChart:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_get(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -66,7 +66,7 @@ class TestVolumeChart:
                 days="1",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_range(self, client: Coingecko) -> None:
         volume_chart = client.exchanges.volume_chart.get_range(
@@ -76,7 +76,7 @@ class TestVolumeChart:
         )
         assert_matches_type(VolumeChartGetRangeResponse, volume_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get_range(self, client: Coingecko) -> None:
         response = client.exchanges.volume_chart.with_raw_response.get_range(
@@ -90,7 +90,7 @@ class TestVolumeChart:
         volume_chart = response.parse()
         assert_matches_type(VolumeChartGetRangeResponse, volume_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get_range(self, client: Coingecko) -> None:
         with client.exchanges.volume_chart.with_streaming_response.get_range(
@@ -106,7 +106,7 @@ class TestVolumeChart:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_get_range(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -122,7 +122,7 @@ class TestAsyncVolumeChart:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         volume_chart = await async_client.exchanges.volume_chart.get(
@@ -131,7 +131,7 @@ class TestAsyncVolumeChart:
         )
         assert_matches_type(VolumeChartGetResponse, volume_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.exchanges.volume_chart.with_raw_response.get(
@@ -144,7 +144,7 @@ class TestAsyncVolumeChart:
         volume_chart = await response.parse()
         assert_matches_type(VolumeChartGetResponse, volume_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.exchanges.volume_chart.with_streaming_response.get(
@@ -159,7 +159,7 @@ class TestAsyncVolumeChart:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_get(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -168,7 +168,7 @@ class TestAsyncVolumeChart:
                 days="1",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_range(self, async_client: AsyncCoingecko) -> None:
         volume_chart = await async_client.exchanges.volume_chart.get_range(
@@ -178,7 +178,7 @@ class TestAsyncVolumeChart:
         )
         assert_matches_type(VolumeChartGetRangeResponse, volume_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get_range(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.exchanges.volume_chart.with_raw_response.get_range(
@@ -192,7 +192,7 @@ class TestAsyncVolumeChart:
         volume_chart = await response.parse()
         assert_matches_type(VolumeChartGetRangeResponse, volume_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get_range(self, async_client: AsyncCoingecko) -> None:
         async with async_client.exchanges.volume_chart.with_streaming_response.get_range(
@@ -208,7 +208,7 @@ class TestAsyncVolumeChart:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_get_range(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):

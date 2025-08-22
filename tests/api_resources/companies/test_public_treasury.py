@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestPublicTreasury:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_coin_id(self, client: Coingecko) -> None:
         public_treasury = client.companies.public_treasury.get_coin_id(
@@ -25,7 +25,7 @@ class TestPublicTreasury:
         )
         assert_matches_type(PublicTreasuryGetCoinIDResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get_coin_id(self, client: Coingecko) -> None:
         response = client.companies.public_treasury.with_raw_response.get_coin_id(
@@ -37,7 +37,7 @@ class TestPublicTreasury:
         public_treasury = response.parse()
         assert_matches_type(PublicTreasuryGetCoinIDResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get_coin_id(self, client: Coingecko) -> None:
         with client.companies.public_treasury.with_streaming_response.get_coin_id(
@@ -57,7 +57,7 @@ class TestAsyncPublicTreasury:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_coin_id(self, async_client: AsyncCoingecko) -> None:
         public_treasury = await async_client.companies.public_treasury.get_coin_id(
@@ -65,7 +65,7 @@ class TestAsyncPublicTreasury:
         )
         assert_matches_type(PublicTreasuryGetCoinIDResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get_coin_id(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.companies.public_treasury.with_raw_response.get_coin_id(
@@ -77,7 +77,7 @@ class TestAsyncPublicTreasury:
         public_treasury = await response.parse()
         assert_matches_type(PublicTreasuryGetCoinIDResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get_coin_id(self, async_client: AsyncCoingecko) -> None:
         async with async_client.companies.public_treasury.with_streaming_response.get_coin_id(

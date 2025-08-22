@@ -20,7 +20,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestMarketChart:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         market_chart = client.coins.contract.market_chart.get(
@@ -31,7 +31,7 @@ class TestMarketChart:
         )
         assert_matches_type(MarketChartGetResponse, market_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         market_chart = client.coins.contract.market_chart.get(
@@ -44,7 +44,7 @@ class TestMarketChart:
         )
         assert_matches_type(MarketChartGetResponse, market_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.coins.contract.market_chart.with_raw_response.get(
@@ -59,7 +59,7 @@ class TestMarketChart:
         market_chart = response.parse()
         assert_matches_type(MarketChartGetResponse, market_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.coins.contract.market_chart.with_streaming_response.get(
@@ -76,7 +76,7 @@ class TestMarketChart:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_get(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -95,7 +95,7 @@ class TestMarketChart:
                 vs_currency="usd",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_range(self, client: Coingecko) -> None:
         market_chart = client.coins.contract.market_chart.get_range(
@@ -107,7 +107,7 @@ class TestMarketChart:
         )
         assert_matches_type(MarketChartGetRangeResponse, market_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_range_with_all_params(self, client: Coingecko) -> None:
         market_chart = client.coins.contract.market_chart.get_range(
@@ -121,7 +121,7 @@ class TestMarketChart:
         )
         assert_matches_type(MarketChartGetRangeResponse, market_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get_range(self, client: Coingecko) -> None:
         response = client.coins.contract.market_chart.with_raw_response.get_range(
@@ -137,7 +137,7 @@ class TestMarketChart:
         market_chart = response.parse()
         assert_matches_type(MarketChartGetRangeResponse, market_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get_range(self, client: Coingecko) -> None:
         with client.coins.contract.market_chart.with_streaming_response.get_range(
@@ -155,7 +155,7 @@ class TestMarketChart:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_get_range(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -182,7 +182,7 @@ class TestAsyncMarketChart:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         market_chart = await async_client.coins.contract.market_chart.get(
@@ -193,7 +193,7 @@ class TestAsyncMarketChart:
         )
         assert_matches_type(MarketChartGetResponse, market_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         market_chart = await async_client.coins.contract.market_chart.get(
@@ -206,7 +206,7 @@ class TestAsyncMarketChart:
         )
         assert_matches_type(MarketChartGetResponse, market_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.coins.contract.market_chart.with_raw_response.get(
@@ -221,7 +221,7 @@ class TestAsyncMarketChart:
         market_chart = await response.parse()
         assert_matches_type(MarketChartGetResponse, market_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.coins.contract.market_chart.with_streaming_response.get(
@@ -238,7 +238,7 @@ class TestAsyncMarketChart:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_get(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -257,7 +257,7 @@ class TestAsyncMarketChart:
                 vs_currency="usd",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_range(self, async_client: AsyncCoingecko) -> None:
         market_chart = await async_client.coins.contract.market_chart.get_range(
@@ -269,7 +269,7 @@ class TestAsyncMarketChart:
         )
         assert_matches_type(MarketChartGetRangeResponse, market_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_range_with_all_params(self, async_client: AsyncCoingecko) -> None:
         market_chart = await async_client.coins.contract.market_chart.get_range(
@@ -283,7 +283,7 @@ class TestAsyncMarketChart:
         )
         assert_matches_type(MarketChartGetRangeResponse, market_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get_range(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.coins.contract.market_chart.with_raw_response.get_range(
@@ -299,7 +299,7 @@ class TestAsyncMarketChart:
         market_chart = await response.parse()
         assert_matches_type(MarketChartGetRangeResponse, market_chart, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get_range(self, async_client: AsyncCoingecko) -> None:
         async with async_client.coins.contract.market_chart.with_streaming_response.get_range(
@@ -317,7 +317,7 @@ class TestAsyncMarketChart:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_get_range(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):

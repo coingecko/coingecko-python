@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestOhlc:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         ohlc = client.coins.ohlc.get(
@@ -27,7 +27,7 @@ class TestOhlc:
         )
         assert_matches_type(OhlcGetResponse, ohlc, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         ohlc = client.coins.ohlc.get(
@@ -39,7 +39,7 @@ class TestOhlc:
         )
         assert_matches_type(OhlcGetResponse, ohlc, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.coins.ohlc.with_raw_response.get(
@@ -53,7 +53,7 @@ class TestOhlc:
         ohlc = response.parse()
         assert_matches_type(OhlcGetResponse, ohlc, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.coins.ohlc.with_streaming_response.get(
@@ -69,7 +69,7 @@ class TestOhlc:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_get(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -79,7 +79,7 @@ class TestOhlc:
                 vs_currency="usd",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_range(self, client: Coingecko) -> None:
         ohlc = client.coins.ohlc.get_range(
@@ -91,7 +91,7 @@ class TestOhlc:
         )
         assert_matches_type(OhlcGetRangeResponse, ohlc, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get_range(self, client: Coingecko) -> None:
         response = client.coins.ohlc.with_raw_response.get_range(
@@ -107,7 +107,7 @@ class TestOhlc:
         ohlc = response.parse()
         assert_matches_type(OhlcGetRangeResponse, ohlc, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get_range(self, client: Coingecko) -> None:
         with client.coins.ohlc.with_streaming_response.get_range(
@@ -125,7 +125,7 @@ class TestOhlc:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_get_range(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -143,7 +143,7 @@ class TestAsyncOhlc:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         ohlc = await async_client.coins.ohlc.get(
@@ -153,7 +153,7 @@ class TestAsyncOhlc:
         )
         assert_matches_type(OhlcGetResponse, ohlc, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         ohlc = await async_client.coins.ohlc.get(
@@ -165,7 +165,7 @@ class TestAsyncOhlc:
         )
         assert_matches_type(OhlcGetResponse, ohlc, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.coins.ohlc.with_raw_response.get(
@@ -179,7 +179,7 @@ class TestAsyncOhlc:
         ohlc = await response.parse()
         assert_matches_type(OhlcGetResponse, ohlc, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.coins.ohlc.with_streaming_response.get(
@@ -195,7 +195,7 @@ class TestAsyncOhlc:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_get(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -205,7 +205,7 @@ class TestAsyncOhlc:
                 vs_currency="usd",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_range(self, async_client: AsyncCoingecko) -> None:
         ohlc = await async_client.coins.ohlc.get_range(
@@ -217,7 +217,7 @@ class TestAsyncOhlc:
         )
         assert_matches_type(OhlcGetRangeResponse, ohlc, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get_range(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.coins.ohlc.with_raw_response.get_range(
@@ -233,7 +233,7 @@ class TestAsyncOhlc:
         ohlc = await response.parse()
         assert_matches_type(OhlcGetRangeResponse, ohlc, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get_range(self, async_client: AsyncCoingecko) -> None:
         async with async_client.coins.ohlc.with_streaming_response.get_range(
@@ -251,7 +251,7 @@ class TestAsyncOhlc:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_get_range(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):

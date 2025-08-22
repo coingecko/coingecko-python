@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestOhlcv:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_timeframe(self, client: Coingecko) -> None:
         ohlcv = client.onchain.networks.pools.ohlcv.get_timeframe(
@@ -27,7 +27,7 @@ class TestOhlcv:
         )
         assert_matches_type(OhlcvGetTimeframeResponse, ohlcv, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get_timeframe_with_all_params(self, client: Coingecko) -> None:
         ohlcv = client.onchain.networks.pools.ohlcv.get_timeframe(
@@ -43,7 +43,7 @@ class TestOhlcv:
         )
         assert_matches_type(OhlcvGetTimeframeResponse, ohlcv, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get_timeframe(self, client: Coingecko) -> None:
         response = client.onchain.networks.pools.ohlcv.with_raw_response.get_timeframe(
@@ -57,7 +57,7 @@ class TestOhlcv:
         ohlcv = response.parse()
         assert_matches_type(OhlcvGetTimeframeResponse, ohlcv, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get_timeframe(self, client: Coingecko) -> None:
         with client.onchain.networks.pools.ohlcv.with_streaming_response.get_timeframe(
@@ -73,7 +73,7 @@ class TestOhlcv:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_get_timeframe(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `network` but received ''"):
@@ -96,7 +96,7 @@ class TestAsyncOhlcv:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_timeframe(self, async_client: AsyncCoingecko) -> None:
         ohlcv = await async_client.onchain.networks.pools.ohlcv.get_timeframe(
@@ -106,7 +106,7 @@ class TestAsyncOhlcv:
         )
         assert_matches_type(OhlcvGetTimeframeResponse, ohlcv, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get_timeframe_with_all_params(self, async_client: AsyncCoingecko) -> None:
         ohlcv = await async_client.onchain.networks.pools.ohlcv.get_timeframe(
@@ -122,7 +122,7 @@ class TestAsyncOhlcv:
         )
         assert_matches_type(OhlcvGetTimeframeResponse, ohlcv, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get_timeframe(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.onchain.networks.pools.ohlcv.with_raw_response.get_timeframe(
@@ -136,7 +136,7 @@ class TestAsyncOhlcv:
         ohlcv = await response.parse()
         assert_matches_type(OhlcvGetTimeframeResponse, ohlcv, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get_timeframe(self, async_client: AsyncCoingecko) -> None:
         async with async_client.onchain.networks.pools.ohlcv.with_streaming_response.get_timeframe(
@@ -152,7 +152,7 @@ class TestAsyncOhlcv:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_get_timeframe(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `network` but received ''"):

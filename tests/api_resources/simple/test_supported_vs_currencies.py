@@ -17,13 +17,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestSupportedVsCurrencies:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         supported_vs_currency = client.simple.supported_vs_currencies.get()
         assert_matches_type(SupportedVsCurrencyGetResponse, supported_vs_currency, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.simple.supported_vs_currencies.with_raw_response.get()
@@ -33,7 +33,7 @@ class TestSupportedVsCurrencies:
         supported_vs_currency = response.parse()
         assert_matches_type(SupportedVsCurrencyGetResponse, supported_vs_currency, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.simple.supported_vs_currencies.with_streaming_response.get() as response:
@@ -51,13 +51,13 @@ class TestAsyncSupportedVsCurrencies:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         supported_vs_currency = await async_client.simple.supported_vs_currencies.get()
         assert_matches_type(SupportedVsCurrencyGetResponse, supported_vs_currency, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.simple.supported_vs_currencies.with_raw_response.get()
@@ -67,7 +67,7 @@ class TestAsyncSupportedVsCurrencies:
         supported_vs_currency = await response.parse()
         assert_matches_type(SupportedVsCurrencyGetResponse, supported_vs_currency, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.simple.supported_vs_currencies.with_streaming_response.get() as response:
