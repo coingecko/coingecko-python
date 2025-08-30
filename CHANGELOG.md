@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.8.3 (2025-08-30)
+
+Full Changelog: [v1.8.2...v1.8.3](https://github.com/coingecko/coingecko-python/compare/v1.8.2...v1.8.3)
+
+### Bug Fixes
+
+* avoid newer type syntax ([3533b82](https://github.com/coingecko/coingecko-python/commit/3533b82ee0a7d137c9234e8adcd4bc4cc4b02ffa))
+
+
+### Chores
+
+* **internal:** add Sequence related utils ([fdf2b29](https://github.com/coingecko/coingecko-python/commit/fdf2b29a17f76d5fe1e7fd33d3d4d0e2350d4362))
+* **internal:** change ci workflow machines ([5a910b3](https://github.com/coingecko/coingecko-python/commit/5a910b3be656bff201e854d7aab7fa8093fe7a01))
+* **internal:** codegen related update ([73e0df0](https://github.com/coingecko/coingecko-python/commit/73e0df07412c4bf958eb91a7a3d89b3683284237))
+* **internal:** update pyright exclude list ([6b0b243](https://github.com/coingecko/coingecko-python/commit/6b0b2431134970e1fef1b572938537c7425bf096))
+* update github action ([bd13157](https://github.com/coingecko/coingecko-python/commit/bd13157fd9eb56aefd6c70ab2874d766654cf0cf))
+
 ## 1.8.2 (2025-07-25)
 
 Full Changelog: [v1.8.1...v1.8.2](https://github.com/coingecko/coingecko-python/compare/v1.8.1...v1.8.2)
