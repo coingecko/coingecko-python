@@ -15,7 +15,7 @@ from .tickers import (
     TickersResourceWithStreamingResponse,
     AsyncTickersResourceWithStreamingResponse,
 )
-from ..._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from ..._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
 from ..._utils import maybe_transform, async_maybe_transform
 from ..._compat import cached_property
 from ..._resource import SyncAPIResource, AsyncAPIResource
@@ -90,7 +90,7 @@ class NFTsResource(SyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NFTGetIDResponse:
         """
         This endpoint allows you to **query all the NFT data (name, floor price, 24hr
@@ -130,15 +130,15 @@ class NFTsResource(SyncAPIResource):
             "market_cap_usd_asc",
             "market_cap_usd_desc",
         ]
-        | NotGiven = NOT_GIVEN,
-        page: float | NotGiven = NOT_GIVEN,
-        per_page: float | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        page: float | Omit = omit,
+        per_page: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NFTGetListResponse:
         """
         This endpoint allows you to **query all supported NFTs with ID, contract
@@ -181,7 +181,7 @@ class NFTsResource(SyncAPIResource):
     def get_markets(
         self,
         *,
-        asset_platform_id: str | NotGiven = NOT_GIVEN,
+        asset_platform_id: str | Omit = omit,
         order: Literal[
             "h24_volume_native_asc",
             "h24_volume_native_desc",
@@ -190,15 +190,15 @@ class NFTsResource(SyncAPIResource):
             "market_cap_usd_asc",
             "market_cap_usd_desc",
         ]
-        | NotGiven = NOT_GIVEN,
-        page: float | NotGiven = NOT_GIVEN,
-        per_page: float | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        page: float | Omit = omit,
+        per_page: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NFTGetMarketsResponse:
         """
         This endpoint allows you to **query all the supported NFT collections with floor
@@ -286,7 +286,7 @@ class AsyncNFTsResource(AsyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NFTGetIDResponse:
         """
         This endpoint allows you to **query all the NFT data (name, floor price, 24hr
@@ -326,15 +326,15 @@ class AsyncNFTsResource(AsyncAPIResource):
             "market_cap_usd_asc",
             "market_cap_usd_desc",
         ]
-        | NotGiven = NOT_GIVEN,
-        page: float | NotGiven = NOT_GIVEN,
-        per_page: float | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        page: float | Omit = omit,
+        per_page: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NFTGetListResponse:
         """
         This endpoint allows you to **query all supported NFTs with ID, contract
@@ -377,7 +377,7 @@ class AsyncNFTsResource(AsyncAPIResource):
     async def get_markets(
         self,
         *,
-        asset_platform_id: str | NotGiven = NOT_GIVEN,
+        asset_platform_id: str | Omit = omit,
         order: Literal[
             "h24_volume_native_asc",
             "h24_volume_native_desc",
@@ -386,15 +386,15 @@ class AsyncNFTsResource(AsyncAPIResource):
             "market_cap_usd_asc",
             "market_cap_usd_desc",
         ]
-        | NotGiven = NOT_GIVEN,
-        page: float | NotGiven = NOT_GIVEN,
-        per_page: float | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        page: float | Omit = omit,
+        per_page: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NFTGetMarketsResponse:
         """
         This endpoint allows you to **query all the supported NFT collections with floor

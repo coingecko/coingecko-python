@@ -6,7 +6,7 @@ from typing_extensions import Literal
 
 import httpx
 
-from ..._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from ..._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
 from ..._utils import maybe_transform, async_maybe_transform
 from ..._compat import cached_property
 from ..._resource import SyncAPIResource, AsyncAPIResource
@@ -47,18 +47,18 @@ class TickersResource(SyncAPIResource):
         self,
         id: str,
         *,
-        depth: bool | NotGiven = NOT_GIVEN,
-        dex_pair_format: Literal["contract_address", "symbol"] | NotGiven = NOT_GIVEN,
-        exchange_ids: str | NotGiven = NOT_GIVEN,
-        include_exchange_logo: bool | NotGiven = NOT_GIVEN,
-        order: Literal["trust_score_desc", "trust_score_asc", "volume_desc", "volume_asc"] | NotGiven = NOT_GIVEN,
-        page: float | NotGiven = NOT_GIVEN,
+        depth: bool | Omit = omit,
+        dex_pair_format: Literal["contract_address", "symbol"] | Omit = omit,
+        exchange_ids: str | Omit = omit,
+        include_exchange_logo: bool | Omit = omit,
+        order: Literal["trust_score_desc", "trust_score_asc", "volume_desc", "volume_asc"] | Omit = omit,
+        page: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TickerGetResponse:
         """
         This endpoint allows you to **query the coin tickers on both centralized
@@ -137,18 +137,18 @@ class AsyncTickersResource(AsyncAPIResource):
         self,
         id: str,
         *,
-        depth: bool | NotGiven = NOT_GIVEN,
-        dex_pair_format: Literal["contract_address", "symbol"] | NotGiven = NOT_GIVEN,
-        exchange_ids: str | NotGiven = NOT_GIVEN,
-        include_exchange_logo: bool | NotGiven = NOT_GIVEN,
-        order: Literal["trust_score_desc", "trust_score_asc", "volume_desc", "volume_asc"] | NotGiven = NOT_GIVEN,
-        page: float | NotGiven = NOT_GIVEN,
+        depth: bool | Omit = omit,
+        dex_pair_format: Literal["contract_address", "symbol"] | Omit = omit,
+        exchange_ids: str | Omit = omit,
+        include_exchange_logo: bool | Omit = omit,
+        order: Literal["trust_score_desc", "trust_score_asc", "volume_desc", "volume_asc"] | Omit = omit,
+        page: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TickerGetResponse:
         """
         This endpoint allows you to **query the coin tickers on both centralized
