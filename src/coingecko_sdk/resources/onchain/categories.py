@@ -6,7 +6,7 @@ from typing_extensions import Literal
 
 import httpx
 
-from ..._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from ..._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
 from ..._utils import maybe_transform, async_maybe_transform
 from ..._compat import cached_property
 from ..._resource import SyncAPIResource, AsyncAPIResource
@@ -47,7 +47,7 @@ class CategoriesResource(SyncAPIResource):
     def get(
         self,
         *,
-        page: int | NotGiven = NOT_GIVEN,
+        page: int | Omit = omit,
         sort: Literal[
             "h1_volume_percentage_desc",
             "h6_volume_percentage_desc",
@@ -57,13 +57,13 @@ class CategoriesResource(SyncAPIResource):
             "fdv_usd_desc",
             "reserve_in_usd_desc",
         ]
-        | NotGiven = NOT_GIVEN,
+        | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CategoryGetResponse:
         """
         This endpoint allows you to **query all the supported categories on
@@ -104,8 +104,8 @@ class CategoriesResource(SyncAPIResource):
         self,
         category_id: str,
         *,
-        include: str | NotGiven = NOT_GIVEN,
-        page: int | NotGiven = NOT_GIVEN,
+        include: str | Omit = omit,
+        page: int | Omit = omit,
         sort: Literal[
             "m5_trending",
             "h1_trending",
@@ -116,13 +116,13 @@ class CategoriesResource(SyncAPIResource):
             "pool_created_at_desc",
             "h24_price_change_percentage_desc",
         ]
-        | NotGiven = NOT_GIVEN,
+        | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CategoryGetPoolsResponse:
         """
         This endpoint allows you to **query all the pools based on the provided category
@@ -190,7 +190,7 @@ class AsyncCategoriesResource(AsyncAPIResource):
     async def get(
         self,
         *,
-        page: int | NotGiven = NOT_GIVEN,
+        page: int | Omit = omit,
         sort: Literal[
             "h1_volume_percentage_desc",
             "h6_volume_percentage_desc",
@@ -200,13 +200,13 @@ class AsyncCategoriesResource(AsyncAPIResource):
             "fdv_usd_desc",
             "reserve_in_usd_desc",
         ]
-        | NotGiven = NOT_GIVEN,
+        | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CategoryGetResponse:
         """
         This endpoint allows you to **query all the supported categories on
@@ -247,8 +247,8 @@ class AsyncCategoriesResource(AsyncAPIResource):
         self,
         category_id: str,
         *,
-        include: str | NotGiven = NOT_GIVEN,
-        page: int | NotGiven = NOT_GIVEN,
+        include: str | Omit = omit,
+        page: int | Omit = omit,
         sort: Literal[
             "m5_trending",
             "h1_trending",
@@ -259,13 +259,13 @@ class AsyncCategoriesResource(AsyncAPIResource):
             "pool_created_at_desc",
             "h24_price_change_percentage_desc",
         ]
-        | NotGiven = NOT_GIVEN,
+        | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CategoryGetPoolsResponse:
         """
         This endpoint allows you to **query all the pools based on the provided category

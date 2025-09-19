@@ -5,7 +5,7 @@ from __future__ import annotations
 import httpx
 
 from ...types import search_get_params
-from ..._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from ..._types import Body, Query, Headers, NotGiven, not_given
 from ..._utils import maybe_transform, async_maybe_transform
 from .trending import (
     TrendingResource,
@@ -62,7 +62,7 @@ class SearchResource(SyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SearchGetResponse:
         """
         This endpoint allows you to **search for coins, categories and markets listed on
@@ -125,7 +125,7 @@ class AsyncSearchResource(AsyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SearchGetResponse:
         """
         This endpoint allows you to **search for coins, categories and markets listed on

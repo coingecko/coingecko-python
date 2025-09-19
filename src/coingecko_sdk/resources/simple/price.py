@@ -6,7 +6,7 @@ from typing_extensions import Literal
 
 import httpx
 
-from ..._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from ..._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
 from ..._utils import maybe_transform, async_maybe_transform
 from ..._compat import cached_property
 from ..._resource import SyncAPIResource, AsyncAPIResource
@@ -47,13 +47,13 @@ class PriceResource(SyncAPIResource):
         self,
         *,
         vs_currencies: str,
-        ids: str | NotGiven = NOT_GIVEN,
-        include_24hr_change: bool | NotGiven = NOT_GIVEN,
-        include_24hr_vol: bool | NotGiven = NOT_GIVEN,
-        include_last_updated_at: bool | NotGiven = NOT_GIVEN,
-        include_market_cap: bool | NotGiven = NOT_GIVEN,
-        include_tokens: Literal["top", "all"] | NotGiven = NOT_GIVEN,
-        names: str | NotGiven = NOT_GIVEN,
+        ids: str | Omit = omit,
+        include_24hr_change: bool | Omit = omit,
+        include_24hr_vol: bool | Omit = omit,
+        include_last_updated_at: bool | Omit = omit,
+        include_market_cap: bool | Omit = omit,
+        include_tokens: Literal["top", "all"] | Omit = omit,
+        names: str | Omit = omit,
         precision: Literal[
             "full",
             "0",
@@ -76,14 +76,14 @@ class PriceResource(SyncAPIResource):
             "17",
             "18",
         ]
-        | NotGiven = NOT_GIVEN,
-        symbols: str | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        symbols: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PriceGetResponse:
         """
         This endpoint allows you to **query the prices of one or more coins by using
@@ -173,13 +173,13 @@ class AsyncPriceResource(AsyncAPIResource):
         self,
         *,
         vs_currencies: str,
-        ids: str | NotGiven = NOT_GIVEN,
-        include_24hr_change: bool | NotGiven = NOT_GIVEN,
-        include_24hr_vol: bool | NotGiven = NOT_GIVEN,
-        include_last_updated_at: bool | NotGiven = NOT_GIVEN,
-        include_market_cap: bool | NotGiven = NOT_GIVEN,
-        include_tokens: Literal["top", "all"] | NotGiven = NOT_GIVEN,
-        names: str | NotGiven = NOT_GIVEN,
+        ids: str | Omit = omit,
+        include_24hr_change: bool | Omit = omit,
+        include_24hr_vol: bool | Omit = omit,
+        include_last_updated_at: bool | Omit = omit,
+        include_market_cap: bool | Omit = omit,
+        include_tokens: Literal["top", "all"] | Omit = omit,
+        names: str | Omit = omit,
         precision: Literal[
             "full",
             "0",
@@ -202,14 +202,14 @@ class AsyncPriceResource(AsyncAPIResource):
             "17",
             "18",
         ]
-        | NotGiven = NOT_GIVEN,
-        symbols: str | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        symbols: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PriceGetResponse:
         """
         This endpoint allows you to **query the prices of one or more coins by using
