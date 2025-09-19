@@ -6,7 +6,7 @@ from typing_extensions import Literal
 
 import httpx
 
-from ...._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from ...._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
 from ...._utils import maybe_transform, async_maybe_transform
 from ...._compat import cached_property
 from ...._resource import SyncAPIResource, AsyncAPIResource
@@ -51,7 +51,7 @@ class MarketChartResource(SyncAPIResource):
         id: str,
         days: str,
         vs_currency: str,
-        interval: Literal["5m", "hourly", "daily"] | NotGiven = NOT_GIVEN,
+        interval: Literal["5m", "hourly", "daily"] | Omit = omit,
         precision: Literal[
             "full",
             "0",
@@ -74,13 +74,13 @@ class MarketChartResource(SyncAPIResource):
             "17",
             "18",
         ]
-        | NotGiven = NOT_GIVEN,
+        | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MarketChartGetResponse:
         """
         This endpoint allows you to **get the historical chart data including time in
@@ -138,7 +138,7 @@ class MarketChartResource(SyncAPIResource):
         from_: float,
         to: float,
         vs_currency: str,
-        interval: Literal["5m", "hourly", "daily"] | NotGiven = NOT_GIVEN,
+        interval: Literal["5m", "hourly", "daily"] | Omit = omit,
         precision: Literal[
             "full",
             "0",
@@ -161,13 +161,13 @@ class MarketChartResource(SyncAPIResource):
             "17",
             "18",
         ]
-        | NotGiven = NOT_GIVEN,
+        | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MarketChartGetRangeResponse:
         """
         This endpoint allows you to **get the historical chart data within certain time
@@ -247,7 +247,7 @@ class AsyncMarketChartResource(AsyncAPIResource):
         id: str,
         days: str,
         vs_currency: str,
-        interval: Literal["5m", "hourly", "daily"] | NotGiven = NOT_GIVEN,
+        interval: Literal["5m", "hourly", "daily"] | Omit = omit,
         precision: Literal[
             "full",
             "0",
@@ -270,13 +270,13 @@ class AsyncMarketChartResource(AsyncAPIResource):
             "17",
             "18",
         ]
-        | NotGiven = NOT_GIVEN,
+        | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MarketChartGetResponse:
         """
         This endpoint allows you to **get the historical chart data including time in
@@ -334,7 +334,7 @@ class AsyncMarketChartResource(AsyncAPIResource):
         from_: float,
         to: float,
         vs_currency: str,
-        interval: Literal["5m", "hourly", "daily"] | NotGiven = NOT_GIVEN,
+        interval: Literal["5m", "hourly", "daily"] | Omit = omit,
         precision: Literal[
             "full",
             "0",
@@ -357,13 +357,13 @@ class AsyncMarketChartResource(AsyncAPIResource):
             "17",
             "18",
         ]
-        | NotGiven = NOT_GIVEN,
+        | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MarketChartGetRangeResponse:
         """
         This endpoint allows you to **get the historical chart data within certain time
