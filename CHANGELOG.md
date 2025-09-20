@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.9.0 (2025-09-20)
+
+Full Changelog: [v1.8.3...v1.9.0](https://github.com/coingecko/coingecko-python/compare/v1.8.3...v1.9.0)
+
+### Features
+
+* improve future compat with pydantic v3 ([a6ad7f5](https://github.com/coingecko/coingecko-python/commit/a6ad7f5bda8eb378eb34f2d65e1c62158df65e91))
+* **types:** replace List[str] with SequenceNotStr in params ([fe41e4f](https://github.com/coingecko/coingecko-python/commit/fe41e4f38fd62059691152075d04bad33e4a78f0))
+
+
+### Chores
+
+* do not install brew dependencies in ./scripts/bootstrap by default ([138163f](https://github.com/coingecko/coingecko-python/commit/138163f74afb1011411f69de7a10f35deb76526a))
+* **internal:** move mypy configurations to `pyproject.toml` file ([73f97dc](https://github.com/coingecko/coingecko-python/commit/73f97dc21a268a818948611733fad74958c90a80))
+* **internal:** update pydantic dependency ([2db8a2b](https://github.com/coingecko/coingecko-python/commit/2db8a2be8f967ea17557632c98465a8ee2479408))
+* **tests:** simplify `get_platform` test ([f344e7e](https://github.com/coingecko/coingecko-python/commit/f344e7ec8a3c5c155adf95cc5890c8a966fb2e19))
+* **types:** change optional parameter type from NotGiven to Omit ([4d0a984](https://github.com/coingecko/coingecko-python/commit/4d0a9840a93a259bfe3613cc81443533fa81e7fe))
+
 ## 1.8.3 (2025-08-30)
 
 Full Changelog: [v1.8.2...v1.8.3](https://github.com/coingecko/coingecko-python/compare/v1.8.2...v1.8.3)
