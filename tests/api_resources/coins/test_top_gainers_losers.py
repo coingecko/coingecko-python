@@ -31,6 +31,7 @@ class TestTopGainersLosers:
         top_gainers_loser = client.coins.top_gainers_losers.get(
             vs_currency="usd",
             duration="1h",
+            price_change_percentage="price_change_percentage",
             top_coins="300",
         )
         assert_matches_type(TopGainersLoserGetResponse, top_gainers_loser, path=["response"])
@@ -81,6 +82,7 @@ class TestAsyncTopGainersLosers:
         top_gainers_loser = await async_client.coins.top_gainers_losers.get(
             vs_currency="usd",
             duration="1h",
+            price_change_percentage="price_change_percentage",
             top_coins="300",
         )
         assert_matches_type(TopGainersLoserGetResponse, top_gainers_loser, path=["response"])

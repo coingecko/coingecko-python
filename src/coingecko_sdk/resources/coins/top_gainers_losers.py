@@ -48,6 +48,7 @@ class TopGainersLosersResource(SyncAPIResource):
         *,
         vs_currency: str,
         duration: Literal["1h", "24h", "7d", "14d", "30d", "60d", "1y"] | Omit = omit,
+        price_change_percentage: str | Omit = omit,
         top_coins: Literal["300", "500", "1000", "all"] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -65,6 +66,9 @@ class TopGainersLosersResource(SyncAPIResource):
               [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
 
           duration: filter result by time range Default value: `24h`
+
+          price_change_percentage: include price change percentage timeframe, comma-separated if query more than 1
+              price change percentage timeframe Valid values: 1h, 24h, 7d, 14d, 30d, 200d, 1y
 
           top_coins: filter result by market cap ranking (top 300 to 1000) or all coins (including
               coins that do not have market cap) Default value: `1000`
@@ -88,6 +92,7 @@ class TopGainersLosersResource(SyncAPIResource):
                     {
                         "vs_currency": vs_currency,
                         "duration": duration,
+                        "price_change_percentage": price_change_percentage,
                         "top_coins": top_coins,
                     },
                     top_gainers_loser_get_params.TopGainersLoserGetParams,
@@ -122,6 +127,7 @@ class AsyncTopGainersLosersResource(AsyncAPIResource):
         *,
         vs_currency: str,
         duration: Literal["1h", "24h", "7d", "14d", "30d", "60d", "1y"] | Omit = omit,
+        price_change_percentage: str | Omit = omit,
         top_coins: Literal["300", "500", "1000", "all"] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -139,6 +145,9 @@ class AsyncTopGainersLosersResource(AsyncAPIResource):
               [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
 
           duration: filter result by time range Default value: `24h`
+
+          price_change_percentage: include price change percentage timeframe, comma-separated if query more than 1
+              price change percentage timeframe Valid values: 1h, 24h, 7d, 14d, 30d, 200d, 1y
 
           top_coins: filter result by market cap ranking (top 300 to 1000) or all coins (including
               coins that do not have market cap) Default value: `1000`
@@ -162,6 +171,7 @@ class AsyncTopGainersLosersResource(AsyncAPIResource):
                     {
                         "vs_currency": vs_currency,
                         "duration": duration,
+                        "price_change_percentage": price_change_percentage,
                         "top_coins": top_coins,
                     },
                     top_gainers_loser_get_params.TopGainersLoserGetParams,

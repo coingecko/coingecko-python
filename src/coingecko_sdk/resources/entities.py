@@ -2,66 +2,70 @@
 
 from __future__ import annotations
 
+from typing_extensions import Literal
+
 import httpx
 
-from ..._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
-from ..._utils import maybe_transform, async_maybe_transform
-from ..._compat import cached_property
-from ..._resource import SyncAPIResource, AsyncAPIResource
-from ..._response import (
+from ..types import entity_get_list_params
+from .._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
+from .._utils import maybe_transform, async_maybe_transform
+from .._compat import cached_property
+from .._resource import SyncAPIResource, AsyncAPIResource
+from .._response import (
     to_raw_response_wrapper,
     to_streamed_response_wrapper,
     async_to_raw_response_wrapper,
     async_to_streamed_response_wrapper,
 )
-from ...types.coins import history_get_params
-from ..._base_client import make_request_options
-from ...types.coins.history_get_response import HistoryGetResponse
+from .._base_client import make_request_options
+from ..types.entity_get_list_response import EntityGetListResponse
 
-__all__ = ["HistoryResource", "AsyncHistoryResource"]
+__all__ = ["EntitiesResource", "AsyncEntitiesResource"]
 
 
-class HistoryResource(SyncAPIResource):
+class EntitiesResource(SyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> HistoryResourceWithRawResponse:
+    def with_raw_response(self) -> EntitiesResourceWithRawResponse:
         """
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/coingecko/coingecko-python#accessing-raw-response-data-eg-headers
         """
-        return HistoryResourceWithRawResponse(self)
+        return EntitiesResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> HistoryResourceWithStreamingResponse:
+    def with_streaming_response(self) -> EntitiesResourceWithStreamingResponse:
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
         For more information, see https://www.github.com/coingecko/coingecko-python#with_streaming_response
         """
-        return HistoryResourceWithStreamingResponse(self)
+        return EntitiesResourceWithStreamingResponse(self)
 
-    def get(
+    def get_list(
         self,
-        id: str,
         *,
-        date: str,
-        localization: bool | Omit = omit,
+        entity_type: Literal["company", "government"] | Omit = omit,
+        page: int | Omit = omit,
+        per_page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
-    ) -> HistoryGetResponse:
+    ) -> EntityGetListResponse:
         """
-        This endpoint allows you to **query the historical data (price, market cap,
-        24hrs volume, ...) at a given date for a coin based on a particular coin ID**
+        This endpoint allows you to **query all the supported entities on CoinGecko with
+        entities ID, name, symbol, and country**
 
         Args:
-          date: date of data snapshot (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`)
+          entity_type: filter by entity type, default: false
 
-          localization: include all the localized languages in response, default: true
+          page: page through results, default: 1
+
+          per_page: total results per page, default: 100 Valid values: 1...250
 
           extra_headers: Send extra headers
 
@@ -71,10 +75,8 @@ class HistoryResource(SyncAPIResource):
 
           timeout: Override the client-level default timeout for this request, in seconds
         """
-        if not id:
-            raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
         return self._get(
-            f"/coins/{id}/history",
+            "/entities/list",
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -82,57 +84,60 @@ class HistoryResource(SyncAPIResource):
                 timeout=timeout,
                 query=maybe_transform(
                     {
-                        "date": date,
-                        "localization": localization,
+                        "entity_type": entity_type,
+                        "page": page,
+                        "per_page": per_page,
                     },
-                    history_get_params.HistoryGetParams,
+                    entity_get_list_params.EntityGetListParams,
                 ),
             ),
-            cast_to=HistoryGetResponse,
+            cast_to=EntityGetListResponse,
         )
 
 
-class AsyncHistoryResource(AsyncAPIResource):
+class AsyncEntitiesResource(AsyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> AsyncHistoryResourceWithRawResponse:
+    def with_raw_response(self) -> AsyncEntitiesResourceWithRawResponse:
         """
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/coingecko/coingecko-python#accessing-raw-response-data-eg-headers
         """
-        return AsyncHistoryResourceWithRawResponse(self)
+        return AsyncEntitiesResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> AsyncHistoryResourceWithStreamingResponse:
+    def with_streaming_response(self) -> AsyncEntitiesResourceWithStreamingResponse:
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
         For more information, see https://www.github.com/coingecko/coingecko-python#with_streaming_response
         """
-        return AsyncHistoryResourceWithStreamingResponse(self)
+        return AsyncEntitiesResourceWithStreamingResponse(self)
 
-    async def get(
+    async def get_list(
         self,
-        id: str,
         *,
-        date: str,
-        localization: bool | Omit = omit,
+        entity_type: Literal["company", "government"] | Omit = omit,
+        page: int | Omit = omit,
+        per_page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
-    ) -> HistoryGetResponse:
+    ) -> EntityGetListResponse:
         """
-        This endpoint allows you to **query the historical data (price, market cap,
-        24hrs volume, ...) at a given date for a coin based on a particular coin ID**
+        This endpoint allows you to **query all the supported entities on CoinGecko with
+        entities ID, name, symbol, and country**
 
         Args:
-          date: date of data snapshot (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`)
+          entity_type: filter by entity type, default: false
 
-          localization: include all the localized languages in response, default: true
+          page: page through results, default: 1
+
+          per_page: total results per page, default: 100 Valid values: 1...250
 
           extra_headers: Send extra headers
 
@@ -142,10 +147,8 @@ class AsyncHistoryResource(AsyncAPIResource):
 
           timeout: Override the client-level default timeout for this request, in seconds
         """
-        if not id:
-            raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
         return await self._get(
-            f"/coins/{id}/history",
+            "/entities/list",
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -153,47 +156,48 @@ class AsyncHistoryResource(AsyncAPIResource):
                 timeout=timeout,
                 query=await async_maybe_transform(
                     {
-                        "date": date,
-                        "localization": localization,
+                        "entity_type": entity_type,
+                        "page": page,
+                        "per_page": per_page,
                     },
-                    history_get_params.HistoryGetParams,
+                    entity_get_list_params.EntityGetListParams,
                 ),
             ),
-            cast_to=HistoryGetResponse,
+            cast_to=EntityGetListResponse,
         )
 
 
-class HistoryResourceWithRawResponse:
-    def __init__(self, history: HistoryResource) -> None:
-        self._history = history
+class EntitiesResourceWithRawResponse:
+    def __init__(self, entities: EntitiesResource) -> None:
+        self._entities = entities
 
-        self.get = to_raw_response_wrapper(
-            history.get,
+        self.get_list = to_raw_response_wrapper(
+            entities.get_list,
         )
 
 
-class AsyncHistoryResourceWithRawResponse:
-    def __init__(self, history: AsyncHistoryResource) -> None:
-        self._history = history
+class AsyncEntitiesResourceWithRawResponse:
+    def __init__(self, entities: AsyncEntitiesResource) -> None:
+        self._entities = entities
 
-        self.get = async_to_raw_response_wrapper(
-            history.get,
+        self.get_list = async_to_raw_response_wrapper(
+            entities.get_list,
         )
 
 
-class HistoryResourceWithStreamingResponse:
-    def __init__(self, history: HistoryResource) -> None:
-        self._history = history
+class EntitiesResourceWithStreamingResponse:
+    def __init__(self, entities: EntitiesResource) -> None:
+        self._entities = entities
 
-        self.get = to_streamed_response_wrapper(
-            history.get,
+        self.get_list = to_streamed_response_wrapper(
+            entities.get_list,
         )
 
 
-class AsyncHistoryResourceWithStreamingResponse:
-    def __init__(self, history: AsyncHistoryResource) -> None:
-        self._history = history
+class AsyncEntitiesResourceWithStreamingResponse:
+    def __init__(self, entities: AsyncEntitiesResource) -> None:
+        self._entities = entities
 
-        self.get = async_to_streamed_response_wrapper(
-            history.get,
+        self.get_list = async_to_streamed_response_wrapper(
+            entities.get_list,
         )

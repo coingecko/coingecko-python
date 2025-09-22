@@ -81,8 +81,8 @@ class TestTotalSupplyChart:
     def test_method_get_range(self, client: Coingecko) -> None:
         total_supply_chart = client.coins.total_supply_chart.get_range(
             id="bitcoin",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
         )
         assert_matches_type(TotalSupplyChartGetRangeResponse, total_supply_chart, path=["response"])
 
@@ -91,8 +91,8 @@ class TestTotalSupplyChart:
     def test_raw_response_get_range(self, client: Coingecko) -> None:
         response = client.coins.total_supply_chart.with_raw_response.get_range(
             id="bitcoin",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
         )
 
         assert response.is_closed is True
@@ -105,8 +105,8 @@ class TestTotalSupplyChart:
     def test_streaming_response_get_range(self, client: Coingecko) -> None:
         with client.coins.total_supply_chart.with_streaming_response.get_range(
             id="bitcoin",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -122,8 +122,8 @@ class TestTotalSupplyChart:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
             client.coins.total_supply_chart.with_raw_response.get_range(
                 id="",
-                from_=0,
-                to=0,
+                from_="from",
+                to="to",
             )
 
 
@@ -193,8 +193,8 @@ class TestAsyncTotalSupplyChart:
     async def test_method_get_range(self, async_client: AsyncCoingecko) -> None:
         total_supply_chart = await async_client.coins.total_supply_chart.get_range(
             id="bitcoin",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
         )
         assert_matches_type(TotalSupplyChartGetRangeResponse, total_supply_chart, path=["response"])
 
@@ -203,8 +203,8 @@ class TestAsyncTotalSupplyChart:
     async def test_raw_response_get_range(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.coins.total_supply_chart.with_raw_response.get_range(
             id="bitcoin",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
         )
 
         assert response.is_closed is True
@@ -217,8 +217,8 @@ class TestAsyncTotalSupplyChart:
     async def test_streaming_response_get_range(self, async_client: AsyncCoingecko) -> None:
         async with async_client.coins.total_supply_chart.with_streaming_response.get_range(
             id="bitcoin",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -234,6 +234,6 @@ class TestAsyncTotalSupplyChart:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
             await async_client.coins.total_supply_chart.with_raw_response.get_range(
                 id="",
-                from_=0,
-                to=0,
+                from_="from",
+                to="to",
             )

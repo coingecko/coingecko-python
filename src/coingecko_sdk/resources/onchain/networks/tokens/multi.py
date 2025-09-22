@@ -49,6 +49,7 @@ class MultiResource(SyncAPIResource):
         *,
         network: str,
         include: Literal["top_pools"] | Omit = omit,
+        include_composition: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -62,6 +63,8 @@ class MultiResource(SyncAPIResource):
 
         Args:
           include: attributes to include
+
+          include_composition: include pool composition, default: false
 
           extra_headers: Send extra headers
 
@@ -82,7 +85,13 @@ class MultiResource(SyncAPIResource):
                 extra_query=extra_query,
                 extra_body=extra_body,
                 timeout=timeout,
-                query=maybe_transform({"include": include}, multi_get_addresses_params.MultiGetAddressesParams),
+                query=maybe_transform(
+                    {
+                        "include": include,
+                        "include_composition": include_composition,
+                    },
+                    multi_get_addresses_params.MultiGetAddressesParams,
+                ),
             ),
             cast_to=MultiGetAddressesResponse,
         )
@@ -114,6 +123,7 @@ class AsyncMultiResource(AsyncAPIResource):
         *,
         network: str,
         include: Literal["top_pools"] | Omit = omit,
+        include_composition: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -127,6 +137,8 @@ class AsyncMultiResource(AsyncAPIResource):
 
         Args:
           include: attributes to include
+
+          include_composition: include pool composition, default: false
 
           extra_headers: Send extra headers
 
@@ -148,7 +160,11 @@ class AsyncMultiResource(AsyncAPIResource):
                 extra_body=extra_body,
                 timeout=timeout,
                 query=await async_maybe_transform(
-                    {"include": include}, multi_get_addresses_params.MultiGetAddressesParams
+                    {
+                        "include": include,
+                        "include_composition": include_composition,
+                    },
+                    multi_get_addresses_params.MultiGetAddressesParams,
                 ),
             ),
             cast_to=MultiGetAddressesResponse,

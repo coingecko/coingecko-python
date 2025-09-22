@@ -2,32 +2,32 @@
 
 from typing import List, Optional
 
-from ..._models import BaseModel
+from .._models import BaseModel
 
 __all__ = ["PublicTreasuryGetCoinIDResponse", "Company"]
 
 
 class Company(BaseModel):
     country: Optional[str] = None
-    """company incorporated country"""
+    """company incorporated or government country"""
 
     name: Optional[str] = None
-    """company name"""
+    """company or government name"""
 
     percentage_of_total_supply: Optional[float] = None
-    """percentage of total btc/eth supply"""
+    """percentage of total crypto supply"""
 
     symbol: Optional[str] = None
     """company symbol"""
 
     total_current_value_usd: Optional[float] = None
-    """total current value of btc/eth holdings in usd"""
+    """total current value of crypto holdings in usd"""
 
     total_entry_value_usd: Optional[float] = None
     """total entry value in usd"""
 
     total_holdings: Optional[float] = None
-    """total btc/eth holdings of company"""
+    """total crypto holdings of company"""
 
 
 class PublicTreasuryGetCoinIDResponse(BaseModel):
@@ -37,7 +37,7 @@ class PublicTreasuryGetCoinIDResponse(BaseModel):
     """market cap dominance"""
 
     total_holdings: Optional[float] = None
-    """total btc/eth holdings of companies"""
+    """total crypto holdings of companies or government"""
 
     total_value_usd: Optional[float] = None
-    """total btc/eth holdings value in usd"""
+    """total crypto holdings value in usd"""

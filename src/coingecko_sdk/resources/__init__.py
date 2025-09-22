@@ -64,13 +64,13 @@ from .onchain import (
     OnchainResourceWithStreamingResponse,
     AsyncOnchainResourceWithStreamingResponse,
 )
-from .companies import (
-    CompaniesResource,
-    AsyncCompaniesResource,
-    CompaniesResourceWithRawResponse,
-    AsyncCompaniesResourceWithRawResponse,
-    CompaniesResourceWithStreamingResponse,
-    AsyncCompaniesResourceWithStreamingResponse,
+from .entities import (
+    EntitiesResource,
+    AsyncEntitiesResource,
+    EntitiesResourceWithRawResponse,
+    AsyncEntitiesResourceWithRawResponse,
+    EntitiesResourceWithStreamingResponse,
+    AsyncEntitiesResourceWithStreamingResponse,
 )
 from .exchanges import (
     ExchangesResource,
@@ -112,6 +112,14 @@ from .asset_platforms import (
     AssetPlatformsResourceWithStreamingResponse,
     AsyncAssetPlatformsResourceWithStreamingResponse,
 )
+from .public_treasury import (
+    PublicTreasuryResource,
+    AsyncPublicTreasuryResource,
+    PublicTreasuryResourceWithRawResponse,
+    AsyncPublicTreasuryResourceWithRawResponse,
+    PublicTreasuryResourceWithStreamingResponse,
+    AsyncPublicTreasuryResourceWithStreamingResponse,
+)
 
 __all__ = [
     "AssetPlatformsResource",
@@ -126,18 +134,18 @@ __all__ = [
     "AsyncCoinsResourceWithRawResponse",
     "CoinsResourceWithStreamingResponse",
     "AsyncCoinsResourceWithStreamingResponse",
-    "CompaniesResource",
-    "AsyncCompaniesResource",
-    "CompaniesResourceWithRawResponse",
-    "AsyncCompaniesResourceWithRawResponse",
-    "CompaniesResourceWithStreamingResponse",
-    "AsyncCompaniesResourceWithStreamingResponse",
     "DerivativesResource",
     "AsyncDerivativesResource",
     "DerivativesResourceWithRawResponse",
     "AsyncDerivativesResourceWithRawResponse",
     "DerivativesResourceWithStreamingResponse",
     "AsyncDerivativesResourceWithStreamingResponse",
+    "EntitiesResource",
+    "AsyncEntitiesResource",
+    "EntitiesResourceWithRawResponse",
+    "AsyncEntitiesResourceWithRawResponse",
+    "EntitiesResourceWithStreamingResponse",
+    "AsyncEntitiesResourceWithStreamingResponse",
     "ExchangeRatesResource",
     "AsyncExchangeRatesResource",
     "ExchangeRatesResourceWithRawResponse",
@@ -180,6 +188,12 @@ __all__ = [
     "AsyncPingResourceWithRawResponse",
     "PingResourceWithStreamingResponse",
     "AsyncPingResourceWithStreamingResponse",
+    "PublicTreasuryResource",
+    "AsyncPublicTreasuryResource",
+    "PublicTreasuryResourceWithRawResponse",
+    "AsyncPublicTreasuryResourceWithRawResponse",
+    "PublicTreasuryResourceWithStreamingResponse",
+    "AsyncPublicTreasuryResourceWithStreamingResponse",
     "SearchResource",
     "AsyncSearchResource",
     "SearchResourceWithRawResponse",

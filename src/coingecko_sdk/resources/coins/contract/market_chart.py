@@ -135,8 +135,8 @@ class MarketChartResource(SyncAPIResource):
         contract_address: str,
         *,
         id: str,
-        from_: float,
-        to: float,
+        from_: str,
+        to: str,
         vs_currency: str,
         interval: Literal["5m", "hourly", "daily"] | Omit = omit,
         precision: Literal[
@@ -175,9 +175,11 @@ class MarketChartResource(SyncAPIResource):
         platform and particular token contract address**
 
         Args:
-          from_: starting date in UNIX timestamp
+          from_: starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **use ISO date string for best compatibility**
 
-          to: ending date in UNIX timestamp
+          to: ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **use ISO date string for best compatibility**
 
           vs_currency: target currency of market data \\**refers to
               [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
@@ -331,8 +333,8 @@ class AsyncMarketChartResource(AsyncAPIResource):
         contract_address: str,
         *,
         id: str,
-        from_: float,
-        to: float,
+        from_: str,
+        to: str,
         vs_currency: str,
         interval: Literal["5m", "hourly", "daily"] | Omit = omit,
         precision: Literal[
@@ -371,9 +373,11 @@ class AsyncMarketChartResource(AsyncAPIResource):
         platform and particular token contract address**
 
         Args:
-          from_: starting date in UNIX timestamp
+          from_: starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **use ISO date string for best compatibility**
 
-          to: ending date in UNIX timestamp
+          to: ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **use ISO date string for best compatibility**
 
           vs_currency: target currency of market data \\**refers to
               [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).

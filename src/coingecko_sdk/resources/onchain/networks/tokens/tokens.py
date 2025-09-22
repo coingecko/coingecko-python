@@ -133,6 +133,7 @@ class TokensResource(SyncAPIResource):
         *,
         network: str,
         include: Literal["top_pools"] | Omit = omit,
+        include_composition: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -146,6 +147,8 @@ class TokensResource(SyncAPIResource):
 
         Args:
           include: attributes to include
+
+          include_composition: include pool composition, default: false
 
           extra_headers: Send extra headers
 
@@ -166,7 +169,13 @@ class TokensResource(SyncAPIResource):
                 extra_query=extra_query,
                 extra_body=extra_body,
                 timeout=timeout,
-                query=maybe_transform({"include": include}, token_get_address_params.TokenGetAddressParams),
+                query=maybe_transform(
+                    {
+                        "include": include,
+                        "include_composition": include_composition,
+                    },
+                    token_get_address_params.TokenGetAddressParams,
+                ),
             ),
             cast_to=TokenGetAddressResponse,
         )
@@ -226,6 +235,7 @@ class AsyncTokensResource(AsyncAPIResource):
         *,
         network: str,
         include: Literal["top_pools"] | Omit = omit,
+        include_composition: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -239,6 +249,8 @@ class AsyncTokensResource(AsyncAPIResource):
 
         Args:
           include: attributes to include
+
+          include_composition: include pool composition, default: false
 
           extra_headers: Send extra headers
 
@@ -259,7 +271,13 @@ class AsyncTokensResource(AsyncAPIResource):
                 extra_query=extra_query,
                 extra_body=extra_body,
                 timeout=timeout,
-                query=await async_maybe_transform({"include": include}, token_get_address_params.TokenGetAddressParams),
+                query=await async_maybe_transform(
+                    {
+                        "include": include,
+                        "include_composition": include_composition,
+                    },
+                    token_get_address_params.TokenGetAddressParams,
+                ),
             ),
             cast_to=TokenGetAddressResponse,
         )

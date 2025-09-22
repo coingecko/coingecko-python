@@ -98,8 +98,8 @@ class CirculatingSupplyChartResource(SyncAPIResource):
         self,
         id: str,
         *,
-        from_: float,
-        to: float,
+        from_: str,
+        to: str,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -112,9 +112,11 @@ class CirculatingSupplyChartResource(SyncAPIResource):
         within a range of timestamp based on the provided coin ID**
 
         Args:
-          from_: starting date in UNIX timestamp
+          from_: starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **use ISO date string for best compatibility**
 
-          to: ending date in UNIX timestamp
+          to: ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **use ISO date string for best compatibility**
 
           extra_headers: Send extra headers
 
@@ -219,8 +221,8 @@ class AsyncCirculatingSupplyChartResource(AsyncAPIResource):
         self,
         id: str,
         *,
-        from_: float,
-        to: float,
+        from_: str,
+        to: str,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -233,9 +235,11 @@ class AsyncCirculatingSupplyChartResource(AsyncAPIResource):
         within a range of timestamp based on the provided coin ID**
 
         Args:
-          from_: starting date in UNIX timestamp
+          from_: starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **use ISO date string for best compatibility**
 
-          to: ending date in UNIX timestamp
+          to: ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **use ISO date string for best compatibility**
 
           extra_headers: Send extra headers
 

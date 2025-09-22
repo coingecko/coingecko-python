@@ -87,8 +87,8 @@ class TestMarketChart:
     def test_method_get_range(self, client: Coingecko) -> None:
         market_chart = client.coins.market_chart.get_range(
             id="bitcoin",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
             vs_currency="usd",
         )
         assert_matches_type(MarketChartGetRangeResponse, market_chart, path=["response"])
@@ -98,8 +98,8 @@ class TestMarketChart:
     def test_method_get_range_with_all_params(self, client: Coingecko) -> None:
         market_chart = client.coins.market_chart.get_range(
             id="bitcoin",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
             vs_currency="usd",
             interval="5m",
             precision="full",
@@ -111,8 +111,8 @@ class TestMarketChart:
     def test_raw_response_get_range(self, client: Coingecko) -> None:
         response = client.coins.market_chart.with_raw_response.get_range(
             id="bitcoin",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
             vs_currency="usd",
         )
 
@@ -126,8 +126,8 @@ class TestMarketChart:
     def test_streaming_response_get_range(self, client: Coingecko) -> None:
         with client.coins.market_chart.with_streaming_response.get_range(
             id="bitcoin",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
             vs_currency="usd",
         ) as response:
             assert not response.is_closed
@@ -144,8 +144,8 @@ class TestMarketChart:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
             client.coins.market_chart.with_raw_response.get_range(
                 id="",
-                from_=0,
-                to=0,
+                from_="from",
+                to="to",
                 vs_currency="usd",
             )
 
@@ -222,8 +222,8 @@ class TestAsyncMarketChart:
     async def test_method_get_range(self, async_client: AsyncCoingecko) -> None:
         market_chart = await async_client.coins.market_chart.get_range(
             id="bitcoin",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
             vs_currency="usd",
         )
         assert_matches_type(MarketChartGetRangeResponse, market_chart, path=["response"])
@@ -233,8 +233,8 @@ class TestAsyncMarketChart:
     async def test_method_get_range_with_all_params(self, async_client: AsyncCoingecko) -> None:
         market_chart = await async_client.coins.market_chart.get_range(
             id="bitcoin",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
             vs_currency="usd",
             interval="5m",
             precision="full",
@@ -246,8 +246,8 @@ class TestAsyncMarketChart:
     async def test_raw_response_get_range(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.coins.market_chart.with_raw_response.get_range(
             id="bitcoin",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
             vs_currency="usd",
         )
 
@@ -261,8 +261,8 @@ class TestAsyncMarketChart:
     async def test_streaming_response_get_range(self, async_client: AsyncCoingecko) -> None:
         async with async_client.coins.market_chart.with_streaming_response.get_range(
             id="bitcoin",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
             vs_currency="usd",
         ) as response:
             assert not response.is_closed
@@ -279,7 +279,7 @@ class TestAsyncMarketChart:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
             await async_client.coins.market_chart.with_raw_response.get_range(
                 id="",
-                from_=0,
-                to=0,
+                from_="from",
+                to="to",
                 vs_currency="usd",
             )

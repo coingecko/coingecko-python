@@ -12,3 +12,6 @@ class MultiGetAddressesParams(TypedDict, total=False):
 
     include: Literal["top_pools"]
     """attributes to include"""
+
+    include_composition: bool
+    """include pool composition, default: false"""

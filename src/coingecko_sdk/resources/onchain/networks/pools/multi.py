@@ -47,6 +47,7 @@ class MultiResource(SyncAPIResource):
         *,
         network: str,
         include: str | Omit = omit,
+        include_composition: bool | Omit = omit,
         include_volume_breakdown: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -62,6 +63,8 @@ class MultiResource(SyncAPIResource):
         Args:
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`
+
+          include_composition: include pool composition, default: false
 
           include_volume_breakdown: include volume breakdown, default: false
 
@@ -87,6 +90,7 @@ class MultiResource(SyncAPIResource):
                 query=maybe_transform(
                     {
                         "include": include,
+                        "include_composition": include_composition,
                         "include_volume_breakdown": include_volume_breakdown,
                     },
                     multi_get_addresses_params.MultiGetAddressesParams,
@@ -122,6 +126,7 @@ class AsyncMultiResource(AsyncAPIResource):
         *,
         network: str,
         include: str | Omit = omit,
+        include_composition: bool | Omit = omit,
         include_volume_breakdown: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -137,6 +142,8 @@ class AsyncMultiResource(AsyncAPIResource):
         Args:
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`
+
+          include_composition: include pool composition, default: false
 
           include_volume_breakdown: include volume breakdown, default: false
 
@@ -162,6 +169,7 @@ class AsyncMultiResource(AsyncAPIResource):
                 query=await async_maybe_transform(
                     {
                         "include": include,
+                        "include_composition": include_composition,
                         "include_volume_breakdown": include_volume_breakdown,
                     },
                     multi_get_addresses_params.MultiGetAddressesParams,

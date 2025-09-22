@@ -153,6 +153,7 @@ class PoolsResource(SyncAPIResource):
         *,
         network: str,
         include: str | Omit = omit,
+        include_composition: bool | Omit = omit,
         include_volume_breakdown: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -168,6 +169,8 @@ class PoolsResource(SyncAPIResource):
         Args:
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`
+
+          include_composition: include pool composition, default: false
 
           include_volume_breakdown: include volume breakdown, default: false
 
@@ -193,6 +196,7 @@ class PoolsResource(SyncAPIResource):
                 query=maybe_transform(
                     {
                         "include": include,
+                        "include_composition": include_composition,
                         "include_volume_breakdown": include_volume_breakdown,
                     },
                     pool_get_address_params.PoolGetAddressParams,
@@ -299,6 +303,7 @@ class AsyncPoolsResource(AsyncAPIResource):
         *,
         network: str,
         include: str | Omit = omit,
+        include_composition: bool | Omit = omit,
         include_volume_breakdown: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -314,6 +319,8 @@ class AsyncPoolsResource(AsyncAPIResource):
         Args:
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`
+
+          include_composition: include pool composition, default: false
 
           include_volume_breakdown: include volume breakdown, default: false
 
@@ -339,6 +346,7 @@ class AsyncPoolsResource(AsyncAPIResource):
                 query=await async_maybe_transform(
                     {
                         "include": include,
+                        "include_composition": include_composition,
                         "include_volume_breakdown": include_volume_breakdown,
                     },
                     pool_get_address_params.PoolGetAddressParams,

@@ -51,7 +51,16 @@ class TickersResource(SyncAPIResource):
         depth: bool | Omit = omit,
         dex_pair_format: Literal["contract_address", "symbol"] | Omit = omit,
         include_exchange_logo: bool | Omit = omit,
-        order: Literal["trust_score_desc", "trust_score_asc", "volume_desc", "volume_asc", "base_target"] | Omit = omit,
+        order: Literal[
+            "market_cap_asc",
+            "market_cap_desc",
+            "trust_score_desc",
+            "trust_score_asc",
+            "volume_desc",
+            "volume_asc",
+            "base_target",
+        ]
+        | Omit = omit,
         page: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -61,7 +70,7 @@ class TickersResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TickerGetResponse:
         """
-        This endpoint allows you to **query exchange's tickers based on exchange’s ID**
+        This endpoint allows you to **query exchange's tickers based on exchange's ID**
 
         Args:
           coin_ids: filter tickers by coin IDs, comma-separated if querying more than 1 coin
@@ -141,7 +150,16 @@ class AsyncTickersResource(AsyncAPIResource):
         depth: bool | Omit = omit,
         dex_pair_format: Literal["contract_address", "symbol"] | Omit = omit,
         include_exchange_logo: bool | Omit = omit,
-        order: Literal["trust_score_desc", "trust_score_asc", "volume_desc", "volume_asc", "base_target"] | Omit = omit,
+        order: Literal[
+            "market_cap_asc",
+            "market_cap_desc",
+            "trust_score_desc",
+            "trust_score_asc",
+            "volume_desc",
+            "volume_asc",
+            "base_target",
+        ]
+        | Omit = omit,
         page: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -151,7 +169,7 @@ class AsyncTickersResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TickerGetResponse:
         """
-        This endpoint allows you to **query exchange's tickers based on exchange’s ID**
+        This endpoint allows you to **query exchange's tickers based on exchange's ID**
 
         Args:
           coin_ids: filter tickers by coin IDs, comma-separated if querying more than 1 coin

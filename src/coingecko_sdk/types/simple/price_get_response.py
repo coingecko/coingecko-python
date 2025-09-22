@@ -16,7 +16,7 @@ class PriceGetResponseItem(BaseModel):
     """price in USD"""
 
     usd_24h_change: Optional[float] = None
-    """24hr change in USD"""
+    """24hr change percentage in USD"""
 
     usd_24h_vol: Optional[float] = None
     """24hr volume in USD"""

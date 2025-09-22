@@ -1,6 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List, Optional
+from typing import List, Union, Optional
 
 from pydantic import Field as FieldInfo
 
@@ -9,15 +9,18 @@ from ....._models import BaseModel
 __all__ = [
     "InfoGetResponse",
     "Data",
-    "DataAttributes",
-    "DataAttributesGtScoreDetails",
-    "DataAttributesHolders",
-    "DataAttributesHoldersDistributionPercentage",
-    "DataAttributesImage",
+    "DataData",
+    "DataDataAttributes",
+    "DataDataAttributesGtScoreDetails",
+    "DataDataAttributesHolders",
+    "DataDataAttributesHoldersDistributionPercentage",
+    "DataDataAttributesImage",
+    "Included",
+    "IncludedAttributes",
 ]
 
 
-class DataAttributesGtScoreDetails(BaseModel):
+class DataDataAttributesGtScoreDetails(BaseModel):
     creation: Optional[float] = None
 
     holders: Optional[float] = None
@@ -29,7 +32,7 @@ class DataAttributesGtScoreDetails(BaseModel):
     transaction: Optional[float] = None
 
 
-class DataAttributesHoldersDistributionPercentage(BaseModel):
+class DataDataAttributesHoldersDistributionPercentage(BaseModel):
     dist_11_30: Optional[float] = FieldInfo(alias="11_30", default=None)
 
     dist_31_50: Optional[float] = FieldInfo(alias="31_50", default=None)
@@ -39,15 +42,15 @@ class DataAttributesHoldersDistributionPercentage(BaseModel):
     top_10: Optional[float] = None
 
 
-class DataAttributesHolders(BaseModel):
+class DataDataAttributesHolders(BaseModel):
     count: Optional[int] = None
 
-    distribution_percentage: Optional[DataAttributesHoldersDistributionPercentage] = None
+    distribution_percentage: Optional[DataDataAttributesHoldersDistributionPercentage] = None
 
     last_updated: Optional[str] = None
 
 
-class DataAttributesImage(BaseModel):
+class DataDataAttributesImage(BaseModel):
     large: Optional[str] = None
 
     small: Optional[str] = None
@@ -55,7 +58,7 @@ class DataAttributesImage(BaseModel):
     thumb: Optional[str] = None
 
 
-class DataAttributes(BaseModel):
+class DataDataAttributes(BaseModel):
     address: Optional[str] = None
 
     categories: Optional[List[str]] = None
@@ -72,15 +75,15 @@ class DataAttributes(BaseModel):
 
     gt_score: Optional[float] = None
 
-    gt_score_details: Optional[DataAttributesGtScoreDetails] = None
+    gt_score_details: Optional[DataDataAttributesGtScoreDetails] = None
 
-    holders: Optional[DataAttributesHolders] = None
+    holders: Optional[DataDataAttributesHolders] = None
 
-    image: Optional[DataAttributesImage] = None
+    image: Optional[DataDataAttributesImage] = None
 
     image_url: Optional[str] = None
 
-    is_honeypot: Optional[bool] = None
+    is_honeypot: Union[bool, str, None] = None
 
     mint_authority: Optional[str] = None
 
@@ -95,13 +98,39 @@ class DataAttributes(BaseModel):
     websites: Optional[List[str]] = None
 
 
-class Data(BaseModel):
+class DataData(BaseModel):
     id: Optional[str] = None
 
-    attributes: Optional[DataAttributes] = None
+    attributes: Optional[DataDataAttributes] = None
+
+    type: Optional[str] = None
+
+
+class Data(BaseModel):
+    data: Optional[DataData] = None
+
+
+class IncludedAttributes(BaseModel):
+    base_token_address: Optional[str] = None
+
+    community_sus_report: Optional[float] = None
+
+    quote_token_address: Optional[str] = None
+
+    sentiment_vote_negative_percentage: Optional[float] = None
+
+    sentiment_vote_positive_percentage: Optional[float] = None
+
+
+class Included(BaseModel):
+    id: Optional[str] = None
+
+    attributes: Optional[IncludedAttributes] = None
 
     type: Optional[str] = None
 
 
 class InfoGetResponse(BaseModel):
-    data: Optional[Data] = None
+    data: Optional[List[Data]] = None
+
+    included: Optional[List[Included]] = None

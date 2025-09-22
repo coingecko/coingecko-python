@@ -29,7 +29,15 @@ class TickerGetParams(TypedDict, total=False):
     include_exchange_logo: bool
     """include exchange logo, default: false"""
 
-    order: Literal["trust_score_desc", "trust_score_asc", "volume_desc", "volume_asc", "base_target"]
+    order: Literal[
+        "market_cap_asc",
+        "market_cap_desc",
+        "trust_score_desc",
+        "trust_score_asc",
+        "volume_desc",
+        "volume_asc",
+        "base_target",
+    ]
     """use this to sort the order of responses, default: trust_score_desc"""
 
     page: float
