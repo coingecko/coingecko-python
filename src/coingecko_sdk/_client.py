@@ -36,7 +36,6 @@ from .resources.search import search
 from .resources.simple import simple
 from .resources.global_ import global_
 from .resources.onchain import onchain
-from .resources.companies import companies
 from .resources.exchanges import exchanges
 from .resources.derivatives import derivatives
 
@@ -61,7 +60,6 @@ ENVIRONMENTS: Dict[str, str] = {
 class Coingecko(SyncAPIClient):
     asset_platforms: asset_platforms.AssetPlatformsResource
     coins: coins.CoinsResource
-    companies: companies.CompaniesResource
     derivatives: derivatives.DerivativesResource
     exchange_rates: exchange_rates.ExchangeRatesResource
     exchanges: exchanges.ExchangesResource
@@ -160,7 +158,6 @@ class Coingecko(SyncAPIClient):
 
         self.asset_platforms = asset_platforms.AssetPlatformsResource(self)
         self.coins = coins.CoinsResource(self)
-        self.companies = companies.CompaniesResource(self)
         self.derivatives = derivatives.DerivativesResource(self)
         self.exchange_rates = exchange_rates.ExchangeRatesResource(self)
         self.exchanges = exchanges.ExchangesResource(self)
@@ -316,7 +313,6 @@ class Coingecko(SyncAPIClient):
 class AsyncCoingecko(AsyncAPIClient):
     asset_platforms: asset_platforms.AsyncAssetPlatformsResource
     coins: coins.AsyncCoinsResource
-    companies: companies.AsyncCompaniesResource
     derivatives: derivatives.AsyncDerivativesResource
     exchange_rates: exchange_rates.AsyncExchangeRatesResource
     exchanges: exchanges.AsyncExchangesResource
@@ -415,7 +411,6 @@ class AsyncCoingecko(AsyncAPIClient):
 
         self.asset_platforms = asset_platforms.AsyncAssetPlatformsResource(self)
         self.coins = coins.AsyncCoinsResource(self)
-        self.companies = companies.AsyncCompaniesResource(self)
         self.derivatives = derivatives.AsyncDerivativesResource(self)
         self.exchange_rates = exchange_rates.AsyncExchangeRatesResource(self)
         self.exchanges = exchanges.AsyncExchangesResource(self)
@@ -572,7 +567,6 @@ class CoingeckoWithRawResponse:
     def __init__(self, client: Coingecko) -> None:
         self.asset_platforms = asset_platforms.AssetPlatformsResourceWithRawResponse(client.asset_platforms)
         self.coins = coins.CoinsResourceWithRawResponse(client.coins)
-        self.companies = companies.CompaniesResourceWithRawResponse(client.companies)
         self.derivatives = derivatives.DerivativesResourceWithRawResponse(client.derivatives)
         self.exchange_rates = exchange_rates.ExchangeRatesResourceWithRawResponse(client.exchange_rates)
         self.exchanges = exchanges.ExchangesResourceWithRawResponse(client.exchanges)
@@ -590,7 +584,6 @@ class AsyncCoingeckoWithRawResponse:
     def __init__(self, client: AsyncCoingecko) -> None:
         self.asset_platforms = asset_platforms.AsyncAssetPlatformsResourceWithRawResponse(client.asset_platforms)
         self.coins = coins.AsyncCoinsResourceWithRawResponse(client.coins)
-        self.companies = companies.AsyncCompaniesResourceWithRawResponse(client.companies)
         self.derivatives = derivatives.AsyncDerivativesResourceWithRawResponse(client.derivatives)
         self.exchange_rates = exchange_rates.AsyncExchangeRatesResourceWithRawResponse(client.exchange_rates)
         self.exchanges = exchanges.AsyncExchangesResourceWithRawResponse(client.exchanges)
@@ -608,7 +601,6 @@ class CoingeckoWithStreamedResponse:
     def __init__(self, client: Coingecko) -> None:
         self.asset_platforms = asset_platforms.AssetPlatformsResourceWithStreamingResponse(client.asset_platforms)
         self.coins = coins.CoinsResourceWithStreamingResponse(client.coins)
-        self.companies = companies.CompaniesResourceWithStreamingResponse(client.companies)
         self.derivatives = derivatives.DerivativesResourceWithStreamingResponse(client.derivatives)
         self.exchange_rates = exchange_rates.ExchangeRatesResourceWithStreamingResponse(client.exchange_rates)
         self.exchanges = exchanges.ExchangesResourceWithStreamingResponse(client.exchanges)
@@ -626,7 +618,6 @@ class AsyncCoingeckoWithStreamedResponse:
     def __init__(self, client: AsyncCoingecko) -> None:
         self.asset_platforms = asset_platforms.AsyncAssetPlatformsResourceWithStreamingResponse(client.asset_platforms)
         self.coins = coins.AsyncCoinsResourceWithStreamingResponse(client.coins)
-        self.companies = companies.AsyncCompaniesResourceWithStreamingResponse(client.companies)
         self.derivatives = derivatives.AsyncDerivativesResourceWithStreamingResponse(client.derivatives)
         self.exchange_rates = exchange_rates.AsyncExchangeRatesResourceWithStreamingResponse(client.exchange_rates)
         self.exchanges = exchanges.AsyncExchangesResourceWithStreamingResponse(client.exchanges)

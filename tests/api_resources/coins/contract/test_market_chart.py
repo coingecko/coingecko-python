@@ -101,8 +101,8 @@ class TestMarketChart:
         market_chart = client.coins.contract.market_chart.get_range(
             contract_address="0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
             id="ethereum",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
             vs_currency="usd",
         )
         assert_matches_type(MarketChartGetRangeResponse, market_chart, path=["response"])
@@ -113,8 +113,8 @@ class TestMarketChart:
         market_chart = client.coins.contract.market_chart.get_range(
             contract_address="0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
             id="ethereum",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
             vs_currency="usd",
             interval="5m",
             precision="full",
@@ -127,8 +127,8 @@ class TestMarketChart:
         response = client.coins.contract.market_chart.with_raw_response.get_range(
             contract_address="0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
             id="ethereum",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
             vs_currency="usd",
         )
 
@@ -143,8 +143,8 @@ class TestMarketChart:
         with client.coins.contract.market_chart.with_streaming_response.get_range(
             contract_address="0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
             id="ethereum",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
             vs_currency="usd",
         ) as response:
             assert not response.is_closed
@@ -162,8 +162,8 @@ class TestMarketChart:
             client.coins.contract.market_chart.with_raw_response.get_range(
                 contract_address="0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
                 id="",
-                from_=0,
-                to=0,
+                from_="from",
+                to="to",
                 vs_currency="usd",
             )
 
@@ -171,8 +171,8 @@ class TestMarketChart:
             client.coins.contract.market_chart.with_raw_response.get_range(
                 contract_address="",
                 id="ethereum",
-                from_=0,
-                to=0,
+                from_="from",
+                to="to",
                 vs_currency="usd",
             )
 
@@ -263,8 +263,8 @@ class TestAsyncMarketChart:
         market_chart = await async_client.coins.contract.market_chart.get_range(
             contract_address="0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
             id="ethereum",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
             vs_currency="usd",
         )
         assert_matches_type(MarketChartGetRangeResponse, market_chart, path=["response"])
@@ -275,8 +275,8 @@ class TestAsyncMarketChart:
         market_chart = await async_client.coins.contract.market_chart.get_range(
             contract_address="0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
             id="ethereum",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
             vs_currency="usd",
             interval="5m",
             precision="full",
@@ -289,8 +289,8 @@ class TestAsyncMarketChart:
         response = await async_client.coins.contract.market_chart.with_raw_response.get_range(
             contract_address="0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
             id="ethereum",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
             vs_currency="usd",
         )
 
@@ -305,8 +305,8 @@ class TestAsyncMarketChart:
         async with async_client.coins.contract.market_chart.with_streaming_response.get_range(
             contract_address="0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
             id="ethereum",
-            from_=0,
-            to=0,
+            from_="from",
+            to="to",
             vs_currency="usd",
         ) as response:
             assert not response.is_closed
@@ -324,8 +324,8 @@ class TestAsyncMarketChart:
             await async_client.coins.contract.market_chart.with_raw_response.get_range(
                 contract_address="0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
                 id="",
-                from_=0,
-                to=0,
+                from_="from",
+                to="to",
                 vs_currency="usd",
             )
 
@@ -333,7 +333,7 @@ class TestAsyncMarketChart:
             await async_client.coins.contract.market_chart.with_raw_response.get_range(
                 contract_address="",
                 id="ethereum",
-                from_=0,
-                to=0,
+                from_="from",
+                to="to",
                 vs_currency="usd",
             )

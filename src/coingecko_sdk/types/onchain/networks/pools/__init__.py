@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from .info_get_params import InfoGetParams as InfoGetParams
 from .trade_get_params import TradeGetParams as TradeGetParams
 from .info_get_response import InfoGetResponse as InfoGetResponse
 from .trade_get_response import TradeGetResponse as TradeGetResponse

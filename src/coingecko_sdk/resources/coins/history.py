@@ -59,7 +59,7 @@ class HistoryResource(SyncAPIResource):
         24hrs volume, ...) at a given date for a coin based on a particular coin ID**
 
         Args:
-          date: the date of data snapshot Format: `dd-mm-yyyy`
+          date: date of data snapshot (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`)
 
           localization: include all the localized languages in response, default: true
 
@@ -130,7 +130,7 @@ class AsyncHistoryResource(AsyncAPIResource):
         24hrs volume, ...) at a given date for a coin based on a particular coin ID**
 
         Args:
-          date: the date of data snapshot Format: `dd-mm-yyyy`
+          date: date of data snapshot (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`)
 
           localization: include all the localized languages in response, default: true
 

@@ -15,8 +15,8 @@ class OhlcvGetTimeframeParams(TypedDict, total=False):
     aggregate: str
     """
     time period to aggregate each OHLCV Available values (day): `1` Available values
-    (hour): `1` , `4` , `12` Available values (minute): `1` , `5` , `15` Default
-    value: 1
+    (hour): `1` , `4` , `12` Available values (minute): `1` , `5` , `15` Available
+    values (second): `1`, `15`, `30` Default value: 1
     """
 
     before_timestamp: int

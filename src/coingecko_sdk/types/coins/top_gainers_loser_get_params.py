@@ -17,6 +17,12 @@ class TopGainersLoserGetParams(TypedDict, total=False):
     duration: Literal["1h", "24h", "7d", "14d", "30d", "60d", "1y"]
     """filter result by time range Default value: `24h`"""
 
+    price_change_percentage: str
+    """
+    include price change percentage timeframe, comma-separated if query more than 1
+    price change percentage timeframe Valid values: 1h, 24h, 7d, 14d, 30d, 200d, 1y
+    """
+
     top_coins: Literal["300", "500", "1000", "all"]
     """
     filter result by market cap ranking (top 300 to 1000) or all coins (including

@@ -82,7 +82,7 @@ class ExchangesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetResponse:
         """
-        This endpoint allows you to **query all the supported exchanges with exchanges’
+        This endpoint allows you to **query all the supported exchanges with exchanges'
         data (ID, name, country, ...) that have active trading volumes on CoinGecko**
 
         Args:
@@ -129,8 +129,8 @@ class ExchangesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetIDResponse:
         """
-        This endpoint allows you to **query exchange’s data (name, year established,
-        country, ...), exchange volume in BTC and top 100 tickers based on exchange’s
+        This endpoint allows you to **query exchange's data (name, year established,
+        country, ...), exchange volume in BTC and top 100 tickers based on exchange's
         ID**
 
         Args:
@@ -239,7 +239,7 @@ class AsyncExchangesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetResponse:
         """
-        This endpoint allows you to **query all the supported exchanges with exchanges’
+        This endpoint allows you to **query all the supported exchanges with exchanges'
         data (ID, name, country, ...) that have active trading volumes on CoinGecko**
 
         Args:
@@ -286,8 +286,8 @@ class AsyncExchangesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetIDResponse:
         """
-        This endpoint allows you to **query exchange’s data (name, year established,
-        country, ...), exchange volume in BTC and top 100 tickers based on exchange’s
+        This endpoint allows you to **query exchange's data (name, year established,
+        country, ...), exchange volume in BTC and top 100 tickers based on exchange's
         ID**
 
         Args:

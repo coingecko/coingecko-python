@@ -45,7 +45,7 @@ class OhlcvResource(SyncAPIResource):
 
     def get_timeframe(
         self,
-        timeframe: Literal["day", "hour", "minute"],
+        timeframe: Literal["day", "hour", "minute", "second"],
         *,
         network: str,
         token_address: str,
@@ -67,8 +67,8 @@ class OhlcvResource(SyncAPIResource):
 
         Args:
           aggregate: time period to aggregate each OHLCV Available values (day): `1` Available values
-              (hour): `1` , `4` , `12` Available values (minute): `1` , `5` , `15` Default
-              value: 1
+              (hour): `1` , `4` , `12` Available values (minute): `1` , `5` , `15` Available
+              values (second): `1`, `15`, `30` Default value: 1
 
           before_timestamp: return OHLCV data before this timestamp (integer seconds since epoch)
 
@@ -136,7 +136,7 @@ class AsyncOhlcvResource(AsyncAPIResource):
 
     async def get_timeframe(
         self,
-        timeframe: Literal["day", "hour", "minute"],
+        timeframe: Literal["day", "hour", "minute", "second"],
         *,
         network: str,
         token_address: str,
@@ -158,8 +158,8 @@ class AsyncOhlcvResource(AsyncAPIResource):
 
         Args:
           aggregate: time period to aggregate each OHLCV Available values (day): `1` Available values
-              (hour): `1` , `4` , `12` Available values (minute): `1` , `5` , `15` Default
-              value: 1
+              (hour): `1` , `4` , `12` Available values (minute): `1` , `5` , `15` Available
+              values (second): `1`, `15`, `30` Default value: 1
 
           before_timestamp: return OHLCV data before this timestamp (integer seconds since epoch)
 

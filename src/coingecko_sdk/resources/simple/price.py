@@ -97,7 +97,7 @@ class PriceResource(SyncAPIResource):
           ids: coins' IDs, comma-separated if querying more than 1 coin. \\**refers to
               [`/coins/list`](/reference/coins-list).
 
-          include_24hr_change: include 24hr change, default: false
+          include_24hr_change: include 24hr change percentage, default: false
 
           include_24hr_vol: include 24hr volume, default: false
 
@@ -223,7 +223,7 @@ class AsyncPriceResource(AsyncAPIResource):
           ids: coins' IDs, comma-separated if querying more than 1 coin. \\**refers to
               [`/coins/list`](/reference/coins-list).
 
-          include_24hr_change: include 24hr change, default: false
+          include_24hr_change: include 24hr change percentage, default: false
 
           include_24hr_vol: include 24hr volume, default: false
 

@@ -58,7 +58,7 @@ class VolumeChartResource(SyncAPIResource):
     ) -> VolumeChartGetResponse:
         """
         This endpoint allows you to **query the historical volume chart data with time
-        in UNIX and trading volume data in BTC based on exchange’s ID**
+        in UNIX and trading volume data in BTC based on exchange's ID**
 
         Args:
           days: data up to number of days ago
@@ -100,7 +100,7 @@ class VolumeChartResource(SyncAPIResource):
     ) -> VolumeChartGetRangeResponse:
         """
         This endpoint allows you to **query the historical volume chart data in BTC by
-        specifying date range in UNIX based on exchange’s ID**
+        specifying date range in UNIX based on exchange's ID**
 
         Args:
           from_: starting date in UNIX timestamp
@@ -170,7 +170,7 @@ class AsyncVolumeChartResource(AsyncAPIResource):
     ) -> VolumeChartGetResponse:
         """
         This endpoint allows you to **query the historical volume chart data with time
-        in UNIX and trading volume data in BTC based on exchange’s ID**
+        in UNIX and trading volume data in BTC based on exchange's ID**
 
         Args:
           days: data up to number of days ago
@@ -212,7 +212,7 @@ class AsyncVolumeChartResource(AsyncAPIResource):
     ) -> VolumeChartGetRangeResponse:
         """
         This endpoint allows you to **query the historical volume chart data in BTC by
-        specifying date range in UNIX based on exchange’s ID**
+        specifying date range in UNIX based on exchange's ID**
 
         Args:
           from_: starting date in UNIX timestamp

@@ -1,6 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List, Optional
+from typing import List, Union, Optional
 
 from pydantic import Field as FieldInfo
 
@@ -80,7 +80,7 @@ class DataAttributes(BaseModel):
 
     image_url: Optional[str] = None
 
-    is_honeypot: Optional[bool] = None
+    is_honeypot: Union[bool, str, None] = None
 
     mint_authority: Optional[str] = None
 

@@ -129,9 +129,9 @@ class OhlcResource(SyncAPIResource):
         self,
         id: str,
         *,
-        from_: float,
+        from_: str,
         interval: Literal["daily", "hourly"],
-        to: float,
+        to: str,
         vs_currency: str,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -145,11 +145,13 @@ class OhlcResource(SyncAPIResource):
         coin within a range of timestamp based on particular coin ID**
 
         Args:
-          from_: starting date in UNIX timestamp
+          from_: starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **use ISO date string for best compatibility**
 
           interval: data interval
 
-          to: ending date in UNIX timestamp
+          to: ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **use ISO date string for best compatibility**
 
           vs_currency: target currency of price data \\**refers to
               [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
@@ -290,9 +292,9 @@ class AsyncOhlcResource(AsyncAPIResource):
         self,
         id: str,
         *,
-        from_: float,
+        from_: str,
         interval: Literal["daily", "hourly"],
-        to: float,
+        to: str,
         vs_currency: str,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -306,11 +308,13 @@ class AsyncOhlcResource(AsyncAPIResource):
         coin within a range of timestamp based on particular coin ID**
 
         Args:
-          from_: starting date in UNIX timestamp
+          from_: starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **use ISO date string for best compatibility**
 
           interval: data interval
 
-          to: ending date in UNIX timestamp
+          to: ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **use ISO date string for best compatibility**
 
           vs_currency: target currency of price data \\**refers to
               [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
