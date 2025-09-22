@@ -32,7 +32,6 @@ from ._base_client import (
 )
 from .resources.nfts import nfts
 from .resources.coins import coins
-from .resources.entity import entity
 from .resources.search import search
 from .resources.simple import simple
 from .resources.global_ import global_
@@ -74,7 +73,6 @@ class Coingecko(SyncAPIClient):
     search: search.SearchResource
     simple: simple.SimpleResource
     token_lists: token_lists.TokenListsResource
-    entity: entity.EntityResource
     with_raw_response: CoingeckoWithRawResponse
     with_streaming_response: CoingeckoWithStreamedResponse
 
@@ -175,7 +173,6 @@ class Coingecko(SyncAPIClient):
         self.search = search.SearchResource(self)
         self.simple = simple.SimpleResource(self)
         self.token_lists = token_lists.TokenListsResource(self)
-        self.entity = entity.EntityResource(self)
         self.with_raw_response = CoingeckoWithRawResponse(self)
         self.with_streaming_response = CoingeckoWithStreamedResponse(self)
 
@@ -333,7 +330,6 @@ class AsyncCoingecko(AsyncAPIClient):
     search: search.AsyncSearchResource
     simple: simple.AsyncSimpleResource
     token_lists: token_lists.AsyncTokenListsResource
-    entity: entity.AsyncEntityResource
     with_raw_response: AsyncCoingeckoWithRawResponse
     with_streaming_response: AsyncCoingeckoWithStreamedResponse
 
@@ -434,7 +430,6 @@ class AsyncCoingecko(AsyncAPIClient):
         self.search = search.AsyncSearchResource(self)
         self.simple = simple.AsyncSimpleResource(self)
         self.token_lists = token_lists.AsyncTokenListsResource(self)
-        self.entity = entity.AsyncEntityResource(self)
         self.with_raw_response = AsyncCoingeckoWithRawResponse(self)
         self.with_streaming_response = AsyncCoingeckoWithStreamedResponse(self)
 
@@ -593,7 +588,6 @@ class CoingeckoWithRawResponse:
         self.search = search.SearchResourceWithRawResponse(client.search)
         self.simple = simple.SimpleResourceWithRawResponse(client.simple)
         self.token_lists = token_lists.TokenListsResourceWithRawResponse(client.token_lists)
-        self.entity = entity.EntityResourceWithRawResponse(client.entity)
 
 
 class AsyncCoingeckoWithRawResponse:
@@ -613,7 +607,6 @@ class AsyncCoingeckoWithRawResponse:
         self.search = search.AsyncSearchResourceWithRawResponse(client.search)
         self.simple = simple.AsyncSimpleResourceWithRawResponse(client.simple)
         self.token_lists = token_lists.AsyncTokenListsResourceWithRawResponse(client.token_lists)
-        self.entity = entity.AsyncEntityResourceWithRawResponse(client.entity)
 
 
 class CoingeckoWithStreamedResponse:
@@ -633,7 +626,6 @@ class CoingeckoWithStreamedResponse:
         self.search = search.SearchResourceWithStreamingResponse(client.search)
         self.simple = simple.SimpleResourceWithStreamingResponse(client.simple)
         self.token_lists = token_lists.TokenListsResourceWithStreamingResponse(client.token_lists)
-        self.entity = entity.EntityResourceWithStreamingResponse(client.entity)
 
 
 class AsyncCoingeckoWithStreamedResponse:
@@ -653,7 +645,6 @@ class AsyncCoingeckoWithStreamedResponse:
         self.search = search.AsyncSearchResourceWithStreamingResponse(client.search)
         self.simple = simple.AsyncSimpleResourceWithStreamingResponse(client.simple)
         self.token_lists = token_lists.AsyncTokenListsResourceWithStreamingResponse(client.token_lists)
-        self.entity = entity.AsyncEntityResourceWithStreamingResponse(client.entity)
 
 
 Client = Coingecko
