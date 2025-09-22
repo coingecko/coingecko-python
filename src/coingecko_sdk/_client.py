@@ -22,7 +22,7 @@ from ._types import (
 )
 from ._utils import is_given, get_async_library
 from ._version import __version__
-from .resources import key, ping, token_lists, exchange_rates, asset_platforms
+from .resources import key, ping, entities, token_lists, exchange_rates, asset_platforms, public_treasury
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import APIStatusError
 from ._base_client import (
@@ -32,6 +32,7 @@ from ._base_client import (
 )
 from .resources.nfts import nfts
 from .resources.coins import coins
+from .resources.entity import entity
 from .resources.search import search
 from .resources.simple import simple
 from .resources.global_ import global_
@@ -61,6 +62,7 @@ class Coingecko(SyncAPIClient):
     asset_platforms: asset_platforms.AssetPlatformsResource
     coins: coins.CoinsResource
     derivatives: derivatives.DerivativesResource
+    entities: entities.EntitiesResource
     exchange_rates: exchange_rates.ExchangeRatesResource
     exchanges: exchanges.ExchangesResource
     global_: global_.GlobalResource
@@ -68,9 +70,11 @@ class Coingecko(SyncAPIClient):
     nfts: nfts.NFTsResource
     onchain: onchain.OnchainResource
     ping: ping.PingResource
+    public_treasury: public_treasury.PublicTreasuryResource
     search: search.SearchResource
     simple: simple.SimpleResource
     token_lists: token_lists.TokenListsResource
+    entity: entity.EntityResource
     with_raw_response: CoingeckoWithRawResponse
     with_streaming_response: CoingeckoWithStreamedResponse
 
@@ -159,6 +163,7 @@ class Coingecko(SyncAPIClient):
         self.asset_platforms = asset_platforms.AssetPlatformsResource(self)
         self.coins = coins.CoinsResource(self)
         self.derivatives = derivatives.DerivativesResource(self)
+        self.entities = entities.EntitiesResource(self)
         self.exchange_rates = exchange_rates.ExchangeRatesResource(self)
         self.exchanges = exchanges.ExchangesResource(self)
         self.global_ = global_.GlobalResource(self)
@@ -166,9 +171,11 @@ class Coingecko(SyncAPIClient):
         self.nfts = nfts.NFTsResource(self)
         self.onchain = onchain.OnchainResource(self)
         self.ping = ping.PingResource(self)
+        self.public_treasury = public_treasury.PublicTreasuryResource(self)
         self.search = search.SearchResource(self)
         self.simple = simple.SimpleResource(self)
         self.token_lists = token_lists.TokenListsResource(self)
+        self.entity = entity.EntityResource(self)
         self.with_raw_response = CoingeckoWithRawResponse(self)
         self.with_streaming_response = CoingeckoWithStreamedResponse(self)
 
@@ -314,6 +321,7 @@ class AsyncCoingecko(AsyncAPIClient):
     asset_platforms: asset_platforms.AsyncAssetPlatformsResource
     coins: coins.AsyncCoinsResource
     derivatives: derivatives.AsyncDerivativesResource
+    entities: entities.AsyncEntitiesResource
     exchange_rates: exchange_rates.AsyncExchangeRatesResource
     exchanges: exchanges.AsyncExchangesResource
     global_: global_.AsyncGlobalResource
@@ -321,9 +329,11 @@ class AsyncCoingecko(AsyncAPIClient):
     nfts: nfts.AsyncNFTsResource
     onchain: onchain.AsyncOnchainResource
     ping: ping.AsyncPingResource
+    public_treasury: public_treasury.AsyncPublicTreasuryResource
     search: search.AsyncSearchResource
     simple: simple.AsyncSimpleResource
     token_lists: token_lists.AsyncTokenListsResource
+    entity: entity.AsyncEntityResource
     with_raw_response: AsyncCoingeckoWithRawResponse
     with_streaming_response: AsyncCoingeckoWithStreamedResponse
 
@@ -412,6 +422,7 @@ class AsyncCoingecko(AsyncAPIClient):
         self.asset_platforms = asset_platforms.AsyncAssetPlatformsResource(self)
         self.coins = coins.AsyncCoinsResource(self)
         self.derivatives = derivatives.AsyncDerivativesResource(self)
+        self.entities = entities.AsyncEntitiesResource(self)
         self.exchange_rates = exchange_rates.AsyncExchangeRatesResource(self)
         self.exchanges = exchanges.AsyncExchangesResource(self)
         self.global_ = global_.AsyncGlobalResource(self)
@@ -419,9 +430,11 @@ class AsyncCoingecko(AsyncAPIClient):
         self.nfts = nfts.AsyncNFTsResource(self)
         self.onchain = onchain.AsyncOnchainResource(self)
         self.ping = ping.AsyncPingResource(self)
+        self.public_treasury = public_treasury.AsyncPublicTreasuryResource(self)
         self.search = search.AsyncSearchResource(self)
         self.simple = simple.AsyncSimpleResource(self)
         self.token_lists = token_lists.AsyncTokenListsResource(self)
+        self.entity = entity.AsyncEntityResource(self)
         self.with_raw_response = AsyncCoingeckoWithRawResponse(self)
         self.with_streaming_response = AsyncCoingeckoWithStreamedResponse(self)
 
@@ -568,6 +581,7 @@ class CoingeckoWithRawResponse:
         self.asset_platforms = asset_platforms.AssetPlatformsResourceWithRawResponse(client.asset_platforms)
         self.coins = coins.CoinsResourceWithRawResponse(client.coins)
         self.derivatives = derivatives.DerivativesResourceWithRawResponse(client.derivatives)
+        self.entities = entities.EntitiesResourceWithRawResponse(client.entities)
         self.exchange_rates = exchange_rates.ExchangeRatesResourceWithRawResponse(client.exchange_rates)
         self.exchanges = exchanges.ExchangesResourceWithRawResponse(client.exchanges)
         self.global_ = global_.GlobalResourceWithRawResponse(client.global_)
@@ -575,9 +589,11 @@ class CoingeckoWithRawResponse:
         self.nfts = nfts.NFTsResourceWithRawResponse(client.nfts)
         self.onchain = onchain.OnchainResourceWithRawResponse(client.onchain)
         self.ping = ping.PingResourceWithRawResponse(client.ping)
+        self.public_treasury = public_treasury.PublicTreasuryResourceWithRawResponse(client.public_treasury)
         self.search = search.SearchResourceWithRawResponse(client.search)
         self.simple = simple.SimpleResourceWithRawResponse(client.simple)
         self.token_lists = token_lists.TokenListsResourceWithRawResponse(client.token_lists)
+        self.entity = entity.EntityResourceWithRawResponse(client.entity)
 
 
 class AsyncCoingeckoWithRawResponse:
@@ -585,6 +601,7 @@ class AsyncCoingeckoWithRawResponse:
         self.asset_platforms = asset_platforms.AsyncAssetPlatformsResourceWithRawResponse(client.asset_platforms)
         self.coins = coins.AsyncCoinsResourceWithRawResponse(client.coins)
         self.derivatives = derivatives.AsyncDerivativesResourceWithRawResponse(client.derivatives)
+        self.entities = entities.AsyncEntitiesResourceWithRawResponse(client.entities)
         self.exchange_rates = exchange_rates.AsyncExchangeRatesResourceWithRawResponse(client.exchange_rates)
         self.exchanges = exchanges.AsyncExchangesResourceWithRawResponse(client.exchanges)
         self.global_ = global_.AsyncGlobalResourceWithRawResponse(client.global_)
@@ -592,9 +609,11 @@ class AsyncCoingeckoWithRawResponse:
         self.nfts = nfts.AsyncNFTsResourceWithRawResponse(client.nfts)
         self.onchain = onchain.AsyncOnchainResourceWithRawResponse(client.onchain)
         self.ping = ping.AsyncPingResourceWithRawResponse(client.ping)
+        self.public_treasury = public_treasury.AsyncPublicTreasuryResourceWithRawResponse(client.public_treasury)
         self.search = search.AsyncSearchResourceWithRawResponse(client.search)
         self.simple = simple.AsyncSimpleResourceWithRawResponse(client.simple)
         self.token_lists = token_lists.AsyncTokenListsResourceWithRawResponse(client.token_lists)
+        self.entity = entity.AsyncEntityResourceWithRawResponse(client.entity)
 
 
 class CoingeckoWithStreamedResponse:
@@ -602,6 +621,7 @@ class CoingeckoWithStreamedResponse:
         self.asset_platforms = asset_platforms.AssetPlatformsResourceWithStreamingResponse(client.asset_platforms)
         self.coins = coins.CoinsResourceWithStreamingResponse(client.coins)
         self.derivatives = derivatives.DerivativesResourceWithStreamingResponse(client.derivatives)
+        self.entities = entities.EntitiesResourceWithStreamingResponse(client.entities)
         self.exchange_rates = exchange_rates.ExchangeRatesResourceWithStreamingResponse(client.exchange_rates)
         self.exchanges = exchanges.ExchangesResourceWithStreamingResponse(client.exchanges)
         self.global_ = global_.GlobalResourceWithStreamingResponse(client.global_)
@@ -609,9 +629,11 @@ class CoingeckoWithStreamedResponse:
         self.nfts = nfts.NFTsResourceWithStreamingResponse(client.nfts)
         self.onchain = onchain.OnchainResourceWithStreamingResponse(client.onchain)
         self.ping = ping.PingResourceWithStreamingResponse(client.ping)
+        self.public_treasury = public_treasury.PublicTreasuryResourceWithStreamingResponse(client.public_treasury)
         self.search = search.SearchResourceWithStreamingResponse(client.search)
         self.simple = simple.SimpleResourceWithStreamingResponse(client.simple)
         self.token_lists = token_lists.TokenListsResourceWithStreamingResponse(client.token_lists)
+        self.entity = entity.EntityResourceWithStreamingResponse(client.entity)
 
 
 class AsyncCoingeckoWithStreamedResponse:
@@ -619,6 +641,7 @@ class AsyncCoingeckoWithStreamedResponse:
         self.asset_platforms = asset_platforms.AsyncAssetPlatformsResourceWithStreamingResponse(client.asset_platforms)
         self.coins = coins.AsyncCoinsResourceWithStreamingResponse(client.coins)
         self.derivatives = derivatives.AsyncDerivativesResourceWithStreamingResponse(client.derivatives)
+        self.entities = entities.AsyncEntitiesResourceWithStreamingResponse(client.entities)
         self.exchange_rates = exchange_rates.AsyncExchangeRatesResourceWithStreamingResponse(client.exchange_rates)
         self.exchanges = exchanges.AsyncExchangesResourceWithStreamingResponse(client.exchanges)
         self.global_ = global_.AsyncGlobalResourceWithStreamingResponse(client.global_)
@@ -626,9 +649,11 @@ class AsyncCoingeckoWithStreamedResponse:
         self.nfts = nfts.AsyncNFTsResourceWithStreamingResponse(client.nfts)
         self.onchain = onchain.AsyncOnchainResourceWithStreamingResponse(client.onchain)
         self.ping = ping.AsyncPingResourceWithStreamingResponse(client.ping)
+        self.public_treasury = public_treasury.AsyncPublicTreasuryResourceWithStreamingResponse(client.public_treasury)
         self.search = search.AsyncSearchResourceWithStreamingResponse(client.search)
         self.simple = simple.AsyncSimpleResourceWithStreamingResponse(client.simple)
         self.token_lists = token_lists.AsyncTokenListsResourceWithStreamingResponse(client.token_lists)
+        self.entity = entity.AsyncEntityResourceWithStreamingResponse(client.entity)
 
 
 Client = Coingecko

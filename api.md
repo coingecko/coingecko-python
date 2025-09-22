@@ -206,6 +206,18 @@ Methods:
 - <code title="get /derivatives/exchanges/{id}">client.derivatives.exchanges.<a href="./src/coingecko_sdk/resources/derivatives/exchanges.py">get_id</a>(id, \*\*<a href="src/coingecko_sdk/types/derivatives/exchange_get_id_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/derivatives/exchange_get_id_response.py">ExchangeGetIDResponse</a></code>
 - <code title="get /derivatives/exchanges/list">client.derivatives.exchanges.<a href="./src/coingecko_sdk/resources/derivatives/exchanges.py">get_list</a>() -> <a href="./src/coingecko_sdk/types/derivatives/exchange_get_list_response.py">ExchangeGetListResponse</a></code>
 
+# Entities
+
+Types:
+
+```python
+from coingecko_sdk.types import EntityGetListResponse
+```
+
+Methods:
+
+- <code title="get /entities/list">client.entities.<a href="./src/coingecko_sdk/resources/entities.py">get_list</a>(\*\*<a href="src/coingecko_sdk/types/entity_get_list_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/entity_get_list_response.py">EntityGetListResponse</a></code>
+
 # ExchangeRates
 
 Types:
@@ -675,6 +687,18 @@ Methods:
 
 - <code title="get /ping">client.ping.<a href="./src/coingecko_sdk/resources/ping.py">get</a>() -> <a href="./src/coingecko_sdk/types/ping_get_response.py">PingGetResponse</a></code>
 
+# PublicTreasury
+
+Types:
+
+```python
+from coingecko_sdk.types import PublicTreasuryGetEntityIDResponse
+```
+
+Methods:
+
+- <code title="get /public_treasury/{entity_id}">client.public_treasury.<a href="./src/coingecko_sdk/resources/public_treasury.py">get_entity_id</a>(entity_id) -> <a href="./src/coingecko_sdk/types/public_treasury_get_entity_id_response.py">PublicTreasuryGetEntityIDResponse</a></code>
+
 # Search
 
 Types:
@@ -748,3 +772,17 @@ from coingecko_sdk.types import TokenListGetAllJsonResponse
 Methods:
 
 - <code title="get /token_lists/{asset_platform_id}/all.json">client.token_lists.<a href="./src/coingecko_sdk/resources/token_lists.py">get_all_json</a>(asset_platform_id) -> <a href="./src/coingecko_sdk/types/token_list_get_all_json_response.py">TokenListGetAllJsonResponse</a></code>
+
+# Entity
+
+## PublicTreasury
+
+Types:
+
+```python
+from coingecko_sdk.types.entity import PublicTreasuryGetCoinIDResponse
+```
+
+Methods:
+
+- <code title="get /{entity}/public_treasury/{coin_id}">client.entity.public_treasury.<a href="./src/coingecko_sdk/resources/entity/public_treasury.py">get_coin_id</a>(coin_id, \*, entity) -> <a href="./src/coingecko_sdk/types/entity/public_treasury_get_coin_id_response.py">PublicTreasuryGetCoinIDResponse</a></code>
