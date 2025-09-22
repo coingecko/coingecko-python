@@ -12,11 +12,17 @@ __all__ = ["MarketChartGetRangeParams"]
 class MarketChartGetRangeParams(TypedDict, total=False):
     id: Required[str]
 
-    from_: Required[Annotated[float, PropertyInfo(alias="from")]]
-    """starting date in UNIX timestamp"""
+    from_: Required[Annotated[str, PropertyInfo(alias="from")]]
+    """
+    starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+    timestamp. **use ISO date string for best compatibility**
+    """
 
-    to: Required[float]
-    """ending date in UNIX timestamp"""
+    to: Required[str]
+    """
+    ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+    timestamp. **use ISO date string for best compatibility**
+    """
 
     vs_currency: Required[str]
     """

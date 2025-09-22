@@ -117,8 +117,8 @@ class ExchangesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetIDResponse:
         """
-        This endpoint allows you to **query the derivatives exchange’s related data (ID,
-        name, open interest, ...) based on the exchanges’ ID**
+        This endpoint allows you to **query the derivatives exchange's related data (ID,
+        name, open interest, ...) based on the exchanges' ID**
 
         Args:
           include_tickers: include tickers data
@@ -260,8 +260,8 @@ class AsyncExchangesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetIDResponse:
         """
-        This endpoint allows you to **query the derivatives exchange’s related data (ID,
-        name, open interest, ...) based on the exchanges’ ID**
+        This endpoint allows you to **query the derivatives exchange's related data (ID,
+        name, open interest, ...) based on the exchanges' ID**
 
         Args:
           include_tickers: include tickers data

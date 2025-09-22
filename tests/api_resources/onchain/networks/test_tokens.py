@@ -33,6 +33,7 @@ class TestTokens:
             address="0xdac17f958d2ee523a2206206994597c13d831ec7",
             network="eth",
             include="top_pools",
+            include_composition=True,
         )
         assert_matches_type(TokenGetAddressResponse, token, path=["response"])
 
@@ -101,6 +102,7 @@ class TestAsyncTokens:
             address="0xdac17f958d2ee523a2206206994597c13d831ec7",
             network="eth",
             include="top_pools",
+            include_composition=True,
         )
         assert_matches_type(TokenGetAddressResponse, token, path=["response"])
 

@@ -16,5 +16,8 @@ class MultiGetAddressesParams(TypedDict, total=False):
     values: `base_token`, `quote_token`, `dex`
     """
 
+    include_composition: bool
+    """include pool composition, default: false"""
+
     include_volume_breakdown: bool
     """include volume breakdown, default: false"""

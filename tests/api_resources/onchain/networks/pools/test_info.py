@@ -28,6 +28,16 @@ class TestInfo:
 
     @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
+    def test_method_get_with_all_params(self, client: Coingecko) -> None:
+        info = client.onchain.networks.pools.info.get(
+            pool_address="0x06da0fd433c1a5d7a4faa01111c044910a184553",
+            network="eth",
+            include="pool",
+        )
+        assert_matches_type(InfoGetResponse, info, path=["response"])
+
+    @pytest.mark.skip(reason="Prism tests are disabled")
+    @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.onchain.networks.pools.info.with_raw_response.get(
             pool_address="0x06da0fd433c1a5d7a4faa01111c044910a184553",
@@ -81,6 +91,16 @@ class TestAsyncInfo:
         info = await async_client.onchain.networks.pools.info.get(
             pool_address="0x06da0fd433c1a5d7a4faa01111c044910a184553",
             network="eth",
+        )
+        assert_matches_type(InfoGetResponse, info, path=["response"])
+
+    @pytest.mark.skip(reason="Prism tests are disabled")
+    @parametrize
+    async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
+        info = await async_client.onchain.networks.pools.info.get(
+            pool_address="0x06da0fd433c1a5d7a4faa01111c044910a184553",
+            network="eth",
+            include="pool",
         )
         assert_matches_type(InfoGetResponse, info, path=["response"])
 

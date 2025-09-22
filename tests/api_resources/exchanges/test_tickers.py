@@ -34,7 +34,7 @@ class TestTickers:
             depth=True,
             dex_pair_format="contract_address",
             include_exchange_logo=True,
-            order="trust_score_desc",
+            order="market_cap_asc",
             page=0,
         )
         assert_matches_type(TickerGetResponse, ticker, path=["response"])
@@ -96,7 +96,7 @@ class TestAsyncTickers:
             depth=True,
             dex_pair_format="contract_address",
             include_exchange_logo=True,
-            order="trust_score_desc",
+            order="market_cap_asc",
             page=0,
         )
         assert_matches_type(TickerGetResponse, ticker, path=["response"])

@@ -18,6 +18,7 @@ __all__ = [
     "IncludedAttributesTransactions",
     "IncludedAttributesTransactionsH1",
     "IncludedAttributesTransactionsH24",
+    "IncludedAttributesTransactionsH6",
     "IncludedAttributesTransactionsM15",
     "IncludedAttributesTransactionsM30",
     "IncludedAttributesTransactionsM5",
@@ -122,6 +123,16 @@ class IncludedAttributesTransactionsH24(BaseModel):
     sells: Optional[int] = None
 
 
+class IncludedAttributesTransactionsH6(BaseModel):
+    buyers: Optional[int] = None
+
+    buys: Optional[int] = None
+
+    sellers: Optional[int] = None
+
+    sells: Optional[int] = None
+
+
 class IncludedAttributesTransactionsM15(BaseModel):
     buyers: Optional[int] = None
 
@@ -157,6 +168,8 @@ class IncludedAttributesTransactions(BaseModel):
 
     h24: Optional[IncludedAttributesTransactionsH24] = None
 
+    h6: Optional[IncludedAttributesTransactionsH6] = None
+
     m15: Optional[IncludedAttributesTransactionsM15] = None
 
     m30: Optional[IncludedAttributesTransactionsM30] = None
@@ -181,6 +194,10 @@ class IncludedAttributesVolumeUsd(BaseModel):
 class IncludedAttributes(BaseModel):
     address: Optional[str] = None
 
+    base_token_balance: Optional[str] = None
+
+    base_token_liquidity_usd: Optional[str] = None
+
     base_token_price_native_currency: Optional[str] = None
 
     base_token_price_quote_token: Optional[str] = None
@@ -196,6 +213,10 @@ class IncludedAttributes(BaseModel):
     pool_created_at: Optional[str] = None
 
     price_change_percentage: Optional[IncludedAttributesPriceChangePercentage] = None
+
+    quote_token_balance: Optional[str] = None
+
+    quote_token_liquidity_usd: Optional[str] = None
 
     quote_token_price_base_token: Optional[str] = None
 

@@ -64,14 +64,6 @@ from .onchain import (
     OnchainResourceWithStreamingResponse,
     AsyncOnchainResourceWithStreamingResponse,
 )
-from .companies import (
-    CompaniesResource,
-    AsyncCompaniesResource,
-    CompaniesResourceWithRawResponse,
-    AsyncCompaniesResourceWithRawResponse,
-    CompaniesResourceWithStreamingResponse,
-    AsyncCompaniesResourceWithStreamingResponse,
-)
 from .exchanges import (
     ExchangesResource,
     AsyncExchangesResource,
@@ -126,12 +118,6 @@ __all__ = [
     "AsyncCoinsResourceWithRawResponse",
     "CoinsResourceWithStreamingResponse",
     "AsyncCoinsResourceWithStreamingResponse",
-    "CompaniesResource",
-    "AsyncCompaniesResource",
-    "CompaniesResourceWithRawResponse",
-    "AsyncCompaniesResourceWithRawResponse",
-    "CompaniesResourceWithStreamingResponse",
-    "AsyncCompaniesResourceWithStreamingResponse",
     "DerivativesResource",
     "AsyncDerivativesResource",
     "DerivativesResourceWithRawResponse",

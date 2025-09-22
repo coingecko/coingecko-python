@@ -22,7 +22,7 @@ class PriceGetParams(TypedDict, total=False):
     """
 
     include_24hr_change: bool
-    """include 24hr change, default: false"""
+    """include 24hr change percentage, default: false"""
 
     include_24hr_vol: bool
     """include 24hr volume, default: false"""

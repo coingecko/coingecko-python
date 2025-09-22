@@ -2,9 +2,12 @@
 
 from __future__ import annotations
 
+from typing_extensions import Literal
+
 import httpx
 
-from ....._types import Body, Query, Headers, NotGiven, not_given
+from ....._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
+from ....._utils import maybe_transform, async_maybe_transform
 from ....._compat import cached_property
 from ....._resource import SyncAPIResource, AsyncAPIResource
 from ....._response import (
@@ -14,6 +17,7 @@ from ....._response import (
     async_to_streamed_response_wrapper,
 )
 from ....._base_client import make_request_options
+from .....types.onchain.networks.pools import info_get_params
 from .....types.onchain.networks.pools.info_get_response import InfoGetResponse
 
 __all__ = ["InfoResource", "AsyncInfoResource"]
@@ -44,6 +48,7 @@ class InfoResource(SyncAPIResource):
         pool_address: str,
         *,
         network: str,
+        include: Literal["pool"] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -57,6 +62,8 @@ class InfoResource(SyncAPIResource):
         provided pool contract address on a network**
 
         Args:
+          include: attributes to include
+
           extra_headers: Send extra headers
 
           extra_query: Add additional query parameters to the request
@@ -72,7 +79,11 @@ class InfoResource(SyncAPIResource):
         return self._get(
             f"/onchain/networks/{network}/pools/{pool_address}/info",
             options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+                extra_headers=extra_headers,
+                extra_query=extra_query,
+                extra_body=extra_body,
+                timeout=timeout,
+                query=maybe_transform({"include": include}, info_get_params.InfoGetParams),
             ),
             cast_to=InfoGetResponse,
         )
@@ -103,6 +114,7 @@ class AsyncInfoResource(AsyncAPIResource):
         pool_address: str,
         *,
         network: str,
+        include: Literal["pool"] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -116,6 +128,8 @@ class AsyncInfoResource(AsyncAPIResource):
         provided pool contract address on a network**
 
         Args:
+          include: attributes to include
+
           extra_headers: Send extra headers
 
           extra_query: Add additional query parameters to the request
@@ -131,7 +145,11 @@ class AsyncInfoResource(AsyncAPIResource):
         return await self._get(
             f"/onchain/networks/{network}/pools/{pool_address}/info",
             options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+                extra_headers=extra_headers,
+                extra_query=extra_query,
+                extra_body=extra_body,
+                timeout=timeout,
+                query=await async_maybe_transform({"include": include}, info_get_params.InfoGetParams),
             ),
             cast_to=InfoGetResponse,
         )

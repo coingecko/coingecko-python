@@ -8,7 +8,10 @@ __all__ = [
     "MultiGetAddressesResponse",
     "Data",
     "DataAttributes",
+    "DataAttributesBuyVolumeUsd",
+    "DataAttributesNetBuyVolumeUsd",
     "DataAttributesPriceChangePercentage",
+    "DataAttributesSellVolumeUsd",
     "DataAttributesTransactions",
     "DataAttributesTransactionsH1",
     "DataAttributesTransactionsH24",
@@ -29,7 +32,49 @@ __all__ = [
 ]
 
 
+class DataAttributesBuyVolumeUsd(BaseModel):
+    h1: Optional[str] = None
+
+    h24: Optional[str] = None
+
+    h6: Optional[str] = None
+
+    m15: Optional[str] = None
+
+    m30: Optional[str] = None
+
+    m5: Optional[str] = None
+
+
+class DataAttributesNetBuyVolumeUsd(BaseModel):
+    h1: Optional[str] = None
+
+    h24: Optional[str] = None
+
+    h6: Optional[str] = None
+
+    m15: Optional[str] = None
+
+    m30: Optional[str] = None
+
+    m5: Optional[str] = None
+
+
 class DataAttributesPriceChangePercentage(BaseModel):
+    h1: Optional[str] = None
+
+    h24: Optional[str] = None
+
+    h6: Optional[str] = None
+
+    m15: Optional[str] = None
+
+    m30: Optional[str] = None
+
+    m5: Optional[str] = None
+
+
+class DataAttributesSellVolumeUsd(BaseModel):
     h1: Optional[str] = None
 
     h24: Optional[str] = None
@@ -134,11 +179,17 @@ class DataAttributesVolumeUsd(BaseModel):
 class DataAttributes(BaseModel):
     address: Optional[str] = None
 
+    base_token_balance: Optional[str] = None
+
+    base_token_liquidity_usd: Optional[str] = None
+
     base_token_price_native_currency: Optional[str] = None
 
     base_token_price_quote_token: Optional[str] = None
 
     base_token_price_usd: Optional[str] = None
+
+    buy_volume_usd: Optional[DataAttributesBuyVolumeUsd] = None
 
     fdv_usd: Optional[str] = None
 
@@ -148,6 +199,8 @@ class DataAttributes(BaseModel):
 
     name: Optional[str] = None
 
+    net_buy_volume_usd: Optional[DataAttributesNetBuyVolumeUsd] = None
+
     pool_created_at: Optional[str] = None
 
     pool_fee_percentage: Optional[str] = None
@@ -156,6 +209,10 @@ class DataAttributes(BaseModel):
 
     price_change_percentage: Optional[DataAttributesPriceChangePercentage] = None
 
+    quote_token_balance: Optional[str] = None
+
+    quote_token_liquidity_usd: Optional[str] = None
+
     quote_token_price_base_token: Optional[str] = None
 
     quote_token_price_native_currency: Optional[str] = None
@@ -163,6 +220,8 @@ class DataAttributes(BaseModel):
     quote_token_price_usd: Optional[str] = None
 
     reserve_in_usd: Optional[str] = None
+
+    sell_volume_usd: Optional[DataAttributesSellVolumeUsd] = None
 
     transactions: Optional[DataAttributesTransactions] = None
 
