@@ -32,14 +32,6 @@ from .coins import (
     CoinsResourceWithStreamingResponse,
     AsyncCoinsResourceWithStreamingResponse,
 )
-from .entity import (
-    EntityResource,
-    AsyncEntityResource,
-    EntityResourceWithRawResponse,
-    AsyncEntityResourceWithRawResponse,
-    EntityResourceWithStreamingResponse,
-    AsyncEntityResourceWithStreamingResponse,
-)
 from .search import (
     SearchResource,
     AsyncSearchResource,
@@ -220,10 +212,4 @@ __all__ = [
     "AsyncTokenListsResourceWithRawResponse",
     "TokenListsResourceWithStreamingResponse",
     "AsyncTokenListsResourceWithStreamingResponse",
-    "EntityResource",
-    "AsyncEntityResource",
-    "EntityResourceWithRawResponse",
-    "AsyncEntityResourceWithRawResponse",
-    "EntityResourceWithStreamingResponse",
-    "AsyncEntityResourceWithStreamingResponse",
 ]

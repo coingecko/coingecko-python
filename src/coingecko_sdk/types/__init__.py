@@ -27,6 +27,7 @@ from .exchange_get_list_response import ExchangeGetListResponse as ExchangeGetLi
 from .exchange_rate_get_response import ExchangeRateGetResponse as ExchangeRateGetResponse
 from .asset_platform_get_response import AssetPlatformGetResponse as AssetPlatformGetResponse
 from .token_list_get_all_json_response import TokenListGetAllJsonResponse as TokenListGetAllJsonResponse
+from .public_treasury_get_coin_id_response import PublicTreasuryGetCoinIDResponse as PublicTreasuryGetCoinIDResponse
 from .public_treasury_get_entity_id_response import (
     PublicTreasuryGetEntityIDResponse as PublicTreasuryGetEntityIDResponse,
 )

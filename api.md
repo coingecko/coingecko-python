@@ -692,11 +692,12 @@ Methods:
 Types:
 
 ```python
-from coingecko_sdk.types import PublicTreasuryGetEntityIDResponse
+from coingecko_sdk.types import PublicTreasuryGetCoinIDResponse, PublicTreasuryGetEntityIDResponse
 ```
 
 Methods:
 
+- <code title="get /{entity}/public_treasury/{coin_id}">client.public_treasury.<a href="./src/coingecko_sdk/resources/public_treasury.py">get_coin_id</a>(coin_id, \*, entity) -> <a href="./src/coingecko_sdk/types/public_treasury_get_coin_id_response.py">PublicTreasuryGetCoinIDResponse</a></code>
 - <code title="get /public_treasury/{entity_id}">client.public_treasury.<a href="./src/coingecko_sdk/resources/public_treasury.py">get_entity_id</a>(entity_id) -> <a href="./src/coingecko_sdk/types/public_treasury_get_entity_id_response.py">PublicTreasuryGetEntityIDResponse</a></code>
 
 # Search
@@ -772,17 +773,3 @@ from coingecko_sdk.types import TokenListGetAllJsonResponse
 Methods:
 
 - <code title="get /token_lists/{asset_platform_id}/all.json">client.token_lists.<a href="./src/coingecko_sdk/resources/token_lists.py">get_all_json</a>(asset_platform_id) -> <a href="./src/coingecko_sdk/types/token_list_get_all_json_response.py">TokenListGetAllJsonResponse</a></code>
-
-# Entity
-
-## PublicTreasury
-
-Types:
-
-```python
-from coingecko_sdk.types.entity import PublicTreasuryGetCoinIDResponse
-```
-
-Methods:
-
-- <code title="get /{entity}/public_treasury/{coin_id}">client.entity.public_treasury.<a href="./src/coingecko_sdk/resources/entity/public_treasury.py">get_coin_id</a>(coin_id, \*, entity) -> <a href="./src/coingecko_sdk/types/entity/public_treasury_get_coin_id_response.py">PublicTreasuryGetCoinIDResponse</a></code>
