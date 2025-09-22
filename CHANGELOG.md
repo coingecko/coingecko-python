@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.10.0 (2025-09-22)
+
+Full Changelog: [v1.9.0...v1.10.0](https://github.com/coingecko/coingecko-python/compare/v1.9.0...v1.10.0)
+
+### Features
+
+* **api:** api update ([ff4a499](https://github.com/coingecko/coingecko-python/commit/ff4a499d348e5312d6eaad322a03cd606478ca58))
+
+
+### Bug Fixes
+
+* Merge public_treasury config ([a6738ba](https://github.com/coingecko/coingecko-python/commit/a6738ba71c6ead0e662145d7a275d03588be5a9d))
+* Stainless config to match the latest endpoints ([73ec25c](https://github.com/coingecko/coingecko-python/commit/73ec25cf0d14fd24a480748c6d5ecfd789005506))
+
 ## 1.9.0 (2025-09-20)
 
 Full Changelog: [v1.8.3...v1.9.0](https://github.com/coingecko/coingecko-python/compare/v1.8.3...v1.9.0)
