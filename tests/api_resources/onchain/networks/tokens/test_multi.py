@@ -22,7 +22,7 @@ class TestMulti:
     def test_method_get_addresses(self, client: Coingecko) -> None:
         multi = client.onchain.networks.tokens.multi.get_addresses(
             addresses="addresses",
-            network="eth",
+            network="solana",
         )
         assert_matches_type(MultiGetAddressesResponse, multi, path=["response"])
 
@@ -31,7 +31,7 @@ class TestMulti:
     def test_method_get_addresses_with_all_params(self, client: Coingecko) -> None:
         multi = client.onchain.networks.tokens.multi.get_addresses(
             addresses="addresses",
-            network="eth",
+            network="solana",
             include="top_pools",
             include_composition=True,
         )
@@ -42,7 +42,7 @@ class TestMulti:
     def test_raw_response_get_addresses(self, client: Coingecko) -> None:
         response = client.onchain.networks.tokens.multi.with_raw_response.get_addresses(
             addresses="addresses",
-            network="eth",
+            network="solana",
         )
 
         assert response.is_closed is True
@@ -55,7 +55,7 @@ class TestMulti:
     def test_streaming_response_get_addresses(self, client: Coingecko) -> None:
         with client.onchain.networks.tokens.multi.with_streaming_response.get_addresses(
             addresses="addresses",
-            network="eth",
+            network="solana",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -77,7 +77,7 @@ class TestMulti:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `addresses` but received ''"):
             client.onchain.networks.tokens.multi.with_raw_response.get_addresses(
                 addresses="",
-                network="eth",
+                network="solana",
             )
 
 
@@ -91,7 +91,7 @@ class TestAsyncMulti:
     async def test_method_get_addresses(self, async_client: AsyncCoingecko) -> None:
         multi = await async_client.onchain.networks.tokens.multi.get_addresses(
             addresses="addresses",
-            network="eth",
+            network="solana",
         )
         assert_matches_type(MultiGetAddressesResponse, multi, path=["response"])
 
@@ -100,7 +100,7 @@ class TestAsyncMulti:
     async def test_method_get_addresses_with_all_params(self, async_client: AsyncCoingecko) -> None:
         multi = await async_client.onchain.networks.tokens.multi.get_addresses(
             addresses="addresses",
-            network="eth",
+            network="solana",
             include="top_pools",
             include_composition=True,
         )
@@ -111,7 +111,7 @@ class TestAsyncMulti:
     async def test_raw_response_get_addresses(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.onchain.networks.tokens.multi.with_raw_response.get_addresses(
             addresses="addresses",
-            network="eth",
+            network="solana",
         )
 
         assert response.is_closed is True
@@ -124,7 +124,7 @@ class TestAsyncMulti:
     async def test_streaming_response_get_addresses(self, async_client: AsyncCoingecko) -> None:
         async with async_client.onchain.networks.tokens.multi.with_streaming_response.get_addresses(
             addresses="addresses",
-            network="eth",
+            network="solana",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -146,5 +146,5 @@ class TestAsyncMulti:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `addresses` but received ''"):
             await async_client.onchain.networks.tokens.multi.with_raw_response.get_addresses(
                 addresses="",
-                network="eth",
+                network="solana",
             )

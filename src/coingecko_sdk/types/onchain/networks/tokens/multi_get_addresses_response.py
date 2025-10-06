@@ -8,6 +8,7 @@ __all__ = [
     "MultiGetAddressesResponse",
     "Data",
     "DataAttributes",
+    "DataAttributesLaunchpadDetails",
     "DataAttributesVolumeUsd",
     "DataRelationships",
     "DataRelationshipsTopPools",
@@ -33,6 +34,16 @@ __all__ = [
 ]
 
 
+class DataAttributesLaunchpadDetails(BaseModel):
+    completed: Optional[bool] = None
+
+    completed_at: Optional[str] = None
+
+    graduation_percentage: Optional[float] = None
+
+    migrated_destination_pool_address: Optional[str] = None
+
+
 class DataAttributesVolumeUsd(BaseModel):
     h24: Optional[str] = None
 
@@ -47,6 +58,8 @@ class DataAttributes(BaseModel):
     fdv_usd: Optional[str] = None
 
     image_url: Optional[str] = None
+
+    launchpad_details: Optional[DataAttributesLaunchpadDetails] = None
 
     market_cap_usd: Optional[str] = None
 
