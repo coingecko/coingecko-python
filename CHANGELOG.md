@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.11.0 (2025-10-06)
+
+Full Changelog: [v1.10.1...v1.11.0](https://github.com/coingecko/coingecko-python/compare/v1.10.1...v1.11.0)
+
+### Features
+
+* **api:** api update ([384c417](https://github.com/coingecko/coingecko-python/commit/384c4173d02da6ee84c5650ded6c56530a960fd1))
+
 ## 1.10.1 (2025-09-25)
 
 Full Changelog: [v1.10.0...v1.10.1](https://github.com/coingecko/coingecko-python/compare/v1.10.0...v1.10.1)
