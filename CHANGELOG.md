@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.11.1 (2025-10-06)
+
+Full Changelog: [v1.11.0...v1.11.1](https://github.com/coingecko/coingecko-python/compare/v1.11.0...v1.11.1)
+
+### Bug Fixes
+
+* Incorrect snippet in ReadMe ([d956a5c](https://github.com/coingecko/coingecko-python/commit/d956a5cd13af9fcc5711fc5e3698cf100ac7142a))
+
 ## 1.11.0 (2025-10-06)
 
 Full Changelog: [v1.10.1...v1.11.0](https://github.com/coingecko/coingecko-python/compare/v1.10.1...v1.11.0)
