@@ -83,12 +83,13 @@ You can enable this by installing `aiohttp`:
 
 ```sh
 # install from PyPI
-pip install coingecko_sdk[aiohttp]
+pip install "coingecko_sdk[aiohttp]"
 ```
 
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
 
 ```python
+import os
 import asyncio
 from coingecko_sdk import DefaultAioHttpClient
 from coingecko_sdk import AsyncCoingecko
@@ -96,13 +97,14 @@ from coingecko_sdk import AsyncCoingecko
 
 async def main() -> None:
     async with AsyncCoingecko(
-        pro_api_key="My Pro API Key",
+        pro_api_key=os.environ.get("COINGECKO_PRO_API_KEY"),
         http_client=DefaultAioHttpClient(),
     ) as client:
         price = await client.simple.price.get(
             vs_currencies="usd",
             ids="bitcoin",
         )
+        print(price["bitcoin"].usd)
 
 
 asyncio.run(main())
@@ -127,16 +129,22 @@ response), a subclass of `coingecko_sdk.APIStatusError` is raised, containing `s
 All errors inherit from `coingecko_sdk.APIError`.
 
 ```python
+import os
 import coingecko_sdk
 from coingecko_sdk import Coingecko
 
-client = Coingecko()
+client = Coingecko(
+    pro_api_key=os.environ.get("COINGECKO_PRO_API_KEY"),
+    # demo_api_key=os.environ.get("COINGECKO_DEMO_API_KEY"), # Optional, for Demo API access
+    environment="pro",  # "demo" to initialize the client with Demo API access
+)
 
 try:
-    client.simple.price.get(
+    price = client.simple.price.get(
         vs_currencies="usd",
         ids="bitcoin",
     )
+    print(price["bitcoin"].usd)
 except coingecko_sdk.APIConnectionError as e:
     print("The server could not be reached")
     print(e.__cause__)  # an underlying Exception, likely raised within httpx.
@@ -170,19 +178,24 @@ Connection errors (for example, due to a network connectivity problem), 408 Requ
 You can use the `max_retries` option to configure or disable retry settings:
 
 ```python
+import os
 from coingecko_sdk import Coingecko
 
 # Configure the default for all requests:
 client = Coingecko(
-    # default is 2
-    max_retries=0,
+    pro_api_key=os.environ.get("COINGECKO_PRO_API_KEY"),
+    # demo_api_key=os.environ.get("COINGECKO_DEMO_API_KEY"), # Optional, for Demo API access
+    environment="pro",  # "demo" to initialize the client with Demo API access
+
+    max_retries=0,  # default is 2
 )
 
 # Or, configure per-request:
-client.with_options(max_retries=5).simple.price.get(
+price = client.with_options(max_retries=5).simple.price.get(
     vs_currencies="usd",
     ids="bitcoin",
 )
+print(price["bitcoin"].usd)
 ```
 
 ### Timeouts
@@ -191,24 +204,29 @@ By default requests time out after 1 minute. You can configure this with a `time
 which accepts a float or an [`httpx.Timeout`](https://www.python-httpx.org/advanced/timeouts/#fine-tuning-the-configuration) object:
 
 ```python
+import os
 from coingecko_sdk import Coingecko
 
 # Configure the default for all requests:
 client = Coingecko(
-    # 20 seconds (default is 1 minute)
-    timeout=20.0,
+    pro_api_key=os.environ.get("COINGECKO_PRO_API_KEY"),
+    # demo_api_key=os.environ.get("COINGECKO_DEMO_API_KEY"), # Optional, for Demo API access
+    environment="pro",  # "demo" to initialize the client with Demo API access
+
+    timeout=20.0,  # 20 seconds (default is 1 minute)
 )
 
 # More granular control:
-client = Coingecko(
-    timeout=httpx.Timeout(60.0, read=5.0, write=10.0, connect=2.0),
-)
+# client = Coingecko(
+#     timeout=httpx.Timeout(60.0, read=5.0, write=10.0, connect=2.0),
+# )
 
 # Override per-request:
-client.with_options(timeout=5.0).simple.price.get(
+price = client.with_options(timeout=5.0).simple.price.get(
     vs_currencies="usd",
     ids="bitcoin",
 )
+print(price["bitcoin"].usd)
 ```
 
 On timeout, an `APITimeoutError` is thrown.
@@ -246,14 +264,19 @@ if response.my_field is None:
 The "raw" Response object can be accessed by prefixing `.with_raw_response.` to any HTTP method call, e.g.,
 
 ```py
+import os
 from coingecko_sdk import Coingecko
 
-client = Coingecko()
+client = Coingecko(
+    pro_api_key=os.environ.get("COINGECKO_PRO_API_KEY"),
+    # demo_api_key=os.environ.get("COINGECKO_DEMO_API_KEY"), # Optional, for Demo API access
+    environment="pro", # "demo" to initialize the client with Demo API access
+)
 response = client.simple.price.with_raw_response.get(
     vs_currencies="usd",
     ids="bitcoin",
 )
-print(response.headers.get('X-My-Header'))
+print(response.headers.get('YOUR-HEADER-NAME'))
 
 price_data = response.parse()  # get the object that `simple.price.get()` would have returned
 print(price_data['bitcoin'].usd)
@@ -274,7 +297,7 @@ with client.simple.price.with_streaming_response.get(
     vs_currencies="usd",
     ids="bitcoin",
 ) as response:
-    print(response.headers.get("X-My-Header"))
+    print(response.headers.get("YOUR-HEADER-NAME"))
 
     for line in response.iter_lines():
         print(line)
