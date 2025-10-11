@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.11.2 (2025-10-11)
+
+Full Changelog: [v1.11.1...v1.11.2](https://github.com/coingecko/coingecko-python/compare/v1.11.1...v1.11.2)
+
+### Chores
+
+* **internal:** detect missing future annotations with ruff ([c7100fb](https://github.com/coingecko/coingecko-python/commit/c7100fb15194c4eb34d12cb995ea2a81ebfe0b26))
+
 ## 1.11.1 (2025-10-06)
 
 Full Changelog: [v1.11.0...v1.11.1](https://github.com/coingecko/coingecko-python/compare/v1.11.0...v1.11.1)
