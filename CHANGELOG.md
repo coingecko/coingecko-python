@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.11.2 (2025-10-18)
+
+Full Changelog: [v1.11.1...v1.11.2](https://github.com/coingecko/coingecko-python/compare/v1.11.1...v1.11.2)
+
+### Chores
+
+* bump `httpx-aiohttp` version to 0.1.9 ([8bb3482](https://github.com/coingecko/coingecko-python/commit/8bb3482e800e3b28a107bf2d71e888cad9e16855))
+* **internal:** detect missing future annotations with ruff ([c7100fb](https://github.com/coingecko/coingecko-python/commit/c7100fb15194c4eb34d12cb995ea2a81ebfe0b26))
+
 ## 1.11.1 (2025-10-06)
 
 Full Changelog: [v1.11.0...v1.11.1](https://github.com/coingecko/coingecko-python/compare/v1.11.0...v1.11.1)
