@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.11.2 (2025-11-22)
+
+Full Changelog: [v1.11.1...v1.11.2](https://github.com/coingecko/coingecko-python/compare/v1.11.1...v1.11.2)
+
+### Bug Fixes
+
+* **client:** close streams without requiring full consumption ([920e115](https://github.com/coingecko/coingecko-python/commit/920e115252ab911ed3e0f0f588efd3302eb07651))
+* compat with Python 3.14 ([480f678](https://github.com/coingecko/coingecko-python/commit/480f67880356efaff1bc290881d64b010f775c54))
+* **compat:** update signatures of `model_dump` and `model_dump_json` for Pydantic v1 ([c8703be](https://github.com/coingecko/coingecko-python/commit/c8703be34335b1dc7cca5f8e6c00267babd95bfd))
+
+
+### Chores
+
+* add Python 3.14 classifier and testing ([aa3cd7d](https://github.com/coingecko/coingecko-python/commit/aa3cd7d3a3c4d8d202726cc1b617ed05bacbb8d2))
+* bump `httpx-aiohttp` version to 0.1.9 ([8bb3482](https://github.com/coingecko/coingecko-python/commit/8bb3482e800e3b28a107bf2d71e888cad9e16855))
+* **internal/tests:** avoid race condition with implicit client cleanup ([21f1918](https://github.com/coingecko/coingecko-python/commit/21f1918d6dd982b0bf0280cd5585cfdab8d1e275))
+* **internal:** detect missing future annotations with ruff ([c7100fb](https://github.com/coingecko/coingecko-python/commit/c7100fb15194c4eb34d12cb995ea2a81ebfe0b26))
+* **internal:** grammar fix (it's -&gt; its) ([10ceb55](https://github.com/coingecko/coingecko-python/commit/10ceb55cfbb9ee6dbd27a9d8e02fd302005c7f70))
+* **package:** drop Python 3.8 support ([a8ce8c0](https://github.com/coingecko/coingecko-python/commit/a8ce8c038065a5aecadd21dbf66b8408a3350f1b))
+
 ## 1.11.1 (2025-10-06)
 
 Full Changelog: [v1.11.0...v1.11.1](https://github.com/coingecko/coingecko-python/compare/v1.11.0...v1.11.1)
