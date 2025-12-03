@@ -97,7 +97,7 @@ from coingecko_sdk import AsyncCoingecko
 
 async def main() -> None:
     async with AsyncCoingecko(
-        pro_api_key=os.environ.get("COINGECKO_PRO_API_KEY"),
+        pro_api_key=os.environ.get("COINGECKO_PRO_API_KEY"),  # This is the default and can be omitted
         http_client=DefaultAioHttpClient(),
     ) as client:
         price = await client.simple.price.get(
