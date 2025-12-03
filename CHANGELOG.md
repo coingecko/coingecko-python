@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.11.3 (2025-12-03)
+
+Full Changelog: [v1.11.2...v1.11.3](https://github.com/coingecko/coingecko-python/compare/v1.11.2...v1.11.3)
+
+### Bug Fixes
+
+* ensure streams are always closed ([e51d469](https://github.com/coingecko/coingecko-python/commit/e51d46991166ae87d5dadd827f803ce0f293ea88))
+
+
+### Chores
+
+* **deps:** mypy 1.18.1 has a regression, pin to 1.17 ([4fb9fd2](https://github.com/coingecko/coingecko-python/commit/4fb9fd29b779f96b3fa57bba750afbcbcd70e06b))
+* **docs:** use environment variables for authentication in code snippets ([cd2478b](https://github.com/coingecko/coingecko-python/commit/cd2478b3aa36989a4685cab291eeae5cc7521c39))
+* update lockfile ([def90a4](https://github.com/coingecko/coingecko-python/commit/def90a462f594215307855a485fb0defb2e59f21))
+
 ## 1.11.2 (2025-11-22)
 
 Full Changelog: [v1.11.1...v1.11.2](https://github.com/coingecko/coingecko-python/compare/v1.11.1...v1.11.2)
