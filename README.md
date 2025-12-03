@@ -87,6 +87,7 @@ pip install coingecko_sdk[aiohttp]
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
 
 ```python
+import os
 import asyncio
 from coingecko_sdk import DefaultAioHttpClient
 from coingecko_sdk import AsyncCoingecko
@@ -94,7 +95,9 @@ from coingecko_sdk import AsyncCoingecko
 
 async def main() -> None:
     async with AsyncCoingecko(
-        pro_api_key="My Pro API Key",
+        pro_api_key=os.environ.get(
+            "COINGECKO_PRO_API_KEY"
+        ),  # This is the default and can be omitted
         http_client=DefaultAioHttpClient(),
     ) as client:
         price = await client.simple.price.get(
