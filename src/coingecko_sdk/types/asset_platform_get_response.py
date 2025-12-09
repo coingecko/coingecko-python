@@ -9,6 +9,8 @@ __all__ = ["AssetPlatformGetResponse", "AssetPlatformGetResponseItem", "AssetPla
 
 
 class AssetPlatformGetResponseItemImage(BaseModel):
+    """image of the asset platform"""
+
     large: Optional[str] = None
 
     small: Optional[str] = None

@@ -18,6 +18,8 @@ __all__ = [
 
 
 class CategoryDataMarketCapChangePercentage24h(BaseModel):
+    """category market cap change percentage in 24 hours"""
+
     btc: Optional[float] = None
 
     usd: Optional[float] = None
@@ -62,6 +64,8 @@ class Category(BaseModel):
 
 
 class CoinDataPriceChangePercentage24h(BaseModel):
+    """coin price change percentage in 24 hours"""
+
     btc: Optional[float] = None
 
     usd: Optional[float] = None

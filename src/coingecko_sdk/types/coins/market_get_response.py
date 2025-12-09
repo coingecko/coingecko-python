@@ -10,6 +10,8 @@ __all__ = ["MarketGetResponse", "MarketGetResponseItem", "MarketGetResponseItemR
 
 
 class MarketGetResponseItemRoi(BaseModel):
+    """return on investment data"""
+
     currency: str
     """ROI currency"""
 

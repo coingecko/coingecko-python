@@ -8,18 +8,24 @@ __all__ = ["GlobalGetResponse", "Data", "DataMarketCapPercentage", "DataTotalMar
 
 
 class DataMarketCapPercentage(BaseModel):
+    """cryptocurrencies market cap percentage"""
+
     btc: Optional[float] = None
 
     eth: Optional[float] = None
 
 
 class DataTotalMarketCap(BaseModel):
+    """cryptocurrencies total market cap"""
+
     btc: Optional[float] = None
 
     eth: Optional[float] = None
 
 
 class DataTotalVolume(BaseModel):
+    """cryptocurrencies total volume"""
+
     btc: Optional[float] = None
 
     eth: Optional[float] = None
