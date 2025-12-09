@@ -19,42 +19,56 @@ __all__ = [
 
 
 class NFTGetMarketsResponseItemFloorPrice(BaseModel):
+    """NFT collection floor price"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None
 
 
 class NFTGetMarketsResponseItemFloorPrice24hPercentageChange(BaseModel):
+    """NFT collection floor price 24 hours percentage change"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None
 
 
 class NFTGetMarketsResponseItemImage(BaseModel):
+    """NFT collection image url"""
+
     small: Optional[str] = None
 
     small_2x: Optional[str] = None
 
 
 class NFTGetMarketsResponseItemMarketCap(BaseModel):
+    """NFT collection market cap"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None
 
 
 class NFTGetMarketsResponseItemMarketCap24hPercentageChange(BaseModel):
+    """NFT collection market cap 24 hours percentage change"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None
 
 
 class NFTGetMarketsResponseItemVolume24h(BaseModel):
+    """NFT collection volume in 24 hours"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None
 
 
 class NFTGetMarketsResponseItemVolume24hPercentageChange(BaseModel):
+    """NFT collection volume in 24 hours percentage change"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None

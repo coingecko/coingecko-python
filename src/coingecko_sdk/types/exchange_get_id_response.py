@@ -15,6 +15,8 @@ __all__ = [
 
 
 class TickerTickerConvertedLast(BaseModel):
+    """coin ticker converted last price"""
+
     btc: Optional[float] = None
 
     eth: Optional[float] = None
@@ -23,6 +25,8 @@ class TickerTickerConvertedLast(BaseModel):
 
 
 class TickerTickerConvertedVolume(BaseModel):
+    """coin ticker converted volume"""
+
     btc: Optional[float] = None
 
     eth: Optional[float] = None
@@ -31,6 +35,8 @@ class TickerTickerConvertedVolume(BaseModel):
 
 
 class TickerTickerMarket(BaseModel):
+    """coin ticker exchange"""
+
     has_trading_incentive: bool
     """exchange trading incentive"""
 
