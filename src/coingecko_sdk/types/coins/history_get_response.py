@@ -19,6 +19,8 @@ __all__ = [
 
 
 class CommunityData(BaseModel):
+    """coin community data"""
+
     facebook_likes: Optional[float] = None
     """coin facebook likes"""
 
@@ -36,12 +38,16 @@ class CommunityData(BaseModel):
 
 
 class DeveloperDataCodeAdditionsDeletions4Weeks(BaseModel):
+    """coin code additions deletions 4 weeks"""
+
     additions: Optional[float] = None
 
     deletions: Optional[float] = None
 
 
 class DeveloperData(BaseModel):
+    """coin developer data"""
+
     closed_issues: Optional[float] = None
     """coin repository closed issues"""
 
@@ -71,12 +77,16 @@ class DeveloperData(BaseModel):
 
 
 class Image(BaseModel):
+    """coin image url"""
+
     small: Optional[str] = None
 
     thumb: Optional[str] = None
 
 
 class MarketDataCurrentPrice(BaseModel):
+    """coin current price"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -85,6 +95,8 @@ class MarketDataCurrentPrice(BaseModel):
 
 
 class MarketDataMarketCap(BaseModel):
+    """coin market cap"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -93,6 +105,8 @@ class MarketDataMarketCap(BaseModel):
 
 
 class MarketDataTotalVolume(BaseModel):
+    """coin total volume"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -101,6 +115,8 @@ class MarketDataTotalVolume(BaseModel):
 
 
 class MarketData(BaseModel):
+    """coin market data"""
+
     current_price: Optional[MarketDataCurrentPrice] = None
     """coin current price"""
 
@@ -112,6 +128,8 @@ class MarketData(BaseModel):
 
 
 class PublicInterestStats(BaseModel):
+    """coin public interest stats"""
+
     alexa_rank: Optional[float] = None
     """coin alexa rank"""
 

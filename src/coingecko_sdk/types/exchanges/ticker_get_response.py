@@ -8,6 +8,8 @@ __all__ = ["TickerGetResponse", "Ticker", "TickerConvertedLast", "TickerConverte
 
 
 class TickerConvertedLast(BaseModel):
+    """coin ticker converted last price"""
+
     btc: Optional[float] = None
 
     eth: Optional[float] = None
@@ -16,6 +18,8 @@ class TickerConvertedLast(BaseModel):
 
 
 class TickerConvertedVolume(BaseModel):
+    """coin ticker converted volume"""
+
     btc: Optional[float] = None
 
     eth: Optional[float] = None
@@ -24,6 +28,8 @@ class TickerConvertedVolume(BaseModel):
 
 
 class TickerMarket(BaseModel):
+    """coin ticker exchange"""
+
     has_trading_incentive: bool
     """exchange trading incentive"""
 

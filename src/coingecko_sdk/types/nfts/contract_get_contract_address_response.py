@@ -29,24 +29,32 @@ __all__ = [
 
 
 class Ath(BaseModel):
+    """NFT collection all time highs"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None
 
 
 class AthChangePercentage(BaseModel):
+    """NFT collection all time highs change percentage"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None
 
 
 class AthDate(BaseModel):
+    """NFT collection all time highs date"""
+
     native_currency: Optional[datetime] = None
 
     usd: Optional[datetime] = None
 
 
 class BannerImage(BaseModel):
+    """NFT collection banner image url"""
+
     small: Optional[str] = None
 
 
@@ -57,18 +65,24 @@ class Explorer(BaseModel):
 
 
 class FloorPrice(BaseModel):
+    """NFT collection floor price"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None
 
 
 class FloorPrice14dPercentageChange(BaseModel):
+    """NFT collection floor price 14 days percentage change"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None
 
 
 class FloorPrice1yPercentageChange(BaseModel):
+    """NFT collection floor price 1 year percentage change"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None
@@ -81,30 +95,40 @@ class FloorPrice24hPercentageChange(BaseModel):
 
 
 class FloorPrice30dPercentageChange(BaseModel):
+    """NFT collection floor price 30 days percentage change"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None
 
 
 class FloorPrice60dPercentageChange(BaseModel):
+    """NFT collection floor price 60 days percentage change"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None
 
 
 class FloorPrice7dPercentageChange(BaseModel):
+    """NFT collection floor price 7 days percentage change"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None
 
 
 class Image(BaseModel):
+    """NFT collection image url"""
+
     small: Optional[str] = None
 
     small_2x: Optional[str] = None
 
 
 class Links(BaseModel):
+    """NFT collection links"""
+
     discord: Optional[str] = None
 
     homepage: Optional[str] = None
@@ -113,24 +137,32 @@ class Links(BaseModel):
 
 
 class MarketCap(BaseModel):
+    """NFT collection market cap"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None
 
 
 class MarketCap24hPercentageChange(BaseModel):
+    """NFT collection market cap 24 hours percentage change"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None
 
 
 class Volume24h(BaseModel):
+    """NFT collection volume in 24 hours"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None
 
 
 class Volume24hPercentageChange(BaseModel):
+    """NFT collection volume in 24 hours percentage change"""
+
     native_currency: Optional[float] = None
 
     usd: Optional[float] = None

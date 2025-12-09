@@ -45,6 +45,8 @@ __all__ = [
 
 
 class CommunityData(BaseModel):
+    """coin community data"""
+
     facebook_likes: Optional[float] = None
     """coin facebook likes"""
 
@@ -73,12 +75,16 @@ class DetailPlatforms(BaseModel):
 
 
 class DeveloperDataCodeAdditionsDeletions4Weeks(BaseModel):
+    """coin code additions and deletions in 4 weeks"""
+
     additions: Optional[float] = None
 
     deletions: Optional[float] = None
 
 
 class DeveloperData(BaseModel):
+    """coin developer data"""
+
     closed_issues: Optional[float] = None
     """coin repository closed issues"""
 
@@ -111,6 +117,8 @@ class DeveloperData(BaseModel):
 
 
 class Image(BaseModel):
+    """coin image url"""
+
     large: Optional[str] = None
 
     small: Optional[str] = None
@@ -119,6 +127,8 @@ class Image(BaseModel):
 
 
 class LinksReposURL(BaseModel):
+    """coin repository url"""
+
     bitbucket: Optional[List[str]] = None
     """coin bitbucket repository url"""
 
@@ -127,6 +137,8 @@ class LinksReposURL(BaseModel):
 
 
 class Links(BaseModel):
+    """links"""
+
     announcement_url: Optional[List[str]] = None
     """coin announcement url"""
 
@@ -168,6 +180,8 @@ class Links(BaseModel):
 
 
 class MarketDataAth(BaseModel):
+    """coin all time high (ATH) in currency"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -176,6 +190,8 @@ class MarketDataAth(BaseModel):
 
 
 class MarketDataAthChangePercentage(BaseModel):
+    """coin all time high (ATH) change in percentage"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -184,6 +200,8 @@ class MarketDataAthChangePercentage(BaseModel):
 
 
 class MarketDataAthDate(BaseModel):
+    """coin all time high (ATH) date"""
+
     btc: Optional[str] = None
 
     eur: Optional[str] = None
@@ -192,6 +210,8 @@ class MarketDataAthDate(BaseModel):
 
 
 class MarketDataAtl(BaseModel):
+    """coin all time low (atl) in currency"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -200,6 +220,8 @@ class MarketDataAtl(BaseModel):
 
 
 class MarketDataAtlChangePercentage(BaseModel):
+    """coin all time low (atl) change in percentage"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -208,6 +230,8 @@ class MarketDataAtlChangePercentage(BaseModel):
 
 
 class MarketDataAtlDate(BaseModel):
+    """coin all time low (atl) date"""
+
     btc: Optional[str] = None
 
     eur: Optional[str] = None
@@ -216,6 +240,8 @@ class MarketDataAtlDate(BaseModel):
 
 
 class MarketDataCurrentPrice(BaseModel):
+    """coin current price in currency"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -224,6 +250,8 @@ class MarketDataCurrentPrice(BaseModel):
 
 
 class MarketDataFullyDilutedValuation(BaseModel):
+    """coin fully diluted valuation (fdv) in currency"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -232,6 +260,8 @@ class MarketDataFullyDilutedValuation(BaseModel):
 
 
 class MarketDataHigh24h(BaseModel):
+    """coin 24hr price high in currency"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -240,6 +270,8 @@ class MarketDataHigh24h(BaseModel):
 
 
 class MarketDataLow24h(BaseModel):
+    """coin 24hr price low in currency"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -248,6 +280,8 @@ class MarketDataLow24h(BaseModel):
 
 
 class MarketDataMarketCap(BaseModel):
+    """coin market cap in currency"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -256,6 +290,8 @@ class MarketDataMarketCap(BaseModel):
 
 
 class MarketDataMarketCapChange24hInCurrency(BaseModel):
+    """coin 24hr market cap change in currency"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -264,6 +300,8 @@ class MarketDataMarketCapChange24hInCurrency(BaseModel):
 
 
 class MarketDataMarketCapChangePercentage24hInCurrency(BaseModel):
+    """coin 24hr market cap change in percentage"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -272,6 +310,8 @@ class MarketDataMarketCapChangePercentage24hInCurrency(BaseModel):
 
 
 class MarketDataPriceChangePercentage14dInCurrency(BaseModel):
+    """coin 14d price change in currency"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -280,6 +320,8 @@ class MarketDataPriceChangePercentage14dInCurrency(BaseModel):
 
 
 class MarketDataPriceChangePercentage1hInCurrency(BaseModel):
+    """coin 1h price change in currency"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -288,6 +330,8 @@ class MarketDataPriceChangePercentage1hInCurrency(BaseModel):
 
 
 class MarketDataPriceChangePercentage1yInCurrency(BaseModel):
+    """coin 1y price change in currency"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -296,6 +340,8 @@ class MarketDataPriceChangePercentage1yInCurrency(BaseModel):
 
 
 class MarketDataPriceChangePercentage200dInCurrency(BaseModel):
+    """coin 200d price change in currency"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -304,6 +350,8 @@ class MarketDataPriceChangePercentage200dInCurrency(BaseModel):
 
 
 class MarketDataPriceChangePercentage24hInCurrency(BaseModel):
+    """coin 24hr price change in currency"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -312,6 +360,8 @@ class MarketDataPriceChangePercentage24hInCurrency(BaseModel):
 
 
 class MarketDataPriceChangePercentage30dInCurrency(BaseModel):
+    """coin 30d price change in currency"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -320,6 +370,8 @@ class MarketDataPriceChangePercentage30dInCurrency(BaseModel):
 
 
 class MarketDataPriceChangePercentage60dInCurrency(BaseModel):
+    """coin 60d price change in currency"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -328,6 +380,8 @@ class MarketDataPriceChangePercentage60dInCurrency(BaseModel):
 
 
 class MarketDataPriceChangePercentage7dInCurrency(BaseModel):
+    """coin 7d price change in currency"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -336,6 +390,8 @@ class MarketDataPriceChangePercentage7dInCurrency(BaseModel):
 
 
 class MarketDataTotalVolume(BaseModel):
+    """coin total trading volume in currency"""
+
     btc: Optional[float] = None
 
     eur: Optional[float] = None
@@ -344,6 +400,8 @@ class MarketDataTotalVolume(BaseModel):
 
 
 class MarketData(BaseModel):
+    """coin market data"""
+
     ath: Optional[MarketDataAth] = None
     """coin all time high (ATH) in currency"""
 
@@ -472,6 +530,8 @@ class MarketData(BaseModel):
 
 
 class TickerConvertedLast(BaseModel):
+    """coin ticker converted last price"""
+
     btc: Optional[float] = None
 
     eth: Optional[float] = None
@@ -480,6 +540,8 @@ class TickerConvertedLast(BaseModel):
 
 
 class TickerConvertedVolume(BaseModel):
+    """coin ticker converted volume"""
+
     btc: Optional[float] = None
 
     eth: Optional[float] = None
@@ -488,6 +550,8 @@ class TickerConvertedVolume(BaseModel):
 
 
 class TickerMarket(BaseModel):
+    """coin ticker exchange"""
+
     has_trading_incentive: Optional[bool] = None
     """coin ticker exchange trading incentive"""
 
