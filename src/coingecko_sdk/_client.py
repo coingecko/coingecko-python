@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import os
-from typing import Any, Dict, Mapping, cast
+from typing import TYPE_CHECKING, Any, Dict, Mapping, cast
 from typing_extensions import Self, Literal, override
 
 import httpx
@@ -21,8 +21,8 @@ from ._types import (
     not_given,
 )
 from ._utils import is_given, get_async_library
+from ._compat import cached_property
 from ._version import __version__
-from .resources import key, ping, entities, token_lists, exchange_rates, asset_platforms, public_treasury
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import APIStatusError
 from ._base_client import (
@@ -30,14 +30,40 @@ from ._base_client import (
     SyncAPIClient,
     AsyncAPIClient,
 )
-from .resources.nfts import nfts
-from .resources.coins import coins
-from .resources.search import search
-from .resources.simple import simple
-from .resources.global_ import global_
-from .resources.onchain import onchain
-from .resources.exchanges import exchanges
-from .resources.derivatives import derivatives
+
+if TYPE_CHECKING:
+    from .resources import (
+        key,
+        nfts,
+        ping,
+        coins,
+        search,
+        simple,
+        global_,
+        onchain,
+        entities,
+        exchanges,
+        derivatives,
+        token_lists,
+        exchange_rates,
+        asset_platforms,
+        public_treasury,
+    )
+    from .resources.key import KeyResource, AsyncKeyResource
+    from .resources.ping import PingResource, AsyncPingResource
+    from .resources.entities import EntitiesResource, AsyncEntitiesResource
+    from .resources.nfts.nfts import NFTsResource, AsyncNFTsResource
+    from .resources.coins.coins import CoinsResource, AsyncCoinsResource
+    from .resources.token_lists import TokenListsResource, AsyncTokenListsResource
+    from .resources.search.search import SearchResource, AsyncSearchResource
+    from .resources.simple.simple import SimpleResource, AsyncSimpleResource
+    from .resources.exchange_rates import ExchangeRatesResource, AsyncExchangeRatesResource
+    from .resources.asset_platforms import AssetPlatformsResource, AsyncAssetPlatformsResource
+    from .resources.global_.global_ import GlobalResource, AsyncGlobalResource
+    from .resources.onchain.onchain import OnchainResource, AsyncOnchainResource
+    from .resources.public_treasury import PublicTreasuryResource, AsyncPublicTreasuryResource
+    from .resources.exchanges.exchanges import ExchangesResource, AsyncExchangesResource
+    from .resources.derivatives.derivatives import DerivativesResource, AsyncDerivativesResource
 
 __all__ = [
     "ENVIRONMENTS",
@@ -58,24 +84,6 @@ ENVIRONMENTS: Dict[str, str] = {
 
 
 class Coingecko(SyncAPIClient):
-    asset_platforms: asset_platforms.AssetPlatformsResource
-    coins: coins.CoinsResource
-    derivatives: derivatives.DerivativesResource
-    entities: entities.EntitiesResource
-    exchange_rates: exchange_rates.ExchangeRatesResource
-    exchanges: exchanges.ExchangesResource
-    global_: global_.GlobalResource
-    key: key.KeyResource
-    nfts: nfts.NFTsResource
-    onchain: onchain.OnchainResource
-    ping: ping.PingResource
-    public_treasury: public_treasury.PublicTreasuryResource
-    search: search.SearchResource
-    simple: simple.SimpleResource
-    token_lists: token_lists.TokenListsResource
-    with_raw_response: CoingeckoWithRawResponse
-    with_streaming_response: CoingeckoWithStreamedResponse
-
     # client options
     pro_api_key: str | None
     demo_api_key: str | None
@@ -158,23 +166,103 @@ class Coingecko(SyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.asset_platforms = asset_platforms.AssetPlatformsResource(self)
-        self.coins = coins.CoinsResource(self)
-        self.derivatives = derivatives.DerivativesResource(self)
-        self.entities = entities.EntitiesResource(self)
-        self.exchange_rates = exchange_rates.ExchangeRatesResource(self)
-        self.exchanges = exchanges.ExchangesResource(self)
-        self.global_ = global_.GlobalResource(self)
-        self.key = key.KeyResource(self)
-        self.nfts = nfts.NFTsResource(self)
-        self.onchain = onchain.OnchainResource(self)
-        self.ping = ping.PingResource(self)
-        self.public_treasury = public_treasury.PublicTreasuryResource(self)
-        self.search = search.SearchResource(self)
-        self.simple = simple.SimpleResource(self)
-        self.token_lists = token_lists.TokenListsResource(self)
-        self.with_raw_response = CoingeckoWithRawResponse(self)
-        self.with_streaming_response = CoingeckoWithStreamedResponse(self)
+    @cached_property
+    def asset_platforms(self) -> AssetPlatformsResource:
+        from .resources.asset_platforms import AssetPlatformsResource
+
+        return AssetPlatformsResource(self)
+
+    @cached_property
+    def coins(self) -> CoinsResource:
+        from .resources.coins import CoinsResource
+
+        return CoinsResource(self)
+
+    @cached_property
+    def derivatives(self) -> DerivativesResource:
+        from .resources.derivatives import DerivativesResource
+
+        return DerivativesResource(self)
+
+    @cached_property
+    def entities(self) -> EntitiesResource:
+        from .resources.entities import EntitiesResource
+
+        return EntitiesResource(self)
+
+    @cached_property
+    def exchange_rates(self) -> ExchangeRatesResource:
+        from .resources.exchange_rates import ExchangeRatesResource
+
+        return ExchangeRatesResource(self)
+
+    @cached_property
+    def exchanges(self) -> ExchangesResource:
+        from .resources.exchanges import ExchangesResource
+
+        return ExchangesResource(self)
+
+    @cached_property
+    def global_(self) -> GlobalResource:
+        from .resources.global_ import GlobalResource
+
+        return GlobalResource(self)
+
+    @cached_property
+    def key(self) -> KeyResource:
+        from .resources.key import KeyResource
+
+        return KeyResource(self)
+
+    @cached_property
+    def nfts(self) -> NFTsResource:
+        from .resources.nfts import NFTsResource
+
+        return NFTsResource(self)
+
+    @cached_property
+    def onchain(self) -> OnchainResource:
+        from .resources.onchain import OnchainResource
+
+        return OnchainResource(self)
+
+    @cached_property
+    def ping(self) -> PingResource:
+        from .resources.ping import PingResource
+
+        return PingResource(self)
+
+    @cached_property
+    def public_treasury(self) -> PublicTreasuryResource:
+        from .resources.public_treasury import PublicTreasuryResource
+
+        return PublicTreasuryResource(self)
+
+    @cached_property
+    def search(self) -> SearchResource:
+        from .resources.search import SearchResource
+
+        return SearchResource(self)
+
+    @cached_property
+    def simple(self) -> SimpleResource:
+        from .resources.simple import SimpleResource
+
+        return SimpleResource(self)
+
+    @cached_property
+    def token_lists(self) -> TokenListsResource:
+        from .resources.token_lists import TokenListsResource
+
+        return TokenListsResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> CoingeckoWithRawResponse:
+        return CoingeckoWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> CoingeckoWithStreamedResponse:
+        return CoingeckoWithStreamedResponse(self)
 
     @property
     @override
@@ -315,24 +403,6 @@ class Coingecko(SyncAPIClient):
 
 
 class AsyncCoingecko(AsyncAPIClient):
-    asset_platforms: asset_platforms.AsyncAssetPlatformsResource
-    coins: coins.AsyncCoinsResource
-    derivatives: derivatives.AsyncDerivativesResource
-    entities: entities.AsyncEntitiesResource
-    exchange_rates: exchange_rates.AsyncExchangeRatesResource
-    exchanges: exchanges.AsyncExchangesResource
-    global_: global_.AsyncGlobalResource
-    key: key.AsyncKeyResource
-    nfts: nfts.AsyncNFTsResource
-    onchain: onchain.AsyncOnchainResource
-    ping: ping.AsyncPingResource
-    public_treasury: public_treasury.AsyncPublicTreasuryResource
-    search: search.AsyncSearchResource
-    simple: simple.AsyncSimpleResource
-    token_lists: token_lists.AsyncTokenListsResource
-    with_raw_response: AsyncCoingeckoWithRawResponse
-    with_streaming_response: AsyncCoingeckoWithStreamedResponse
-
     # client options
     pro_api_key: str | None
     demo_api_key: str | None
@@ -415,23 +485,103 @@ class AsyncCoingecko(AsyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.asset_platforms = asset_platforms.AsyncAssetPlatformsResource(self)
-        self.coins = coins.AsyncCoinsResource(self)
-        self.derivatives = derivatives.AsyncDerivativesResource(self)
-        self.entities = entities.AsyncEntitiesResource(self)
-        self.exchange_rates = exchange_rates.AsyncExchangeRatesResource(self)
-        self.exchanges = exchanges.AsyncExchangesResource(self)
-        self.global_ = global_.AsyncGlobalResource(self)
-        self.key = key.AsyncKeyResource(self)
-        self.nfts = nfts.AsyncNFTsResource(self)
-        self.onchain = onchain.AsyncOnchainResource(self)
-        self.ping = ping.AsyncPingResource(self)
-        self.public_treasury = public_treasury.AsyncPublicTreasuryResource(self)
-        self.search = search.AsyncSearchResource(self)
-        self.simple = simple.AsyncSimpleResource(self)
-        self.token_lists = token_lists.AsyncTokenListsResource(self)
-        self.with_raw_response = AsyncCoingeckoWithRawResponse(self)
-        self.with_streaming_response = AsyncCoingeckoWithStreamedResponse(self)
+    @cached_property
+    def asset_platforms(self) -> AsyncAssetPlatformsResource:
+        from .resources.asset_platforms import AsyncAssetPlatformsResource
+
+        return AsyncAssetPlatformsResource(self)
+
+    @cached_property
+    def coins(self) -> AsyncCoinsResource:
+        from .resources.coins import AsyncCoinsResource
+
+        return AsyncCoinsResource(self)
+
+    @cached_property
+    def derivatives(self) -> AsyncDerivativesResource:
+        from .resources.derivatives import AsyncDerivativesResource
+
+        return AsyncDerivativesResource(self)
+
+    @cached_property
+    def entities(self) -> AsyncEntitiesResource:
+        from .resources.entities import AsyncEntitiesResource
+
+        return AsyncEntitiesResource(self)
+
+    @cached_property
+    def exchange_rates(self) -> AsyncExchangeRatesResource:
+        from .resources.exchange_rates import AsyncExchangeRatesResource
+
+        return AsyncExchangeRatesResource(self)
+
+    @cached_property
+    def exchanges(self) -> AsyncExchangesResource:
+        from .resources.exchanges import AsyncExchangesResource
+
+        return AsyncExchangesResource(self)
+
+    @cached_property
+    def global_(self) -> AsyncGlobalResource:
+        from .resources.global_ import AsyncGlobalResource
+
+        return AsyncGlobalResource(self)
+
+    @cached_property
+    def key(self) -> AsyncKeyResource:
+        from .resources.key import AsyncKeyResource
+
+        return AsyncKeyResource(self)
+
+    @cached_property
+    def nfts(self) -> AsyncNFTsResource:
+        from .resources.nfts import AsyncNFTsResource
+
+        return AsyncNFTsResource(self)
+
+    @cached_property
+    def onchain(self) -> AsyncOnchainResource:
+        from .resources.onchain import AsyncOnchainResource
+
+        return AsyncOnchainResource(self)
+
+    @cached_property
+    def ping(self) -> AsyncPingResource:
+        from .resources.ping import AsyncPingResource
+
+        return AsyncPingResource(self)
+
+    @cached_property
+    def public_treasury(self) -> AsyncPublicTreasuryResource:
+        from .resources.public_treasury import AsyncPublicTreasuryResource
+
+        return AsyncPublicTreasuryResource(self)
+
+    @cached_property
+    def search(self) -> AsyncSearchResource:
+        from .resources.search import AsyncSearchResource
+
+        return AsyncSearchResource(self)
+
+    @cached_property
+    def simple(self) -> AsyncSimpleResource:
+        from .resources.simple import AsyncSimpleResource
+
+        return AsyncSimpleResource(self)
+
+    @cached_property
+    def token_lists(self) -> AsyncTokenListsResource:
+        from .resources.token_lists import AsyncTokenListsResource
+
+        return AsyncTokenListsResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> AsyncCoingeckoWithRawResponse:
+        return AsyncCoingeckoWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> AsyncCoingeckoWithStreamedResponse:
+        return AsyncCoingeckoWithStreamedResponse(self)
 
     @property
     @override
@@ -572,79 +722,391 @@ class AsyncCoingecko(AsyncAPIClient):
 
 
 class CoingeckoWithRawResponse:
+    _client: Coingecko
+
     def __init__(self, client: Coingecko) -> None:
-        self.asset_platforms = asset_platforms.AssetPlatformsResourceWithRawResponse(client.asset_platforms)
-        self.coins = coins.CoinsResourceWithRawResponse(client.coins)
-        self.derivatives = derivatives.DerivativesResourceWithRawResponse(client.derivatives)
-        self.entities = entities.EntitiesResourceWithRawResponse(client.entities)
-        self.exchange_rates = exchange_rates.ExchangeRatesResourceWithRawResponse(client.exchange_rates)
-        self.exchanges = exchanges.ExchangesResourceWithRawResponse(client.exchanges)
-        self.global_ = global_.GlobalResourceWithRawResponse(client.global_)
-        self.key = key.KeyResourceWithRawResponse(client.key)
-        self.nfts = nfts.NFTsResourceWithRawResponse(client.nfts)
-        self.onchain = onchain.OnchainResourceWithRawResponse(client.onchain)
-        self.ping = ping.PingResourceWithRawResponse(client.ping)
-        self.public_treasury = public_treasury.PublicTreasuryResourceWithRawResponse(client.public_treasury)
-        self.search = search.SearchResourceWithRawResponse(client.search)
-        self.simple = simple.SimpleResourceWithRawResponse(client.simple)
-        self.token_lists = token_lists.TokenListsResourceWithRawResponse(client.token_lists)
+        self._client = client
+
+    @cached_property
+    def asset_platforms(self) -> asset_platforms.AssetPlatformsResourceWithRawResponse:
+        from .resources.asset_platforms import AssetPlatformsResourceWithRawResponse
+
+        return AssetPlatformsResourceWithRawResponse(self._client.asset_platforms)
+
+    @cached_property
+    def coins(self) -> coins.CoinsResourceWithRawResponse:
+        from .resources.coins import CoinsResourceWithRawResponse
+
+        return CoinsResourceWithRawResponse(self._client.coins)
+
+    @cached_property
+    def derivatives(self) -> derivatives.DerivativesResourceWithRawResponse:
+        from .resources.derivatives import DerivativesResourceWithRawResponse
+
+        return DerivativesResourceWithRawResponse(self._client.derivatives)
+
+    @cached_property
+    def entities(self) -> entities.EntitiesResourceWithRawResponse:
+        from .resources.entities import EntitiesResourceWithRawResponse
+
+        return EntitiesResourceWithRawResponse(self._client.entities)
+
+    @cached_property
+    def exchange_rates(self) -> exchange_rates.ExchangeRatesResourceWithRawResponse:
+        from .resources.exchange_rates import ExchangeRatesResourceWithRawResponse
+
+        return ExchangeRatesResourceWithRawResponse(self._client.exchange_rates)
+
+    @cached_property
+    def exchanges(self) -> exchanges.ExchangesResourceWithRawResponse:
+        from .resources.exchanges import ExchangesResourceWithRawResponse
+
+        return ExchangesResourceWithRawResponse(self._client.exchanges)
+
+    @cached_property
+    def global_(self) -> global_.GlobalResourceWithRawResponse:
+        from .resources.global_ import GlobalResourceWithRawResponse
+
+        return GlobalResourceWithRawResponse(self._client.global_)
+
+    @cached_property
+    def key(self) -> key.KeyResourceWithRawResponse:
+        from .resources.key import KeyResourceWithRawResponse
+
+        return KeyResourceWithRawResponse(self._client.key)
+
+    @cached_property
+    def nfts(self) -> nfts.NFTsResourceWithRawResponse:
+        from .resources.nfts import NFTsResourceWithRawResponse
+
+        return NFTsResourceWithRawResponse(self._client.nfts)
+
+    @cached_property
+    def onchain(self) -> onchain.OnchainResourceWithRawResponse:
+        from .resources.onchain import OnchainResourceWithRawResponse
+
+        return OnchainResourceWithRawResponse(self._client.onchain)
+
+    @cached_property
+    def ping(self) -> ping.PingResourceWithRawResponse:
+        from .resources.ping import PingResourceWithRawResponse
+
+        return PingResourceWithRawResponse(self._client.ping)
+
+    @cached_property
+    def public_treasury(self) -> public_treasury.PublicTreasuryResourceWithRawResponse:
+        from .resources.public_treasury import PublicTreasuryResourceWithRawResponse
+
+        return PublicTreasuryResourceWithRawResponse(self._client.public_treasury)
+
+    @cached_property
+    def search(self) -> search.SearchResourceWithRawResponse:
+        from .resources.search import SearchResourceWithRawResponse
+
+        return SearchResourceWithRawResponse(self._client.search)
+
+    @cached_property
+    def simple(self) -> simple.SimpleResourceWithRawResponse:
+        from .resources.simple import SimpleResourceWithRawResponse
+
+        return SimpleResourceWithRawResponse(self._client.simple)
+
+    @cached_property
+    def token_lists(self) -> token_lists.TokenListsResourceWithRawResponse:
+        from .resources.token_lists import TokenListsResourceWithRawResponse
+
+        return TokenListsResourceWithRawResponse(self._client.token_lists)
 
 
 class AsyncCoingeckoWithRawResponse:
+    _client: AsyncCoingecko
+
     def __init__(self, client: AsyncCoingecko) -> None:
-        self.asset_platforms = asset_platforms.AsyncAssetPlatformsResourceWithRawResponse(client.asset_platforms)
-        self.coins = coins.AsyncCoinsResourceWithRawResponse(client.coins)
-        self.derivatives = derivatives.AsyncDerivativesResourceWithRawResponse(client.derivatives)
-        self.entities = entities.AsyncEntitiesResourceWithRawResponse(client.entities)
-        self.exchange_rates = exchange_rates.AsyncExchangeRatesResourceWithRawResponse(client.exchange_rates)
-        self.exchanges = exchanges.AsyncExchangesResourceWithRawResponse(client.exchanges)
-        self.global_ = global_.AsyncGlobalResourceWithRawResponse(client.global_)
-        self.key = key.AsyncKeyResourceWithRawResponse(client.key)
-        self.nfts = nfts.AsyncNFTsResourceWithRawResponse(client.nfts)
-        self.onchain = onchain.AsyncOnchainResourceWithRawResponse(client.onchain)
-        self.ping = ping.AsyncPingResourceWithRawResponse(client.ping)
-        self.public_treasury = public_treasury.AsyncPublicTreasuryResourceWithRawResponse(client.public_treasury)
-        self.search = search.AsyncSearchResourceWithRawResponse(client.search)
-        self.simple = simple.AsyncSimpleResourceWithRawResponse(client.simple)
-        self.token_lists = token_lists.AsyncTokenListsResourceWithRawResponse(client.token_lists)
+        self._client = client
+
+    @cached_property
+    def asset_platforms(self) -> asset_platforms.AsyncAssetPlatformsResourceWithRawResponse:
+        from .resources.asset_platforms import AsyncAssetPlatformsResourceWithRawResponse
+
+        return AsyncAssetPlatformsResourceWithRawResponse(self._client.asset_platforms)
+
+    @cached_property
+    def coins(self) -> coins.AsyncCoinsResourceWithRawResponse:
+        from .resources.coins import AsyncCoinsResourceWithRawResponse
+
+        return AsyncCoinsResourceWithRawResponse(self._client.coins)
+
+    @cached_property
+    def derivatives(self) -> derivatives.AsyncDerivativesResourceWithRawResponse:
+        from .resources.derivatives import AsyncDerivativesResourceWithRawResponse
+
+        return AsyncDerivativesResourceWithRawResponse(self._client.derivatives)
+
+    @cached_property
+    def entities(self) -> entities.AsyncEntitiesResourceWithRawResponse:
+        from .resources.entities import AsyncEntitiesResourceWithRawResponse
+
+        return AsyncEntitiesResourceWithRawResponse(self._client.entities)
+
+    @cached_property
+    def exchange_rates(self) -> exchange_rates.AsyncExchangeRatesResourceWithRawResponse:
+        from .resources.exchange_rates import AsyncExchangeRatesResourceWithRawResponse
+
+        return AsyncExchangeRatesResourceWithRawResponse(self._client.exchange_rates)
+
+    @cached_property
+    def exchanges(self) -> exchanges.AsyncExchangesResourceWithRawResponse:
+        from .resources.exchanges import AsyncExchangesResourceWithRawResponse
+
+        return AsyncExchangesResourceWithRawResponse(self._client.exchanges)
+
+    @cached_property
+    def global_(self) -> global_.AsyncGlobalResourceWithRawResponse:
+        from .resources.global_ import AsyncGlobalResourceWithRawResponse
+
+        return AsyncGlobalResourceWithRawResponse(self._client.global_)
+
+    @cached_property
+    def key(self) -> key.AsyncKeyResourceWithRawResponse:
+        from .resources.key import AsyncKeyResourceWithRawResponse
+
+        return AsyncKeyResourceWithRawResponse(self._client.key)
+
+    @cached_property
+    def nfts(self) -> nfts.AsyncNFTsResourceWithRawResponse:
+        from .resources.nfts import AsyncNFTsResourceWithRawResponse
+
+        return AsyncNFTsResourceWithRawResponse(self._client.nfts)
+
+    @cached_property
+    def onchain(self) -> onchain.AsyncOnchainResourceWithRawResponse:
+        from .resources.onchain import AsyncOnchainResourceWithRawResponse
+
+        return AsyncOnchainResourceWithRawResponse(self._client.onchain)
+
+    @cached_property
+    def ping(self) -> ping.AsyncPingResourceWithRawResponse:
+        from .resources.ping import AsyncPingResourceWithRawResponse
+
+        return AsyncPingResourceWithRawResponse(self._client.ping)
+
+    @cached_property
+    def public_treasury(self) -> public_treasury.AsyncPublicTreasuryResourceWithRawResponse:
+        from .resources.public_treasury import AsyncPublicTreasuryResourceWithRawResponse
+
+        return AsyncPublicTreasuryResourceWithRawResponse(self._client.public_treasury)
+
+    @cached_property
+    def search(self) -> search.AsyncSearchResourceWithRawResponse:
+        from .resources.search import AsyncSearchResourceWithRawResponse
+
+        return AsyncSearchResourceWithRawResponse(self._client.search)
+
+    @cached_property
+    def simple(self) -> simple.AsyncSimpleResourceWithRawResponse:
+        from .resources.simple import AsyncSimpleResourceWithRawResponse
+
+        return AsyncSimpleResourceWithRawResponse(self._client.simple)
+
+    @cached_property
+    def token_lists(self) -> token_lists.AsyncTokenListsResourceWithRawResponse:
+        from .resources.token_lists import AsyncTokenListsResourceWithRawResponse
+
+        return AsyncTokenListsResourceWithRawResponse(self._client.token_lists)
 
 
 class CoingeckoWithStreamedResponse:
+    _client: Coingecko
+
     def __init__(self, client: Coingecko) -> None:
-        self.asset_platforms = asset_platforms.AssetPlatformsResourceWithStreamingResponse(client.asset_platforms)
-        self.coins = coins.CoinsResourceWithStreamingResponse(client.coins)
-        self.derivatives = derivatives.DerivativesResourceWithStreamingResponse(client.derivatives)
-        self.entities = entities.EntitiesResourceWithStreamingResponse(client.entities)
-        self.exchange_rates = exchange_rates.ExchangeRatesResourceWithStreamingResponse(client.exchange_rates)
-        self.exchanges = exchanges.ExchangesResourceWithStreamingResponse(client.exchanges)
-        self.global_ = global_.GlobalResourceWithStreamingResponse(client.global_)
-        self.key = key.KeyResourceWithStreamingResponse(client.key)
-        self.nfts = nfts.NFTsResourceWithStreamingResponse(client.nfts)
-        self.onchain = onchain.OnchainResourceWithStreamingResponse(client.onchain)
-        self.ping = ping.PingResourceWithStreamingResponse(client.ping)
-        self.public_treasury = public_treasury.PublicTreasuryResourceWithStreamingResponse(client.public_treasury)
-        self.search = search.SearchResourceWithStreamingResponse(client.search)
-        self.simple = simple.SimpleResourceWithStreamingResponse(client.simple)
-        self.token_lists = token_lists.TokenListsResourceWithStreamingResponse(client.token_lists)
+        self._client = client
+
+    @cached_property
+    def asset_platforms(self) -> asset_platforms.AssetPlatformsResourceWithStreamingResponse:
+        from .resources.asset_platforms import AssetPlatformsResourceWithStreamingResponse
+
+        return AssetPlatformsResourceWithStreamingResponse(self._client.asset_platforms)
+
+    @cached_property
+    def coins(self) -> coins.CoinsResourceWithStreamingResponse:
+        from .resources.coins import CoinsResourceWithStreamingResponse
+
+        return CoinsResourceWithStreamingResponse(self._client.coins)
+
+    @cached_property
+    def derivatives(self) -> derivatives.DerivativesResourceWithStreamingResponse:
+        from .resources.derivatives import DerivativesResourceWithStreamingResponse
+
+        return DerivativesResourceWithStreamingResponse(self._client.derivatives)
+
+    @cached_property
+    def entities(self) -> entities.EntitiesResourceWithStreamingResponse:
+        from .resources.entities import EntitiesResourceWithStreamingResponse
+
+        return EntitiesResourceWithStreamingResponse(self._client.entities)
+
+    @cached_property
+    def exchange_rates(self) -> exchange_rates.ExchangeRatesResourceWithStreamingResponse:
+        from .resources.exchange_rates import ExchangeRatesResourceWithStreamingResponse
+
+        return ExchangeRatesResourceWithStreamingResponse(self._client.exchange_rates)
+
+    @cached_property
+    def exchanges(self) -> exchanges.ExchangesResourceWithStreamingResponse:
+        from .resources.exchanges import ExchangesResourceWithStreamingResponse
+
+        return ExchangesResourceWithStreamingResponse(self._client.exchanges)
+
+    @cached_property
+    def global_(self) -> global_.GlobalResourceWithStreamingResponse:
+        from .resources.global_ import GlobalResourceWithStreamingResponse
+
+        return GlobalResourceWithStreamingResponse(self._client.global_)
+
+    @cached_property
+    def key(self) -> key.KeyResourceWithStreamingResponse:
+        from .resources.key import KeyResourceWithStreamingResponse
+
+        return KeyResourceWithStreamingResponse(self._client.key)
+
+    @cached_property
+    def nfts(self) -> nfts.NFTsResourceWithStreamingResponse:
+        from .resources.nfts import NFTsResourceWithStreamingResponse
+
+        return NFTsResourceWithStreamingResponse(self._client.nfts)
+
+    @cached_property
+    def onchain(self) -> onchain.OnchainResourceWithStreamingResponse:
+        from .resources.onchain import OnchainResourceWithStreamingResponse
+
+        return OnchainResourceWithStreamingResponse(self._client.onchain)
+
+    @cached_property
+    def ping(self) -> ping.PingResourceWithStreamingResponse:
+        from .resources.ping import PingResourceWithStreamingResponse
+
+        return PingResourceWithStreamingResponse(self._client.ping)
+
+    @cached_property
+    def public_treasury(self) -> public_treasury.PublicTreasuryResourceWithStreamingResponse:
+        from .resources.public_treasury import PublicTreasuryResourceWithStreamingResponse
+
+        return PublicTreasuryResourceWithStreamingResponse(self._client.public_treasury)
+
+    @cached_property
+    def search(self) -> search.SearchResourceWithStreamingResponse:
+        from .resources.search import SearchResourceWithStreamingResponse
+
+        return SearchResourceWithStreamingResponse(self._client.search)
+
+    @cached_property
+    def simple(self) -> simple.SimpleResourceWithStreamingResponse:
+        from .resources.simple import SimpleResourceWithStreamingResponse
+
+        return SimpleResourceWithStreamingResponse(self._client.simple)
+
+    @cached_property
+    def token_lists(self) -> token_lists.TokenListsResourceWithStreamingResponse:
+        from .resources.token_lists import TokenListsResourceWithStreamingResponse
+
+        return TokenListsResourceWithStreamingResponse(self._client.token_lists)
 
 
 class AsyncCoingeckoWithStreamedResponse:
+    _client: AsyncCoingecko
+
     def __init__(self, client: AsyncCoingecko) -> None:
-        self.asset_platforms = asset_platforms.AsyncAssetPlatformsResourceWithStreamingResponse(client.asset_platforms)
-        self.coins = coins.AsyncCoinsResourceWithStreamingResponse(client.coins)
-        self.derivatives = derivatives.AsyncDerivativesResourceWithStreamingResponse(client.derivatives)
-        self.entities = entities.AsyncEntitiesResourceWithStreamingResponse(client.entities)
-        self.exchange_rates = exchange_rates.AsyncExchangeRatesResourceWithStreamingResponse(client.exchange_rates)
-        self.exchanges = exchanges.AsyncExchangesResourceWithStreamingResponse(client.exchanges)
-        self.global_ = global_.AsyncGlobalResourceWithStreamingResponse(client.global_)
-        self.key = key.AsyncKeyResourceWithStreamingResponse(client.key)
-        self.nfts = nfts.AsyncNFTsResourceWithStreamingResponse(client.nfts)
-        self.onchain = onchain.AsyncOnchainResourceWithStreamingResponse(client.onchain)
-        self.ping = ping.AsyncPingResourceWithStreamingResponse(client.ping)
-        self.public_treasury = public_treasury.AsyncPublicTreasuryResourceWithStreamingResponse(client.public_treasury)
-        self.search = search.AsyncSearchResourceWithStreamingResponse(client.search)
-        self.simple = simple.AsyncSimpleResourceWithStreamingResponse(client.simple)
-        self.token_lists = token_lists.AsyncTokenListsResourceWithStreamingResponse(client.token_lists)
+        self._client = client
+
+    @cached_property
+    def asset_platforms(self) -> asset_platforms.AsyncAssetPlatformsResourceWithStreamingResponse:
+        from .resources.asset_platforms import AsyncAssetPlatformsResourceWithStreamingResponse
+
+        return AsyncAssetPlatformsResourceWithStreamingResponse(self._client.asset_platforms)
+
+    @cached_property
+    def coins(self) -> coins.AsyncCoinsResourceWithStreamingResponse:
+        from .resources.coins import AsyncCoinsResourceWithStreamingResponse
+
+        return AsyncCoinsResourceWithStreamingResponse(self._client.coins)
+
+    @cached_property
+    def derivatives(self) -> derivatives.AsyncDerivativesResourceWithStreamingResponse:
+        from .resources.derivatives import AsyncDerivativesResourceWithStreamingResponse
+
+        return AsyncDerivativesResourceWithStreamingResponse(self._client.derivatives)
+
+    @cached_property
+    def entities(self) -> entities.AsyncEntitiesResourceWithStreamingResponse:
+        from .resources.entities import AsyncEntitiesResourceWithStreamingResponse
+
+        return AsyncEntitiesResourceWithStreamingResponse(self._client.entities)
+
+    @cached_property
+    def exchange_rates(self) -> exchange_rates.AsyncExchangeRatesResourceWithStreamingResponse:
+        from .resources.exchange_rates import AsyncExchangeRatesResourceWithStreamingResponse
+
+        return AsyncExchangeRatesResourceWithStreamingResponse(self._client.exchange_rates)
+
+    @cached_property
+    def exchanges(self) -> exchanges.AsyncExchangesResourceWithStreamingResponse:
+        from .resources.exchanges import AsyncExchangesResourceWithStreamingResponse
+
+        return AsyncExchangesResourceWithStreamingResponse(self._client.exchanges)
+
+    @cached_property
+    def global_(self) -> global_.AsyncGlobalResourceWithStreamingResponse:
+        from .resources.global_ import AsyncGlobalResourceWithStreamingResponse
+
+        return AsyncGlobalResourceWithStreamingResponse(self._client.global_)
+
+    @cached_property
+    def key(self) -> key.AsyncKeyResourceWithStreamingResponse:
+        from .resources.key import AsyncKeyResourceWithStreamingResponse
+
+        return AsyncKeyResourceWithStreamingResponse(self._client.key)
+
+    @cached_property
+    def nfts(self) -> nfts.AsyncNFTsResourceWithStreamingResponse:
+        from .resources.nfts import AsyncNFTsResourceWithStreamingResponse
+
+        return AsyncNFTsResourceWithStreamingResponse(self._client.nfts)
+
+    @cached_property
+    def onchain(self) -> onchain.AsyncOnchainResourceWithStreamingResponse:
+        from .resources.onchain import AsyncOnchainResourceWithStreamingResponse
+
+        return AsyncOnchainResourceWithStreamingResponse(self._client.onchain)
+
+    @cached_property
+    def ping(self) -> ping.AsyncPingResourceWithStreamingResponse:
+        from .resources.ping import AsyncPingResourceWithStreamingResponse
+
+        return AsyncPingResourceWithStreamingResponse(self._client.ping)
+
+    @cached_property
+    def public_treasury(self) -> public_treasury.AsyncPublicTreasuryResourceWithStreamingResponse:
+        from .resources.public_treasury import AsyncPublicTreasuryResourceWithStreamingResponse
+
+        return AsyncPublicTreasuryResourceWithStreamingResponse(self._client.public_treasury)
+
+    @cached_property
+    def search(self) -> search.AsyncSearchResourceWithStreamingResponse:
+        from .resources.search import AsyncSearchResourceWithStreamingResponse
+
+        return AsyncSearchResourceWithStreamingResponse(self._client.search)
+
+    @cached_property
+    def simple(self) -> simple.AsyncSimpleResourceWithStreamingResponse:
+        from .resources.simple import AsyncSimpleResourceWithStreamingResponse
+
+        return AsyncSimpleResourceWithStreamingResponse(self._client.simple)
+
+    @cached_property
+    def token_lists(self) -> token_lists.AsyncTokenListsResourceWithStreamingResponse:
+        from .resources.token_lists import AsyncTokenListsResourceWithStreamingResponse
+
+        return AsyncTokenListsResourceWithStreamingResponse(self._client.token_lists)
 
 
 Client = Coingecko
