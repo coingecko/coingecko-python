@@ -50,6 +50,7 @@ class MultiResource(SyncAPIResource):
         network: str,
         include: Literal["top_pools"] | Omit = omit,
         include_composition: bool | Omit = omit,
+        include_inactive_source: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -65,6 +66,8 @@ class MultiResource(SyncAPIResource):
           include: attributes to include
 
           include_composition: include pool composition, default: false
+
+          include_inactive_source: include tokens from inactive pools using the most recent swap, default: false
 
           extra_headers: Send extra headers
 
@@ -89,6 +92,7 @@ class MultiResource(SyncAPIResource):
                     {
                         "include": include,
                         "include_composition": include_composition,
+                        "include_inactive_source": include_inactive_source,
                     },
                     multi_get_addresses_params.MultiGetAddressesParams,
                 ),
@@ -124,6 +128,7 @@ class AsyncMultiResource(AsyncAPIResource):
         network: str,
         include: Literal["top_pools"] | Omit = omit,
         include_composition: bool | Omit = omit,
+        include_inactive_source: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -139,6 +144,8 @@ class AsyncMultiResource(AsyncAPIResource):
           include: attributes to include
 
           include_composition: include pool composition, default: false
+
+          include_inactive_source: include tokens from inactive pools using the most recent swap, default: false
 
           extra_headers: Send extra headers
 
@@ -163,6 +170,7 @@ class AsyncMultiResource(AsyncAPIResource):
                     {
                         "include": include,
                         "include_composition": include_composition,
+                        "include_inactive_source": include_inactive_source,
                     },
                     multi_get_addresses_params.MultiGetAddressesParams,
                 ),

@@ -127,6 +127,8 @@ class DataAttributes(BaseModel):
 
     base_token_price_usd: Optional[str] = None
 
+    community_sus_report: Optional[float] = None
+
     fdv_usd: Optional[str] = None
 
     market_cap_usd: Optional[str] = None
@@ -144,6 +146,10 @@ class DataAttributes(BaseModel):
     quote_token_price_usd: Optional[str] = None
 
     reserve_in_usd: Optional[str] = None
+
+    sentiment_vote_negative_percentage: Optional[float] = None
+
+    sentiment_vote_positive_percentage: Optional[float] = None
 
     transactions: Optional[DataAttributesTransactions] = None
 

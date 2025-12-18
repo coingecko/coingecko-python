@@ -182,6 +182,7 @@ class CoinsResource(SyncAPIResource):
         community_data: bool | Omit = omit,
         developer_data: bool | Omit = omit,
         dex_pair_format: Literal["contract_address", "symbol"] | Omit = omit,
+        include_categories_details: bool | Omit = omit,
         localization: bool | Omit = omit,
         market_data: bool | Omit = omit,
         sparkline: bool | Omit = omit,
@@ -207,6 +208,8 @@ class CoinsResource(SyncAPIResource):
           dex_pair_format:
               set to `symbol` to display DEX pair base and target as symbols, default:
               `contract_address`
+
+          include_categories_details: include categories details, default: false
 
           localization: include all the localized languages in the response, default: true
 
@@ -238,6 +241,7 @@ class CoinsResource(SyncAPIResource):
                         "community_data": community_data,
                         "developer_data": developer_data,
                         "dex_pair_format": dex_pair_format,
+                        "include_categories_details": include_categories_details,
                         "localization": localization,
                         "market_data": market_data,
                         "sparkline": sparkline,
@@ -321,6 +325,7 @@ class AsyncCoinsResource(AsyncAPIResource):
         community_data: bool | Omit = omit,
         developer_data: bool | Omit = omit,
         dex_pair_format: Literal["contract_address", "symbol"] | Omit = omit,
+        include_categories_details: bool | Omit = omit,
         localization: bool | Omit = omit,
         market_data: bool | Omit = omit,
         sparkline: bool | Omit = omit,
@@ -346,6 +351,8 @@ class AsyncCoinsResource(AsyncAPIResource):
           dex_pair_format:
               set to `symbol` to display DEX pair base and target as symbols, default:
               `contract_address`
+
+          include_categories_details: include categories details, default: false
 
           localization: include all the localized languages in the response, default: true
 
@@ -377,6 +384,7 @@ class AsyncCoinsResource(AsyncAPIResource):
                         "community_data": community_data,
                         "developer_data": developer_data,
                         "dex_pair_format": dex_pair_format,
+                        "include_categories_details": include_categories_details,
                         "localization": localization,
                         "market_data": market_data,
                         "sparkline": sparkline,

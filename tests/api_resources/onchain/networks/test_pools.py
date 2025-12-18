@@ -34,6 +34,7 @@ class TestPools:
         pool = client.onchain.networks.pools.get(
             network="eth",
             include="include",
+            include_gt_community_data=True,
             page=0,
             sort="h24_tx_count_desc",
         )
@@ -157,6 +158,7 @@ class TestAsyncPools:
         pool = await async_client.onchain.networks.pools.get(
             network="eth",
             include="include",
+            include_gt_community_data=True,
             page=0,
             sort="h24_tx_count_desc",
         )

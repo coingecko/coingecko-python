@@ -33,6 +33,7 @@ class TestPools:
             token_address="0xdac17f958d2ee523a2206206994597c13d831ec7",
             network="eth",
             include="include",
+            include_inactive_source=True,
             page=0,
             sort="h24_volume_usd_liquidity_desc",
         )
@@ -103,6 +104,7 @@ class TestAsyncPools:
             token_address="0xdac17f958d2ee523a2206206994597c13d831ec7",
             network="eth",
             include="include",
+            include_inactive_source=True,
             page=0,
             sort="h24_volume_usd_liquidity_desc",
         )

@@ -32,6 +32,7 @@ class TestTrendingPools:
         trending_pool = client.onchain.networks.trending_pools.get(
             duration="5m",
             include="include",
+            include_gt_community_data=True,
             page=0,
         )
         assert_matches_type(TrendingPoolGetResponse, trending_pool, path=["response"])
@@ -73,6 +74,7 @@ class TestTrendingPools:
             network="eth",
             duration="5m",
             include="include",
+            include_gt_community_data=True,
             page=0,
         )
         assert_matches_type(TrendingPoolGetNetworkResponse, trending_pool, path=["response"])
@@ -129,6 +131,7 @@ class TestAsyncTrendingPools:
         trending_pool = await async_client.onchain.networks.trending_pools.get(
             duration="5m",
             include="include",
+            include_gt_community_data=True,
             page=0,
         )
         assert_matches_type(TrendingPoolGetResponse, trending_pool, path=["response"])
@@ -170,6 +173,7 @@ class TestAsyncTrendingPools:
             network="eth",
             duration="5m",
             include="include",
+            include_gt_community_data=True,
             page=0,
         )
         assert_matches_type(TrendingPoolGetNetworkResponse, trending_pool, path=["response"])

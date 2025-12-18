@@ -97,6 +97,7 @@ class PoolsResource(SyncAPIResource):
         network: str,
         *,
         include: str | Omit = omit,
+        include_gt_community_data: bool | Omit = omit,
         page: int | Omit = omit,
         sort: Literal["h24_tx_count_desc", "h24_volume_usd_desc"] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -113,6 +114,9 @@ class PoolsResource(SyncAPIResource):
         Args:
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`
+
+          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
+              Default value: false
 
           page: page through results Default value: 1
 
@@ -138,6 +142,7 @@ class PoolsResource(SyncAPIResource):
                 query=maybe_transform(
                     {
                         "include": include,
+                        "include_gt_community_data": include_gt_community_data,
                         "page": page,
                         "sort": sort,
                     },
@@ -247,6 +252,7 @@ class AsyncPoolsResource(AsyncAPIResource):
         network: str,
         *,
         include: str | Omit = omit,
+        include_gt_community_data: bool | Omit = omit,
         page: int | Omit = omit,
         sort: Literal["h24_tx_count_desc", "h24_volume_usd_desc"] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -263,6 +269,9 @@ class AsyncPoolsResource(AsyncAPIResource):
         Args:
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`
+
+          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
+              Default value: false
 
           page: page through results Default value: 1
 
@@ -288,6 +297,7 @@ class AsyncPoolsResource(AsyncAPIResource):
                 query=await async_maybe_transform(
                     {
                         "include": include,
+                        "include_gt_community_data": include_gt_community_data,
                         "page": page,
                         "sort": sort,
                     },

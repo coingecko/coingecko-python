@@ -16,6 +16,12 @@ class TokenPriceGetAddressesParams(TypedDict, total=False):
     include_24hr_vol: bool
     """include 24hr volume, default: false"""
 
+    include_inactive_source: bool
+    """
+    include token price data from inactive pools using the most recent swap,
+    default: false
+    """
+
     include_market_cap: bool
     """include market capitalization, default: false"""
 

@@ -34,6 +34,7 @@ class TestTokens:
             network="eth",
             include="top_pools",
             include_composition=True,
+            include_inactive_source=True,
         )
         assert_matches_type(TokenGetAddressResponse, token, path=["response"])
 
@@ -103,6 +104,7 @@ class TestAsyncTokens:
             network="eth",
             include="top_pools",
             include_composition=True,
+            include_inactive_source=True,
         )
         assert_matches_type(TokenGetAddressResponse, token, path=["response"])
 

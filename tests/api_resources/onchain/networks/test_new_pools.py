@@ -31,6 +31,7 @@ class TestNewPools:
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         new_pool = client.onchain.networks.new_pools.get(
             include="include",
+            include_gt_community_data=True,
             page=0,
         )
         assert_matches_type(NewPoolGetResponse, new_pool, path=["response"])
@@ -71,6 +72,7 @@ class TestNewPools:
         new_pool = client.onchain.networks.new_pools.get_network(
             network="eth",
             include="include",
+            include_gt_community_data=True,
             page=0,
         )
         assert_matches_type(NewPoolGetNetworkResponse, new_pool, path=["response"])
@@ -126,6 +128,7 @@ class TestAsyncNewPools:
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         new_pool = await async_client.onchain.networks.new_pools.get(
             include="include",
+            include_gt_community_data=True,
             page=0,
         )
         assert_matches_type(NewPoolGetResponse, new_pool, path=["response"])
@@ -166,6 +169,7 @@ class TestAsyncNewPools:
         new_pool = await async_client.onchain.networks.new_pools.get_network(
             network="eth",
             include="include",
+            include_gt_community_data=True,
             page=0,
         )
         assert_matches_type(NewPoolGetNetworkResponse, new_pool, path=["response"])
