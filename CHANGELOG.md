@@ -1,5 +1,26 @@
 # Changelog
 
+## 1.11.3 (2025-12-18)
+
+Full Changelog: [v1.11.2...v1.11.3](https://github.com/coingecko/coingecko-python/compare/v1.11.2...v1.11.3)
+
+### Bug Fixes
+
+* ensure streams are always closed ([e51d469](https://github.com/coingecko/coingecko-python/commit/e51d46991166ae87d5dadd827f803ce0f293ea88))
+* Remove incorrect comment ([12a638c](https://github.com/coingecko/coingecko-python/commit/12a638cc2b314240ea9c5ddf460bfab88542b797))
+* **types:** allow pyright to infer TypedDict types within SequenceNotStr ([dfe9c19](https://github.com/coingecko/coingecko-python/commit/dfe9c19b68627e99139837f8b00b2d35948e2e87))
+* use async_to_httpx_files in patch method ([6482e2b](https://github.com/coingecko/coingecko-python/commit/6482e2b102a82dbea5f8f6951af0ba0809d3b4b0))
+
+
+### Chores
+
+* add missing docstrings ([d90bf87](https://github.com/coingecko/coingecko-python/commit/d90bf87cc6149e32d10bbb81f5d12a97fbc14eb9))
+* **deps:** mypy 1.18.1 has a regression, pin to 1.17 ([4fb9fd2](https://github.com/coingecko/coingecko-python/commit/4fb9fd29b779f96b3fa57bba750afbcbcd70e06b))
+* **docs:** use environment variables for authentication in code snippets ([cd2478b](https://github.com/coingecko/coingecko-python/commit/cd2478b3aa36989a4685cab291eeae5cc7521c39))
+* **internal:** add missing files argument to base client ([fdfb733](https://github.com/coingecko/coingecko-python/commit/fdfb733c0826445d3cac26ac220335c19df07a94))
+* speedup initial import ([41bfc15](https://github.com/coingecko/coingecko-python/commit/41bfc1506a5ef1ffe945dbdc9996f12dd425a34d))
+* update lockfile ([def90a4](https://github.com/coingecko/coingecko-python/commit/def90a462f594215307855a485fb0defb2e59f21))
+
 ## 1.11.2 (2025-11-22)
 
 Full Changelog: [v1.11.1...v1.11.2](https://github.com/coingecko/coingecko-python/compare/v1.11.1...v1.11.2)
