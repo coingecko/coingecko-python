@@ -9,7 +9,7 @@ __all__ = ["HistoryGetParams"]
 
 class HistoryGetParams(TypedDict, total=False):
     date: Required[str]
-    """date of data snapshot (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`)"""
+    """date of data snapshot (`YYYY-MM-DD`)"""
 
     localization: bool
     """include all the localized languages in response, default: true"""

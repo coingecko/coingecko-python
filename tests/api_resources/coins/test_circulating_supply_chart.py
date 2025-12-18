@@ -35,7 +35,7 @@ class TestCirculatingSupplyChart:
         circulating_supply_chart = client.coins.circulating_supply_chart.get(
             id="bitcoin",
             days="days",
-            interval="daily",
+            interval="5m",
         )
         assert_matches_type(CirculatingSupplyChartGetResponse, circulating_supply_chart, path=["response"])
 
@@ -147,7 +147,7 @@ class TestAsyncCirculatingSupplyChart:
         circulating_supply_chart = await async_client.coins.circulating_supply_chart.get(
             id="bitcoin",
             days="days",
-            interval="daily",
+            interval="5m",
         )
         assert_matches_type(CirculatingSupplyChartGetResponse, circulating_supply_chart, path=["response"])
 

@@ -46,6 +46,7 @@ class NewPoolsResource(SyncAPIResource):
         self,
         *,
         include: str | Omit = omit,
+        include_gt_community_data: bool | Omit = omit,
         page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -61,6 +62,9 @@ class NewPoolsResource(SyncAPIResource):
         Args:
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`, `network`
+
+          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
+              Default value: false
 
           page: page through results Default value: 1
 
@@ -82,6 +86,7 @@ class NewPoolsResource(SyncAPIResource):
                 query=maybe_transform(
                     {
                         "include": include,
+                        "include_gt_community_data": include_gt_community_data,
                         "page": page,
                     },
                     new_pool_get_params.NewPoolGetParams,
@@ -95,6 +100,7 @@ class NewPoolsResource(SyncAPIResource):
         network: str,
         *,
         include: str | Omit = omit,
+        include_gt_community_data: bool | Omit = omit,
         page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -110,6 +116,9 @@ class NewPoolsResource(SyncAPIResource):
         Args:
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`
+
+          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
+              Default value: false
 
           page: page through results Default value: 1
 
@@ -133,6 +142,7 @@ class NewPoolsResource(SyncAPIResource):
                 query=maybe_transform(
                     {
                         "include": include,
+                        "include_gt_community_data": include_gt_community_data,
                         "page": page,
                     },
                     new_pool_get_network_params.NewPoolGetNetworkParams,
@@ -166,6 +176,7 @@ class AsyncNewPoolsResource(AsyncAPIResource):
         self,
         *,
         include: str | Omit = omit,
+        include_gt_community_data: bool | Omit = omit,
         page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -181,6 +192,9 @@ class AsyncNewPoolsResource(AsyncAPIResource):
         Args:
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`, `network`
+
+          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
+              Default value: false
 
           page: page through results Default value: 1
 
@@ -202,6 +216,7 @@ class AsyncNewPoolsResource(AsyncAPIResource):
                 query=await async_maybe_transform(
                     {
                         "include": include,
+                        "include_gt_community_data": include_gt_community_data,
                         "page": page,
                     },
                     new_pool_get_params.NewPoolGetParams,
@@ -215,6 +230,7 @@ class AsyncNewPoolsResource(AsyncAPIResource):
         network: str,
         *,
         include: str | Omit = omit,
+        include_gt_community_data: bool | Omit = omit,
         page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -230,6 +246,9 @@ class AsyncNewPoolsResource(AsyncAPIResource):
         Args:
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`
+
+          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
+              Default value: false
 
           page: page through results Default value: 1
 
@@ -253,6 +272,7 @@ class AsyncNewPoolsResource(AsyncAPIResource):
                 query=await async_maybe_transform(
                     {
                         "include": include,
+                        "include_gt_community_data": include_gt_community_data,
                         "page": page,
                     },
                     new_pool_get_network_params.NewPoolGetNetworkParams,

@@ -48,6 +48,8 @@ class DataAttributes(BaseModel):
 
     image_url: Optional[str] = None
 
+    last_trade_timestamp: Optional[int] = None
+
     market_cap_usd: Optional[str] = None
 
     name: Optional[str] = None

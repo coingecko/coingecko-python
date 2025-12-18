@@ -14,5 +14,11 @@ class NewPoolGetNetworkParams(TypedDict, total=False):
     values: `base_token`, `quote_token`, `dex`
     """
 
+    include_gt_community_data: bool
+    """
+    include GeckoTerminal community data (Sentiment votes, Suspicious reports)
+    Default value: false
+    """
+
     page: int
     """page through results Default value: 1"""

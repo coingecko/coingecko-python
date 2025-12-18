@@ -28,5 +28,11 @@ class OhlcvGetTimeframeParams(TypedDict, total=False):
     include_empty_intervals: bool
     """include empty intervals with no trade data, default: false"""
 
+    include_inactive_source: bool
+    """
+    include token data from inactive pools using the most recent swap, default:
+    false
+    """
+
     limit: int
     """number of OHLCV results to return, maximum 1000 Default value: 100"""

@@ -18,5 +18,11 @@ class TrendingPoolGetParams(TypedDict, total=False):
     `base_token,dex`
     """
 
+    include_gt_community_data: bool
+    """
+    include GeckoTerminal community data (Sentiment votes, Suspicious reports)
+    Default value: false
+    """
+
     page: int
     """page through results Default value: 1"""

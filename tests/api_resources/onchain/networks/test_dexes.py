@@ -87,6 +87,7 @@ class TestDexes:
             dex="sushiswap",
             network="eth",
             include="include",
+            include_gt_community_data=True,
             page=0,
             sort="h24_tx_count_desc",
         )
@@ -208,6 +209,7 @@ class TestAsyncDexes:
             dex="sushiswap",
             network="eth",
             include="include",
+            include_gt_community_data=True,
             page=0,
             sort="h24_tx_count_desc",
         )

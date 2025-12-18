@@ -16,6 +16,9 @@ class PoolGetParams(TypedDict, total=False):
     values: `base_token`, `quote_token`, `dex`
     """
 
+    include_inactive_source: bool
+    """include tokens from inactive pools using the most recent swap, default: false"""
+
     page: int
     """page through results Default value: 1"""
 
