@@ -56,6 +56,14 @@ from .top_holders import (
     TopHoldersResourceWithStreamingResponse,
     AsyncTopHoldersResourceWithStreamingResponse,
 )
+from .top_traders import (
+    TopTradersResource,
+    AsyncTopTradersResource,
+    TopTradersResourceWithRawResponse,
+    AsyncTopTradersResourceWithRawResponse,
+    TopTradersResourceWithStreamingResponse,
+    AsyncTopTradersResourceWithStreamingResponse,
+)
 from .holders_chart import (
     HoldersChartResource,
     AsyncHoldersChartResource,
@@ -108,6 +116,12 @@ __all__ = [
     "AsyncTradesResourceWithRawResponse",
     "TradesResourceWithStreamingResponse",
     "AsyncTradesResourceWithStreamingResponse",
+    "TopTradersResource",
+    "AsyncTopTradersResource",
+    "TopTradersResourceWithRawResponse",
+    "AsyncTopTradersResourceWithRawResponse",
+    "TopTradersResourceWithStreamingResponse",
+    "AsyncTopTradersResourceWithStreamingResponse",
     "TokensResource",
     "AsyncTokensResource",
     "TokensResourceWithRawResponse",

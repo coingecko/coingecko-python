@@ -605,6 +605,18 @@ Methods:
 
 - <code title="get /onchain/networks/{network}/tokens/{token_address}/trades">client.onchain.networks.tokens.trades.<a href="./src/coingecko_sdk/resources/onchain/networks/tokens/trades.py">get</a>(token_address, \*, network, \*\*<a href="src/coingecko_sdk/types/onchain/networks/tokens/trade_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/networks/tokens/trade_get_response.py">TradeGetResponse</a></code>
 
+#### TopTraders
+
+Types:
+
+```python
+from coingecko_sdk.types.onchain.networks.tokens import TopTraderGetResponse
+```
+
+Methods:
+
+- <code title="get /onchain/networks/{network_id}/tokens/{token_address}/top_traders">client.onchain.networks.tokens.top_traders.<a href="./src/coingecko_sdk/resources/onchain/networks/tokens/top_traders.py">get</a>(token_address, \*, network_id, \*\*<a href="src/coingecko_sdk/types/onchain/networks/tokens/top_trader_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/networks/tokens/top_trader_get_response.py">TopTraderGetResponse</a></code>
+
 ## Pools
 
 ### Megafilter
@@ -692,13 +704,20 @@ Methods:
 Types:
 
 ```python
-from coingecko_sdk.types import PublicTreasuryGetCoinIDResponse, PublicTreasuryGetEntityIDResponse
+from coingecko_sdk.types import (
+    PublicTreasuryGetCoinIDResponse,
+    PublicTreasuryGetEntityIDResponse,
+    PublicTreasuryGetHoldingChartResponse,
+    PublicTreasuryGetTransactionHistoryResponse,
+)
 ```
 
 Methods:
 
 - <code title="get /{entity}/public_treasury/{coin_id}">client.public_treasury.<a href="./src/coingecko_sdk/resources/public_treasury.py">get_coin_id</a>(coin_id, \*, entity) -> <a href="./src/coingecko_sdk/types/public_treasury_get_coin_id_response.py">PublicTreasuryGetCoinIDResponse</a></code>
 - <code title="get /public_treasury/{entity_id}">client.public_treasury.<a href="./src/coingecko_sdk/resources/public_treasury.py">get_entity_id</a>(entity_id) -> <a href="./src/coingecko_sdk/types/public_treasury_get_entity_id_response.py">PublicTreasuryGetEntityIDResponse</a></code>
+- <code title="get /public_treasury/{entity_id}/{coin_id}/holding_chart">client.public_treasury.<a href="./src/coingecko_sdk/resources/public_treasury.py">get_holding_chart</a>(coin_id, \*, entity_id, \*\*<a href="src/coingecko_sdk/types/public_treasury_get_holding_chart_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/public_treasury_get_holding_chart_response.py">PublicTreasuryGetHoldingChartResponse</a></code>
+- <code title="get /public_treasury/{entity_id}/transaction_history">client.public_treasury.<a href="./src/coingecko_sdk/resources/public_treasury.py">get_transaction_history</a>(entity_id, \*\*<a href="src/coingecko_sdk/types/public_treasury_get_transaction_history_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/public_treasury_get_transaction_history_response.py">PublicTreasuryGetTransactionHistoryResponse</a></code>
 
 # Search
 

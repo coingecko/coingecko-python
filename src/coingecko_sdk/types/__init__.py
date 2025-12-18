@@ -31,3 +31,15 @@ from .public_treasury_get_coin_id_response import PublicTreasuryGetCoinIDRespons
 from .public_treasury_get_entity_id_response import (
     PublicTreasuryGetEntityIDResponse as PublicTreasuryGetEntityIDResponse,
 )
+from .public_treasury_get_holding_chart_params import (
+    PublicTreasuryGetHoldingChartParams as PublicTreasuryGetHoldingChartParams,
+)
+from .public_treasury_get_holding_chart_response import (
+    PublicTreasuryGetHoldingChartResponse as PublicTreasuryGetHoldingChartResponse,
+)
+from .public_treasury_get_transaction_history_params import (
+    PublicTreasuryGetTransactionHistoryParams as PublicTreasuryGetTransactionHistoryParams,
+)
+from .public_treasury_get_transaction_history_response import (
+    PublicTreasuryGetTransactionHistoryResponse as PublicTreasuryGetTransactionHistoryResponse,
+)

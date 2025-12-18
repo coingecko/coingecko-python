@@ -57,6 +57,14 @@ from .top_holders import (
     TopHoldersResourceWithStreamingResponse,
     AsyncTopHoldersResourceWithStreamingResponse,
 )
+from .top_traders import (
+    TopTradersResource,
+    AsyncTopTradersResource,
+    TopTradersResourceWithRawResponse,
+    AsyncTopTradersResourceWithRawResponse,
+    TopTradersResourceWithStreamingResponse,
+    AsyncTopTradersResourceWithStreamingResponse,
+)
 from ....._resource import SyncAPIResource, AsyncAPIResource
 from ....._response import (
     to_raw_response_wrapper,
@@ -107,6 +115,10 @@ class TokensResource(SyncAPIResource):
     @cached_property
     def trades(self) -> TradesResource:
         return TradesResource(self._client)
+
+    @cached_property
+    def top_traders(self) -> TopTradersResource:
+        return TopTradersResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> TokensResourceWithRawResponse:
@@ -215,6 +227,10 @@ class AsyncTokensResource(AsyncAPIResource):
     @cached_property
     def trades(self) -> AsyncTradesResource:
         return AsyncTradesResource(self._client)
+
+    @cached_property
+    def top_traders(self) -> AsyncTopTradersResource:
+        return AsyncTopTradersResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> AsyncTokensResourceWithRawResponse:
@@ -331,6 +347,10 @@ class TokensResourceWithRawResponse:
     def trades(self) -> TradesResourceWithRawResponse:
         return TradesResourceWithRawResponse(self._tokens.trades)
 
+    @cached_property
+    def top_traders(self) -> TopTradersResourceWithRawResponse:
+        return TopTradersResourceWithRawResponse(self._tokens.top_traders)
+
 
 class AsyncTokensResourceWithRawResponse:
     def __init__(self, tokens: AsyncTokensResource) -> None:
@@ -367,6 +387,10 @@ class AsyncTokensResourceWithRawResponse:
     @cached_property
     def trades(self) -> AsyncTradesResourceWithRawResponse:
         return AsyncTradesResourceWithRawResponse(self._tokens.trades)
+
+    @cached_property
+    def top_traders(self) -> AsyncTopTradersResourceWithRawResponse:
+        return AsyncTopTradersResourceWithRawResponse(self._tokens.top_traders)
 
 
 class TokensResourceWithStreamingResponse:
@@ -405,6 +429,10 @@ class TokensResourceWithStreamingResponse:
     def trades(self) -> TradesResourceWithStreamingResponse:
         return TradesResourceWithStreamingResponse(self._tokens.trades)
 
+    @cached_property
+    def top_traders(self) -> TopTradersResourceWithStreamingResponse:
+        return TopTradersResourceWithStreamingResponse(self._tokens.top_traders)
+
 
 class AsyncTokensResourceWithStreamingResponse:
     def __init__(self, tokens: AsyncTokensResource) -> None:
@@ -441,3 +469,7 @@ class AsyncTokensResourceWithStreamingResponse:
     @cached_property
     def trades(self) -> AsyncTradesResourceWithStreamingResponse:
         return AsyncTradesResourceWithStreamingResponse(self._tokens.trades)
+
+    @cached_property
+    def top_traders(self) -> AsyncTopTradersResourceWithStreamingResponse:
+        return AsyncTopTradersResourceWithStreamingResponse(self._tokens.top_traders)
