@@ -38,6 +38,7 @@ class TestOhlcv:
             before_timestamp=0,
             currency="usd",
             include_empty_intervals=True,
+            include_inactive_source=True,
             limit=0,
         )
         assert_matches_type(OhlcvGetTimeframeResponse, ohlcv, path=["response"])
@@ -116,6 +117,7 @@ class TestAsyncOhlcv:
             before_timestamp=0,
             currency="usd",
             include_empty_intervals=True,
+            include_inactive_source=True,
             limit=0,
         )
         assert_matches_type(OhlcvGetTimeframeResponse, ohlcv, path=["response"])

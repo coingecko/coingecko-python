@@ -20,6 +20,9 @@ class CoinGetIDParams(TypedDict, total=False):
     `contract_address`
     """
 
+    include_categories_details: bool
+    """include categories details, default: false"""
+
     localization: bool
     """include all the localized languages in the response, default: true"""
 

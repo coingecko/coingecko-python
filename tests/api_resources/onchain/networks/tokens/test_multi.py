@@ -34,6 +34,7 @@ class TestMulti:
             network="solana",
             include="top_pools",
             include_composition=True,
+            include_inactive_source=True,
         )
         assert_matches_type(MultiGetAddressesResponse, multi, path=["response"])
 
@@ -103,6 +104,7 @@ class TestAsyncMulti:
             network="solana",
             include="top_pools",
             include_composition=True,
+            include_inactive_source=True,
         )
         assert_matches_type(MultiGetAddressesResponse, multi, path=["response"])
 

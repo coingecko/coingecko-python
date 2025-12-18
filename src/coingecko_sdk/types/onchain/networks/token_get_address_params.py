@@ -15,3 +15,9 @@ class TokenGetAddressParams(TypedDict, total=False):
 
     include_composition: bool
     """include pool composition, default: false"""
+
+    include_inactive_source: bool
+    """
+    include token data from inactive pools using the most recent swap, default:
+    false
+    """

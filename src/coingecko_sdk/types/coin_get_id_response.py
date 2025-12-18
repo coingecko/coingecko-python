@@ -7,10 +7,12 @@ from .._models import BaseModel
 
 __all__ = [
     "CoinGetIDResponse",
+    "CategoriesDetail",
     "CommunityData",
     "DetailPlatforms",
     "DeveloperData",
     "DeveloperDataCodeAdditionsDeletions4Weeks",
+    "IcoData",
     "Image",
     "Links",
     "LinksReposURL",
@@ -42,6 +44,14 @@ __all__ = [
     "TickerConvertedVolume",
     "TickerMarket",
 ]
+
+
+class CategoriesDetail(BaseModel):
+    id: Optional[str] = None
+    """category ID"""
+
+    name: Optional[str] = None
+    """category name"""
 
 
 class CommunityData(BaseModel):
@@ -114,6 +124,100 @@ class DeveloperData(BaseModel):
 
     total_issues: Optional[float] = None
     """coin repository total issues"""
+
+
+class IcoData(BaseModel):
+    """coin ICO data"""
+
+    accepting_currencies: Optional[str] = None
+    """accepting currencies"""
+
+    amount_for_sale: Optional[float] = None
+    """amount for sale"""
+
+    base_pre_sale_amount: Optional[float] = None
+    """base pre-sale amount"""
+
+    base_public_sale_amount: Optional[float] = None
+    """base public sale amount"""
+
+    bounty_detail_url: Optional[str] = None
+    """bounty detail url"""
+
+    country_origin: Optional[str] = None
+    """country of origin"""
+
+    description: Optional[str] = None
+    """detailed description"""
+
+    hardcap_amount: Optional[float] = None
+    """hardcap amount"""
+
+    hardcap_currency: Optional[str] = None
+    """hardcap currency"""
+
+    ico_end_date: Optional[datetime] = None
+    """ICO end date"""
+
+    ico_start_date: Optional[datetime] = None
+    """ICO start date"""
+
+    kyc_required: Optional[bool] = None
+    """KYC required"""
+
+    links: Optional[Dict[str, str]] = None
+    """ICO related links"""
+
+    pre_sale_available: Optional[bool] = None
+    """pre-sale available"""
+
+    pre_sale_end_date: Optional[datetime] = None
+    """pre-sale end date"""
+
+    pre_sale_ended: Optional[bool] = None
+    """pre-sale ended"""
+
+    pre_sale_start_date: Optional[datetime] = None
+    """pre-sale start date"""
+
+    quote_pre_sale_amount: Optional[float] = None
+    """quote pre-sale amount"""
+
+    quote_pre_sale_currency: Optional[str] = None
+    """quote pre-sale currency"""
+
+    quote_public_sale_amount: Optional[float] = None
+    """quote public sale amount"""
+
+    quote_public_sale_currency: Optional[str] = None
+    """quote public sale currency"""
+
+    short_desc: Optional[str] = None
+    """short description"""
+
+    softcap_amount: Optional[float] = None
+    """softcap amount"""
+
+    softcap_currency: Optional[str] = None
+    """softcap currency"""
+
+    total_raised: Optional[float] = None
+    """total raised amount"""
+
+    total_raised_currency: Optional[str] = None
+    """total raised currency"""
+
+    whitelist_available: Optional[bool] = None
+    """whitelist available"""
+
+    whitelist_end_date: Optional[datetime] = None
+    """whitelist end date"""
+
+    whitelist_start_date: Optional[datetime] = None
+    """whitelist start date"""
+
+    whitelist_url: Optional[str] = None
+    """whitelist url"""
 
 
 class Image(BaseModel):
@@ -634,6 +738,9 @@ class CoinGetIDResponse(BaseModel):
     categories: Optional[List[str]] = None
     """coin categories"""
 
+    categories_details: Optional[List[CategoriesDetail]] = None
+    """detailed coin categories"""
+
     community_data: Optional[CommunityData] = None
     """coin community data"""
 
@@ -654,6 +761,9 @@ class CoinGetIDResponse(BaseModel):
 
     hashing_algorithm: Optional[str] = None
     """blockchain hashing algorithm"""
+
+    ico_data: Optional[IcoData] = None
+    """coin ICO data"""
 
     image: Optional[Image] = None
     """coin image url"""

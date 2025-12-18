@@ -49,6 +49,7 @@ class PoolsResource(SyncAPIResource):
         *,
         network: str,
         include: str | Omit = omit,
+        include_inactive_source: bool | Omit = omit,
         page: int | Omit = omit,
         sort: Literal["h24_volume_usd_liquidity_desc", "h24_tx_count_desc", "h24_volume_usd_desc"] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -65,6 +66,8 @@ class PoolsResource(SyncAPIResource):
         Args:
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`
+
+          include_inactive_source: include tokens from inactive pools using the most recent swap, default: false
 
           page: page through results Default value: 1
 
@@ -92,6 +95,7 @@ class PoolsResource(SyncAPIResource):
                 query=maybe_transform(
                     {
                         "include": include,
+                        "include_inactive_source": include_inactive_source,
                         "page": page,
                         "sort": sort,
                     },
@@ -128,6 +132,7 @@ class AsyncPoolsResource(AsyncAPIResource):
         *,
         network: str,
         include: str | Omit = omit,
+        include_inactive_source: bool | Omit = omit,
         page: int | Omit = omit,
         sort: Literal["h24_volume_usd_liquidity_desc", "h24_tx_count_desc", "h24_volume_usd_desc"] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -144,6 +149,8 @@ class AsyncPoolsResource(AsyncAPIResource):
         Args:
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`
+
+          include_inactive_source: include tokens from inactive pools using the most recent swap, default: false
 
           page: page through results Default value: 1
 
@@ -171,6 +178,7 @@ class AsyncPoolsResource(AsyncAPIResource):
                 query=await async_maybe_transform(
                     {
                         "include": include,
+                        "include_inactive_source": include_inactive_source,
                         "page": page,
                         "sort": sort,
                     },

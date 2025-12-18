@@ -48,6 +48,7 @@ class TokenPriceResource(SyncAPIResource):
         network: str,
         include_24hr_price_change: bool | Omit = omit,
         include_24hr_vol: bool | Omit = omit,
+        include_inactive_source: bool | Omit = omit,
         include_market_cap: bool | Omit = omit,
         include_total_reserve_in_usd: bool | Omit = omit,
         mcap_fdv_fallback: bool | Omit = omit,
@@ -66,6 +67,9 @@ class TokenPriceResource(SyncAPIResource):
           include_24hr_price_change: include 24hr price change, default: false
 
           include_24hr_vol: include 24hr volume, default: false
+
+          include_inactive_source: include token price data from inactive pools using the most recent swap,
+              default: false
 
           include_market_cap: include market capitalization, default: false
 
@@ -96,6 +100,7 @@ class TokenPriceResource(SyncAPIResource):
                     {
                         "include_24hr_price_change": include_24hr_price_change,
                         "include_24hr_vol": include_24hr_vol,
+                        "include_inactive_source": include_inactive_source,
                         "include_market_cap": include_market_cap,
                         "include_total_reserve_in_usd": include_total_reserve_in_usd,
                         "mcap_fdv_fallback": mcap_fdv_fallback,
@@ -134,6 +139,7 @@ class AsyncTokenPriceResource(AsyncAPIResource):
         network: str,
         include_24hr_price_change: bool | Omit = omit,
         include_24hr_vol: bool | Omit = omit,
+        include_inactive_source: bool | Omit = omit,
         include_market_cap: bool | Omit = omit,
         include_total_reserve_in_usd: bool | Omit = omit,
         mcap_fdv_fallback: bool | Omit = omit,
@@ -152,6 +158,9 @@ class AsyncTokenPriceResource(AsyncAPIResource):
           include_24hr_price_change: include 24hr price change, default: false
 
           include_24hr_vol: include 24hr volume, default: false
+
+          include_inactive_source: include token price data from inactive pools using the most recent swap,
+              default: false
 
           include_market_cap: include market capitalization, default: false
 
@@ -182,6 +191,7 @@ class AsyncTokenPriceResource(AsyncAPIResource):
                     {
                         "include_24hr_price_change": include_24hr_price_change,
                         "include_24hr_vol": include_24hr_vol,
+                        "include_inactive_source": include_inactive_source,
                         "include_market_cap": include_market_cap,
                         "include_total_reserve_in_usd": include_total_reserve_in_usd,
                         "mcap_fdv_fallback": mcap_fdv_fallback,

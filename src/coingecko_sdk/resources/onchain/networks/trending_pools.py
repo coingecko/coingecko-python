@@ -49,6 +49,7 @@ class TrendingPoolsResource(SyncAPIResource):
         *,
         duration: Literal["5m", "1h", "6h", "24h"] | Omit = omit,
         include: str | Omit = omit,
+        include_gt_community_data: bool | Omit = omit,
         page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -67,6 +68,9 @@ class TrendingPoolsResource(SyncAPIResource):
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`, `network`. Example: `base_token` or
               `base_token,dex`
+
+          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
+              Default value: false
 
           page: page through results Default value: 1
 
@@ -89,6 +93,7 @@ class TrendingPoolsResource(SyncAPIResource):
                     {
                         "duration": duration,
                         "include": include,
+                        "include_gt_community_data": include_gt_community_data,
                         "page": page,
                     },
                     trending_pool_get_params.TrendingPoolGetParams,
@@ -103,6 +108,7 @@ class TrendingPoolsResource(SyncAPIResource):
         *,
         duration: Literal["5m", "1h", "6h", "24h"] | Omit = omit,
         include: str | Omit = omit,
+        include_gt_community_data: bool | Omit = omit,
         page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -120,6 +126,9 @@ class TrendingPoolsResource(SyncAPIResource):
 
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`
+
+          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
+              Default value: false
 
           page: page through results Default value: 1
 
@@ -144,6 +153,7 @@ class TrendingPoolsResource(SyncAPIResource):
                     {
                         "duration": duration,
                         "include": include,
+                        "include_gt_community_data": include_gt_community_data,
                         "page": page,
                     },
                     trending_pool_get_network_params.TrendingPoolGetNetworkParams,
@@ -178,6 +188,7 @@ class AsyncTrendingPoolsResource(AsyncAPIResource):
         *,
         duration: Literal["5m", "1h", "6h", "24h"] | Omit = omit,
         include: str | Omit = omit,
+        include_gt_community_data: bool | Omit = omit,
         page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -196,6 +207,9 @@ class AsyncTrendingPoolsResource(AsyncAPIResource):
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`, `network`. Example: `base_token` or
               `base_token,dex`
+
+          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
+              Default value: false
 
           page: page through results Default value: 1
 
@@ -218,6 +232,7 @@ class AsyncTrendingPoolsResource(AsyncAPIResource):
                     {
                         "duration": duration,
                         "include": include,
+                        "include_gt_community_data": include_gt_community_data,
                         "page": page,
                     },
                     trending_pool_get_params.TrendingPoolGetParams,
@@ -232,6 +247,7 @@ class AsyncTrendingPoolsResource(AsyncAPIResource):
         *,
         duration: Literal["5m", "1h", "6h", "24h"] | Omit = omit,
         include: str | Omit = omit,
+        include_gt_community_data: bool | Omit = omit,
         page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -249,6 +265,9 @@ class AsyncTrendingPoolsResource(AsyncAPIResource):
 
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`
+
+          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
+              Default value: false
 
           page: page through results Default value: 1
 
@@ -273,6 +292,7 @@ class AsyncTrendingPoolsResource(AsyncAPIResource):
                     {
                         "duration": duration,
                         "include": include,
+                        "include_gt_community_data": include_gt_community_data,
                         "page": page,
                     },
                     trending_pool_get_network_params.TrendingPoolGetNetworkParams,

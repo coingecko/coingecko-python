@@ -134,6 +134,7 @@ class TokensResource(SyncAPIResource):
         network: str,
         include: Literal["top_pools"] | Omit = omit,
         include_composition: bool | Omit = omit,
+        include_inactive_source: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -149,6 +150,10 @@ class TokensResource(SyncAPIResource):
           include: attributes to include
 
           include_composition: include pool composition, default: false
+
+          include_inactive_source:
+              include token data from inactive pools using the most recent swap, default:
+              false
 
           extra_headers: Send extra headers
 
@@ -173,6 +178,7 @@ class TokensResource(SyncAPIResource):
                     {
                         "include": include,
                         "include_composition": include_composition,
+                        "include_inactive_source": include_inactive_source,
                     },
                     token_get_address_params.TokenGetAddressParams,
                 ),
@@ -236,6 +242,7 @@ class AsyncTokensResource(AsyncAPIResource):
         network: str,
         include: Literal["top_pools"] | Omit = omit,
         include_composition: bool | Omit = omit,
+        include_inactive_source: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -251,6 +258,10 @@ class AsyncTokensResource(AsyncAPIResource):
           include: attributes to include
 
           include_composition: include pool composition, default: false
+
+          include_inactive_source:
+              include token data from inactive pools using the most recent swap, default:
+              false
 
           extra_headers: Send extra headers
 
@@ -275,6 +286,7 @@ class AsyncTokensResource(AsyncAPIResource):
                     {
                         "include": include,
                         "include_composition": include_composition,
+                        "include_inactive_source": include_inactive_source,
                     },
                     token_get_address_params.TokenGetAddressParams,
                 ),

@@ -66,6 +66,8 @@ class DataAttributes(BaseModel):
 
     discord_url: Optional[str] = None
 
+    farcaster_url: Optional[str] = None
+
     freeze_authority: Optional[str] = None
 
     gt_categories_id: Optional[List[str]] = None
@@ -93,6 +95,8 @@ class DataAttributes(BaseModel):
     twitter_handle: Optional[str] = None
 
     websites: Optional[List[str]] = None
+
+    zora_url: Optional[str] = None
 
 
 class Data(BaseModel):

@@ -59,6 +59,8 @@ class DataAttributes(BaseModel):
 
     image_url: Optional[str] = None
 
+    last_trade_timestamp: Optional[int] = None
+
     launchpad_details: Optional[DataAttributesLaunchpadDetails] = None
 
     market_cap_usd: Optional[str] = None
