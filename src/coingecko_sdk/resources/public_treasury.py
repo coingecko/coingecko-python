@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from typing import Any, cast
 from typing_extensions import Literal
 
 import httpx
@@ -75,12 +76,17 @@ class PublicTreasuryResource(SyncAPIResource):
             raise ValueError(f"Expected a non-empty value for `entity` but received {entity!r}")
         if not coin_id:
             raise ValueError(f"Expected a non-empty value for `coin_id` but received {coin_id!r}")
-        return self._get(
-            f"/{entity}/public_treasury/{coin_id}",
-            options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+        return cast(
+            PublicTreasuryGetCoinIDResponse,
+            self._get(
+                f"/{entity}/public_treasury/{coin_id}",
+                options=make_request_options(
+                    extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+                ),
+                cast_to=cast(
+                    Any, PublicTreasuryGetCoinIDResponse
+                ),  # Union types cannot be passed in as arguments in the type system
             ),
-            cast_to=PublicTreasuryGetCoinIDResponse,
         )
 
     def get_entity_id(
@@ -289,12 +295,17 @@ class AsyncPublicTreasuryResource(AsyncAPIResource):
             raise ValueError(f"Expected a non-empty value for `entity` but received {entity!r}")
         if not coin_id:
             raise ValueError(f"Expected a non-empty value for `coin_id` but received {coin_id!r}")
-        return await self._get(
-            f"/{entity}/public_treasury/{coin_id}",
-            options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+        return cast(
+            PublicTreasuryGetCoinIDResponse,
+            await self._get(
+                f"/{entity}/public_treasury/{coin_id}",
+                options=make_request_options(
+                    extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+                ),
+                cast_to=cast(
+                    Any, PublicTreasuryGetCoinIDResponse
+                ),  # Union types cannot be passed in as arguments in the type system
             ),
-            cast_to=PublicTreasuryGetCoinIDResponse,
         )
 
     async def get_entity_id(

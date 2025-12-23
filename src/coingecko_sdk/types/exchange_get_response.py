@@ -21,7 +21,7 @@ class ExchangeGetResponse(BaseModel):
     """exchange trading incentive"""
 
     image: Optional[str] = None
-    """exchange image url"""
+    """exchange image URL"""
 
     name: Optional[str] = None
     """exchange name"""
@@ -36,7 +36,7 @@ class ExchangeGetResponse(BaseModel):
     """exchange trust score rank"""
 
     url: Optional[str] = None
-    """exchange website url"""
+    """exchange website URL"""
 
     year_established: Optional[float] = None
     """exchange established year"""
