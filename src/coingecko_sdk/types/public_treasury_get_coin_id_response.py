@@ -1,13 +1,20 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List, Optional
+from typing import List, Union, Optional
+from typing_extensions import TypeAlias
 
 from .._models import BaseModel
 
-__all__ = ["PublicTreasuryGetCoinIDResponse", "Company"]
+__all__ = [
+    "PublicTreasuryGetCoinIDResponse",
+    "CompaniesTreasury",
+    "CompaniesTreasuryCompany",
+    "GovernmentsTreasury",
+    "GovernmentsTreasuryGovernment",
+]
 
 
-class Company(BaseModel):
+class CompaniesTreasuryCompany(BaseModel):
     country: Optional[str] = None
     """company incorporated or government country"""
 
@@ -27,17 +34,56 @@ class Company(BaseModel):
     """total entry value in usd"""
 
     total_holdings: Optional[float] = None
-    """total crypto holdings of company"""
+    """total crypto holdings"""
 
 
-class PublicTreasuryGetCoinIDResponse(BaseModel):
-    companies: Optional[List[Company]] = None
+class CompaniesTreasury(BaseModel):
+    companies: List[CompaniesTreasuryCompany]
 
-    market_cap_dominance: Optional[float] = None
+    market_cap_dominance: float
     """market cap dominance"""
 
-    total_holdings: Optional[float] = None
-    """total crypto holdings of companies or government"""
+    total_holdings: float
+    """total crypto holdings of companies"""
 
-    total_value_usd: Optional[float] = None
+    total_value_usd: float
     """total crypto holdings value in usd"""
+
+
+class GovernmentsTreasuryGovernment(BaseModel):
+    country: Optional[str] = None
+    """company incorporated or government country"""
+
+    name: Optional[str] = None
+    """company or government name"""
+
+    percentage_of_total_supply: Optional[float] = None
+    """percentage of total crypto supply"""
+
+    symbol: Optional[str] = None
+    """company symbol"""
+
+    total_current_value_usd: Optional[float] = None
+    """total current value of crypto holdings in usd"""
+
+    total_entry_value_usd: Optional[float] = None
+    """total entry value in usd"""
+
+    total_holdings: Optional[float] = None
+    """total crypto holdings"""
+
+
+class GovernmentsTreasury(BaseModel):
+    governments: List[GovernmentsTreasuryGovernment]
+
+    market_cap_dominance: float
+    """market cap dominance"""
+
+    total_holdings: float
+    """total crypto holdings of governments"""
+
+    total_value_usd: float
+    """total crypto holdings value in usd"""
+
+
+PublicTreasuryGetCoinIDResponse: TypeAlias = Union[CompaniesTreasury, GovernmentsTreasury]
