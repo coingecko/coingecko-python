@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.13.0 (2025-12-23)
+
+Full Changelog: [v1.12.0...v1.13.0](https://github.com/coingecko/coingecko-python/compare/v1.12.0...v1.13.0)
+
+### Features
+
+* **api:** api update ([8436976](https://github.com/coingecko/coingecko-python/commit/84369760ef357df8e4feb0285263b7896d081948))
+
+
+### Chores
+
+* **internal:** add `--fix` argument to lint script ([0a4e127](https://github.com/coingecko/coingecko-python/commit/0a4e127596bee226b220890acc706e6782d553ab))
+
 ## 1.12.0 (2025-12-18)
 
 Full Changelog: [v1.11.3...v1.12.0](https://github.com/coingecko/coingecko-python/compare/v1.11.3...v1.12.0)
