@@ -299,14 +299,10 @@ class Coingecko(SyncAPIClient):
 
     @override
     def _validate_headers(self, headers: Headers, custom_headers: Headers) -> None:
-        if self.pro_api_key and headers.get("x-cg-pro-api-key"):
-            return
-        if isinstance(custom_headers.get("x-cg-pro-api-key"), Omit):
+        if headers.get("x-cg-pro-api-key") or isinstance(custom_headers.get("x-cg-pro-api-key"), Omit):
             return
 
-        if self.demo_api_key and headers.get("x-cg-demo-api-key"):
-            return
-        if isinstance(custom_headers.get("x-cg-demo-api-key"), Omit):
+        if headers.get("x-cg-demo-api-key") or isinstance(custom_headers.get("x-cg-demo-api-key"), Omit):
             return
 
         raise TypeError(
@@ -618,14 +614,10 @@ class AsyncCoingecko(AsyncAPIClient):
 
     @override
     def _validate_headers(self, headers: Headers, custom_headers: Headers) -> None:
-        if self.pro_api_key and headers.get("x-cg-pro-api-key"):
-            return
-        if isinstance(custom_headers.get("x-cg-pro-api-key"), Omit):
+        if headers.get("x-cg-pro-api-key") or isinstance(custom_headers.get("x-cg-pro-api-key"), Omit):
             return
 
-        if self.demo_api_key and headers.get("x-cg-demo-api-key"):
-            return
-        if isinstance(custom_headers.get("x-cg-demo-api-key"), Omit):
+        if headers.get("x-cg-demo-api-key") or isinstance(custom_headers.get("x-cg-demo-api-key"), Omit):
             return
 
         raise TypeError(
