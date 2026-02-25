@@ -566,6 +566,9 @@ class MarketData(BaseModel):
     market_cap_rank: Optional[float] = None
     """coin rank by market cap"""
 
+    market_cap_rank_with_rehypothecated: Optional[float] = None
+    """coin rank by market cap including rehypothecated tokens"""
+
     max_supply: Optional[float] = None
     """coin max supply"""
 
@@ -779,6 +782,9 @@ class CoinGetIDResponse(BaseModel):
 
     market_cap_rank: Optional[float] = None
     """coin rank by market cap"""
+
+    market_cap_rank_with_rehypothecated: Optional[float] = None
+    """coin rank by market cap including rehypothecated tokens"""
 
     market_data: Optional[MarketData] = None
     """coin market data"""

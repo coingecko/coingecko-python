@@ -74,6 +74,15 @@ class MegafilterGetParams(TypedDict, total=False):
     pool_created_hour_min: float
     """minimum pool age in hours"""
 
+    price_change_percentage_duration: Literal["5m", "1h", "6h", "24h"]
+    """duration for price change percentage metric"""
+
+    price_change_percentage_max: float
+    """maximum price change percentage"""
+
+    price_change_percentage_min: float
+    """minimum price change percentage"""
+
     reserve_in_usd_max: float
     """maximum reserve in USD"""
 
@@ -101,7 +110,9 @@ class MegafilterGetParams(TypedDict, total=False):
         "h6_trending",
         "h24_trending",
         "h24_tx_count_desc",
+        "h24_tx_count_asc",
         "h24_volume_usd_desc",
+        "h24_volume_usd_asc",
         "m5_price_change_percentage_asc",
         "h1_price_change_percentage_asc",
         "h6_price_change_percentage_asc",
@@ -114,6 +125,8 @@ class MegafilterGetParams(TypedDict, total=False):
         "fdv_usd_desc",
         "reserve_in_usd_asc",
         "reserve_in_usd_desc",
+        "price_asc",
+        "price_desc",
         "pool_created_at_desc",
     ]
     """sort the pools by field Default value: h6_trending"""

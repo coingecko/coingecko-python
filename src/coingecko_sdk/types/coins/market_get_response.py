@@ -77,6 +77,9 @@ class MarketGetResponseItem(BaseModel):
     market_cap_rank: Optional[float] = None
     """coin rank by market cap"""
 
+    market_cap_rank_with_rehypothecated: Optional[float] = None
+    """coin rank by market cap including rehypothecated tokens"""
+
     max_supply: Optional[float] = None
     """coin max supply"""
 

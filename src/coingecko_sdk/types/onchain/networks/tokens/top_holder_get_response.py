@@ -12,11 +12,27 @@ class DataAttributesHolder(BaseModel):
 
     amount: Optional[str] = None
 
+    average_buy_price_usd: Optional[str] = None
+
+    explorer_url: Optional[str] = None
+
     label: Optional[str] = None
 
     percentage: Optional[str] = None
 
     rank: Optional[float] = None
+
+    realized_pnl_percentage: Optional[str] = None
+
+    realized_pnl_usd: Optional[str] = None
+
+    total_buy_count: Optional[float] = None
+
+    total_sell_count: Optional[float] = None
+
+    unrealized_pnl_percentage: Optional[str] = None
+
+    unrealized_pnl_usd: Optional[str] = None
 
     value: Optional[str] = None
 

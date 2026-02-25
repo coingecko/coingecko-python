@@ -61,6 +61,9 @@ class Data(BaseModel):
 
     updated_at: Optional[float] = None
 
+    volume_change_percentage_24h_usd: Optional[float] = None
+    """cryptocurrencies volume change percentage in 24 hours in usd"""
+
 
 class GlobalGetResponse(BaseModel):
     data: Optional[Data] = None

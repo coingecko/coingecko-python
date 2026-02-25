@@ -8,6 +8,18 @@ __all__ = ["KeyGetResponse"]
 
 
 class KeyGetResponse(BaseModel):
+    api_key_monthly_call_credit: Optional[float] = None
+    """
+    Specific monthly credit limit configured for the API key used to authenticate
+    this request
+    """
+
+    api_key_rate_limit_request_per_minute: Optional[float] = None
+    """
+    Specific request per minute configured for the API key used to authenticate this
+    request
+    """
+
     current_remaining_monthly_calls: Optional[float] = None
 
     current_total_monthly_calls: Optional[float] = None

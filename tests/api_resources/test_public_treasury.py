@@ -22,7 +22,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestPublicTreasury:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_coin_id(self, client: Coingecko) -> None:
         public_treasury = client.public_treasury.get_coin_id(
@@ -31,7 +31,19 @@ class TestPublicTreasury:
         )
         assert_matches_type(PublicTreasuryGetCoinIDResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_method_get_coin_id_with_all_params(self, client: Coingecko) -> None:
+        public_treasury = client.public_treasury.get_coin_id(
+            coin_id="bitcoin",
+            entity="companies",
+            order="total_holdings_usd_desc",
+            page=1,
+            per_page=250,
+        )
+        assert_matches_type(PublicTreasuryGetCoinIDResponse, public_treasury, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_coin_id(self, client: Coingecko) -> None:
         response = client.public_treasury.with_raw_response.get_coin_id(
@@ -44,7 +56,7 @@ class TestPublicTreasury:
         public_treasury = response.parse()
         assert_matches_type(PublicTreasuryGetCoinIDResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_coin_id(self, client: Coingecko) -> None:
         with client.public_treasury.with_streaming_response.get_coin_id(
@@ -59,7 +71,7 @@ class TestPublicTreasury:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_coin_id(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `coin_id` but received ''"):
@@ -68,19 +80,29 @@ class TestPublicTreasury:
                 entity="companies",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_entity_id(self, client: Coingecko) -> None:
         public_treasury = client.public_treasury.get_entity_id(
-            "strategy",
+            entity_id="strategy",
         )
         assert_matches_type(PublicTreasuryGetEntityIDResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_method_get_entity_id_with_all_params(self, client: Coingecko) -> None:
+        public_treasury = client.public_treasury.get_entity_id(
+            entity_id="strategy",
+            holding_amount_change="holding_amount_change",
+            holding_change_percentage="holding_change_percentage",
+        )
+        assert_matches_type(PublicTreasuryGetEntityIDResponse, public_treasury, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_entity_id(self, client: Coingecko) -> None:
         response = client.public_treasury.with_raw_response.get_entity_id(
-            "strategy",
+            entity_id="strategy",
         )
 
         assert response.is_closed is True
@@ -88,11 +110,11 @@ class TestPublicTreasury:
         public_treasury = response.parse()
         assert_matches_type(PublicTreasuryGetEntityIDResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_entity_id(self, client: Coingecko) -> None:
         with client.public_treasury.with_streaming_response.get_entity_id(
-            "strategy",
+            entity_id="strategy",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -102,15 +124,15 @@ class TestPublicTreasury:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_entity_id(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `entity_id` but received ''"):
             client.public_treasury.with_raw_response.get_entity_id(
-                "",
+                entity_id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_holding_chart(self, client: Coingecko) -> None:
         public_treasury = client.public_treasury.get_holding_chart(
@@ -120,7 +142,7 @@ class TestPublicTreasury:
         )
         assert_matches_type(PublicTreasuryGetHoldingChartResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_holding_chart_with_all_params(self, client: Coingecko) -> None:
         public_treasury = client.public_treasury.get_holding_chart(
@@ -131,7 +153,7 @@ class TestPublicTreasury:
         )
         assert_matches_type(PublicTreasuryGetHoldingChartResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_holding_chart(self, client: Coingecko) -> None:
         response = client.public_treasury.with_raw_response.get_holding_chart(
@@ -145,7 +167,7 @@ class TestPublicTreasury:
         public_treasury = response.parse()
         assert_matches_type(PublicTreasuryGetHoldingChartResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_holding_chart(self, client: Coingecko) -> None:
         with client.public_treasury.with_streaming_response.get_holding_chart(
@@ -161,7 +183,7 @@ class TestPublicTreasury:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_holding_chart(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `entity_id` but received ''"):
@@ -178,7 +200,7 @@ class TestPublicTreasury:
                 days="days",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_transaction_history(self, client: Coingecko) -> None:
         public_treasury = client.public_treasury.get_transaction_history(
@@ -186,7 +208,7 @@ class TestPublicTreasury:
         )
         assert_matches_type(PublicTreasuryGetTransactionHistoryResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_transaction_history_with_all_params(self, client: Coingecko) -> None:
         public_treasury = client.public_treasury.get_transaction_history(
@@ -198,7 +220,7 @@ class TestPublicTreasury:
         )
         assert_matches_type(PublicTreasuryGetTransactionHistoryResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_transaction_history(self, client: Coingecko) -> None:
         response = client.public_treasury.with_raw_response.get_transaction_history(
@@ -210,7 +232,7 @@ class TestPublicTreasury:
         public_treasury = response.parse()
         assert_matches_type(PublicTreasuryGetTransactionHistoryResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_transaction_history(self, client: Coingecko) -> None:
         with client.public_treasury.with_streaming_response.get_transaction_history(
@@ -224,7 +246,7 @@ class TestPublicTreasury:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_transaction_history(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `entity_id` but received ''"):
@@ -238,7 +260,7 @@ class TestAsyncPublicTreasury:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_coin_id(self, async_client: AsyncCoingecko) -> None:
         public_treasury = await async_client.public_treasury.get_coin_id(
@@ -247,7 +269,19 @@ class TestAsyncPublicTreasury:
         )
         assert_matches_type(PublicTreasuryGetCoinIDResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_method_get_coin_id_with_all_params(self, async_client: AsyncCoingecko) -> None:
+        public_treasury = await async_client.public_treasury.get_coin_id(
+            coin_id="bitcoin",
+            entity="companies",
+            order="total_holdings_usd_desc",
+            page=1,
+            per_page=250,
+        )
+        assert_matches_type(PublicTreasuryGetCoinIDResponse, public_treasury, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_coin_id(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.public_treasury.with_raw_response.get_coin_id(
@@ -260,7 +294,7 @@ class TestAsyncPublicTreasury:
         public_treasury = await response.parse()
         assert_matches_type(PublicTreasuryGetCoinIDResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_coin_id(self, async_client: AsyncCoingecko) -> None:
         async with async_client.public_treasury.with_streaming_response.get_coin_id(
@@ -275,7 +309,7 @@ class TestAsyncPublicTreasury:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_coin_id(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `coin_id` but received ''"):
@@ -284,19 +318,29 @@ class TestAsyncPublicTreasury:
                 entity="companies",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_entity_id(self, async_client: AsyncCoingecko) -> None:
         public_treasury = await async_client.public_treasury.get_entity_id(
-            "strategy",
+            entity_id="strategy",
         )
         assert_matches_type(PublicTreasuryGetEntityIDResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_method_get_entity_id_with_all_params(self, async_client: AsyncCoingecko) -> None:
+        public_treasury = await async_client.public_treasury.get_entity_id(
+            entity_id="strategy",
+            holding_amount_change="holding_amount_change",
+            holding_change_percentage="holding_change_percentage",
+        )
+        assert_matches_type(PublicTreasuryGetEntityIDResponse, public_treasury, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_entity_id(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.public_treasury.with_raw_response.get_entity_id(
-            "strategy",
+            entity_id="strategy",
         )
 
         assert response.is_closed is True
@@ -304,11 +348,11 @@ class TestAsyncPublicTreasury:
         public_treasury = await response.parse()
         assert_matches_type(PublicTreasuryGetEntityIDResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_entity_id(self, async_client: AsyncCoingecko) -> None:
         async with async_client.public_treasury.with_streaming_response.get_entity_id(
-            "strategy",
+            entity_id="strategy",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -318,15 +362,15 @@ class TestAsyncPublicTreasury:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_entity_id(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `entity_id` but received ''"):
             await async_client.public_treasury.with_raw_response.get_entity_id(
-                "",
+                entity_id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_holding_chart(self, async_client: AsyncCoingecko) -> None:
         public_treasury = await async_client.public_treasury.get_holding_chart(
@@ -336,7 +380,7 @@ class TestAsyncPublicTreasury:
         )
         assert_matches_type(PublicTreasuryGetHoldingChartResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_holding_chart_with_all_params(self, async_client: AsyncCoingecko) -> None:
         public_treasury = await async_client.public_treasury.get_holding_chart(
@@ -347,7 +391,7 @@ class TestAsyncPublicTreasury:
         )
         assert_matches_type(PublicTreasuryGetHoldingChartResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_holding_chart(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.public_treasury.with_raw_response.get_holding_chart(
@@ -361,7 +405,7 @@ class TestAsyncPublicTreasury:
         public_treasury = await response.parse()
         assert_matches_type(PublicTreasuryGetHoldingChartResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_holding_chart(self, async_client: AsyncCoingecko) -> None:
         async with async_client.public_treasury.with_streaming_response.get_holding_chart(
@@ -377,7 +421,7 @@ class TestAsyncPublicTreasury:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_holding_chart(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `entity_id` but received ''"):
@@ -394,7 +438,7 @@ class TestAsyncPublicTreasury:
                 days="days",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_transaction_history(self, async_client: AsyncCoingecko) -> None:
         public_treasury = await async_client.public_treasury.get_transaction_history(
@@ -402,7 +446,7 @@ class TestAsyncPublicTreasury:
         )
         assert_matches_type(PublicTreasuryGetTransactionHistoryResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_transaction_history_with_all_params(self, async_client: AsyncCoingecko) -> None:
         public_treasury = await async_client.public_treasury.get_transaction_history(
@@ -414,7 +458,7 @@ class TestAsyncPublicTreasury:
         )
         assert_matches_type(PublicTreasuryGetTransactionHistoryResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_transaction_history(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.public_treasury.with_raw_response.get_transaction_history(
@@ -426,7 +470,7 @@ class TestAsyncPublicTreasury:
         public_treasury = await response.parse()
         assert_matches_type(PublicTreasuryGetTransactionHistoryResponse, public_treasury, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_transaction_history(self, async_client: AsyncCoingecko) -> None:
         async with async_client.public_treasury.with_streaming_response.get_transaction_history(
@@ -440,7 +484,7 @@ class TestAsyncPublicTreasury:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_transaction_history(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `entity_id` but received ''"):
