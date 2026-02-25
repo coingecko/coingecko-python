@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestPools:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         pool = client.onchain.networks.tokens.pools.get(
@@ -26,20 +26,21 @@ class TestPools:
         )
         assert_matches_type(PoolGetResponse, pool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         pool = client.onchain.networks.tokens.pools.get(
             token_address="0xdac17f958d2ee523a2206206994597c13d831ec7",
             network="eth",
             include="include",
+            include_gt_community_data=True,
             include_inactive_source=True,
             page=0,
             sort="h24_volume_usd_liquidity_desc",
         )
         assert_matches_type(PoolGetResponse, pool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.onchain.networks.tokens.pools.with_raw_response.get(
@@ -52,7 +53,7 @@ class TestPools:
         pool = response.parse()
         assert_matches_type(PoolGetResponse, pool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.onchain.networks.tokens.pools.with_streaming_response.get(
@@ -67,7 +68,7 @@ class TestPools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `network` but received ''"):
@@ -88,7 +89,7 @@ class TestAsyncPools:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         pool = await async_client.onchain.networks.tokens.pools.get(
@@ -97,20 +98,21 @@ class TestAsyncPools:
         )
         assert_matches_type(PoolGetResponse, pool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         pool = await async_client.onchain.networks.tokens.pools.get(
             token_address="0xdac17f958d2ee523a2206206994597c13d831ec7",
             network="eth",
             include="include",
+            include_gt_community_data=True,
             include_inactive_source=True,
             page=0,
             sort="h24_volume_usd_liquidity_desc",
         )
         assert_matches_type(PoolGetResponse, pool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.onchain.networks.tokens.pools.with_raw_response.get(
@@ -123,7 +125,7 @@ class TestAsyncPools:
         pool = await response.parse()
         assert_matches_type(PoolGetResponse, pool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.onchain.networks.tokens.pools.with_streaming_response.get(
@@ -138,7 +140,7 @@ class TestAsyncPools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `network` but received ''"):

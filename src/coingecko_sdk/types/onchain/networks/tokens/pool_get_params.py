@@ -16,6 +16,12 @@ class PoolGetParams(TypedDict, total=False):
     values: `base_token`, `quote_token`, `dex`
     """
 
+    include_gt_community_data: bool
+    """
+    include GeckoTerminal community data (Sentiment votes, Suspicious reports)
+    Default value: false
+    """
+
     include_inactive_source: bool
     """include tokens from inactive pools using the most recent swap, default: false"""
 

@@ -26,6 +26,12 @@ class MarketGetParams(TypedDict, total=False):
     \\**refers to [`/coins/list`](/reference/coins-list).
     """
 
+    include_rehypothecated: bool
+    """
+    include rehypothecated tokens in results, default: false When true, returns
+    `market_cap_rank_with_rehypothecated` field
+    """
+
     include_tokens: Literal["top", "all"]
     """
     for `symbols` lookups, specify `all` to include all matching tokens Default

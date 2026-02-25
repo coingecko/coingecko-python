@@ -63,6 +63,9 @@ class MegafilterResource(SyncAPIResource):
         page: int | Omit = omit,
         pool_created_hour_max: float | Omit = omit,
         pool_created_hour_min: float | Omit = omit,
+        price_change_percentage_duration: Literal["5m", "1h", "6h", "24h"] | Omit = omit,
+        price_change_percentage_max: float | Omit = omit,
+        price_change_percentage_min: float | Omit = omit,
         reserve_in_usd_max: float | Omit = omit,
         reserve_in_usd_min: float | Omit = omit,
         sell_tax_percentage_max: float | Omit = omit,
@@ -76,7 +79,9 @@ class MegafilterResource(SyncAPIResource):
             "h6_trending",
             "h24_trending",
             "h24_tx_count_desc",
+            "h24_tx_count_asc",
             "h24_volume_usd_desc",
+            "h24_volume_usd_asc",
             "m5_price_change_percentage_asc",
             "h1_price_change_percentage_asc",
             "h6_price_change_percentage_asc",
@@ -89,6 +94,8 @@ class MegafilterResource(SyncAPIResource):
             "fdv_usd_desc",
             "reserve_in_usd_asc",
             "reserve_in_usd_desc",
+            "price_asc",
+            "price_desc",
             "pool_created_at_desc",
         ]
         | Omit = omit,
@@ -146,6 +153,12 @@ class MegafilterResource(SyncAPIResource):
 
           pool_created_hour_min: minimum pool age in hours
 
+          price_change_percentage_duration: duration for price change percentage metric
+
+          price_change_percentage_max: maximum price change percentage
+
+          price_change_percentage_min: minimum price change percentage
+
           reserve_in_usd_max: maximum reserve in USD
 
           reserve_in_usd_min: minimum reserve in USD
@@ -202,6 +215,9 @@ class MegafilterResource(SyncAPIResource):
                         "page": page,
                         "pool_created_hour_max": pool_created_hour_max,
                         "pool_created_hour_min": pool_created_hour_min,
+                        "price_change_percentage_duration": price_change_percentage_duration,
+                        "price_change_percentage_max": price_change_percentage_max,
+                        "price_change_percentage_min": price_change_percentage_min,
                         "reserve_in_usd_max": reserve_in_usd_max,
                         "reserve_in_usd_min": reserve_in_usd_min,
                         "sell_tax_percentage_max": sell_tax_percentage_max,
@@ -261,6 +277,9 @@ class AsyncMegafilterResource(AsyncAPIResource):
         page: int | Omit = omit,
         pool_created_hour_max: float | Omit = omit,
         pool_created_hour_min: float | Omit = omit,
+        price_change_percentage_duration: Literal["5m", "1h", "6h", "24h"] | Omit = omit,
+        price_change_percentage_max: float | Omit = omit,
+        price_change_percentage_min: float | Omit = omit,
         reserve_in_usd_max: float | Omit = omit,
         reserve_in_usd_min: float | Omit = omit,
         sell_tax_percentage_max: float | Omit = omit,
@@ -274,7 +293,9 @@ class AsyncMegafilterResource(AsyncAPIResource):
             "h6_trending",
             "h24_trending",
             "h24_tx_count_desc",
+            "h24_tx_count_asc",
             "h24_volume_usd_desc",
+            "h24_volume_usd_asc",
             "m5_price_change_percentage_asc",
             "h1_price_change_percentage_asc",
             "h6_price_change_percentage_asc",
@@ -287,6 +308,8 @@ class AsyncMegafilterResource(AsyncAPIResource):
             "fdv_usd_desc",
             "reserve_in_usd_asc",
             "reserve_in_usd_desc",
+            "price_asc",
+            "price_desc",
             "pool_created_at_desc",
         ]
         | Omit = omit,
@@ -344,6 +367,12 @@ class AsyncMegafilterResource(AsyncAPIResource):
 
           pool_created_hour_min: minimum pool age in hours
 
+          price_change_percentage_duration: duration for price change percentage metric
+
+          price_change_percentage_max: maximum price change percentage
+
+          price_change_percentage_min: minimum price change percentage
+
           reserve_in_usd_max: maximum reserve in USD
 
           reserve_in_usd_min: minimum reserve in USD
@@ -400,6 +429,9 @@ class AsyncMegafilterResource(AsyncAPIResource):
                         "page": page,
                         "pool_created_hour_max": pool_created_hour_max,
                         "pool_created_hour_min": pool_created_hour_min,
+                        "price_change_percentage_duration": price_change_percentage_duration,
+                        "price_change_percentage_max": price_change_percentage_max,
+                        "price_change_percentage_min": price_change_percentage_min,
                         "reserve_in_usd_max": reserve_in_usd_max,
                         "reserve_in_usd_min": reserve_in_usd_min,
                         "sell_tax_percentage_max": sell_tax_percentage_max,

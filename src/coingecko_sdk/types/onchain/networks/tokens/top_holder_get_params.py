@@ -15,3 +15,6 @@ class TopHolderGetParams(TypedDict, total=False):
     number of top token holders to return, you may use any integer or `max` Default
     value: 10
     """
+
+    include_pnl_details: bool
+    """include PnL details for token holders, default: false"""

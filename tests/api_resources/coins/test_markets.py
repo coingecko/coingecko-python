@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestMarkets:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         market = client.coins.markets.get(
@@ -25,13 +25,14 @@ class TestMarkets:
         )
         assert_matches_type(MarketGetResponse, market, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         market = client.coins.markets.get(
             vs_currency="usd",
             category="layer-1",
             ids="ids",
+            include_rehypothecated=True,
             include_tokens="top",
             locale="ar",
             names="names",
@@ -45,7 +46,7 @@ class TestMarkets:
         )
         assert_matches_type(MarketGetResponse, market, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.coins.markets.with_raw_response.get(
@@ -57,7 +58,7 @@ class TestMarkets:
         market = response.parse()
         assert_matches_type(MarketGetResponse, market, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.coins.markets.with_streaming_response.get(
@@ -77,7 +78,7 @@ class TestAsyncMarkets:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         market = await async_client.coins.markets.get(
@@ -85,13 +86,14 @@ class TestAsyncMarkets:
         )
         assert_matches_type(MarketGetResponse, market, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         market = await async_client.coins.markets.get(
             vs_currency="usd",
             category="layer-1",
             ids="ids",
+            include_rehypothecated=True,
             include_tokens="top",
             locale="ar",
             names="names",
@@ -105,7 +107,7 @@ class TestAsyncMarkets:
         )
         assert_matches_type(MarketGetResponse, market, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.coins.markets.with_raw_response.get(
@@ -117,7 +119,7 @@ class TestAsyncMarkets:
         market = await response.parse()
         assert_matches_type(MarketGetResponse, market, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.coins.markets.with_streaming_response.get(
