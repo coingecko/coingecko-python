@@ -1,5 +1,39 @@
 # Changelog
 
+## 1.13.0 (2026-02-25)
+
+Full Changelog: [v1.12.0...v1.13.0](https://github.com/coingecko/coingecko-python/compare/v1.12.0...v1.13.0)
+
+### Features
+
+* **api:** api update ([0241244](https://github.com/coingecko/coingecko-python/commit/02412444ad3bbc58bbec8f16c4e3e18d84ac3969))
+* **api:** api update ([8436976](https://github.com/coingecko/coingecko-python/commit/84369760ef357df8e4feb0285263b7896d081948))
+* **client:** add custom JSON encoder for extended type support ([dad7856](https://github.com/coingecko/coingecko-python/commit/dad7856f521034641be1af22a9de396d5b3816ff))
+* **client:** add support for binary request streaming ([a9f1aa3](https://github.com/coingecko/coingecko-python/commit/a9f1aa33c8765610d03550e5721b0279d172d273))
+* **client:** support file upload requests ([9d2d8ee](https://github.com/coingecko/coingecko-python/commit/9d2d8ee494cfaf60ed0bcc9a7b6b4e7b0cff30d5))
+
+
+### Bug Fixes
+
+* **client:** loosen auth header validation ([eafba80](https://github.com/coingecko/coingecko-python/commit/eafba8079e34ec10de0153950de8d6637c1d422a))
+* **docs:** fix mcp installation instructions for remote servers ([62c08fb](https://github.com/coingecko/coingecko-python/commit/62c08fb291eab975560ce0d0e055a5b88fc7029d))
+
+
+### Chores
+
+* **ci:** upgrade `actions/github-script` ([4e83c98](https://github.com/coingecko/coingecko-python/commit/4e83c9866f46c4f1b695ac83e566e5d04fdbea77))
+* format all `api.md` files ([94bf810](https://github.com/coingecko/coingecko-python/commit/94bf810205db49812c2bbbe25f3018a2ac228170))
+* **internal:** add `--fix` argument to lint script ([0a4e127](https://github.com/coingecko/coingecko-python/commit/0a4e127596bee226b220890acc706e6782d553ab))
+* **internal:** bump dependencies ([369ba5d](https://github.com/coingecko/coingecko-python/commit/369ba5d99e285c3ac88ef80c193c7563769c36be))
+* **internal:** codegen related update ([cc420eb](https://github.com/coingecko/coingecko-python/commit/cc420ebc39f9ab254ef2be16bf065fc513fcd2d3))
+* **internal:** fix lint error on Python 3.14 ([9134bbc](https://github.com/coingecko/coingecko-python/commit/9134bbc5b7ca8c752e677aec2eb84fc1b627409f))
+* **internal:** update `actions/checkout` version ([f633c5e](https://github.com/coingecko/coingecko-python/commit/f633c5ef5aa1daf0ce6c05efd058571099e1cc06))
+
+
+### Documentation
+
+* prominently feature MCP server setup in root SDK readmes ([10cb284](https://github.com/coingecko/coingecko-python/commit/10cb284cf8300229a26c6816a737ba772870d7aa))
+
 ## 1.12.0 (2025-12-18)
 
 Full Changelog: [v1.11.3...v1.12.0](https://github.com/coingecko/coingecko-python/compare/v1.11.3...v1.12.0)
