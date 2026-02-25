@@ -49,6 +49,7 @@ class MarketsResource(SyncAPIResource):
         vs_currency: str,
         category: str | Omit = omit,
         ids: str | Omit = omit,
+        include_rehypothecated: bool | Omit = omit,
         include_tokens: Literal["top", "all"] | Omit = omit,
         locale: Literal[
             "ar",
@@ -139,6 +140,9 @@ class MarketsResource(SyncAPIResource):
           ids: coins' IDs, comma-separated if querying more than 1 coin. \\**refers to
               [`/coins/list`](/reference/coins-list).
 
+          include_rehypothecated: include rehypothecated tokens in results, default: false When true, returns
+              `market_cap_rank_with_rehypothecated` field
+
           include_tokens: for `symbols` lookups, specify `all` to include all matching tokens Default
               `top` returns top-ranked tokens (by market cap or volume)
 
@@ -181,6 +185,7 @@ class MarketsResource(SyncAPIResource):
                         "vs_currency": vs_currency,
                         "category": category,
                         "ids": ids,
+                        "include_rehypothecated": include_rehypothecated,
                         "include_tokens": include_tokens,
                         "locale": locale,
                         "names": names,
@@ -225,6 +230,7 @@ class AsyncMarketsResource(AsyncAPIResource):
         vs_currency: str,
         category: str | Omit = omit,
         ids: str | Omit = omit,
+        include_rehypothecated: bool | Omit = omit,
         include_tokens: Literal["top", "all"] | Omit = omit,
         locale: Literal[
             "ar",
@@ -315,6 +321,9 @@ class AsyncMarketsResource(AsyncAPIResource):
           ids: coins' IDs, comma-separated if querying more than 1 coin. \\**refers to
               [`/coins/list`](/reference/coins-list).
 
+          include_rehypothecated: include rehypothecated tokens in results, default: false When true, returns
+              `market_cap_rank_with_rehypothecated` field
+
           include_tokens: for `symbols` lookups, specify `all` to include all matching tokens Default
               `top` returns top-ranked tokens (by market cap or volume)
 
@@ -357,6 +366,7 @@ class AsyncMarketsResource(AsyncAPIResource):
                         "vs_currency": vs_currency,
                         "category": category,
                         "ids": ids,
+                        "include_rehypothecated": include_rehypothecated,
                         "include_tokens": include_tokens,
                         "locale": locale,
                         "names": names,

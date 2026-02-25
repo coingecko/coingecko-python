@@ -7,7 +7,12 @@ from typing_extensions import Literal
 
 import httpx
 
-from ..types import public_treasury_get_holding_chart_params, public_treasury_get_transaction_history_params
+from ..types import (
+    public_treasury_get_coin_id_params,
+    public_treasury_get_entity_id_params,
+    public_treasury_get_holding_chart_params,
+    public_treasury_get_transaction_history_params,
+)
 from .._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
@@ -52,6 +57,9 @@ class PublicTreasuryResource(SyncAPIResource):
         coin_id: str,
         *,
         entity: Literal["companies", "governments"],
+        order: Literal["total_holdings_usd_desc", "total_holdings_usd_asc"] | Omit = omit,
+        page: int | Omit = omit,
+        per_page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -64,6 +72,12 @@ class PublicTreasuryResource(SyncAPIResource):
         holdings** by Coin ID
 
         Args:
+          order: Sort order for results
+
+          page: Page number to return
+
+          per_page: Number of results to return per page
+
           extra_headers: Send extra headers
 
           extra_query: Add additional query parameters to the request
@@ -81,7 +95,18 @@ class PublicTreasuryResource(SyncAPIResource):
             self._get(
                 f"/{entity}/public_treasury/{coin_id}",
                 options=make_request_options(
-                    extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+                    extra_headers=extra_headers,
+                    extra_query=extra_query,
+                    extra_body=extra_body,
+                    timeout=timeout,
+                    query=maybe_transform(
+                        {
+                            "order": order,
+                            "page": page,
+                            "per_page": per_page,
+                        },
+                        public_treasury_get_coin_id_params.PublicTreasuryGetCoinIDParams,
+                    ),
                 ),
                 cast_to=cast(
                     Any, PublicTreasuryGetCoinIDResponse
@@ -93,6 +118,8 @@ class PublicTreasuryResource(SyncAPIResource):
         self,
         entity_id: str,
         *,
+        holding_amount_change: str | Omit = omit,
+        holding_change_percentage: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -105,6 +132,12 @@ class PublicTreasuryResource(SyncAPIResource):
         holdings** by Entity ID
 
         Args:
+          holding_amount_change: include holding amount change for specified timeframes, comma-separated if
+              querying more than 1 timeframe Valid values: 7d, 14d, 30d, 90d, 1y, ytd
+
+          holding_change_percentage: include holding change percentage for specified timeframes, comma-separated if
+              querying more than 1 timeframe Valid values: 7d, 14d, 30d, 90d, 1y, ytd
+
           extra_headers: Send extra headers
 
           extra_query: Add additional query parameters to the request
@@ -118,7 +151,17 @@ class PublicTreasuryResource(SyncAPIResource):
         return self._get(
             f"/public_treasury/{entity_id}",
             options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+                extra_headers=extra_headers,
+                extra_query=extra_query,
+                extra_body=extra_body,
+                timeout=timeout,
+                query=maybe_transform(
+                    {
+                        "holding_amount_change": holding_amount_change,
+                        "holding_change_percentage": holding_change_percentage,
+                    },
+                    public_treasury_get_entity_id_params.PublicTreasuryGetEntityIDParams,
+                ),
             ),
             cast_to=PublicTreasuryGetEntityIDResponse,
         )
@@ -271,6 +314,9 @@ class AsyncPublicTreasuryResource(AsyncAPIResource):
         coin_id: str,
         *,
         entity: Literal["companies", "governments"],
+        order: Literal["total_holdings_usd_desc", "total_holdings_usd_asc"] | Omit = omit,
+        page: int | Omit = omit,
+        per_page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -283,6 +329,12 @@ class AsyncPublicTreasuryResource(AsyncAPIResource):
         holdings** by Coin ID
 
         Args:
+          order: Sort order for results
+
+          page: Page number to return
+
+          per_page: Number of results to return per page
+
           extra_headers: Send extra headers
 
           extra_query: Add additional query parameters to the request
@@ -300,7 +352,18 @@ class AsyncPublicTreasuryResource(AsyncAPIResource):
             await self._get(
                 f"/{entity}/public_treasury/{coin_id}",
                 options=make_request_options(
-                    extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+                    extra_headers=extra_headers,
+                    extra_query=extra_query,
+                    extra_body=extra_body,
+                    timeout=timeout,
+                    query=await async_maybe_transform(
+                        {
+                            "order": order,
+                            "page": page,
+                            "per_page": per_page,
+                        },
+                        public_treasury_get_coin_id_params.PublicTreasuryGetCoinIDParams,
+                    ),
                 ),
                 cast_to=cast(
                     Any, PublicTreasuryGetCoinIDResponse
@@ -312,6 +375,8 @@ class AsyncPublicTreasuryResource(AsyncAPIResource):
         self,
         entity_id: str,
         *,
+        holding_amount_change: str | Omit = omit,
+        holding_change_percentage: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -324,6 +389,12 @@ class AsyncPublicTreasuryResource(AsyncAPIResource):
         holdings** by Entity ID
 
         Args:
+          holding_amount_change: include holding amount change for specified timeframes, comma-separated if
+              querying more than 1 timeframe Valid values: 7d, 14d, 30d, 90d, 1y, ytd
+
+          holding_change_percentage: include holding change percentage for specified timeframes, comma-separated if
+              querying more than 1 timeframe Valid values: 7d, 14d, 30d, 90d, 1y, ytd
+
           extra_headers: Send extra headers
 
           extra_query: Add additional query parameters to the request
@@ -337,7 +408,17 @@ class AsyncPublicTreasuryResource(AsyncAPIResource):
         return await self._get(
             f"/public_treasury/{entity_id}",
             options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+                extra_headers=extra_headers,
+                extra_query=extra_query,
+                extra_body=extra_body,
+                timeout=timeout,
+                query=await async_maybe_transform(
+                    {
+                        "holding_amount_change": holding_amount_change,
+                        "holding_change_percentage": holding_change_percentage,
+                    },
+                    public_treasury_get_entity_id_params.PublicTreasuryGetEntityIDParams,
+                ),
             ),
             cast_to=PublicTreasuryGetEntityIDResponse,
         )

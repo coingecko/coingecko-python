@@ -49,6 +49,7 @@ class PoolsResource(SyncAPIResource):
         *,
         network: str,
         include: str | Omit = omit,
+        include_gt_community_data: bool | Omit = omit,
         include_inactive_source: bool | Omit = omit,
         page: int | Omit = omit,
         sort: Literal["h24_volume_usd_liquidity_desc", "h24_tx_count_desc", "h24_volume_usd_desc"] | Omit = omit,
@@ -66,6 +67,9 @@ class PoolsResource(SyncAPIResource):
         Args:
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`
+
+          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
+              Default value: false
 
           include_inactive_source: include tokens from inactive pools using the most recent swap, default: false
 
@@ -95,6 +99,7 @@ class PoolsResource(SyncAPIResource):
                 query=maybe_transform(
                     {
                         "include": include,
+                        "include_gt_community_data": include_gt_community_data,
                         "include_inactive_source": include_inactive_source,
                         "page": page,
                         "sort": sort,
@@ -132,6 +137,7 @@ class AsyncPoolsResource(AsyncAPIResource):
         *,
         network: str,
         include: str | Omit = omit,
+        include_gt_community_data: bool | Omit = omit,
         include_inactive_source: bool | Omit = omit,
         page: int | Omit = omit,
         sort: Literal["h24_volume_usd_liquidity_desc", "h24_tx_count_desc", "h24_volume_usd_desc"] | Omit = omit,
@@ -149,6 +155,9 @@ class AsyncPoolsResource(AsyncAPIResource):
         Args:
           include: attributes to include, comma-separated if more than one to include Available
               values: `base_token`, `quote_token`, `dex`
+
+          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
+              Default value: false
 
           include_inactive_source: include tokens from inactive pools using the most recent swap, default: false
 
@@ -178,6 +187,7 @@ class AsyncPoolsResource(AsyncAPIResource):
                 query=await async_maybe_transform(
                     {
                         "include": include,
+                        "include_gt_community_data": include_gt_community_data,
                         "include_inactive_source": include_inactive_source,
                         "page": page,
                         "sort": sort,

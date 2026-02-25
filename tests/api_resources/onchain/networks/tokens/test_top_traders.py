@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestTopTraders:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         top_trader = client.onchain.networks.tokens.top_traders.get(
@@ -26,7 +26,7 @@ class TestTopTraders:
         )
         assert_matches_type(TopTraderGetResponse, top_trader, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         top_trader = client.onchain.networks.tokens.top_traders.get(
@@ -38,7 +38,7 @@ class TestTopTraders:
         )
         assert_matches_type(TopTraderGetResponse, top_trader, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.onchain.networks.tokens.top_traders.with_raw_response.get(
@@ -51,7 +51,7 @@ class TestTopTraders:
         top_trader = response.parse()
         assert_matches_type(TopTraderGetResponse, top_trader, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.onchain.networks.tokens.top_traders.with_streaming_response.get(
@@ -66,7 +66,7 @@ class TestTopTraders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `network_id` but received ''"):
@@ -87,7 +87,7 @@ class TestAsyncTopTraders:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         top_trader = await async_client.onchain.networks.tokens.top_traders.get(
@@ -96,7 +96,7 @@ class TestAsyncTopTraders:
         )
         assert_matches_type(TopTraderGetResponse, top_trader, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         top_trader = await async_client.onchain.networks.tokens.top_traders.get(
@@ -108,7 +108,7 @@ class TestAsyncTopTraders:
         )
         assert_matches_type(TopTraderGetResponse, top_trader, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.onchain.networks.tokens.top_traders.with_raw_response.get(
@@ -121,7 +121,7 @@ class TestAsyncTopTraders:
         top_trader = await response.parse()
         assert_matches_type(TopTraderGetResponse, top_trader, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.onchain.networks.tokens.top_traders.with_streaming_response.get(
@@ -136,7 +136,7 @@ class TestAsyncTopTraders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `network_id` but received ''"):

@@ -47,6 +47,7 @@ class TopHoldersResource(SyncAPIResource):
         *,
         network: str,
         holders: str | Omit = omit,
+        include_pnl_details: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -61,6 +62,8 @@ class TopHoldersResource(SyncAPIResource):
         Args:
           holders: number of top token holders to return, you may use any integer or `max` Default
               value: 10
+
+          include_pnl_details: include PnL details for token holders, default: false
 
           extra_headers: Send extra headers
 
@@ -81,7 +84,13 @@ class TopHoldersResource(SyncAPIResource):
                 extra_query=extra_query,
                 extra_body=extra_body,
                 timeout=timeout,
-                query=maybe_transform({"holders": holders}, top_holder_get_params.TopHolderGetParams),
+                query=maybe_transform(
+                    {
+                        "holders": holders,
+                        "include_pnl_details": include_pnl_details,
+                    },
+                    top_holder_get_params.TopHolderGetParams,
+                ),
             ),
             cast_to=TopHolderGetResponse,
         )
@@ -113,6 +122,7 @@ class AsyncTopHoldersResource(AsyncAPIResource):
         *,
         network: str,
         holders: str | Omit = omit,
+        include_pnl_details: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -127,6 +137,8 @@ class AsyncTopHoldersResource(AsyncAPIResource):
         Args:
           holders: number of top token holders to return, you may use any integer or `max` Default
               value: 10
+
+          include_pnl_details: include PnL details for token holders, default: false
 
           extra_headers: Send extra headers
 
@@ -147,7 +159,13 @@ class AsyncTopHoldersResource(AsyncAPIResource):
                 extra_query=extra_query,
                 extra_body=extra_body,
                 timeout=timeout,
-                query=await async_maybe_transform({"holders": holders}, top_holder_get_params.TopHolderGetParams),
+                query=await async_maybe_transform(
+                    {
+                        "holders": holders,
+                        "include_pnl_details": include_pnl_details,
+                    },
+                    top_holder_get_params.TopHolderGetParams,
+                ),
             ),
             cast_to=TopHolderGetResponse,
         )
