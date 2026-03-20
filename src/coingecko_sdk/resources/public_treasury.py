@@ -14,7 +14,7 @@ from ..types import (
     public_treasury_get_transaction_history_params,
 )
 from .._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
-from .._utils import maybe_transform, async_maybe_transform
+from .._utils import path_template, maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
 from .._response import (
@@ -93,7 +93,7 @@ class PublicTreasuryResource(SyncAPIResource):
         return cast(
             PublicTreasuryGetCoinIDResponse,
             self._get(
-                f"/{entity}/public_treasury/{coin_id}",
+                path_template("/{entity}/public_treasury/{coin_id}", entity=entity, coin_id=coin_id),
                 options=make_request_options(
                     extra_headers=extra_headers,
                     extra_query=extra_query,
@@ -149,7 +149,7 @@ class PublicTreasuryResource(SyncAPIResource):
         if not entity_id:
             raise ValueError(f"Expected a non-empty value for `entity_id` but received {entity_id!r}")
         return self._get(
-            f"/public_treasury/{entity_id}",
+            path_template("/public_treasury/{entity_id}", entity_id=entity_id),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -202,7 +202,7 @@ class PublicTreasuryResource(SyncAPIResource):
         if not coin_id:
             raise ValueError(f"Expected a non-empty value for `coin_id` but received {coin_id!r}")
         return self._get(
-            f"/public_treasury/{entity_id}/{coin_id}/holding_chart",
+            path_template("/public_treasury/{entity_id}/{coin_id}/holding_chart", entity_id=entity_id, coin_id=coin_id),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -269,7 +269,7 @@ class PublicTreasuryResource(SyncAPIResource):
         if not entity_id:
             raise ValueError(f"Expected a non-empty value for `entity_id` but received {entity_id!r}")
         return self._get(
-            f"/public_treasury/{entity_id}/transaction_history",
+            path_template("/public_treasury/{entity_id}/transaction_history", entity_id=entity_id),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -350,7 +350,7 @@ class AsyncPublicTreasuryResource(AsyncAPIResource):
         return cast(
             PublicTreasuryGetCoinIDResponse,
             await self._get(
-                f"/{entity}/public_treasury/{coin_id}",
+                path_template("/{entity}/public_treasury/{coin_id}", entity=entity, coin_id=coin_id),
                 options=make_request_options(
                     extra_headers=extra_headers,
                     extra_query=extra_query,
@@ -406,7 +406,7 @@ class AsyncPublicTreasuryResource(AsyncAPIResource):
         if not entity_id:
             raise ValueError(f"Expected a non-empty value for `entity_id` but received {entity_id!r}")
         return await self._get(
-            f"/public_treasury/{entity_id}",
+            path_template("/public_treasury/{entity_id}", entity_id=entity_id),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -459,7 +459,7 @@ class AsyncPublicTreasuryResource(AsyncAPIResource):
         if not coin_id:
             raise ValueError(f"Expected a non-empty value for `coin_id` but received {coin_id!r}")
         return await self._get(
-            f"/public_treasury/{entity_id}/{coin_id}/holding_chart",
+            path_template("/public_treasury/{entity_id}/{coin_id}/holding_chart", entity_id=entity_id, coin_id=coin_id),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -526,7 +526,7 @@ class AsyncPublicTreasuryResource(AsyncAPIResource):
         if not entity_id:
             raise ValueError(f"Expected a non-empty value for `entity_id` but received {entity_id!r}")
         return await self._get(
-            f"/public_treasury/{entity_id}/transaction_history",
+            path_template("/public_treasury/{entity_id}/transaction_history", entity_id=entity_id),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
