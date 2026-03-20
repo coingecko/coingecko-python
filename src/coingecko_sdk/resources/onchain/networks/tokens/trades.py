@@ -5,7 +5,7 @@ from __future__ import annotations
 import httpx
 
 from ....._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
-from ....._utils import maybe_transform, async_maybe_transform
+from ....._utils import path_template, maybe_transform, async_maybe_transform
 from ....._compat import cached_property
 from ....._resource import SyncAPIResource, AsyncAPIResource
 from ....._response import (
@@ -74,7 +74,11 @@ class TradesResource(SyncAPIResource):
         if not token_address:
             raise ValueError(f"Expected a non-empty value for `token_address` but received {token_address!r}")
         return self._get(
-            f"/onchain/networks/{network}/tokens/{token_address}/trades",
+            path_template(
+                "/onchain/networks/{network}/tokens/{token_address}/trades",
+                network=network,
+                token_address=token_address,
+            ),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -142,7 +146,11 @@ class AsyncTradesResource(AsyncAPIResource):
         if not token_address:
             raise ValueError(f"Expected a non-empty value for `token_address` but received {token_address!r}")
         return await self._get(
-            f"/onchain/networks/{network}/tokens/{token_address}/trades",
+            path_template(
+                "/onchain/networks/{network}/tokens/{token_address}/trades",
+                network=network,
+                token_address=token_address,
+            ),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,

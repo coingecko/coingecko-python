@@ -5,6 +5,7 @@ from __future__ import annotations
 import httpx
 
 from ...._types import Body, Query, Headers, NotGiven, not_given
+from ...._utils import path_template
 from ...._compat import cached_property
 from ...._resource import SyncAPIResource, AsyncAPIResource
 from ...._response import (
@@ -82,7 +83,11 @@ class ContractResource(SyncAPIResource):
         if not contract_address:
             raise ValueError(f"Expected a non-empty value for `contract_address` but received {contract_address!r}")
         return self._get(
-            f"/nfts/{asset_platform_id}/contract/{contract_address}",
+            path_template(
+                "/nfts/{asset_platform_id}/contract/{contract_address}",
+                asset_platform_id=asset_platform_id,
+                contract_address=contract_address,
+            ),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
@@ -145,7 +150,11 @@ class AsyncContractResource(AsyncAPIResource):
         if not contract_address:
             raise ValueError(f"Expected a non-empty value for `contract_address` but received {contract_address!r}")
         return await self._get(
-            f"/nfts/{asset_platform_id}/contract/{contract_address}",
+            path_template(
+                "/nfts/{asset_platform_id}/contract/{contract_address}",
+                asset_platform_id=asset_platform_id,
+                contract_address=contract_address,
+            ),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),

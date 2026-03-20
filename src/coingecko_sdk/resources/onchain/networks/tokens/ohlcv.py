@@ -7,7 +7,7 @@ from typing_extensions import Literal
 import httpx
 
 from ....._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
-from ....._utils import maybe_transform, async_maybe_transform
+from ....._utils import path_template, maybe_transform, async_maybe_transform
 from ....._compat import cached_property
 from ....._resource import SyncAPIResource, AsyncAPIResource
 from ....._response import (
@@ -98,7 +98,12 @@ class OhlcvResource(SyncAPIResource):
         if not timeframe:
             raise ValueError(f"Expected a non-empty value for `timeframe` but received {timeframe!r}")
         return self._get(
-            f"/onchain/networks/{network}/tokens/{token_address}/ohlcv/{timeframe}",
+            path_template(
+                "/onchain/networks/{network}/tokens/{token_address}/ohlcv/{timeframe}",
+                network=network,
+                token_address=token_address,
+                timeframe=timeframe,
+            ),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -195,7 +200,12 @@ class AsyncOhlcvResource(AsyncAPIResource):
         if not timeframe:
             raise ValueError(f"Expected a non-empty value for `timeframe` but received {timeframe!r}")
         return await self._get(
-            f"/onchain/networks/{network}/tokens/{token_address}/ohlcv/{timeframe}",
+            path_template(
+                "/onchain/networks/{network}/tokens/{token_address}/ohlcv/{timeframe}",
+                network=network,
+                token_address=token_address,
+                timeframe=timeframe,
+            ),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
