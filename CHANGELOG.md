@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.14.0 (2026-03-27)
+
+Full Changelog: [v1.13.0...v1.14.0](https://github.com/coingecko/coingecko-python/compare/v1.13.0...v1.14.0)
+
+### Features
+
+* **internal:** implement indices array format for query and form serialization ([6b672e3](https://github.com/coingecko/coingecko-python/commit/6b672e393231b592ae0ec3d7aec8a41aab5ce331))
+
+
+### Bug Fixes
+
+* **deps:** bump minimum typing-extensions version ([7a2809e](https://github.com/coingecko/coingecko-python/commit/7a2809e203ebeacd52704696b19c94780d9c0db6))
+* **pydantic:** do not pass `by_alias` unless set ([5b4c5d1](https://github.com/coingecko/coingecko-python/commit/5b4c5d1fec42630e39a569422baf75eb0990bb31))
+* sanitize endpoint path params ([a87e9d4](https://github.com/coingecko/coingecko-python/commit/a87e9d4bacf39d06c9becdd45dcf6a422699e987))
+
+
+### Chores
+
+* **ci:** skip lint on metadata-only changes ([07969b0](https://github.com/coingecko/coingecko-python/commit/07969b071692db08955e6dec6d1c85ef751e2cf5))
+* **ci:** skip uploading artifacts on stainless-internal branches ([53e9338](https://github.com/coingecko/coingecko-python/commit/53e93380ab1adfadf0a86d219c9216bb8bfe4174))
+* **internal:** tweak CI branches ([4d1960a](https://github.com/coingecko/coingecko-python/commit/4d1960abd7dfb3610749bcc303579deb787f8853))
+* **internal:** update gitignore ([5266e41](https://github.com/coingecko/coingecko-python/commit/5266e41274a94efa377aa80cd77f67e0f2369311))
+
 ## 1.13.0 (2026-02-25)
 
 Full Changelog: [v1.12.0...v1.13.0](https://github.com/coingecko/coingecko-python/compare/v1.12.0...v1.13.0)

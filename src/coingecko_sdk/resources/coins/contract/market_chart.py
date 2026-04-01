@@ -7,7 +7,7 @@ from typing_extensions import Literal
 import httpx
 
 from ...._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
-from ...._utils import maybe_transform, async_maybe_transform
+from ...._utils import path_template, maybe_transform, async_maybe_transform
 from ...._compat import cached_property
 from ...._resource import SyncAPIResource, AsyncAPIResource
 from ...._response import (
@@ -111,7 +111,9 @@ class MarketChartResource(SyncAPIResource):
         if not contract_address:
             raise ValueError(f"Expected a non-empty value for `contract_address` but received {contract_address!r}")
         return self._get(
-            f"/coins/{id}/contract/{contract_address}/market_chart",
+            path_template(
+                "/coins/{id}/contract/{contract_address}/market_chart", id=id, contract_address=contract_address
+            ),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -201,7 +203,9 @@ class MarketChartResource(SyncAPIResource):
         if not contract_address:
             raise ValueError(f"Expected a non-empty value for `contract_address` but received {contract_address!r}")
         return self._get(
-            f"/coins/{id}/contract/{contract_address}/market_chart/range",
+            path_template(
+                "/coins/{id}/contract/{contract_address}/market_chart/range", id=id, contract_address=contract_address
+            ),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -309,7 +313,9 @@ class AsyncMarketChartResource(AsyncAPIResource):
         if not contract_address:
             raise ValueError(f"Expected a non-empty value for `contract_address` but received {contract_address!r}")
         return await self._get(
-            f"/coins/{id}/contract/{contract_address}/market_chart",
+            path_template(
+                "/coins/{id}/contract/{contract_address}/market_chart", id=id, contract_address=contract_address
+            ),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -399,7 +405,9 @@ class AsyncMarketChartResource(AsyncAPIResource):
         if not contract_address:
             raise ValueError(f"Expected a non-empty value for `contract_address` but received {contract_address!r}")
         return await self._get(
-            f"/coins/{id}/contract/{contract_address}/market_chart/range",
+            path_template(
+                "/coins/{id}/contract/{contract_address}/market_chart/range", id=id, contract_address=contract_address
+            ),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
