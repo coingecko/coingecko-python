@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.14.1 (2026-04-11)
+
+Full Changelog: [v1.14.0...v1.14.1](https://github.com/coingecko/coingecko-python/compare/v1.14.0...v1.14.1)
+
+### Bug Fixes
+
+* **client:** preserve hardcoded query params when merging with user params ([ffefe0c](https://github.com/coingecko/coingecko-python/commit/ffefe0c8418ab5f77790f3c21dbd78157879c629))
+* ensure file data are only sent as 1 parameter ([7b09afe](https://github.com/coingecko/coingecko-python/commit/7b09afe02609030c9da627e2f3475063652a254a))
+
 ## 1.14.0 (2026-03-27)
 
 Full Changelog: [v1.13.0...v1.14.0](https://github.com/coingecko/coingecko-python/compare/v1.13.0...v1.14.0)
