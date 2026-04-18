@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.14.2 (2026-04-18)
+
+Full Changelog: [v1.14.1...v1.14.2](https://github.com/coingecko/coingecko-python/compare/v1.14.1...v1.14.2)
+
+### Performance Improvements
+
+* **client:** optimize file structure copying in multipart requests ([e5d3b21](https://github.com/coingecko/coingecko-python/commit/e5d3b21f3760652cf307989dade7a93bffe10811))
+
 ## 1.14.1 (2026-04-11)
 
 Full Changelog: [v1.14.0...v1.14.1](https://github.com/coingecko/coingecko-python/compare/v1.14.0...v1.14.1)
