@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.1 (2026-04-30)
+
+Full Changelog: [v2.0.0...v2.0.1](https://github.com/coingecko/coingecko-python/compare/v2.0.0...v2.0.1)
+
+### Bug Fixes
+
+* Remove orphaned MCP tools ([f85b4af](https://github.com/coingecko/coingecko-python/commit/f85b4af2fbddd5e30ba43f658f56ccf49c245239))
+
 ## 2.0.0 (2026-04-30)
 
 Full Changelog: [v1.14.2...v2.0.0](https://github.com/coingecko/coingecko-python/compare/v1.14.2...v2.0.0)
