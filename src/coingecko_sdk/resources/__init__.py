@@ -8,6 +8,14 @@ from .key import (
     KeyResourceWithStreamingResponse,
     AsyncKeyResourceWithStreamingResponse,
 )
+from .news import (
+    NewsResource,
+    AsyncNewsResource,
+    NewsResourceWithRawResponse,
+    AsyncNewsResourceWithRawResponse,
+    NewsResourceWithStreamingResponse,
+    AsyncNewsResourceWithStreamingResponse,
+)
 from .nfts import (
     NFTsResource,
     AsyncNFTsResource,
@@ -170,6 +178,12 @@ __all__ = [
     "AsyncKeyResourceWithRawResponse",
     "KeyResourceWithStreamingResponse",
     "AsyncKeyResourceWithStreamingResponse",
+    "NewsResource",
+    "AsyncNewsResource",
+    "NewsResourceWithRawResponse",
+    "AsyncNewsResourceWithRawResponse",
+    "NewsResourceWithStreamingResponse",
+    "AsyncNewsResourceWithStreamingResponse",
     "NFTsResource",
     "AsyncNFTsResource",
     "NFTsResourceWithRawResponse",

@@ -7,7 +7,7 @@ from pydantic import Field as FieldInfo
 
 from .._models import BaseModel
 
-__all__ = ["TokenListGetAllJsonResponse", "Token"]
+__all__ = ["TokenListGetAllJsonResponse", "Token", "Version"]
 
 
 class Token(BaseModel):
@@ -30,6 +30,16 @@ class Token(BaseModel):
     """token symbol"""
 
 
+class Version(BaseModel):
+    """token list version"""
+
+    major: Optional[float] = None
+
+    minor: Optional[float] = None
+
+    patch: Optional[float] = None
+
+
 class TokenListGetAllJsonResponse(BaseModel):
     keywords: Optional[List[str]] = None
 
@@ -40,3 +50,6 @@ class TokenListGetAllJsonResponse(BaseModel):
     timestamp: Optional[datetime] = None
 
     tokens: Optional[List[Token]] = None
+
+    version: Optional[Version] = None
+    """token list version"""

@@ -12,13 +12,13 @@ __all__ = ["MarketGetResponse", "MarketGetResponseItem", "MarketGetResponseItemR
 class MarketGetResponseItemRoi(BaseModel):
     """return on investment data"""
 
-    currency: str
+    currency: Optional[str] = None
     """ROI currency"""
 
-    percentage: float
+    percentage: Optional[float] = None
     """ROI percentage"""
 
-    times: float
+    times: Optional[float] = None
     """ROI multiplier"""
 
 

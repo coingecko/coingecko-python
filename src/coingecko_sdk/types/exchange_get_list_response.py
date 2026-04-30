@@ -1,6 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List
+from typing import List, Optional
 from typing_extensions import TypeAlias
 
 from .._models import BaseModel
@@ -9,10 +9,10 @@ __all__ = ["ExchangeGetListResponse", "ExchangeGetListResponseItem"]
 
 
 class ExchangeGetListResponseItem(BaseModel):
-    id: str
+    id: Optional[str] = None
     """exchange ID"""
 
-    name: str
+    name: Optional[str] = None
     """exchange name"""
 
 

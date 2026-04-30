@@ -21,4 +21,7 @@ class PoolGetParams(TypedDict, total=False):
     """page through results Default value: 1"""
 
     query: str
-    """search query"""
+    """
+    search query, can be pool contract address, token name, token symbol, or token
+    contract address
+    """

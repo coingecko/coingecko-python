@@ -6,12 +6,49 @@ from .._models import BaseModel
 
 __all__ = [
     "ExchangeGetIDResponse",
+    "StatusUpdate",
+    "StatusUpdateProject",
+    "StatusUpdateProjectImage",
     "Ticker",
     "TickerTicker",
     "TickerTickerConvertedLast",
     "TickerTickerConvertedVolume",
     "TickerTickerMarket",
 ]
+
+
+class StatusUpdateProjectImage(BaseModel):
+    large: Optional[str] = None
+
+    small: Optional[str] = None
+
+    thumb: Optional[str] = None
+
+
+class StatusUpdateProject(BaseModel):
+    id: Optional[str] = None
+
+    image: Optional[StatusUpdateProjectImage] = None
+
+    name: Optional[str] = None
+
+    type: Optional[str] = None
+
+
+class StatusUpdate(BaseModel):
+    category: Optional[str] = None
+
+    created_at: Optional[str] = None
+
+    description: Optional[str] = None
+
+    pin: Optional[bool] = None
+
+    project: Optional[StatusUpdateProject] = None
+
+    user: Optional[str] = None
+
+    user_title: Optional[str] = None
 
 
 class TickerTickerConvertedLast(BaseModel):
@@ -37,17 +74,17 @@ class TickerTickerConvertedVolume(BaseModel):
 class TickerTickerMarket(BaseModel):
     """coin ticker exchange"""
 
-    has_trading_incentive: bool
+    has_trading_incentive: Optional[bool] = None
     """exchange trading incentive"""
 
-    identifier: str
+    identifier: Optional[str] = None
     """exchange identifier"""
-
-    name: str
-    """exchange name"""
 
     logo: Optional[str] = None
     """exchange image url"""
+
+    name: Optional[str] = None
+    """exchange name"""
 
 
 class TickerTicker(BaseModel):
@@ -59,6 +96,9 @@ class TickerTicker(BaseModel):
 
     coin_id: Optional[str] = None
     """coin ticker base currency coin ID"""
+
+    coin_mcap_usd: Optional[float] = None
+    """coin market cap in usd"""
 
     converted_last: Optional[TickerTickerConvertedLast] = None
     """coin ticker converted last price"""
@@ -163,6 +203,9 @@ class ExchangeGetIDResponse(BaseModel):
 
     slack_url: Optional[str] = None
     """exchange slack url"""
+
+    status_updates: Optional[List[StatusUpdate]] = None
+    """exchange status updates"""
 
     telegram_url: Optional[str] = None
     """exchange telegram url"""

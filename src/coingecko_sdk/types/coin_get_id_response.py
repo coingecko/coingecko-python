@@ -4,12 +4,12 @@ from typing import Dict, List, Optional
 from datetime import datetime
 
 from .._models import BaseModel
+from .detail_platform_data import DetailPlatformData
 
 __all__ = [
     "CoinGetIDResponse",
     "CategoriesDetail",
     "CommunityData",
-    "DetailPlatforms",
     "DeveloperData",
     "DeveloperDataCodeAdditionsDeletions4Weeks",
     "IcoData",
@@ -74,14 +74,6 @@ class CommunityData(BaseModel):
 
     telegram_channel_user_count: Optional[float] = None
     """coin telegram channel user count"""
-
-
-class DetailPlatforms(BaseModel):
-    contract_address: Optional[str] = None
-    """contract address on the platform"""
-
-    decimal_place: Optional[float] = None
-    """decimal places for the token"""
 
 
 class DeveloperDataCodeAdditionsDeletions4Weeks(BaseModel):
@@ -575,6 +567,14 @@ class MarketData(BaseModel):
     mcap_to_tvl_ratio: Optional[float] = None
     """market cap to total value locked ratio"""
 
+    outstanding_supply: Optional[float] = None
+    """
+    tokens outstanding in the market, circulated/tradable or planned for circulation
+    """
+
+    outstanding_token_value_usd: Optional[float] = None
+    """outstanding token value in USD"""
+
     price_change_24h: Optional[float] = None
     """coin 24hr price change in currency"""
 
@@ -679,6 +679,9 @@ class Ticker(BaseModel):
     coin_id: Optional[str] = None
     """coin ticker base currency coin ID"""
 
+    coin_mcap_usd: Optional[float] = None
+    """coin market cap in usd"""
+
     converted_last: Optional[TickerConvertedLast] = None
     """coin ticker converted last price"""
 
@@ -753,7 +756,7 @@ class CoinGetIDResponse(BaseModel):
     description: Optional[Dict[str, str]] = None
     """coin description"""
 
-    detail_platforms: Optional[Dict[str, DetailPlatforms]] = None
+    detail_platforms: Optional[Dict[str, DetailPlatformData]] = None
     """detailed coin asset platform and contract address"""
 
     developer_data: Optional[DeveloperData] = None
@@ -792,7 +795,7 @@ class CoinGetIDResponse(BaseModel):
     name: Optional[str] = None
     """coin name"""
 
-    platforms: Optional[Dict[str, str]] = None
+    platforms: Optional[Dict[str, Optional[str]]] = None
     """coin asset platform and contract address"""
 
     preview_listing: Optional[bool] = None

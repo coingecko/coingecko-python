@@ -38,6 +38,7 @@ from ._base_client import (
 if TYPE_CHECKING:
     from .resources import (
         key,
+        news,
         nfts,
         ping,
         coins,
@@ -54,6 +55,7 @@ if TYPE_CHECKING:
         public_treasury,
     )
     from .resources.key import KeyResource, AsyncKeyResource
+    from .resources.news import NewsResource, AsyncNewsResource
     from .resources.ping import PingResource, AsyncPingResource
     from .resources.entities import EntitiesResource, AsyncEntitiesResource
     from .resources.nfts.nfts import NFTsResource, AsyncNFTsResource
@@ -226,6 +228,12 @@ class Coingecko(SyncAPIClient):
         from .resources.key import KeyResource
 
         return KeyResource(self)
+
+    @cached_property
+    def news(self) -> NewsResource:
+        from .resources.news import NewsResource
+
+        return NewsResource(self)
 
     @cached_property
     def nfts(self) -> NFTsResource:
@@ -552,6 +560,12 @@ class AsyncCoingecko(AsyncAPIClient):
         return AsyncKeyResource(self)
 
     @cached_property
+    def news(self) -> AsyncNewsResource:
+        from .resources.news import AsyncNewsResource
+
+        return AsyncNewsResource(self)
+
+    @cached_property
     def nfts(self) -> AsyncNFTsResource:
         from .resources.nfts import AsyncNFTsResource
 
@@ -790,6 +804,12 @@ class CoingeckoWithRawResponse:
         return KeyResourceWithRawResponse(self._client.key)
 
     @cached_property
+    def news(self) -> news.NewsResourceWithRawResponse:
+        from .resources.news import NewsResourceWithRawResponse
+
+        return NewsResourceWithRawResponse(self._client.news)
+
+    @cached_property
     def nfts(self) -> nfts.NFTsResourceWithRawResponse:
         from .resources.nfts import NFTsResourceWithRawResponse
 
@@ -885,6 +905,12 @@ class AsyncCoingeckoWithRawResponse:
         from .resources.key import AsyncKeyResourceWithRawResponse
 
         return AsyncKeyResourceWithRawResponse(self._client.key)
+
+    @cached_property
+    def news(self) -> news.AsyncNewsResourceWithRawResponse:
+        from .resources.news import AsyncNewsResourceWithRawResponse
+
+        return AsyncNewsResourceWithRawResponse(self._client.news)
 
     @cached_property
     def nfts(self) -> nfts.AsyncNFTsResourceWithRawResponse:
@@ -984,6 +1010,12 @@ class CoingeckoWithStreamedResponse:
         return KeyResourceWithStreamingResponse(self._client.key)
 
     @cached_property
+    def news(self) -> news.NewsResourceWithStreamingResponse:
+        from .resources.news import NewsResourceWithStreamingResponse
+
+        return NewsResourceWithStreamingResponse(self._client.news)
+
+    @cached_property
     def nfts(self) -> nfts.NFTsResourceWithStreamingResponse:
         from .resources.nfts import NFTsResourceWithStreamingResponse
 
@@ -1079,6 +1111,12 @@ class AsyncCoingeckoWithStreamedResponse:
         from .resources.key import AsyncKeyResourceWithStreamingResponse
 
         return AsyncKeyResourceWithStreamingResponse(self._client.key)
+
+    @cached_property
+    def news(self) -> news.AsyncNewsResourceWithStreamingResponse:
+        from .resources.news import AsyncNewsResourceWithStreamingResponse
+
+        return AsyncNewsResourceWithStreamingResponse(self._client.news)
 
     @cached_property
     def nfts(self) -> nfts.AsyncNFTsResourceWithStreamingResponse:

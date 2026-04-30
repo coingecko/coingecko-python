@@ -12,6 +12,7 @@ __all__ = [
     "DataAttributesTransactions",
     "DataAttributesTransactionsH1",
     "DataAttributesTransactionsH24",
+    "DataAttributesTransactionsH6",
     "DataAttributesTransactionsM15",
     "DataAttributesTransactionsM30",
     "DataAttributesTransactionsM5",
@@ -21,6 +22,8 @@ __all__ = [
     "DataRelationshipsBaseTokenData",
     "DataRelationshipsDex",
     "DataRelationshipsDexData",
+    "DataRelationshipsNetwork",
+    "DataRelationshipsNetworkData",
     "DataRelationshipsQuoteToken",
     "DataRelationshipsQuoteTokenData",
     "Included",
@@ -53,6 +56,16 @@ class DataAttributesTransactionsH1(BaseModel):
 
 
 class DataAttributesTransactionsH24(BaseModel):
+    buyers: Optional[int] = None
+
+    buys: Optional[int] = None
+
+    sellers: Optional[int] = None
+
+    sells: Optional[int] = None
+
+
+class DataAttributesTransactionsH6(BaseModel):
     buyers: Optional[int] = None
 
     buys: Optional[int] = None
@@ -96,6 +109,8 @@ class DataAttributesTransactions(BaseModel):
     h1: Optional[DataAttributesTransactionsH1] = None
 
     h24: Optional[DataAttributesTransactionsH24] = None
+
+    h6: Optional[DataAttributesTransactionsH6] = None
 
     m15: Optional[DataAttributesTransactionsM15] = None
 
@@ -176,6 +191,16 @@ class DataRelationshipsDex(BaseModel):
     data: Optional[DataRelationshipsDexData] = None
 
 
+class DataRelationshipsNetworkData(BaseModel):
+    id: Optional[str] = None
+
+    type: Optional[str] = None
+
+
+class DataRelationshipsNetwork(BaseModel):
+    data: Optional[DataRelationshipsNetworkData] = None
+
+
 class DataRelationshipsQuoteTokenData(BaseModel):
     id: Optional[str] = None
 
@@ -190,6 +215,8 @@ class DataRelationships(BaseModel):
     base_token: Optional[DataRelationshipsBaseToken] = None
 
     dex: Optional[DataRelationshipsDex] = None
+
+    network: Optional[DataRelationshipsNetwork] = None
 
     quote_token: Optional[DataRelationshipsQuoteToken] = None
 

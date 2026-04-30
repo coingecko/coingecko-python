@@ -19,7 +19,13 @@ class DataAttributes(BaseModel):
 
     coingecko_coin_id: Optional[str] = None
 
+    decimals: Optional[int] = None
+
     description: Optional[str] = None
+
+    discord_url: Optional[str] = None
+
+    farcaster_url: Optional[str] = None
 
     gt_score: Optional[float] = None
 
@@ -31,7 +37,13 @@ class DataAttributes(BaseModel):
 
     symbol: Optional[str] = None
 
+    telegram_handle: Optional[str] = None
+
+    twitter_handle: Optional[str] = None
+
     websites: Optional[List[str]] = None
+
+    zora_url: Optional[str] = None
 
 
 class DataRelationshipsNetworkData(BaseModel):
@@ -59,4 +71,4 @@ class Data(BaseModel):
 
 
 class InfoRecentlyUpdatedGetResponse(BaseModel):
-    data: Optional[Data] = None
+    data: Optional[List[Data]] = None

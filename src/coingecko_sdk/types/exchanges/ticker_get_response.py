@@ -30,17 +30,17 @@ class TickerConvertedVolume(BaseModel):
 class TickerMarket(BaseModel):
     """coin ticker exchange"""
 
-    has_trading_incentive: bool
+    has_trading_incentive: Optional[bool] = None
     """exchange trading incentive"""
 
-    identifier: str
+    identifier: Optional[str] = None
     """exchange identifier"""
-
-    name: str
-    """exchange name"""
 
     logo: Optional[str] = None
     """exchange image url"""
+
+    name: Optional[str] = None
+    """exchange name"""
 
 
 class Ticker(BaseModel):
@@ -52,6 +52,9 @@ class Ticker(BaseModel):
 
     coin_id: Optional[str] = None
     """coin ticker base currency coin ID"""
+
+    coin_mcap_usd: Optional[float] = None
+    """coin market cap in usd"""
 
     converted_last: Optional[TickerConvertedLast] = None
     """coin ticker converted last price"""
