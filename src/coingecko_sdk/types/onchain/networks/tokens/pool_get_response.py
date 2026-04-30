@@ -12,6 +12,7 @@ __all__ = [
     "DataAttributesTransactions",
     "DataAttributesTransactionsH1",
     "DataAttributesTransactionsH24",
+    "DataAttributesTransactionsH6",
     "DataAttributesTransactionsM15",
     "DataAttributesTransactionsM30",
     "DataAttributesTransactionsM5",
@@ -62,6 +63,16 @@ class DataAttributesTransactionsH24(BaseModel):
     sells: Optional[int] = None
 
 
+class DataAttributesTransactionsH6(BaseModel):
+    buyers: Optional[int] = None
+
+    buys: Optional[int] = None
+
+    sellers: Optional[int] = None
+
+    sells: Optional[int] = None
+
+
 class DataAttributesTransactionsM15(BaseModel):
     buyers: Optional[int] = None
 
@@ -96,6 +107,8 @@ class DataAttributesTransactions(BaseModel):
     h1: Optional[DataAttributesTransactionsH1] = None
 
     h24: Optional[DataAttributesTransactionsH24] = None
+
+    h6: Optional[DataAttributesTransactionsH6] = None
 
     m15: Optional[DataAttributesTransactionsM15] = None
 
@@ -152,6 +165,8 @@ class DataAttributes(BaseModel):
     sentiment_vote_negative_percentage: Optional[float] = None
 
     sentiment_vote_positive_percentage: Optional[float] = None
+
+    token_price_usd: Optional[str] = None
 
     transactions: Optional[DataAttributesTransactions] = None
 

@@ -4,85 +4,34 @@ from typing import List, Union, Optional
 from typing_extensions import TypeAlias
 
 from .._models import BaseModel
+from .treasury_entity import TreasuryEntity
 
-__all__ = [
-    "PublicTreasuryGetCoinIDResponse",
-    "CompaniesTreasury",
-    "CompaniesTreasuryCompany",
-    "GovernmentsTreasury",
-    "GovernmentsTreasuryGovernment",
-]
-
-
-class CompaniesTreasuryCompany(BaseModel):
-    country: Optional[str] = None
-    """company incorporated or government country"""
-
-    name: Optional[str] = None
-    """company or government name"""
-
-    percentage_of_total_supply: Optional[float] = None
-    """percentage of total crypto supply"""
-
-    symbol: Optional[str] = None
-    """company symbol"""
-
-    total_current_value_usd: Optional[float] = None
-    """total current value of crypto holdings in usd"""
-
-    total_entry_value_usd: Optional[float] = None
-    """total entry value in usd"""
-
-    total_holdings: Optional[float] = None
-    """total crypto holdings"""
+__all__ = ["PublicTreasuryGetCoinIDResponse", "CompaniesTreasury", "GovernmentsTreasury"]
 
 
 class CompaniesTreasury(BaseModel):
-    companies: List[CompaniesTreasuryCompany]
+    companies: Optional[List[TreasuryEntity]] = None
 
-    market_cap_dominance: float
+    market_cap_dominance: Optional[float] = None
     """market cap dominance"""
 
-    total_holdings: float
+    total_holdings: Optional[float] = None
     """total crypto holdings of companies"""
 
-    total_value_usd: float
+    total_value_usd: Optional[float] = None
     """total crypto holdings value in usd"""
 
 
-class GovernmentsTreasuryGovernment(BaseModel):
-    country: Optional[str] = None
-    """company incorporated or government country"""
-
-    name: Optional[str] = None
-    """company or government name"""
-
-    percentage_of_total_supply: Optional[float] = None
-    """percentage of total crypto supply"""
-
-    symbol: Optional[str] = None
-    """company symbol"""
-
-    total_current_value_usd: Optional[float] = None
-    """total current value of crypto holdings in usd"""
-
-    total_entry_value_usd: Optional[float] = None
-    """total entry value in usd"""
-
-    total_holdings: Optional[float] = None
-    """total crypto holdings"""
-
-
 class GovernmentsTreasury(BaseModel):
-    governments: List[GovernmentsTreasuryGovernment]
+    governments: Optional[List[TreasuryEntity]] = None
 
-    market_cap_dominance: float
+    market_cap_dominance: Optional[float] = None
     """market cap dominance"""
 
-    total_holdings: float
+    total_holdings: Optional[float] = None
     """total crypto holdings of governments"""
 
-    total_value_usd: float
+    total_value_usd: Optional[float] = None
     """total crypto holdings value in usd"""
 
 

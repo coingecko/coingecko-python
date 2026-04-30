@@ -19,15 +19,15 @@ class HoldingHoldingAmountChange(BaseModel):
     holding amount changes over different timeframes (only present if holding_amount_change param is used)
     """
 
-    api_14d: Optional[float] = FieldInfo(alias="14d", default=None)
+    period_14d: Optional[float] = FieldInfo(alias="14d", default=None)
 
-    api_1y: Optional[float] = FieldInfo(alias="1y", default=None)
+    period_1y: Optional[float] = FieldInfo(alias="1y", default=None)
 
-    api_30d: Optional[float] = FieldInfo(alias="30d", default=None)
+    period_30d: Optional[float] = FieldInfo(alias="30d", default=None)
 
-    api_7d: Optional[float] = FieldInfo(alias="7d", default=None)
+    period_7d: Optional[float] = FieldInfo(alias="7d", default=None)
 
-    api_90d: Optional[float] = FieldInfo(alias="90d", default=None)
+    period_90d: Optional[float] = FieldInfo(alias="90d", default=None)
 
     ytd: Optional[float] = None
 
@@ -37,15 +37,15 @@ class HoldingHoldingChangePercentage(BaseModel):
     holding change percentages over different timeframes (only present if holding_change_percentage param is used)
     """
 
-    api_14d: Optional[float] = FieldInfo(alias="14d", default=None)
+    period_14d: Optional[float] = FieldInfo(alias="14d", default=None)
 
-    api_1y: Optional[float] = FieldInfo(alias="1y", default=None)
+    period_1y: Optional[float] = FieldInfo(alias="1y", default=None)
 
-    api_30d: Optional[float] = FieldInfo(alias="30d", default=None)
+    period_30d: Optional[float] = FieldInfo(alias="30d", default=None)
 
-    api_7d: Optional[float] = FieldInfo(alias="7d", default=None)
+    period_7d: Optional[float] = FieldInfo(alias="7d", default=None)
 
-    api_90d: Optional[float] = FieldInfo(alias="90d", default=None)
+    period_90d: Optional[float] = FieldInfo(alias="90d", default=None)
 
     ytd: Optional[float] = None
 

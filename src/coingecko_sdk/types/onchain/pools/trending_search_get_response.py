@@ -40,7 +40,7 @@ class DataAttributes(BaseModel):
 
     reserve_in_usd: Optional[str] = None
 
-    trending_rank: Optional[float] = None
+    trending_rank: Optional[int] = None
 
     volume_usd: Optional[DataAttributesVolumeUsd] = None
 

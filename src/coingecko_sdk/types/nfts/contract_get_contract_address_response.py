@@ -10,7 +10,6 @@ __all__ = [
     "Ath",
     "AthChangePercentage",
     "AthDate",
-    "BannerImage",
     "Explorer",
     "FloorPrice",
     "FloorPrice14dPercentageChange",
@@ -50,12 +49,6 @@ class AthDate(BaseModel):
     native_currency: Optional[datetime] = None
 
     usd: Optional[datetime] = None
-
-
-class BannerImage(BaseModel):
-    """NFT collection banner image url"""
-
-    small: Optional[str] = None
 
 
 class Explorer(BaseModel):
@@ -184,7 +177,7 @@ class ContractGetContractAddressResponse(BaseModel):
     ath_date: Optional[AthDate] = None
     """NFT collection all time highs date"""
 
-    banner_image: Optional[BannerImage] = None
+    banner_image: Optional[str] = None
     """NFT collection banner image url"""
 
     contract_address: Optional[str] = None
@@ -278,3 +271,6 @@ class ContractGetContractAddressResponse(BaseModel):
 
     volume_in_usd_24h_percentage_change: Optional[float] = None
     """NFT collection volume in usd 24 hours percentage change"""
+
+    web_slug: Optional[str] = None
+    """NFT collection web slug"""

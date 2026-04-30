@@ -65,6 +65,8 @@ class DataDataAttributes(BaseModel):
 
     coingecko_coin_id: Optional[str] = None
 
+    decimals: Optional[int] = None
+
     description: Optional[str] = None
 
     discord_url: Optional[str] = None
@@ -73,11 +75,13 @@ class DataDataAttributes(BaseModel):
 
     freeze_authority: Optional[str] = None
 
-    gt_categories_id: Optional[List[str]] = None
+    gt_category_ids: Optional[List[str]] = None
 
     gt_score: Optional[float] = None
 
     gt_score_details: Optional[DataDataAttributesGtScoreDetails] = None
+
+    gt_verified: Optional[bool] = None
 
     holders: Optional[DataDataAttributesHolders] = None
 

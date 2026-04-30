@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 
+from .news_get_params import NewsGetParams as NewsGetParams
+from .treasury_entity import TreasuryEntity as TreasuryEntity
 from .key_get_response import KeyGetResponse as KeyGetResponse
+from .news_get_response import NewsGetResponse as NewsGetResponse
 from .ping_get_response import PingGetResponse as PingGetResponse
 from .search_get_params import SearchGetParams as SearchGetParams
 from .coin_get_id_params import CoinGetIDParams as CoinGetIDParams
@@ -12,6 +15,7 @@ from .nft_get_id_response import NFTGetIDResponse as NFTGetIDResponse
 from .nft_get_list_params import NFTGetListParams as NFTGetListParams
 from .search_get_response import SearchGetResponse as SearchGetResponse
 from .coin_get_id_response import CoinGetIDResponse as CoinGetIDResponse
+from .detail_platform_data import DetailPlatformData as DetailPlatformData
 from .exchange_get_response import ExchangeGetResponse as ExchangeGetResponse
 from .nft_get_list_response import NFTGetListResponse as NFTGetListResponse
 from .entity_get_list_params import EntityGetListParams as EntityGetListParams

@@ -56,7 +56,8 @@ class PoolsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PoolGetResponse:
         """
-        This endpoint allows you to **search for pools on a network**
+        This endpoint allows you to **search for pools on a network by pool address,
+        token name, token symbol, or token contract address**
 
         Args:
           include: attributes to include, comma-separated if more than one to include Available
@@ -66,7 +67,8 @@ class PoolsResource(SyncAPIResource):
 
           page: page through results Default value: 1
 
-          query: search query
+          query: search query, can be pool contract address, token name, token symbol, or token
+              contract address
 
           extra_headers: Send extra headers
 
@@ -132,7 +134,8 @@ class AsyncPoolsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PoolGetResponse:
         """
-        This endpoint allows you to **search for pools on a network**
+        This endpoint allows you to **search for pools on a network by pool address,
+        token name, token symbol, or token contract address**
 
         Args:
           include: attributes to include, comma-separated if more than one to include Available
@@ -142,7 +145,8 @@ class AsyncPoolsResource(AsyncAPIResource):
 
           page: page through results Default value: 1
 
-          query: search query
+          query: search query, can be pool contract address, token name, token symbol, or token
+              contract address
 
           extra_headers: Send extra headers
 
