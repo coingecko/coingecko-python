@@ -1,13 +1,14 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Optional
+from typing import List, Optional
+from typing_extensions import TypeAlias
 
 from .._models import BaseModel
 
-__all__ = ["DerivativeGetResponse"]
+__all__ = ["DerivativeGetResponse", "DerivativeGetResponseItem"]
 
 
-class DerivativeGetResponse(BaseModel):
+class DerivativeGetResponseItem(BaseModel):
     basis: Optional[float] = None
     """difference of derivative price and index price"""
 
@@ -48,3 +49,6 @@ class DerivativeGetResponse(BaseModel):
 
     volume_24h: Optional[float] = None
     """derivative volume in 24 hours"""
+
+
+DerivativeGetResponse: TypeAlias = List[DerivativeGetResponseItem]

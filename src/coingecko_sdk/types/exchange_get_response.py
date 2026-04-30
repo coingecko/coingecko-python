@@ -1,13 +1,14 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Optional
+from typing import List, Optional
+from typing_extensions import TypeAlias
 
 from .._models import BaseModel
 
-__all__ = ["ExchangeGetResponse"]
+__all__ = ["ExchangeGetResponse", "ExchangeGetResponseItem"]
 
 
-class ExchangeGetResponse(BaseModel):
+class ExchangeGetResponseItem(BaseModel):
     id: Optional[str] = None
     """exchange ID"""
 
@@ -40,3 +41,6 @@ class ExchangeGetResponse(BaseModel):
 
     year_established: Optional[float] = None
     """exchange established year"""
+
+
+ExchangeGetResponse: TypeAlias = List[ExchangeGetResponseItem]
