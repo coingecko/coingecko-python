@@ -1,5 +1,28 @@
 # Changelog
 
+## 2.0.0 (2026-04-30)
+
+Full Changelog: [v1.14.2...v2.0.0](https://github.com/coingecko/coingecko-python/compare/v1.14.2...v2.0.0)
+
+### ⚠ BREAKING CHANGES
+
+* AIP updates; fix!: Pydantic response model
+
+### Features
+
+* AIP updates; fix!: Pydantic response model ([8c4629e](https://github.com/coingecko/coingecko-python/commit/8c4629e7c7431cc8925b757fd23c205816357ed6))
+* support setting headers via env ([3979340](https://github.com/coingecko/coingecko-python/commit/3979340037d5ec65908c8c9e8d21d67e6e770ae8))
+
+
+### Bug Fixes
+
+* use correct field name format for multipart file arrays ([5932ae6](https://github.com/coingecko/coingecko-python/commit/5932ae6d020e9841a92773aee20ea926b849945e))
+
+
+### Chores
+
+* **internal:** more robust bootstrap script ([e53a0fc](https://github.com/coingecko/coingecko-python/commit/e53a0fc7939c399537fefd1cf9d77044a1925c94))
+
 ## 1.14.2 (2026-04-18)
 
 Full Changelog: [v1.14.1...v1.14.2](https://github.com/coingecko/coingecko-python/compare/v1.14.1...v1.14.2)
