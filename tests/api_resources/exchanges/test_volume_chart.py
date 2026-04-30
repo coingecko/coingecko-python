@@ -71,8 +71,8 @@ class TestVolumeChart:
     def test_method_get_range(self, client: Coingecko) -> None:
         volume_chart = client.exchanges.volume_chart.get_range(
             id="id",
-            from_=0,
-            to=0,
+            from_=1672531200,
+            to=1675123200,
         )
         assert_matches_type(VolumeChartGetRangeResponse, volume_chart, path=["response"])
 
@@ -81,8 +81,8 @@ class TestVolumeChart:
     def test_raw_response_get_range(self, client: Coingecko) -> None:
         response = client.exchanges.volume_chart.with_raw_response.get_range(
             id="id",
-            from_=0,
-            to=0,
+            from_=1672531200,
+            to=1675123200,
         )
 
         assert response.is_closed is True
@@ -95,8 +95,8 @@ class TestVolumeChart:
     def test_streaming_response_get_range(self, client: Coingecko) -> None:
         with client.exchanges.volume_chart.with_streaming_response.get_range(
             id="id",
-            from_=0,
-            to=0,
+            from_=1672531200,
+            to=1675123200,
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -112,8 +112,8 @@ class TestVolumeChart:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
             client.exchanges.volume_chart.with_raw_response.get_range(
                 id="",
-                from_=0,
-                to=0,
+                from_=1672531200,
+                to=1675123200,
             )
 
 
@@ -173,8 +173,8 @@ class TestAsyncVolumeChart:
     async def test_method_get_range(self, async_client: AsyncCoingecko) -> None:
         volume_chart = await async_client.exchanges.volume_chart.get_range(
             id="id",
-            from_=0,
-            to=0,
+            from_=1672531200,
+            to=1675123200,
         )
         assert_matches_type(VolumeChartGetRangeResponse, volume_chart, path=["response"])
 
@@ -183,8 +183,8 @@ class TestAsyncVolumeChart:
     async def test_raw_response_get_range(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.exchanges.volume_chart.with_raw_response.get_range(
             id="id",
-            from_=0,
-            to=0,
+            from_=1672531200,
+            to=1675123200,
         )
 
         assert response.is_closed is True
@@ -197,8 +197,8 @@ class TestAsyncVolumeChart:
     async def test_streaming_response_get_range(self, async_client: AsyncCoingecko) -> None:
         async with async_client.exchanges.volume_chart.with_streaming_response.get_range(
             id="id",
-            from_=0,
-            to=0,
+            from_=1672531200,
+            to=1675123200,
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -214,6 +214,6 @@ class TestAsyncVolumeChart:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
             await async_client.exchanges.volume_chart.with_raw_response.get_range(
                 id="",
-                from_=0,
-                to=0,
+                from_=1672531200,
+                to=1675123200,
             )
