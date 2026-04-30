@@ -30,13 +30,13 @@ class DataAttributesGtScoreDetails(BaseModel):
 
 
 class DataAttributesHoldersDistributionPercentage(BaseModel):
-    dist_11_30: Optional[float] = FieldInfo(alias="11_30", default=None)
+    dist_11_30: Optional[str] = FieldInfo(alias="11_30", default=None)
 
-    dist_31_50: Optional[float] = FieldInfo(alias="31_50", default=None)
+    dist_31_50: Optional[str] = FieldInfo(alias="31_50", default=None)
 
-    rest: Optional[float] = None
+    rest: Optional[str] = None
 
-    top_10: Optional[float] = None
+    top_10: Optional[str] = None
 
 
 class DataAttributesHolders(BaseModel):
