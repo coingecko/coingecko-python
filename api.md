@@ -15,7 +15,7 @@ Methods:
 Types:
 
 ```python
-from coingecko_sdk.types import CoinGetIDResponse
+from coingecko_sdk.types import DetailPlatformData, CoinGetIDResponse
 ```
 
 Methods:
@@ -317,6 +317,18 @@ Methods:
 
 - <code title="get /key">client.key.<a href="./src/coingecko_sdk/resources/key.py">get</a>() -> <a href="./src/coingecko_sdk/types/key_get_response.py">KeyGetResponse</a></code>
 
+# News
+
+Types:
+
+```python
+from coingecko_sdk.types import NewsGetResponse
+```
+
+Methods:
+
+- <code title="get /news">client.news.<a href="./src/coingecko_sdk/resources/news.py">get</a>(\*\*<a href="src/coingecko_sdk/types/news_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/news_get_response.py">NewsGetResponse</a></code>
+
 # NFTs
 
 Types:
@@ -453,7 +465,7 @@ Methods:
 Types:
 
 ```python
-from coingecko_sdk.types.onchain.networks import PoolGetResponse, PoolGetAddressResponse
+from coingecko_sdk.types.onchain.networks import PoolData, PoolGetResponse, PoolGetAddressResponse
 ```
 
 Methods:
@@ -705,6 +717,7 @@ Types:
 
 ```python
 from coingecko_sdk.types import (
+    TreasuryEntity,
     PublicTreasuryGetCoinIDResponse,
     PublicTreasuryGetEntityIDResponse,
     PublicTreasuryGetHoldingChartResponse,

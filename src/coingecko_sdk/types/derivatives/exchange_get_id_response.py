@@ -103,7 +103,7 @@ class ExchangeGetIDResponse(BaseModel):
 
     tickers: Optional[List[Ticker]] = None
 
-    trade_volume_24h_btc: Optional[float] = None
+    trade_volume_24h_btc: Optional[str] = None
     """derivatives exchange trade volume in BTC in 24 hours"""
 
     url: Optional[str] = None

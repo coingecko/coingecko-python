@@ -87,7 +87,7 @@ class PriceResource(SyncAPIResource):
     ) -> PriceGetResponse:
         """
         This endpoint allows you to **query the prices of one or more coins by using
-        their unique Coin API IDs**
+        their unique Coin API IDs, symbols, or names**
 
         Args:
           vs_currencies: target currency of coins, comma-separated if querying more than 1 currency.
@@ -213,7 +213,7 @@ class AsyncPriceResource(AsyncAPIResource):
     ) -> PriceGetResponse:
         """
         This endpoint allows you to **query the prices of one or more coins by using
-        their unique Coin API IDs**
+        their unique Coin API IDs, symbols, or names**
 
         Args:
           vs_currencies: target currency of coins, comma-separated if querying more than 1 currency.

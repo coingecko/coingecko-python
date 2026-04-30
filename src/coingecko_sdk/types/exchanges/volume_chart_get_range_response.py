@@ -1,8 +1,8 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List
+from typing import List, Union
 from typing_extensions import TypeAlias
 
 __all__ = ["VolumeChartGetRangeResponse"]
 
-VolumeChartGetRangeResponse: TypeAlias = List[List[float]]
+VolumeChartGetRangeResponse: TypeAlias = List[List[Union[float, str]]]

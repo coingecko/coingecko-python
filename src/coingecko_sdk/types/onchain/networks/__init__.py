@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from .pool_data import PoolData as PoolData
 from .dex_get_params import DexGetParams as DexGetParams
 from .pool_get_params import PoolGetParams as PoolGetParams
 from .dex_get_response import DexGetResponse as DexGetResponse

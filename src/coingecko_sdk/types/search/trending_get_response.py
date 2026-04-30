@@ -11,9 +11,11 @@ __all__ = [
     "CategoryDataMarketCapChangePercentage24h",
     "Coin",
     "CoinData",
+    "CoinDataContent",
     "CoinDataPriceChangePercentage24h",
     "NFT",
     "NFTData",
+    "NFTDataContent",
 ]
 
 
@@ -63,6 +65,12 @@ class Category(BaseModel):
     """category web slug"""
 
 
+class CoinDataContent(BaseModel):
+    description: Optional[str] = None
+
+    title: Optional[str] = None
+
+
 class CoinDataPriceChangePercentage24h(BaseModel):
     """coin price change percentage in 24 hours"""
 
@@ -72,7 +80,7 @@ class CoinDataPriceChangePercentage24h(BaseModel):
 
 
 class CoinData(BaseModel):
-    content: Optional[str] = None
+    content: Optional[CoinDataContent] = None
 
     market_cap: Optional[str] = None
     """coin market cap in usd"""
@@ -135,8 +143,14 @@ class Coin(BaseModel):
     """coin thumb image url"""
 
 
+class NFTDataContent(BaseModel):
+    description: Optional[str] = None
+
+    title: Optional[str] = None
+
+
 class NFTData(BaseModel):
-    content: Optional[str] = None
+    content: Optional[NFTDataContent] = None
 
     floor_price: Optional[str] = None
     """NFT collection floor price"""
