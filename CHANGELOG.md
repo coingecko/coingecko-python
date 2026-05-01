@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.2 (2026-05-01)
+
+Full Changelog: [v2.0.1...v2.0.2](https://github.com/coingecko/coingecko-python/compare/v2.0.1...v2.0.2)
+
+### Chores
+
+* **internal:** reformat pyproject.toml ([f32c0f3](https://github.com/coingecko/coingecko-python/commit/f32c0f3d2e71c274c00f2b5e9608be42c5e5169b))
+
 ## 2.0.1 (2026-04-30)
 
 Full Changelog: [v2.0.0...v2.0.1](https://github.com/coingecko/coingecko-python/compare/v2.0.0...v2.0.1)
