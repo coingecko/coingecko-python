@@ -9,19 +9,19 @@ __all__ = ["PoolGetParams"]
 
 class PoolGetParams(TypedDict, total=False):
     include: str
-    """
-    attributes to include, comma-separated if more than one to include Available
-    values: `base_token`, `quote_token`, `dex`
+    """Attributes to include, comma-separated if more than one.
+
+    Available values: `base_token`, `quote_token`, `dex`
     """
 
     network: str
-    """network ID \\**refers to [/networks](/reference/networks-list)"""
+    """Network ID. \\**refers to [`/onchain/networks`](/reference/networks-list)."""
 
     page: int
-    """page through results Default value: 1"""
+    """Page through results. Default value: 1"""
 
     query: str
     """
-    search query, can be pool contract address, token name, token symbol, or token
-    contract address
+    Search query: pool contract address, token name, token symbol, or token contract
+    address.
     """

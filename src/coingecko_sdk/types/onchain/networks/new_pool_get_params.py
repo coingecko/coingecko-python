@@ -9,16 +9,16 @@ __all__ = ["NewPoolGetParams"]
 
 class NewPoolGetParams(TypedDict, total=False):
     include: str
-    """
-    attributes to include, comma-separated if more than one to include Available
-    values: `base_token`, `quote_token`, `dex`, `network`
+    """Attributes to include, comma-separated if more than one.
+
+    Available values: `base_token`, `quote_token`, `dex`, `network`
     """
 
     include_gt_community_data: bool
-    """
-    include GeckoTerminal community data (Sentiment votes, Suspicious reports)
-    Default value: false
+    """Include GeckoTerminal community data (sentiment votes, suspicious reports).
+
+    Default: `false`
     """
 
     page: int
-    """page through results Default value: 1"""
+    """Page through results. Default value: 1"""

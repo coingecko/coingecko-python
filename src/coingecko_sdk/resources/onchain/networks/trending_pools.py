@@ -59,20 +59,19 @@ class TrendingPoolsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TrendingPoolGetResponse:
         """
-        This endpoint allows you to **query all the trending pools across all networks
-        on GeckoTerminal**
+        To query all the trending pools across all networks on GeckoTerminal
 
         Args:
-          duration: duration to sort trending list by Default value: 24h
+          duration: Duration to sort trending list by. Default: `24h`
 
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`, `network`. Example: `base_token` or
-              `base_token,dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`, `network`
 
-          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
-              Default value: false
+          include_gt_community_data: Include GeckoTerminal community data (sentiment votes, suspicious reports).
+              Default: `false`
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
           extra_headers: Send extra headers
 
@@ -118,19 +117,19 @@ class TrendingPoolsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TrendingPoolGetNetworkResponse:
         """
-        This endpoint allows you to **query the trending pools based on the provided
-        network**
+        To query the trending pools based on the provided network
 
         Args:
-          duration: duration to sort trending list by Default value: 24h
+          duration: Duration to sort trending list by. Default: `24h`
 
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`
 
-          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
-              Default value: false
+          include_gt_community_data: Include GeckoTerminal community data (sentiment votes, suspicious reports).
+              Default: `false`
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
           extra_headers: Send extra headers
 
@@ -198,20 +197,19 @@ class AsyncTrendingPoolsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TrendingPoolGetResponse:
         """
-        This endpoint allows you to **query all the trending pools across all networks
-        on GeckoTerminal**
+        To query all the trending pools across all networks on GeckoTerminal
 
         Args:
-          duration: duration to sort trending list by Default value: 24h
+          duration: Duration to sort trending list by. Default: `24h`
 
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`, `network`. Example: `base_token` or
-              `base_token,dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`, `network`
 
-          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
-              Default value: false
+          include_gt_community_data: Include GeckoTerminal community data (sentiment votes, suspicious reports).
+              Default: `false`
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
           extra_headers: Send extra headers
 
@@ -257,19 +255,19 @@ class AsyncTrendingPoolsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TrendingPoolGetNetworkResponse:
         """
-        This endpoint allows you to **query the trending pools based on the provided
-        network**
+        To query the trending pools based on the provided network
 
         Args:
-          duration: duration to sort trending list by Default value: 24h
+          duration: Duration to sort trending list by. Default: `24h`
 
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`
 
-          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
-              Default value: false
+          include_gt_community_data: Include GeckoTerminal community data (sentiment votes, suspicious reports).
+              Default: `false`
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
           extra_headers: Send extra headers
 

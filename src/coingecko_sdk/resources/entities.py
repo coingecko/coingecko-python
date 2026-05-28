@@ -57,15 +57,15 @@ class EntitiesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> EntityGetListResponse:
         """
-        This endpoint allows you to **query all the supported entities on CoinGecko with
-        entities ID, name, symbol, and country**
+        To query all the supported entities on CoinGecko with entity ID, name, symbol,
+        and country
 
         Args:
-          entity_type: filter by entity type, default: false
+          entity_type: Filter by entity type.
 
-          page: page through results, default: 1
+          page: Page through results. Default value: 1
 
-          per_page: total results per page, default: 100 Valid values: 1...250
+          per_page: Total results per page. Default value: 100 Valid values: 1...250
 
           extra_headers: Send extra headers
 
@@ -129,15 +129,15 @@ class AsyncEntitiesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> EntityGetListResponse:
         """
-        This endpoint allows you to **query all the supported entities on CoinGecko with
-        entities ID, name, symbol, and country**
+        To query all the supported entities on CoinGecko with entity ID, name, symbol,
+        and country
 
         Args:
-          entity_type: filter by entity type, default: false
+          entity_type: Filter by entity type.
 
-          page: page through results, default: 1
+          page: Page through results. Default value: 1
 
-          per_page: total results per page, default: 100 Valid values: 1...250
+          per_page: Total results per page. Default value: 100 Valid values: 1...250
 
           extra_headers: Send extra headers
 

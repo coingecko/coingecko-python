@@ -21,8 +21,8 @@ class TestHoldersChart:
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         holders_chart = client.onchain.networks.tokens.holders_chart.get(
-            token_address="0xdac17f958d2ee523a2206206994597c13d831ec7",
-            network="eth",
+            token_address="token_address",
+            network="network",
         )
         assert_matches_type(HoldersChartGetResponse, holders_chart, path=["response"])
 
@@ -30,8 +30,8 @@ class TestHoldersChart:
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         holders_chart = client.onchain.networks.tokens.holders_chart.get(
-            token_address="0xdac17f958d2ee523a2206206994597c13d831ec7",
-            network="eth",
+            token_address="token_address",
+            network="network",
             days="7",
         )
         assert_matches_type(HoldersChartGetResponse, holders_chart, path=["response"])
@@ -40,8 +40,8 @@ class TestHoldersChart:
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.onchain.networks.tokens.holders_chart.with_raw_response.get(
-            token_address="0xdac17f958d2ee523a2206206994597c13d831ec7",
-            network="eth",
+            token_address="token_address",
+            network="network",
         )
 
         assert response.is_closed is True
@@ -53,8 +53,8 @@ class TestHoldersChart:
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.onchain.networks.tokens.holders_chart.with_streaming_response.get(
-            token_address="0xdac17f958d2ee523a2206206994597c13d831ec7",
-            network="eth",
+            token_address="token_address",
+            network="network",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -69,14 +69,14 @@ class TestHoldersChart:
     def test_path_params_get(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `network` but received ''"):
             client.onchain.networks.tokens.holders_chart.with_raw_response.get(
-                token_address="0xdac17f958d2ee523a2206206994597c13d831ec7",
+                token_address="token_address",
                 network="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `token_address` but received ''"):
             client.onchain.networks.tokens.holders_chart.with_raw_response.get(
                 token_address="",
-                network="eth",
+                network="network",
             )
 
 
@@ -89,8 +89,8 @@ class TestAsyncHoldersChart:
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         holders_chart = await async_client.onchain.networks.tokens.holders_chart.get(
-            token_address="0xdac17f958d2ee523a2206206994597c13d831ec7",
-            network="eth",
+            token_address="token_address",
+            network="network",
         )
         assert_matches_type(HoldersChartGetResponse, holders_chart, path=["response"])
 
@@ -98,8 +98,8 @@ class TestAsyncHoldersChart:
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         holders_chart = await async_client.onchain.networks.tokens.holders_chart.get(
-            token_address="0xdac17f958d2ee523a2206206994597c13d831ec7",
-            network="eth",
+            token_address="token_address",
+            network="network",
             days="7",
         )
         assert_matches_type(HoldersChartGetResponse, holders_chart, path=["response"])
@@ -108,8 +108,8 @@ class TestAsyncHoldersChart:
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.onchain.networks.tokens.holders_chart.with_raw_response.get(
-            token_address="0xdac17f958d2ee523a2206206994597c13d831ec7",
-            network="eth",
+            token_address="token_address",
+            network="network",
         )
 
         assert response.is_closed is True
@@ -121,8 +121,8 @@ class TestAsyncHoldersChart:
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.onchain.networks.tokens.holders_chart.with_streaming_response.get(
-            token_address="0xdac17f958d2ee523a2206206994597c13d831ec7",
-            network="eth",
+            token_address="token_address",
+            network="network",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -137,12 +137,12 @@ class TestAsyncHoldersChart:
     async def test_path_params_get(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `network` but received ''"):
             await async_client.onchain.networks.tokens.holders_chart.with_raw_response.get(
-                token_address="0xdac17f958d2ee523a2206206994597c13d831ec7",
+                token_address="token_address",
                 network="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `token_address` but received ''"):
             await async_client.onchain.networks.tokens.holders_chart.with_raw_response.get(
                 token_address="",
-                network="eth",
+                network="network",
             )

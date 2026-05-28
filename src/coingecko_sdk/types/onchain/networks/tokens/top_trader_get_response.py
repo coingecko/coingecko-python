@@ -8,50 +8,68 @@ __all__ = ["TopTraderGetResponse", "Data", "DataAttributes", "DataAttributesTrad
 
 
 class DataAttributesTrader(BaseModel):
-    address: Optional[str] = None
+    address: str
+    """Trader wallet address"""
 
-    average_buy_price_usd: Optional[str] = None
+    average_buy_price_usd: str
+    """Average buy price in USD"""
 
-    average_sell_price_usd: Optional[str] = None
+    average_sell_price_usd: str
+    """Average sell price in USD"""
 
-    explorer_url: Optional[str] = None
+    explorer_url: str
+    """Block explorer URL for the trader address"""
 
-    label: Optional[str] = None
-
-    name: Optional[str] = None
-
-    realized_pnl_usd: Optional[str] = None
+    realized_pnl_usd: str
+    """Realized PnL in USD"""
 
     token_balance: Optional[str] = None
+    """Current token balance"""
 
-    total_buy_count: Optional[int] = None
+    total_buy_count: int
+    """Total number of buy transactions"""
 
-    total_buy_token_amount: Optional[str] = None
+    total_buy_token_amount: str
+    """Total buy token amount"""
 
-    total_buy_usd: Optional[str] = None
+    total_buy_usd: str
+    """Total buy amount in USD"""
 
-    total_sell_count: Optional[int] = None
+    total_sell_count: int
+    """Total number of sell transactions"""
 
-    total_sell_token_amount: Optional[str] = None
+    total_sell_token_amount: str
+    """Total sell token amount"""
 
-    total_sell_usd: Optional[str] = None
-
-    type: Optional[str] = None
+    total_sell_usd: str
+    """Total sell amount in USD"""
 
     unrealized_pnl_usd: Optional[str] = None
+    """Unrealized PnL in USD"""
+
+    label: Optional[str] = None
+    """Address label"""
+
+    name: Optional[str] = None
+    """Address label name"""
+
+    type: Optional[str] = None
+    """Address type"""
 
 
 class DataAttributes(BaseModel):
-    traders: Optional[List[DataAttributesTrader]] = None
+    traders: List[DataAttributesTrader]
 
 
 class Data(BaseModel):
-    id: Optional[str] = None
+    id: str
+    """Token identifier"""
 
-    attributes: Optional[DataAttributes] = None
+    attributes: DataAttributes
 
-    type: Optional[str] = None
+    type: str
+    """Resource type"""
 
 
 class TopTraderGetResponse(BaseModel):
-    data: Optional[Data] = None
+    data: Data

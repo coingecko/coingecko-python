@@ -11,4 +11,4 @@ class HoldersChartGetParams(TypedDict, total=False):
     network: Required[str]
 
     days: Literal["7", "30", "max"]
-    """number of days to return the historical token holders chart Default value: 7"""
+    """Number of days to return the historical token holders chart. Default value: 7"""

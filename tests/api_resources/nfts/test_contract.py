@@ -21,8 +21,8 @@ class TestContract:
     @parametrize
     def test_method_get_contract_address(self, client: Coingecko) -> None:
         contract = client.nfts.contract.get_contract_address(
-            contract_address="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8",
-            asset_platform_id="ethereum",
+            contract_address="contract_address",
+            asset_platform_id="asset_platform_id",
         )
         assert_matches_type(ContractGetContractAddressResponse, contract, path=["response"])
 
@@ -30,8 +30,8 @@ class TestContract:
     @parametrize
     def test_raw_response_get_contract_address(self, client: Coingecko) -> None:
         response = client.nfts.contract.with_raw_response.get_contract_address(
-            contract_address="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8",
-            asset_platform_id="ethereum",
+            contract_address="contract_address",
+            asset_platform_id="asset_platform_id",
         )
 
         assert response.is_closed is True
@@ -43,8 +43,8 @@ class TestContract:
     @parametrize
     def test_streaming_response_get_contract_address(self, client: Coingecko) -> None:
         with client.nfts.contract.with_streaming_response.get_contract_address(
-            contract_address="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8",
-            asset_platform_id="ethereum",
+            contract_address="contract_address",
+            asset_platform_id="asset_platform_id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -59,14 +59,14 @@ class TestContract:
     def test_path_params_get_contract_address(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `asset_platform_id` but received ''"):
             client.nfts.contract.with_raw_response.get_contract_address(
-                contract_address="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8",
+                contract_address="contract_address",
                 asset_platform_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `contract_address` but received ''"):
             client.nfts.contract.with_raw_response.get_contract_address(
                 contract_address="",
-                asset_platform_id="ethereum",
+                asset_platform_id="asset_platform_id",
             )
 
 
@@ -79,8 +79,8 @@ class TestAsyncContract:
     @parametrize
     async def test_method_get_contract_address(self, async_client: AsyncCoingecko) -> None:
         contract = await async_client.nfts.contract.get_contract_address(
-            contract_address="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8",
-            asset_platform_id="ethereum",
+            contract_address="contract_address",
+            asset_platform_id="asset_platform_id",
         )
         assert_matches_type(ContractGetContractAddressResponse, contract, path=["response"])
 
@@ -88,8 +88,8 @@ class TestAsyncContract:
     @parametrize
     async def test_raw_response_get_contract_address(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.nfts.contract.with_raw_response.get_contract_address(
-            contract_address="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8",
-            asset_platform_id="ethereum",
+            contract_address="contract_address",
+            asset_platform_id="asset_platform_id",
         )
 
         assert response.is_closed is True
@@ -101,8 +101,8 @@ class TestAsyncContract:
     @parametrize
     async def test_streaming_response_get_contract_address(self, async_client: AsyncCoingecko) -> None:
         async with async_client.nfts.contract.with_streaming_response.get_contract_address(
-            contract_address="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8",
-            asset_platform_id="ethereum",
+            contract_address="contract_address",
+            asset_platform_id="asset_platform_id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -117,12 +117,12 @@ class TestAsyncContract:
     async def test_path_params_get_contract_address(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `asset_platform_id` but received ''"):
             await async_client.nfts.contract.with_raw_response.get_contract_address(
-                contract_address="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8",
+                contract_address="contract_address",
                 asset_platform_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `contract_address` but received ''"):
             await async_client.nfts.contract.with_raw_response.get_contract_address(
                 contract_address="",
-                asset_platform_id="ethereum",
+                asset_platform_id="asset_platform_id",
             )

@@ -93,8 +93,8 @@ class NFTsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NFTGetIDResponse:
         """
-        This endpoint allows you to **query all the NFT data (name, floor price, 24hr
-        volume ...) based on the NFT collection ID**
+        To query all the NFT data (name, floor price, 24hr volume, ...) based on the NFT
+        collection ID
 
         Args:
           extra_headers: Send extra headers
@@ -131,8 +131,8 @@ class NFTsResource(SyncAPIResource):
             "market_cap_usd_desc",
         ]
         | Omit = omit,
-        page: float | Omit = omit,
-        per_page: float | Omit = omit,
+        page: int | Omit = omit,
+        per_page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -141,15 +141,15 @@ class NFTsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NFTGetListResponse:
         """
-        This endpoint allows you to **query all supported NFTs with ID, contract
-        address, name, asset platform ID and symbol on CoinGecko**
+        To query all supported NFTs with ID, contract address, name, asset platform ID
+        and symbol on CoinGecko
 
         Args:
-          order: use this to sort the order of responses
+          order: Sort order of responses.
 
-          page: page through results
+          page: Page through results.
 
-          per_page: total results per page Valid values: 1...250
+          per_page: Total results per page. Valid values: 1...250
 
           extra_headers: Send extra headers
 
@@ -191,8 +191,8 @@ class NFTsResource(SyncAPIResource):
             "market_cap_usd_desc",
         ]
         | Omit = omit,
-        page: float | Omit = omit,
-        per_page: float | Omit = omit,
+        page: int | Omit = omit,
+        per_page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -201,20 +201,18 @@ class NFTsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NFTGetMarketsResponse:
         """
-        This endpoint allows you to **query all the supported NFT collections with floor
-        price, market cap, volume and market related data on CoinGecko**
+        To query all the supported NFT collections with floor price, market cap, volume
+        and market related data on CoinGecko
 
         Args:
-          asset_platform_id: filter result by asset platform (blockchain network) \\**refers to
-              [`/asset_platforms`](/reference/asset-platforms-list) filter=`nft`
+          asset_platform_id: Filter result by asset platform (blockchain network). \\**refers to
+              [`/asset_platforms`](/reference/asset-platforms-list) filter=`nft`.
 
-          order: sort results by field Default: `market_cap_usd_desc`
+          order: Sort results by field. Default: `market_cap_usd_desc`
 
-          page: page through results Default: `1`
+          page: Page through results. Default value: 1
 
-          per_page:
-              total results per page Valid values: any integer between 1 and 250 Default:
-              `100`
+          per_page: Total results per page. Default value: 100 Valid values: 1...250
 
           extra_headers: Send extra headers
 
@@ -289,8 +287,8 @@ class AsyncNFTsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NFTGetIDResponse:
         """
-        This endpoint allows you to **query all the NFT data (name, floor price, 24hr
-        volume ...) based on the NFT collection ID**
+        To query all the NFT data (name, floor price, 24hr volume, ...) based on the NFT
+        collection ID
 
         Args:
           extra_headers: Send extra headers
@@ -327,8 +325,8 @@ class AsyncNFTsResource(AsyncAPIResource):
             "market_cap_usd_desc",
         ]
         | Omit = omit,
-        page: float | Omit = omit,
-        per_page: float | Omit = omit,
+        page: int | Omit = omit,
+        per_page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -337,15 +335,15 @@ class AsyncNFTsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NFTGetListResponse:
         """
-        This endpoint allows you to **query all supported NFTs with ID, contract
-        address, name, asset platform ID and symbol on CoinGecko**
+        To query all supported NFTs with ID, contract address, name, asset platform ID
+        and symbol on CoinGecko
 
         Args:
-          order: use this to sort the order of responses
+          order: Sort order of responses.
 
-          page: page through results
+          page: Page through results.
 
-          per_page: total results per page Valid values: 1...250
+          per_page: Total results per page. Valid values: 1...250
 
           extra_headers: Send extra headers
 
@@ -387,8 +385,8 @@ class AsyncNFTsResource(AsyncAPIResource):
             "market_cap_usd_desc",
         ]
         | Omit = omit,
-        page: float | Omit = omit,
-        per_page: float | Omit = omit,
+        page: int | Omit = omit,
+        per_page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -397,20 +395,18 @@ class AsyncNFTsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NFTGetMarketsResponse:
         """
-        This endpoint allows you to **query all the supported NFT collections with floor
-        price, market cap, volume and market related data on CoinGecko**
+        To query all the supported NFT collections with floor price, market cap, volume
+        and market related data on CoinGecko
 
         Args:
-          asset_platform_id: filter result by asset platform (blockchain network) \\**refers to
-              [`/asset_platforms`](/reference/asset-platforms-list) filter=`nft`
+          asset_platform_id: Filter result by asset platform (blockchain network). \\**refers to
+              [`/asset_platforms`](/reference/asset-platforms-list) filter=`nft`.
 
-          order: sort results by field Default: `market_cap_usd_desc`
+          order: Sort results by field. Default: `market_cap_usd_desc`
 
-          page: page through results Default: `1`
+          page: Page through results. Default value: 1
 
-          per_page:
-              total results per page Valid values: any integer between 1 and 250 Default:
-              `100`
+          per_page: Total results per page. Default value: 100 Valid values: 1...250
 
           extra_headers: Send extra headers
 

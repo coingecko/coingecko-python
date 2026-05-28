@@ -9,7 +9,7 @@ __all__ = ["ListGetParams"]
 
 class ListGetParams(TypedDict, total=False):
     include_platform: bool
-    """include platform and token's contract addresses, default: false"""
+    """Include platform and token's contract addresses. Default: false"""
 
     status: Literal["active", "inactive"]
-    """filter by status of coins, default: active"""
+    """Filter by status of coins. Default: active"""

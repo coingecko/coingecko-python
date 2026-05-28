@@ -1,6 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List, Optional
+from typing import List
 from typing_extensions import TypeAlias
 
 from ..._models import BaseModel
@@ -9,17 +9,17 @@ __all__ = ["ListGetNewResponse", "ListGetNewResponseItem"]
 
 
 class ListGetNewResponseItem(BaseModel):
-    id: Optional[str] = None
-    """coin ID"""
+    id: str
+    """Coin ID"""
 
-    activated_at: Optional[float] = None
-    """timestamp when coin was activated on CoinGecko"""
+    activated_at: int
+    """Timestamp when coin was activated on CoinGecko"""
 
-    name: Optional[str] = None
-    """coin name"""
+    name: str
+    """Coin name"""
 
-    symbol: Optional[str] = None
-    """coin symbol"""
+    symbol: str
+    """Coin symbol"""
 
 
 ListGetNewResponse: TypeAlias = List[ListGetNewResponseItem]

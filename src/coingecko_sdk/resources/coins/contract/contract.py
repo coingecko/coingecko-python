@@ -65,10 +65,9 @@ class ContractResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ContractGetResponse:
         """
-        This endpoint allows you to **query all the metadata (image, websites, socials,
-        description, contract address, etc.) and market data (price, ATH, exchange
-        tickers, etc.) of a coin from the CoinGecko coin page based on an asset platform
-        and a particular token contract address**
+        To query all the metadata (image, websites, socials, description, contract
+        address, etc.) and market data (price, ATH, exchange tickers, etc.) of a coin
+        based on an asset platform and a particular token contract address
 
         Args:
           extra_headers: Send extra headers
@@ -129,10 +128,9 @@ class AsyncContractResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ContractGetResponse:
         """
-        This endpoint allows you to **query all the metadata (image, websites, socials,
-        description, contract address, etc.) and market data (price, ATH, exchange
-        tickers, etc.) of a coin from the CoinGecko coin page based on an asset platform
-        and a particular token contract address**
+        To query all the metadata (image, websites, socials, description, contract
+        address, etc.) and market data (price, ATH, exchange tickers, etc.) of a coin
+        based on an asset platform and a particular token contract address
 
         Args:
           extra_headers: Send extra headers

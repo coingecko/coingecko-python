@@ -56,19 +56,20 @@ class PoolsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PoolGetResponse:
         """
-        This endpoint allows you to **search for pools on a network by pool address,
-        token name, token symbol, or token contract address**
+        To search for pools across all networks by pool address, token name, token
+        symbol, or token contract address
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`
 
-          network: network ID \\**refers to [/networks](/reference/networks-list)
+          network: Network ID. \\**refers to [`/onchain/networks`](/reference/networks-list).
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
-          query: search query, can be pool contract address, token name, token symbol, or token
-              contract address
+          query: Search query: pool contract address, token name, token symbol, or token contract
+              address.
 
           extra_headers: Send extra headers
 
@@ -134,19 +135,20 @@ class AsyncPoolsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PoolGetResponse:
         """
-        This endpoint allows you to **search for pools on a network by pool address,
-        token name, token symbol, or token contract address**
+        To search for pools across all networks by pool address, token name, token
+        symbol, or token contract address
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`
 
-          network: network ID \\**refers to [/networks](/reference/networks-list)
+          network: Network ID. \\**refers to [`/onchain/networks`](/reference/networks-list).
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
-          query: search query, can be pool contract address, token name, token symbol, or token
-              contract address
+          query: Search query: pool contract address, token name, token symbol, or token contract
+              address.
 
           extra_headers: Send extra headers
 

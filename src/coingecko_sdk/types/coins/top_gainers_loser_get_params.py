@@ -9,22 +9,23 @@ __all__ = ["TopGainersLoserGetParams"]
 
 class TopGainersLoserGetParams(TypedDict, total=False):
     vs_currency: Required[str]
-    """
-    target currency of coins \\**refers to
-    [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
+    """Target currency of coins.
+
+    \\**refers to
+    [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies)
     """
 
     duration: Literal["1h", "24h", "7d", "14d", "30d", "60d", "1y"]
-    """filter result by time range Default value: `24h`"""
+    """Filter result by time range. Default: `24h`"""
 
     price_change_percentage: str
     """
-    include price change percentage timeframe, comma-separated if query more than 1
-    price change percentage timeframe Valid values: 1h, 24h, 7d, 14d, 30d, 200d, 1y
+    Include price change percentage timeframe, comma-separated if querying more than
+    1 timeframe. Valid values: `1h`, `24h`, `7d`, `14d`, `30d`, `60d`, `200d`, `1y`
     """
 
     top_coins: Literal["300", "500", "1000", "all"]
     """
-    filter result by market cap ranking (top 300 to 1000) or all coins (including
-    coins that do not have market cap) Default value: `1000`
+    Filter result by market cap ranking (top 300 to 1000) or all coins (including
+    coins that do not have market cap). Default: `1000`
     """

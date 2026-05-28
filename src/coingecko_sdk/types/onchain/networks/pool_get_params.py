@@ -9,19 +9,19 @@ __all__ = ["PoolGetParams"]
 
 class PoolGetParams(TypedDict, total=False):
     include: str
-    """
-    attributes to include, comma-separated if more than one to include Available
-    values: `base_token`, `quote_token`, `dex`
+    """Attributes to include, comma-separated if more than one.
+
+    Available values: `base_token`, `quote_token`, `dex`
     """
 
     include_gt_community_data: bool
-    """
-    include GeckoTerminal community data (Sentiment votes, Suspicious reports)
-    Default value: false
+    """Include GeckoTerminal community data (sentiment votes, suspicious reports).
+
+    Default: `false`
     """
 
     page: int
-    """page through results Default value: 1"""
+    """Page through results. Default value: 1"""
 
     sort: Literal["h24_tx_count_desc", "h24_volume_usd_desc"]
-    """sort the pools by field Default value: h24_tx_count_desc"""
+    """Sort the pools by field. Default: `h24_tx_count_desc`"""

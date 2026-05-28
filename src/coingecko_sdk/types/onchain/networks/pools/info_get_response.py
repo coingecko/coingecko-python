@@ -1,26 +1,27 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List, Union, Optional
-
-from pydantic import Field as FieldInfo
+from typing import Dict, List, Union, Optional
 
 from ....._models import BaseModel
 
 __all__ = [
     "InfoGetResponse",
     "Data",
-    "DataData",
-    "DataDataAttributes",
-    "DataDataAttributesGtScoreDetails",
-    "DataDataAttributesHolders",
-    "DataDataAttributesHoldersDistributionPercentage",
-    "DataDataAttributesImage",
+    "DataAttributes",
+    "DataAttributesGtScoreDetails",
+    "DataAttributesHolders",
+    "DataAttributesImage",
+    "DataRelationships",
+    "DataRelationshipsPool",
+    "DataRelationshipsPoolData",
     "Included",
     "IncludedAttributes",
 ]
 
 
-class DataDataAttributesGtScoreDetails(BaseModel):
+class DataAttributesGtScoreDetails(BaseModel):
+    """GeckoTerminal trust score breakdown"""
+
     creation: Optional[float] = None
 
     holders: Optional[float] = None
@@ -32,25 +33,25 @@ class DataDataAttributesGtScoreDetails(BaseModel):
     transaction: Optional[float] = None
 
 
-class DataDataAttributesHoldersDistributionPercentage(BaseModel):
-    dist_11_30: Optional[str] = FieldInfo(alias="11_30", default=None)
+class DataAttributesHolders(BaseModel):
+    """Token holder information"""
 
-    dist_31_50: Optional[str] = FieldInfo(alias="31_50", default=None)
-
-    rest: Optional[str] = None
-
-    top_10: Optional[str] = None
-
-
-class DataDataAttributesHolders(BaseModel):
     count: Optional[int] = None
+    """Number of holders"""
 
-    distribution_percentage: Optional[DataDataAttributesHoldersDistributionPercentage] = None
+    distribution_percentage: Optional[Dict[str, str]] = None
+    """Holder distribution percentage (keys vary by chain, e.g.
+
+    top_10, 11_30, 31_50, rest)
+    """
 
     last_updated: Optional[str] = None
+    """Last updated timestamp"""
 
 
-class DataDataAttributesImage(BaseModel):
+class DataAttributesImage(BaseModel):
+    """Token image URLs in different sizes"""
+
     large: Optional[str] = None
 
     small: Optional[str] = None
@@ -58,76 +59,121 @@ class DataDataAttributesImage(BaseModel):
     thumb: Optional[str] = None
 
 
-class DataDataAttributes(BaseModel):
-    address: Optional[str] = None
+class DataAttributes(BaseModel):
+    address: str
+    """Token contract address"""
 
-    categories: Optional[List[str]] = None
+    categories: List[str]
+    """Token categories"""
 
     coingecko_coin_id: Optional[str] = None
+    """CoinGecko coin ID"""
 
-    decimals: Optional[int] = None
+    decimals: int
+    """Token decimals"""
 
     description: Optional[str] = None
+    """Token description"""
 
     discord_url: Optional[str] = None
+    """Discord URL"""
 
     farcaster_url: Optional[str] = None
+    """Farcaster URL"""
 
     freeze_authority: Optional[str] = None
+    """Freeze authority status"""
 
-    gt_category_ids: Optional[List[str]] = None
+    gt_category_ids: List[str]
+    """GeckoTerminal category IDs"""
 
-    gt_score: Optional[float] = None
+    gt_score: float
+    """GeckoTerminal trust score"""
 
-    gt_score_details: Optional[DataDataAttributesGtScoreDetails] = None
+    gt_score_details: DataAttributesGtScoreDetails
+    """GeckoTerminal trust score breakdown"""
 
-    gt_verified: Optional[bool] = None
+    gt_verified: bool
+    """Whether the token is verified on GeckoTerminal"""
 
-    holders: Optional[DataDataAttributesHolders] = None
+    holders: DataAttributesHolders
+    """Token holder information"""
 
-    image: Optional[DataDataAttributesImage] = None
+    image: DataAttributesImage
+    """Token image URLs in different sizes"""
 
     image_url: Optional[str] = None
+    """Token image URL"""
 
-    is_honeypot: Union[bool, str, None] = None
+    is_honeypot: Union[bool, str]
+    """Whether the token is a honeypot (boolean or 'unknown')"""
 
     mint_authority: Optional[str] = None
+    """Mint authority status"""
 
-    name: Optional[str] = None
+    name: str
+    """Token name"""
 
-    symbol: Optional[str] = None
+    symbol: str
+    """Token symbol"""
 
     telegram_handle: Optional[str] = None
+    """Telegram handle"""
 
     twitter_handle: Optional[str] = None
+    """Twitter handle"""
 
-    websites: Optional[List[str]] = None
+    websites: List[str]
+    """Token websites"""
 
     zora_url: Optional[str] = None
+    """Zora URL"""
 
 
-class DataData(BaseModel):
+class DataRelationshipsPoolData(BaseModel):
     id: Optional[str] = None
-
-    attributes: Optional[DataDataAttributes] = None
 
     type: Optional[str] = None
 
 
+class DataRelationshipsPool(BaseModel):
+    data: Optional[DataRelationshipsPoolData] = None
+
+
+class DataRelationships(BaseModel):
+    pool: Optional[DataRelationshipsPool] = None
+
+
 class Data(BaseModel):
-    data: Optional[DataData] = None
+    id: str
+    """Token identifier"""
+
+    attributes: DataAttributes
+
+    relationships: DataRelationships
+
+    type: str
+    """Resource type"""
 
 
 class IncludedAttributes(BaseModel):
     base_token_address: Optional[str] = None
+    """Base token contract address"""
 
-    community_sus_report: Optional[float] = None
+    community_sus_report: Optional[int] = None
+    """GeckoTerminal community suspicious reports count"""
 
     quote_token_address: Optional[str] = None
+    """Quote token contract address"""
+
+    quote_token_addresses: Optional[List[str]] = None
+    """Quote token contract addresses, present for pools with more than 2 tokens"""
 
     sentiment_vote_negative_percentage: Optional[float] = None
+    """GeckoTerminal community negative sentiment vote percentage"""
 
     sentiment_vote_positive_percentage: Optional[float] = None
+    """GeckoTerminal community positive sentiment vote percentage"""
 
 
 class Included(BaseModel):
@@ -139,6 +185,7 @@ class Included(BaseModel):
 
 
 class InfoGetResponse(BaseModel):
-    data: Optional[List[Data]] = None
+    data: List[Data]
 
     included: Optional[List[Included]] = None
+    """Included pool data, present when include=pool is specified"""

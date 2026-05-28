@@ -82,13 +82,13 @@ class ExchangesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetResponse:
         """
-        This endpoint allows you to **query all the supported exchanges with exchanges'
-        data (ID, name, country, ...) that have active trading volumes on CoinGecko**
+        To query all the supported exchanges with exchanges' data (ID, name, country,
+        etc.) that have active trading volumes on CoinGecko
 
         Args:
-          page: page through results, default: 1
+          page: Page through results. Default: 1
 
-          per_page: total results per page, default: 100 Valid values: 1...250
+          per_page: Total results per page. Default: 100. Valid values: 1...250
 
           extra_headers: Send extra headers
 
@@ -129,13 +129,12 @@ class ExchangesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetIDResponse:
         """
-        This endpoint allows you to **query exchange's data (name, year established,
-        country, ...), exchange volume in BTC and top 100 tickers based on exchange's
-        ID**
+        To query exchange's data (name, year established, country, etc.), exchange
+        volume in BTC and top 100 tickers based on exchange's ID
 
         Args:
           dex_pair_format:
-              set to `symbol` to display DEX pair base and target as symbols, default:
+              Set to `symbol` to display DEX pair base and target as symbols. Default:
               `contract_address`
 
           extra_headers: Send extra headers
@@ -172,10 +171,10 @@ class ExchangesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetListResponse:
         """
-        This endpoint allows you to **query all the exchanges with ID and name**
+        To query all the exchanges with ID and name
 
         Args:
-          status: filter by status of exchanges, default: active
+          status: Filter by status of exchanges. Default: `active`
 
           extra_headers: Send extra headers
 
@@ -239,13 +238,13 @@ class AsyncExchangesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetResponse:
         """
-        This endpoint allows you to **query all the supported exchanges with exchanges'
-        data (ID, name, country, ...) that have active trading volumes on CoinGecko**
+        To query all the supported exchanges with exchanges' data (ID, name, country,
+        etc.) that have active trading volumes on CoinGecko
 
         Args:
-          page: page through results, default: 1
+          page: Page through results. Default: 1
 
-          per_page: total results per page, default: 100 Valid values: 1...250
+          per_page: Total results per page. Default: 100. Valid values: 1...250
 
           extra_headers: Send extra headers
 
@@ -286,13 +285,12 @@ class AsyncExchangesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetIDResponse:
         """
-        This endpoint allows you to **query exchange's data (name, year established,
-        country, ...), exchange volume in BTC and top 100 tickers based on exchange's
-        ID**
+        To query exchange's data (name, year established, country, etc.), exchange
+        volume in BTC and top 100 tickers based on exchange's ID
 
         Args:
           dex_pair_format:
-              set to `symbol` to display DEX pair base and target as symbols, default:
+              Set to `symbol` to display DEX pair base and target as symbols. Default:
               `contract_address`
 
           extra_headers: Send extra headers
@@ -331,10 +329,10 @@ class AsyncExchangesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetListResponse:
         """
-        This endpoint allows you to **query all the exchanges with ID and name**
+        To query all the exchanges with ID and name
 
         Args:
-          status: filter by status of exchanges, default: active
+          status: Filter by status of exchanges. Default: `active`
 
           extra_headers: Send extra headers
 

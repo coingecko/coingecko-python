@@ -56,14 +56,14 @@ class MarketCapChartResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MarketCapChartGetResponse:
         """
-        This endpoint allows you to **query historical global market cap and volume data
-        by number of days away from now**
+        To query historical global market cap and volume data by number of days away
+        from now
 
         Args:
-          days: data up to number of days ago Valid values: any integer
+          days: Data up to number of days ago.
 
-          vs_currency: target currency of market cap, default: usd \\**refers to
-              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies)
+          vs_currency: Target currency of market cap. Default: `usd` \\**refers to
+              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
 
           extra_headers: Send extra headers
 
@@ -125,14 +125,14 @@ class AsyncMarketCapChartResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MarketCapChartGetResponse:
         """
-        This endpoint allows you to **query historical global market cap and volume data
-        by number of days away from now**
+        To query historical global market cap and volume data by number of days away
+        from now
 
         Args:
-          days: data up to number of days ago Valid values: any integer
+          days: Data up to number of days ago.
 
-          vs_currency: target currency of market cap, default: usd \\**refers to
-              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies)
+          vs_currency: Target currency of market cap. Default: `usd` \\**refers to
+              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
 
           extra_headers: Send extra headers
 

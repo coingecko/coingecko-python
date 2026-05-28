@@ -58,12 +58,12 @@ __all__ = ["PoolsResource", "AsyncPoolsResource"]
 
 class PoolsResource(SyncAPIResource):
     @cached_property
-    def multi(self) -> MultiResource:
-        return MultiResource(self._client)
-
-    @cached_property
     def info(self) -> InfoResource:
         return InfoResource(self._client)
+
+    @cached_property
+    def multi(self) -> MultiResource:
+        return MultiResource(self._client)
 
     @cached_property
     def ohlcv(self) -> OhlcvResource:
@@ -108,19 +108,19 @@ class PoolsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PoolGetResponse:
         """
-        This endpoint allows you to **query all the top pools based on the provided
-        network**
+        To query all the top pools based on the provided network
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`
 
-          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
-              Default value: false
+          include_gt_community_data: Include GeckoTerminal community data (sentiment votes, suspicious reports).
+              Default: `false`
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
-          sort: sort the pools by field Default value: h24_tx_count_desc
+          sort: Sort the pools by field. Default: `h24_tx_count_desc`
 
           extra_headers: Send extra headers
 
@@ -168,16 +168,16 @@ class PoolsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PoolGetAddressResponse:
         """
-        This endpoint allows you to **query the specific pool based on the provided
-        network and pool address**
+        To query the specific pool based on the provided network and pool address
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`
 
-          include_composition: include pool composition, default: false
+          include_composition: Include pool composition. Default: `false`
 
-          include_volume_breakdown: include volume breakdown, default: false
+          include_volume_breakdown: Include volume breakdown. Default: `false`
 
           extra_headers: Send extra headers
 
@@ -213,12 +213,12 @@ class PoolsResource(SyncAPIResource):
 
 class AsyncPoolsResource(AsyncAPIResource):
     @cached_property
-    def multi(self) -> AsyncMultiResource:
-        return AsyncMultiResource(self._client)
-
-    @cached_property
     def info(self) -> AsyncInfoResource:
         return AsyncInfoResource(self._client)
+
+    @cached_property
+    def multi(self) -> AsyncMultiResource:
+        return AsyncMultiResource(self._client)
 
     @cached_property
     def ohlcv(self) -> AsyncOhlcvResource:
@@ -263,19 +263,19 @@ class AsyncPoolsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PoolGetResponse:
         """
-        This endpoint allows you to **query all the top pools based on the provided
-        network**
+        To query all the top pools based on the provided network
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`
 
-          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
-              Default value: false
+          include_gt_community_data: Include GeckoTerminal community data (sentiment votes, suspicious reports).
+              Default: `false`
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
-          sort: sort the pools by field Default value: h24_tx_count_desc
+          sort: Sort the pools by field. Default: `h24_tx_count_desc`
 
           extra_headers: Send extra headers
 
@@ -323,16 +323,16 @@ class AsyncPoolsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PoolGetAddressResponse:
         """
-        This endpoint allows you to **query the specific pool based on the provided
-        network and pool address**
+        To query the specific pool based on the provided network and pool address
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`
 
-          include_composition: include pool composition, default: false
+          include_composition: Include pool composition. Default: `false`
 
-          include_volume_breakdown: include volume breakdown, default: false
+          include_volume_breakdown: Include volume breakdown. Default: `false`
 
           extra_headers: Send extra headers
 
@@ -378,12 +378,12 @@ class PoolsResourceWithRawResponse:
         )
 
     @cached_property
-    def multi(self) -> MultiResourceWithRawResponse:
-        return MultiResourceWithRawResponse(self._pools.multi)
-
-    @cached_property
     def info(self) -> InfoResourceWithRawResponse:
         return InfoResourceWithRawResponse(self._pools.info)
+
+    @cached_property
+    def multi(self) -> MultiResourceWithRawResponse:
+        return MultiResourceWithRawResponse(self._pools.multi)
 
     @cached_property
     def ohlcv(self) -> OhlcvResourceWithRawResponse:
@@ -406,12 +406,12 @@ class AsyncPoolsResourceWithRawResponse:
         )
 
     @cached_property
-    def multi(self) -> AsyncMultiResourceWithRawResponse:
-        return AsyncMultiResourceWithRawResponse(self._pools.multi)
-
-    @cached_property
     def info(self) -> AsyncInfoResourceWithRawResponse:
         return AsyncInfoResourceWithRawResponse(self._pools.info)
+
+    @cached_property
+    def multi(self) -> AsyncMultiResourceWithRawResponse:
+        return AsyncMultiResourceWithRawResponse(self._pools.multi)
 
     @cached_property
     def ohlcv(self) -> AsyncOhlcvResourceWithRawResponse:
@@ -434,12 +434,12 @@ class PoolsResourceWithStreamingResponse:
         )
 
     @cached_property
-    def multi(self) -> MultiResourceWithStreamingResponse:
-        return MultiResourceWithStreamingResponse(self._pools.multi)
-
-    @cached_property
     def info(self) -> InfoResourceWithStreamingResponse:
         return InfoResourceWithStreamingResponse(self._pools.info)
+
+    @cached_property
+    def multi(self) -> MultiResourceWithStreamingResponse:
+        return MultiResourceWithStreamingResponse(self._pools.multi)
 
     @cached_property
     def ohlcv(self) -> OhlcvResourceWithStreamingResponse:
@@ -462,12 +462,12 @@ class AsyncPoolsResourceWithStreamingResponse:
         )
 
     @cached_property
-    def multi(self) -> AsyncMultiResourceWithStreamingResponse:
-        return AsyncMultiResourceWithStreamingResponse(self._pools.multi)
-
-    @cached_property
     def info(self) -> AsyncInfoResourceWithStreamingResponse:
         return AsyncInfoResourceWithStreamingResponse(self._pools.info)
+
+    @cached_property
+    def multi(self) -> AsyncMultiResourceWithStreamingResponse:
+        return AsyncMultiResourceWithStreamingResponse(self._pools.multi)
 
     @cached_property
     def ohlcv(self) -> AsyncOhlcvResourceWithStreamingResponse:

@@ -11,10 +11,10 @@ class MultiGetAddressesParams(TypedDict, total=False):
     network: Required[str]
 
     include: Literal["top_pools"]
-    """attributes to include"""
+    """Attributes to include."""
 
     include_composition: bool
-    """include pool composition, default: false"""
+    """Include pool composition. Default: `false`"""
 
     include_inactive_source: bool
-    """include tokens from inactive pools using the most recent swap, default: false"""
+    """Include tokens from inactive pools using the most recent swap. Default: `false`"""

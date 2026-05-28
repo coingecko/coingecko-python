@@ -58,20 +58,20 @@ class TopGainersLosersResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TopGainersLoserGetResponse:
         """
-        This endpoint allows you to **query the top 30 coins with largest price gain and
-        loss by a specific time duration**
+        To query the top 30 coins with largest price gain and loss by a specific time
+        duration
 
         Args:
-          vs_currency: target currency of coins \\**refers to
-              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
+          vs_currency: Target currency of coins. \\**refers to
+              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies)
 
-          duration: filter result by time range Default value: `24h`
+          duration: Filter result by time range. Default: `24h`
 
-          price_change_percentage: include price change percentage timeframe, comma-separated if query more than 1
-              price change percentage timeframe Valid values: 1h, 24h, 7d, 14d, 30d, 200d, 1y
+          price_change_percentage: Include price change percentage timeframe, comma-separated if querying more than
+              1 timeframe. Valid values: `1h`, `24h`, `7d`, `14d`, `30d`, `60d`, `200d`, `1y`
 
-          top_coins: filter result by market cap ranking (top 300 to 1000) or all coins (including
-              coins that do not have market cap) Default value: `1000`
+          top_coins: Filter result by market cap ranking (top 300 to 1000) or all coins (including
+              coins that do not have market cap). Default: `1000`
 
           extra_headers: Send extra headers
 
@@ -137,20 +137,20 @@ class AsyncTopGainersLosersResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TopGainersLoserGetResponse:
         """
-        This endpoint allows you to **query the top 30 coins with largest price gain and
-        loss by a specific time duration**
+        To query the top 30 coins with largest price gain and loss by a specific time
+        duration
 
         Args:
-          vs_currency: target currency of coins \\**refers to
-              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
+          vs_currency: Target currency of coins. \\**refers to
+              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies)
 
-          duration: filter result by time range Default value: `24h`
+          duration: Filter result by time range. Default: `24h`
 
-          price_change_percentage: include price change percentage timeframe, comma-separated if query more than 1
-              price change percentage timeframe Valid values: 1h, 24h, 7d, 14d, 30d, 200d, 1y
+          price_change_percentage: Include price change percentage timeframe, comma-separated if querying more than
+              1 timeframe. Valid values: `1h`, `24h`, `7d`, `14d`, `30d`, `60d`, `200d`, `1y`
 
-          top_coins: filter result by market cap ranking (top 300 to 1000) or all coins (including
-              coins that do not have market cap) Default value: `1000`
+          top_coins: Filter result by market cap ranking (top 300 to 1000) or all coins (including
+              coins that do not have market cap). Default: `1000`
 
           extra_headers: Send extra headers
 

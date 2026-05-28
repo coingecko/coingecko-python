@@ -21,7 +21,7 @@ class TestTickers:
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         ticker = client.coins.tickers.get(
-            id="bitcoin",
+            id="id",
         )
         assert_matches_type(TickerGetResponse, ticker, path=["response"])
 
@@ -29,10 +29,10 @@ class TestTickers:
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         ticker = client.coins.tickers.get(
-            id="bitcoin",
+            id="id",
             depth=True,
             dex_pair_format="contract_address",
-            exchange_ids="binance",
+            exchange_ids="exchange_ids",
             include_exchange_logo=True,
             order="trust_score_desc",
             page=0,
@@ -43,7 +43,7 @@ class TestTickers:
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.coins.tickers.with_raw_response.get(
-            id="bitcoin",
+            id="id",
         )
 
         assert response.is_closed is True
@@ -55,7 +55,7 @@ class TestTickers:
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.coins.tickers.with_streaming_response.get(
-            id="bitcoin",
+            id="id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -83,7 +83,7 @@ class TestAsyncTickers:
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         ticker = await async_client.coins.tickers.get(
-            id="bitcoin",
+            id="id",
         )
         assert_matches_type(TickerGetResponse, ticker, path=["response"])
 
@@ -91,10 +91,10 @@ class TestAsyncTickers:
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         ticker = await async_client.coins.tickers.get(
-            id="bitcoin",
+            id="id",
             depth=True,
             dex_pair_format="contract_address",
-            exchange_ids="binance",
+            exchange_ids="exchange_ids",
             include_exchange_logo=True,
             order="trust_score_desc",
             page=0,
@@ -105,7 +105,7 @@ class TestAsyncTickers:
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.coins.tickers.with_raw_response.get(
-            id="bitcoin",
+            id="id",
         )
 
         assert response.is_closed is True
@@ -117,7 +117,7 @@ class TestAsyncTickers:
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.coins.tickers.with_streaming_response.get(
-            id="bitcoin",
+            id="id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"

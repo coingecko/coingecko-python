@@ -91,8 +91,8 @@ class MarketsResource(SyncAPIResource):
         names: str | Omit = omit,
         order: Literal["market_cap_asc", "market_cap_desc", "volume_asc", "volume_desc", "id_asc", "id_desc"]
         | Omit = omit,
-        page: float | Omit = omit,
-        per_page: float | Omit = omit,
+        page: int | Omit = omit,
+        per_page: int | Omit = omit,
         precision: Literal[
             "full",
             "0",
@@ -127,43 +127,43 @@ class MarketsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MarketGetResponse:
         """
-        This endpoint allows you to **query all the supported coins with price, market
-        cap, volume and market related data**
+        To query all the supported coins with price, market cap, volume and market
+        related data
 
         Args:
-          vs_currency: target currency of coins and market data \\**refers to
-              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
+          vs_currency: Target currency of coins and market data. \\**refers to
+              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies)
 
-          category: filter based on coins' category \\**refers to
-              [`/coins/categories/list`](/reference/coins-categories-list).
+          category: Filter based on coins' category. \\**refers to
+              [`/coins/categories/list`](/reference/coins-categories-list)
 
-          ids: coins' IDs, comma-separated if querying more than 1 coin. \\**refers to
-              [`/coins/list`](/reference/coins-list).
+          ids: Coins' IDs, comma-separated if querying more than 1 coin. \\**refers to
+              [`/coins/list`](/reference/coins-list)
 
-          include_rehypothecated: include rehypothecated tokens in results, default: false When true, returns
-              `market_cap_rank_with_rehypothecated` field
+          include_rehypothecated: Include rehypothecated tokens in results. When true, returns
+              `market_cap_rank_with_rehypothecated` field. Default: false
 
-          include_tokens: for `symbols` lookups, specify `all` to include all matching tokens Default
-              `top` returns top-ranked tokens (by market cap or volume)
+          include_tokens: For `symbols` lookups, specify `all` to include all matching tokens. Default
+              `top` returns top-ranked tokens by market cap or volume.
 
-          locale: language background, default: en
+          locale: Language background. Default: en
 
-          names: coins' names, comma-separated if querying more than 1 coin.
+          names: Coins' names, comma-separated if querying more than 1 coin.
 
-          order: sort result by field, default: market_cap_desc
+          order: Sort result by field. Default: market_cap_desc
 
-          page: page through results, default: 1
+          page: Page through results. Default: 1
 
-          per_page: total results per page, default: 100 Valid values: 1...250
+          per_page: Total results per page. Default: 100 Valid values: 1...250
 
-          precision: decimal place for currency price value
+          precision: Decimal places for currency price value
 
-          price_change_percentage: include price change percentage timeframe, comma-separated if query more than 1
-              timeframe Valid values: 1h, 24h, 7d, 14d, 30d, 200d, 1y
+          price_change_percentage: Include price change percentage timeframe, comma-separated if querying more than
+              1 timeframe. Valid values: `1h`, `24h`, `7d`, `14d`, `30d`, `200d`, `1y`
 
-          sparkline: include sparkline 7 days data, default: false
+          sparkline: Include sparkline 7-day data. Default: false
 
-          symbols: coins' symbols, comma-separated if querying more than 1 coin.
+          symbols: Coins' symbols, comma-separated if querying more than 1 coin.
 
           extra_headers: Send extra headers
 
@@ -272,8 +272,8 @@ class AsyncMarketsResource(AsyncAPIResource):
         names: str | Omit = omit,
         order: Literal["market_cap_asc", "market_cap_desc", "volume_asc", "volume_desc", "id_asc", "id_desc"]
         | Omit = omit,
-        page: float | Omit = omit,
-        per_page: float | Omit = omit,
+        page: int | Omit = omit,
+        per_page: int | Omit = omit,
         precision: Literal[
             "full",
             "0",
@@ -308,43 +308,43 @@ class AsyncMarketsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MarketGetResponse:
         """
-        This endpoint allows you to **query all the supported coins with price, market
-        cap, volume and market related data**
+        To query all the supported coins with price, market cap, volume and market
+        related data
 
         Args:
-          vs_currency: target currency of coins and market data \\**refers to
-              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
+          vs_currency: Target currency of coins and market data. \\**refers to
+              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies)
 
-          category: filter based on coins' category \\**refers to
-              [`/coins/categories/list`](/reference/coins-categories-list).
+          category: Filter based on coins' category. \\**refers to
+              [`/coins/categories/list`](/reference/coins-categories-list)
 
-          ids: coins' IDs, comma-separated if querying more than 1 coin. \\**refers to
-              [`/coins/list`](/reference/coins-list).
+          ids: Coins' IDs, comma-separated if querying more than 1 coin. \\**refers to
+              [`/coins/list`](/reference/coins-list)
 
-          include_rehypothecated: include rehypothecated tokens in results, default: false When true, returns
-              `market_cap_rank_with_rehypothecated` field
+          include_rehypothecated: Include rehypothecated tokens in results. When true, returns
+              `market_cap_rank_with_rehypothecated` field. Default: false
 
-          include_tokens: for `symbols` lookups, specify `all` to include all matching tokens Default
-              `top` returns top-ranked tokens (by market cap or volume)
+          include_tokens: For `symbols` lookups, specify `all` to include all matching tokens. Default
+              `top` returns top-ranked tokens by market cap or volume.
 
-          locale: language background, default: en
+          locale: Language background. Default: en
 
-          names: coins' names, comma-separated if querying more than 1 coin.
+          names: Coins' names, comma-separated if querying more than 1 coin.
 
-          order: sort result by field, default: market_cap_desc
+          order: Sort result by field. Default: market_cap_desc
 
-          page: page through results, default: 1
+          page: Page through results. Default: 1
 
-          per_page: total results per page, default: 100 Valid values: 1...250
+          per_page: Total results per page. Default: 100 Valid values: 1...250
 
-          precision: decimal place for currency price value
+          precision: Decimal places for currency price value
 
-          price_change_percentage: include price change percentage timeframe, comma-separated if query more than 1
-              timeframe Valid values: 1h, 24h, 7d, 14d, 30d, 200d, 1y
+          price_change_percentage: Include price change percentage timeframe, comma-separated if querying more than
+              1 timeframe. Valid values: `1h`, `24h`, `7d`, `14d`, `30d`, `200d`, `1y`
 
-          sparkline: include sparkline 7 days data, default: false
+          sparkline: Include sparkline 7-day data. Default: false
 
-          symbols: coins' symbols, comma-separated if querying more than 1 coin.
+          symbols: Coins' symbols, comma-separated if querying more than 1 coin.
 
           extra_headers: Send extra headers
 

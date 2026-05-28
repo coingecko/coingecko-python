@@ -9,46 +9,47 @@ __all__ = ["DerivativeGetResponse", "DerivativeGetResponseItem"]
 
 
 class DerivativeGetResponseItem(BaseModel):
-    basis: Optional[float] = None
-    """difference of derivative price and index price"""
+    basis: float
+    """Difference of derivative price and index price"""
 
-    contract_type: Optional[str] = None
-    """derivative contract type"""
+    contract_type: str
+    """Derivative contract type"""
 
-    expired_at: Optional[str] = None
+    expired_at: Optional[float] = None
+    """Derivative expiry time in UNIX timestamp"""
 
-    funding_rate: Optional[float] = None
-    """derivative funding rate"""
+    funding_rate: float
+    """Derivative funding rate"""
 
-    index: Optional[float] = None
-    """derivative underlying asset price"""
+    index: float
+    """Derivative underlying asset price"""
 
-    index_id: Optional[str] = None
-    """derivative underlying asset"""
+    index_id: str
+    """Derivative underlying asset"""
 
-    last_traded_at: Optional[float] = None
-    """derivative last updated time"""
+    last_traded_at: float
+    """Derivative last traded time in UNIX timestamp"""
 
-    market: Optional[str] = None
-    """derivative market name"""
+    market: str
+    """Derivative market name"""
 
-    open_interest: Optional[float] = None
-    """derivative open interest"""
+    open_interest: float
+    """Derivative open interest"""
 
-    price: Optional[str] = None
-    """derivative ticker price"""
+    price: str
+    """Derivative ticker price"""
 
-    price_percentage_change_24h: Optional[float] = None
-    """derivative ticker price percentage change in 24 hours"""
+    price_percentage_change_24h: float
+    """Derivative ticker price percentage change in 24 hours"""
 
-    spread: Optional[float] = None
-    """derivative bid ask spread"""
+    spread: float
+    """Derivative bid-ask spread"""
 
-    symbol: Optional[str] = None
-    """derivative ticker symbol"""
+    symbol: str
+    """Derivative ticker symbol"""
 
-    volume_24h: Optional[float] = None
-    """derivative volume in 24 hours"""
+    volume_24h: float
+    """Derivative trading volume in 24 hours"""
 
 
 DerivativeGetResponse: TypeAlias = List[DerivativeGetResponseItem]

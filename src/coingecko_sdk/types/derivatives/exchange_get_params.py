@@ -16,10 +16,10 @@ class ExchangeGetParams(TypedDict, total=False):
         "trade_volume_24h_btc_asc",
         "trade_volume_24h_btc_desc",
     ]
-    """use this to sort the order of responses, default: open_interest_btc_desc"""
+    """Sort order of responses. Default: `open_interest_btc_desc`"""
 
-    page: float
-    """page through results, default: 1"""
+    page: int
+    """Page through results. Default value: 1"""
 
-    per_page: float
-    """total results per page"""
+    per_page: int
+    """Total results per page."""

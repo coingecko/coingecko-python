@@ -49,7 +49,7 @@ class PingResource(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PingGetResponse:
-        """This endpoint allows you to **check the API server status**"""
+        """To check the API server status"""
         return self._get(
             "/ping",
             options=make_request_options(
@@ -89,7 +89,7 @@ class AsyncPingResource(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PingGetResponse:
-        """This endpoint allows you to **check the API server status**"""
+        """To check the API server status"""
         return await self._get(
             "/ping",
             options=make_request_options(

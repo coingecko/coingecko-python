@@ -57,11 +57,11 @@ class DexesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> DexGetResponse:
         """
-        This endpoint allows you to **query all the supported decentralized exchanges
-        (DEXs) based on the provided network on GeckoTerminal**
+        To query all the supported decentralized exchanges (DEXs) based on the provided
+        network on GeckoTerminal
 
         Args:
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
           extra_headers: Send extra headers
 
@@ -102,19 +102,20 @@ class DexesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> DexGetPoolsResponse:
         """
-        This endpoint allows you to **query all the top pools based on the provided
-        network and decentralized exchange (DEX)**
+        To query all the top pools based on the provided network and decentralized
+        exchange (DEX)
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`
 
-          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
-              Default value: false
+          include_gt_community_data: Include GeckoTerminal community data (sentiment votes, suspicious reports).
+              Default: `false`
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
-          sort: sort the pools by field Default value: h24_tx_count_desc
+          sort: Sort the pools by field. Default: `h24_tx_count_desc`
 
           extra_headers: Send extra headers
 
@@ -182,11 +183,11 @@ class AsyncDexesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> DexGetResponse:
         """
-        This endpoint allows you to **query all the supported decentralized exchanges
-        (DEXs) based on the provided network on GeckoTerminal**
+        To query all the supported decentralized exchanges (DEXs) based on the provided
+        network on GeckoTerminal
 
         Args:
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
           extra_headers: Send extra headers
 
@@ -227,19 +228,20 @@ class AsyncDexesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> DexGetPoolsResponse:
         """
-        This endpoint allows you to **query all the top pools based on the provided
-        network and decentralized exchange (DEX)**
+        To query all the top pools based on the provided network and decentralized
+        exchange (DEX)
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`
 
-          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
-              Default value: false
+          include_gt_community_data: Include GeckoTerminal community data (sentiment votes, suspicious reports).
+              Default: `false`
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
-          sort: sort the pools by field Default value: h24_tx_count_desc
+          sort: Sort the pools by field. Default: `h24_tx_count_desc`
 
           extra_headers: Send extra headers
 

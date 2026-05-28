@@ -9,100 +9,100 @@ __all__ = ["MegafilterGetParams"]
 
 class MegafilterGetParams(TypedDict, total=False):
     buy_tax_percentage_max: float
-    """maximum buy tax percentage"""
+    """Maximum buy tax percentage."""
 
     buy_tax_percentage_min: float
-    """minimum buy tax percentage"""
+    """Minimum buy tax percentage."""
 
     buys_duration: Literal["5m", "1h", "6h", "24h"]
-    """duration for buy transactions metric Default value: 24h"""
+    """Duration for buy transactions metric. Default: `24h`"""
 
     buys_max: int
-    """maximum number of buy transactions"""
+    """Maximum number of buy transactions."""
 
     buys_min: int
-    """minimum number of buy transactions"""
+    """Minimum number of buy transactions."""
 
     checks: str
-    """
-    filter options for various checks, comma-separated if more than one Available
-    values: `no_honeypot`, `good_gt_score`, `on_coingecko`, `has_social`
+    """Filter options for various checks, comma-separated if more than one.
+
+    Available values: `no_honeypot`, `good_gt_score`, `on_coingecko`, `has_social`
     """
 
     dexes: str
-    """
-    filter pools by DEXes, comma-separated if more than one DEX ID refers to
-    [/networks/{network}/dexes](/reference/dexes-list)
+    """Filter pools by DEXes, comma-separated if more than one.
+
+    \\**refers to [`/onchain/networks/{network}/dexes`](/reference/dexes-list).
     """
 
     fdv_usd_max: float
-    """maximum fully diluted value in USD"""
+    """Maximum fully diluted value in USD."""
 
     fdv_usd_min: float
-    """minimum fully diluted value in USD"""
+    """Minimum fully diluted value in USD."""
 
     h24_volume_usd_max: float
-    """maximum 24hr volume in USD"""
+    """Maximum 24hr volume in USD."""
 
     h24_volume_usd_min: float
-    """minimum 24hr volume in USD"""
+    """Minimum 24hr volume in USD."""
 
     include: str
-    """
-    attributes to include, comma-separated if more than one to include Available
-    values: `base_token`, `quote_token`, `dex`, `network`
+    """Attributes to include, comma-separated if more than one.
+
+    Available values: `base_token`, `quote_token`, `dex`, `network`
     """
 
     include_unknown_honeypot_tokens: bool
     """
-    when `checks` includes `no_honeypot`, set to **`true`** to also include 'unknown
-    honeypot' tokens. Default value: `false`
+    When `checks` includes `no_honeypot`, set to `true` to also include unknown
+    honeypot tokens. Default: `false`
     """
 
     networks: str
-    """
-    filter pools by networks, comma-separated if more than one Network ID refers to
-    [/networks](/reference/networks-list)
+    """Filter pools by networks, comma-separated if more than one.
+
+    \\**refers to [`/onchain/networks`](/reference/networks-list).
     """
 
     page: int
-    """page through results Default value: 1"""
+    """Page through results. Default value: 1"""
 
     pool_created_hour_max: float
-    """maximum pool age in hours"""
+    """Maximum pool age in hours."""
 
     pool_created_hour_min: float
-    """minimum pool age in hours"""
+    """Minimum pool age in hours."""
 
     price_change_percentage_duration: Literal["5m", "1h", "6h", "24h"]
-    """duration for price change percentage metric"""
+    """Duration for price change percentage metric. Default: `24h`"""
 
     price_change_percentage_max: float
-    """maximum price change percentage"""
+    """Maximum price change percentage."""
 
     price_change_percentage_min: float
-    """minimum price change percentage"""
+    """Minimum price change percentage."""
 
     reserve_in_usd_max: float
-    """maximum reserve in USD"""
+    """Maximum reserve in USD."""
 
     reserve_in_usd_min: float
-    """minimum reserve in USD"""
+    """Minimum reserve in USD."""
 
     sell_tax_percentage_max: float
-    """maximum sell tax percentage"""
+    """Maximum sell tax percentage."""
 
     sell_tax_percentage_min: float
-    """minimum sell tax percentage"""
+    """Minimum sell tax percentage."""
 
     sells_duration: Literal["5m", "1h", "6h", "24h"]
-    """duration for sell transactions metric Default value: 24h"""
+    """Duration for sell transactions metric. Default: `24h`"""
 
     sells_max: int
-    """maximum number of sell transactions"""
+    """Maximum number of sell transactions."""
 
     sells_min: int
-    """minimum number of sell transactions"""
+    """Minimum number of sell transactions."""
 
     sort: Literal[
         "m5_trending",
@@ -129,13 +129,13 @@ class MegafilterGetParams(TypedDict, total=False):
         "price_desc",
         "pool_created_at_desc",
     ]
-    """sort the pools by field Default value: h6_trending"""
+    """Sort the pools by field. Default: `h6_trending`"""
 
     tx_count_duration: Literal["5m", "1h", "6h", "24h"]
-    """duration for transaction count metric Default value: 24h"""
+    """Duration for transaction count metric. Default: `24h`"""
 
     tx_count_max: int
-    """maximum transaction count"""
+    """Maximum transaction count."""
 
     tx_count_min: int
-    """minimum transaction count"""
+    """Minimum transaction count."""

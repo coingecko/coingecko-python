@@ -11,10 +11,10 @@ class PublicTreasuryGetCoinIDParams(TypedDict, total=False):
     entity: Required[Literal["companies", "governments"]]
 
     order: Literal["total_holdings_usd_desc", "total_holdings_usd_asc"]
-    """Sort order for results"""
+    """Sort order for results. Default: `total_holdings_usd_desc`"""
 
     page: int
-    """Page number to return"""
+    """Page through results. Default value: 1"""
 
     per_page: int
-    """Number of results to return per page"""
+    """Total results per page. Default value: 250 Valid values: 1...250"""

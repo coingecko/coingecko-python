@@ -21,8 +21,8 @@ class TestMarketChart:
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         market_chart = client.nfts.contract.market_chart.get(
-            contract_address="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8",
-            asset_platform_id="ethereum",
+            contract_address="contract_address",
+            asset_platform_id="asset_platform_id",
             days="days",
         )
         assert_matches_type(MarketChartGetResponse, market_chart, path=["response"])
@@ -31,8 +31,8 @@ class TestMarketChart:
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.nfts.contract.market_chart.with_raw_response.get(
-            contract_address="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8",
-            asset_platform_id="ethereum",
+            contract_address="contract_address",
+            asset_platform_id="asset_platform_id",
             days="days",
         )
 
@@ -45,8 +45,8 @@ class TestMarketChart:
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.nfts.contract.market_chart.with_streaming_response.get(
-            contract_address="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8",
-            asset_platform_id="ethereum",
+            contract_address="contract_address",
+            asset_platform_id="asset_platform_id",
             days="days",
         ) as response:
             assert not response.is_closed
@@ -62,7 +62,7 @@ class TestMarketChart:
     def test_path_params_get(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `asset_platform_id` but received ''"):
             client.nfts.contract.market_chart.with_raw_response.get(
-                contract_address="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8",
+                contract_address="contract_address",
                 asset_platform_id="",
                 days="days",
             )
@@ -70,7 +70,7 @@ class TestMarketChart:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `contract_address` but received ''"):
             client.nfts.contract.market_chart.with_raw_response.get(
                 contract_address="",
-                asset_platform_id="ethereum",
+                asset_platform_id="asset_platform_id",
                 days="days",
             )
 
@@ -84,8 +84,8 @@ class TestAsyncMarketChart:
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         market_chart = await async_client.nfts.contract.market_chart.get(
-            contract_address="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8",
-            asset_platform_id="ethereum",
+            contract_address="contract_address",
+            asset_platform_id="asset_platform_id",
             days="days",
         )
         assert_matches_type(MarketChartGetResponse, market_chart, path=["response"])
@@ -94,8 +94,8 @@ class TestAsyncMarketChart:
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.nfts.contract.market_chart.with_raw_response.get(
-            contract_address="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8",
-            asset_platform_id="ethereum",
+            contract_address="contract_address",
+            asset_platform_id="asset_platform_id",
             days="days",
         )
 
@@ -108,8 +108,8 @@ class TestAsyncMarketChart:
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.nfts.contract.market_chart.with_streaming_response.get(
-            contract_address="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8",
-            asset_platform_id="ethereum",
+            contract_address="contract_address",
+            asset_platform_id="asset_platform_id",
             days="days",
         ) as response:
             assert not response.is_closed
@@ -125,7 +125,7 @@ class TestAsyncMarketChart:
     async def test_path_params_get(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `asset_platform_id` but received ''"):
             await async_client.nfts.contract.market_chart.with_raw_response.get(
-                contract_address="0xBd3531dA5CF5857e7CfAA92426877b022e612cf8",
+                contract_address="contract_address",
                 asset_platform_id="",
                 days="days",
             )
@@ -133,6 +133,6 @@ class TestAsyncMarketChart:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `contract_address` but received ''"):
             await async_client.nfts.contract.market_chart.with_raw_response.get(
                 contract_address="",
-                asset_platform_id="ethereum",
+                asset_platform_id="asset_platform_id",
                 days="days",
             )

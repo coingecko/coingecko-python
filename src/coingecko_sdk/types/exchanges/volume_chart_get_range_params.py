@@ -11,7 +11,7 @@ __all__ = ["VolumeChartGetRangeParams"]
 
 class VolumeChartGetRangeParams(TypedDict, total=False):
     from_: Required[Annotated[float, PropertyInfo(alias="from")]]
-    """starting date in UNIX timestamp"""
+    """Starting date in UNIX timestamp."""
 
     to: Required[float]
-    """ending date in UNIX timestamp"""
+    """Ending date in UNIX timestamp."""

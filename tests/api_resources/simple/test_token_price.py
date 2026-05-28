@@ -21,7 +21,7 @@ class TestTokenPrice:
     @parametrize
     def test_method_get_id(self, client: Coingecko) -> None:
         token_price = client.simple.token_price.get_id(
-            id="ethereum",
+            id="id",
             contract_addresses="contract_addresses",
             vs_currencies="vs_currencies",
         )
@@ -31,7 +31,7 @@ class TestTokenPrice:
     @parametrize
     def test_method_get_id_with_all_params(self, client: Coingecko) -> None:
         token_price = client.simple.token_price.get_id(
-            id="ethereum",
+            id="id",
             contract_addresses="contract_addresses",
             vs_currencies="vs_currencies",
             include_24hr_change=True,
@@ -46,7 +46,7 @@ class TestTokenPrice:
     @parametrize
     def test_raw_response_get_id(self, client: Coingecko) -> None:
         response = client.simple.token_price.with_raw_response.get_id(
-            id="ethereum",
+            id="id",
             contract_addresses="contract_addresses",
             vs_currencies="vs_currencies",
         )
@@ -60,7 +60,7 @@ class TestTokenPrice:
     @parametrize
     def test_streaming_response_get_id(self, client: Coingecko) -> None:
         with client.simple.token_price.with_streaming_response.get_id(
-            id="ethereum",
+            id="id",
             contract_addresses="contract_addresses",
             vs_currencies="vs_currencies",
         ) as response:
@@ -92,7 +92,7 @@ class TestAsyncTokenPrice:
     @parametrize
     async def test_method_get_id(self, async_client: AsyncCoingecko) -> None:
         token_price = await async_client.simple.token_price.get_id(
-            id="ethereum",
+            id="id",
             contract_addresses="contract_addresses",
             vs_currencies="vs_currencies",
         )
@@ -102,7 +102,7 @@ class TestAsyncTokenPrice:
     @parametrize
     async def test_method_get_id_with_all_params(self, async_client: AsyncCoingecko) -> None:
         token_price = await async_client.simple.token_price.get_id(
-            id="ethereum",
+            id="id",
             contract_addresses="contract_addresses",
             vs_currencies="vs_currencies",
             include_24hr_change=True,
@@ -117,7 +117,7 @@ class TestAsyncTokenPrice:
     @parametrize
     async def test_raw_response_get_id(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.simple.token_price.with_raw_response.get_id(
-            id="ethereum",
+            id="id",
             contract_addresses="contract_addresses",
             vs_currencies="vs_currencies",
         )
@@ -131,7 +131,7 @@ class TestAsyncTokenPrice:
     @parametrize
     async def test_streaming_response_get_id(self, async_client: AsyncCoingecko) -> None:
         async with async_client.simple.token_price.with_streaming_response.get_id(
-            id="ethereum",
+            id="id",
             contract_addresses="contract_addresses",
             vs_currencies="vs_currencies",
         ) as response:

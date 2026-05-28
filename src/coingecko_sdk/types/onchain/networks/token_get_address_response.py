@@ -3,15 +3,10 @@
 from typing import List, Optional
 
 from ...._models import BaseModel
+from .token_item import TokenItem
 
 __all__ = [
     "TokenGetAddressResponse",
-    "Data",
-    "DataAttributes",
-    "DataAttributesVolumeUsd",
-    "DataRelationships",
-    "DataRelationshipsTopPools",
-    "DataRelationshipsTopPoolsData",
     "Included",
     "IncludedAttributes",
     "IncludedAttributesPriceChangePercentage",
@@ -31,64 +26,6 @@ __all__ = [
     "IncludedRelationshipsQuoteToken",
     "IncludedRelationshipsQuoteTokenData",
 ]
-
-
-class DataAttributesVolumeUsd(BaseModel):
-    h24: Optional[str] = None
-
-
-class DataAttributes(BaseModel):
-    address: Optional[str] = None
-
-    coingecko_coin_id: Optional[str] = None
-
-    decimals: Optional[int] = None
-
-    fdv_usd: Optional[str] = None
-
-    image_url: Optional[str] = None
-
-    last_trade_timestamp: Optional[int] = None
-
-    market_cap_usd: Optional[str] = None
-
-    name: Optional[str] = None
-
-    normalized_total_supply: Optional[str] = None
-
-    price_usd: Optional[str] = None
-
-    symbol: Optional[str] = None
-
-    total_reserve_in_usd: Optional[str] = None
-
-    total_supply: Optional[str] = None
-
-    volume_usd: Optional[DataAttributesVolumeUsd] = None
-
-
-class DataRelationshipsTopPoolsData(BaseModel):
-    id: Optional[str] = None
-
-    type: Optional[str] = None
-
-
-class DataRelationshipsTopPools(BaseModel):
-    data: Optional[List[DataRelationshipsTopPoolsData]] = None
-
-
-class DataRelationships(BaseModel):
-    top_pools: Optional[DataRelationshipsTopPools] = None
-
-
-class Data(BaseModel):
-    id: Optional[str] = None
-
-    attributes: Optional[DataAttributes] = None
-
-    relationships: Optional[DataRelationships] = None
-
-    type: Optional[str] = None
 
 
 class IncludedAttributesPriceChangePercentage(BaseModel):
@@ -196,10 +133,6 @@ class IncludedAttributesVolumeUsd(BaseModel):
 class IncludedAttributes(BaseModel):
     address: Optional[str] = None
 
-    base_token_balance: Optional[str] = None
-
-    base_token_liquidity_usd: Optional[str] = None
-
     base_token_price_native_currency: Optional[str] = None
 
     base_token_price_quote_token: Optional[str] = None
@@ -208,6 +141,8 @@ class IncludedAttributes(BaseModel):
 
     fdv_usd: Optional[str] = None
 
+    last_trade_timestamp: Optional[str] = None
+
     market_cap_usd: Optional[str] = None
 
     name: Optional[str] = None
@@ -215,10 +150,6 @@ class IncludedAttributes(BaseModel):
     pool_created_at: Optional[str] = None
 
     price_change_percentage: Optional[IncludedAttributesPriceChangePercentage] = None
-
-    quote_token_balance: Optional[str] = None
-
-    quote_token_liquidity_usd: Optional[str] = None
 
     quote_token_price_base_token: Optional[str] = None
 
@@ -284,6 +215,7 @@ class Included(BaseModel):
 
 
 class TokenGetAddressResponse(BaseModel):
-    data: Optional[Data] = None
+    data: TokenItem
 
     included: Optional[List[Included]] = None
+    """Included top pool data, present when include=top_pools is specified"""

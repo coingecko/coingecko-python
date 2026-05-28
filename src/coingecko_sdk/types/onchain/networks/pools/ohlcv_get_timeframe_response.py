@@ -8,18 +8,23 @@ __all__ = ["OhlcvGetTimeframeResponse", "Data", "DataAttributes", "Meta", "MetaB
 
 
 class DataAttributes(BaseModel):
-    ohlcv_list: Optional[List[List[float]]] = None
+    ohlcv_list: List[List[float]]
+    """OHLCV data as [timestamp, open, high, low, close, volume] arrays"""
 
 
 class Data(BaseModel):
-    id: Optional[str] = None
+    id: str
+    """Request ID"""
 
-    attributes: Optional[DataAttributes] = None
+    attributes: DataAttributes
 
-    type: Optional[str] = None
+    type: str
+    """Resource type"""
 
 
 class MetaBase(BaseModel):
+    """Base token metadata"""
+
     address: Optional[str] = None
 
     coingecko_coin_id: Optional[str] = None
@@ -30,6 +35,8 @@ class MetaBase(BaseModel):
 
 
 class MetaQuote(BaseModel):
+    """Quote token metadata"""
+
     address: Optional[str] = None
 
     coingecko_coin_id: Optional[str] = None
@@ -41,11 +48,13 @@ class MetaQuote(BaseModel):
 
 class Meta(BaseModel):
     base: Optional[MetaBase] = None
+    """Base token metadata"""
 
     quote: Optional[MetaQuote] = None
+    """Quote token metadata"""
 
 
 class OhlcvGetTimeframeResponse(BaseModel):
-    data: Optional[Data] = None
+    data: Data
 
-    meta: Optional[Meta] = None
+    meta: Meta

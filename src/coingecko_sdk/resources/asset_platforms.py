@@ -55,10 +55,10 @@ class AssetPlatformsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> AssetPlatformGetResponse:
         """
-        This endpoint allows you to **query all the asset platforms on CoinGecko**
+        To query all the asset platforms (blockchain networks) on CoinGecko
 
         Args:
-          filter: apply relevant filters to results
+          filter: Apply relevant filters to results.
 
           extra_headers: Send extra headers
 
@@ -113,10 +113,10 @@ class AsyncAssetPlatformsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> AssetPlatformGetResponse:
         """
-        This endpoint allows you to **query all the asset platforms on CoinGecko**
+        To query all the asset platforms (blockchain networks) on CoinGecko
 
         Args:
-          filter: apply relevant filters to results
+          filter: Apply relevant filters to results.
 
           extra_headers: Send extra headers
 

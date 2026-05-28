@@ -82,18 +82,18 @@ class OhlcResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> OhlcGetResponse:
         """
-        This endpoint allows you to **get the OHLC chart (Open, High, Low, Close) of a
-        coin based on particular coin ID**
+        To get the OHLC chart (Open, High, Low, Close) of a coin based on particular
+        coin ID
 
         Args:
-          days: data up to number of days ago
+          days: Data up to number of days ago.
 
-          vs_currency: target currency of price data \\**refers to
+          vs_currency: Target currency of price data. \\**refers to
               [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
 
-          interval: data interval, leave empty for auto granularity
+          interval: Data interval, leave empty for auto granularity.
 
-          precision: decimal place for currency price value
+          precision: Decimal place for currency price value.
 
           extra_headers: Send extra headers
 
@@ -141,19 +141,19 @@ class OhlcResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> OhlcGetRangeResponse:
         """
-        This endpoint allows you to **get the OHLC chart (Open, High, Low, Close) of a
-        coin within a range of timestamp based on particular coin ID**
+        To get the OHLC chart (Open, High, Low, Close) of a coin within a range of
+        timestamp based on particular coin ID
 
         Args:
-          from_: starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
-              timestamp. **use ISO date string for best compatibility**
+          from_: Starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **Use ISO date string for best compatibility.**
 
-          interval: data interval
+          interval: Data interval.
 
-          to: ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
-              timestamp. **use ISO date string for best compatibility**
+          to: Ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **Use ISO date string for best compatibility.**
 
-          vs_currency: target currency of price data \\**refers to
+          vs_currency: Target currency of price data. \\**refers to
               [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
 
           extra_headers: Send extra headers
@@ -245,18 +245,18 @@ class AsyncOhlcResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> OhlcGetResponse:
         """
-        This endpoint allows you to **get the OHLC chart (Open, High, Low, Close) of a
-        coin based on particular coin ID**
+        To get the OHLC chart (Open, High, Low, Close) of a coin based on particular
+        coin ID
 
         Args:
-          days: data up to number of days ago
+          days: Data up to number of days ago.
 
-          vs_currency: target currency of price data \\**refers to
+          vs_currency: Target currency of price data. \\**refers to
               [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
 
-          interval: data interval, leave empty for auto granularity
+          interval: Data interval, leave empty for auto granularity.
 
-          precision: decimal place for currency price value
+          precision: Decimal place for currency price value.
 
           extra_headers: Send extra headers
 
@@ -304,19 +304,19 @@ class AsyncOhlcResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> OhlcGetRangeResponse:
         """
-        This endpoint allows you to **get the OHLC chart (Open, High, Low, Close) of a
-        coin within a range of timestamp based on particular coin ID**
+        To get the OHLC chart (Open, High, Low, Close) of a coin within a range of
+        timestamp based on particular coin ID
 
         Args:
-          from_: starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
-              timestamp. **use ISO date string for best compatibility**
+          from_: Starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **Use ISO date string for best compatibility.**
 
-          interval: data interval
+          interval: Data interval.
 
-          to: ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
-              timestamp. **use ISO date string for best compatibility**
+          to: Ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **Use ISO date string for best compatibility.**
 
-          vs_currency: target currency of price data \\**refers to
+          vs_currency: Target currency of price data. \\**refers to
               [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
 
           extra_headers: Send extra headers

@@ -84,26 +84,24 @@ class TokenPriceResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TokenPriceGetIDResponse:
         """
-        This endpoint allows you to **query one or more token prices using their token
-        contract addresses**
+        To query one or more token prices by using their token contract addresses
 
         Args:
-          contract_addresses: the contract addresses of tokens, comma-separated if querying more than 1
-              token's contract address
+          contract_addresses: Token contract addresses, comma-separated if querying more than 1 token
 
-          vs_currencies: target currency of coins, comma-separated if querying more than 1 currency.
+          vs_currencies: Target currency of coins, comma-separated if querying more than 1 currency.
               \\**refers to
-              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
+              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies)
 
-          include_24hr_change: include 24hr change default: false
+          include_24hr_change: Include 24-hour change percentage. Default: false
 
-          include_24hr_vol: include 24hr volume, default: false
+          include_24hr_vol: Include 24-hour trading volume. Default: false
 
-          include_last_updated_at: include last updated price time in UNIX , default: false
+          include_last_updated_at: Include last updated price time as a UNIX timestamp. Default: false
 
-          include_market_cap: include market capitalization, default: false
+          include_market_cap: Include market capitalization. Default: false
 
-          precision: decimal place for currency price value
+          precision: Decimal places for currency price value
 
           extra_headers: Send extra headers
 
@@ -200,26 +198,24 @@ class AsyncTokenPriceResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TokenPriceGetIDResponse:
         """
-        This endpoint allows you to **query one or more token prices using their token
-        contract addresses**
+        To query one or more token prices by using their token contract addresses
 
         Args:
-          contract_addresses: the contract addresses of tokens, comma-separated if querying more than 1
-              token's contract address
+          contract_addresses: Token contract addresses, comma-separated if querying more than 1 token
 
-          vs_currencies: target currency of coins, comma-separated if querying more than 1 currency.
+          vs_currencies: Target currency of coins, comma-separated if querying more than 1 currency.
               \\**refers to
-              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
+              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies)
 
-          include_24hr_change: include 24hr change default: false
+          include_24hr_change: Include 24-hour change percentage. Default: false
 
-          include_24hr_vol: include 24hr volume, default: false
+          include_24hr_vol: Include 24-hour trading volume. Default: false
 
-          include_last_updated_at: include last updated price time in UNIX , default: false
+          include_last_updated_at: Include last updated price time as a UNIX timestamp. Default: false
 
-          include_market_cap: include market capitalization, default: false
+          include_market_cap: Include market capitalization. Default: false
 
-          precision: decimal place for currency price value
+          precision: Decimal places for currency price value
 
           extra_headers: Send extra headers
 

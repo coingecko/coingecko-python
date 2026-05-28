@@ -35,7 +35,7 @@ class NFTGetMarketsResponseItemFloorPrice24hPercentageChange(BaseModel):
 
 
 class NFTGetMarketsResponseItemImage(BaseModel):
-    """NFT collection image url"""
+    """NFT collection image URLs"""
 
     small: Optional[str] = None
 
@@ -75,10 +75,10 @@ class NFTGetMarketsResponseItemVolume24hPercentageChange(BaseModel):
 
 
 class NFTGetMarketsResponseItem(BaseModel):
-    id: Optional[str] = None
+    id: str
     """NFT collection ID"""
 
-    asset_platform_id: Optional[str] = None
+    asset_platform_id: str
     """NFT collection asset platform ID"""
 
     contract_address: Optional[str] = None
@@ -87,68 +87,65 @@ class NFTGetMarketsResponseItem(BaseModel):
     description: Optional[str] = None
     """NFT collection description"""
 
-    floor_price: Optional[NFTGetMarketsResponseItemFloorPrice] = None
+    floor_price: NFTGetMarketsResponseItemFloorPrice
     """NFT collection floor price"""
 
-    floor_price_24h_percentage_change: Optional[NFTGetMarketsResponseItemFloorPrice24hPercentageChange] = None
+    floor_price_24h_percentage_change: NFTGetMarketsResponseItemFloorPrice24hPercentageChange
     """NFT collection floor price 24 hours percentage change"""
 
-    floor_price_in_usd_24h_percentage_change: Optional[float] = None
-    """NFT collection floor price in usd 24 hours percentage change"""
+    floor_price_in_usd_24h_percentage_change: float
+    """NFT collection floor price in USD 24 hours percentage change"""
 
-    image: Optional[NFTGetMarketsResponseItemImage] = None
-    """NFT collection image url"""
+    image: NFTGetMarketsResponseItemImage
+    """NFT collection image URLs"""
 
-    market_cap: Optional[NFTGetMarketsResponseItemMarketCap] = None
+    market_cap: NFTGetMarketsResponseItemMarketCap
     """NFT collection market cap"""
 
-    market_cap_24h_percentage_change: Optional[NFTGetMarketsResponseItemMarketCap24hPercentageChange] = None
+    market_cap_24h_percentage_change: NFTGetMarketsResponseItemMarketCap24hPercentageChange
     """NFT collection market cap 24 hours percentage change"""
 
-    market_cap_rank: Optional[float] = None
-    """coin market cap rank"""
-
-    name: Optional[str] = None
+    name: str
     """NFT collection name"""
 
-    native_currency: Optional[str] = None
+    native_currency: str
     """NFT collection native currency"""
 
-    native_currency_symbol: Optional[str] = None
+    native_currency_symbol: str
     """NFT collection native currency symbol"""
 
     number_of_unique_addresses: Optional[float] = None
-    """number of unique address owning the NFTs"""
+    """Number of unique addresses owning the NFTs"""
 
-    number_of_unique_addresses_24h_percentage_change: Optional[float] = None
-    """number of unique address owning the NFTs 24 hours percentage change"""
+    number_of_unique_addresses_24h_percentage_change: float
+    """Number of unique addresses 24 hours percentage change"""
 
     one_day_average_sale_price: Optional[float] = None
     """NFT collection one day average sale price"""
 
-    one_day_average_sale_price_24h_percentage_change: Optional[float] = None
+    one_day_average_sale_price_24h_percentage_change: float
     """NFT collection one day average sale price 24 hours percentage change"""
 
     one_day_sales: Optional[float] = None
     """NFT collection one day sales"""
 
-    one_day_sales_24h_percentage_change: Optional[float] = None
+    one_day_sales_24h_percentage_change: float
     """NFT collection one day sales 24 hours percentage change"""
 
-    symbol: Optional[str] = None
+    symbol: str
     """NFT collection symbol"""
 
     total_supply: Optional[float] = None
     """NFT collection total supply"""
 
-    volume_24h: Optional[NFTGetMarketsResponseItemVolume24h] = None
+    volume_24h: NFTGetMarketsResponseItemVolume24h
     """NFT collection volume in 24 hours"""
 
-    volume_24h_percentage_change: Optional[NFTGetMarketsResponseItemVolume24hPercentageChange] = None
+    volume_24h_percentage_change: NFTGetMarketsResponseItemVolume24hPercentageChange
     """NFT collection volume in 24 hours percentage change"""
 
-    volume_in_usd_24h_percentage_change: Optional[float] = None
-    """NFT collection volume in usd 24 hours percentage change"""
+    volume_in_usd_24h_percentage_change: float
+    """NFT collection volume in USD 24 hours percentage change"""
 
 
 NFTGetMarketsResponse: TypeAlias = List[NFTGetMarketsResponseItem]

@@ -11,10 +11,7 @@ class TopHolderGetParams(TypedDict, total=False):
     network: Required[str]
 
     holders: str
-    """
-    number of top token holders to return, you may use any integer or `max` Default
-    value: 10
-    """
+    """Number of top token holders to return, any integer or `max`. Default value: 10"""
 
     include_pnl_details: bool
-    """include PnL details for token holders, default: false"""
+    """Include PnL details for token holders. Default: `false`"""

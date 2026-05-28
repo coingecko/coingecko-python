@@ -49,7 +49,7 @@ class SupportedVsCurrenciesResource(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SupportedVsCurrencyGetResponse:
-        """This endpoint allows you to **query all the supported currencies on CoinGecko**"""
+        """To query all the supported currencies on CoinGecko"""
         return self._get(
             "/simple/supported_vs_currencies",
             options=make_request_options(
@@ -89,7 +89,7 @@ class AsyncSupportedVsCurrenciesResource(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SupportedVsCurrencyGetResponse:
-        """This endpoint allows you to **query all the supported currencies on CoinGecko**"""
+        """To query all the supported currencies on CoinGecko"""
         return await self._get(
             "/simple/supported_vs_currencies",
             options=make_request_options(

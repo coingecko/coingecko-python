@@ -1,24 +1,28 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Optional
+from typing import Dict, Optional
+from typing_extensions import TypeAlias
 
 from ..._models import BaseModel
 
-__all__ = ["TokenPriceGetIDResponse"]
+__all__ = ["TokenPriceGetIDResponse", "TokenPriceGetIDResponseItem"]
 
 
-class TokenPriceGetIDResponse(BaseModel):
+class TokenPriceGetIDResponseItem(BaseModel):
     last_updated_at: Optional[float] = None
-    """last updated timestamp"""
+    """Last updated timestamp in UNIX seconds"""
 
     usd: Optional[float] = None
-    """price in USD"""
+    """Price in the target currency"""
 
     usd_24h_change: Optional[float] = None
-    """24hr change in USD"""
+    """24-hour price change percentage in the target currency"""
 
     usd_24h_vol: Optional[float] = None
-    """24hr volume in USD"""
+    """24-hour trading volume in the target currency"""
 
     usd_market_cap: Optional[float] = None
-    """market cap in USD"""
+    """Market capitalization in the target currency"""
+
+
+TokenPriceGetIDResponse: TypeAlias = Dict[str, TokenPriceGetIDResponseItem]

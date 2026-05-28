@@ -9,8 +9,8 @@ __all__ = ["PublicTreasuryGetTransactionHistoryParams"]
 
 class PublicTreasuryGetTransactionHistoryParams(TypedDict, total=False):
     coin_ids: str
-    """
-    filter transactions by coin IDs, comma-separated if querying more than 1 coin
+    """Filter transactions by coin IDs, comma-separated if querying more than 1 coin.
+
     \\**refers to [`/coins/list`](/reference/coins-list).
     """
 
@@ -24,10 +24,10 @@ class PublicTreasuryGetTransactionHistoryParams(TypedDict, total=False):
         "average_cost_desc",
         "average_cost_asc",
     ]
-    """use this to sort the order of transactions, default: `date_desc`"""
+    """Sort order of transactions. Default: `date_desc`"""
 
-    page: float
-    """page through results, default: `1`"""
+    page: int
+    """Page through results. Default value: 1"""
 
-    per_page: float
-    """total results per page, default: `100` Valid values: 1...250"""
+    per_page: int
+    """Total results per page. Default value: 100 Valid values: 1...250"""

@@ -1,69 +1,46 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Optional
+from typing import Dict
 
 from .._models import BaseModel
 
-__all__ = ["GlobalGetResponse", "Data", "DataMarketCapPercentage", "DataTotalMarketCap", "DataTotalVolume"]
-
-
-class DataMarketCapPercentage(BaseModel):
-    """cryptocurrencies market cap percentage"""
-
-    btc: Optional[float] = None
-
-    eth: Optional[float] = None
-
-
-class DataTotalMarketCap(BaseModel):
-    """cryptocurrencies total market cap"""
-
-    btc: Optional[float] = None
-
-    eth: Optional[float] = None
-
-
-class DataTotalVolume(BaseModel):
-    """cryptocurrencies total volume"""
-
-    btc: Optional[float] = None
-
-    eth: Optional[float] = None
+__all__ = ["GlobalGetResponse", "Data"]
 
 
 class Data(BaseModel):
-    active_cryptocurrencies: Optional[float] = None
-    """number of active cryptocurrencies"""
+    active_cryptocurrencies: int
+    """Number of active cryptocurrencies"""
 
-    ended_icos: Optional[float] = None
-    """number of ended icos"""
+    ended_icos: int
+    """Number of ended ICOs"""
 
-    market_cap_change_percentage_24h_usd: Optional[float] = None
-    """cryptocurrencies market cap change percentage in 24 hours in usd"""
+    market_cap_change_percentage_24h_usd: float
+    """Market cap change percentage in 24 hours in USD"""
 
-    market_cap_percentage: Optional[DataMarketCapPercentage] = None
-    """cryptocurrencies market cap percentage"""
+    market_cap_percentage: Dict[str, float]
+    """Market cap percentage by coin"""
 
-    markets: Optional[float] = None
-    """number of exchanges"""
+    markets: int
+    """Number of exchanges"""
 
-    ongoing_icos: Optional[float] = None
-    """number of ongoing icos"""
+    ongoing_icos: int
+    """Number of ongoing ICOs"""
 
-    total_market_cap: Optional[DataTotalMarketCap] = None
-    """cryptocurrencies total market cap"""
+    total_market_cap: Dict[str, float]
+    """Total cryptocurrency market cap by currency"""
 
-    total_volume: Optional[DataTotalVolume] = None
-    """cryptocurrencies total volume"""
+    total_volume: Dict[str, float]
+    """Total cryptocurrency volume by currency"""
 
-    upcoming_icos: Optional[float] = None
-    """number of upcoming icos"""
+    upcoming_icos: int
+    """Number of upcoming ICOs"""
 
-    updated_at: Optional[float] = None
+    updated_at: int
+    """Last updated time in UNIX timestamp"""
 
-    volume_change_percentage_24h_usd: Optional[float] = None
-    """cryptocurrencies volume change percentage in 24 hours in usd"""
+    volume_change_percentage_24h_usd: float
+    """Volume change percentage in 24 hours in USD"""
 
 
 class GlobalGetResponse(BaseModel):
-    data: Optional[Data] = None
+    data: Data

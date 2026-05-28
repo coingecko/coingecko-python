@@ -95,20 +95,19 @@ class NewsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NewsGetResponse:
         """
-        This endpoint allows you to **query the latest crypto news and guides on
-        CoinGecko**
+        To query the latest crypto news and guides on CoinGecko
 
         Args:
-          coin_id: filter news by coin ID \\**refers to [`/coins/list`](/reference/coins-list).
+          coin_id: Filter news by coin ID. \\**refers to [`/coins/list`](/reference/coins-list).
 
-          language: filter news by language Default value: **en**
+          language: Filter news by language. Default: `en`
 
-          page: page through results Default value: **1**
+          page: Page through results. Default value: 1 Valid values: 1...20
 
-          per_page: total results per page Default value: **10**
+          per_page: Total results per page. Default value: 10 Valid values: 1...20
 
-          type: filter news by type Default value: **all** Note: `guides` filter is only
-              applicable if `coin_id` is specified and valid
+          type: Filter news by type. Default: `all` Note: `guides` filter is only applicable if
+              `coin_id` is specified and valid.
 
           extra_headers: Send extra headers
 
@@ -212,20 +211,19 @@ class AsyncNewsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NewsGetResponse:
         """
-        This endpoint allows you to **query the latest crypto news and guides on
-        CoinGecko**
+        To query the latest crypto news and guides on CoinGecko
 
         Args:
-          coin_id: filter news by coin ID \\**refers to [`/coins/list`](/reference/coins-list).
+          coin_id: Filter news by coin ID. \\**refers to [`/coins/list`](/reference/coins-list).
 
-          language: filter news by language Default value: **en**
+          language: Filter news by language. Default: `en`
 
-          page: page through results Default value: **1**
+          page: Page through results. Default value: 1 Valid values: 1...20
 
-          per_page: total results per page Default value: **10**
+          per_page: Total results per page. Default value: 10 Valid values: 1...20
 
-          type: filter news by type Default value: **all** Note: `guides` filter is only
-              applicable if `coin_id` is specified and valid
+          type: Filter news by type. Default: `all` Note: `guides` filter is only applicable if
+              `coin_id` is specified and valid.
 
           extra_headers: Send extra headers
 

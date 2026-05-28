@@ -61,7 +61,7 @@ class TestCategories:
     @parametrize
     def test_method_get_pools(self, client: Coingecko) -> None:
         category = client.onchain.categories.get_pools(
-            category_id="pump-fun",
+            category_id="category_id",
         )
         assert_matches_type(CategoryGetPoolsResponse, category, path=["response"])
 
@@ -69,7 +69,7 @@ class TestCategories:
     @parametrize
     def test_method_get_pools_with_all_params(self, client: Coingecko) -> None:
         category = client.onchain.categories.get_pools(
-            category_id="pump-fun",
+            category_id="category_id",
             include="include",
             page=0,
             sort="m5_trending",
@@ -80,7 +80,7 @@ class TestCategories:
     @parametrize
     def test_raw_response_get_pools(self, client: Coingecko) -> None:
         response = client.onchain.categories.with_raw_response.get_pools(
-            category_id="pump-fun",
+            category_id="category_id",
         )
 
         assert response.is_closed is True
@@ -92,7 +92,7 @@ class TestCategories:
     @parametrize
     def test_streaming_response_get_pools(self, client: Coingecko) -> None:
         with client.onchain.categories.with_streaming_response.get_pools(
-            category_id="pump-fun",
+            category_id="category_id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -157,7 +157,7 @@ class TestAsyncCategories:
     @parametrize
     async def test_method_get_pools(self, async_client: AsyncCoingecko) -> None:
         category = await async_client.onchain.categories.get_pools(
-            category_id="pump-fun",
+            category_id="category_id",
         )
         assert_matches_type(CategoryGetPoolsResponse, category, path=["response"])
 
@@ -165,7 +165,7 @@ class TestAsyncCategories:
     @parametrize
     async def test_method_get_pools_with_all_params(self, async_client: AsyncCoingecko) -> None:
         category = await async_client.onchain.categories.get_pools(
-            category_id="pump-fun",
+            category_id="category_id",
             include="include",
             page=0,
             sort="m5_trending",
@@ -176,7 +176,7 @@ class TestAsyncCategories:
     @parametrize
     async def test_raw_response_get_pools(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.onchain.categories.with_raw_response.get_pools(
-            category_id="pump-fun",
+            category_id="category_id",
         )
 
         assert response.is_closed is True
@@ -188,7 +188,7 @@ class TestAsyncCategories:
     @parametrize
     async def test_streaming_response_get_pools(self, async_client: AsyncCoingecko) -> None:
         async with async_client.onchain.categories.with_streaming_response.get_pools(
-            category_id="pump-fun",
+            category_id="category_id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"

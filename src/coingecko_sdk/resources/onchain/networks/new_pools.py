@@ -56,17 +56,17 @@ class NewPoolsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NewPoolGetResponse:
         """
-        This endpoint allows you to **query all the latest pools across all networks on
-        GeckoTerminal**
+        To query all the latest pools across all networks on GeckoTerminal
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`, `network`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`, `network`
 
-          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
-              Default value: false
+          include_gt_community_data: Include GeckoTerminal community data (sentiment votes, suspicious reports).
+              Default: `false`
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
           extra_headers: Send extra headers
 
@@ -110,17 +110,17 @@ class NewPoolsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NewPoolGetNetworkResponse:
         """
-        This endpoint allows you to **query all the latest pools based on provided
-        network**
+        To query all the latest pools based on the provided network
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`
 
-          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
-              Default value: false
+          include_gt_community_data: Include GeckoTerminal community data (sentiment votes, suspicious reports).
+              Default: `false`
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
           extra_headers: Send extra headers
 
@@ -186,17 +186,17 @@ class AsyncNewPoolsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NewPoolGetResponse:
         """
-        This endpoint allows you to **query all the latest pools across all networks on
-        GeckoTerminal**
+        To query all the latest pools across all networks on GeckoTerminal
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`, `network`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`, `network`
 
-          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
-              Default value: false
+          include_gt_community_data: Include GeckoTerminal community data (sentiment votes, suspicious reports).
+              Default: `false`
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
           extra_headers: Send extra headers
 
@@ -240,17 +240,17 @@ class AsyncNewPoolsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NewPoolGetNetworkResponse:
         """
-        This endpoint allows you to **query all the latest pools based on provided
-        network**
+        To query all the latest pools based on the provided network
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`
 
-          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
-              Default value: false
+          include_gt_community_data: Include GeckoTerminal community data (sentiment votes, suspicious reports).
+              Default: `false`
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
           extra_headers: Send extra headers
 

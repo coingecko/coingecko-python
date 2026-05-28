@@ -9,7 +9,7 @@ __all__ = ["TotalSupplyChartGetParams"]
 
 class TotalSupplyChartGetParams(TypedDict, total=False):
     days: Required[str]
-    """data up to number of days ago Valid values: any integer or `max`"""
+    """Data up to number of days ago. Valid values: any integer or `max`."""
 
     interval: Literal["daily"]
-    """data interval"""
+    """Data interval."""

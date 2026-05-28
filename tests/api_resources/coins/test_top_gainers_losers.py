@@ -21,7 +21,7 @@ class TestTopGainersLosers:
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         top_gainers_loser = client.coins.top_gainers_losers.get(
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
         assert_matches_type(TopGainersLoserGetResponse, top_gainers_loser, path=["response"])
 
@@ -29,7 +29,7 @@ class TestTopGainersLosers:
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         top_gainers_loser = client.coins.top_gainers_losers.get(
-            vs_currency="usd",
+            vs_currency="vs_currency",
             duration="1h",
             price_change_percentage="price_change_percentage",
             top_coins="300",
@@ -40,7 +40,7 @@ class TestTopGainersLosers:
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.coins.top_gainers_losers.with_raw_response.get(
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
 
         assert response.is_closed is True
@@ -52,7 +52,7 @@ class TestTopGainersLosers:
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.coins.top_gainers_losers.with_streaming_response.get(
-            vs_currency="usd",
+            vs_currency="vs_currency",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -72,7 +72,7 @@ class TestAsyncTopGainersLosers:
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         top_gainers_loser = await async_client.coins.top_gainers_losers.get(
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
         assert_matches_type(TopGainersLoserGetResponse, top_gainers_loser, path=["response"])
 
@@ -80,7 +80,7 @@ class TestAsyncTopGainersLosers:
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         top_gainers_loser = await async_client.coins.top_gainers_losers.get(
-            vs_currency="usd",
+            vs_currency="vs_currency",
             duration="1h",
             price_change_percentage="price_change_percentage",
             top_coins="300",
@@ -91,7 +91,7 @@ class TestAsyncTopGainersLosers:
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.coins.top_gainers_losers.with_raw_response.get(
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
 
         assert response.is_closed is True
@@ -103,7 +103,7 @@ class TestAsyncTopGainersLosers:
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.coins.top_gainers_losers.with_streaming_response.get(
-            vs_currency="usd",
+            vs_currency="vs_currency",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"

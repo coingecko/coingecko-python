@@ -26,7 +26,7 @@ class TestPublicTreasury:
     @parametrize
     def test_method_get_coin_id(self, client: Coingecko) -> None:
         public_treasury = client.public_treasury.get_coin_id(
-            coin_id="bitcoin",
+            coin_id="coin_id",
             entity="companies",
         )
         assert_matches_type(PublicTreasuryGetCoinIDResponse, public_treasury, path=["response"])
@@ -35,11 +35,11 @@ class TestPublicTreasury:
     @parametrize
     def test_method_get_coin_id_with_all_params(self, client: Coingecko) -> None:
         public_treasury = client.public_treasury.get_coin_id(
-            coin_id="bitcoin",
+            coin_id="coin_id",
             entity="companies",
             order="total_holdings_usd_desc",
-            page=1,
-            per_page=250,
+            page=0,
+            per_page=0,
         )
         assert_matches_type(PublicTreasuryGetCoinIDResponse, public_treasury, path=["response"])
 
@@ -47,7 +47,7 @@ class TestPublicTreasury:
     @parametrize
     def test_raw_response_get_coin_id(self, client: Coingecko) -> None:
         response = client.public_treasury.with_raw_response.get_coin_id(
-            coin_id="bitcoin",
+            coin_id="coin_id",
             entity="companies",
         )
 
@@ -60,7 +60,7 @@ class TestPublicTreasury:
     @parametrize
     def test_streaming_response_get_coin_id(self, client: Coingecko) -> None:
         with client.public_treasury.with_streaming_response.get_coin_id(
-            coin_id="bitcoin",
+            coin_id="coin_id",
             entity="companies",
         ) as response:
             assert not response.is_closed
@@ -84,7 +84,7 @@ class TestPublicTreasury:
     @parametrize
     def test_method_get_entity_id(self, client: Coingecko) -> None:
         public_treasury = client.public_treasury.get_entity_id(
-            entity_id="strategy",
+            entity_id="entity_id",
         )
         assert_matches_type(PublicTreasuryGetEntityIDResponse, public_treasury, path=["response"])
 
@@ -92,7 +92,7 @@ class TestPublicTreasury:
     @parametrize
     def test_method_get_entity_id_with_all_params(self, client: Coingecko) -> None:
         public_treasury = client.public_treasury.get_entity_id(
-            entity_id="strategy",
+            entity_id="entity_id",
             holding_amount_change="holding_amount_change",
             holding_change_percentage="holding_change_percentage",
         )
@@ -102,7 +102,7 @@ class TestPublicTreasury:
     @parametrize
     def test_raw_response_get_entity_id(self, client: Coingecko) -> None:
         response = client.public_treasury.with_raw_response.get_entity_id(
-            entity_id="strategy",
+            entity_id="entity_id",
         )
 
         assert response.is_closed is True
@@ -114,7 +114,7 @@ class TestPublicTreasury:
     @parametrize
     def test_streaming_response_get_entity_id(self, client: Coingecko) -> None:
         with client.public_treasury.with_streaming_response.get_entity_id(
-            entity_id="strategy",
+            entity_id="entity_id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -136,8 +136,8 @@ class TestPublicTreasury:
     @parametrize
     def test_method_get_holding_chart(self, client: Coingecko) -> None:
         public_treasury = client.public_treasury.get_holding_chart(
-            coin_id="bitcoin",
-            entity_id="strategy",
+            coin_id="coin_id",
+            entity_id="entity_id",
             days="days",
         )
         assert_matches_type(PublicTreasuryGetHoldingChartResponse, public_treasury, path=["response"])
@@ -146,8 +146,8 @@ class TestPublicTreasury:
     @parametrize
     def test_method_get_holding_chart_with_all_params(self, client: Coingecko) -> None:
         public_treasury = client.public_treasury.get_holding_chart(
-            coin_id="bitcoin",
-            entity_id="strategy",
+            coin_id="coin_id",
+            entity_id="entity_id",
             days="days",
             include_empty_intervals=True,
         )
@@ -157,8 +157,8 @@ class TestPublicTreasury:
     @parametrize
     def test_raw_response_get_holding_chart(self, client: Coingecko) -> None:
         response = client.public_treasury.with_raw_response.get_holding_chart(
-            coin_id="bitcoin",
-            entity_id="strategy",
+            coin_id="coin_id",
+            entity_id="entity_id",
             days="days",
         )
 
@@ -171,8 +171,8 @@ class TestPublicTreasury:
     @parametrize
     def test_streaming_response_get_holding_chart(self, client: Coingecko) -> None:
         with client.public_treasury.with_streaming_response.get_holding_chart(
-            coin_id="bitcoin",
-            entity_id="strategy",
+            coin_id="coin_id",
+            entity_id="entity_id",
             days="days",
         ) as response:
             assert not response.is_closed
@@ -188,7 +188,7 @@ class TestPublicTreasury:
     def test_path_params_get_holding_chart(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `entity_id` but received ''"):
             client.public_treasury.with_raw_response.get_holding_chart(
-                coin_id="bitcoin",
+                coin_id="coin_id",
                 entity_id="",
                 days="days",
             )
@@ -196,7 +196,7 @@ class TestPublicTreasury:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `coin_id` but received ''"):
             client.public_treasury.with_raw_response.get_holding_chart(
                 coin_id="",
-                entity_id="strategy",
+                entity_id="entity_id",
                 days="days",
             )
 
@@ -204,7 +204,7 @@ class TestPublicTreasury:
     @parametrize
     def test_method_get_transaction_history(self, client: Coingecko) -> None:
         public_treasury = client.public_treasury.get_transaction_history(
-            entity_id="strategy",
+            entity_id="entity_id",
         )
         assert_matches_type(PublicTreasuryGetTransactionHistoryResponse, public_treasury, path=["response"])
 
@@ -212,7 +212,7 @@ class TestPublicTreasury:
     @parametrize
     def test_method_get_transaction_history_with_all_params(self, client: Coingecko) -> None:
         public_treasury = client.public_treasury.get_transaction_history(
-            entity_id="strategy",
+            entity_id="entity_id",
             coin_ids="coin_ids",
             order="date_desc",
             page=0,
@@ -224,7 +224,7 @@ class TestPublicTreasury:
     @parametrize
     def test_raw_response_get_transaction_history(self, client: Coingecko) -> None:
         response = client.public_treasury.with_raw_response.get_transaction_history(
-            entity_id="strategy",
+            entity_id="entity_id",
         )
 
         assert response.is_closed is True
@@ -236,7 +236,7 @@ class TestPublicTreasury:
     @parametrize
     def test_streaming_response_get_transaction_history(self, client: Coingecko) -> None:
         with client.public_treasury.with_streaming_response.get_transaction_history(
-            entity_id="strategy",
+            entity_id="entity_id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -264,7 +264,7 @@ class TestAsyncPublicTreasury:
     @parametrize
     async def test_method_get_coin_id(self, async_client: AsyncCoingecko) -> None:
         public_treasury = await async_client.public_treasury.get_coin_id(
-            coin_id="bitcoin",
+            coin_id="coin_id",
             entity="companies",
         )
         assert_matches_type(PublicTreasuryGetCoinIDResponse, public_treasury, path=["response"])
@@ -273,11 +273,11 @@ class TestAsyncPublicTreasury:
     @parametrize
     async def test_method_get_coin_id_with_all_params(self, async_client: AsyncCoingecko) -> None:
         public_treasury = await async_client.public_treasury.get_coin_id(
-            coin_id="bitcoin",
+            coin_id="coin_id",
             entity="companies",
             order="total_holdings_usd_desc",
-            page=1,
-            per_page=250,
+            page=0,
+            per_page=0,
         )
         assert_matches_type(PublicTreasuryGetCoinIDResponse, public_treasury, path=["response"])
 
@@ -285,7 +285,7 @@ class TestAsyncPublicTreasury:
     @parametrize
     async def test_raw_response_get_coin_id(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.public_treasury.with_raw_response.get_coin_id(
-            coin_id="bitcoin",
+            coin_id="coin_id",
             entity="companies",
         )
 
@@ -298,7 +298,7 @@ class TestAsyncPublicTreasury:
     @parametrize
     async def test_streaming_response_get_coin_id(self, async_client: AsyncCoingecko) -> None:
         async with async_client.public_treasury.with_streaming_response.get_coin_id(
-            coin_id="bitcoin",
+            coin_id="coin_id",
             entity="companies",
         ) as response:
             assert not response.is_closed
@@ -322,7 +322,7 @@ class TestAsyncPublicTreasury:
     @parametrize
     async def test_method_get_entity_id(self, async_client: AsyncCoingecko) -> None:
         public_treasury = await async_client.public_treasury.get_entity_id(
-            entity_id="strategy",
+            entity_id="entity_id",
         )
         assert_matches_type(PublicTreasuryGetEntityIDResponse, public_treasury, path=["response"])
 
@@ -330,7 +330,7 @@ class TestAsyncPublicTreasury:
     @parametrize
     async def test_method_get_entity_id_with_all_params(self, async_client: AsyncCoingecko) -> None:
         public_treasury = await async_client.public_treasury.get_entity_id(
-            entity_id="strategy",
+            entity_id="entity_id",
             holding_amount_change="holding_amount_change",
             holding_change_percentage="holding_change_percentage",
         )
@@ -340,7 +340,7 @@ class TestAsyncPublicTreasury:
     @parametrize
     async def test_raw_response_get_entity_id(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.public_treasury.with_raw_response.get_entity_id(
-            entity_id="strategy",
+            entity_id="entity_id",
         )
 
         assert response.is_closed is True
@@ -352,7 +352,7 @@ class TestAsyncPublicTreasury:
     @parametrize
     async def test_streaming_response_get_entity_id(self, async_client: AsyncCoingecko) -> None:
         async with async_client.public_treasury.with_streaming_response.get_entity_id(
-            entity_id="strategy",
+            entity_id="entity_id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -374,8 +374,8 @@ class TestAsyncPublicTreasury:
     @parametrize
     async def test_method_get_holding_chart(self, async_client: AsyncCoingecko) -> None:
         public_treasury = await async_client.public_treasury.get_holding_chart(
-            coin_id="bitcoin",
-            entity_id="strategy",
+            coin_id="coin_id",
+            entity_id="entity_id",
             days="days",
         )
         assert_matches_type(PublicTreasuryGetHoldingChartResponse, public_treasury, path=["response"])
@@ -384,8 +384,8 @@ class TestAsyncPublicTreasury:
     @parametrize
     async def test_method_get_holding_chart_with_all_params(self, async_client: AsyncCoingecko) -> None:
         public_treasury = await async_client.public_treasury.get_holding_chart(
-            coin_id="bitcoin",
-            entity_id="strategy",
+            coin_id="coin_id",
+            entity_id="entity_id",
             days="days",
             include_empty_intervals=True,
         )
@@ -395,8 +395,8 @@ class TestAsyncPublicTreasury:
     @parametrize
     async def test_raw_response_get_holding_chart(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.public_treasury.with_raw_response.get_holding_chart(
-            coin_id="bitcoin",
-            entity_id="strategy",
+            coin_id="coin_id",
+            entity_id="entity_id",
             days="days",
         )
 
@@ -409,8 +409,8 @@ class TestAsyncPublicTreasury:
     @parametrize
     async def test_streaming_response_get_holding_chart(self, async_client: AsyncCoingecko) -> None:
         async with async_client.public_treasury.with_streaming_response.get_holding_chart(
-            coin_id="bitcoin",
-            entity_id="strategy",
+            coin_id="coin_id",
+            entity_id="entity_id",
             days="days",
         ) as response:
             assert not response.is_closed
@@ -426,7 +426,7 @@ class TestAsyncPublicTreasury:
     async def test_path_params_get_holding_chart(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `entity_id` but received ''"):
             await async_client.public_treasury.with_raw_response.get_holding_chart(
-                coin_id="bitcoin",
+                coin_id="coin_id",
                 entity_id="",
                 days="days",
             )
@@ -434,7 +434,7 @@ class TestAsyncPublicTreasury:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `coin_id` but received ''"):
             await async_client.public_treasury.with_raw_response.get_holding_chart(
                 coin_id="",
-                entity_id="strategy",
+                entity_id="entity_id",
                 days="days",
             )
 
@@ -442,7 +442,7 @@ class TestAsyncPublicTreasury:
     @parametrize
     async def test_method_get_transaction_history(self, async_client: AsyncCoingecko) -> None:
         public_treasury = await async_client.public_treasury.get_transaction_history(
-            entity_id="strategy",
+            entity_id="entity_id",
         )
         assert_matches_type(PublicTreasuryGetTransactionHistoryResponse, public_treasury, path=["response"])
 
@@ -450,7 +450,7 @@ class TestAsyncPublicTreasury:
     @parametrize
     async def test_method_get_transaction_history_with_all_params(self, async_client: AsyncCoingecko) -> None:
         public_treasury = await async_client.public_treasury.get_transaction_history(
-            entity_id="strategy",
+            entity_id="entity_id",
             coin_ids="coin_ids",
             order="date_desc",
             page=0,
@@ -462,7 +462,7 @@ class TestAsyncPublicTreasury:
     @parametrize
     async def test_raw_response_get_transaction_history(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.public_treasury.with_raw_response.get_transaction_history(
-            entity_id="strategy",
+            entity_id="entity_id",
         )
 
         assert response.is_closed is True
@@ -474,7 +474,7 @@ class TestAsyncPublicTreasury:
     @parametrize
     async def test_streaming_response_get_transaction_history(self, async_client: AsyncCoingecko) -> None:
         async with async_client.public_treasury.with_streaming_response.get_transaction_history(
-            entity_id="strategy",
+            entity_id="entity_id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"

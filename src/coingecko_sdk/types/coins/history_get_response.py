@@ -11,156 +11,127 @@ __all__ = [
     "DeveloperDataCodeAdditionsDeletions4Weeks",
     "Image",
     "MarketData",
-    "MarketDataCurrentPrice",
-    "MarketDataMarketCap",
-    "MarketDataTotalVolume",
     "PublicInterestStats",
 ]
 
 
 class CommunityData(BaseModel):
-    """coin community data"""
+    """Community engagement data"""
 
     facebook_likes: Optional[float] = None
-    """coin facebook likes"""
+    """Number of Facebook likes"""
 
     reddit_accounts_active_48h: Optional[float] = None
-    """coin reddit accounts active 48h"""
+    """Active Reddit accounts in 48 hours"""
 
     reddit_average_comments_48h: Optional[float] = None
-    """coin reddit average comments 48h"""
+    """Average Reddit comments in 48 hours"""
 
     reddit_average_posts_48h: Optional[float] = None
-    """coin reddit average posts 48h"""
+    """Average Reddit posts in 48 hours"""
 
     reddit_subscribers: Optional[float] = None
-    """coin reddit subscribers"""
+    """Number of Reddit subscribers"""
 
 
 class DeveloperDataCodeAdditionsDeletions4Weeks(BaseModel):
-    """coin code additions deletions 4 weeks"""
+    """Code additions and deletions in the last 4 weeks"""
 
     additions: Optional[float] = None
+    """Lines added"""
 
     deletions: Optional[float] = None
+    """Lines deleted"""
 
 
 class DeveloperData(BaseModel):
-    """coin developer data"""
+    """Developer activity data"""
 
     closed_issues: Optional[float] = None
-    """coin repository closed issues"""
+    """Closed issues"""
 
     code_additions_deletions_4_weeks: Optional[DeveloperDataCodeAdditionsDeletions4Weeks] = None
-    """coin code additions deletions 4 weeks"""
+    """Code additions and deletions in the last 4 weeks"""
 
     commit_count_4_weeks: Optional[float] = None
-    """coin commit count 4 weeks"""
+    """Commit count in the last 4 weeks"""
 
     forks: Optional[float] = None
-    """coin repository forks"""
+    """Repository forks"""
 
     pull_request_contributors: Optional[float] = None
-    """coin repository pull request contributors"""
+    """Pull request contributors"""
 
     pull_requests_merged: Optional[float] = None
-    """coin repository pull requests merged"""
+    """Pull requests merged"""
 
     stars: Optional[float] = None
-    """coin repository stars"""
+    """Repository stars"""
 
     subscribers: Optional[float] = None
-    """coin repository subscribers"""
+    """Repository subscribers"""
 
     total_issues: Optional[float] = None
-    """coin repository total issues"""
+    """Total issues"""
 
 
 class Image(BaseModel):
-    """coin image url"""
+    """Coin image URLs"""
 
     small: Optional[str] = None
+    """Small image URL"""
 
     thumb: Optional[str] = None
-
-
-class MarketDataCurrentPrice(BaseModel):
-    """coin current price"""
-
-    btc: Optional[float] = None
-
-    eur: Optional[float] = None
-
-    usd: Optional[float] = None
-
-
-class MarketDataMarketCap(BaseModel):
-    """coin market cap"""
-
-    btc: Optional[float] = None
-
-    eur: Optional[float] = None
-
-    usd: Optional[float] = None
-
-
-class MarketDataTotalVolume(BaseModel):
-    """coin total volume"""
-
-    btc: Optional[float] = None
-
-    eur: Optional[float] = None
-
-    usd: Optional[float] = None
+    """Thumbnail image URL"""
 
 
 class MarketData(BaseModel):
-    """coin market data"""
+    """Market data at the given date"""
 
-    current_price: Optional[MarketDataCurrentPrice] = None
-    """coin current price"""
+    current_price: Optional[Dict[str, float]] = None
+    """Current price keyed by currency"""
 
-    market_cap: Optional[MarketDataMarketCap] = None
-    """coin market cap"""
+    market_cap: Optional[Dict[str, float]] = None
+    """Market capitalization keyed by currency"""
 
-    total_volume: Optional[MarketDataTotalVolume] = None
-    """coin total volume"""
+    total_volume: Optional[Dict[str, float]] = None
+    """Total trading volume keyed by currency"""
 
 
 class PublicInterestStats(BaseModel):
-    """coin public interest stats"""
+    """Public interest statistics"""
 
     alexa_rank: Optional[float] = None
-    """coin alexa rank"""
+    """Alexa rank"""
 
     bing_matches: Optional[float] = None
-    """coin bing matches"""
+    """Bing search matches"""
 
 
 class HistoryGetResponse(BaseModel):
-    id: Optional[str] = None
-    """coin ID"""
+    id: str
+    """Coin ID"""
 
-    community_data: Optional[CommunityData] = None
-    """coin community data"""
+    community_data: CommunityData
+    """Community engagement data"""
 
-    developer_data: Optional[DeveloperData] = None
-    """coin developer data"""
+    developer_data: DeveloperData
+    """Developer activity data"""
 
-    image: Optional[Image] = None
-    """coin image url"""
+    image: Image
+    """Coin image URLs"""
+
+    market_data: MarketData
+    """Market data at the given date"""
+
+    name: str
+    """Coin name"""
+
+    public_interest_stats: PublicInterestStats
+    """Public interest statistics"""
+
+    symbol: str
+    """Coin symbol"""
 
     localization: Optional[Dict[str, str]] = None
-    """coin localization"""
-
-    market_data: Optional[MarketData] = None
-    """coin market data"""
-
-    name: Optional[str] = None
-    """coin name"""
-
-    public_interest_stats: Optional[PublicInterestStats] = None
-    """coin public interest stats"""
-
-    symbol: Optional[str] = None
-    """coin symbol"""
+    """Localized coin names keyed by locale code"""

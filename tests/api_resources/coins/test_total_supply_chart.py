@@ -24,7 +24,7 @@ class TestTotalSupplyChart:
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         total_supply_chart = client.coins.total_supply_chart.get(
-            id="bitcoin",
+            id="id",
             days="days",
         )
         assert_matches_type(TotalSupplyChartGetResponse, total_supply_chart, path=["response"])
@@ -33,7 +33,7 @@ class TestTotalSupplyChart:
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         total_supply_chart = client.coins.total_supply_chart.get(
-            id="bitcoin",
+            id="id",
             days="days",
             interval="daily",
         )
@@ -43,7 +43,7 @@ class TestTotalSupplyChart:
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.coins.total_supply_chart.with_raw_response.get(
-            id="bitcoin",
+            id="id",
             days="days",
         )
 
@@ -56,7 +56,7 @@ class TestTotalSupplyChart:
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.coins.total_supply_chart.with_streaming_response.get(
-            id="bitcoin",
+            id="id",
             days="days",
         ) as response:
             assert not response.is_closed
@@ -80,7 +80,7 @@ class TestTotalSupplyChart:
     @parametrize
     def test_method_get_range(self, client: Coingecko) -> None:
         total_supply_chart = client.coins.total_supply_chart.get_range(
-            id="bitcoin",
+            id="id",
             from_="from",
             to="to",
         )
@@ -90,7 +90,7 @@ class TestTotalSupplyChart:
     @parametrize
     def test_raw_response_get_range(self, client: Coingecko) -> None:
         response = client.coins.total_supply_chart.with_raw_response.get_range(
-            id="bitcoin",
+            id="id",
             from_="from",
             to="to",
         )
@@ -104,7 +104,7 @@ class TestTotalSupplyChart:
     @parametrize
     def test_streaming_response_get_range(self, client: Coingecko) -> None:
         with client.coins.total_supply_chart.with_streaming_response.get_range(
-            id="bitcoin",
+            id="id",
             from_="from",
             to="to",
         ) as response:
@@ -136,7 +136,7 @@ class TestAsyncTotalSupplyChart:
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         total_supply_chart = await async_client.coins.total_supply_chart.get(
-            id="bitcoin",
+            id="id",
             days="days",
         )
         assert_matches_type(TotalSupplyChartGetResponse, total_supply_chart, path=["response"])
@@ -145,7 +145,7 @@ class TestAsyncTotalSupplyChart:
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         total_supply_chart = await async_client.coins.total_supply_chart.get(
-            id="bitcoin",
+            id="id",
             days="days",
             interval="daily",
         )
@@ -155,7 +155,7 @@ class TestAsyncTotalSupplyChart:
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.coins.total_supply_chart.with_raw_response.get(
-            id="bitcoin",
+            id="id",
             days="days",
         )
 
@@ -168,7 +168,7 @@ class TestAsyncTotalSupplyChart:
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.coins.total_supply_chart.with_streaming_response.get(
-            id="bitcoin",
+            id="id",
             days="days",
         ) as response:
             assert not response.is_closed
@@ -192,7 +192,7 @@ class TestAsyncTotalSupplyChart:
     @parametrize
     async def test_method_get_range(self, async_client: AsyncCoingecko) -> None:
         total_supply_chart = await async_client.coins.total_supply_chart.get_range(
-            id="bitcoin",
+            id="id",
             from_="from",
             to="to",
         )
@@ -202,7 +202,7 @@ class TestAsyncTotalSupplyChart:
     @parametrize
     async def test_raw_response_get_range(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.coins.total_supply_chart.with_raw_response.get_range(
-            id="bitcoin",
+            id="id",
             from_="from",
             to="to",
         )
@@ -216,7 +216,7 @@ class TestAsyncTotalSupplyChart:
     @parametrize
     async def test_streaming_response_get_range(self, async_client: AsyncCoingecko) -> None:
         async with async_client.coins.total_supply_chart.with_streaming_response.get_range(
-            id="bitcoin",
+            id="id",
             from_="from",
             to="to",
         ) as response:

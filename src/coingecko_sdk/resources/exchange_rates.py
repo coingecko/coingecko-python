@@ -49,7 +49,7 @@ class ExchangeRatesResource(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeRateGetResponse:
-        """This endpoint allows you to **query BTC exchange rates with other currencies**"""
+        """To query BTC exchange rates with other currencies"""
         return self._get(
             "/exchange_rates",
             options=make_request_options(
@@ -89,7 +89,7 @@ class AsyncExchangeRatesResource(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeRateGetResponse:
-        """This endpoint allows you to **query BTC exchange rates with other currencies**"""
+        """To query BTC exchange rates with other currencies"""
         return await self._get(
             "/exchange_rates",
             options=make_request_options(

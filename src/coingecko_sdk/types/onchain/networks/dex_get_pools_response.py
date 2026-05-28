@@ -32,6 +32,8 @@ __all__ = [
 
 
 class DataAttributesPriceChangePercentage(BaseModel):
+    """Price change percentage over various timeframes"""
+
     h1: Optional[str] = None
 
     h24: Optional[str] = None
@@ -106,6 +108,8 @@ class DataAttributesTransactionsM5(BaseModel):
 
 
 class DataAttributesTransactions(BaseModel):
+    """Transaction counts over various timeframes"""
+
     h1: Optional[DataAttributesTransactionsH1] = None
 
     h24: Optional[DataAttributesTransactionsH24] = None
@@ -120,6 +124,8 @@ class DataAttributesTransactions(BaseModel):
 
 
 class DataAttributesVolumeUsd(BaseModel):
+    """Volume in USD over various timeframes"""
+
     h1: Optional[str] = None
 
     h24: Optional[str] = None
@@ -134,41 +140,62 @@ class DataAttributesVolumeUsd(BaseModel):
 
 
 class DataAttributes(BaseModel):
-    address: Optional[str] = None
+    address: str
+    """Pool contract address"""
 
     base_token_price_native_currency: Optional[str] = None
+    """Base token price in native currency"""
 
     base_token_price_quote_token: Optional[str] = None
+    """Base token price in quote token"""
 
-    base_token_price_usd: Optional[str] = None
-
-    community_sus_report: Optional[float] = None
+    base_token_price_usd: str
+    """Base token price in USD"""
 
     fdv_usd: Optional[str] = None
+    """Fully diluted valuation in USD"""
 
     market_cap_usd: Optional[str] = None
+    """Market cap in USD"""
 
-    name: Optional[str] = None
+    name: str
+    """Pool name"""
 
-    pool_created_at: Optional[str] = None
+    pool_created_at: str
+    """Pool creation timestamp"""
 
-    price_change_percentage: Optional[DataAttributesPriceChangePercentage] = None
+    price_change_percentage: DataAttributesPriceChangePercentage
+    """Price change percentage over various timeframes"""
 
     quote_token_price_base_token: Optional[str] = None
+    """Quote token price in base token"""
 
     quote_token_price_native_currency: Optional[str] = None
+    """Quote token price in native currency"""
 
-    quote_token_price_usd: Optional[str] = None
+    quote_token_price_usd: str
+    """Quote token price in USD"""
 
     reserve_in_usd: Optional[str] = None
+    """Total reserve in USD"""
+
+    transactions: DataAttributesTransactions
+    """Transaction counts over various timeframes"""
+
+    volume_usd: DataAttributesVolumeUsd
+    """Volume in USD over various timeframes"""
+
+    community_sus_report: Optional[int] = None
+    """GeckoTerminal community suspicious reports count"""
 
     sentiment_vote_negative_percentage: Optional[float] = None
+    """GeckoTerminal community negative sentiment vote percentage"""
 
     sentiment_vote_positive_percentage: Optional[float] = None
+    """GeckoTerminal community positive sentiment vote percentage"""
 
-    transactions: Optional[DataAttributesTransactions] = None
-
-    volume_usd: Optional[DataAttributesVolumeUsd] = None
+    token_price_usd: Optional[str] = None
+    """Price of the queried token in USD, present when querying pools by token address"""
 
 
 class DataRelationshipsBaseTokenData(BaseModel):
@@ -212,6 +239,8 @@ class DataRelationshipsQuoteToken(BaseModel):
 
 
 class DataRelationships(BaseModel):
+    """Related resources"""
+
     base_token: Optional[DataRelationshipsBaseToken] = None
 
     dex: Optional[DataRelationshipsDex] = None
@@ -222,17 +251,22 @@ class DataRelationships(BaseModel):
 
 
 class Data(BaseModel):
-    id: Optional[str] = None
+    id: str
+    """Pool identifier"""
 
-    attributes: Optional[DataAttributes] = None
+    attributes: DataAttributes
 
-    relationships: Optional[DataRelationships] = None
+    relationships: DataRelationships
+    """Related resources"""
 
-    type: Optional[str] = None
+    type: str
+    """Resource type"""
 
 
 class IncludedAttributes(BaseModel):
     address: Optional[str] = None
+
+    coingecko_asset_platform_id: Optional[str] = None
 
     coingecko_coin_id: Optional[str] = None
 
@@ -254,6 +288,7 @@ class Included(BaseModel):
 
 
 class DexGetPoolsResponse(BaseModel):
-    data: Optional[List[Data]] = None
+    data: List[Data]
 
     included: Optional[List[Included]] = None
+    """Included related resources, present when include parameter is specified"""

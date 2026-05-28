@@ -9,33 +9,36 @@ __all__ = ["AssetPlatformGetResponse", "AssetPlatformGetResponseItem", "AssetPla
 
 
 class AssetPlatformGetResponseItemImage(BaseModel):
-    """image of the asset platform"""
+    """Asset platform image URLs"""
 
     large: Optional[str] = None
+    """Large image URL"""
 
     small: Optional[str] = None
+    """Small image URL"""
 
     thumb: Optional[str] = None
+    """Thumbnail image URL"""
 
 
 class AssetPlatformGetResponseItem(BaseModel):
-    id: Optional[str] = None
-    """asset platform ID"""
+    id: str
+    """Asset platform ID"""
 
     chain_identifier: Optional[float] = None
-    """chainlist's chain ID"""
+    """Chainlist's chain ID"""
 
-    image: Optional[AssetPlatformGetResponseItemImage] = None
-    """image of the asset platform"""
+    image: AssetPlatformGetResponseItemImage
+    """Asset platform image URLs"""
 
-    name: Optional[str] = None
-    """chain name"""
+    name: str
+    """Chain name"""
 
     native_coin_id: Optional[str] = None
-    """chain native coin ID"""
+    """Chain native coin ID"""
 
-    shortname: Optional[str] = None
-    """chain shortname"""
+    shortname: str
+    """Chain shortname"""
 
 
 AssetPlatformGetResponse: TypeAlias = List[AssetPlatformGetResponseItem]
