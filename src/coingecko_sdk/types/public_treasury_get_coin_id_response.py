@@ -7,14 +7,14 @@ from .._models import BaseModel
 
 __all__ = [
     "PublicTreasuryGetCoinIDResponse",
-    "UnionMember0",
-    "UnionMember0Company",
-    "UnionMember1",
-    "UnionMember1Government",
+    "CompanyTreasury",
+    "CompanyTreasuryCompany",
+    "GovernmentTreasury",
+    "GovernmentTreasuryGovernment",
 ]
 
 
-class UnionMember0Company(BaseModel):
+class CompanyTreasuryCompany(BaseModel):
     country: str
     """Country code"""
 
@@ -37,8 +37,8 @@ class UnionMember0Company(BaseModel):
     """Total crypto holdings"""
 
 
-class UnionMember0(BaseModel):
-    companies: List[UnionMember0Company]
+class CompanyTreasury(BaseModel):
+    companies: List[CompanyTreasuryCompany]
     """List of companies holding crypto"""
 
     market_cap_dominance: float
@@ -51,7 +51,7 @@ class UnionMember0(BaseModel):
     """Total crypto holdings value in USD"""
 
 
-class UnionMember1Government(BaseModel):
+class GovernmentTreasuryGovernment(BaseModel):
     country: str
     """Country code"""
 
@@ -74,8 +74,8 @@ class UnionMember1Government(BaseModel):
     """Total crypto holdings"""
 
 
-class UnionMember1(BaseModel):
-    governments: List[UnionMember1Government]
+class GovernmentTreasury(BaseModel):
+    governments: List[GovernmentTreasuryGovernment]
     """List of governments holding crypto"""
 
     market_cap_dominance: float
@@ -88,4 +88,4 @@ class UnionMember1(BaseModel):
     """Total crypto holdings value in USD"""
 
 
-PublicTreasuryGetCoinIDResponse: TypeAlias = Union[UnionMember0, UnionMember1]
+PublicTreasuryGetCoinIDResponse: TypeAlias = Union[CompanyTreasury, GovernmentTreasury]
