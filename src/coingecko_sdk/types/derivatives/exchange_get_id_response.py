@@ -8,6 +8,8 @@ __all__ = ["ExchangeGetIDResponse", "Ticker", "TickerConvertedLast", "TickerConv
 
 
 class TickerConvertedLast(BaseModel):
+    """Derivative converted last price"""
+
     btc: Optional[str] = None
 
     eth: Optional[str] = None
@@ -16,6 +18,8 @@ class TickerConvertedLast(BaseModel):
 
 
 class TickerConvertedVolume(BaseModel):
+    """Derivative converted volume"""
+
     btc: Optional[str] = None
 
     eth: Optional[str] = None
@@ -24,90 +28,94 @@ class TickerConvertedVolume(BaseModel):
 
 
 class Ticker(BaseModel):
-    base: Optional[str] = None
-    """derivative base asset"""
+    base: str
+    """Derivative base asset"""
 
-    bid_ask_spread: Optional[float] = None
-    """derivative bid ask spread"""
+    bid_ask_spread: float
+    """Derivative bid-ask spread"""
 
-    coin_id: Optional[str] = None
-    """derivative base asset coin ID"""
+    coin_id: str
+    """Derivative base asset coin ID"""
 
-    contract_type: Optional[str] = None
-    """derivative contract type"""
+    contract_type: str
+    """Derivative contract type"""
 
-    converted_last: Optional[TickerConvertedLast] = None
+    converted_last: TickerConvertedLast
+    """Derivative converted last price"""
 
-    converted_volume: Optional[TickerConvertedVolume] = None
+    converted_volume: TickerConvertedVolume
+    """Derivative converted volume"""
 
-    expired_at: Optional[str] = None
+    expired_at: Optional[float] = None
+    """Derivative expiry time in UNIX timestamp"""
 
-    funding_rate: Optional[float] = None
-    """derivative funding rate"""
+    funding_rate: float
+    """Derivative funding rate"""
 
-    h24_percentage_change: Optional[float] = None
-    """derivative price percentage change in 24 hours"""
+    h24_percentage_change: float
+    """Derivative price percentage change in 24 hours"""
 
-    h24_volume: Optional[float] = None
-    """derivative volume in 24 hours"""
+    h24_volume: float
+    """Derivative volume in 24 hours"""
 
-    index: Optional[float] = None
-    """derivative underlying asset price"""
+    index: float
+    """Derivative underlying asset price"""
 
-    index_basis_percentage: Optional[float] = None
-    """difference of derivative price and index price in percentage"""
+    index_basis_percentage: float
+    """Difference of derivative price and index price in percentage"""
 
-    last: Optional[float] = None
-    """derivative last price"""
+    last: float
+    """Derivative last price"""
 
-    last_traded: Optional[float] = None
-    """derivative last updated time"""
+    last_traded: float
+    """Derivative last traded time in UNIX timestamp"""
 
-    open_interest_usd: Optional[float] = None
-    """derivative open interest in USD"""
+    open_interest_usd: float
+    """Derivative open interest in USD"""
 
-    symbol: Optional[str] = None
-    """derivative ticker symbol"""
+    symbol: str
+    """Derivative ticker symbol"""
 
-    target: Optional[str] = None
-    """derivative target asset"""
+    target: str
+    """Derivative target asset"""
 
-    target_coin_id: Optional[str] = None
-    """derivative target asset coin ID"""
+    target_coin_id: str
+    """Derivative target asset coin ID"""
 
-    trade_url: Optional[str] = None
-    """derivative trade url"""
+    trade_url: str
+    """Derivative trade URL"""
 
 
 class ExchangeGetIDResponse(BaseModel):
     country: Optional[str] = None
-    """derivatives exchange incorporated country"""
+    """Derivatives exchange incorporated country"""
 
-    description: Optional[str] = None
-    """derivatives exchange description"""
+    description: str
+    """Derivatives exchange description"""
 
-    image: Optional[str] = None
-    """derivatives exchange image url"""
+    image: str
+    """Derivatives exchange image URL"""
 
-    name: Optional[str] = None
-    """derivatives exchange name"""
+    name: str
+    """Derivatives exchange name"""
 
-    number_of_futures_pairs: Optional[float] = None
-    """number of futures pairs in the derivatives exchange"""
+    number_of_futures_pairs: int
+    """Number of futures pairs in the derivatives exchange"""
 
-    number_of_perpetual_pairs: Optional[float] = None
-    """number of perpetual pairs in the derivatives exchange"""
+    number_of_perpetual_pairs: int
+    """Number of perpetual pairs in the derivatives exchange"""
 
     open_interest_btc: Optional[float] = None
-    """derivatives exchange open interest in BTC"""
+    """Derivatives exchange open interest in BTC"""
+
+    trade_volume_24h_btc: str
+    """Derivatives exchange trade volume in BTC in 24 hours"""
+
+    url: str
+    """Derivatives exchange website URL"""
+
+    year_established: Optional[int] = None
+    """Derivatives exchange established year"""
 
     tickers: Optional[List[Ticker]] = None
-
-    trade_volume_24h_btc: Optional[str] = None
-    """derivatives exchange trade volume in BTC in 24 hours"""
-
-    url: Optional[str] = None
-    """derivatives exchange website url"""
-
-    year_established: Optional[float] = None
-    """derivatives exchange established year"""
+    """Derivative tickers data, available when include_tickers is specified"""

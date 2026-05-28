@@ -21,7 +21,7 @@ class TestTokenLists:
     @parametrize
     def test_method_get_all_json(self, client: Coingecko) -> None:
         token_list = client.token_lists.get_all_json(
-            "ethereum",
+            "asset_platform_id",
         )
         assert_matches_type(TokenListGetAllJsonResponse, token_list, path=["response"])
 
@@ -29,7 +29,7 @@ class TestTokenLists:
     @parametrize
     def test_raw_response_get_all_json(self, client: Coingecko) -> None:
         response = client.token_lists.with_raw_response.get_all_json(
-            "ethereum",
+            "asset_platform_id",
         )
 
         assert response.is_closed is True
@@ -41,7 +41,7 @@ class TestTokenLists:
     @parametrize
     def test_streaming_response_get_all_json(self, client: Coingecko) -> None:
         with client.token_lists.with_streaming_response.get_all_json(
-            "ethereum",
+            "asset_platform_id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -69,7 +69,7 @@ class TestAsyncTokenLists:
     @parametrize
     async def test_method_get_all_json(self, async_client: AsyncCoingecko) -> None:
         token_list = await async_client.token_lists.get_all_json(
-            "ethereum",
+            "asset_platform_id",
         )
         assert_matches_type(TokenListGetAllJsonResponse, token_list, path=["response"])
 
@@ -77,7 +77,7 @@ class TestAsyncTokenLists:
     @parametrize
     async def test_raw_response_get_all_json(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.token_lists.with_raw_response.get_all_json(
-            "ethereum",
+            "asset_platform_id",
         )
 
         assert response.is_closed is True
@@ -89,7 +89,7 @@ class TestAsyncTokenLists:
     @parametrize
     async def test_streaming_response_get_all_json(self, async_client: AsyncCoingecko) -> None:
         async with async_client.token_lists.with_streaming_response.get_all_json(
-            "ethereum",
+            "asset_platform_id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"

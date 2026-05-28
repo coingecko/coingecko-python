@@ -9,10 +9,10 @@ __all__ = ["TrendingSearchGetParams"]
 
 class TrendingSearchGetParams(TypedDict, total=False):
     include: str
-    """
-    attributes to include, comma-separated if more than one to include Available
-    values: `base_token`, `quote_token`, `dex`, `network`
+    """Attributes to include, comma-separated if more than one.
+
+    Available values: `base_token`, `quote_token`, `dex`, `network`
     """
 
     pools: int
-    """number of pools to return, maximum 10 Default value: 4"""
+    """Number of pools to return, maximum 10. Default value: 4"""

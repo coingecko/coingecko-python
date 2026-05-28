@@ -1,6 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List, Optional
+from typing import List
 from typing_extensions import Literal
 
 from .._models import BaseModel
@@ -9,30 +9,30 @@ __all__ = ["PublicTreasuryGetTransactionHistoryResponse", "Transaction"]
 
 
 class Transaction(BaseModel):
-    average_entry_value_usd: Optional[float] = None
-    """average entry value in usd after the transaction"""
+    average_entry_value_usd: float
+    """Average entry value in USD after the transaction"""
 
-    coin_id: Optional[str] = None
-    """coin ID"""
+    coin_id: str
+    """Coin ID"""
 
-    date: Optional[float] = None
-    """transaction date in UNIX timestamp"""
+    date: float
+    """Transaction date in UNIX timestamp"""
 
-    holding_balance: Optional[float] = None
-    """total holding balance after the transaction"""
+    holding_balance: float
+    """Total holding balance after the transaction"""
 
-    holding_net_change: Optional[float] = None
-    """net change in holdings after the transaction"""
+    holding_net_change: float
+    """Net change in holdings after the transaction"""
 
-    source_url: Optional[str] = None
-    """source document URL"""
+    source_url: str
+    """Source document URL"""
 
-    transaction_value_usd: Optional[float] = None
-    """transaction value in usd"""
+    transaction_value_usd: float
+    """Transaction value in USD"""
 
-    type: Optional[Literal["buy", "sell"]] = None
-    """transaction type: buy or sell"""
+    type: Literal["buy", "sell"]
+    """Transaction type"""
 
 
 class PublicTreasuryGetTransactionHistoryResponse(BaseModel):
-    transactions: Optional[List[Transaction]] = None
+    transactions: List[Transaction]

@@ -59,15 +59,15 @@ class MultiResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MultiGetAddressesResponse:
         """
-        This endpoint allows you to **query multiple tokens data based on the provided
-        token contract addresses on a network**
+        To query multiple tokens data based on the provided token contract addresses on
+        a network
 
         Args:
-          include: attributes to include
+          include: Attributes to include.
 
-          include_composition: include pool composition, default: false
+          include_composition: Include pool composition. Default: `false`
 
-          include_inactive_source: include tokens from inactive pools using the most recent swap, default: false
+          include_inactive_source: Include tokens from inactive pools using the most recent swap. Default: `false`
 
           extra_headers: Send extra headers
 
@@ -137,15 +137,15 @@ class AsyncMultiResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MultiGetAddressesResponse:
         """
-        This endpoint allows you to **query multiple tokens data based on the provided
-        token contract addresses on a network**
+        To query multiple tokens data based on the provided token contract addresses on
+        a network
 
         Args:
-          include: attributes to include
+          include: Attributes to include.
 
-          include_composition: include pool composition, default: false
+          include_composition: Include pool composition. Default: `false`
 
-          include_inactive_source: include tokens from inactive pools using the most recent swap, default: false
+          include_inactive_source: Include tokens from inactive pools using the most recent swap. Default: `false`
 
           extra_headers: Send extra headers
 

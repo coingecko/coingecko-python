@@ -1,6 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List, Optional
+from typing import List, Union, Optional
 
 from ....._models import BaseModel
 
@@ -8,25 +8,32 @@ __all__ = ["HoldersChartGetResponse", "Data", "DataAttributes", "Meta", "MetaTok
 
 
 class DataAttributes(BaseModel):
-    token_holders_list: Optional[List[List[str]]] = None
+    token_holders_list: List[List[Union[str, int]]]
+    """Historical token holders as [timestamp, holder_count] pairs"""
 
 
 class Data(BaseModel):
-    id: Optional[str] = None
+    id: str
+    """Request ID"""
 
-    attributes: Optional[DataAttributes] = None
+    attributes: DataAttributes
 
-    type: Optional[str] = None
+    type: str
+    """Resource type"""
 
 
 class MetaToken(BaseModel):
     address: Optional[str] = None
+    """Token contract address"""
 
     coingecko_coin_id: Optional[str] = None
+    """CoinGecko coin ID"""
 
     name: Optional[str] = None
+    """Token name"""
 
     symbol: Optional[str] = None
+    """Token symbol"""
 
 
 class Meta(BaseModel):
@@ -34,6 +41,6 @@ class Meta(BaseModel):
 
 
 class HoldersChartGetResponse(BaseModel):
-    data: Optional[Data] = None
+    data: Data
 
-    meta: Optional[Meta] = None
+    meta: Meta

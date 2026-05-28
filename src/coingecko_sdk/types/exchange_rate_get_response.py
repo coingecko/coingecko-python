@@ -1,6 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Dict, Optional
+from typing import Dict
 
 from .._models import BaseModel
 
@@ -8,18 +8,19 @@ __all__ = ["ExchangeRateGetResponse", "Rates"]
 
 
 class Rates(BaseModel):
-    name: Optional[str] = None
-    """name of the currency"""
+    name: str
+    """Currency name"""
 
-    type: Optional[str] = None
-    """type of the currency"""
+    type: str
+    """Currency type: crypto, fiat, or commodity"""
 
-    unit: Optional[str] = None
-    """unit of the currency"""
+    unit: str
+    """Currency unit symbol"""
 
-    value: Optional[float] = None
-    """value of the currency"""
+    value: float
+    """Exchange rate value relative to BTC"""
 
 
 class ExchangeRateGetResponse(BaseModel):
-    rates: Optional[Dict[str, Rates]] = None
+    rates: Dict[str, Rates]
+    """Exchange rates keyed by currency code"""

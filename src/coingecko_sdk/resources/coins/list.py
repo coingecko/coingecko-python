@@ -57,13 +57,12 @@ class ListResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ListGetResponse:
         """
-        This endpoint allows you to **query all the supported coins on CoinGecko with
-        coins ID, name and symbol**
+        To query all the supported coins on CoinGecko with coin ID, name and symbol
 
         Args:
-          include_platform: include platform and token's contract addresses, default: false
+          include_platform: Include platform and token's contract addresses. Default: false
 
-          status: filter by status of coins, default: active
+          status: Filter by status of coins. Default: active
 
           extra_headers: Send extra headers
 
@@ -101,10 +100,7 @@ class ListResource(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ListGetNewResponse:
-        """
-        This endpoint allows you to **query the latest 200 coins that recently listed on
-        CoinGecko**
-        """
+        """To query the latest 200 coins that recently listed on CoinGecko"""
         return self._get(
             "/coins/list/new",
             options=make_request_options(
@@ -147,13 +143,12 @@ class AsyncListResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ListGetResponse:
         """
-        This endpoint allows you to **query all the supported coins on CoinGecko with
-        coins ID, name and symbol**
+        To query all the supported coins on CoinGecko with coin ID, name and symbol
 
         Args:
-          include_platform: include platform and token's contract addresses, default: false
+          include_platform: Include platform and token's contract addresses. Default: false
 
-          status: filter by status of coins, default: active
+          status: Filter by status of coins. Default: active
 
           extra_headers: Send extra headers
 
@@ -191,10 +186,7 @@ class AsyncListResource(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ListGetNewResponse:
-        """
-        This endpoint allows you to **query the latest 200 coins that recently listed on
-        CoinGecko**
-        """
+        """To query the latest 200 coins that recently listed on CoinGecko"""
         return await self._get(
             "/coins/list/new",
             options=make_request_options(

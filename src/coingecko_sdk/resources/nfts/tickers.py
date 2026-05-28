@@ -52,8 +52,8 @@ class TickersResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TickerGetResponse:
         """
-        This endpoint allows you to **query the latest floor price and 24hr volume of a
-        NFT collection, on each NFT marketplace, e.g. OpenSea and LooksRare**
+        To query the latest floor price and 24hr volume of a NFT collection, on each NFT
+        marketplace, e.g. OpenSea and Blur
 
         Args:
           extra_headers: Send extra headers
@@ -107,8 +107,8 @@ class AsyncTickersResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TickerGetResponse:
         """
-        This endpoint allows you to **query the latest floor price and 24hr volume of a
-        NFT collection, on each NFT marketplace, e.g. OpenSea and LooksRare**
+        To query the latest floor price and 24hr volume of a NFT collection, on each NFT
+        marketplace, e.g. OpenSea and Blur
 
         Args:
           extra_headers: Send extra headers

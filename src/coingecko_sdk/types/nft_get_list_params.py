@@ -20,10 +20,10 @@ class NFTGetListParams(TypedDict, total=False):
         "market_cap_usd_asc",
         "market_cap_usd_desc",
     ]
-    """use this to sort the order of responses"""
+    """Sort order of responses."""
 
-    page: float
-    """page through results"""
+    page: int
+    """Page through results."""
 
-    per_page: float
-    """total results per page Valid values: 1...250"""
+    per_page: int
+    """Total results per page. Valid values: 1...250"""

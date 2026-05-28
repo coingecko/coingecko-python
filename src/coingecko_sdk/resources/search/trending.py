@@ -53,13 +53,13 @@ class TrendingResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TrendingGetResponse:
         """
-        This endpoint allows you **query trending search coins, NFTs and categories on
-        CoinGecko in the last 24 hours**
+        To query trending search coins, NFTs and categories on CoinGecko in the last 24
+        hours
 
         Args:
           show_max:
-              show max number of results available for the given type Available values:
-              `coins`, `nfts`, `categories` Example: `coins` or `coins,nfts,categories`
+              Show max number of results available for the given type. Available values:
+              `coins`, `nfts`, `categories` e.g. `coins` or `coins,nfts,categories`
 
           extra_headers: Send extra headers
 
@@ -114,13 +114,13 @@ class AsyncTrendingResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TrendingGetResponse:
         """
-        This endpoint allows you **query trending search coins, NFTs and categories on
-        CoinGecko in the last 24 hours**
+        To query trending search coins, NFTs and categories on CoinGecko in the last 24
+        hours
 
         Args:
           show_max:
-              show max number of results available for the given type Available values:
-              `coins`, `nfts`, `categories` Example: `coins` or `coins,nfts,categories`
+              Show max number of results available for the given type. Available values:
+              `coins`, `nfts`, `categories` e.g. `coins` or `coins,nfts,categories`
 
           extra_headers: Send extra headers
 

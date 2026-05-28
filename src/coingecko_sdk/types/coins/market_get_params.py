@@ -9,33 +9,34 @@ __all__ = ["MarketGetParams"]
 
 class MarketGetParams(TypedDict, total=False):
     vs_currency: Required[str]
-    """
-    target currency of coins and market data \\**refers to
-    [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
+    """Target currency of coins and market data.
+
+    \\**refers to
+    [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies)
     """
 
     category: str
-    """
-    filter based on coins' category \\**refers to
-    [`/coins/categories/list`](/reference/coins-categories-list).
+    """Filter based on coins' category.
+
+    \\**refers to [`/coins/categories/list`](/reference/coins-categories-list)
     """
 
     ids: str
-    """coins' IDs, comma-separated if querying more than 1 coin.
+    """Coins' IDs, comma-separated if querying more than 1 coin.
 
-    \\**refers to [`/coins/list`](/reference/coins-list).
+    \\**refers to [`/coins/list`](/reference/coins-list)
     """
 
     include_rehypothecated: bool
-    """
-    include rehypothecated tokens in results, default: false When true, returns
-    `market_cap_rank_with_rehypothecated` field
+    """Include rehypothecated tokens in results.
+
+    When true, returns `market_cap_rank_with_rehypothecated` field. Default: false
     """
 
     include_tokens: Literal["top", "all"]
-    """
-    for `symbols` lookups, specify `all` to include all matching tokens Default
-    `top` returns top-ranked tokens (by market cap or volume)
+    """For `symbols` lookups, specify `all` to include all matching tokens.
+
+    Default `top` returns top-ranked tokens by market cap or volume.
     """
 
     locale: Literal[
@@ -74,33 +75,33 @@ class MarketGetParams(TypedDict, total=False):
         "zh",
         "zh-tw",
     ]
-    """language background, default: en"""
+    """Language background. Default: en"""
 
     names: str
-    """coins' names, comma-separated if querying more than 1 coin."""
+    """Coins' names, comma-separated if querying more than 1 coin."""
 
     order: Literal["market_cap_asc", "market_cap_desc", "volume_asc", "volume_desc", "id_asc", "id_desc"]
-    """sort result by field, default: market_cap_desc"""
+    """Sort result by field. Default: market_cap_desc"""
 
-    page: float
-    """page through results, default: 1"""
+    page: int
+    """Page through results. Default: 1"""
 
-    per_page: float
-    """total results per page, default: 100 Valid values: 1...250"""
+    per_page: int
+    """Total results per page. Default: 100 Valid values: 1...250"""
 
     precision: Literal[
         "full", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"
     ]
-    """decimal place for currency price value"""
+    """Decimal places for currency price value"""
 
     price_change_percentage: str
     """
-    include price change percentage timeframe, comma-separated if query more than 1
-    timeframe Valid values: 1h, 24h, 7d, 14d, 30d, 200d, 1y
+    Include price change percentage timeframe, comma-separated if querying more than
+    1 timeframe. Valid values: `1h`, `24h`, `7d`, `14d`, `30d`, `200d`, `1y`
     """
 
     sparkline: bool
-    """include sparkline 7 days data, default: false"""
+    """Include sparkline 7-day data. Default: false"""
 
     symbols: str
-    """coins' symbols, comma-separated if querying more than 1 coin."""
+    """Coins' symbols, comma-separated if querying more than 1 coin."""

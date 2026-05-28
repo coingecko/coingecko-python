@@ -64,11 +64,11 @@ class CategoriesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CategoryGetResponse:
         """
-        This endpoint allows you to **query all the coins categories with market data
-        (market cap, volume, ...) on CoinGecko**
+        To query all the coins categories with market data (market cap, volume, etc.) on
+        CoinGecko
 
         Args:
-          order: sort results by field, default: market_cap_desc
+          order: Sort results by field. Default: `market_cap_desc`
 
           extra_headers: Send extra headers
 
@@ -100,7 +100,7 @@ class CategoriesResource(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CategoryGetListResponse:
-        """This endpoint allows you to **query all the coins categories on CoinGecko**"""
+        """To query all the coins categories on CoinGecko"""
         return self._get(
             "/coins/categories/list",
             options=make_request_options(
@@ -150,11 +150,11 @@ class AsyncCategoriesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CategoryGetResponse:
         """
-        This endpoint allows you to **query all the coins categories with market data
-        (market cap, volume, ...) on CoinGecko**
+        To query all the coins categories with market data (market cap, volume, etc.) on
+        CoinGecko
 
         Args:
-          order: sort results by field, default: market_cap_desc
+          order: Sort results by field. Default: `market_cap_desc`
 
           extra_headers: Send extra headers
 
@@ -186,7 +186,7 @@ class AsyncCategoriesResource(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CategoryGetListResponse:
-        """This endpoint allows you to **query all the coins categories on CoinGecko**"""
+        """To query all the coins categories on CoinGecko"""
         return await self._get(
             "/coins/categories/list",
             options=make_request_options(

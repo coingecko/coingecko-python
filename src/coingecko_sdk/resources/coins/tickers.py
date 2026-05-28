@@ -52,7 +52,7 @@ class TickersResource(SyncAPIResource):
         exchange_ids: str | Omit = omit,
         include_exchange_logo: bool | Omit = omit,
         order: Literal["trust_score_desc", "trust_score_asc", "volume_desc", "volume_asc"] | Omit = omit,
-        page: float | Omit = omit,
+        page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -61,24 +61,24 @@ class TickersResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TickerGetResponse:
         """
-        This endpoint allows you to **query the coin tickers on both centralized
-        exchange (CEX) and decentralized exchange (DEX) based on a particular coin ID**
+        To query the coin tickers on both centralized exchange (CEX) and decentralized
+        exchange (DEX) based on a particular coin ID
 
         Args:
-          depth: include 2% orderbook depth, ie. `cost_to_move_up_usd` and
-              `cost_to_move_down_usd` Default: false
+          depth: Include 2% orderbook depth, i.e. `cost_to_move_up_usd` and
+              `cost_to_move_down_usd`. Default: false
 
           dex_pair_format:
-              set to `symbol` to display DEX pair base and target as symbols, default:
+              Set to `symbol` to display DEX pair base and target as symbols. Default:
               `contract_address`
 
-          exchange_ids: exchange ID \\**refers to [`/exchanges/list`](/reference/exchanges-list).
+          exchange_ids: Exchange ID. \\**refers to [`/exchanges/list`](/reference/exchanges-list)
 
-          include_exchange_logo: include exchange logo, default: false
+          include_exchange_logo: Include exchange logo. Default: false
 
-          order: use this to sort the order of responses, default: trust_score_desc
+          order: Sort the order of responses. Default: trust_score_desc
 
-          page: page through results
+          page: Page through results
 
           extra_headers: Send extra headers
 
@@ -142,7 +142,7 @@ class AsyncTickersResource(AsyncAPIResource):
         exchange_ids: str | Omit = omit,
         include_exchange_logo: bool | Omit = omit,
         order: Literal["trust_score_desc", "trust_score_asc", "volume_desc", "volume_asc"] | Omit = omit,
-        page: float | Omit = omit,
+        page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -151,24 +151,24 @@ class AsyncTickersResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TickerGetResponse:
         """
-        This endpoint allows you to **query the coin tickers on both centralized
-        exchange (CEX) and decentralized exchange (DEX) based on a particular coin ID**
+        To query the coin tickers on both centralized exchange (CEX) and decentralized
+        exchange (DEX) based on a particular coin ID
 
         Args:
-          depth: include 2% orderbook depth, ie. `cost_to_move_up_usd` and
-              `cost_to_move_down_usd` Default: false
+          depth: Include 2% orderbook depth, i.e. `cost_to_move_up_usd` and
+              `cost_to_move_down_usd`. Default: false
 
           dex_pair_format:
-              set to `symbol` to display DEX pair base and target as symbols, default:
+              Set to `symbol` to display DEX pair base and target as symbols. Default:
               `contract_address`
 
-          exchange_ids: exchange ID \\**refers to [`/exchanges/list`](/reference/exchanges-list).
+          exchange_ids: Exchange ID. \\**refers to [`/exchanges/list`](/reference/exchanges-list)
 
-          include_exchange_logo: include exchange logo, default: false
+          include_exchange_logo: Include exchange logo. Default: false
 
-          order: use this to sort the order of responses, default: trust_score_desc
+          order: Sort the order of responses. Default: trust_score_desc
 
-          page: page through results
+          page: Page through results
 
           extra_headers: Send extra headers
 

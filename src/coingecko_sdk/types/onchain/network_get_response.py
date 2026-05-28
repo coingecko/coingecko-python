@@ -1,6 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List, Optional
+from typing import List
 
 from ..._models import BaseModel
 
@@ -8,18 +8,22 @@ __all__ = ["NetworkGetResponse", "Data", "DataAttributes"]
 
 
 class DataAttributes(BaseModel):
-    coingecko_asset_platform_id: Optional[str] = None
+    coingecko_asset_platform_id: str
+    """Corresponding CoinGecko asset platform ID"""
 
-    name: Optional[str] = None
+    name: str
+    """Network name"""
 
 
 class Data(BaseModel):
-    id: Optional[str] = None
+    id: str
+    """Network identifier"""
 
-    attributes: Optional[DataAttributes] = None
+    attributes: DataAttributes
 
-    type: Optional[str] = None
+    type: str
+    """Resource type"""
 
 
 class NetworkGetResponse(BaseModel):
-    data: Optional[List[Data]] = None
+    data: List[Data]

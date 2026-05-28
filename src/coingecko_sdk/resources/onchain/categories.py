@@ -66,13 +66,12 @@ class CategoriesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CategoryGetResponse:
         """
-        This endpoint allows you to **query all the supported categories on
-        GeckoTerminal**
+        To query all the supported categories on GeckoTerminal
 
         Args:
-          page: page through results Default value: `1`
+          page: Page through results. Default value: 1
 
-          sort: sort the categories by field Default value: `h6_volume_percentage_desc`
+          sort: Sort the categories by field. Default: `h6_volume_percentage_desc`
 
           extra_headers: Send extra headers
 
@@ -125,17 +124,16 @@ class CategoriesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CategoryGetPoolsResponse:
         """
-        This endpoint allows you to **query all the pools based on the provided category
-        ID**
+        To query all the pools based on the provided category ID
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`, `network`. Example: `base_token` or
-              `base_token,dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`, `network`
 
-          page: page through results Default value: `1`
+          page: Page through results. Default value: 1
 
-          sort: sort the pools by field Default value: `pool_created_at_desc`
+          sort: Sort the pools by field. Default: `pool_created_at_desc`
 
           extra_headers: Send extra headers
 
@@ -209,13 +207,12 @@ class AsyncCategoriesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CategoryGetResponse:
         """
-        This endpoint allows you to **query all the supported categories on
-        GeckoTerminal**
+        To query all the supported categories on GeckoTerminal
 
         Args:
-          page: page through results Default value: `1`
+          page: Page through results. Default value: 1
 
-          sort: sort the categories by field Default value: `h6_volume_percentage_desc`
+          sort: Sort the categories by field. Default: `h6_volume_percentage_desc`
 
           extra_headers: Send extra headers
 
@@ -268,17 +265,16 @@ class AsyncCategoriesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CategoryGetPoolsResponse:
         """
-        This endpoint allows you to **query all the pools based on the provided category
-        ID**
+        To query all the pools based on the provided category ID
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`, `network`. Example: `base_token` or
-              `base_token,dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`, `network`
 
-          page: page through results Default value: `1`
+          page: Page through results. Default value: 1
 
-          sort: sort the pools by field Default value: `pool_created_at_desc`
+          sort: Sort the pools by field. Default: `pool_created_at_desc`
 
           extra_headers: Send extra headers
 

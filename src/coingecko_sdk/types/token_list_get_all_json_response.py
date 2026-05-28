@@ -11,45 +11,53 @@ __all__ = ["TokenListGetAllJsonResponse", "Token", "Version"]
 
 
 class Token(BaseModel):
-    address: Optional[str] = None
-    """token contract address"""
+    address: str
+    """Token contract address"""
 
-    chain_id: Optional[float] = FieldInfo(alias="chainId", default=None)
-    """chainlist's chain ID"""
+    chain_id: float = FieldInfo(alias="chainId")
+    """Chainlist's chain ID"""
 
-    decimals: Optional[float] = None
-    """token decimals"""
+    decimals: float
+    """Token decimals"""
 
-    logo_uri: Optional[str] = FieldInfo(alias="logoURI", default=None)
-    """token image url"""
+    logo_uri: str = FieldInfo(alias="logoURI")
+    """Token image URL"""
 
-    name: Optional[str] = None
-    """token name"""
+    name: str
+    """Token name"""
 
-    symbol: Optional[str] = None
-    """token symbol"""
+    symbol: str
+    """Token symbol"""
 
 
 class Version(BaseModel):
-    """token list version"""
+    """Token list version"""
 
     major: Optional[float] = None
+    """Major version"""
 
     minor: Optional[float] = None
+    """Minor version"""
 
     patch: Optional[float] = None
+    """Patch version"""
 
 
 class TokenListGetAllJsonResponse(BaseModel):
-    keywords: Optional[List[str]] = None
+    keywords: List[str]
+    """Token list keywords"""
 
-    logo_uri: Optional[str] = FieldInfo(alias="logoURI", default=None)
+    logo_uri: str = FieldInfo(alias="logoURI")
+    """Token list logo URL"""
 
-    name: Optional[str] = None
+    name: str
+    """Token list name"""
 
-    timestamp: Optional[datetime] = None
+    timestamp: datetime
+    """Token list generation timestamp"""
 
-    tokens: Optional[List[Token]] = None
+    tokens: List[Token]
+    """List of tokens"""
 
-    version: Optional[Version] = None
-    """token list version"""
+    version: Version
+    """Token list version"""

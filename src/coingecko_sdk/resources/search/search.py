@@ -65,11 +65,10 @@ class SearchResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SearchGetResponse:
         """
-        This endpoint allows you to **search for coins, categories and markets listed on
-        CoinGecko**
+        To search for coins, categories and markets listed on CoinGecko
 
         Args:
-          query: search query
+          query: Search query
 
           extra_headers: Send extra headers
 
@@ -128,11 +127,10 @@ class AsyncSearchResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SearchGetResponse:
         """
-        This endpoint allows you to **search for coins, categories and markets listed on
-        CoinGecko**
+        To search for coins, categories and markets listed on CoinGecko
 
         Args:
-          query: search query
+          query: Search query
 
           extra_headers: Send extra headers
 

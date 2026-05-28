@@ -9,7 +9,7 @@ __all__ = ["NewsGetParams"]
 
 class NewsGetParams(TypedDict, total=False):
     coin_id: str
-    """filter news by coin ID \\**refers to [`/coins/list`](/reference/coins-list)."""
+    """Filter news by coin ID. \\**refers to [`/coins/list`](/reference/coins-list)."""
 
     language: Literal[
         "en",
@@ -47,16 +47,17 @@ class NewsGetParams(TypedDict, total=False):
         "zh",
         "zh-tw",
     ]
-    """filter news by language Default value: **en**"""
+    """Filter news by language. Default: `en`"""
 
     page: int
-    """page through results Default value: **1**"""
+    """Page through results. Default value: 1 Valid values: 1...20"""
 
     per_page: int
-    """total results per page Default value: **10**"""
+    """Total results per page. Default value: 10 Valid values: 1...20"""
 
     type: Literal["all", "news", "guides"]
-    """
-    filter news by type Default value: **all** Note: `guides` filter is only
-    applicable if `coin_id` is specified and valid
+    """Filter news by type.
+
+    Default: `all` Note: `guides` filter is only applicable if `coin_id` is
+    specified and valid.
     """

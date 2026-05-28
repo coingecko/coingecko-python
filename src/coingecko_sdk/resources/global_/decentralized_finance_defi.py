@@ -50,8 +50,8 @@ class DecentralizedFinanceDefiResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> DecentralizedFinanceDefiGetResponse:
         """
-        This endpoint allows you **query top 100 cryptocurrency global decentralized
-        finance (DeFi) data including DeFi market cap, trading volume**
+        To query top 100 cryptocurrency global decentralized finance (DeFi) data
+        including DeFi market cap, trading volume
         """
         return self._get(
             "/global/decentralized_finance_defi",
@@ -93,8 +93,8 @@ class AsyncDecentralizedFinanceDefiResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> DecentralizedFinanceDefiGetResponse:
         """
-        This endpoint allows you **query top 100 cryptocurrency global decentralized
-        finance (DeFi) data including DeFi market cap, trading volume**
+        To query top 100 cryptocurrency global decentralized finance (DeFi) data
+        including DeFi market cap, trading volume
         """
         return await self._get(
             "/global/decentralized_finance_defi",

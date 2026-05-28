@@ -1,8 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List, Union, Optional
-
-from pydantic import Field as FieldInfo
+from typing import Dict, List, Union, Optional
 
 from ....._models import BaseModel
 
@@ -12,12 +10,13 @@ __all__ = [
     "DataAttributes",
     "DataAttributesGtScoreDetails",
     "DataAttributesHolders",
-    "DataAttributesHoldersDistributionPercentage",
     "DataAttributesImage",
 ]
 
 
 class DataAttributesGtScoreDetails(BaseModel):
+    """GeckoTerminal trust score breakdown"""
+
     creation: Optional[float] = None
 
     holders: Optional[float] = None
@@ -29,25 +28,25 @@ class DataAttributesGtScoreDetails(BaseModel):
     transaction: Optional[float] = None
 
 
-class DataAttributesHoldersDistributionPercentage(BaseModel):
-    dist_11_30: Optional[str] = FieldInfo(alias="11_30", default=None)
-
-    dist_31_50: Optional[str] = FieldInfo(alias="31_50", default=None)
-
-    rest: Optional[str] = None
-
-    top_10: Optional[str] = None
-
-
 class DataAttributesHolders(BaseModel):
-    count: Optional[int] = None
+    """Token holder information"""
 
-    distribution_percentage: Optional[DataAttributesHoldersDistributionPercentage] = None
+    count: Optional[int] = None
+    """Number of holders"""
+
+    distribution_percentage: Optional[Dict[str, str]] = None
+    """Holder distribution percentage (keys vary by chain, e.g.
+
+    top_10, 11_30, 31_50, rest)
+    """
 
     last_updated: Optional[str] = None
+    """Last updated timestamp"""
 
 
 class DataAttributesImage(BaseModel):
+    """Token image URLs in different sizes"""
+
     large: Optional[str] = None
 
     small: Optional[str] = None
@@ -56,60 +55,85 @@ class DataAttributesImage(BaseModel):
 
 
 class DataAttributes(BaseModel):
-    address: Optional[str] = None
+    address: str
+    """Token contract address"""
 
-    categories: Optional[List[str]] = None
+    categories: List[str]
+    """Token categories"""
 
     coingecko_coin_id: Optional[str] = None
+    """CoinGecko coin ID"""
 
-    decimals: Optional[int] = None
+    decimals: int
+    """Token decimals"""
 
     description: Optional[str] = None
+    """Token description"""
 
     discord_url: Optional[str] = None
+    """Discord URL"""
 
     farcaster_url: Optional[str] = None
+    """Farcaster URL"""
 
     freeze_authority: Optional[str] = None
+    """Freeze authority status"""
 
-    gt_category_ids: Optional[List[str]] = None
+    gt_category_ids: List[str]
+    """GeckoTerminal category IDs"""
 
-    gt_score: Optional[float] = None
+    gt_score: float
+    """GeckoTerminal trust score"""
 
-    gt_score_details: Optional[DataAttributesGtScoreDetails] = None
+    gt_score_details: DataAttributesGtScoreDetails
+    """GeckoTerminal trust score breakdown"""
 
-    gt_verified: Optional[bool] = None
+    gt_verified: bool
+    """Whether the token is verified on GeckoTerminal"""
 
-    holders: Optional[DataAttributesHolders] = None
+    holders: DataAttributesHolders
+    """Token holder information"""
 
-    image: Optional[DataAttributesImage] = None
+    image: DataAttributesImage
+    """Token image URLs in different sizes"""
 
     image_url: Optional[str] = None
+    """Token image URL"""
 
-    is_honeypot: Union[bool, str, None] = None
+    is_honeypot: Union[bool, str]
+    """Whether the token is a honeypot (boolean or 'unknown')"""
 
     mint_authority: Optional[str] = None
+    """Mint authority status"""
 
-    name: Optional[str] = None
+    name: str
+    """Token name"""
 
-    symbol: Optional[str] = None
+    symbol: str
+    """Token symbol"""
 
     telegram_handle: Optional[str] = None
+    """Telegram handle"""
 
     twitter_handle: Optional[str] = None
+    """Twitter handle"""
 
-    websites: Optional[List[str]] = None
+    websites: List[str]
+    """Token websites"""
 
     zora_url: Optional[str] = None
+    """Zora URL"""
 
 
 class Data(BaseModel):
-    id: Optional[str] = None
+    id: str
+    """Token identifier"""
 
-    attributes: Optional[DataAttributes] = None
+    attributes: DataAttributes
 
-    type: Optional[str] = None
+    type: str
+    """Resource type"""
 
 
 class InfoGetResponse(BaseModel):
-    data: Optional[Data] = None
+    data: Data

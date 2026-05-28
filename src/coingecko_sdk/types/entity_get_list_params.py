@@ -9,10 +9,10 @@ __all__ = ["EntityGetListParams"]
 
 class EntityGetListParams(TypedDict, total=False):
     entity_type: Literal["company", "government"]
-    """filter by entity type, default: false"""
+    """Filter by entity type."""
 
     page: int
-    """page through results, default: 1"""
+    """Page through results. Default value: 1"""
 
     per_page: int
-    """total results per page, default: 100 Valid values: 1...250"""
+    """Total results per page. Default value: 100 Valid values: 1...250"""

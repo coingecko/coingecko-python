@@ -65,9 +65,8 @@ class ContractResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ContractGetContractAddressResponse:
         """
-        This endpoint allows you to **query all the NFT data (name, floor price, 24hr
-        volume ...) based on the NFT collection contract address and respective asset
-        platform**
+        To query all the NFT data (name, floor price, 24hr volume, ...) based on the NFT
+        collection contract address and respective asset platform
 
         Args:
           extra_headers: Send extra headers
@@ -132,9 +131,8 @@ class AsyncContractResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ContractGetContractAddressResponse:
         """
-        This endpoint allows you to **query all the NFT data (name, floor price, 24hr
-        volume ...) based on the NFT collection contract address and respective asset
-        platform**
+        To query all the NFT data (name, floor price, 24hr volume, ...) based on the NFT
+        collection contract address and respective asset platform
 
         Args:
           extra_headers: Send extra headers

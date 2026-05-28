@@ -8,6 +8,8 @@ __all__ = ["CategoryGetResponse", "Data", "DataAttributes", "DataAttributesVolum
 
 
 class DataAttributesVolumeChangePercentage(BaseModel):
+    """Volume change percentage over various timeframes"""
+
     h1: Optional[str] = None
 
     h12: Optional[str] = None
@@ -18,28 +20,37 @@ class DataAttributesVolumeChangePercentage(BaseModel):
 
 
 class DataAttributes(BaseModel):
-    description: Optional[str] = None
+    description: str
+    """Category description"""
 
-    fdv_usd: Optional[str] = None
+    fdv_usd: str
+    """Fully diluted valuation in USD"""
 
-    h24_tx_count: Optional[int] = None
+    h24_tx_count: int
+    """24hr transaction count"""
 
-    h24_volume_usd: Optional[str] = None
+    h24_volume_usd: str
+    """24hr volume in USD"""
 
-    name: Optional[str] = None
+    name: str
+    """Category name"""
 
-    reserve_in_usd: Optional[str] = None
+    reserve_in_usd: str
+    """Total reserve in USD"""
 
-    volume_change_percentage: Optional[DataAttributesVolumeChangePercentage] = None
+    volume_change_percentage: DataAttributesVolumeChangePercentage
+    """Volume change percentage over various timeframes"""
 
 
 class Data(BaseModel):
-    id: Optional[str] = None
+    id: str
+    """Category ID"""
 
-    attributes: Optional[DataAttributes] = None
+    attributes: DataAttributes
 
-    type: Optional[str] = None
+    type: str
+    """Resource type"""
 
 
 class CategoryGetResponse(BaseModel):
-    data: Optional[List[Data]] = None
+    data: List[Data]

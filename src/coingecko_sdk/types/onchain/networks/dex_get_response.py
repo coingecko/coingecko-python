@@ -1,6 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List, Optional
+from typing import List
 
 from ...._models import BaseModel
 
@@ -8,16 +8,19 @@ __all__ = ["DexGetResponse", "Data", "DataAttributes"]
 
 
 class DataAttributes(BaseModel):
-    name: Optional[str] = None
+    name: str
+    """DEX name"""
 
 
 class Data(BaseModel):
-    id: Optional[str] = None
+    id: str
+    """DEX identifier"""
 
-    attributes: Optional[DataAttributes] = None
+    attributes: DataAttributes
 
-    type: Optional[str] = None
+    type: str
+    """Resource type"""
 
 
 class DexGetResponse(BaseModel):
-    data: Optional[List[Data]] = None
+    data: List[Data]

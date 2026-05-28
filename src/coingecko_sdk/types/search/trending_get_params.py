@@ -9,7 +9,8 @@ __all__ = ["TrendingGetParams"]
 
 class TrendingGetParams(TypedDict, total=False):
     show_max: str
-    """
-    show max number of results available for the given type Available values:
-    `coins`, `nfts`, `categories` Example: `coins` or `coins,nfts,categories`
+    """Show max number of results available for the given type.
+
+    Available values: `coins`, `nfts`, `categories` e.g. `coins` or
+    `coins,nfts,categories`
     """

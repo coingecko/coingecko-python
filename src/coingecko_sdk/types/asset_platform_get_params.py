@@ -9,4 +9,4 @@ __all__ = ["AssetPlatformGetParams"]
 
 class AssetPlatformGetParams(TypedDict, total=False):
     filter: Literal["nft"]
-    """apply relevant filters to results"""
+    """Apply relevant filters to results."""

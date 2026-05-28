@@ -60,22 +60,21 @@ class TokenPriceResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TokenPriceGetAddressesResponse:
         """
-        This endpoint allows you to **get token price based on the provided token
-        contract address on a network**
+        To get token price based on the provided token contract address on a network
 
         Args:
-          include_24hr_price_change: include 24hr price change, default: false
+          include_24hr_price_change: Include 24hr price change. Default: `false`
 
-          include_24hr_vol: include 24hr volume, default: false
+          include_24hr_vol: Include 24hr volume. Default: `false`
 
-          include_inactive_source: include token price data from inactive pools using the most recent swap,
-              default: false
+          include_inactive_source: Include token price data from inactive pools using the most recent swap.
+              Default: `false`
 
-          include_market_cap: include market capitalization, default: false
+          include_market_cap: Include market capitalization. Default: `false`
 
-          include_total_reserve_in_usd: include total reserve in USD, default: false
+          include_total_reserve_in_usd: Include total reserve in USD. Default: `false`
 
-          mcap_fdv_fallback: return FDV if market cap is not available, default: false
+          mcap_fdv_fallback: Return FDV if market cap is not available. Default: `false`
 
           extra_headers: Send extra headers
 
@@ -153,22 +152,21 @@ class AsyncTokenPriceResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TokenPriceGetAddressesResponse:
         """
-        This endpoint allows you to **get token price based on the provided token
-        contract address on a network**
+        To get token price based on the provided token contract address on a network
 
         Args:
-          include_24hr_price_change: include 24hr price change, default: false
+          include_24hr_price_change: Include 24hr price change. Default: `false`
 
-          include_24hr_vol: include 24hr volume, default: false
+          include_24hr_vol: Include 24hr volume. Default: `false`
 
-          include_inactive_source: include token price data from inactive pools using the most recent swap,
-              default: false
+          include_inactive_source: Include token price data from inactive pools using the most recent swap.
+              Default: `false`
 
-          include_market_cap: include market capitalization, default: false
+          include_market_cap: Include market capitalization. Default: `false`
 
-          include_total_reserve_in_usd: include total reserve in USD, default: false
+          include_total_reserve_in_usd: Include total reserve in USD. Default: `false`
 
-          mcap_fdv_fallback: return FDV if market cap is not available, default: false
+          mcap_fdv_fallback: Return FDV if market cap is not available. Default: `false`
 
           extra_headers: Send extra headers
 

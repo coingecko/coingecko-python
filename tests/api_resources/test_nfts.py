@@ -25,7 +25,7 @@ class TestNFTs:
     @parametrize
     def test_method_get_id(self, client: Coingecko) -> None:
         nft = client.nfts.get_id(
-            "pudgy-penguins",
+            "id",
         )
         assert_matches_type(NFTGetIDResponse, nft, path=["response"])
 
@@ -33,7 +33,7 @@ class TestNFTs:
     @parametrize
     def test_raw_response_get_id(self, client: Coingecko) -> None:
         response = client.nfts.with_raw_response.get_id(
-            "pudgy-penguins",
+            "id",
         )
 
         assert response.is_closed is True
@@ -45,7 +45,7 @@ class TestNFTs:
     @parametrize
     def test_streaming_response_get_id(self, client: Coingecko) -> None:
         with client.nfts.with_streaming_response.get_id(
-            "pudgy-penguins",
+            "id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -111,7 +111,7 @@ class TestNFTs:
     @parametrize
     def test_method_get_markets_with_all_params(self, client: Coingecko) -> None:
         nft = client.nfts.get_markets(
-            asset_platform_id="ethereum",
+            asset_platform_id="asset_platform_id",
             order="h24_volume_native_asc",
             page=0,
             per_page=0,
@@ -150,7 +150,7 @@ class TestAsyncNFTs:
     @parametrize
     async def test_method_get_id(self, async_client: AsyncCoingecko) -> None:
         nft = await async_client.nfts.get_id(
-            "pudgy-penguins",
+            "id",
         )
         assert_matches_type(NFTGetIDResponse, nft, path=["response"])
 
@@ -158,7 +158,7 @@ class TestAsyncNFTs:
     @parametrize
     async def test_raw_response_get_id(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.nfts.with_raw_response.get_id(
-            "pudgy-penguins",
+            "id",
         )
 
         assert response.is_closed is True
@@ -170,7 +170,7 @@ class TestAsyncNFTs:
     @parametrize
     async def test_streaming_response_get_id(self, async_client: AsyncCoingecko) -> None:
         async with async_client.nfts.with_streaming_response.get_id(
-            "pudgy-penguins",
+            "id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -236,7 +236,7 @@ class TestAsyncNFTs:
     @parametrize
     async def test_method_get_markets_with_all_params(self, async_client: AsyncCoingecko) -> None:
         nft = await async_client.nfts.get_markets(
-            asset_platform_id="ethereum",
+            asset_platform_id="asset_platform_id",
             order="h24_volume_native_asc",
             page=0,
             per_page=0,

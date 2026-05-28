@@ -22,7 +22,7 @@ class TestTokenPrice:
     def test_method_get_addresses(self, client: Coingecko) -> None:
         token_price = client.onchain.simple.networks.token_price.get_addresses(
             addresses="addresses",
-            network="eth",
+            network="network",
         )
         assert_matches_type(TokenPriceGetAddressesResponse, token_price, path=["response"])
 
@@ -31,7 +31,7 @@ class TestTokenPrice:
     def test_method_get_addresses_with_all_params(self, client: Coingecko) -> None:
         token_price = client.onchain.simple.networks.token_price.get_addresses(
             addresses="addresses",
-            network="eth",
+            network="network",
             include_24hr_price_change=True,
             include_24hr_vol=True,
             include_inactive_source=True,
@@ -46,7 +46,7 @@ class TestTokenPrice:
     def test_raw_response_get_addresses(self, client: Coingecko) -> None:
         response = client.onchain.simple.networks.token_price.with_raw_response.get_addresses(
             addresses="addresses",
-            network="eth",
+            network="network",
         )
 
         assert response.is_closed is True
@@ -59,7 +59,7 @@ class TestTokenPrice:
     def test_streaming_response_get_addresses(self, client: Coingecko) -> None:
         with client.onchain.simple.networks.token_price.with_streaming_response.get_addresses(
             addresses="addresses",
-            network="eth",
+            network="network",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -81,7 +81,7 @@ class TestTokenPrice:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `addresses` but received ''"):
             client.onchain.simple.networks.token_price.with_raw_response.get_addresses(
                 addresses="",
-                network="eth",
+                network="network",
             )
 
 
@@ -95,7 +95,7 @@ class TestAsyncTokenPrice:
     async def test_method_get_addresses(self, async_client: AsyncCoingecko) -> None:
         token_price = await async_client.onchain.simple.networks.token_price.get_addresses(
             addresses="addresses",
-            network="eth",
+            network="network",
         )
         assert_matches_type(TokenPriceGetAddressesResponse, token_price, path=["response"])
 
@@ -104,7 +104,7 @@ class TestAsyncTokenPrice:
     async def test_method_get_addresses_with_all_params(self, async_client: AsyncCoingecko) -> None:
         token_price = await async_client.onchain.simple.networks.token_price.get_addresses(
             addresses="addresses",
-            network="eth",
+            network="network",
             include_24hr_price_change=True,
             include_24hr_vol=True,
             include_inactive_source=True,
@@ -119,7 +119,7 @@ class TestAsyncTokenPrice:
     async def test_raw_response_get_addresses(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.onchain.simple.networks.token_price.with_raw_response.get_addresses(
             addresses="addresses",
-            network="eth",
+            network="network",
         )
 
         assert response.is_closed is True
@@ -132,7 +132,7 @@ class TestAsyncTokenPrice:
     async def test_streaming_response_get_addresses(self, async_client: AsyncCoingecko) -> None:
         async with async_client.onchain.simple.networks.token_price.with_streaming_response.get_addresses(
             addresses="addresses",
-            network="eth",
+            network="network",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -154,5 +154,5 @@ class TestAsyncTokenPrice:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `addresses` but received ''"):
             await async_client.onchain.simple.networks.token_price.with_raw_response.get_addresses(
                 addresses="",
-                network="eth",
+                network="network",
             )

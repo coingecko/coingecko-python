@@ -9,7 +9,7 @@ __all__ = ["ExchangeGetParams"]
 
 class ExchangeGetParams(TypedDict, total=False):
     page: float
-    """page through results, default: 1"""
+    """Page through results. Default: 1"""
 
     per_page: float
-    """total results per page, default: 100 Valid values: 1...250"""
+    """Total results per page. Default: 100. Valid values: 1...250"""

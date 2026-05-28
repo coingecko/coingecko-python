@@ -54,14 +54,14 @@ class TrendingSearchResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TrendingSearchGetResponse:
         """
-        This endpoint allows you to **query all the trending search pools across all
-        networks on GeckoTerminal**
+        To query all the trending search pools across all networks on GeckoTerminal
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`, `network`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`, `network`
 
-          pools: number of pools to return, maximum 10 Default value: 4
+          pools: Number of pools to return, maximum 10. Default value: 4
 
           extra_headers: Send extra headers
 
@@ -123,14 +123,14 @@ class AsyncTrendingSearchResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TrendingSearchGetResponse:
         """
-        This endpoint allows you to **query all the trending search pools across all
-        networks on GeckoTerminal**
+        To query all the trending search pools across all networks on GeckoTerminal
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`, `network`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`, `network`
 
-          pools: number of pools to return, maximum 10 Default value: 4
+          pools: Number of pools to return, maximum 10. Default value: 4
 
           extra_headers: Send extra headers
 

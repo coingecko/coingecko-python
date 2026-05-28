@@ -5,12 +5,9 @@ from typing import Optional
 from ...._models import BaseModel
 
 __all__ = [
-    "PoolData",
+    "PoolAddressItem",
     "Attributes",
-    "AttributesBuyVolumeUsd",
-    "AttributesNetBuyVolumeUsd",
     "AttributesPriceChangePercentage",
-    "AttributesSellVolumeUsd",
     "AttributesTransactions",
     "AttributesTransactionsH1",
     "AttributesTransactionsH24",
@@ -19,6 +16,9 @@ __all__ = [
     "AttributesTransactionsM30",
     "AttributesTransactionsM5",
     "AttributesVolumeUsd",
+    "AttributesBuyVolumeUsd",
+    "AttributesNetBuyVolumeUsd",
+    "AttributesSellVolumeUsd",
     "Relationships",
     "RelationshipsBaseToken",
     "RelationshipsBaseTokenData",
@@ -29,49 +29,9 @@ __all__ = [
 ]
 
 
-class AttributesBuyVolumeUsd(BaseModel):
-    h1: Optional[str] = None
-
-    h24: Optional[str] = None
-
-    h6: Optional[str] = None
-
-    m15: Optional[str] = None
-
-    m30: Optional[str] = None
-
-    m5: Optional[str] = None
-
-
-class AttributesNetBuyVolumeUsd(BaseModel):
-    h1: Optional[str] = None
-
-    h24: Optional[str] = None
-
-    h6: Optional[str] = None
-
-    m15: Optional[str] = None
-
-    m30: Optional[str] = None
-
-    m5: Optional[str] = None
-
-
 class AttributesPriceChangePercentage(BaseModel):
-    h1: Optional[str] = None
+    """Price change percentage over various timeframes"""
 
-    h24: Optional[str] = None
-
-    h6: Optional[str] = None
-
-    m15: Optional[str] = None
-
-    m30: Optional[str] = None
-
-    m5: Optional[str] = None
-
-
-class AttributesSellVolumeUsd(BaseModel):
     h1: Optional[str] = None
 
     h24: Optional[str] = None
@@ -146,6 +106,8 @@ class AttributesTransactionsM5(BaseModel):
 
 
 class AttributesTransactions(BaseModel):
+    """Transaction counts over various timeframes"""
+
     h1: Optional[AttributesTransactionsH1] = None
 
     h24: Optional[AttributesTransactionsH24] = None
@@ -160,6 +122,56 @@ class AttributesTransactions(BaseModel):
 
 
 class AttributesVolumeUsd(BaseModel):
+    """Volume in USD over various timeframes"""
+
+    h1: Optional[str] = None
+
+    h24: Optional[str] = None
+
+    h6: Optional[str] = None
+
+    m15: Optional[str] = None
+
+    m30: Optional[str] = None
+
+    m5: Optional[str] = None
+
+
+class AttributesBuyVolumeUsd(BaseModel):
+    """Buy volume in USD over various timeframes"""
+
+    h1: Optional[str] = None
+
+    h24: Optional[str] = None
+
+    h6: Optional[str] = None
+
+    m15: Optional[str] = None
+
+    m30: Optional[str] = None
+
+    m5: Optional[str] = None
+
+
+class AttributesNetBuyVolumeUsd(BaseModel):
+    """Net buy volume in USD over various timeframes"""
+
+    h1: Optional[str] = None
+
+    h24: Optional[str] = None
+
+    h6: Optional[str] = None
+
+    m15: Optional[str] = None
+
+    m30: Optional[str] = None
+
+    m5: Optional[str] = None
+
+
+class AttributesSellVolumeUsd(BaseModel):
+    """Sell volume in USD over various timeframes"""
+
     h1: Optional[str] = None
 
     h24: Optional[str] = None
@@ -174,55 +186,80 @@ class AttributesVolumeUsd(BaseModel):
 
 
 class Attributes(BaseModel):
-    address: Optional[str] = None
+    address: str
+    """Pool contract address"""
 
-    base_token_balance: Optional[str] = None
+    base_token_price_native_currency: str
+    """Base token price in native currency"""
 
-    base_token_liquidity_usd: Optional[str] = None
+    base_token_price_quote_token: str
+    """Base token price in quote token"""
 
-    base_token_price_native_currency: Optional[str] = None
-
-    base_token_price_quote_token: Optional[str] = None
-
-    base_token_price_usd: Optional[str] = None
-
-    buy_volume_usd: Optional[AttributesBuyVolumeUsd] = None
+    base_token_price_usd: str
+    """Base token price in USD"""
 
     fdv_usd: Optional[str] = None
+    """Fully diluted valuation in USD"""
 
-    locked_liquidity_percentage: Optional[str] = None
+    locked_liquidity_percentage: str
+    """Locked liquidity percentage"""
 
     market_cap_usd: Optional[str] = None
+    """Market cap in USD"""
 
-    name: Optional[str] = None
+    name: str
+    """Pool name with fee tier"""
+
+    pool_created_at: str
+    """Pool creation timestamp"""
+
+    pool_fee_percentage: str
+    """Pool fee percentage"""
+
+    pool_name: str
+    """Pool name without fee tier"""
+
+    price_change_percentage: AttributesPriceChangePercentage
+    """Price change percentage over various timeframes"""
+
+    quote_token_price_base_token: str
+    """Quote token price in base token"""
+
+    quote_token_price_native_currency: str
+    """Quote token price in native currency"""
+
+    quote_token_price_usd: str
+    """Quote token price in USD"""
+
+    reserve_in_usd: str
+    """Total reserve in USD"""
+
+    transactions: AttributesTransactions
+    """Transaction counts over various timeframes"""
+
+    volume_usd: AttributesVolumeUsd
+    """Volume in USD over various timeframes"""
+
+    base_token_balance: Optional[str] = None
+    """Base token balance in pool"""
+
+    base_token_liquidity_usd: Optional[str] = None
+    """Base token liquidity in USD"""
+
+    buy_volume_usd: Optional[AttributesBuyVolumeUsd] = None
+    """Buy volume in USD over various timeframes"""
 
     net_buy_volume_usd: Optional[AttributesNetBuyVolumeUsd] = None
-
-    pool_created_at: Optional[str] = None
-
-    pool_fee_percentage: Optional[str] = None
-
-    pool_name: Optional[str] = None
-
-    price_change_percentage: Optional[AttributesPriceChangePercentage] = None
+    """Net buy volume in USD over various timeframes"""
 
     quote_token_balance: Optional[str] = None
+    """Quote token balance in pool"""
 
     quote_token_liquidity_usd: Optional[str] = None
-
-    quote_token_price_base_token: Optional[str] = None
-
-    quote_token_price_native_currency: Optional[str] = None
-
-    quote_token_price_usd: Optional[str] = None
-
-    reserve_in_usd: Optional[str] = None
+    """Quote token liquidity in USD"""
 
     sell_volume_usd: Optional[AttributesSellVolumeUsd] = None
-
-    transactions: Optional[AttributesTransactions] = None
-
-    volume_usd: Optional[AttributesVolumeUsd] = None
+    """Sell volume in USD over various timeframes"""
 
 
 class RelationshipsBaseTokenData(BaseModel):
@@ -256,6 +293,8 @@ class RelationshipsQuoteToken(BaseModel):
 
 
 class Relationships(BaseModel):
+    """Related resources"""
+
     base_token: Optional[RelationshipsBaseToken] = None
 
     dex: Optional[RelationshipsDex] = None
@@ -263,11 +302,14 @@ class Relationships(BaseModel):
     quote_token: Optional[RelationshipsQuoteToken] = None
 
 
-class PoolData(BaseModel):
-    id: Optional[str] = None
+class PoolAddressItem(BaseModel):
+    id: str
+    """Pool identifier"""
 
-    attributes: Optional[Attributes] = None
+    attributes: Attributes
 
-    relationships: Optional[Relationships] = None
+    relationships: Relationships
+    """Related resources"""
 
-    type: Optional[str] = None
+    type: str
+    """Resource type"""

@@ -68,15 +68,14 @@ class PublicTreasuryResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PublicTreasuryGetCoinIDResponse:
         """
-        This endpoint allows you **query public companies & governments' cryptocurrency
-        holdings** by Coin ID
+        To query public companies' and governments' cryptocurrency holdings by coin ID
 
         Args:
-          order: Sort order for results
+          order: Sort order for results. Default: `total_holdings_usd_desc`
 
-          page: Page number to return
+          page: Page through results. Default value: 1
 
-          per_page: Number of results to return per page
+          per_page: Total results per page. Default value: 250 Valid values: 1...250
 
           extra_headers: Send extra headers
 
@@ -128,15 +127,16 @@ class PublicTreasuryResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PublicTreasuryGetEntityIDResponse:
         """
-        This endpoint allows you **query public companies & governments' cryptocurrency
-        holdings** by Entity ID
+        To query public companies' and governments' cryptocurrency holdings by entity ID
 
         Args:
-          holding_amount_change: include holding amount change for specified timeframes, comma-separated if
-              querying more than 1 timeframe Valid values: 7d, 14d, 30d, 90d, 1y, ytd
+          holding_amount_change: Include holding amount change for specified timeframes, comma-separated if
+              querying more than 1 timeframe. Valid values: `7d`, `14d`, `30d`, `90d`, `1y`,
+              `ytd`
 
-          holding_change_percentage: include holding change percentage for specified timeframes, comma-separated if
-              querying more than 1 timeframe Valid values: 7d, 14d, 30d, 90d, 1y, ytd
+          holding_change_percentage: Include holding change percentage for specified timeframes, comma-separated if
+              querying more than 1 timeframe. Valid values: `7d`, `14d`, `30d`, `90d`, `1y`,
+              `ytd`
 
           extra_headers: Send extra headers
 
@@ -181,13 +181,14 @@ class PublicTreasuryResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PublicTreasuryGetHoldingChartResponse:
         """
-        This endpoint allows you to **query historical cryptocurrency holdings chart of
-        public companies & governments** by Entity ID and Coin ID
+        To query historical cryptocurrency holdings chart of public companies and
+        governments by entity ID and coin ID
 
         Args:
-          days: data up to number of days ago Valid values: `7, 14, 30, 90, 180, 365, 730, max`
+          days: Data up to number of days ago. Valid values: `7`, `14`, `30`, `90`, `180`,
+              `365`, `730`, `max`
 
-          include_empty_intervals: include empty intervals with no transaction data, default: false
+          include_empty_intervals: Include empty intervals with no transaction data. Default: `false`
 
           extra_headers: Send extra headers
 
@@ -235,8 +236,8 @@ class PublicTreasuryResource(SyncAPIResource):
             "average_cost_asc",
         ]
         | Omit = omit,
-        page: float | Omit = omit,
-        per_page: float | Omit = omit,
+        page: int | Omit = omit,
+        per_page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -245,18 +246,18 @@ class PublicTreasuryResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PublicTreasuryGetTransactionHistoryResponse:
         """
-        This endpoint allows you **query public companies & governments' cryptocurrency
-        transaction history** by Entity ID
+        To query public companies' and governments' cryptocurrency transaction history
+        by entity ID
 
         Args:
-          coin_ids: filter transactions by coin IDs, comma-separated if querying more than 1 coin
+          coin_ids: Filter transactions by coin IDs, comma-separated if querying more than 1 coin.
               \\**refers to [`/coins/list`](/reference/coins-list).
 
-          order: use this to sort the order of transactions, default: `date_desc`
+          order: Sort order of transactions. Default: `date_desc`
 
-          page: page through results, default: `1`
+          page: Page through results. Default value: 1
 
-          per_page: total results per page, default: `100` Valid values: 1...250
+          per_page: Total results per page. Default value: 100 Valid values: 1...250
 
           extra_headers: Send extra headers
 
@@ -325,15 +326,14 @@ class AsyncPublicTreasuryResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PublicTreasuryGetCoinIDResponse:
         """
-        This endpoint allows you **query public companies & governments' cryptocurrency
-        holdings** by Coin ID
+        To query public companies' and governments' cryptocurrency holdings by coin ID
 
         Args:
-          order: Sort order for results
+          order: Sort order for results. Default: `total_holdings_usd_desc`
 
-          page: Page number to return
+          page: Page through results. Default value: 1
 
-          per_page: Number of results to return per page
+          per_page: Total results per page. Default value: 250 Valid values: 1...250
 
           extra_headers: Send extra headers
 
@@ -385,15 +385,16 @@ class AsyncPublicTreasuryResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PublicTreasuryGetEntityIDResponse:
         """
-        This endpoint allows you **query public companies & governments' cryptocurrency
-        holdings** by Entity ID
+        To query public companies' and governments' cryptocurrency holdings by entity ID
 
         Args:
-          holding_amount_change: include holding amount change for specified timeframes, comma-separated if
-              querying more than 1 timeframe Valid values: 7d, 14d, 30d, 90d, 1y, ytd
+          holding_amount_change: Include holding amount change for specified timeframes, comma-separated if
+              querying more than 1 timeframe. Valid values: `7d`, `14d`, `30d`, `90d`, `1y`,
+              `ytd`
 
-          holding_change_percentage: include holding change percentage for specified timeframes, comma-separated if
-              querying more than 1 timeframe Valid values: 7d, 14d, 30d, 90d, 1y, ytd
+          holding_change_percentage: Include holding change percentage for specified timeframes, comma-separated if
+              querying more than 1 timeframe. Valid values: `7d`, `14d`, `30d`, `90d`, `1y`,
+              `ytd`
 
           extra_headers: Send extra headers
 
@@ -438,13 +439,14 @@ class AsyncPublicTreasuryResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PublicTreasuryGetHoldingChartResponse:
         """
-        This endpoint allows you to **query historical cryptocurrency holdings chart of
-        public companies & governments** by Entity ID and Coin ID
+        To query historical cryptocurrency holdings chart of public companies and
+        governments by entity ID and coin ID
 
         Args:
-          days: data up to number of days ago Valid values: `7, 14, 30, 90, 180, 365, 730, max`
+          days: Data up to number of days ago. Valid values: `7`, `14`, `30`, `90`, `180`,
+              `365`, `730`, `max`
 
-          include_empty_intervals: include empty intervals with no transaction data, default: false
+          include_empty_intervals: Include empty intervals with no transaction data. Default: `false`
 
           extra_headers: Send extra headers
 
@@ -492,8 +494,8 @@ class AsyncPublicTreasuryResource(AsyncAPIResource):
             "average_cost_asc",
         ]
         | Omit = omit,
-        page: float | Omit = omit,
-        per_page: float | Omit = omit,
+        page: int | Omit = omit,
+        per_page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -502,18 +504,18 @@ class AsyncPublicTreasuryResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PublicTreasuryGetTransactionHistoryResponse:
         """
-        This endpoint allows you **query public companies & governments' cryptocurrency
-        transaction history** by Entity ID
+        To query public companies' and governments' cryptocurrency transaction history
+        by entity ID
 
         Args:
-          coin_ids: filter transactions by coin IDs, comma-separated if querying more than 1 coin
+          coin_ids: Filter transactions by coin IDs, comma-separated if querying more than 1 coin.
               \\**refers to [`/coins/list`](/reference/coins-list).
 
-          order: use this to sort the order of transactions, default: `date_desc`
+          order: Sort order of transactions. Default: `date_desc`
 
-          page: page through results, default: `1`
+          page: Page through results. Default value: 1
 
-          per_page: total results per page, default: `100` Valid values: 1...250
+          per_page: Total results per page. Default value: 100 Valid values: 1...250
 
           extra_headers: Send extra headers
 

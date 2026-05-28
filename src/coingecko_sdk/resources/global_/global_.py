@@ -74,8 +74,8 @@ class GlobalResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> GlobalGetResponse:
         """
-        This endpoint allows you **query cryptocurrency global data including active
-        cryptocurrencies, markets, total crypto market cap and etc**
+        To query cryptocurrency global data including active cryptocurrencies, markets,
+        total crypto market cap and etc
         """
         return self._get(
             "/global",
@@ -125,8 +125,8 @@ class AsyncGlobalResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> GlobalGetResponse:
         """
-        This endpoint allows you **query cryptocurrency global data including active
-        cryptocurrencies, markets, total crypto market cap and etc**
+        To query cryptocurrency global data including active cryptocurrencies, markets,
+        total crypto market cap and etc
         """
         return await self._get(
             "/global",

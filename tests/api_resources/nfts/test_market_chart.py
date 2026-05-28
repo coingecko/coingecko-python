@@ -21,7 +21,7 @@ class TestMarketChart:
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         market_chart = client.nfts.market_chart.get(
-            id="pudgy-penguins",
+            id="id",
             days="days",
         )
         assert_matches_type(MarketChartGetResponse, market_chart, path=["response"])
@@ -30,7 +30,7 @@ class TestMarketChart:
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.nfts.market_chart.with_raw_response.get(
-            id="pudgy-penguins",
+            id="id",
             days="days",
         )
 
@@ -43,7 +43,7 @@ class TestMarketChart:
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.nfts.market_chart.with_streaming_response.get(
-            id="pudgy-penguins",
+            id="id",
             days="days",
         ) as response:
             assert not response.is_closed
@@ -73,7 +73,7 @@ class TestAsyncMarketChart:
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         market_chart = await async_client.nfts.market_chart.get(
-            id="pudgy-penguins",
+            id="id",
             days="days",
         )
         assert_matches_type(MarketChartGetResponse, market_chart, path=["response"])
@@ -82,7 +82,7 @@ class TestAsyncMarketChart:
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.nfts.market_chart.with_raw_response.get(
-            id="pudgy-penguins",
+            id="id",
             days="days",
         )
 
@@ -95,7 +95,7 @@ class TestAsyncMarketChart:
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.nfts.market_chart.with_streaming_response.get(
-            id="pudgy-penguins",
+            id="id",
             days="days",
         ) as response:
             assert not response.is_closed

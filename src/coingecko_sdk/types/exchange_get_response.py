@@ -9,38 +9,38 @@ __all__ = ["ExchangeGetResponse", "ExchangeGetResponseItem"]
 
 
 class ExchangeGetResponseItem(BaseModel):
-    id: Optional[str] = None
-    """exchange ID"""
+    id: str
+    """Exchange ID"""
 
     country: Optional[str] = None
-    """exchange country"""
+    """Country where the exchange is based"""
 
-    description: Optional[str] = None
-    """exchange description"""
+    description: str
+    """Exchange description"""
 
-    has_trading_incentive: Optional[bool] = None
-    """exchange trading incentive"""
+    has_trading_incentive: bool
+    """Whether the exchange has trading incentive"""
 
-    image: Optional[str] = None
-    """exchange image URL"""
+    image: str
+    """Exchange logo URL"""
 
-    name: Optional[str] = None
-    """exchange name"""
+    name: str
+    """Exchange name"""
 
-    trade_volume_24h_btc: Optional[float] = None
-    """exchange trade volume in BTC in 24 hours"""
+    trade_volume_24h_btc: float
+    """Exchange 24h trading volume in BTC"""
 
     trust_score: Optional[float] = None
-    """exchange trust score"""
+    """Exchange trust score"""
 
     trust_score_rank: Optional[float] = None
-    """exchange trust score rank"""
+    """Exchange trust score rank"""
 
-    url: Optional[str] = None
-    """exchange website URL"""
+    url: str
+    """Exchange website URL"""
 
     year_established: Optional[float] = None
-    """exchange established year"""
+    """Year the exchange was established"""
 
 
 ExchangeGetResponse: TypeAlias = List[ExchangeGetResponseItem]

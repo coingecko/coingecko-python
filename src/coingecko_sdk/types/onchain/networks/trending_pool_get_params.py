@@ -9,20 +9,19 @@ __all__ = ["TrendingPoolGetParams"]
 
 class TrendingPoolGetParams(TypedDict, total=False):
     duration: Literal["5m", "1h", "6h", "24h"]
-    """duration to sort trending list by Default value: 24h"""
+    """Duration to sort trending list by. Default: `24h`"""
 
     include: str
-    """
-    attributes to include, comma-separated if more than one to include Available
-    values: `base_token`, `quote_token`, `dex`, `network`. Example: `base_token` or
-    `base_token,dex`
+    """Attributes to include, comma-separated if more than one.
+
+    Available values: `base_token`, `quote_token`, `dex`, `network`
     """
 
     include_gt_community_data: bool
-    """
-    include GeckoTerminal community data (Sentiment votes, Suspicious reports)
-    Default value: false
+    """Include GeckoTerminal community data (sentiment votes, suspicious reports).
+
+    Default: `false`
     """
 
     page: int
-    """page through results Default value: 1"""
+    """Page through results. Default value: 1"""

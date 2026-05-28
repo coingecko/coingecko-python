@@ -9,7 +9,7 @@ __all__ = ["CategoryGetParams"]
 
 class CategoryGetParams(TypedDict, total=False):
     page: int
-    """page through results Default value: `1`"""
+    """Page through results. Default value: 1"""
 
     sort: Literal[
         "h1_volume_percentage_desc",
@@ -20,4 +20,4 @@ class CategoryGetParams(TypedDict, total=False):
         "fdv_usd_desc",
         "reserve_in_usd_desc",
     ]
-    """sort the categories by field Default value: `h6_volume_percentage_desc`"""
+    """Sort the categories by field. Default: `h6_volume_percentage_desc`"""

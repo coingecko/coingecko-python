@@ -62,7 +62,7 @@ class TestNewPools:
     @parametrize
     def test_method_get_network(self, client: Coingecko) -> None:
         new_pool = client.onchain.networks.new_pools.get_network(
-            network="eth",
+            network="network",
         )
         assert_matches_type(NewPoolGetNetworkResponse, new_pool, path=["response"])
 
@@ -70,7 +70,7 @@ class TestNewPools:
     @parametrize
     def test_method_get_network_with_all_params(self, client: Coingecko) -> None:
         new_pool = client.onchain.networks.new_pools.get_network(
-            network="eth",
+            network="network",
             include="include",
             include_gt_community_data=True,
             page=0,
@@ -81,7 +81,7 @@ class TestNewPools:
     @parametrize
     def test_raw_response_get_network(self, client: Coingecko) -> None:
         response = client.onchain.networks.new_pools.with_raw_response.get_network(
-            network="eth",
+            network="network",
         )
 
         assert response.is_closed is True
@@ -93,7 +93,7 @@ class TestNewPools:
     @parametrize
     def test_streaming_response_get_network(self, client: Coingecko) -> None:
         with client.onchain.networks.new_pools.with_streaming_response.get_network(
-            network="eth",
+            network="network",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -159,7 +159,7 @@ class TestAsyncNewPools:
     @parametrize
     async def test_method_get_network(self, async_client: AsyncCoingecko) -> None:
         new_pool = await async_client.onchain.networks.new_pools.get_network(
-            network="eth",
+            network="network",
         )
         assert_matches_type(NewPoolGetNetworkResponse, new_pool, path=["response"])
 
@@ -167,7 +167,7 @@ class TestAsyncNewPools:
     @parametrize
     async def test_method_get_network_with_all_params(self, async_client: AsyncCoingecko) -> None:
         new_pool = await async_client.onchain.networks.new_pools.get_network(
-            network="eth",
+            network="network",
             include="include",
             include_gt_community_data=True,
             page=0,
@@ -178,7 +178,7 @@ class TestAsyncNewPools:
     @parametrize
     async def test_raw_response_get_network(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.onchain.networks.new_pools.with_raw_response.get_network(
-            network="eth",
+            network="network",
         )
 
         assert response.is_closed is True
@@ -190,7 +190,7 @@ class TestAsyncNewPools:
     @parametrize
     async def test_streaming_response_get_network(self, async_client: AsyncCoingecko) -> None:
         async with async_client.onchain.networks.new_pools.with_streaming_response.get_network(
-            network="eth",
+            network="network",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"

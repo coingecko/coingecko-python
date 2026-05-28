@@ -1,6 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List, Optional
+from typing import List
 from typing_extensions import TypeAlias
 
 from ..._models import BaseModel
@@ -9,32 +9,32 @@ __all__ = ["CategoryGetResponse", "CategoryGetResponseItem"]
 
 
 class CategoryGetResponseItem(BaseModel):
-    id: Optional[str] = None
-    """category ID"""
+    id: str
+    """Category ID"""
 
-    content: Optional[str] = None
-    """category description"""
+    content: str
+    """Category description"""
 
-    market_cap: Optional[float] = None
-    """category market cap"""
+    market_cap: float
+    """Category market cap"""
 
-    market_cap_change_24h: Optional[float] = None
-    """category market cap change in 24 hours"""
+    market_cap_change_24h: float
+    """Category market cap change in 24 hours"""
 
-    name: Optional[str] = None
-    """category name"""
+    name: str
+    """Category name"""
 
-    top_3_coins: Optional[List[str]] = None
-    """images of top 3 coins in the category"""
+    top_3_coins: List[str]
+    """Image URLs of top 3 coins in the category"""
 
-    top_3_coins_id: Optional[List[str]] = None
+    top_3_coins_id: List[str]
     """IDs of top 3 coins in the category"""
 
-    updated_at: Optional[str] = None
-    """category last updated time"""
+    updated_at: str
+    """Category last updated timestamp"""
 
-    volume_24h: Optional[float] = None
-    """category volume in 24 hours"""
+    volume_24h: float
+    """Category trading volume in 24 hours"""
 
 
 CategoryGetResponse: TypeAlias = List[CategoryGetResponseItem]

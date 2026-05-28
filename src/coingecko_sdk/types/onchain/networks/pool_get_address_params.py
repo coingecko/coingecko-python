@@ -11,13 +11,13 @@ class PoolGetAddressParams(TypedDict, total=False):
     network: Required[str]
 
     include: str
-    """
-    attributes to include, comma-separated if more than one to include Available
-    values: `base_token`, `quote_token`, `dex`
+    """Attributes to include, comma-separated if more than one.
+
+    Available values: `base_token`, `quote_token`, `dex`
     """
 
     include_composition: bool
-    """include pool composition, default: false"""
+    """Include pool composition. Default: `false`"""
 
     include_volume_breakdown: bool
-    """include volume breakdown, default: false"""
+    """Include volume breakdown. Default: `false`"""

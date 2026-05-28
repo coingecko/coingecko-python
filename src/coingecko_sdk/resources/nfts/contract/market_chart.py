@@ -55,12 +55,12 @@ class MarketChartResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MarketChartGetResponse:
         """
-        This endpoint allows you **query historical market data of a NFT collection,
-        including floor price, market cap, and 24hr volume, by number of days away from
-        now based on the provided contract address**
+        To query historical market data of a NFT collection, including floor price,
+        market cap, and 24hr volume, by number of days away from now based on the
+        provided contract address
 
         Args:
-          days: data up to number of days ago Valid values: any integer or max
+          days: Data up to number of days ago. Valid values: any integer or `max`
 
           extra_headers: Send extra headers
 
@@ -125,12 +125,12 @@ class AsyncMarketChartResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MarketChartGetResponse:
         """
-        This endpoint allows you **query historical market data of a NFT collection,
-        including floor price, market cap, and 24hr volume, by number of days away from
-        now based on the provided contract address**
+        To query historical market data of a NFT collection, including floor price,
+        market cap, and 24hr volume, by number of days away from now based on the
+        provided contract address
 
         Args:
-          days: data up to number of days ago Valid values: any integer or max
+          days: Data up to number of days ago. Valid values: any integer or `max`
 
           extra_headers: Send extra headers
 

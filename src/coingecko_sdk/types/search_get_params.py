@@ -9,4 +9,4 @@ __all__ = ["SearchGetParams"]
 
 class SearchGetParams(TypedDict, total=False):
     query: Required[str]
-    """search query"""
+    """Search query"""

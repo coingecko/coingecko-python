@@ -63,7 +63,7 @@ class TestExchanges:
     @parametrize
     def test_method_get_id(self, client: Coingecko) -> None:
         exchange = client.derivatives.exchanges.get_id(
-            id="binance_futures",
+            id="id",
         )
         assert_matches_type(ExchangeGetIDResponse, exchange, path=["response"])
 
@@ -71,7 +71,7 @@ class TestExchanges:
     @parametrize
     def test_method_get_id_with_all_params(self, client: Coingecko) -> None:
         exchange = client.derivatives.exchanges.get_id(
-            id="binance_futures",
+            id="id",
             include_tickers="all",
         )
         assert_matches_type(ExchangeGetIDResponse, exchange, path=["response"])
@@ -80,7 +80,7 @@ class TestExchanges:
     @parametrize
     def test_raw_response_get_id(self, client: Coingecko) -> None:
         response = client.derivatives.exchanges.with_raw_response.get_id(
-            id="binance_futures",
+            id="id",
         )
 
         assert response.is_closed is True
@@ -92,7 +92,7 @@ class TestExchanges:
     @parametrize
     def test_streaming_response_get_id(self, client: Coingecko) -> None:
         with client.derivatives.exchanges.with_streaming_response.get_id(
-            id="binance_futures",
+            id="id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -186,7 +186,7 @@ class TestAsyncExchanges:
     @parametrize
     async def test_method_get_id(self, async_client: AsyncCoingecko) -> None:
         exchange = await async_client.derivatives.exchanges.get_id(
-            id="binance_futures",
+            id="id",
         )
         assert_matches_type(ExchangeGetIDResponse, exchange, path=["response"])
 
@@ -194,7 +194,7 @@ class TestAsyncExchanges:
     @parametrize
     async def test_method_get_id_with_all_params(self, async_client: AsyncCoingecko) -> None:
         exchange = await async_client.derivatives.exchanges.get_id(
-            id="binance_futures",
+            id="id",
             include_tickers="all",
         )
         assert_matches_type(ExchangeGetIDResponse, exchange, path=["response"])
@@ -203,7 +203,7 @@ class TestAsyncExchanges:
     @parametrize
     async def test_raw_response_get_id(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.derivatives.exchanges.with_raw_response.get_id(
-            id="binance_futures",
+            id="id",
         )
 
         assert response.is_closed is True
@@ -215,7 +215,7 @@ class TestAsyncExchanges:
     @parametrize
     async def test_streaming_response_get_id(self, async_client: AsyncCoingecko) -> None:
         async with async_client.derivatives.exchanges.with_streaming_response.get_id(
-            id="binance_futures",
+            id="id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"

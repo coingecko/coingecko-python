@@ -1,6 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List, Optional
+from typing import List
 from typing_extensions import Literal, TypeAlias
 
 from .._models import BaseModel
@@ -9,29 +9,29 @@ __all__ = ["NewsGetResponse", "NewsGetResponseItem"]
 
 
 class NewsGetResponseItem(BaseModel):
-    author: Optional[str] = None
-    """news article author"""
+    author: str
+    """News article author"""
 
-    image: Optional[str] = None
-    """news article image URL"""
+    image: str
+    """News article image URL"""
 
-    posted_at: Optional[str] = None
-    """news article published timestamp in ISO 8601 format"""
+    posted_at: str
+    """News article published timestamp in ISO 8601 format"""
 
-    related_coin_ids: Optional[List[str]] = None
-    """related coin IDs"""
+    related_coin_ids: List[str]
+    """Related coin IDs"""
 
-    source_name: Optional[str] = None
-    """news article source name"""
+    source_name: str
+    """News article source name"""
 
-    title: Optional[str] = None
-    """news article title"""
+    title: str
+    """News article title"""
 
-    type: Optional[Literal["news", "guide"]] = None
-    """news article type"""
+    type: Literal["news", "guide"]
+    """News article type"""
 
-    url: Optional[str] = None
-    """news article URL"""
+    url: str
+    """News article URL"""
 
 
 NewsGetResponse: TypeAlias = List[NewsGetResponseItem]

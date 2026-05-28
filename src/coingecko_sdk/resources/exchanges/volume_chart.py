@@ -57,11 +57,11 @@ class VolumeChartResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> VolumeChartGetResponse:
         """
-        This endpoint allows you to **query the historical volume chart data with time
-        in UNIX and trading volume data in BTC based on exchange's ID**
+        To query the historical volume chart data with time in UNIX and trading volume
+        data in BTC based on exchange's ID
 
         Args:
-          days: data up to number of days ago
+          days: Data up to number of days ago.
 
           extra_headers: Send extra headers
 
@@ -99,13 +99,13 @@ class VolumeChartResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> VolumeChartGetRangeResponse:
         """
-        This endpoint allows you to **query the historical volume chart data in BTC by
-        specifying date range in UNIX based on exchange's ID**
+        To query the historical volume chart data in BTC by specifying date range in
+        UNIX based on exchange's ID
 
         Args:
-          from_: starting date in UNIX timestamp
+          from_: Starting date in UNIX timestamp.
 
-          to: ending date in UNIX timestamp
+          to: Ending date in UNIX timestamp.
 
           extra_headers: Send extra headers
 
@@ -169,11 +169,11 @@ class AsyncVolumeChartResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> VolumeChartGetResponse:
         """
-        This endpoint allows you to **query the historical volume chart data with time
-        in UNIX and trading volume data in BTC based on exchange's ID**
+        To query the historical volume chart data with time in UNIX and trading volume
+        data in BTC based on exchange's ID
 
         Args:
-          days: data up to number of days ago
+          days: Data up to number of days ago.
 
           extra_headers: Send extra headers
 
@@ -211,13 +211,13 @@ class AsyncVolumeChartResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> VolumeChartGetRangeResponse:
         """
-        This endpoint allows you to **query the historical volume chart data in BTC by
-        specifying date range in UNIX based on exchange's ID**
+        To query the historical volume chart data in BTC by specifying date range in
+        UNIX based on exchange's ID
 
         Args:
-          from_: starting date in UNIX timestamp
+          from_: Starting date in UNIX timestamp.
 
-          to: ending date in UNIX timestamp
+          to: Ending date in UNIX timestamp.
 
           extra_headers: Send extra headers
 

@@ -21,8 +21,8 @@ class TestInfo:
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         info = client.onchain.networks.pools.info.get(
-            pool_address="0x06da0fd433c1a5d7a4faa01111c044910a184553",
-            network="eth",
+            pool_address="pool_address",
+            network="network",
         )
         assert_matches_type(InfoGetResponse, info, path=["response"])
 
@@ -30,8 +30,8 @@ class TestInfo:
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         info = client.onchain.networks.pools.info.get(
-            pool_address="0x06da0fd433c1a5d7a4faa01111c044910a184553",
-            network="eth",
+            pool_address="pool_address",
+            network="network",
             include="pool",
         )
         assert_matches_type(InfoGetResponse, info, path=["response"])
@@ -40,8 +40,8 @@ class TestInfo:
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.onchain.networks.pools.info.with_raw_response.get(
-            pool_address="0x06da0fd433c1a5d7a4faa01111c044910a184553",
-            network="eth",
+            pool_address="pool_address",
+            network="network",
         )
 
         assert response.is_closed is True
@@ -53,8 +53,8 @@ class TestInfo:
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.onchain.networks.pools.info.with_streaming_response.get(
-            pool_address="0x06da0fd433c1a5d7a4faa01111c044910a184553",
-            network="eth",
+            pool_address="pool_address",
+            network="network",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -69,14 +69,14 @@ class TestInfo:
     def test_path_params_get(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `network` but received ''"):
             client.onchain.networks.pools.info.with_raw_response.get(
-                pool_address="0x06da0fd433c1a5d7a4faa01111c044910a184553",
+                pool_address="pool_address",
                 network="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `pool_address` but received ''"):
             client.onchain.networks.pools.info.with_raw_response.get(
                 pool_address="",
-                network="eth",
+                network="network",
             )
 
 
@@ -89,8 +89,8 @@ class TestAsyncInfo:
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         info = await async_client.onchain.networks.pools.info.get(
-            pool_address="0x06da0fd433c1a5d7a4faa01111c044910a184553",
-            network="eth",
+            pool_address="pool_address",
+            network="network",
         )
         assert_matches_type(InfoGetResponse, info, path=["response"])
 
@@ -98,8 +98,8 @@ class TestAsyncInfo:
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         info = await async_client.onchain.networks.pools.info.get(
-            pool_address="0x06da0fd433c1a5d7a4faa01111c044910a184553",
-            network="eth",
+            pool_address="pool_address",
+            network="network",
             include="pool",
         )
         assert_matches_type(InfoGetResponse, info, path=["response"])
@@ -108,8 +108,8 @@ class TestAsyncInfo:
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.onchain.networks.pools.info.with_raw_response.get(
-            pool_address="0x06da0fd433c1a5d7a4faa01111c044910a184553",
-            network="eth",
+            pool_address="pool_address",
+            network="network",
         )
 
         assert response.is_closed is True
@@ -121,8 +121,8 @@ class TestAsyncInfo:
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.onchain.networks.pools.info.with_streaming_response.get(
-            pool_address="0x06da0fd433c1a5d7a4faa01111c044910a184553",
-            network="eth",
+            pool_address="pool_address",
+            network="network",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -137,12 +137,12 @@ class TestAsyncInfo:
     async def test_path_params_get(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `network` but received ''"):
             await async_client.onchain.networks.pools.info.with_raw_response.get(
-                pool_address="0x06da0fd433c1a5d7a4faa01111c044910a184553",
+                pool_address="pool_address",
                 network="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `pool_address` but received ''"):
             await async_client.onchain.networks.pools.info.with_raw_response.get(
                 pool_address="",
-                network="eth",
+                network="network",
             )

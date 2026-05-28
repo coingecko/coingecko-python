@@ -21,8 +21,8 @@ class TestTopTraders:
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         top_trader = client.onchain.networks.tokens.top_traders.get(
-            token_address="0x6921b130d297cc43754afba22e5eac0fbf8db75b",
-            network_id="base",
+            token_address="token_address",
+            network_id="network_id",
         )
         assert_matches_type(TopTraderGetResponse, top_trader, path=["response"])
 
@@ -30,8 +30,8 @@ class TestTopTraders:
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         top_trader = client.onchain.networks.tokens.top_traders.get(
-            token_address="0x6921b130d297cc43754afba22e5eac0fbf8db75b",
-            network_id="base",
+            token_address="token_address",
+            network_id="network_id",
             include_address_label=True,
             sort="realized_pnl_usd_desc",
             traders="traders",
@@ -42,8 +42,8 @@ class TestTopTraders:
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.onchain.networks.tokens.top_traders.with_raw_response.get(
-            token_address="0x6921b130d297cc43754afba22e5eac0fbf8db75b",
-            network_id="base",
+            token_address="token_address",
+            network_id="network_id",
         )
 
         assert response.is_closed is True
@@ -55,8 +55,8 @@ class TestTopTraders:
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.onchain.networks.tokens.top_traders.with_streaming_response.get(
-            token_address="0x6921b130d297cc43754afba22e5eac0fbf8db75b",
-            network_id="base",
+            token_address="token_address",
+            network_id="network_id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -71,14 +71,14 @@ class TestTopTraders:
     def test_path_params_get(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `network_id` but received ''"):
             client.onchain.networks.tokens.top_traders.with_raw_response.get(
-                token_address="0x6921b130d297cc43754afba22e5eac0fbf8db75b",
+                token_address="token_address",
                 network_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `token_address` but received ''"):
             client.onchain.networks.tokens.top_traders.with_raw_response.get(
                 token_address="",
-                network_id="base",
+                network_id="network_id",
             )
 
 
@@ -91,8 +91,8 @@ class TestAsyncTopTraders:
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         top_trader = await async_client.onchain.networks.tokens.top_traders.get(
-            token_address="0x6921b130d297cc43754afba22e5eac0fbf8db75b",
-            network_id="base",
+            token_address="token_address",
+            network_id="network_id",
         )
         assert_matches_type(TopTraderGetResponse, top_trader, path=["response"])
 
@@ -100,8 +100,8 @@ class TestAsyncTopTraders:
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         top_trader = await async_client.onchain.networks.tokens.top_traders.get(
-            token_address="0x6921b130d297cc43754afba22e5eac0fbf8db75b",
-            network_id="base",
+            token_address="token_address",
+            network_id="network_id",
             include_address_label=True,
             sort="realized_pnl_usd_desc",
             traders="traders",
@@ -112,8 +112,8 @@ class TestAsyncTopTraders:
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.onchain.networks.tokens.top_traders.with_raw_response.get(
-            token_address="0x6921b130d297cc43754afba22e5eac0fbf8db75b",
-            network_id="base",
+            token_address="token_address",
+            network_id="network_id",
         )
 
         assert response.is_closed is True
@@ -125,8 +125,8 @@ class TestAsyncTopTraders:
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.onchain.networks.tokens.top_traders.with_streaming_response.get(
-            token_address="0x6921b130d297cc43754afba22e5eac0fbf8db75b",
-            network_id="base",
+            token_address="token_address",
+            network_id="network_id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -141,12 +141,12 @@ class TestAsyncTopTraders:
     async def test_path_params_get(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `network_id` but received ''"):
             await async_client.onchain.networks.tokens.top_traders.with_raw_response.get(
-                token_address="0x6921b130d297cc43754afba22e5eac0fbf8db75b",
+                token_address="token_address",
                 network_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `token_address` but received ''"):
             await async_client.onchain.networks.tokens.top_traders.with_raw_response.get(
                 token_address="",
-                network_id="base",
+                network_id="network_id",
             )

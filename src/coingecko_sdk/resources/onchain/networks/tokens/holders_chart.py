@@ -57,11 +57,11 @@ class HoldersChartResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> HoldersChartGetResponse:
         """
-        This endpoint allows you to **get the historical token holders chart based on
-        the provided token contract address on a network**
+        To get the historical token holders chart based on the provided token contract
+        address on a network
 
         Args:
-          days: number of days to return the historical token holders chart Default value: 7
+          days: Number of days to return the historical token holders chart. Default value: 7
 
           extra_headers: Send extra headers
 
@@ -126,11 +126,11 @@ class AsyncHoldersChartResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> HoldersChartGetResponse:
         """
-        This endpoint allows you to **get the historical token holders chart based on
-        the provided token contract address on a network**
+        To get the historical token holders chart based on the provided token contract
+        address on a network
 
         Args:
-          days: number of days to return the historical token holders chart Default value: 7
+          days: Number of days to return the historical token holders chart. Default value: 7
 
           extra_headers: Send extra headers
 

@@ -1,6 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List, Optional
+from typing import List
 from typing_extensions import TypeAlias
 
 from .._models import BaseModel
@@ -9,19 +9,19 @@ __all__ = ["NFTGetListResponse", "NFTGetListResponseItem"]
 
 
 class NFTGetListResponseItem(BaseModel):
-    id: Optional[str] = None
+    id: str
     """NFT collection ID"""
 
-    asset_platform_id: Optional[str] = None
+    asset_platform_id: str
     """NFT collection asset platform ID"""
 
-    contract_address: Optional[str] = None
+    contract_address: str
     """NFT collection contract address"""
 
-    name: Optional[str] = None
+    name: str
     """NFT collection name"""
 
-    symbol: Optional[str] = None
+    symbol: str
     """NFT collection symbol"""
 
 

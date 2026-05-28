@@ -9,9 +9,9 @@ __all__ = ["NFTGetMarketsParams"]
 
 class NFTGetMarketsParams(TypedDict, total=False):
     asset_platform_id: str
-    """
-    filter result by asset platform (blockchain network) \\**refers to
-    [`/asset_platforms`](/reference/asset-platforms-list) filter=`nft`
+    """Filter result by asset platform (blockchain network).
+
+    \\**refers to [`/asset_platforms`](/reference/asset-platforms-list) filter=`nft`.
     """
 
     order: Literal[
@@ -22,13 +22,10 @@ class NFTGetMarketsParams(TypedDict, total=False):
         "market_cap_usd_asc",
         "market_cap_usd_desc",
     ]
-    """sort results by field Default: `market_cap_usd_desc`"""
+    """Sort results by field. Default: `market_cap_usd_desc`"""
 
-    page: float
-    """page through results Default: `1`"""
+    page: int
+    """Page through results. Default value: 1"""
 
-    per_page: float
-    """
-    total results per page Valid values: any integer between 1 and 250 Default:
-    `100`
-    """
+    per_page: int
+    """Total results per page. Default value: 100 Valid values: 1...250"""

@@ -28,7 +28,7 @@ class TestInfoRecentlyUpdated:
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         info_recently_updated = client.onchain.tokens.info_recently_updated.get(
             include="network",
-            network="eth",
+            network="network",
         )
         assert_matches_type(InfoRecentlyUpdatedGetResponse, info_recently_updated, path=["response"])
 
@@ -71,7 +71,7 @@ class TestAsyncInfoRecentlyUpdated:
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         info_recently_updated = await async_client.onchain.tokens.info_recently_updated.get(
             include="network",
-            network="eth",
+            network="network",
         )
         assert_matches_type(InfoRecentlyUpdatedGetResponse, info_recently_updated, path=["response"])
 

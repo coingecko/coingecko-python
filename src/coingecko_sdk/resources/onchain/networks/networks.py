@@ -63,16 +63,12 @@ __all__ = ["NetworksResource", "AsyncNetworksResource"]
 
 class NetworksResource(SyncAPIResource):
     @cached_property
-    def new_pools(self) -> NewPoolsResource:
-        return NewPoolsResource(self._client)
-
-    @cached_property
-    def trending_pools(self) -> TrendingPoolsResource:
-        return TrendingPoolsResource(self._client)
-
-    @cached_property
     def dexes(self) -> DexesResource:
         return DexesResource(self._client)
+
+    @cached_property
+    def new_pools(self) -> NewPoolsResource:
+        return NewPoolsResource(self._client)
 
     @cached_property
     def pools(self) -> PoolsResource:
@@ -81,6 +77,10 @@ class NetworksResource(SyncAPIResource):
     @cached_property
     def tokens(self) -> TokensResource:
         return TokensResource(self._client)
+
+    @cached_property
+    def trending_pools(self) -> TrendingPoolsResource:
+        return TrendingPoolsResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> NetworksResourceWithRawResponse:
@@ -113,11 +113,10 @@ class NetworksResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NetworkGetResponse:
         """
-        This endpoint allows you to **query all the supported networks on
-        GeckoTerminal**
+        To retrieve a list of all supported networks on GeckoTerminal
 
         Args:
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
           extra_headers: Send extra headers
 
@@ -142,16 +141,12 @@ class NetworksResource(SyncAPIResource):
 
 class AsyncNetworksResource(AsyncAPIResource):
     @cached_property
-    def new_pools(self) -> AsyncNewPoolsResource:
-        return AsyncNewPoolsResource(self._client)
-
-    @cached_property
-    def trending_pools(self) -> AsyncTrendingPoolsResource:
-        return AsyncTrendingPoolsResource(self._client)
-
-    @cached_property
     def dexes(self) -> AsyncDexesResource:
         return AsyncDexesResource(self._client)
+
+    @cached_property
+    def new_pools(self) -> AsyncNewPoolsResource:
+        return AsyncNewPoolsResource(self._client)
 
     @cached_property
     def pools(self) -> AsyncPoolsResource:
@@ -160,6 +155,10 @@ class AsyncNetworksResource(AsyncAPIResource):
     @cached_property
     def tokens(self) -> AsyncTokensResource:
         return AsyncTokensResource(self._client)
+
+    @cached_property
+    def trending_pools(self) -> AsyncTrendingPoolsResource:
+        return AsyncTrendingPoolsResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> AsyncNetworksResourceWithRawResponse:
@@ -192,11 +191,10 @@ class AsyncNetworksResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> NetworkGetResponse:
         """
-        This endpoint allows you to **query all the supported networks on
-        GeckoTerminal**
+        To retrieve a list of all supported networks on GeckoTerminal
 
         Args:
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
           extra_headers: Send extra headers
 
@@ -228,16 +226,12 @@ class NetworksResourceWithRawResponse:
         )
 
     @cached_property
-    def new_pools(self) -> NewPoolsResourceWithRawResponse:
-        return NewPoolsResourceWithRawResponse(self._networks.new_pools)
-
-    @cached_property
-    def trending_pools(self) -> TrendingPoolsResourceWithRawResponse:
-        return TrendingPoolsResourceWithRawResponse(self._networks.trending_pools)
-
-    @cached_property
     def dexes(self) -> DexesResourceWithRawResponse:
         return DexesResourceWithRawResponse(self._networks.dexes)
+
+    @cached_property
+    def new_pools(self) -> NewPoolsResourceWithRawResponse:
+        return NewPoolsResourceWithRawResponse(self._networks.new_pools)
 
     @cached_property
     def pools(self) -> PoolsResourceWithRawResponse:
@@ -246,6 +240,10 @@ class NetworksResourceWithRawResponse:
     @cached_property
     def tokens(self) -> TokensResourceWithRawResponse:
         return TokensResourceWithRawResponse(self._networks.tokens)
+
+    @cached_property
+    def trending_pools(self) -> TrendingPoolsResourceWithRawResponse:
+        return TrendingPoolsResourceWithRawResponse(self._networks.trending_pools)
 
 
 class AsyncNetworksResourceWithRawResponse:
@@ -257,16 +255,12 @@ class AsyncNetworksResourceWithRawResponse:
         )
 
     @cached_property
-    def new_pools(self) -> AsyncNewPoolsResourceWithRawResponse:
-        return AsyncNewPoolsResourceWithRawResponse(self._networks.new_pools)
-
-    @cached_property
-    def trending_pools(self) -> AsyncTrendingPoolsResourceWithRawResponse:
-        return AsyncTrendingPoolsResourceWithRawResponse(self._networks.trending_pools)
-
-    @cached_property
     def dexes(self) -> AsyncDexesResourceWithRawResponse:
         return AsyncDexesResourceWithRawResponse(self._networks.dexes)
+
+    @cached_property
+    def new_pools(self) -> AsyncNewPoolsResourceWithRawResponse:
+        return AsyncNewPoolsResourceWithRawResponse(self._networks.new_pools)
 
     @cached_property
     def pools(self) -> AsyncPoolsResourceWithRawResponse:
@@ -275,6 +269,10 @@ class AsyncNetworksResourceWithRawResponse:
     @cached_property
     def tokens(self) -> AsyncTokensResourceWithRawResponse:
         return AsyncTokensResourceWithRawResponse(self._networks.tokens)
+
+    @cached_property
+    def trending_pools(self) -> AsyncTrendingPoolsResourceWithRawResponse:
+        return AsyncTrendingPoolsResourceWithRawResponse(self._networks.trending_pools)
 
 
 class NetworksResourceWithStreamingResponse:
@@ -286,16 +284,12 @@ class NetworksResourceWithStreamingResponse:
         )
 
     @cached_property
-    def new_pools(self) -> NewPoolsResourceWithStreamingResponse:
-        return NewPoolsResourceWithStreamingResponse(self._networks.new_pools)
-
-    @cached_property
-    def trending_pools(self) -> TrendingPoolsResourceWithStreamingResponse:
-        return TrendingPoolsResourceWithStreamingResponse(self._networks.trending_pools)
-
-    @cached_property
     def dexes(self) -> DexesResourceWithStreamingResponse:
         return DexesResourceWithStreamingResponse(self._networks.dexes)
+
+    @cached_property
+    def new_pools(self) -> NewPoolsResourceWithStreamingResponse:
+        return NewPoolsResourceWithStreamingResponse(self._networks.new_pools)
 
     @cached_property
     def pools(self) -> PoolsResourceWithStreamingResponse:
@@ -304,6 +298,10 @@ class NetworksResourceWithStreamingResponse:
     @cached_property
     def tokens(self) -> TokensResourceWithStreamingResponse:
         return TokensResourceWithStreamingResponse(self._networks.tokens)
+
+    @cached_property
+    def trending_pools(self) -> TrendingPoolsResourceWithStreamingResponse:
+        return TrendingPoolsResourceWithStreamingResponse(self._networks.trending_pools)
 
 
 class AsyncNetworksResourceWithStreamingResponse:
@@ -315,16 +313,12 @@ class AsyncNetworksResourceWithStreamingResponse:
         )
 
     @cached_property
-    def new_pools(self) -> AsyncNewPoolsResourceWithStreamingResponse:
-        return AsyncNewPoolsResourceWithStreamingResponse(self._networks.new_pools)
-
-    @cached_property
-    def trending_pools(self) -> AsyncTrendingPoolsResourceWithStreamingResponse:
-        return AsyncTrendingPoolsResourceWithStreamingResponse(self._networks.trending_pools)
-
-    @cached_property
     def dexes(self) -> AsyncDexesResourceWithStreamingResponse:
         return AsyncDexesResourceWithStreamingResponse(self._networks.dexes)
+
+    @cached_property
+    def new_pools(self) -> AsyncNewPoolsResourceWithStreamingResponse:
+        return AsyncNewPoolsResourceWithStreamingResponse(self._networks.new_pools)
 
     @cached_property
     def pools(self) -> AsyncPoolsResourceWithStreamingResponse:
@@ -333,3 +327,7 @@ class AsyncNetworksResourceWithStreamingResponse:
     @cached_property
     def tokens(self) -> AsyncTokensResourceWithStreamingResponse:
         return AsyncTokensResourceWithStreamingResponse(self._networks.tokens)
+
+    @cached_property
+    def trending_pools(self) -> AsyncTrendingPoolsResourceWithStreamingResponse:
+        return AsyncTrendingPoolsResourceWithStreamingResponse(self._networks.trending_pools)
