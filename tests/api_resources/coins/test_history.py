@@ -21,7 +21,7 @@ class TestHistory:
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         history = client.coins.history.get(
-            id="bitcoin",
+            id="id",
             date="date",
         )
         assert_matches_type(HistoryGetResponse, history, path=["response"])
@@ -30,7 +30,7 @@ class TestHistory:
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         history = client.coins.history.get(
-            id="bitcoin",
+            id="id",
             date="date",
             localization=True,
         )
@@ -40,7 +40,7 @@ class TestHistory:
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.coins.history.with_raw_response.get(
-            id="bitcoin",
+            id="id",
             date="date",
         )
 
@@ -53,7 +53,7 @@ class TestHistory:
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.coins.history.with_streaming_response.get(
-            id="bitcoin",
+            id="id",
             date="date",
         ) as response:
             assert not response.is_closed
@@ -83,7 +83,7 @@ class TestAsyncHistory:
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         history = await async_client.coins.history.get(
-            id="bitcoin",
+            id="id",
             date="date",
         )
         assert_matches_type(HistoryGetResponse, history, path=["response"])
@@ -92,7 +92,7 @@ class TestAsyncHistory:
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         history = await async_client.coins.history.get(
-            id="bitcoin",
+            id="id",
             date="date",
             localization=True,
         )
@@ -102,7 +102,7 @@ class TestAsyncHistory:
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.coins.history.with_raw_response.get(
-            id="bitcoin",
+            id="id",
             date="date",
         )
 
@@ -115,7 +115,7 @@ class TestAsyncHistory:
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.coins.history.with_streaming_response.get(
-            id="bitcoin",
+            id="id",
             date="date",
         ) as response:
             assert not response.is_closed

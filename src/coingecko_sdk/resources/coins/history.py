@@ -55,13 +55,13 @@ class HistoryResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> HistoryGetResponse:
         """
-        This endpoint allows you to **query the historical data (price, market cap,
-        24hrs volume, ...) at a given date for a coin based on a particular coin ID**
+        To query the historical data (price, market cap, 24hrs volume, etc.) at a given
+        date for a coin based on a particular coin ID
 
         Args:
-          date: date of data snapshot (`YYYY-MM-DD`)
+          date: The date of data snapshot. Format: `YYYY-MM-DD`
 
-          localization: include all the localized languages in response, default: true
+          localization: Include all the localized languages in response. Default: true
 
           extra_headers: Send extra headers
 
@@ -126,13 +126,13 @@ class AsyncHistoryResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> HistoryGetResponse:
         """
-        This endpoint allows you to **query the historical data (price, market cap,
-        24hrs volume, ...) at a given date for a coin based on a particular coin ID**
+        To query the historical data (price, market cap, 24hrs volume, etc.) at a given
+        date for a coin based on a particular coin ID
 
         Args:
-          date: date of data snapshot (`YYYY-MM-DD`)
+          date: The date of data snapshot. Format: `YYYY-MM-DD`
 
-          localization: include all the localized languages in response, default: true
+          localization: Include all the localized languages in response. Default: true
 
           extra_headers: Send extra headers
 

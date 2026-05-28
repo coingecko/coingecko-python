@@ -30,7 +30,7 @@ class TestMarketCapChart:
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         market_cap_chart = client.global_.market_cap_chart.get(
             days="1",
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
         assert_matches_type(MarketCapChartGetResponse, market_cap_chart, path=["response"])
 
@@ -79,7 +79,7 @@ class TestAsyncMarketCapChart:
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         market_cap_chart = await async_client.global_.market_cap_chart.get(
             days="1",
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
         assert_matches_type(MarketCapChartGetResponse, market_cap_chart, path=["response"])
 

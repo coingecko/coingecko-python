@@ -21,7 +21,7 @@ class TestTickers:
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         ticker = client.nfts.tickers.get(
-            "pudgy-penguins",
+            "id",
         )
         assert_matches_type(TickerGetResponse, ticker, path=["response"])
 
@@ -29,7 +29,7 @@ class TestTickers:
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.nfts.tickers.with_raw_response.get(
-            "pudgy-penguins",
+            "id",
         )
 
         assert response.is_closed is True
@@ -41,7 +41,7 @@ class TestTickers:
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.nfts.tickers.with_streaming_response.get(
-            "pudgy-penguins",
+            "id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -69,7 +69,7 @@ class TestAsyncTickers:
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         ticker = await async_client.nfts.tickers.get(
-            "pudgy-penguins",
+            "id",
         )
         assert_matches_type(TickerGetResponse, ticker, path=["response"])
 
@@ -77,7 +77,7 @@ class TestAsyncTickers:
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.nfts.tickers.with_raw_response.get(
-            "pudgy-penguins",
+            "id",
         )
 
         assert response.is_closed is True
@@ -89,7 +89,7 @@ class TestAsyncTickers:
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.nfts.tickers.with_streaming_response.get(
-            "pudgy-penguins",
+            "id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"

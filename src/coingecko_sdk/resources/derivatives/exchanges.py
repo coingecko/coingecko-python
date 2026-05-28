@@ -57,8 +57,8 @@ class ExchangesResource(SyncAPIResource):
             "trade_volume_24h_btc_desc",
         ]
         | Omit = omit,
-        page: float | Omit = omit,
-        per_page: float | Omit = omit,
+        page: int | Omit = omit,
+        per_page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -67,15 +67,15 @@ class ExchangesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetResponse:
         """
-        This endpoint allows you to **query all the derivatives exchanges with related
-        data (ID, name, open interest, ...) on CoinGecko**
+        To query all the derivatives exchanges with related data (ID, name, open
+        interest, ...) on CoinGecko
 
         Args:
-          order: use this to sort the order of responses, default: open_interest_btc_desc
+          order: Sort order of responses. Default: `open_interest_btc_desc`
 
-          page: page through results, default: 1
+          page: Page through results. Default value: 1
 
-          per_page: total results per page
+          per_page: Total results per page.
 
           extra_headers: Send extra headers
 
@@ -117,11 +117,11 @@ class ExchangesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetIDResponse:
         """
-        This endpoint allows you to **query the derivatives exchange's related data (ID,
-        name, open interest, ...) based on the exchanges' ID**
+        To query the derivatives exchange's related data (name, open interest, trade
+        volume, ...) based on the exchange's ID
 
         Args:
-          include_tickers: include tickers data
+          include_tickers: Include tickers data. Default: tickers data is not included.
 
           extra_headers: Send extra headers
 
@@ -155,10 +155,7 @@ class ExchangesResource(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetListResponse:
-        """
-        This endpoint allows you to **query all the derivatives exchanges with ID and
-        name on CoinGecko**
-        """
+        """To query all the derivatives exchanges with ID and name on CoinGecko"""
         return self._get(
             "/derivatives/exchanges/list",
             options=make_request_options(
@@ -200,8 +197,8 @@ class AsyncExchangesResource(AsyncAPIResource):
             "trade_volume_24h_btc_desc",
         ]
         | Omit = omit,
-        page: float | Omit = omit,
-        per_page: float | Omit = omit,
+        page: int | Omit = omit,
+        per_page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -210,15 +207,15 @@ class AsyncExchangesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetResponse:
         """
-        This endpoint allows you to **query all the derivatives exchanges with related
-        data (ID, name, open interest, ...) on CoinGecko**
+        To query all the derivatives exchanges with related data (ID, name, open
+        interest, ...) on CoinGecko
 
         Args:
-          order: use this to sort the order of responses, default: open_interest_btc_desc
+          order: Sort order of responses. Default: `open_interest_btc_desc`
 
-          page: page through results, default: 1
+          page: Page through results. Default value: 1
 
-          per_page: total results per page
+          per_page: Total results per page.
 
           extra_headers: Send extra headers
 
@@ -260,11 +257,11 @@ class AsyncExchangesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetIDResponse:
         """
-        This endpoint allows you to **query the derivatives exchange's related data (ID,
-        name, open interest, ...) based on the exchanges' ID**
+        To query the derivatives exchange's related data (name, open interest, trade
+        volume, ...) based on the exchange's ID
 
         Args:
-          include_tickers: include tickers data
+          include_tickers: Include tickers data. Default: tickers data is not included.
 
           extra_headers: Send extra headers
 
@@ -300,10 +297,7 @@ class AsyncExchangesResource(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetListResponse:
-        """
-        This endpoint allows you to **query all the derivatives exchanges with ID and
-        name on CoinGecko**
-        """
+        """To query all the derivatives exchanges with ID and name on CoinGecko"""
         return await self._get(
             "/derivatives/exchanges/list",
             options=make_request_options(

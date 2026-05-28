@@ -29,8 +29,8 @@ class TestNews:
         news = client.news.get(
             coin_id="coin_id",
             language="en",
-            page=1,
-            per_page=1,
+            page=0,
+            per_page=0,
             type="all",
         )
         assert_matches_type(NewsGetResponse, news, path=["response"])
@@ -75,8 +75,8 @@ class TestAsyncNews:
         news = await async_client.news.get(
             coin_id="coin_id",
             language="en",
-            page=1,
-            per_page=1,
+            page=0,
+            per_page=0,
             type="all",
         )
         assert_matches_type(NewsGetResponse, news, path=["response"])

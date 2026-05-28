@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 
-from .pool_data import PoolData as PoolData
+from .token_item import TokenItem as TokenItem
 from .dex_get_params import DexGetParams as DexGetParams
 from .pool_get_params import PoolGetParams as PoolGetParams
 from .dex_get_response import DexGetResponse as DexGetResponse
+from .pool_address_item import PoolAddressItem as PoolAddressItem
 from .pool_get_response import PoolGetResponse as PoolGetResponse
 from .new_pool_get_params import NewPoolGetParams as NewPoolGetParams
 from .dex_get_pools_params import DexGetPoolsParams as DexGetPoolsParams

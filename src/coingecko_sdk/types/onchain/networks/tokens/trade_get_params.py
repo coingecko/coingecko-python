@@ -11,4 +11,4 @@ class TradeGetParams(TypedDict, total=False):
     network: Required[str]
 
     trade_volume_in_usd_greater_than: float
-    """filter trades by trade volume in USD greater than this value Default value: 0"""
+    """Filter trades by trade volume in USD greater than this value. Default value: 0"""

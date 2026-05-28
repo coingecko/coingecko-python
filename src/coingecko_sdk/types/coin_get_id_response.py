@@ -1,44 +1,23 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 from typing import Dict, List, Optional
-from datetime import datetime
 
 from .._models import BaseModel
-from .detail_platform_data import DetailPlatformData
 
 __all__ = [
     "CoinGetIDResponse",
+    "DetailPlatforms",
+    "Image",
+    "Links",
+    "LinksReposURL",
+    "StatusUpdate",
     "CategoriesDetail",
     "CommunityData",
     "DeveloperData",
     "DeveloperDataCodeAdditionsDeletions4Weeks",
     "IcoData",
-    "Image",
-    "Links",
-    "LinksReposURL",
     "MarketData",
-    "MarketDataAth",
-    "MarketDataAthChangePercentage",
-    "MarketDataAthDate",
-    "MarketDataAtl",
-    "MarketDataAtlChangePercentage",
-    "MarketDataAtlDate",
-    "MarketDataCurrentPrice",
-    "MarketDataFullyDilutedValuation",
-    "MarketDataHigh24h",
-    "MarketDataLow24h",
-    "MarketDataMarketCap",
-    "MarketDataMarketCapChange24hInCurrency",
-    "MarketDataMarketCapChangePercentage24hInCurrency",
-    "MarketDataPriceChangePercentage14dInCurrency",
-    "MarketDataPriceChangePercentage1hInCurrency",
-    "MarketDataPriceChangePercentage1yInCurrency",
-    "MarketDataPriceChangePercentage200dInCurrency",
-    "MarketDataPriceChangePercentage24hInCurrency",
-    "MarketDataPriceChangePercentage30dInCurrency",
-    "MarketDataPriceChangePercentage60dInCurrency",
-    "MarketDataPriceChangePercentage7dInCurrency",
-    "MarketDataTotalVolume",
+    "MarketDataRoi",
     "Ticker",
     "TickerConvertedLast",
     "TickerConvertedVolume",
@@ -46,174 +25,16 @@ __all__ = [
 ]
 
 
-class CategoriesDetail(BaseModel):
-    id: Optional[str] = None
-    """category ID"""
+class DetailPlatforms(BaseModel):
+    contract_address: Optional[str] = None
+    """Token contract address"""
 
-    name: Optional[str] = None
-    """category name"""
-
-
-class CommunityData(BaseModel):
-    """coin community data"""
-
-    facebook_likes: Optional[float] = None
-    """coin facebook likes"""
-
-    reddit_accounts_active_48h: Optional[float] = None
-    """coin reddit active accounts in 48 hours"""
-
-    reddit_average_comments_48h: Optional[float] = None
-    """coin reddit average comments in 48 hours"""
-
-    reddit_average_posts_48h: Optional[float] = None
-    """coin reddit average posts in 48 hours"""
-
-    reddit_subscribers: Optional[float] = None
-    """coin reddit subscribers"""
-
-    telegram_channel_user_count: Optional[float] = None
-    """coin telegram channel user count"""
-
-
-class DeveloperDataCodeAdditionsDeletions4Weeks(BaseModel):
-    """coin code additions and deletions in 4 weeks"""
-
-    additions: Optional[float] = None
-
-    deletions: Optional[float] = None
-
-
-class DeveloperData(BaseModel):
-    """coin developer data"""
-
-    closed_issues: Optional[float] = None
-    """coin repository closed issues"""
-
-    code_additions_deletions_4_weeks: Optional[DeveloperDataCodeAdditionsDeletions4Weeks] = None
-    """coin code additions and deletions in 4 weeks"""
-
-    commit_count_4_weeks: Optional[float] = None
-    """coin repository commit count in 4 weeks"""
-
-    forks: Optional[float] = None
-    """coin repository forks"""
-
-    last_4_weeks_commit_activity_series: Optional[List[float]] = None
-    """coin repository last 4 weeks commit activity series"""
-
-    pull_request_contributors: Optional[float] = None
-    """coin repository pull request contributors"""
-
-    pull_requests_merged: Optional[float] = None
-    """coin repository pull requests merged"""
-
-    stars: Optional[float] = None
-    """coin repository stars"""
-
-    subscribers: Optional[float] = None
-    """coin repository subscribers"""
-
-    total_issues: Optional[float] = None
-    """coin repository total issues"""
-
-
-class IcoData(BaseModel):
-    """coin ICO data"""
-
-    accepting_currencies: Optional[str] = None
-    """accepting currencies"""
-
-    amount_for_sale: Optional[float] = None
-    """amount for sale"""
-
-    base_pre_sale_amount: Optional[float] = None
-    """base pre-sale amount"""
-
-    base_public_sale_amount: Optional[float] = None
-    """base public sale amount"""
-
-    bounty_detail_url: Optional[str] = None
-    """bounty detail url"""
-
-    country_origin: Optional[str] = None
-    """country of origin"""
-
-    description: Optional[str] = None
-    """detailed description"""
-
-    hardcap_amount: Optional[float] = None
-    """hardcap amount"""
-
-    hardcap_currency: Optional[str] = None
-    """hardcap currency"""
-
-    ico_end_date: Optional[datetime] = None
-    """ICO end date"""
-
-    ico_start_date: Optional[datetime] = None
-    """ICO start date"""
-
-    kyc_required: Optional[bool] = None
-    """KYC required"""
-
-    links: Optional[Dict[str, str]] = None
-    """ICO related links"""
-
-    pre_sale_available: Optional[bool] = None
-    """pre-sale available"""
-
-    pre_sale_end_date: Optional[datetime] = None
-    """pre-sale end date"""
-
-    pre_sale_ended: Optional[bool] = None
-    """pre-sale ended"""
-
-    pre_sale_start_date: Optional[datetime] = None
-    """pre-sale start date"""
-
-    quote_pre_sale_amount: Optional[float] = None
-    """quote pre-sale amount"""
-
-    quote_pre_sale_currency: Optional[str] = None
-    """quote pre-sale currency"""
-
-    quote_public_sale_amount: Optional[float] = None
-    """quote public sale amount"""
-
-    quote_public_sale_currency: Optional[str] = None
-    """quote public sale currency"""
-
-    short_desc: Optional[str] = None
-    """short description"""
-
-    softcap_amount: Optional[float] = None
-    """softcap amount"""
-
-    softcap_currency: Optional[str] = None
-    """softcap currency"""
-
-    total_raised: Optional[float] = None
-    """total raised amount"""
-
-    total_raised_currency: Optional[str] = None
-    """total raised currency"""
-
-    whitelist_available: Optional[bool] = None
-    """whitelist available"""
-
-    whitelist_end_date: Optional[datetime] = None
-    """whitelist end date"""
-
-    whitelist_start_date: Optional[datetime] = None
-    """whitelist start date"""
-
-    whitelist_url: Optional[str] = None
-    """whitelist url"""
+    decimal_place: Optional[int] = None
+    """Token decimal place"""
 
 
 class Image(BaseModel):
-    """coin image url"""
+    """Coin image URL"""
 
     large: Optional[str] = None
 
@@ -223,421 +44,404 @@ class Image(BaseModel):
 
 
 class LinksReposURL(BaseModel):
-    """coin repository url"""
+    """Repository URL"""
 
     bitbucket: Optional[List[str]] = None
-    """coin bitbucket repository url"""
+    """Bitbucket repository URL"""
 
     github: Optional[List[str]] = None
-    """coin github repository url"""
+    """GitHub repository URL"""
 
 
 class Links(BaseModel):
-    """links"""
+    """Links"""
 
     announcement_url: Optional[List[str]] = None
-    """coin announcement url"""
+    """Announcement URL"""
 
-    bitcointalk_thread_identifier: Optional[str] = None
-    """coin bitcointalk thread identifier"""
+    bitcointalk_thread_identifier: Optional[int] = None
+    """Bitcointalk thread identifier"""
 
     blockchain_site: Optional[List[str]] = None
-    """coin block explorer url"""
+    """Block explorer URL"""
 
     chat_url: Optional[List[str]] = None
-    """coin chat url"""
+    """Chat URL"""
 
     facebook_username: Optional[str] = None
-    """coin facebook username"""
+    """Facebook username"""
 
     homepage: Optional[List[str]] = None
-    """coin website url"""
+    """Website URL"""
 
     official_forum_url: Optional[List[str]] = None
-    """coin official forum url"""
+    """Official forum URL"""
 
     repos_url: Optional[LinksReposURL] = None
-    """coin repository url"""
+    """Repository URL"""
 
     snapshot_url: Optional[str] = None
-    """coin snapshot url"""
+    """Snapshot URL"""
 
     subreddit_url: Optional[str] = None
-    """coin subreddit url"""
+    """Subreddit URL"""
 
     telegram_channel_identifier: Optional[str] = None
-    """coin telegram channel identifier"""
+    """Telegram channel identifier"""
 
     twitter_screen_name: Optional[str] = None
-    """coin twitter handle"""
+    """Twitter handle"""
 
-    whitepaper: Optional[List[str]] = None
-    """coin whitepaper url"""
+    whitepaper: Optional[str] = None
+    """Whitepaper URL"""
 
 
-class MarketDataAth(BaseModel):
-    """coin all time high (ATH) in currency"""
+class StatusUpdate(BaseModel):
+    category: Optional[str] = None
+    """Status update category"""
 
-    btc: Optional[float] = None
+    created_at: Optional[str] = None
+    """Status update creation time"""
 
-    eur: Optional[float] = None
+    description: Optional[str] = None
+    """Status update description"""
 
-    usd: Optional[float] = None
+    user: Optional[str] = None
+    """Status update user"""
 
+    user_title: Optional[str] = None
+    """Status update user title"""
 
-class MarketDataAthChangePercentage(BaseModel):
-    """coin all time high (ATH) change in percentage"""
 
-    btc: Optional[float] = None
+class CategoriesDetail(BaseModel):
+    id: Optional[str] = None
+    """Category ID"""
 
-    eur: Optional[float] = None
+    name: Optional[str] = None
+    """Category name"""
 
-    usd: Optional[float] = None
 
+class CommunityData(BaseModel):
+    """Community data"""
 
-class MarketDataAthDate(BaseModel):
-    """coin all time high (ATH) date"""
+    facebook_likes: Optional[float] = None
+    """Facebook likes"""
 
-    btc: Optional[str] = None
+    reddit_accounts_active_48h: Optional[float] = None
+    """Reddit active accounts in 48 hours"""
 
-    eur: Optional[str] = None
+    reddit_average_comments_48h: Optional[float] = None
+    """Reddit average comments in 48 hours"""
 
-    usd: Optional[str] = None
+    reddit_average_posts_48h: Optional[float] = None
+    """Reddit average posts in 48 hours"""
 
+    reddit_subscribers: Optional[float] = None
+    """Reddit subscribers"""
 
-class MarketDataAtl(BaseModel):
-    """coin all time low (atl) in currency"""
+    telegram_channel_user_count: Optional[float] = None
+    """Telegram channel user count"""
 
-    btc: Optional[float] = None
 
-    eur: Optional[float] = None
+class DeveloperDataCodeAdditionsDeletions4Weeks(BaseModel):
+    """Code additions and deletions in 4 weeks"""
 
-    usd: Optional[float] = None
+    additions: Optional[float] = None
 
+    deletions: Optional[float] = None
 
-class MarketDataAtlChangePercentage(BaseModel):
-    """coin all time low (atl) change in percentage"""
 
-    btc: Optional[float] = None
+class DeveloperData(BaseModel):
+    """Developer data"""
 
-    eur: Optional[float] = None
+    closed_issues: Optional[float] = None
+    """Repository closed issues"""
 
-    usd: Optional[float] = None
+    code_additions_deletions_4_weeks: Optional[DeveloperDataCodeAdditionsDeletions4Weeks] = None
+    """Code additions and deletions in 4 weeks"""
 
+    commit_count_4_weeks: Optional[float] = None
+    """Repository commit count in 4 weeks"""
 
-class MarketDataAtlDate(BaseModel):
-    """coin all time low (atl) date"""
+    forks: Optional[float] = None
+    """Repository forks"""
 
-    btc: Optional[str] = None
+    last_4_weeks_commit_activity_series: Optional[List[float]] = None
+    """Repository last 4 weeks commit activity series"""
 
-    eur: Optional[str] = None
+    pull_request_contributors: Optional[float] = None
+    """Repository pull request contributors"""
 
-    usd: Optional[str] = None
+    pull_requests_merged: Optional[float] = None
+    """Repository pull requests merged"""
 
+    stars: Optional[float] = None
+    """Repository stars"""
 
-class MarketDataCurrentPrice(BaseModel):
-    """coin current price in currency"""
+    subscribers: Optional[float] = None
+    """Repository subscribers"""
 
-    btc: Optional[float] = None
+    total_issues: Optional[float] = None
+    """Repository total issues"""
 
-    eur: Optional[float] = None
 
-    usd: Optional[float] = None
+class IcoData(BaseModel):
+    """ICO data"""
 
+    accepting_currencies: Optional[str] = None
+    """Accepting currencies"""
 
-class MarketDataFullyDilutedValuation(BaseModel):
-    """coin fully diluted valuation (fdv) in currency"""
+    amount_for_sale: Optional[float] = None
+    """Amount for sale"""
 
-    btc: Optional[float] = None
+    base_pre_sale_amount: Optional[float] = None
+    """Base pre-sale amount"""
 
-    eur: Optional[float] = None
+    base_public_sale_amount: Optional[float] = None
+    """Base public sale amount"""
 
-    usd: Optional[float] = None
+    bounty_detail_url: Optional[str] = None
+    """Bounty detail URL"""
 
+    country_origin: Optional[str] = None
+    """Country of origin"""
 
-class MarketDataHigh24h(BaseModel):
-    """coin 24hr price high in currency"""
+    description: Optional[str] = None
+    """Detailed description"""
 
-    btc: Optional[float] = None
+    hardcap_amount: Optional[float] = None
+    """Hardcap amount"""
 
-    eur: Optional[float] = None
+    hardcap_currency: Optional[str] = None
+    """Hardcap currency"""
 
-    usd: Optional[float] = None
+    ico_end_date: Optional[str] = None
+    """ICO end date"""
 
+    ico_start_date: Optional[str] = None
+    """ICO start date"""
 
-class MarketDataLow24h(BaseModel):
-    """coin 24hr price low in currency"""
+    kyc_required: Optional[bool] = None
+    """KYC required"""
 
-    btc: Optional[float] = None
+    links: Optional[Dict[str, str]] = None
+    """ICO related links"""
 
-    eur: Optional[float] = None
+    pre_sale_available: Optional[bool] = None
+    """Pre-sale available"""
 
-    usd: Optional[float] = None
+    pre_sale_end_date: Optional[str] = None
+    """Pre-sale end date"""
 
+    pre_sale_ended: Optional[bool] = None
+    """Pre-sale ended"""
 
-class MarketDataMarketCap(BaseModel):
-    """coin market cap in currency"""
+    pre_sale_start_date: Optional[str] = None
+    """Pre-sale start date"""
 
-    btc: Optional[float] = None
+    quote_pre_sale_amount: Optional[float] = None
+    """Quote pre-sale amount"""
 
-    eur: Optional[float] = None
+    quote_pre_sale_currency: Optional[str] = None
+    """Quote pre-sale currency"""
 
-    usd: Optional[float] = None
+    quote_public_sale_amount: Optional[float] = None
+    """Quote public sale amount"""
 
+    quote_public_sale_currency: Optional[str] = None
+    """Quote public sale currency"""
 
-class MarketDataMarketCapChange24hInCurrency(BaseModel):
-    """coin 24hr market cap change in currency"""
+    short_desc: Optional[str] = None
+    """Short description"""
 
-    btc: Optional[float] = None
+    softcap_amount: Optional[float] = None
+    """Softcap amount"""
 
-    eur: Optional[float] = None
+    softcap_currency: Optional[str] = None
+    """Softcap currency"""
 
-    usd: Optional[float] = None
+    total_raised: Optional[float] = None
+    """Total raised amount"""
 
+    total_raised_currency: Optional[str] = None
+    """Total raised currency"""
 
-class MarketDataMarketCapChangePercentage24hInCurrency(BaseModel):
-    """coin 24hr market cap change in percentage"""
+    whitelist_available: Optional[bool] = None
+    """Whitelist available"""
 
-    btc: Optional[float] = None
+    whitelist_end_date: Optional[str] = None
+    """Whitelist end date"""
 
-    eur: Optional[float] = None
+    whitelist_start_date: Optional[str] = None
+    """Whitelist start date"""
 
-    usd: Optional[float] = None
+    whitelist_url: Optional[str] = None
+    """Whitelist URL"""
 
 
-class MarketDataPriceChangePercentage14dInCurrency(BaseModel):
-    """coin 14d price change in currency"""
+class MarketDataRoi(BaseModel):
+    """Return on investment"""
 
-    btc: Optional[float] = None
+    currency: Optional[str] = None
+    """ROI currency"""
 
-    eur: Optional[float] = None
+    percentage: Optional[float] = None
+    """ROI percentage"""
 
-    usd: Optional[float] = None
-
-
-class MarketDataPriceChangePercentage1hInCurrency(BaseModel):
-    """coin 1h price change in currency"""
-
-    btc: Optional[float] = None
-
-    eur: Optional[float] = None
-
-    usd: Optional[float] = None
-
-
-class MarketDataPriceChangePercentage1yInCurrency(BaseModel):
-    """coin 1y price change in currency"""
-
-    btc: Optional[float] = None
-
-    eur: Optional[float] = None
-
-    usd: Optional[float] = None
-
-
-class MarketDataPriceChangePercentage200dInCurrency(BaseModel):
-    """coin 200d price change in currency"""
-
-    btc: Optional[float] = None
-
-    eur: Optional[float] = None
-
-    usd: Optional[float] = None
-
-
-class MarketDataPriceChangePercentage24hInCurrency(BaseModel):
-    """coin 24hr price change in currency"""
-
-    btc: Optional[float] = None
-
-    eur: Optional[float] = None
-
-    usd: Optional[float] = None
-
-
-class MarketDataPriceChangePercentage30dInCurrency(BaseModel):
-    """coin 30d price change in currency"""
-
-    btc: Optional[float] = None
-
-    eur: Optional[float] = None
-
-    usd: Optional[float] = None
-
-
-class MarketDataPriceChangePercentage60dInCurrency(BaseModel):
-    """coin 60d price change in currency"""
-
-    btc: Optional[float] = None
-
-    eur: Optional[float] = None
-
-    usd: Optional[float] = None
-
-
-class MarketDataPriceChangePercentage7dInCurrency(BaseModel):
-    """coin 7d price change in currency"""
-
-    btc: Optional[float] = None
-
-    eur: Optional[float] = None
-
-    usd: Optional[float] = None
-
-
-class MarketDataTotalVolume(BaseModel):
-    """coin total trading volume in currency"""
-
-    btc: Optional[float] = None
-
-    eur: Optional[float] = None
-
-    usd: Optional[float] = None
+    times: Optional[float] = None
+    """ROI multiplier"""
 
 
 class MarketData(BaseModel):
-    """coin market data"""
+    """Market data"""
 
-    ath: Optional[MarketDataAth] = None
-    """coin all time high (ATH) in currency"""
+    ath: Optional[Dict[str, float]] = None
+    """All-time high in target currency"""
 
-    ath_change_percentage: Optional[MarketDataAthChangePercentage] = None
-    """coin all time high (ATH) change in percentage"""
+    ath_change_percentage: Optional[Dict[str, float]] = None
+    """All-time high change percentage"""
 
-    ath_date: Optional[MarketDataAthDate] = None
-    """coin all time high (ATH) date"""
+    ath_date: Optional[Dict[str, str]] = None
+    """All-time high date"""
 
-    atl: Optional[MarketDataAtl] = None
-    """coin all time low (atl) in currency"""
+    atl: Optional[Dict[str, float]] = None
+    """All-time low in target currency"""
 
-    atl_change_percentage: Optional[MarketDataAtlChangePercentage] = None
-    """coin all time low (atl) change in percentage"""
+    atl_change_percentage: Optional[Dict[str, float]] = None
+    """All-time low change percentage"""
 
-    atl_date: Optional[MarketDataAtlDate] = None
-    """coin all time low (atl) date"""
+    atl_date: Optional[Dict[str, str]] = None
+    """All-time low date"""
 
     circulating_supply: Optional[float] = None
-    """coin circulating supply"""
+    """Circulating supply"""
 
-    current_price: Optional[MarketDataCurrentPrice] = None
-    """coin current price in currency"""
+    current_price: Optional[Dict[str, float]] = None
+    """Current price in target currency"""
 
     fdv_to_tvl_ratio: Optional[float] = None
-    """fully diluted valuation to total value locked ratio"""
+    """FDV to TVL ratio"""
 
-    fully_diluted_valuation: Optional[MarketDataFullyDilutedValuation] = None
-    """coin fully diluted valuation (fdv) in currency"""
+    fully_diluted_valuation: Optional[Dict[str, float]] = None
+    """Fully diluted valuation in target currency"""
 
-    high_24h: Optional[MarketDataHigh24h] = None
-    """coin 24hr price high in currency"""
+    high_24h: Optional[Dict[str, float]] = None
+    """24h price high in target currency"""
 
-    last_updated: Optional[datetime] = None
-    """coin market data last updated timestamp"""
+    last_updated: Optional[str] = None
+    """Market data last updated timestamp"""
 
-    low_24h: Optional[MarketDataLow24h] = None
-    """coin 24hr price low in currency"""
+    low_24h: Optional[Dict[str, float]] = None
+    """24h price low in target currency"""
 
-    market_cap: Optional[MarketDataMarketCap] = None
-    """coin market cap in currency"""
+    market_cap: Optional[Dict[str, float]] = None
+    """Market cap in target currency"""
 
     market_cap_change_24h: Optional[float] = None
-    """coin 24hr market cap change in currency"""
+    """24h market cap change in target currency"""
 
-    market_cap_change_24h_in_currency: Optional[MarketDataMarketCapChange24hInCurrency] = None
-    """coin 24hr market cap change in currency"""
+    market_cap_change_24h_in_currency: Optional[Dict[str, float]] = None
+    """24h market cap change in target currency"""
 
     market_cap_change_percentage_24h: Optional[float] = None
-    """coin 24hr market cap change in percentage"""
+    """24h market cap change percentage"""
 
-    market_cap_change_percentage_24h_in_currency: Optional[MarketDataMarketCapChangePercentage24hInCurrency] = None
-    """coin 24hr market cap change in percentage"""
+    market_cap_change_percentage_24h_in_currency: Optional[Dict[str, float]] = None
+    """24h market cap change percentage per currency"""
 
     market_cap_fdv_ratio: Optional[float] = None
-    """market cap to fully diluted valuation ratio"""
+    """Market cap to FDV ratio"""
 
-    market_cap_rank: Optional[float] = None
-    """coin rank by market cap"""
+    market_cap_rank: Optional[int] = None
+    """Market cap rank"""
 
-    market_cap_rank_with_rehypothecated: Optional[float] = None
-    """coin rank by market cap including rehypothecated tokens"""
+    market_cap_rank_with_rehypothecated: Optional[int] = None
+    """Market cap rank including rehypothecated tokens"""
 
     max_supply: Optional[float] = None
-    """coin max supply"""
+    """Max supply"""
+
+    max_supply_infinite: Optional[bool] = None
+    """Max supply infinite"""
 
     mcap_to_tvl_ratio: Optional[float] = None
-    """market cap to total value locked ratio"""
+    """Market cap to TVL ratio"""
 
     outstanding_supply: Optional[float] = None
-    """
-    tokens outstanding in the market, circulated/tradable or planned for circulation
-    """
+    """Tokens outstanding in the market"""
 
     outstanding_token_value_usd: Optional[float] = None
-    """outstanding token value in USD"""
+    """Outstanding token value in USD"""
 
     price_change_24h: Optional[float] = None
-    """coin 24hr price change in currency"""
+    """24h price change in target currency"""
+
+    price_change_24h_in_currency: Optional[Dict[str, float]] = None
+    """24h price change in target currency"""
 
     price_change_percentage_14d: Optional[float] = None
-    """coin 14d price change in percentage"""
+    """14d price change percentage"""
 
-    price_change_percentage_14d_in_currency: Optional[MarketDataPriceChangePercentage14dInCurrency] = None
-    """coin 14d price change in currency"""
+    price_change_percentage_14d_in_currency: Optional[Dict[str, float]] = None
+    """14d price change percentage per currency"""
 
-    price_change_percentage_1h_in_currency: Optional[MarketDataPriceChangePercentage1hInCurrency] = None
-    """coin 1h price change in currency"""
+    price_change_percentage_1h_in_currency: Optional[Dict[str, float]] = None
+    """1h price change percentage per currency"""
 
     price_change_percentage_1y: Optional[float] = None
-    """coin 1y price change in percentage"""
+    """1y price change percentage"""
 
-    price_change_percentage_1y_in_currency: Optional[MarketDataPriceChangePercentage1yInCurrency] = None
-    """coin 1y price change in currency"""
+    price_change_percentage_1y_in_currency: Optional[Dict[str, float]] = None
+    """1y price change percentage per currency"""
 
     price_change_percentage_200d: Optional[float] = None
-    """coin 200d price change in percentage"""
+    """200d price change percentage"""
 
-    price_change_percentage_200d_in_currency: Optional[MarketDataPriceChangePercentage200dInCurrency] = None
-    """coin 200d price change in currency"""
+    price_change_percentage_200d_in_currency: Optional[Dict[str, float]] = None
+    """200d price change percentage per currency"""
 
     price_change_percentage_24h: Optional[float] = None
-    """coin 24hr price change in percentage"""
+    """24h price change percentage"""
 
-    price_change_percentage_24h_in_currency: Optional[MarketDataPriceChangePercentage24hInCurrency] = None
-    """coin 24hr price change in currency"""
+    price_change_percentage_24h_in_currency: Optional[Dict[str, float]] = None
+    """24h price change percentage per currency"""
 
     price_change_percentage_30d: Optional[float] = None
-    """coin 30d price change in percentage"""
+    """30d price change percentage"""
 
-    price_change_percentage_30d_in_currency: Optional[MarketDataPriceChangePercentage30dInCurrency] = None
-    """coin 30d price change in currency"""
+    price_change_percentage_30d_in_currency: Optional[Dict[str, float]] = None
+    """30d price change percentage per currency"""
 
     price_change_percentage_60d: Optional[float] = None
-    """coin 60d price change in percentage"""
+    """60d price change percentage"""
 
-    price_change_percentage_60d_in_currency: Optional[MarketDataPriceChangePercentage60dInCurrency] = None
-    """coin 60d price change in currency"""
+    price_change_percentage_60d_in_currency: Optional[Dict[str, float]] = None
+    """60d price change percentage per currency"""
 
     price_change_percentage_7d: Optional[float] = None
-    """coin 7d price change in percentage"""
+    """7d price change percentage"""
 
-    price_change_percentage_7d_in_currency: Optional[MarketDataPriceChangePercentage7dInCurrency] = None
-    """coin 7d price change in currency"""
+    price_change_percentage_7d_in_currency: Optional[Dict[str, float]] = None
+    """7d price change percentage per currency"""
 
-    roi: Optional[float] = None
-    """coin return on investment"""
+    roi: Optional[MarketDataRoi] = None
+    """Return on investment"""
+
+    sparkline_7d: Optional[List[float]] = None
+    """Sparkline 7-day price data"""
 
     total_supply: Optional[float] = None
-    """coin total supply"""
+    """Total supply"""
 
     total_value_locked: Optional[float] = None
-    """total value locked"""
+    """Total value locked"""
 
-    total_volume: Optional[MarketDataTotalVolume] = None
-    """coin total trading volume in currency"""
+    total_volume: Optional[Dict[str, float]] = None
+    """Total trading volume in target currency"""
 
 
 class TickerConvertedLast(BaseModel):
-    """coin ticker converted last price"""
+    """Ticker converted last price"""
 
     btc: Optional[float] = None
 
@@ -647,7 +451,7 @@ class TickerConvertedLast(BaseModel):
 
 
 class TickerConvertedVolume(BaseModel):
-    """coin ticker converted volume"""
+    """Ticker converted volume"""
 
     btc: Optional[float] = None
 
@@ -657,170 +461,170 @@ class TickerConvertedVolume(BaseModel):
 
 
 class TickerMarket(BaseModel):
-    """coin ticker exchange"""
+    """Ticker exchange"""
 
     has_trading_incentive: Optional[bool] = None
-    """coin ticker exchange trading incentive"""
+    """Exchange trading incentive"""
 
     identifier: Optional[str] = None
-    """coin ticker exchange identifier"""
+    """Exchange identifier"""
 
     name: Optional[str] = None
-    """coin ticker exchange name"""
+    """Exchange name"""
 
 
 class Ticker(BaseModel):
     base: Optional[str] = None
-    """coin ticker base currency"""
+    """Ticker base currency"""
 
     bid_ask_spread_percentage: Optional[float] = None
-    """coin ticker bid ask spread percentage"""
+    """Ticker bid-ask spread percentage"""
 
     coin_id: Optional[str] = None
-    """coin ticker base currency coin ID"""
+    """Ticker base currency coin ID"""
 
     coin_mcap_usd: Optional[float] = None
-    """coin market cap in usd"""
+    """Market cap in USD"""
 
     converted_last: Optional[TickerConvertedLast] = None
-    """coin ticker converted last price"""
+    """Ticker converted last price"""
 
     converted_volume: Optional[TickerConvertedVolume] = None
-    """coin ticker converted volume"""
+    """Ticker converted volume"""
 
     is_anomaly: Optional[bool] = None
-    """coin ticker anomaly"""
+    """Ticker anomaly"""
 
     is_stale: Optional[bool] = None
-    """coin ticker stale"""
+    """Ticker stale"""
 
     last: Optional[float] = None
-    """coin ticker last price"""
+    """Ticker last price"""
 
-    last_fetch_at: Optional[datetime] = None
-    """coin ticker last fetch timestamp"""
+    last_fetch_at: Optional[str] = None
+    """Ticker last fetch timestamp"""
 
-    last_traded_at: Optional[datetime] = None
-    """coin ticker last traded timestamp"""
+    last_traded_at: Optional[str] = None
+    """Ticker last traded timestamp"""
 
     market: Optional[TickerMarket] = None
-    """coin ticker exchange"""
+    """Ticker exchange"""
 
     target: Optional[str] = None
-    """coin ticker target currency"""
+    """Ticker target currency"""
 
     target_coin_id: Optional[str] = None
-    """coin ticker target currency coin ID"""
+    """Ticker target currency coin ID"""
 
-    timestamp: Optional[datetime] = None
-    """coin ticker timestamp"""
+    timestamp: Optional[str] = None
+    """Ticker timestamp"""
 
     token_info_url: Optional[str] = None
-    """coin ticker token info url"""
+    """Ticker token info URL"""
 
     trade_url: Optional[str] = None
-    """coin ticker trade url"""
+    """Ticker trade URL"""
 
     trust_score: Optional[str] = None
-    """coin ticker trust score"""
+    """Ticker trust score"""
 
     volume: Optional[float] = None
-    """coin ticker volume"""
+    """Ticker volume"""
 
 
 class CoinGetIDResponse(BaseModel):
-    id: Optional[str] = None
-    """coin ID"""
+    id: str
+    """Coin ID"""
 
-    additional_notices: Optional[List[str]] = None
-    """additional notices"""
+    additional_notices: List[str]
+    """Additional notices"""
 
     asset_platform_id: Optional[str] = None
-    """coin asset platform ID"""
+    """Coin asset platform ID"""
 
-    block_time_in_minutes: Optional[float] = None
-    """blockchain block time in minutes"""
+    block_time_in_minutes: float
+    """Blockchain block time in minutes"""
 
-    categories: Optional[List[str]] = None
-    """coin categories"""
+    categories: List[str]
+    """Coin categories"""
 
-    categories_details: Optional[List[CategoriesDetail]] = None
-    """detailed coin categories"""
+    country_origin: str
+    """Country of origin"""
 
-    community_data: Optional[CommunityData] = None
-    """coin community data"""
+    description: Dict[str, str]
+    """Coin description"""
 
-    country_origin: Optional[str] = None
-    """coin country of origin"""
+    detail_platforms: Dict[str, DetailPlatforms]
+    """Detailed coin asset platform and contract address"""
 
-    description: Optional[Dict[str, str]] = None
-    """coin description"""
-
-    detail_platforms: Optional[Dict[str, DetailPlatformData]] = None
-    """detailed coin asset platform and contract address"""
-
-    developer_data: Optional[DeveloperData] = None
-    """coin developer data"""
-
-    genesis_date: Optional[datetime] = None
-    """coin genesis date"""
+    genesis_date: Optional[str] = None
+    """Genesis date"""
 
     hashing_algorithm: Optional[str] = None
-    """blockchain hashing algorithm"""
+    """Blockchain hashing algorithm"""
 
-    ico_data: Optional[IcoData] = None
-    """coin ICO data"""
+    image: Image
+    """Coin image URL"""
 
-    image: Optional[Image] = None
-    """coin image url"""
+    last_updated: str
+    """Last updated timestamp"""
 
-    last_updated: Optional[datetime] = None
-    """coin last updated timestamp"""
+    links: Links
+    """Links"""
 
-    links: Optional[Links] = None
-    """links"""
+    market_cap_rank: Optional[int] = None
+    """Market cap rank"""
 
-    localization: Optional[Dict[str, str]] = None
-    """coin name localization"""
+    market_cap_rank_with_rehypothecated: Optional[int] = None
+    """Market cap rank including rehypothecated tokens"""
 
-    market_cap_rank: Optional[float] = None
-    """coin rank by market cap"""
+    name: str
+    """Coin name"""
 
-    market_cap_rank_with_rehypothecated: Optional[float] = None
-    """coin rank by market cap including rehypothecated tokens"""
+    platforms: Dict[str, str]
+    """Coin asset platform and contract address"""
 
-    market_data: Optional[MarketData] = None
-    """coin market data"""
-
-    name: Optional[str] = None
-    """coin name"""
-
-    platforms: Optional[Dict[str, Optional[str]]] = None
-    """coin asset platform and contract address"""
-
-    preview_listing: Optional[bool] = None
-    """preview listing coin"""
+    preview_listing: bool
+    """Preview listing coin"""
 
     public_notice: Optional[str] = None
-    """public notice"""
+    """Public notice"""
 
     sentiment_votes_down_percentage: Optional[float] = None
-    """coin sentiment votes down percentage"""
+    """Sentiment votes down percentage"""
 
     sentiment_votes_up_percentage: Optional[float] = None
-    """coin sentiment votes up percentage"""
+    """Sentiment votes up percentage"""
 
-    status_updates: Optional[List[str]] = None
-    """coin status updates"""
+    status_updates: List[StatusUpdate]
+    """Status updates"""
 
-    symbol: Optional[str] = None
-    """coin symbol"""
+    symbol: str
+    """Coin symbol"""
+
+    watchlist_portfolio_users: float
+    """Number of users watching this coin in portfolio"""
+
+    web_slug: str
+    """Coin web slug"""
+
+    categories_details: Optional[List[CategoriesDetail]] = None
+    """Detailed coin categories"""
+
+    community_data: Optional[CommunityData] = None
+    """Community data"""
+
+    developer_data: Optional[DeveloperData] = None
+    """Developer data"""
+
+    ico_data: Optional[IcoData] = None
+    """ICO data"""
+
+    localization: Optional[Dict[str, str]] = None
+    """Coin name localization"""
+
+    market_data: Optional[MarketData] = None
+    """Market data"""
 
     tickers: Optional[List[Ticker]] = None
-    """coin tickers"""
-
-    watchlist_portfolio_users: Optional[float] = None
-    """number of users watching this coin in portfolio"""
-
-    web_slug: Optional[str] = None
-    """coin web slug"""
+    """Tickers"""

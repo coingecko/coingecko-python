@@ -9,13 +9,10 @@ __all__ = ["InfoRecentlyUpdatedGetParams"]
 
 class InfoRecentlyUpdatedGetParams(TypedDict, total=False):
     include: Literal["network"]
-    """
-    Attributes for related resources to include, which will be returned under the
-    top-level 'included' key
-    """
+    """Attributes for related resources to include."""
 
     network: str
-    """
-    filter tokens by provided network \\**refers to
-    [/networks](/reference/networks-list)
+    """Filter tokens by provided network.
+
+    \\**refers to [`/onchain/networks`](/reference/networks-list).
     """

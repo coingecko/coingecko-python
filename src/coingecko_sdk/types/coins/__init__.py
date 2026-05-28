@@ -19,6 +19,7 @@ from .list_get_new_response import ListGetNewResponse as ListGetNewResponse
 from .ohlc_get_range_params import OhlcGetRangeParams as OhlcGetRangeParams
 from .market_chart_get_params import MarketChartGetParams as MarketChartGetParams
 from .ohlc_get_range_response import OhlcGetRangeResponse as OhlcGetRangeResponse
+from .top_gainers_losers_item import TopGainersLosersItem as TopGainersLosersItem
 from .market_chart_get_response import MarketChartGetResponse as MarketChartGetResponse
 from .category_get_list_response import CategoryGetListResponse as CategoryGetListResponse
 from .top_gainers_loser_get_params import TopGainersLoserGetParams as TopGainersLoserGetParams

@@ -9,7 +9,7 @@ __all__ = ["CirculatingSupplyChartGetParams"]
 
 class CirculatingSupplyChartGetParams(TypedDict, total=False):
     days: Required[str]
-    """data up to number of days ago Valid values: any integer or `max`"""
+    """Data up to number of days ago. Valid values: any integer or `max`."""
 
     interval: Literal["5m", "hourly", "daily"]
-    """data interval"""
+    """Data interval."""

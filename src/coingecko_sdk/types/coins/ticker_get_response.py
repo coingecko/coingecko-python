@@ -8,7 +8,7 @@ __all__ = ["TickerGetResponse", "Ticker", "TickerConvertedLast", "TickerConverte
 
 
 class TickerConvertedLast(BaseModel):
-    """coin ticker converted last price"""
+    """Converted last price"""
 
     btc: Optional[float] = None
 
@@ -18,7 +18,7 @@ class TickerConvertedLast(BaseModel):
 
 
 class TickerConvertedVolume(BaseModel):
-    """coin ticker converted volume"""
+    """Converted trading volume"""
 
     btc: Optional[float] = None
 
@@ -28,89 +28,89 @@ class TickerConvertedVolume(BaseModel):
 
 
 class TickerMarket(BaseModel):
-    """coin ticker exchange"""
+    """Exchange information"""
 
     has_trading_incentive: Optional[bool] = None
-    """exchange trading incentive"""
+    """Exchange trading incentive"""
 
     identifier: Optional[str] = None
-    """exchange identifier"""
+    """Exchange identifier"""
 
     logo: Optional[str] = None
-    """exchange image url"""
+    """Exchange logo URL"""
 
     name: Optional[str] = None
-    """exchange name"""
+    """Exchange name"""
 
 
 class Ticker(BaseModel):
-    base: Optional[str] = None
-    """coin ticker base currency"""
+    base: str
+    """Ticker base currency"""
 
-    bid_ask_spread_percentage: Optional[float] = None
-    """coin ticker bid ask spread percentage"""
+    bid_ask_spread_percentage: float
+    """Bid-ask spread percentage"""
 
-    coin_id: Optional[str] = None
-    """coin ticker base currency coin ID"""
+    coin_id: str
+    """Base currency coin ID"""
 
-    coin_mcap_usd: Optional[float] = None
-    """coin market cap in usd"""
+    coin_mcap_usd: float
+    """Coin market cap in USD"""
 
-    converted_last: Optional[TickerConvertedLast] = None
-    """coin ticker converted last price"""
+    converted_last: TickerConvertedLast
+    """Converted last price"""
 
-    converted_volume: Optional[TickerConvertedVolume] = None
-    """coin ticker converted volume"""
+    converted_volume: TickerConvertedVolume
+    """Converted trading volume"""
 
-    cost_to_move_down_usd: Optional[float] = None
-    """coin ticker cost to move down in usd"""
+    is_anomaly: bool
+    """Whether ticker is anomalous"""
 
-    cost_to_move_up_usd: Optional[float] = None
-    """coin ticker cost to move up in usd"""
+    is_stale: bool
+    """Whether ticker is stale"""
 
-    is_anomaly: Optional[bool] = None
-    """coin ticker anomaly"""
+    last: float
+    """Last price"""
 
-    is_stale: Optional[bool] = None
-    """coin ticker stale"""
+    last_fetch_at: str
+    """Last fetch timestamp"""
 
-    last: Optional[float] = None
-    """coin ticker last price"""
+    last_traded_at: str
+    """Last traded timestamp"""
 
-    last_fetch_at: Optional[str] = None
-    """coin ticker last fetch timestamp"""
+    market: TickerMarket
+    """Exchange information"""
 
-    last_traded_at: Optional[str] = None
-    """coin ticker last traded timestamp"""
+    target: str
+    """Ticker target currency"""
 
-    market: Optional[TickerMarket] = None
-    """coin ticker exchange"""
+    target_coin_id: str
+    """Target currency coin ID"""
 
-    target: Optional[str] = None
-    """coin ticker target currency"""
-
-    target_coin_id: Optional[str] = None
-    """coin ticker target currency coin ID"""
-
-    timestamp: Optional[str] = None
-    """coin ticker timestamp"""
+    timestamp: str
+    """Ticker timestamp"""
 
     token_info_url: Optional[str] = None
-    """coin ticker token info url"""
+    """Token info URL"""
 
-    trade_url: Optional[str] = None
-    """coin ticker trade url"""
+    trade_url: str
+    """Trade URL"""
 
     trust_score: Optional[str] = None
-    """coin ticker trust score"""
+    """Trust score"""
 
-    volume: Optional[float] = None
-    """coin ticker volume"""
+    volume: float
+    """Trading volume"""
+
+    cost_to_move_down_usd: Optional[float] = None
+    """Cost to move price down by 2% in USD"""
+
+    cost_to_move_up_usd: Optional[float] = None
+    """Cost to move price up by 2% in USD"""
 
 
 class TickerGetResponse(BaseModel):
-    name: Optional[str] = None
-    """coin name"""
+    name: str
+    """Coin name"""
 
-    tickers: Optional[List[Ticker]] = None
-    """list of tickers"""
+    tickers: List[Ticker]
+    """List of tickers"""

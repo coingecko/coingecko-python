@@ -9,4 +9,4 @@ __all__ = ["NetworkGetParams"]
 
 class NetworkGetParams(TypedDict, total=False):
     page: int
-    """page through results Default value: 1"""
+    """Page through results. Default value: 1"""

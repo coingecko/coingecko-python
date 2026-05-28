@@ -56,15 +56,14 @@ class InfoRecentlyUpdatedResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> InfoRecentlyUpdatedGetResponse:
         """
-        This endpoint allows you to **query 100 most recently updated tokens info of a
-        specific network or across all networks on GeckoTerminal**
+        To query 100 most recently updated tokens info of a specific network or across
+        all networks on GeckoTerminal
 
         Args:
-          include: Attributes for related resources to include, which will be returned under the
-              top-level 'included' key
+          include: Attributes for related resources to include.
 
-          network: filter tokens by provided network \\**refers to
-              [/networks](/reference/networks-list)
+          network: Filter tokens by provided network. \\**refers to
+              [`/onchain/networks`](/reference/networks-list).
 
           extra_headers: Send extra headers
 
@@ -126,15 +125,14 @@ class AsyncInfoRecentlyUpdatedResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> InfoRecentlyUpdatedGetResponse:
         """
-        This endpoint allows you to **query 100 most recently updated tokens info of a
-        specific network or across all networks on GeckoTerminal**
+        To query 100 most recently updated tokens info of a specific network or across
+        all networks on GeckoTerminal
 
         Args:
-          include: Attributes for related resources to include, which will be returned under the
-              top-level 'included' key
+          include: Attributes for related resources to include.
 
-          network: filter tokens by provided network \\**refers to
-              [/networks](/reference/networks-list)
+          network: Filter tokens by provided network. \\**refers to
+              [`/onchain/networks`](/reference/networks-list).
 
           extra_headers: Send extra headers
 

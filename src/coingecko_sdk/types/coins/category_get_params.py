@@ -16,4 +16,4 @@ class CategoryGetParams(TypedDict, total=False):
         "market_cap_change_24h_desc",
         "market_cap_change_24h_asc",
     ]
-    """sort results by field, default: market_cap_desc"""
+    """Sort results by field. Default: `market_cap_desc`"""

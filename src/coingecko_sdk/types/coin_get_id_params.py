@@ -9,28 +9,28 @@ __all__ = ["CoinGetIDParams"]
 
 class CoinGetIDParams(TypedDict, total=False):
     community_data: bool
-    """include community data, default: true"""
+    """Include community data. Default: true"""
 
     developer_data: bool
-    """include developer data, default: true"""
+    """Include developer data. Default: true"""
 
     dex_pair_format: Literal["contract_address", "symbol"]
-    """
-    set to `symbol` to display DEX pair base and target as symbols, default:
-    `contract_address`
+    """Set to `symbol` to display DEX pair base and target as symbols.
+
+    Default: `contract_address`
     """
 
     include_categories_details: bool
-    """include categories details, default: false"""
+    """Include categories details. Default: false"""
 
     localization: bool
-    """include all the localized languages in the response, default: true"""
+    """Include all localized languages in the response. Default: true"""
 
     market_data: bool
-    """include market data, default: true"""
+    """Include market data. Default: true"""
 
     sparkline: bool
-    """include sparkline 7 days data, default: false"""
+    """Include sparkline 7-day data. Default: false"""
 
     tickers: bool
-    """include tickers data, default: true"""
+    """Include tickers data. Default: true"""

@@ -60,16 +60,15 @@ class TopTradersResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TopTraderGetResponse:
         """
-        This endpoint allows you to **query top token traders based on the provided
-        token contract address on a network**
+        To query top token traders based on the provided token contract address on a
+        network
 
         Args:
-          include_address_label: include address label data, default: false
+          include_address_label: Include address label data. Default: `false`
 
-          sort: sort the traders by field Default value: realized_pnl_usd_desc
+          sort: Sort the traders by field. Default: `realized_pnl_usd_desc`
 
-          traders: number of top token traders to return, you may use any integer or `max` Default
-              value: 10
+          traders: Number of top token traders to return, any integer or `max`. Default value: 10
 
           extra_headers: Send extra headers
 
@@ -144,16 +143,15 @@ class AsyncTopTradersResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TopTraderGetResponse:
         """
-        This endpoint allows you to **query top token traders based on the provided
-        token contract address on a network**
+        To query top token traders based on the provided token contract address on a
+        network
 
         Args:
-          include_address_label: include address label data, default: false
+          include_address_label: Include address label data. Default: `false`
 
-          sort: sort the traders by field Default value: realized_pnl_usd_desc
+          sort: Sort the traders by field. Default: `realized_pnl_usd_desc`
 
-          traders: number of top token traders to return, you may use any integer or `max` Default
-              value: 10
+          traders: Number of top token traders to return, any integer or `max`. Default value: 10
 
           extra_headers: Send extra headers
 

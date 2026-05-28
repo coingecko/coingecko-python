@@ -2,8 +2,8 @@
 
 from typing import List, Optional
 
-from .pool_data import PoolData
 from ...._models import BaseModel
+from .pool_address_item import PoolAddressItem
 
 __all__ = ["PoolGetAddressResponse", "Included", "IncludedAttributes"]
 
@@ -31,6 +31,7 @@ class Included(BaseModel):
 
 
 class PoolGetAddressResponse(BaseModel):
-    data: Optional[PoolData] = None
+    data: PoolAddressItem
 
     included: Optional[List[Included]] = None
+    """Included related resources, present when include parameter is specified"""

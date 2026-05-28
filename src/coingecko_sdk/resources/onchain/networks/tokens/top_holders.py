@@ -56,14 +56,13 @@ class TopHoldersResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TopHolderGetResponse:
         """
-        This endpoint allows you to **query top token holders based on the provided
-        token contract address on a network**
+        To query top token holders based on the provided token contract address on a
+        network
 
         Args:
-          holders: number of top token holders to return, you may use any integer or `max` Default
-              value: 10
+          holders: Number of top token holders to return, any integer or `max`. Default value: 10
 
-          include_pnl_details: include PnL details for token holders, default: false
+          include_pnl_details: Include PnL details for token holders. Default: `false`
 
           extra_headers: Send extra headers
 
@@ -131,14 +130,13 @@ class AsyncTopHoldersResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TopHolderGetResponse:
         """
-        This endpoint allows you to **query top token holders based on the provided
-        token contract address on a network**
+        To query top token holders based on the provided token contract address on a
+        network
 
         Args:
-          holders: number of top token holders to return, you may use any integer or `max` Default
-              value: 10
+          holders: Number of top token holders to return, any integer or `max`. Default value: 10
 
-          include_pnl_details: include PnL details for token holders, default: false
+          include_pnl_details: Include PnL details for token holders. Default: `false`
 
           extra_headers: Send extra headers
 

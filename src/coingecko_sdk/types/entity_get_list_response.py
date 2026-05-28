@@ -1,6 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List, Optional
+from typing import List
 from typing_extensions import TypeAlias
 
 from .._models import BaseModel
@@ -9,17 +9,17 @@ __all__ = ["EntityGetListResponse", "EntityGetListResponseItem"]
 
 
 class EntityGetListResponseItem(BaseModel):
-    id: Optional[str] = None
-    """entity ID"""
+    id: str
+    """Entity ID"""
 
-    country: Optional[str] = None
-    """country code"""
+    country: str
+    """Country code"""
 
-    name: Optional[str] = None
-    """entity name"""
+    name: str
+    """Entity name"""
 
-    symbol: Optional[str] = None
-    """ticker symbol of public company"""
+    symbol: str
+    """Ticker symbol of public company"""
 
 
 EntityGetListResponse: TypeAlias = List[EntityGetListResponseItem]

@@ -21,7 +21,7 @@ class TestMarkets:
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         market = client.coins.markets.get(
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
         assert_matches_type(MarketGetResponse, market, path=["response"])
 
@@ -29,8 +29,8 @@ class TestMarkets:
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         market = client.coins.markets.get(
-            vs_currency="usd",
-            category="layer-1",
+            vs_currency="vs_currency",
+            category="category",
             ids="ids",
             include_rehypothecated=True,
             include_tokens="top",
@@ -50,7 +50,7 @@ class TestMarkets:
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.coins.markets.with_raw_response.get(
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
 
         assert response.is_closed is True
@@ -62,7 +62,7 @@ class TestMarkets:
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.coins.markets.with_streaming_response.get(
-            vs_currency="usd",
+            vs_currency="vs_currency",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -82,7 +82,7 @@ class TestAsyncMarkets:
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         market = await async_client.coins.markets.get(
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
         assert_matches_type(MarketGetResponse, market, path=["response"])
 
@@ -90,8 +90,8 @@ class TestAsyncMarkets:
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         market = await async_client.coins.markets.get(
-            vs_currency="usd",
-            category="layer-1",
+            vs_currency="vs_currency",
+            category="category",
             ids="ids",
             include_rehypothecated=True,
             include_tokens="top",
@@ -111,7 +111,7 @@ class TestAsyncMarkets:
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.coins.markets.with_raw_response.get(
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
 
         assert response.is_closed is True
@@ -123,7 +123,7 @@ class TestAsyncMarkets:
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.coins.markets.with_streaming_response.get(
-            vs_currency="usd",
+            vs_currency="vs_currency",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"

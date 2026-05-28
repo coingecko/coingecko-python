@@ -89,20 +89,16 @@ __all__ = ["TokensResource", "AsyncTokensResource"]
 
 class TokensResource(SyncAPIResource):
     @cached_property
-    def multi(self) -> MultiResource:
-        return MultiResource(self._client)
+    def holders_chart(self) -> HoldersChartResource:
+        return HoldersChartResource(self._client)
 
     @cached_property
     def info(self) -> InfoResource:
         return InfoResource(self._client)
 
     @cached_property
-    def top_holders(self) -> TopHoldersResource:
-        return TopHoldersResource(self._client)
-
-    @cached_property
-    def holders_chart(self) -> HoldersChartResource:
-        return HoldersChartResource(self._client)
+    def multi(self) -> MultiResource:
+        return MultiResource(self._client)
 
     @cached_property
     def ohlcv(self) -> OhlcvResource:
@@ -113,12 +109,16 @@ class TokensResource(SyncAPIResource):
         return PoolsResource(self._client)
 
     @cached_property
-    def trades(self) -> TradesResource:
-        return TradesResource(self._client)
+    def top_holders(self) -> TopHoldersResource:
+        return TopHoldersResource(self._client)
 
     @cached_property
     def top_traders(self) -> TopTradersResource:
         return TopTradersResource(self._client)
+
+    @cached_property
+    def trades(self) -> TradesResource:
+        return TradesResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> TokensResourceWithRawResponse:
@@ -155,17 +155,17 @@ class TokensResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TokenGetAddressResponse:
         """
-        This endpoint allows you to **query specific token data based on the provided
-        token contract address on a network**
+        To query specific token data based on the provided token contract address on a
+        network
 
         Args:
-          include: attributes to include
+          include: Attributes to include.
 
-          include_composition: include pool composition, default: false
+          include_composition: Include pool composition. Default: `false`
 
           include_inactive_source:
-              include token data from inactive pools using the most recent swap, default:
-              false
+              Include token data from inactive pools using the most recent swap. Default:
+              `false`
 
           extra_headers: Send extra headers
 
@@ -201,20 +201,16 @@ class TokensResource(SyncAPIResource):
 
 class AsyncTokensResource(AsyncAPIResource):
     @cached_property
-    def multi(self) -> AsyncMultiResource:
-        return AsyncMultiResource(self._client)
+    def holders_chart(self) -> AsyncHoldersChartResource:
+        return AsyncHoldersChartResource(self._client)
 
     @cached_property
     def info(self) -> AsyncInfoResource:
         return AsyncInfoResource(self._client)
 
     @cached_property
-    def top_holders(self) -> AsyncTopHoldersResource:
-        return AsyncTopHoldersResource(self._client)
-
-    @cached_property
-    def holders_chart(self) -> AsyncHoldersChartResource:
-        return AsyncHoldersChartResource(self._client)
+    def multi(self) -> AsyncMultiResource:
+        return AsyncMultiResource(self._client)
 
     @cached_property
     def ohlcv(self) -> AsyncOhlcvResource:
@@ -225,12 +221,16 @@ class AsyncTokensResource(AsyncAPIResource):
         return AsyncPoolsResource(self._client)
 
     @cached_property
-    def trades(self) -> AsyncTradesResource:
-        return AsyncTradesResource(self._client)
+    def top_holders(self) -> AsyncTopHoldersResource:
+        return AsyncTopHoldersResource(self._client)
 
     @cached_property
     def top_traders(self) -> AsyncTopTradersResource:
         return AsyncTopTradersResource(self._client)
+
+    @cached_property
+    def trades(self) -> AsyncTradesResource:
+        return AsyncTradesResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> AsyncTokensResourceWithRawResponse:
@@ -267,17 +267,17 @@ class AsyncTokensResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TokenGetAddressResponse:
         """
-        This endpoint allows you to **query specific token data based on the provided
-        token contract address on a network**
+        To query specific token data based on the provided token contract address on a
+        network
 
         Args:
-          include: attributes to include
+          include: Attributes to include.
 
-          include_composition: include pool composition, default: false
+          include_composition: Include pool composition. Default: `false`
 
           include_inactive_source:
-              include token data from inactive pools using the most recent swap, default:
-              false
+              Include token data from inactive pools using the most recent swap. Default:
+              `false`
 
           extra_headers: Send extra headers
 
@@ -320,20 +320,16 @@ class TokensResourceWithRawResponse:
         )
 
     @cached_property
-    def multi(self) -> MultiResourceWithRawResponse:
-        return MultiResourceWithRawResponse(self._tokens.multi)
+    def holders_chart(self) -> HoldersChartResourceWithRawResponse:
+        return HoldersChartResourceWithRawResponse(self._tokens.holders_chart)
 
     @cached_property
     def info(self) -> InfoResourceWithRawResponse:
         return InfoResourceWithRawResponse(self._tokens.info)
 
     @cached_property
-    def top_holders(self) -> TopHoldersResourceWithRawResponse:
-        return TopHoldersResourceWithRawResponse(self._tokens.top_holders)
-
-    @cached_property
-    def holders_chart(self) -> HoldersChartResourceWithRawResponse:
-        return HoldersChartResourceWithRawResponse(self._tokens.holders_chart)
+    def multi(self) -> MultiResourceWithRawResponse:
+        return MultiResourceWithRawResponse(self._tokens.multi)
 
     @cached_property
     def ohlcv(self) -> OhlcvResourceWithRawResponse:
@@ -344,12 +340,16 @@ class TokensResourceWithRawResponse:
         return PoolsResourceWithRawResponse(self._tokens.pools)
 
     @cached_property
-    def trades(self) -> TradesResourceWithRawResponse:
-        return TradesResourceWithRawResponse(self._tokens.trades)
+    def top_holders(self) -> TopHoldersResourceWithRawResponse:
+        return TopHoldersResourceWithRawResponse(self._tokens.top_holders)
 
     @cached_property
     def top_traders(self) -> TopTradersResourceWithRawResponse:
         return TopTradersResourceWithRawResponse(self._tokens.top_traders)
+
+    @cached_property
+    def trades(self) -> TradesResourceWithRawResponse:
+        return TradesResourceWithRawResponse(self._tokens.trades)
 
 
 class AsyncTokensResourceWithRawResponse:
@@ -361,20 +361,16 @@ class AsyncTokensResourceWithRawResponse:
         )
 
     @cached_property
-    def multi(self) -> AsyncMultiResourceWithRawResponse:
-        return AsyncMultiResourceWithRawResponse(self._tokens.multi)
+    def holders_chart(self) -> AsyncHoldersChartResourceWithRawResponse:
+        return AsyncHoldersChartResourceWithRawResponse(self._tokens.holders_chart)
 
     @cached_property
     def info(self) -> AsyncInfoResourceWithRawResponse:
         return AsyncInfoResourceWithRawResponse(self._tokens.info)
 
     @cached_property
-    def top_holders(self) -> AsyncTopHoldersResourceWithRawResponse:
-        return AsyncTopHoldersResourceWithRawResponse(self._tokens.top_holders)
-
-    @cached_property
-    def holders_chart(self) -> AsyncHoldersChartResourceWithRawResponse:
-        return AsyncHoldersChartResourceWithRawResponse(self._tokens.holders_chart)
+    def multi(self) -> AsyncMultiResourceWithRawResponse:
+        return AsyncMultiResourceWithRawResponse(self._tokens.multi)
 
     @cached_property
     def ohlcv(self) -> AsyncOhlcvResourceWithRawResponse:
@@ -385,12 +381,16 @@ class AsyncTokensResourceWithRawResponse:
         return AsyncPoolsResourceWithRawResponse(self._tokens.pools)
 
     @cached_property
-    def trades(self) -> AsyncTradesResourceWithRawResponse:
-        return AsyncTradesResourceWithRawResponse(self._tokens.trades)
+    def top_holders(self) -> AsyncTopHoldersResourceWithRawResponse:
+        return AsyncTopHoldersResourceWithRawResponse(self._tokens.top_holders)
 
     @cached_property
     def top_traders(self) -> AsyncTopTradersResourceWithRawResponse:
         return AsyncTopTradersResourceWithRawResponse(self._tokens.top_traders)
+
+    @cached_property
+    def trades(self) -> AsyncTradesResourceWithRawResponse:
+        return AsyncTradesResourceWithRawResponse(self._tokens.trades)
 
 
 class TokensResourceWithStreamingResponse:
@@ -402,20 +402,16 @@ class TokensResourceWithStreamingResponse:
         )
 
     @cached_property
-    def multi(self) -> MultiResourceWithStreamingResponse:
-        return MultiResourceWithStreamingResponse(self._tokens.multi)
+    def holders_chart(self) -> HoldersChartResourceWithStreamingResponse:
+        return HoldersChartResourceWithStreamingResponse(self._tokens.holders_chart)
 
     @cached_property
     def info(self) -> InfoResourceWithStreamingResponse:
         return InfoResourceWithStreamingResponse(self._tokens.info)
 
     @cached_property
-    def top_holders(self) -> TopHoldersResourceWithStreamingResponse:
-        return TopHoldersResourceWithStreamingResponse(self._tokens.top_holders)
-
-    @cached_property
-    def holders_chart(self) -> HoldersChartResourceWithStreamingResponse:
-        return HoldersChartResourceWithStreamingResponse(self._tokens.holders_chart)
+    def multi(self) -> MultiResourceWithStreamingResponse:
+        return MultiResourceWithStreamingResponse(self._tokens.multi)
 
     @cached_property
     def ohlcv(self) -> OhlcvResourceWithStreamingResponse:
@@ -426,12 +422,16 @@ class TokensResourceWithStreamingResponse:
         return PoolsResourceWithStreamingResponse(self._tokens.pools)
 
     @cached_property
-    def trades(self) -> TradesResourceWithStreamingResponse:
-        return TradesResourceWithStreamingResponse(self._tokens.trades)
+    def top_holders(self) -> TopHoldersResourceWithStreamingResponse:
+        return TopHoldersResourceWithStreamingResponse(self._tokens.top_holders)
 
     @cached_property
     def top_traders(self) -> TopTradersResourceWithStreamingResponse:
         return TopTradersResourceWithStreamingResponse(self._tokens.top_traders)
+
+    @cached_property
+    def trades(self) -> TradesResourceWithStreamingResponse:
+        return TradesResourceWithStreamingResponse(self._tokens.trades)
 
 
 class AsyncTokensResourceWithStreamingResponse:
@@ -443,20 +443,16 @@ class AsyncTokensResourceWithStreamingResponse:
         )
 
     @cached_property
-    def multi(self) -> AsyncMultiResourceWithStreamingResponse:
-        return AsyncMultiResourceWithStreamingResponse(self._tokens.multi)
+    def holders_chart(self) -> AsyncHoldersChartResourceWithStreamingResponse:
+        return AsyncHoldersChartResourceWithStreamingResponse(self._tokens.holders_chart)
 
     @cached_property
     def info(self) -> AsyncInfoResourceWithStreamingResponse:
         return AsyncInfoResourceWithStreamingResponse(self._tokens.info)
 
     @cached_property
-    def top_holders(self) -> AsyncTopHoldersResourceWithStreamingResponse:
-        return AsyncTopHoldersResourceWithStreamingResponse(self._tokens.top_holders)
-
-    @cached_property
-    def holders_chart(self) -> AsyncHoldersChartResourceWithStreamingResponse:
-        return AsyncHoldersChartResourceWithStreamingResponse(self._tokens.holders_chart)
+    def multi(self) -> AsyncMultiResourceWithStreamingResponse:
+        return AsyncMultiResourceWithStreamingResponse(self._tokens.multi)
 
     @cached_property
     def ohlcv(self) -> AsyncOhlcvResourceWithStreamingResponse:
@@ -467,9 +463,13 @@ class AsyncTokensResourceWithStreamingResponse:
         return AsyncPoolsResourceWithStreamingResponse(self._tokens.pools)
 
     @cached_property
-    def trades(self) -> AsyncTradesResourceWithStreamingResponse:
-        return AsyncTradesResourceWithStreamingResponse(self._tokens.trades)
+    def top_holders(self) -> AsyncTopHoldersResourceWithStreamingResponse:
+        return AsyncTopHoldersResourceWithStreamingResponse(self._tokens.top_holders)
 
     @cached_property
     def top_traders(self) -> AsyncTopTradersResourceWithStreamingResponse:
         return AsyncTopTradersResourceWithStreamingResponse(self._tokens.top_traders)
+
+    @cached_property
+    def trades(self) -> AsyncTradesResourceWithStreamingResponse:
+        return AsyncTradesResourceWithStreamingResponse(self._tokens.trades)

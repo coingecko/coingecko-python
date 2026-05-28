@@ -28,9 +28,9 @@ class TestPools:
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         pool = client.onchain.search.pools.get(
             include="include",
-            network="eth",
+            network="network",
             page=0,
-            query="weth",
+            query="query",
         )
         assert_matches_type(PoolGetResponse, pool, path=["response"])
 
@@ -73,9 +73,9 @@ class TestAsyncPools:
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         pool = await async_client.onchain.search.pools.get(
             include="include",
-            network="eth",
+            network="network",
             page=0,
-            query="weth",
+            query="query",
         )
         assert_matches_type(PoolGetResponse, pool, path=["response"])
 

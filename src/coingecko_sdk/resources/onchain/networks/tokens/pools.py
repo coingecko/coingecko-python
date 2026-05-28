@@ -61,21 +61,21 @@ class PoolsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PoolGetResponse:
         """
-        This endpoint allows you to **query top pools based on the provided token
-        contract address on a network**
+        To query top pools based on the provided token contract address on a network
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`
 
-          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
-              Default value: false
+          include_gt_community_data: Include GeckoTerminal community data (sentiment votes, suspicious reports).
+              Default: `false`
 
-          include_inactive_source: include tokens from inactive pools using the most recent swap, default: false
+          include_inactive_source: Include tokens from inactive pools using the most recent swap. Default: `false`
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
-          sort: sort the pools by field Default value: h24_volume_usd_liquidity_desc
+          sort: Sort the pools by field. Default: `h24_volume_usd_liquidity_desc`
 
           extra_headers: Send extra headers
 
@@ -151,21 +151,21 @@ class AsyncPoolsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PoolGetResponse:
         """
-        This endpoint allows you to **query top pools based on the provided token
-        contract address on a network**
+        To query top pools based on the provided token contract address on a network
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`
 
-          include_gt_community_data: include GeckoTerminal community data (Sentiment votes, Suspicious reports)
-              Default value: false
+          include_gt_community_data: Include GeckoTerminal community data (sentiment votes, suspicious reports).
+              Default: `false`
 
-          include_inactive_source: include tokens from inactive pools using the most recent swap, default: false
+          include_inactive_source: Include tokens from inactive pools using the most recent swap. Default: `false`
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
-          sort: sort the pools by field Default value: h24_volume_usd_liquidity_desc
+          sort: Sort the pools by field. Default: `h24_volume_usd_liquidity_desc`
 
           extra_headers: Send extra headers
 

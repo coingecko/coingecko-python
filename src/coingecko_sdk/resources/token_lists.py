@@ -52,9 +52,8 @@ class TokenListsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TokenListGetAllJsonResponse:
         """
-        This endpoint allows you to **get full list of tokens of a blockchain network
-        (asset platform) that is supported by
-        [Ethereum token list standard](https://tokenlists.org/)**
+        To get full list of tokens of a blockchain network (asset platform) that is
+        supported by [Ethereum token list standard](https://tokenlists.org/)
 
         Args:
           extra_headers: Send extra headers
@@ -108,9 +107,8 @@ class AsyncTokenListsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TokenListGetAllJsonResponse:
         """
-        This endpoint allows you to **get full list of tokens of a blockchain network
-        (asset platform) that is supported by
-        [Ethereum token list standard](https://tokenlists.org/)**
+        To get full list of tokens of a blockchain network (asset platform) that is
+        supported by [Ethereum token list standard](https://tokenlists.org/)
 
         Args:
           extra_headers: Send extra headers

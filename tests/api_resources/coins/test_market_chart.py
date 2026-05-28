@@ -24,9 +24,9 @@ class TestMarketChart:
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         market_chart = client.coins.market_chart.get(
-            id="bitcoin",
+            id="id",
             days="days",
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
         assert_matches_type(MarketChartGetResponse, market_chart, path=["response"])
 
@@ -34,9 +34,9 @@ class TestMarketChart:
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         market_chart = client.coins.market_chart.get(
-            id="bitcoin",
+            id="id",
             days="days",
-            vs_currency="usd",
+            vs_currency="vs_currency",
             interval="5m",
             precision="full",
         )
@@ -46,9 +46,9 @@ class TestMarketChart:
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.coins.market_chart.with_raw_response.get(
-            id="bitcoin",
+            id="id",
             days="days",
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
 
         assert response.is_closed is True
@@ -60,9 +60,9 @@ class TestMarketChart:
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.coins.market_chart.with_streaming_response.get(
-            id="bitcoin",
+            id="id",
             days="days",
-            vs_currency="usd",
+            vs_currency="vs_currency",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -79,17 +79,17 @@ class TestMarketChart:
             client.coins.market_chart.with_raw_response.get(
                 id="",
                 days="days",
-                vs_currency="usd",
+                vs_currency="vs_currency",
             )
 
     @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_range(self, client: Coingecko) -> None:
         market_chart = client.coins.market_chart.get_range(
-            id="bitcoin",
+            id="id",
             from_="from",
             to="to",
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
         assert_matches_type(MarketChartGetRangeResponse, market_chart, path=["response"])
 
@@ -97,10 +97,10 @@ class TestMarketChart:
     @parametrize
     def test_method_get_range_with_all_params(self, client: Coingecko) -> None:
         market_chart = client.coins.market_chart.get_range(
-            id="bitcoin",
+            id="id",
             from_="from",
             to="to",
-            vs_currency="usd",
+            vs_currency="vs_currency",
             interval="5m",
             precision="full",
         )
@@ -110,10 +110,10 @@ class TestMarketChart:
     @parametrize
     def test_raw_response_get_range(self, client: Coingecko) -> None:
         response = client.coins.market_chart.with_raw_response.get_range(
-            id="bitcoin",
+            id="id",
             from_="from",
             to="to",
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
 
         assert response.is_closed is True
@@ -125,10 +125,10 @@ class TestMarketChart:
     @parametrize
     def test_streaming_response_get_range(self, client: Coingecko) -> None:
         with client.coins.market_chart.with_streaming_response.get_range(
-            id="bitcoin",
+            id="id",
             from_="from",
             to="to",
-            vs_currency="usd",
+            vs_currency="vs_currency",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -146,7 +146,7 @@ class TestMarketChart:
                 id="",
                 from_="from",
                 to="to",
-                vs_currency="usd",
+                vs_currency="vs_currency",
             )
 
 
@@ -159,9 +159,9 @@ class TestAsyncMarketChart:
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         market_chart = await async_client.coins.market_chart.get(
-            id="bitcoin",
+            id="id",
             days="days",
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
         assert_matches_type(MarketChartGetResponse, market_chart, path=["response"])
 
@@ -169,9 +169,9 @@ class TestAsyncMarketChart:
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         market_chart = await async_client.coins.market_chart.get(
-            id="bitcoin",
+            id="id",
             days="days",
-            vs_currency="usd",
+            vs_currency="vs_currency",
             interval="5m",
             precision="full",
         )
@@ -181,9 +181,9 @@ class TestAsyncMarketChart:
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.coins.market_chart.with_raw_response.get(
-            id="bitcoin",
+            id="id",
             days="days",
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
 
         assert response.is_closed is True
@@ -195,9 +195,9 @@ class TestAsyncMarketChart:
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.coins.market_chart.with_streaming_response.get(
-            id="bitcoin",
+            id="id",
             days="days",
-            vs_currency="usd",
+            vs_currency="vs_currency",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -214,17 +214,17 @@ class TestAsyncMarketChart:
             await async_client.coins.market_chart.with_raw_response.get(
                 id="",
                 days="days",
-                vs_currency="usd",
+                vs_currency="vs_currency",
             )
 
     @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_range(self, async_client: AsyncCoingecko) -> None:
         market_chart = await async_client.coins.market_chart.get_range(
-            id="bitcoin",
+            id="id",
             from_="from",
             to="to",
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
         assert_matches_type(MarketChartGetRangeResponse, market_chart, path=["response"])
 
@@ -232,10 +232,10 @@ class TestAsyncMarketChart:
     @parametrize
     async def test_method_get_range_with_all_params(self, async_client: AsyncCoingecko) -> None:
         market_chart = await async_client.coins.market_chart.get_range(
-            id="bitcoin",
+            id="id",
             from_="from",
             to="to",
-            vs_currency="usd",
+            vs_currency="vs_currency",
             interval="5m",
             precision="full",
         )
@@ -245,10 +245,10 @@ class TestAsyncMarketChart:
     @parametrize
     async def test_raw_response_get_range(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.coins.market_chart.with_raw_response.get_range(
-            id="bitcoin",
+            id="id",
             from_="from",
             to="to",
-            vs_currency="usd",
+            vs_currency="vs_currency",
         )
 
         assert response.is_closed is True
@@ -260,10 +260,10 @@ class TestAsyncMarketChart:
     @parametrize
     async def test_streaming_response_get_range(self, async_client: AsyncCoingecko) -> None:
         async with async_client.coins.market_chart.with_streaming_response.get_range(
-            id="bitcoin",
+            id="id",
             from_="from",
             to="to",
-            vs_currency="usd",
+            vs_currency="vs_currency",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -281,5 +281,5 @@ class TestAsyncMarketChart:
                 id="",
                 from_="from",
                 to="to",
-                vs_currency="usd",
+                vs_currency="vs_currency",
             )

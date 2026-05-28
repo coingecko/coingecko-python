@@ -24,25 +24,35 @@ __all__ = [
 
 
 class DataAttributesVolumeUsd(BaseModel):
+    """Volume in USD"""
+
     h24: Optional[str] = None
 
 
 class DataAttributes(BaseModel):
-    address: Optional[str] = None
+    address: str
+    """Pool contract address"""
 
     fdv_usd: Optional[str] = None
+    """Fully diluted valuation in USD"""
 
     market_cap_usd: Optional[str] = None
+    """Market cap in USD"""
 
-    name: Optional[str] = None
+    name: str
+    """Pool name"""
 
-    pool_created_at: Optional[str] = None
+    pool_created_at: str
+    """Pool creation timestamp"""
 
     reserve_in_usd: Optional[str] = None
+    """Total reserve in USD"""
 
-    trending_rank: Optional[int] = None
+    trending_rank: int
+    """Trending search rank (0-based)"""
 
-    volume_usd: Optional[DataAttributesVolumeUsd] = None
+    volume_usd: DataAttributesVolumeUsd
+    """Volume in USD"""
 
 
 class DataRelationshipsBaseTokenData(BaseModel):
@@ -86,6 +96,8 @@ class DataRelationshipsQuoteToken(BaseModel):
 
 
 class DataRelationships(BaseModel):
+    """Related resources"""
+
     base_token: Optional[DataRelationshipsBaseToken] = None
 
     dex: Optional[DataRelationshipsDex] = None
@@ -96,17 +108,22 @@ class DataRelationships(BaseModel):
 
 
 class Data(BaseModel):
-    id: Optional[str] = None
+    id: str
+    """Pool identifier"""
 
-    attributes: Optional[DataAttributes] = None
+    attributes: DataAttributes
 
-    relationships: Optional[DataRelationships] = None
+    relationships: DataRelationships
+    """Related resources"""
 
-    type: Optional[str] = None
+    type: str
+    """Resource type"""
 
 
 class IncludedAttributes(BaseModel):
     address: Optional[str] = None
+
+    coingecko_asset_platform_id: Optional[str] = None
 
     coingecko_coin_id: Optional[str] = None
 
@@ -128,6 +145,7 @@ class Included(BaseModel):
 
 
 class TrendingSearchGetResponse(BaseModel):
-    data: Optional[List[Data]] = None
+    data: List[Data]
 
     included: Optional[List[Included]] = None
+    """Included related resources, present when include parameter is specified"""

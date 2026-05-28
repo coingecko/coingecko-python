@@ -1,7 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 from typing import List, Optional
-from datetime import datetime
 
 from ..._models import BaseModel
 
@@ -25,6 +24,8 @@ __all__ = [
 
 
 class DataAttributesPriceChangePercentage(BaseModel):
+    """Price change percentage over various timeframes"""
+
     h1: Optional[str] = None
 
     h24: Optional[str] = None
@@ -39,35 +40,50 @@ class DataAttributesPriceChangePercentage(BaseModel):
 
 
 class DataAttributes(BaseModel):
-    address: Optional[str] = None
+    address: str
+    """Pool contract address"""
 
     base_token_price_native_currency: Optional[str] = None
+    """Base token price in native currency"""
 
     base_token_price_quote_token: Optional[str] = None
+    """Base token price in quote token"""
 
-    base_token_price_usd: Optional[str] = None
+    base_token_price_usd: str
+    """Base token price in USD"""
 
     fdv_usd: Optional[str] = None
+    """Fully diluted valuation in USD"""
 
-    h24_tx_count: Optional[int] = None
+    h24_tx_count: int
+    """24hr transaction count"""
 
-    h24_volume_usd: Optional[str] = None
+    h24_volume_usd: str
+    """24hr volume in USD"""
 
     market_cap_usd: Optional[str] = None
+    """Market cap in USD"""
 
-    name: Optional[str] = None
+    name: str
+    """Pool name"""
 
-    pool_created_at: Optional[datetime] = None
+    pool_created_at: str
+    """Pool creation timestamp"""
 
-    price_change_percentage: Optional[DataAttributesPriceChangePercentage] = None
+    price_change_percentage: DataAttributesPriceChangePercentage
+    """Price change percentage over various timeframes"""
 
     quote_token_price_base_token: Optional[str] = None
+    """Quote token price in base token"""
 
     quote_token_price_native_currency: Optional[str] = None
+    """Quote token price in native currency"""
 
-    quote_token_price_usd: Optional[str] = None
+    quote_token_price_usd: str
+    """Quote token price in USD"""
 
     reserve_in_usd: Optional[str] = None
+    """Total reserve in USD"""
 
 
 class DataRelationshipsBaseTokenData(BaseModel):
@@ -111,6 +127,8 @@ class DataRelationshipsQuoteToken(BaseModel):
 
 
 class DataRelationships(BaseModel):
+    """Related resources"""
+
     base_token: Optional[DataRelationshipsBaseToken] = None
 
     dex: Optional[DataRelationshipsDex] = None
@@ -121,17 +139,22 @@ class DataRelationships(BaseModel):
 
 
 class Data(BaseModel):
-    id: Optional[str] = None
+    id: str
+    """Pool identifier"""
 
-    attributes: Optional[DataAttributes] = None
+    attributes: DataAttributes
 
-    relationships: Optional[DataRelationships] = None
+    relationships: DataRelationships
+    """Related resources"""
 
-    type: Optional[str] = None
+    type: str
+    """Resource type"""
 
 
 class IncludedAttributes(BaseModel):
     address: Optional[str] = None
+
+    coingecko_asset_platform_id: Optional[str] = None
 
     coingecko_coin_id: Optional[str] = None
 
@@ -153,6 +176,7 @@ class Included(BaseModel):
 
 
 class CategoryGetPoolsResponse(BaseModel):
-    data: Optional[List[Data]] = None
+    data: List[Data]
 
     included: Optional[List[Included]] = None
+    """Included related resources, present when include parameter is specified"""

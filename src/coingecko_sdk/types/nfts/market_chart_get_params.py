@@ -9,4 +9,4 @@ __all__ = ["MarketChartGetParams"]
 
 class MarketChartGetParams(TypedDict, total=False):
     days: Required[str]
-    """data up to number of days Valid values: any integer or max"""
+    """Data up to number of days ago. Valid values: any integer or `max`"""

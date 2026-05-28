@@ -13,26 +13,27 @@ class OhlcvGetTimeframeParams(TypedDict, total=False):
     pool_address: Required[str]
 
     token: str
-    """
-    return OHLCV for token use this to invert the chart Available values: 'base',
-    'quote' or token address Default value: 'base'
+    """Return OHLCV for token, use this to invert the chart.
+
+    Available values: `base`, `quote`, or token address. Default: `base`
     """
 
     aggregate: str
-    """
-    time period to aggregate each OHLCV Available values (day): `1` Available values
-    (hour): `1` , `4` , `12` Available values (minute): `1` , `5` , `15` Available
-    values (second): `1`, `15`, `30` Default value: 1
+    """Time period to aggregate each OHLCV.
+
+    Available values (day): `1` Available values (hour): `1`, `4`, `12` Available
+    values (minute): `1`, `5`, `15` Available values (second): `1`, `15`, `30`
+    Default value: 1
     """
 
     before_timestamp: int
-    """return OHLCV data before this timestamp (integer seconds since epoch)"""
+    """Return OHLCV data before this timestamp (integer seconds since epoch)."""
 
     currency: Literal["usd", "token"]
-    """return OHLCV in USD or quote token Default value: usd"""
+    """Return OHLCV in USD or quote token. Default: `usd`"""
 
     include_empty_intervals: bool
-    """include empty intervals with no trade data, default: false"""
+    """Include empty intervals with no trade data. Default: `false`"""
 
     limit: int
-    """number of OHLCV results to return, maximum 1000 Default value: 100"""
+    """Number of OHLCV results to return, maximum 1000. Default value: 100"""

@@ -57,16 +57,16 @@ class MultiResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MultiGetAddressesResponse:
         """
-        This endpoint allows you to **query multiple pools based on the provided network
-        and pool address**
+        To query multiple pools based on the provided network and pool addresses
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`
 
-          include_composition: include pool composition, default: false
+          include_composition: Include pool composition. Default: `false`
 
-          include_volume_breakdown: include volume breakdown, default: false
+          include_volume_breakdown: Include volume breakdown. Default: `false`
 
           extra_headers: Send extra headers
 
@@ -136,16 +136,16 @@ class AsyncMultiResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MultiGetAddressesResponse:
         """
-        This endpoint allows you to **query multiple pools based on the provided network
-        and pool address**
+        To query multiple pools based on the provided network and pool addresses
 
         Args:
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`
 
-          include_composition: include pool composition, default: false
+          include_composition: Include pool composition. Default: `false`
 
-          include_volume_breakdown: include volume breakdown, default: false
+          include_volume_breakdown: Include volume breakdown. Default: `false`
 
           extra_headers: Send extra headers
 

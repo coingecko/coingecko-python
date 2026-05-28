@@ -11,4 +11,4 @@ class InfoGetParams(TypedDict, total=False):
     network: Required[str]
 
     include: Literal["pool"]
-    """attributes to include"""
+    """Attributes to include."""

@@ -110,76 +110,76 @@ class MegafilterResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MegafilterGetResponse:
         """
-        This endpoint allows you to **query pools based on various filters across all
-        networks on GeckoTerminal**
+        To query pools based on various filters across all networks on GeckoTerminal
 
         Args:
-          buy_tax_percentage_max: maximum buy tax percentage
+          buy_tax_percentage_max: Maximum buy tax percentage.
 
-          buy_tax_percentage_min: minimum buy tax percentage
+          buy_tax_percentage_min: Minimum buy tax percentage.
 
-          buys_duration: duration for buy transactions metric Default value: 24h
+          buys_duration: Duration for buy transactions metric. Default: `24h`
 
-          buys_max: maximum number of buy transactions
+          buys_max: Maximum number of buy transactions.
 
-          buys_min: minimum number of buy transactions
+          buys_min: Minimum number of buy transactions.
 
-          checks: filter options for various checks, comma-separated if more than one Available
+          checks: Filter options for various checks, comma-separated if more than one. Available
               values: `no_honeypot`, `good_gt_score`, `on_coingecko`, `has_social`
 
-          dexes: filter pools by DEXes, comma-separated if more than one DEX ID refers to
-              [/networks/{network}/dexes](/reference/dexes-list)
+          dexes: Filter pools by DEXes, comma-separated if more than one. \\**refers to
+              [`/onchain/networks/{network}/dexes`](/reference/dexes-list).
 
-          fdv_usd_max: maximum fully diluted value in USD
+          fdv_usd_max: Maximum fully diluted value in USD.
 
-          fdv_usd_min: minimum fully diluted value in USD
+          fdv_usd_min: Minimum fully diluted value in USD.
 
-          h24_volume_usd_max: maximum 24hr volume in USD
+          h24_volume_usd_max: Maximum 24hr volume in USD.
 
-          h24_volume_usd_min: minimum 24hr volume in USD
+          h24_volume_usd_min: Minimum 24hr volume in USD.
 
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`, `network`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`, `network`
 
-          include_unknown_honeypot_tokens: when `checks` includes `no_honeypot`, set to **`true`** to also include 'unknown
-              honeypot' tokens. Default value: `false`
+          include_unknown_honeypot_tokens: When `checks` includes `no_honeypot`, set to `true` to also include unknown
+              honeypot tokens. Default: `false`
 
-          networks: filter pools by networks, comma-separated if more than one Network ID refers to
-              [/networks](/reference/networks-list)
+          networks: Filter pools by networks, comma-separated if more than one. \\**refers to
+              [`/onchain/networks`](/reference/networks-list).
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
-          pool_created_hour_max: maximum pool age in hours
+          pool_created_hour_max: Maximum pool age in hours.
 
-          pool_created_hour_min: minimum pool age in hours
+          pool_created_hour_min: Minimum pool age in hours.
 
-          price_change_percentage_duration: duration for price change percentage metric
+          price_change_percentage_duration: Duration for price change percentage metric. Default: `24h`
 
-          price_change_percentage_max: maximum price change percentage
+          price_change_percentage_max: Maximum price change percentage.
 
-          price_change_percentage_min: minimum price change percentage
+          price_change_percentage_min: Minimum price change percentage.
 
-          reserve_in_usd_max: maximum reserve in USD
+          reserve_in_usd_max: Maximum reserve in USD.
 
-          reserve_in_usd_min: minimum reserve in USD
+          reserve_in_usd_min: Minimum reserve in USD.
 
-          sell_tax_percentage_max: maximum sell tax percentage
+          sell_tax_percentage_max: Maximum sell tax percentage.
 
-          sell_tax_percentage_min: minimum sell tax percentage
+          sell_tax_percentage_min: Minimum sell tax percentage.
 
-          sells_duration: duration for sell transactions metric Default value: 24h
+          sells_duration: Duration for sell transactions metric. Default: `24h`
 
-          sells_max: maximum number of sell transactions
+          sells_max: Maximum number of sell transactions.
 
-          sells_min: minimum number of sell transactions
+          sells_min: Minimum number of sell transactions.
 
-          sort: sort the pools by field Default value: h6_trending
+          sort: Sort the pools by field. Default: `h6_trending`
 
-          tx_count_duration: duration for transaction count metric Default value: 24h
+          tx_count_duration: Duration for transaction count metric. Default: `24h`
 
-          tx_count_max: maximum transaction count
+          tx_count_max: Maximum transaction count.
 
-          tx_count_min: minimum transaction count
+          tx_count_min: Minimum transaction count.
 
           extra_headers: Send extra headers
 
@@ -324,76 +324,76 @@ class AsyncMegafilterResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MegafilterGetResponse:
         """
-        This endpoint allows you to **query pools based on various filters across all
-        networks on GeckoTerminal**
+        To query pools based on various filters across all networks on GeckoTerminal
 
         Args:
-          buy_tax_percentage_max: maximum buy tax percentage
+          buy_tax_percentage_max: Maximum buy tax percentage.
 
-          buy_tax_percentage_min: minimum buy tax percentage
+          buy_tax_percentage_min: Minimum buy tax percentage.
 
-          buys_duration: duration for buy transactions metric Default value: 24h
+          buys_duration: Duration for buy transactions metric. Default: `24h`
 
-          buys_max: maximum number of buy transactions
+          buys_max: Maximum number of buy transactions.
 
-          buys_min: minimum number of buy transactions
+          buys_min: Minimum number of buy transactions.
 
-          checks: filter options for various checks, comma-separated if more than one Available
+          checks: Filter options for various checks, comma-separated if more than one. Available
               values: `no_honeypot`, `good_gt_score`, `on_coingecko`, `has_social`
 
-          dexes: filter pools by DEXes, comma-separated if more than one DEX ID refers to
-              [/networks/{network}/dexes](/reference/dexes-list)
+          dexes: Filter pools by DEXes, comma-separated if more than one. \\**refers to
+              [`/onchain/networks/{network}/dexes`](/reference/dexes-list).
 
-          fdv_usd_max: maximum fully diluted value in USD
+          fdv_usd_max: Maximum fully diluted value in USD.
 
-          fdv_usd_min: minimum fully diluted value in USD
+          fdv_usd_min: Minimum fully diluted value in USD.
 
-          h24_volume_usd_max: maximum 24hr volume in USD
+          h24_volume_usd_max: Maximum 24hr volume in USD.
 
-          h24_volume_usd_min: minimum 24hr volume in USD
+          h24_volume_usd_min: Minimum 24hr volume in USD.
 
-          include: attributes to include, comma-separated if more than one to include Available
-              values: `base_token`, `quote_token`, `dex`, `network`
+          include:
+              Attributes to include, comma-separated if more than one. Available values:
+              `base_token`, `quote_token`, `dex`, `network`
 
-          include_unknown_honeypot_tokens: when `checks` includes `no_honeypot`, set to **`true`** to also include 'unknown
-              honeypot' tokens. Default value: `false`
+          include_unknown_honeypot_tokens: When `checks` includes `no_honeypot`, set to `true` to also include unknown
+              honeypot tokens. Default: `false`
 
-          networks: filter pools by networks, comma-separated if more than one Network ID refers to
-              [/networks](/reference/networks-list)
+          networks: Filter pools by networks, comma-separated if more than one. \\**refers to
+              [`/onchain/networks`](/reference/networks-list).
 
-          page: page through results Default value: 1
+          page: Page through results. Default value: 1
 
-          pool_created_hour_max: maximum pool age in hours
+          pool_created_hour_max: Maximum pool age in hours.
 
-          pool_created_hour_min: minimum pool age in hours
+          pool_created_hour_min: Minimum pool age in hours.
 
-          price_change_percentage_duration: duration for price change percentage metric
+          price_change_percentage_duration: Duration for price change percentage metric. Default: `24h`
 
-          price_change_percentage_max: maximum price change percentage
+          price_change_percentage_max: Maximum price change percentage.
 
-          price_change_percentage_min: minimum price change percentage
+          price_change_percentage_min: Minimum price change percentage.
 
-          reserve_in_usd_max: maximum reserve in USD
+          reserve_in_usd_max: Maximum reserve in USD.
 
-          reserve_in_usd_min: minimum reserve in USD
+          reserve_in_usd_min: Minimum reserve in USD.
 
-          sell_tax_percentage_max: maximum sell tax percentage
+          sell_tax_percentage_max: Maximum sell tax percentage.
 
-          sell_tax_percentage_min: minimum sell tax percentage
+          sell_tax_percentage_min: Minimum sell tax percentage.
 
-          sells_duration: duration for sell transactions metric Default value: 24h
+          sells_duration: Duration for sell transactions metric. Default: `24h`
 
-          sells_max: maximum number of sell transactions
+          sells_max: Maximum number of sell transactions.
 
-          sells_min: minimum number of sell transactions
+          sells_min: Minimum number of sell transactions.
 
-          sort: sort the pools by field Default value: h6_trending
+          sort: Sort the pools by field. Default: `h6_trending`
 
-          tx_count_duration: duration for transaction count metric Default value: 24h
+          tx_count_duration: Duration for transaction count metric. Default: `24h`
 
-          tx_count_max: maximum transaction count
+          tx_count_max: Maximum transaction count.
 
-          tx_count_min: minimum transaction count
+          tx_count_min: Minimum transaction count.
 
           extra_headers: Send extra headers
 

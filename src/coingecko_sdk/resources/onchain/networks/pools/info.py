@@ -57,12 +57,12 @@ class InfoResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> InfoGetResponse:
         """
-        This endpoint allows you to **query pool metadata (base and quote token details,
-        image, socials, websites, description, contract address, etc.) based on a
-        provided pool contract address on a network**
+        To query pool metadata (base and quote token details, image, socials, websites,
+        description, contract address, etc.) based on a provided pool contract address
+        on a network
 
         Args:
-          include: attributes to include
+          include: Attributes to include.
 
           extra_headers: Send extra headers
 
@@ -125,12 +125,12 @@ class AsyncInfoResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> InfoGetResponse:
         """
-        This endpoint allows you to **query pool metadata (base and quote token details,
-        image, socials, websites, description, contract address, etc.) based on a
-        provided pool contract address on a network**
+        To query pool metadata (base and quote token details, image, socials, websites,
+        description, contract address, etc.) based on a provided pool contract address
+        on a network
 
         Args:
-          include: attributes to include
+          include: Attributes to include.
 
           extra_headers: Send extra headers
 

@@ -61,10 +61,7 @@ class DerivativesResource(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> DerivativeGetResponse:
-        """
-        This endpoint allows you to **query all the tickers from derivatives exchanges
-        on CoinGecko**
-        """
+        """To query all the tickers from derivatives exchanges on CoinGecko"""
         return self._get(
             "/derivatives",
             options=make_request_options(
@@ -108,10 +105,7 @@ class AsyncDerivativesResource(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> DerivativeGetResponse:
-        """
-        This endpoint allows you to **query all the tickers from derivatives exchanges
-        on CoinGecko**
-        """
+        """To query all the tickers from derivatives exchanges on CoinGecko"""
         return await self._get(
             "/derivatives",
             options=make_request_options(

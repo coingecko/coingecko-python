@@ -11,22 +11,22 @@ class TokenPriceGetAddressesParams(TypedDict, total=False):
     network: Required[str]
 
     include_24hr_price_change: bool
-    """include 24hr price change, default: false"""
+    """Include 24hr price change. Default: `false`"""
 
     include_24hr_vol: bool
-    """include 24hr volume, default: false"""
+    """Include 24hr volume. Default: `false`"""
 
     include_inactive_source: bool
-    """
-    include token price data from inactive pools using the most recent swap,
-    default: false
+    """Include token price data from inactive pools using the most recent swap.
+
+    Default: `false`
     """
 
     include_market_cap: bool
-    """include market capitalization, default: false"""
+    """Include market capitalization. Default: `false`"""
 
     include_total_reserve_in_usd: bool
-    """include total reserve in USD, default: false"""
+    """Include total reserve in USD. Default: `false`"""
 
     mcap_fdv_fallback: bool
-    """return FDV if market cap is not available, default: false"""
+    """Return FDV if market cap is not available. Default: `false`"""

@@ -9,4 +9,4 @@ __all__ = ["ExchangeGetListParams"]
 
 class ExchangeGetListParams(TypedDict, total=False):
     status: Literal["active", "inactive"]
-    """filter by status of exchanges, default: active"""
+    """Filter by status of exchanges. Default: `active`"""

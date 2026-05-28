@@ -53,9 +53,8 @@ class InfoResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> InfoGetResponse:
         """
-        This endpoint allows you to **query token metadata (name, symbol, CoinGecko ID,
-        image, socials, websites, description, etc.) based on a provided token contract
-        address on a network**
+        To query token metadata (name, symbol, CoinGecko ID, image, socials, websites,
+        description, etc.) based on a provided token contract address on a network
 
         Args:
           extra_headers: Send extra headers
@@ -112,9 +111,8 @@ class AsyncInfoResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> InfoGetResponse:
         """
-        This endpoint allows you to **query token metadata (name, symbol, CoinGecko ID,
-        image, socials, websites, description, etc.) based on a provided token contract
-        address on a network**
+        To query token metadata (name, symbol, CoinGecko ID, image, socials, websites,
+        description, etc.) based on a provided token contract address on a network
 
         Args:
           extra_headers: Send extra headers

@@ -58,13 +58,13 @@ class CirculatingSupplyChartResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CirculatingSupplyChartGetResponse:
         """
-        This endpoint allows you to **query historical circulating supply of a coin by
-        number of days away from now based on provided coin ID**
+        To query historical circulating supply of a coin by number of days away from now
+        based on provided coin ID
 
         Args:
-          days: data up to number of days ago Valid values: any integer or `max`
+          days: Data up to number of days ago. Valid values: any integer or `max`.
 
-          interval: data interval
+          interval: Data interval.
 
           extra_headers: Send extra headers
 
@@ -108,15 +108,15 @@ class CirculatingSupplyChartResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CirculatingSupplyChartGetRangeResponse:
         """
-        This endpoint allows you to **query historical circulating supply of a coin,
-        within a range of timestamp based on the provided coin ID**
+        To query historical circulating supply of a coin, within a range of timestamp
+        based on the provided coin ID
 
         Args:
-          from_: starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
-              timestamp. **use ISO date string for best compatibility**
+          from_: Starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **Use ISO date string for best compatibility.**
 
-          to: ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
-              timestamp. **use ISO date string for best compatibility**
+          to: Ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **Use ISO date string for best compatibility.**
 
           extra_headers: Send extra headers
 
@@ -181,13 +181,13 @@ class AsyncCirculatingSupplyChartResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CirculatingSupplyChartGetResponse:
         """
-        This endpoint allows you to **query historical circulating supply of a coin by
-        number of days away from now based on provided coin ID**
+        To query historical circulating supply of a coin by number of days away from now
+        based on provided coin ID
 
         Args:
-          days: data up to number of days ago Valid values: any integer or `max`
+          days: Data up to number of days ago. Valid values: any integer or `max`.
 
-          interval: data interval
+          interval: Data interval.
 
           extra_headers: Send extra headers
 
@@ -231,15 +231,15 @@ class AsyncCirculatingSupplyChartResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CirculatingSupplyChartGetRangeResponse:
         """
-        This endpoint allows you to **query historical circulating supply of a coin,
-        within a range of timestamp based on the provided coin ID**
+        To query historical circulating supply of a coin, within a range of timestamp
+        based on the provided coin ID
 
         Args:
-          from_: starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
-              timestamp. **use ISO date string for best compatibility**
+          from_: Starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **Use ISO date string for best compatibility.**
 
-          to: ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
-              timestamp. **use ISO date string for best compatibility**
+          to: Ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **Use ISO date string for best compatibility.**
 
           extra_headers: Send extra headers
 

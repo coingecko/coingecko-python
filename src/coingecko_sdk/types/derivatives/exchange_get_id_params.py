@@ -9,4 +9,4 @@ __all__ = ["ExchangeGetIDParams"]
 
 class ExchangeGetIDParams(TypedDict, total=False):
     include_tickers: Literal["all", "unexpired"]
-    """include tickers data"""
+    """Include tickers data. Default: tickers data is not included."""

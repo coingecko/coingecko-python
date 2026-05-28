@@ -4,78 +4,82 @@ from typing import List, Optional
 
 from .._models import BaseModel
 
-__all__ = ["SearchGetResponse", "Category", "Coin", "Exchange", "NFT"]
+__all__ = ["SearchGetResponse", "Category", "Coin", "Exchange", "Ico", "NFT"]
 
 
 class Category(BaseModel):
-    id: Optional[str] = None
-    """category ID"""
+    id: str
+    """Category ID"""
 
-    name: Optional[str] = None
-    """category name"""
+    name: str
+    """Category name"""
 
 
 class Coin(BaseModel):
-    id: Optional[str] = None
-    """coin ID"""
+    id: str
+    """Coin ID"""
 
-    api_symbol: Optional[str] = None
-    """coin api symbol"""
+    api_symbol: str
+    """Coin API symbol"""
 
-    large: Optional[str] = None
-    """coin large image url"""
+    large: str
+    """Coin large image URL"""
 
-    market_cap_rank: Optional[float] = None
-    """coin market cap rank"""
+    market_cap_rank: Optional[int] = None
+    """Coin market cap rank"""
 
-    name: Optional[str] = None
-    """coin name"""
+    name: str
+    """Coin name"""
 
-    symbol: Optional[str] = None
-    """coin symbol"""
+    symbol: str
+    """Coin symbol"""
 
-    thumb: Optional[str] = None
-    """coin thumb image url"""
+    thumb: str
+    """Coin thumb image URL"""
 
 
 class Exchange(BaseModel):
-    id: Optional[str] = None
-    """exchange ID"""
+    id: str
+    """Exchange ID"""
 
-    large: Optional[str] = None
-    """exchange large image url"""
+    large: str
+    """Exchange large image URL"""
 
-    market_type: Optional[str] = None
-    """exchange market type"""
+    market_type: str
+    """Exchange market type"""
 
-    name: Optional[str] = None
-    """exchange name"""
+    name: str
+    """Exchange name"""
 
-    thumb: Optional[str] = None
-    """exchange thumb image url"""
+    thumb: str
+    """Exchange thumb image URL"""
+
+
+class Ico(BaseModel):
+    pass
 
 
 class NFT(BaseModel):
-    id: Optional[str] = None
+    id: str
     """NFT collection ID"""
 
-    name: Optional[str] = None
-    """NFT name"""
+    name: str
+    """NFT collection name"""
 
-    symbol: Optional[str] = None
+    symbol: str
     """NFT collection symbol"""
 
-    thumb: Optional[str] = None
-    """NFT collection thumb image url"""
+    thumb: str
+    """NFT collection thumb image URL"""
 
 
 class SearchGetResponse(BaseModel):
-    categories: Optional[List[Category]] = None
+    categories: List[Category]
 
-    coins: Optional[List[Coin]] = None
+    coins: List[Coin]
 
-    exchanges: Optional[List[Exchange]] = None
+    exchanges: List[Exchange]
 
-    icos: Optional[List[str]] = None
+    icos: List[Ico]
 
-    nfts: Optional[List[NFT]] = None
+    nfts: List[NFT]

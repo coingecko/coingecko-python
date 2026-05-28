@@ -56,14 +56,14 @@ class TradesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TradeGetResponse:
         """
-        This endpoint allows you to **query the last 300 trades in the past 24 hours
-        based on the provided pool address**
+        To query the last 300 trades in the past 24 hours based on the provided pool
+        address
 
         Args:
-          token: return trades for token use this to invert the chart Available values: 'base',
-              'quote' or token address Default value: 'base'
+          token: Return trades for token, use this to invert the chart. Available values: `base`,
+              `quote`, or token address. Default: `base`
 
-          trade_volume_in_usd_greater_than: filter trades by trade volume in USD greater than this value Default value: 0
+          trade_volume_in_usd_greater_than: Filter trades by trade volume in USD greater than this value. Default value: 0
 
           extra_headers: Send extra headers
 
@@ -133,14 +133,14 @@ class AsyncTradesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TradeGetResponse:
         """
-        This endpoint allows you to **query the last 300 trades in the past 24 hours
-        based on the provided pool address**
+        To query the last 300 trades in the past 24 hours based on the provided pool
+        address
 
         Args:
-          token: return trades for token use this to invert the chart Available values: 'base',
-              'quote' or token address Default value: 'base'
+          token: Return trades for token, use this to invert the chart. Available values: `base`,
+              `quote`, or token address. Default: `base`
 
-          trade_volume_in_usd_greater_than: filter trades by trade volume in USD greater than this value Default value: 0
+          trade_volume_in_usd_greater_than: Filter trades by trade volume in USD greater than this value. Default value: 0
 
           extra_headers: Send extra headers
 

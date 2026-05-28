@@ -15,9 +15,7 @@ __all__ = [
 
 
 class HoldingHoldingAmountChange(BaseModel):
-    """
-    holding amount changes over different timeframes (only present if holding_amount_change param is used)
-    """
+    """Holding amount changes over different timeframes"""
 
     period_14d: Optional[float] = FieldInfo(alias="14d", default=None)
 
@@ -33,9 +31,7 @@ class HoldingHoldingAmountChange(BaseModel):
 
 
 class HoldingHoldingChangePercentage(BaseModel):
-    """
-    holding change percentages over different timeframes (only present if holding_change_percentage param is used)
-    """
+    """Holding change percentages over different timeframes"""
 
     period_14d: Optional[float] = FieldInfo(alias="14d", default=None)
 
@@ -51,79 +47,73 @@ class HoldingHoldingChangePercentage(BaseModel):
 
 
 class Holding(BaseModel):
-    amount: Optional[int] = None
-    """amount of the cryptocurrency held"""
+    amount: float
+    """Amount of cryptocurrency held"""
 
-    amount_per_share: Optional[float] = None
-    """amount of cryptocurrency per share"""
+    amount_per_share: float
+    """Amount of cryptocurrency per share"""
 
-    average_entry_value_usd: Optional[float] = None
-    """average entry cost per unit in USD"""
+    average_entry_value_usd: float
+    """Average entry cost per unit in USD"""
 
-    coin_id: Optional[str] = None
-    """coin ID"""
+    coin_id: str
+    """Coin ID"""
 
-    current_value_usd: Optional[float] = None
-    """current value of holdings in USD"""
+    current_value_usd: float
+    """Current value of holdings in USD"""
 
-    entity_value_usd_percentage: Optional[float] = None
-    """percentage of entity's total treasury value"""
+    entity_value_usd_percentage: float
+    """Percentage of entity's total treasury value"""
+
+    percentage_of_total_supply: float
+    """Percentage of total crypto supply"""
+
+    total_entry_value_usd: float
+    """Total entry cost in USD"""
+
+    unrealized_pnl: float
+    """Unrealized profit and loss for this holding"""
 
     holding_amount_change: Optional[HoldingHoldingAmountChange] = None
-    """
-    holding amount changes over different timeframes (only present if
-    holding_amount_change param is used)
-    """
+    """Holding amount changes over different timeframes"""
 
     holding_change_percentage: Optional[HoldingHoldingChangePercentage] = None
-    """
-    holding change percentages over different timeframes (only present if
-    holding_change_percentage param is used)
-    """
-
-    percentage_of_total_supply: Optional[float] = None
-    """percentage of total crypto supply"""
-
-    total_entry_value_usd: Optional[float] = None
-    """total entry cost/purchase value in USD"""
-
-    unrealized_pnl: Optional[float] = None
-    """unrealized profit and loss for this holding"""
+    """Holding change percentages over different timeframes"""
 
 
 class PublicTreasuryGetEntityIDResponse(BaseModel):
-    id: Optional[str] = None
-    """entity ID"""
+    id: str
+    """Entity ID"""
 
-    country: Optional[str] = None
-    """country code of company or government location"""
+    country: str
+    """Country code"""
 
-    holdings: Optional[List[Holding]] = None
-    """list of cryptocurrency assets held by the entity"""
+    holdings: List[Holding]
+    """List of cryptocurrency assets held by the entity"""
 
-    m_nav: Optional[float] = None
-    """market to net asset value ratio"""
+    m_nav: float
+    """Market to net asset value ratio"""
 
-    name: Optional[str] = None
-    """entity name"""
+    name: str
+    """Entity name"""
 
     symbol: Optional[str] = None
-    """stock market symbol for public company"""
+    """Stock market ticker symbol"""
 
-    total_asset_value_per_share_usd: Optional[float] = None
-    """total asset value per share in USD"""
+    total_asset_value_per_share_usd: float
+    """Total asset value per share in USD"""
 
-    total_treasury_value_usd: Optional[float] = None
-    """total current value of all holdings in USD"""
+    total_treasury_value_usd: float
+    """Total current value of all holdings in USD"""
 
-    twitter_screen_name: Optional[str] = None
-    """official Twitter handle of the entity"""
+    twitter_screen_name: str
+    """Official Twitter handle"""
 
-    type: Optional[str] = None
-    """entity type: company or government"""
+    type: str
+    """Entity type: company or government"""
 
-    unrealized_pnl: Optional[float] = None
-    """unrealized profit and loss (current value - total entry value)"""
+    unrealized_pnl: float
+    """Unrealized profit and loss (current value minus total entry value)"""
 
-    website_url: Optional[str] = None
-    """official website URL of the entity"""
+    website_url: str
+    """Official website URL"""

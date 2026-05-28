@@ -117,18 +117,6 @@ class CoinsResource(SyncAPIResource):
         return CategoriesResource(self._client)
 
     @cached_property
-    def list(self) -> ListResource:
-        return ListResource(self._client)
-
-    @cached_property
-    def markets(self) -> MarketsResource:
-        return MarketsResource(self._client)
-
-    @cached_property
-    def top_gainers_losers(self) -> TopGainersLosersResource:
-        return TopGainersLosersResource(self._client)
-
-    @cached_property
     def circulating_supply_chart(self) -> CirculatingSupplyChartResource:
         return CirculatingSupplyChartResource(self._client)
 
@@ -141,8 +129,16 @@ class CoinsResource(SyncAPIResource):
         return HistoryResource(self._client)
 
     @cached_property
+    def list(self) -> ListResource:
+        return ListResource(self._client)
+
+    @cached_property
     def market_chart(self) -> MarketChartResource:
         return MarketChartResource(self._client)
+
+    @cached_property
+    def markets(self) -> MarketsResource:
+        return MarketsResource(self._client)
 
     @cached_property
     def ohlc(self) -> OhlcResource:
@@ -151,6 +147,10 @@ class CoinsResource(SyncAPIResource):
     @cached_property
     def tickers(self) -> TickersResource:
         return TickersResource(self._client)
+
+    @cached_property
+    def top_gainers_losers(self) -> TopGainersLosersResource:
+        return TopGainersLosersResource(self._client)
 
     @cached_property
     def total_supply_chart(self) -> TotalSupplyChartResource:
@@ -195,29 +195,28 @@ class CoinsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CoinGetIDResponse:
         """
-        This endpoint allows you to **query all the metadata (image, websites, socials,
-        description, contract address, etc.) and market data (price, ATH, exchange
-        tickers, etc.) of a coin from the CoinGecko coin page based on a particular coin
-        ID**
+        To query all the metadata (image, websites, socials, description, contract
+        address, etc.) and market data (price, ATH, exchange tickers, etc.) of a coin
+        based on a particular coin ID
 
         Args:
-          community_data: include community data, default: true
+          community_data: Include community data. Default: true
 
-          developer_data: include developer data, default: true
+          developer_data: Include developer data. Default: true
 
           dex_pair_format:
-              set to `symbol` to display DEX pair base and target as symbols, default:
+              Set to `symbol` to display DEX pair base and target as symbols. Default:
               `contract_address`
 
-          include_categories_details: include categories details, default: false
+          include_categories_details: Include categories details. Default: false
 
-          localization: include all the localized languages in the response, default: true
+          localization: Include all localized languages in the response. Default: true
 
-          market_data: include market data, default: true
+          market_data: Include market data. Default: true
 
-          sparkline: include sparkline 7 days data, default: false
+          sparkline: Include sparkline 7-day data. Default: false
 
-          tickers: include tickers data, default: true
+          tickers: Include tickers data. Default: true
 
           extra_headers: Send extra headers
 
@@ -260,18 +259,6 @@ class AsyncCoinsResource(AsyncAPIResource):
         return AsyncCategoriesResource(self._client)
 
     @cached_property
-    def list(self) -> AsyncListResource:
-        return AsyncListResource(self._client)
-
-    @cached_property
-    def markets(self) -> AsyncMarketsResource:
-        return AsyncMarketsResource(self._client)
-
-    @cached_property
-    def top_gainers_losers(self) -> AsyncTopGainersLosersResource:
-        return AsyncTopGainersLosersResource(self._client)
-
-    @cached_property
     def circulating_supply_chart(self) -> AsyncCirculatingSupplyChartResource:
         return AsyncCirculatingSupplyChartResource(self._client)
 
@@ -284,8 +271,16 @@ class AsyncCoinsResource(AsyncAPIResource):
         return AsyncHistoryResource(self._client)
 
     @cached_property
+    def list(self) -> AsyncListResource:
+        return AsyncListResource(self._client)
+
+    @cached_property
     def market_chart(self) -> AsyncMarketChartResource:
         return AsyncMarketChartResource(self._client)
+
+    @cached_property
+    def markets(self) -> AsyncMarketsResource:
+        return AsyncMarketsResource(self._client)
 
     @cached_property
     def ohlc(self) -> AsyncOhlcResource:
@@ -294,6 +289,10 @@ class AsyncCoinsResource(AsyncAPIResource):
     @cached_property
     def tickers(self) -> AsyncTickersResource:
         return AsyncTickersResource(self._client)
+
+    @cached_property
+    def top_gainers_losers(self) -> AsyncTopGainersLosersResource:
+        return AsyncTopGainersLosersResource(self._client)
 
     @cached_property
     def total_supply_chart(self) -> AsyncTotalSupplyChartResource:
@@ -338,29 +337,28 @@ class AsyncCoinsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CoinGetIDResponse:
         """
-        This endpoint allows you to **query all the metadata (image, websites, socials,
-        description, contract address, etc.) and market data (price, ATH, exchange
-        tickers, etc.) of a coin from the CoinGecko coin page based on a particular coin
-        ID**
+        To query all the metadata (image, websites, socials, description, contract
+        address, etc.) and market data (price, ATH, exchange tickers, etc.) of a coin
+        based on a particular coin ID
 
         Args:
-          community_data: include community data, default: true
+          community_data: Include community data. Default: true
 
-          developer_data: include developer data, default: true
+          developer_data: Include developer data. Default: true
 
           dex_pair_format:
-              set to `symbol` to display DEX pair base and target as symbols, default:
+              Set to `symbol` to display DEX pair base and target as symbols. Default:
               `contract_address`
 
-          include_categories_details: include categories details, default: false
+          include_categories_details: Include categories details. Default: false
 
-          localization: include all the localized languages in the response, default: true
+          localization: Include all localized languages in the response. Default: true
 
-          market_data: include market data, default: true
+          market_data: Include market data. Default: true
 
-          sparkline: include sparkline 7 days data, default: false
+          sparkline: Include sparkline 7-day data. Default: false
 
-          tickers: include tickers data, default: true
+          tickers: Include tickers data. Default: true
 
           extra_headers: Send extra headers
 
@@ -410,18 +408,6 @@ class CoinsResourceWithRawResponse:
         return CategoriesResourceWithRawResponse(self._coins.categories)
 
     @cached_property
-    def list(self) -> ListResourceWithRawResponse:
-        return ListResourceWithRawResponse(self._coins.list)
-
-    @cached_property
-    def markets(self) -> MarketsResourceWithRawResponse:
-        return MarketsResourceWithRawResponse(self._coins.markets)
-
-    @cached_property
-    def top_gainers_losers(self) -> TopGainersLosersResourceWithRawResponse:
-        return TopGainersLosersResourceWithRawResponse(self._coins.top_gainers_losers)
-
-    @cached_property
     def circulating_supply_chart(self) -> CirculatingSupplyChartResourceWithRawResponse:
         return CirculatingSupplyChartResourceWithRawResponse(self._coins.circulating_supply_chart)
 
@@ -434,8 +420,16 @@ class CoinsResourceWithRawResponse:
         return HistoryResourceWithRawResponse(self._coins.history)
 
     @cached_property
+    def list(self) -> ListResourceWithRawResponse:
+        return ListResourceWithRawResponse(self._coins.list)
+
+    @cached_property
     def market_chart(self) -> MarketChartResourceWithRawResponse:
         return MarketChartResourceWithRawResponse(self._coins.market_chart)
+
+    @cached_property
+    def markets(self) -> MarketsResourceWithRawResponse:
+        return MarketsResourceWithRawResponse(self._coins.markets)
 
     @cached_property
     def ohlc(self) -> OhlcResourceWithRawResponse:
@@ -444,6 +438,10 @@ class CoinsResourceWithRawResponse:
     @cached_property
     def tickers(self) -> TickersResourceWithRawResponse:
         return TickersResourceWithRawResponse(self._coins.tickers)
+
+    @cached_property
+    def top_gainers_losers(self) -> TopGainersLosersResourceWithRawResponse:
+        return TopGainersLosersResourceWithRawResponse(self._coins.top_gainers_losers)
 
     @cached_property
     def total_supply_chart(self) -> TotalSupplyChartResourceWithRawResponse:
@@ -463,18 +461,6 @@ class AsyncCoinsResourceWithRawResponse:
         return AsyncCategoriesResourceWithRawResponse(self._coins.categories)
 
     @cached_property
-    def list(self) -> AsyncListResourceWithRawResponse:
-        return AsyncListResourceWithRawResponse(self._coins.list)
-
-    @cached_property
-    def markets(self) -> AsyncMarketsResourceWithRawResponse:
-        return AsyncMarketsResourceWithRawResponse(self._coins.markets)
-
-    @cached_property
-    def top_gainers_losers(self) -> AsyncTopGainersLosersResourceWithRawResponse:
-        return AsyncTopGainersLosersResourceWithRawResponse(self._coins.top_gainers_losers)
-
-    @cached_property
     def circulating_supply_chart(self) -> AsyncCirculatingSupplyChartResourceWithRawResponse:
         return AsyncCirculatingSupplyChartResourceWithRawResponse(self._coins.circulating_supply_chart)
 
@@ -487,8 +473,16 @@ class AsyncCoinsResourceWithRawResponse:
         return AsyncHistoryResourceWithRawResponse(self._coins.history)
 
     @cached_property
+    def list(self) -> AsyncListResourceWithRawResponse:
+        return AsyncListResourceWithRawResponse(self._coins.list)
+
+    @cached_property
     def market_chart(self) -> AsyncMarketChartResourceWithRawResponse:
         return AsyncMarketChartResourceWithRawResponse(self._coins.market_chart)
+
+    @cached_property
+    def markets(self) -> AsyncMarketsResourceWithRawResponse:
+        return AsyncMarketsResourceWithRawResponse(self._coins.markets)
 
     @cached_property
     def ohlc(self) -> AsyncOhlcResourceWithRawResponse:
@@ -497,6 +491,10 @@ class AsyncCoinsResourceWithRawResponse:
     @cached_property
     def tickers(self) -> AsyncTickersResourceWithRawResponse:
         return AsyncTickersResourceWithRawResponse(self._coins.tickers)
+
+    @cached_property
+    def top_gainers_losers(self) -> AsyncTopGainersLosersResourceWithRawResponse:
+        return AsyncTopGainersLosersResourceWithRawResponse(self._coins.top_gainers_losers)
 
     @cached_property
     def total_supply_chart(self) -> AsyncTotalSupplyChartResourceWithRawResponse:
@@ -516,18 +514,6 @@ class CoinsResourceWithStreamingResponse:
         return CategoriesResourceWithStreamingResponse(self._coins.categories)
 
     @cached_property
-    def list(self) -> ListResourceWithStreamingResponse:
-        return ListResourceWithStreamingResponse(self._coins.list)
-
-    @cached_property
-    def markets(self) -> MarketsResourceWithStreamingResponse:
-        return MarketsResourceWithStreamingResponse(self._coins.markets)
-
-    @cached_property
-    def top_gainers_losers(self) -> TopGainersLosersResourceWithStreamingResponse:
-        return TopGainersLosersResourceWithStreamingResponse(self._coins.top_gainers_losers)
-
-    @cached_property
     def circulating_supply_chart(self) -> CirculatingSupplyChartResourceWithStreamingResponse:
         return CirculatingSupplyChartResourceWithStreamingResponse(self._coins.circulating_supply_chart)
 
@@ -540,8 +526,16 @@ class CoinsResourceWithStreamingResponse:
         return HistoryResourceWithStreamingResponse(self._coins.history)
 
     @cached_property
+    def list(self) -> ListResourceWithStreamingResponse:
+        return ListResourceWithStreamingResponse(self._coins.list)
+
+    @cached_property
     def market_chart(self) -> MarketChartResourceWithStreamingResponse:
         return MarketChartResourceWithStreamingResponse(self._coins.market_chart)
+
+    @cached_property
+    def markets(self) -> MarketsResourceWithStreamingResponse:
+        return MarketsResourceWithStreamingResponse(self._coins.markets)
 
     @cached_property
     def ohlc(self) -> OhlcResourceWithStreamingResponse:
@@ -550,6 +544,10 @@ class CoinsResourceWithStreamingResponse:
     @cached_property
     def tickers(self) -> TickersResourceWithStreamingResponse:
         return TickersResourceWithStreamingResponse(self._coins.tickers)
+
+    @cached_property
+    def top_gainers_losers(self) -> TopGainersLosersResourceWithStreamingResponse:
+        return TopGainersLosersResourceWithStreamingResponse(self._coins.top_gainers_losers)
 
     @cached_property
     def total_supply_chart(self) -> TotalSupplyChartResourceWithStreamingResponse:
@@ -569,18 +567,6 @@ class AsyncCoinsResourceWithStreamingResponse:
         return AsyncCategoriesResourceWithStreamingResponse(self._coins.categories)
 
     @cached_property
-    def list(self) -> AsyncListResourceWithStreamingResponse:
-        return AsyncListResourceWithStreamingResponse(self._coins.list)
-
-    @cached_property
-    def markets(self) -> AsyncMarketsResourceWithStreamingResponse:
-        return AsyncMarketsResourceWithStreamingResponse(self._coins.markets)
-
-    @cached_property
-    def top_gainers_losers(self) -> AsyncTopGainersLosersResourceWithStreamingResponse:
-        return AsyncTopGainersLosersResourceWithStreamingResponse(self._coins.top_gainers_losers)
-
-    @cached_property
     def circulating_supply_chart(self) -> AsyncCirculatingSupplyChartResourceWithStreamingResponse:
         return AsyncCirculatingSupplyChartResourceWithStreamingResponse(self._coins.circulating_supply_chart)
 
@@ -593,8 +579,16 @@ class AsyncCoinsResourceWithStreamingResponse:
         return AsyncHistoryResourceWithStreamingResponse(self._coins.history)
 
     @cached_property
+    def list(self) -> AsyncListResourceWithStreamingResponse:
+        return AsyncListResourceWithStreamingResponse(self._coins.list)
+
+    @cached_property
     def market_chart(self) -> AsyncMarketChartResourceWithStreamingResponse:
         return AsyncMarketChartResourceWithStreamingResponse(self._coins.market_chart)
+
+    @cached_property
+    def markets(self) -> AsyncMarketsResourceWithStreamingResponse:
+        return AsyncMarketsResourceWithStreamingResponse(self._coins.markets)
 
     @cached_property
     def ohlc(self) -> AsyncOhlcResourceWithStreamingResponse:
@@ -603,6 +597,10 @@ class AsyncCoinsResourceWithStreamingResponse:
     @cached_property
     def tickers(self) -> AsyncTickersResourceWithStreamingResponse:
         return AsyncTickersResourceWithStreamingResponse(self._coins.tickers)
+
+    @cached_property
+    def top_gainers_losers(self) -> AsyncTopGainersLosersResourceWithStreamingResponse:
+        return AsyncTopGainersLosersResourceWithStreamingResponse(self._coins.top_gainers_losers)
 
     @cached_property
     def total_supply_chart(self) -> AsyncTotalSupplyChartResourceWithStreamingResponse:

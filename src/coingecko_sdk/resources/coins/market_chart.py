@@ -82,19 +82,19 @@ class MarketChartResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MarketChartGetResponse:
         """
-        This endpoint allows you to **get the historical chart data of a coin including
-        time in UNIX, price, market cap and 24hr volume based on particular coin ID**
+        To get the historical chart data of a coin including time in UNIX, price, market
+        cap and 24hrs volume based on particular coin ID
 
         Args:
-          days: data up to number of days ago You may use any integer or `max` for number of
-              days
+          days: Data up to number of days ago. You may use any integer or `max` for number of
+              days.
 
-          vs_currency: target currency of market data \\**refers to
+          vs_currency: Target currency of market data. \\**refers to
               [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
 
-          interval: data interval, leave empty for auto granularity
+          interval: Data interval, leave empty for auto granularity.
 
-          precision: decimal place for currency price value
+          precision: Decimal place for currency price value.
 
           extra_headers: Send extra headers
 
@@ -165,23 +165,22 @@ class MarketChartResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MarketChartGetRangeResponse:
         """
-        This endpoint allows you to **get the historical chart data of a coin within
-        certain time range in UNIX along with price, market cap and 24hr volume based on
-        particular coin ID**
+        To get the historical chart data of a coin within certain time range in UNIX
+        along with price, market cap and 24hrs volume based on particular coin ID
 
         Args:
-          from_: starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
-              timestamp. **use ISO date string for best compatibility**
+          from_: Starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **Use ISO date string for best compatibility.**
 
-          to: ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
-              timestamp. **use ISO date string for best compatibility**
+          to: Ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **Use ISO date string for best compatibility.**
 
-          vs_currency: target currency of market data \\**refers to
+          vs_currency: Target currency of market data. \\**refers to
               [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
 
-          interval: data interval, leave empty for auto granularity
+          interval: Data interval, leave empty for auto granularity.
 
-          precision: decimal place for currency price value
+          precision: Decimal place for currency price value.
 
           extra_headers: Send extra headers
 
@@ -273,19 +272,19 @@ class AsyncMarketChartResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MarketChartGetResponse:
         """
-        This endpoint allows you to **get the historical chart data of a coin including
-        time in UNIX, price, market cap and 24hr volume based on particular coin ID**
+        To get the historical chart data of a coin including time in UNIX, price, market
+        cap and 24hrs volume based on particular coin ID
 
         Args:
-          days: data up to number of days ago You may use any integer or `max` for number of
-              days
+          days: Data up to number of days ago. You may use any integer or `max` for number of
+              days.
 
-          vs_currency: target currency of market data \\**refers to
+          vs_currency: Target currency of market data. \\**refers to
               [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
 
-          interval: data interval, leave empty for auto granularity
+          interval: Data interval, leave empty for auto granularity.
 
-          precision: decimal place for currency price value
+          precision: Decimal place for currency price value.
 
           extra_headers: Send extra headers
 
@@ -356,23 +355,22 @@ class AsyncMarketChartResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> MarketChartGetRangeResponse:
         """
-        This endpoint allows you to **get the historical chart data of a coin within
-        certain time range in UNIX along with price, market cap and 24hr volume based on
-        particular coin ID**
+        To get the historical chart data of a coin within certain time range in UNIX
+        along with price, market cap and 24hrs volume based on particular coin ID
 
         Args:
-          from_: starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
-              timestamp. **use ISO date string for best compatibility**
+          from_: Starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **Use ISO date string for best compatibility.**
 
-          to: ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
-              timestamp. **use ISO date string for best compatibility**
+          to: Ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **Use ISO date string for best compatibility.**
 
-          vs_currency: target currency of market data \\**refers to
+          vs_currency: Target currency of market data. \\**refers to
               [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
 
-          interval: data interval, leave empty for auto granularity
+          interval: Data interval, leave empty for auto granularity.
 
-          precision: decimal place for currency price value
+          precision: Decimal place for currency price value.
 
           extra_headers: Send extra headers
 

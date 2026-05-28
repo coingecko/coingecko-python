@@ -9,7 +9,7 @@ __all__ = ["ExchangeGetIDParams"]
 
 class ExchangeGetIDParams(TypedDict, total=False):
     dex_pair_format: Literal["contract_address", "symbol"]
-    """
-    set to `symbol` to display DEX pair base and target as symbols, default:
-    `contract_address`
+    """Set to `symbol` to display DEX pair base and target as symbols.
+
+    Default: `contract_address`
     """

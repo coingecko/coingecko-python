@@ -86,33 +86,33 @@ class PriceResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PriceGetResponse:
         """
-        This endpoint allows you to **query the prices of one or more coins by using
-        their unique Coin API IDs, symbols, or names**
+        To query the prices of one or more coins by using their unique Coin API IDs,
+        symbols, or names
 
         Args:
-          vs_currencies: target currency of coins, comma-separated if querying more than 1 currency.
+          vs_currencies: Target currency of coins, comma-separated if querying more than 1 currency.
               \\**refers to
-              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
+              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies)
 
-          ids: coins' IDs, comma-separated if querying more than 1 coin. \\**refers to
-              [`/coins/list`](/reference/coins-list).
+          ids: Coins' IDs, comma-separated if querying more than 1 coin. \\**refers to
+              [`/coins/list`](/reference/coins-list)
 
-          include_24hr_change: include 24hr change percentage, default: false
+          include_24hr_change: Include 24-hour change percentage. Default: false
 
-          include_24hr_vol: include 24hr volume, default: false
+          include_24hr_vol: Include 24-hour trading volume. Default: false
 
-          include_last_updated_at: include last updated price time in UNIX, default: false
+          include_last_updated_at: Include last updated price time as a UNIX timestamp. Default: false
 
-          include_market_cap: include market capitalization, default: false
+          include_market_cap: Include market capitalization. Default: false
 
-          include_tokens: for `symbols` lookups, specify `all` to include all matching tokens Default
-              `top` returns top-ranked tokens (by market cap or volume)
+          include_tokens: For `symbols` lookups, specify `all` to include all matching tokens. Default
+              `top` returns top-ranked tokens by market cap or volume.
 
-          names: coins' names, comma-separated if querying more than 1 coin.
+          names: Coins' names, comma-separated if querying more than 1 coin.
 
-          precision: decimal place for currency price value
+          precision: Decimal places for currency price value
 
-          symbols: coins' symbols, comma-separated if querying more than 1 coin.
+          symbols: Coins' symbols, comma-separated if querying more than 1 coin.
 
           extra_headers: Send extra headers
 
@@ -212,33 +212,33 @@ class AsyncPriceResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> PriceGetResponse:
         """
-        This endpoint allows you to **query the prices of one or more coins by using
-        their unique Coin API IDs, symbols, or names**
+        To query the prices of one or more coins by using their unique Coin API IDs,
+        symbols, or names
 
         Args:
-          vs_currencies: target currency of coins, comma-separated if querying more than 1 currency.
+          vs_currencies: Target currency of coins, comma-separated if querying more than 1 currency.
               \\**refers to
-              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
+              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies)
 
-          ids: coins' IDs, comma-separated if querying more than 1 coin. \\**refers to
-              [`/coins/list`](/reference/coins-list).
+          ids: Coins' IDs, comma-separated if querying more than 1 coin. \\**refers to
+              [`/coins/list`](/reference/coins-list)
 
-          include_24hr_change: include 24hr change percentage, default: false
+          include_24hr_change: Include 24-hour change percentage. Default: false
 
-          include_24hr_vol: include 24hr volume, default: false
+          include_24hr_vol: Include 24-hour trading volume. Default: false
 
-          include_last_updated_at: include last updated price time in UNIX, default: false
+          include_last_updated_at: Include last updated price time as a UNIX timestamp. Default: false
 
-          include_market_cap: include market capitalization, default: false
+          include_market_cap: Include market capitalization. Default: false
 
-          include_tokens: for `symbols` lookups, specify `all` to include all matching tokens Default
-              `top` returns top-ranked tokens (by market cap or volume)
+          include_tokens: For `symbols` lookups, specify `all` to include all matching tokens. Default
+              `top` returns top-ranked tokens by market cap or volume.
 
-          names: coins' names, comma-separated if querying more than 1 coin.
+          names: Coins' names, comma-separated if querying more than 1 coin.
 
-          precision: decimal place for currency price value
+          precision: Decimal places for currency price value
 
-          symbols: coins' symbols, comma-separated if querying more than 1 coin.
+          symbols: Coins' symbols, comma-separated if querying more than 1 coin.
 
           extra_headers: Send extra headers
 

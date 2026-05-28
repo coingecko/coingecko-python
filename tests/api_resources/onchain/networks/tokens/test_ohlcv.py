@@ -22,8 +22,8 @@ class TestOhlcv:
     def test_method_get_timeframe(self, client: Coingecko) -> None:
         ohlcv = client.onchain.networks.tokens.ohlcv.get_timeframe(
             timeframe="day",
-            network="solana",
-            token_address="So11111111111111111111111111111111111111112",
+            network="network",
+            token_address="token_address",
         )
         assert_matches_type(OhlcvGetTimeframeResponse, ohlcv, path=["response"])
 
@@ -32,8 +32,8 @@ class TestOhlcv:
     def test_method_get_timeframe_with_all_params(self, client: Coingecko) -> None:
         ohlcv = client.onchain.networks.tokens.ohlcv.get_timeframe(
             timeframe="day",
-            network="solana",
-            token_address="So11111111111111111111111111111111111111112",
+            network="network",
+            token_address="token_address",
             aggregate="aggregate",
             before_timestamp=0,
             currency="usd",
@@ -48,8 +48,8 @@ class TestOhlcv:
     def test_raw_response_get_timeframe(self, client: Coingecko) -> None:
         response = client.onchain.networks.tokens.ohlcv.with_raw_response.get_timeframe(
             timeframe="day",
-            network="solana",
-            token_address="So11111111111111111111111111111111111111112",
+            network="network",
+            token_address="token_address",
         )
 
         assert response.is_closed is True
@@ -62,8 +62,8 @@ class TestOhlcv:
     def test_streaming_response_get_timeframe(self, client: Coingecko) -> None:
         with client.onchain.networks.tokens.ohlcv.with_streaming_response.get_timeframe(
             timeframe="day",
-            network="solana",
-            token_address="So11111111111111111111111111111111111111112",
+            network="network",
+            token_address="token_address",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -80,13 +80,13 @@ class TestOhlcv:
             client.onchain.networks.tokens.ohlcv.with_raw_response.get_timeframe(
                 timeframe="day",
                 network="",
-                token_address="So11111111111111111111111111111111111111112",
+                token_address="token_address",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `token_address` but received ''"):
             client.onchain.networks.tokens.ohlcv.with_raw_response.get_timeframe(
                 timeframe="day",
-                network="solana",
+                network="network",
                 token_address="",
             )
 
@@ -101,8 +101,8 @@ class TestAsyncOhlcv:
     async def test_method_get_timeframe(self, async_client: AsyncCoingecko) -> None:
         ohlcv = await async_client.onchain.networks.tokens.ohlcv.get_timeframe(
             timeframe="day",
-            network="solana",
-            token_address="So11111111111111111111111111111111111111112",
+            network="network",
+            token_address="token_address",
         )
         assert_matches_type(OhlcvGetTimeframeResponse, ohlcv, path=["response"])
 
@@ -111,8 +111,8 @@ class TestAsyncOhlcv:
     async def test_method_get_timeframe_with_all_params(self, async_client: AsyncCoingecko) -> None:
         ohlcv = await async_client.onchain.networks.tokens.ohlcv.get_timeframe(
             timeframe="day",
-            network="solana",
-            token_address="So11111111111111111111111111111111111111112",
+            network="network",
+            token_address="token_address",
             aggregate="aggregate",
             before_timestamp=0,
             currency="usd",
@@ -127,8 +127,8 @@ class TestAsyncOhlcv:
     async def test_raw_response_get_timeframe(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.onchain.networks.tokens.ohlcv.with_raw_response.get_timeframe(
             timeframe="day",
-            network="solana",
-            token_address="So11111111111111111111111111111111111111112",
+            network="network",
+            token_address="token_address",
         )
 
         assert response.is_closed is True
@@ -141,8 +141,8 @@ class TestAsyncOhlcv:
     async def test_streaming_response_get_timeframe(self, async_client: AsyncCoingecko) -> None:
         async with async_client.onchain.networks.tokens.ohlcv.with_streaming_response.get_timeframe(
             timeframe="day",
-            network="solana",
-            token_address="So11111111111111111111111111111111111111112",
+            network="network",
+            token_address="token_address",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -159,12 +159,12 @@ class TestAsyncOhlcv:
             await async_client.onchain.networks.tokens.ohlcv.with_raw_response.get_timeframe(
                 timeframe="day",
                 network="",
-                token_address="So11111111111111111111111111111111111111112",
+                token_address="token_address",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `token_address` but received ''"):
             await async_client.onchain.networks.tokens.ohlcv.with_raw_response.get_timeframe(
                 timeframe="day",
-                network="solana",
+                network="network",
                 token_address="",
             )

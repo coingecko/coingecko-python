@@ -1,31 +1,31 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Optional
-
 from .._models import BaseModel
 
 __all__ = ["KeyGetResponse"]
 
 
 class KeyGetResponse(BaseModel):
-    api_key_monthly_call_credit: Optional[float] = None
-    """
-    Specific monthly credit limit configured for the API key used to authenticate
-    this request
-    """
+    api_key_current_total_monthly_calls: int
+    """Total API calls made this month by this API key"""
 
-    api_key_rate_limit_request_per_minute: Optional[float] = None
-    """
-    Specific request per minute configured for the API key used to authenticate this
-    request
-    """
+    api_key_monthly_call_credit: int
+    """Monthly call credit limit configured for this API key"""
 
-    current_remaining_monthly_calls: Optional[float] = None
+    api_key_rate_limit_request_per_minute: int
+    """Rate limit per minute configured for this API key"""
 
-    current_total_monthly_calls: Optional[float] = None
+    current_remaining_monthly_calls: int
+    """Remaining API call credits this month"""
 
-    monthly_call_credit: Optional[float] = None
+    current_total_monthly_calls: int
+    """Total API calls made this month"""
 
-    plan: Optional[str] = None
+    monthly_call_credit: int
+    """Total monthly API call credits for the plan"""
 
-    rate_limit_request_per_minute: Optional[float] = None
+    plan: str
+    """Current subscription plan"""
+
+    rate_limit_request_per_minute: int
+    """Rate limit per minute for the plan"""

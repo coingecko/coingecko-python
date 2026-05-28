@@ -24,7 +24,7 @@ class TestDexes:
     @parametrize
     def test_method_get(self, client: Coingecko) -> None:
         dex = client.onchain.networks.dexes.get(
-            network="eth",
+            network="network",
         )
         assert_matches_type(DexGetResponse, dex, path=["response"])
 
@@ -32,7 +32,7 @@ class TestDexes:
     @parametrize
     def test_method_get_with_all_params(self, client: Coingecko) -> None:
         dex = client.onchain.networks.dexes.get(
-            network="eth",
+            network="network",
             page=0,
         )
         assert_matches_type(DexGetResponse, dex, path=["response"])
@@ -41,7 +41,7 @@ class TestDexes:
     @parametrize
     def test_raw_response_get(self, client: Coingecko) -> None:
         response = client.onchain.networks.dexes.with_raw_response.get(
-            network="eth",
+            network="network",
         )
 
         assert response.is_closed is True
@@ -53,7 +53,7 @@ class TestDexes:
     @parametrize
     def test_streaming_response_get(self, client: Coingecko) -> None:
         with client.onchain.networks.dexes.with_streaming_response.get(
-            network="eth",
+            network="network",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -75,8 +75,8 @@ class TestDexes:
     @parametrize
     def test_method_get_pools(self, client: Coingecko) -> None:
         dex = client.onchain.networks.dexes.get_pools(
-            dex="sushiswap",
-            network="eth",
+            dex="dex",
+            network="network",
         )
         assert_matches_type(DexGetPoolsResponse, dex, path=["response"])
 
@@ -84,8 +84,8 @@ class TestDexes:
     @parametrize
     def test_method_get_pools_with_all_params(self, client: Coingecko) -> None:
         dex = client.onchain.networks.dexes.get_pools(
-            dex="sushiswap",
-            network="eth",
+            dex="dex",
+            network="network",
             include="include",
             include_gt_community_data=True,
             page=0,
@@ -97,8 +97,8 @@ class TestDexes:
     @parametrize
     def test_raw_response_get_pools(self, client: Coingecko) -> None:
         response = client.onchain.networks.dexes.with_raw_response.get_pools(
-            dex="sushiswap",
-            network="eth",
+            dex="dex",
+            network="network",
         )
 
         assert response.is_closed is True
@@ -110,8 +110,8 @@ class TestDexes:
     @parametrize
     def test_streaming_response_get_pools(self, client: Coingecko) -> None:
         with client.onchain.networks.dexes.with_streaming_response.get_pools(
-            dex="sushiswap",
-            network="eth",
+            dex="dex",
+            network="network",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -126,14 +126,14 @@ class TestDexes:
     def test_path_params_get_pools(self, client: Coingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `network` but received ''"):
             client.onchain.networks.dexes.with_raw_response.get_pools(
-                dex="sushiswap",
+                dex="dex",
                 network="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `dex` but received ''"):
             client.onchain.networks.dexes.with_raw_response.get_pools(
                 dex="",
-                network="eth",
+                network="network",
             )
 
 
@@ -146,7 +146,7 @@ class TestAsyncDexes:
     @parametrize
     async def test_method_get(self, async_client: AsyncCoingecko) -> None:
         dex = await async_client.onchain.networks.dexes.get(
-            network="eth",
+            network="network",
         )
         assert_matches_type(DexGetResponse, dex, path=["response"])
 
@@ -154,7 +154,7 @@ class TestAsyncDexes:
     @parametrize
     async def test_method_get_with_all_params(self, async_client: AsyncCoingecko) -> None:
         dex = await async_client.onchain.networks.dexes.get(
-            network="eth",
+            network="network",
             page=0,
         )
         assert_matches_type(DexGetResponse, dex, path=["response"])
@@ -163,7 +163,7 @@ class TestAsyncDexes:
     @parametrize
     async def test_raw_response_get(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.onchain.networks.dexes.with_raw_response.get(
-            network="eth",
+            network="network",
         )
 
         assert response.is_closed is True
@@ -175,7 +175,7 @@ class TestAsyncDexes:
     @parametrize
     async def test_streaming_response_get(self, async_client: AsyncCoingecko) -> None:
         async with async_client.onchain.networks.dexes.with_streaming_response.get(
-            network="eth",
+            network="network",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -197,8 +197,8 @@ class TestAsyncDexes:
     @parametrize
     async def test_method_get_pools(self, async_client: AsyncCoingecko) -> None:
         dex = await async_client.onchain.networks.dexes.get_pools(
-            dex="sushiswap",
-            network="eth",
+            dex="dex",
+            network="network",
         )
         assert_matches_type(DexGetPoolsResponse, dex, path=["response"])
 
@@ -206,8 +206,8 @@ class TestAsyncDexes:
     @parametrize
     async def test_method_get_pools_with_all_params(self, async_client: AsyncCoingecko) -> None:
         dex = await async_client.onchain.networks.dexes.get_pools(
-            dex="sushiswap",
-            network="eth",
+            dex="dex",
+            network="network",
             include="include",
             include_gt_community_data=True,
             page=0,
@@ -219,8 +219,8 @@ class TestAsyncDexes:
     @parametrize
     async def test_raw_response_get_pools(self, async_client: AsyncCoingecko) -> None:
         response = await async_client.onchain.networks.dexes.with_raw_response.get_pools(
-            dex="sushiswap",
-            network="eth",
+            dex="dex",
+            network="network",
         )
 
         assert response.is_closed is True
@@ -232,8 +232,8 @@ class TestAsyncDexes:
     @parametrize
     async def test_streaming_response_get_pools(self, async_client: AsyncCoingecko) -> None:
         async with async_client.onchain.networks.dexes.with_streaming_response.get_pools(
-            dex="sushiswap",
-            network="eth",
+            dex="dex",
+            network="network",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -248,12 +248,12 @@ class TestAsyncDexes:
     async def test_path_params_get_pools(self, async_client: AsyncCoingecko) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `network` but received ''"):
             await async_client.onchain.networks.dexes.with_raw_response.get_pools(
-                dex="sushiswap",
+                dex="dex",
                 network="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `dex` but received ''"):
             await async_client.onchain.networks.dexes.with_raw_response.get_pools(
                 dex="",
-                network="eth",
+                network="network",
             )

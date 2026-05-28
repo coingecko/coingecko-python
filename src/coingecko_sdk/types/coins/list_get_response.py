@@ -9,17 +9,17 @@ __all__ = ["ListGetResponse", "ListGetResponseItem"]
 
 
 class ListGetResponseItem(BaseModel):
-    id: Optional[str] = None
-    """coin ID"""
+    id: str
+    """Coin ID"""
 
-    name: Optional[str] = None
-    """coin name"""
+    name: str
+    """Coin name"""
 
-    platforms: Optional[Dict[str, str]] = None
-    """coin asset platform and contract address"""
+    symbol: str
+    """Coin symbol"""
 
-    symbol: Optional[str] = None
-    """coin symbol"""
+    platforms: Optional[Dict[str, Optional[str]]] = None
+    """Asset platform and contract address"""
 
 
 ListGetResponse: TypeAlias = List[ListGetResponseItem]

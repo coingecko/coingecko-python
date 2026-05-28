@@ -11,13 +11,10 @@ class TopTraderGetParams(TypedDict, total=False):
     network_id: Required[str]
 
     include_address_label: bool
-    """include address label data, default: false"""
+    """Include address label data. Default: `false`"""
 
     sort: Literal["realized_pnl_usd_desc", "unrealized_pnl_usd_desc", "total_buy_usd_desc", "total_sell_usd_desc"]
-    """sort the traders by field Default value: realized_pnl_usd_desc"""
+    """Sort the traders by field. Default: `realized_pnl_usd_desc`"""
 
     traders: str
-    """
-    number of top token traders to return, you may use any integer or `max` Default
-    value: 10
-    """
+    """Number of top token traders to return, any integer or `max`. Default value: 10"""

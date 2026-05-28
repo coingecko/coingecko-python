@@ -50,8 +50,8 @@ class KeyResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> KeyGetResponse:
         """
-        This endpoint allows you to **monitor your account's API usage, including rate
-        limits, monthly total credits, remaining credits, and more**
+        To monitor your account's API usage, including rate limits, monthly total
+        credits, remaining credits, and more
         """
         return self._get(
             "/key",
@@ -93,8 +93,8 @@ class AsyncKeyResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> KeyGetResponse:
         """
-        This endpoint allows you to **monitor your account's API usage, including rate
-        limits, monthly total credits, remaining credits, and more**
+        To monitor your account's API usage, including rate limits, monthly total
+        credits, remaining credits, and more
         """
         return await self._get(
             "/key",
