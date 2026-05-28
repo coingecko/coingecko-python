@@ -1,5 +1,33 @@
 # Changelog
 
+## 3.0.0 (2026-05-28)
+
+Full Changelog: [v2.0.1...v3.0.0](https://github.com/coingecko/coingecko-python/compare/v2.0.1...v3.0.0)
+
+### ⚠ BREAKING CHANGES
+
+* Methods refresh
+
+### Features
+
+* **internal/types:** support eagerly validating pydantic iterators ([c6c8ef9](https://github.com/coingecko/coingecko-python/commit/c6c8ef9a176183c52f134c1a81bb0f8eec3fb832))
+
+
+### Bug Fixes
+
+* **api:** InferUnionVariantName for PublicTreasury ([165a3ea](https://github.com/coingecko/coingecko-python/commit/165a3eacb2e33710efc212a0c3973d079e03266c))
+* **client:** add missing f-string prefix in file type error message ([3852f84](https://github.com/coingecko/coingecko-python/commit/3852f84ead0b60a88a936e52309aee30a0743030))
+
+
+### Chores
+
+* **internal:** reformat pyproject.toml ([f32c0f3](https://github.com/coingecko/coingecko-python/commit/f32c0f3d2e71c274c00f2b5e9608be42c5e5169b))
+
+
+### Refactors
+
+* Methods refresh ([44e2ae6](https://github.com/coingecko/coingecko-python/commit/44e2ae67a350de62ced124dfb85f9c6083d57aed))
+
 ## 2.0.1 (2026-04-30)
 
 Full Changelog: [v2.0.0...v2.0.1](https://github.com/coingecko/coingecko-python/compare/v2.0.0...v2.0.1)
