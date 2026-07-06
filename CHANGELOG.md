@@ -1,5 +1,15 @@
 # Changelog
 
+## 3.0.1 (2026-07-06)
+
+Full Changelog: [v3.0.0...v3.0.1](https://github.com/coingecko/coingecko-python/compare/v3.0.0...v3.0.1)
+
+### Chores
+
+* add stlc promote/back-sync/trunk-lock workflows ([a0e414f](https://github.com/coingecko/coingecko-python/commit/a0e414fdaae0ac10bd2398774f3476b3a2a974aa))
+* drop stlc workflow YAMLs from .prettierignore (prettier-clean, exemption unnecessary) ([b476cc4](https://github.com/coingecko/coingecko-python/commit/b476cc4135fdb3b05a51834251eeb334bd531298))
+* migrate config repo to stlc workspace + generate workflows ([cac4968](https://github.com/coingecko/coingecko-python/commit/cac4968bf897dbfc7d4df1e684bea15457f6610d))
+
 ## 3.0.0 (2026-05-28)
 
 Full Changelog: [v2.0.1...v3.0.0](https://github.com/coingecko/coingecko-python/compare/v2.0.1...v3.0.0)
