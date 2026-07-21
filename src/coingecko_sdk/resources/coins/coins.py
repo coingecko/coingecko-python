@@ -74,6 +74,14 @@ from .market_chart import (
     AsyncMarketChartResourceWithStreamingResponse,
 )
 from ..._base_client import make_request_options
+from .supply_breakdown import (
+    SupplyBreakdownResource,
+    AsyncSupplyBreakdownResource,
+    SupplyBreakdownResourceWithRawResponse,
+    AsyncSupplyBreakdownResourceWithRawResponse,
+    SupplyBreakdownResourceWithStreamingResponse,
+    AsyncSupplyBreakdownResourceWithStreamingResponse,
+)
 from .contract.contract import (
     ContractResource,
     AsyncContractResource,
@@ -143,6 +151,10 @@ class CoinsResource(SyncAPIResource):
     @cached_property
     def ohlc(self) -> OhlcResource:
         return OhlcResource(self._client)
+
+    @cached_property
+    def supply_breakdown(self) -> SupplyBreakdownResource:
+        return SupplyBreakdownResource(self._client)
 
     @cached_property
     def tickers(self) -> TickersResource:
@@ -285,6 +297,10 @@ class AsyncCoinsResource(AsyncAPIResource):
     @cached_property
     def ohlc(self) -> AsyncOhlcResource:
         return AsyncOhlcResource(self._client)
+
+    @cached_property
+    def supply_breakdown(self) -> AsyncSupplyBreakdownResource:
+        return AsyncSupplyBreakdownResource(self._client)
 
     @cached_property
     def tickers(self) -> AsyncTickersResource:
@@ -436,6 +452,10 @@ class CoinsResourceWithRawResponse:
         return OhlcResourceWithRawResponse(self._coins.ohlc)
 
     @cached_property
+    def supply_breakdown(self) -> SupplyBreakdownResourceWithRawResponse:
+        return SupplyBreakdownResourceWithRawResponse(self._coins.supply_breakdown)
+
+    @cached_property
     def tickers(self) -> TickersResourceWithRawResponse:
         return TickersResourceWithRawResponse(self._coins.tickers)
 
@@ -487,6 +507,10 @@ class AsyncCoinsResourceWithRawResponse:
     @cached_property
     def ohlc(self) -> AsyncOhlcResourceWithRawResponse:
         return AsyncOhlcResourceWithRawResponse(self._coins.ohlc)
+
+    @cached_property
+    def supply_breakdown(self) -> AsyncSupplyBreakdownResourceWithRawResponse:
+        return AsyncSupplyBreakdownResourceWithRawResponse(self._coins.supply_breakdown)
 
     @cached_property
     def tickers(self) -> AsyncTickersResourceWithRawResponse:
@@ -542,6 +566,10 @@ class CoinsResourceWithStreamingResponse:
         return OhlcResourceWithStreamingResponse(self._coins.ohlc)
 
     @cached_property
+    def supply_breakdown(self) -> SupplyBreakdownResourceWithStreamingResponse:
+        return SupplyBreakdownResourceWithStreamingResponse(self._coins.supply_breakdown)
+
+    @cached_property
     def tickers(self) -> TickersResourceWithStreamingResponse:
         return TickersResourceWithStreamingResponse(self._coins.tickers)
 
@@ -593,6 +621,10 @@ class AsyncCoinsResourceWithStreamingResponse:
     @cached_property
     def ohlc(self) -> AsyncOhlcResourceWithStreamingResponse:
         return AsyncOhlcResourceWithStreamingResponse(self._coins.ohlc)
+
+    @cached_property
+    def supply_breakdown(self) -> AsyncSupplyBreakdownResourceWithStreamingResponse:
+        return AsyncSupplyBreakdownResourceWithStreamingResponse(self._coins.supply_breakdown)
 
     @cached_property
     def tickers(self) -> AsyncTickersResourceWithStreamingResponse:

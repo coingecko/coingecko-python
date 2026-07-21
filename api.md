@@ -139,6 +139,18 @@ Methods:
 - <code title="get /coins/{id}/ohlc">client.coins.ohlc.<a href="./src/coingecko_sdk/resources/coins/ohlc.py">get</a>(id, \*\*<a href="src/coingecko_sdk/types/coins/ohlc_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/coins/ohlc_get_response.py">OhlcGetResponse</a></code>
 - <code title="get /coins/{id}/ohlc/range">client.coins.ohlc.<a href="./src/coingecko_sdk/resources/coins/ohlc.py">get_range</a>(id, \*\*<a href="src/coingecko_sdk/types/coins/ohlc_get_range_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/coins/ohlc_get_range_response.py">OhlcGetRangeResponse</a></code>
 
+## SupplyBreakdown
+
+Types:
+
+```python
+from coingecko_sdk.types.coins import SupplyBreakdownGetResponse
+```
+
+Methods:
+
+- <code title="get /coins/{id}/supply_breakdown">client.coins.supply_breakdown.<a href="./src/coingecko_sdk/resources/coins/supply_breakdown.py">get</a>(id) -> <a href="./src/coingecko_sdk/types/coins/supply_breakdown_get_response.py">SupplyBreakdownGetResponse</a></code>
+
 ## Tickers
 
 Types:
@@ -304,6 +316,18 @@ from coingecko_sdk.types.global_ import MarketCapChartGetResponse
 Methods:
 
 - <code title="get /global/market_cap_chart">client.global*.market_cap_chart.<a href="./src/coingecko_sdk/resources/global*/market*cap_chart.py">get</a>(\*\*<a href="src/coingecko_sdk/types/global*/market*cap_chart_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/global*/market_cap_chart_get_response.py">MarketCapChartGetResponse</a></code>
+
+# Insights
+
+Types:
+
+```python
+from coingecko_sdk.types import InsightGetResponse
+```
+
+Methods:
+
+- <code title="get /insights">client.insights.<a href="./src/coingecko_sdk/resources/insights.py">get</a>(\*\*<a href="src/coingecko_sdk/types/insight_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/insight_get_response.py">InsightGetResponse</a></code>
 
 # Key
 

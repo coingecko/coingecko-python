@@ -47,6 +47,7 @@ if TYPE_CHECKING:
         global_,
         onchain,
         entities,
+        insights,
         exchanges,
         derivatives,
         token_lists,
@@ -58,6 +59,7 @@ if TYPE_CHECKING:
     from .resources.news import NewsResource, AsyncNewsResource
     from .resources.ping import PingResource, AsyncPingResource
     from .resources.entities import EntitiesResource, AsyncEntitiesResource
+    from .resources.insights import InsightsResource, AsyncInsightsResource
     from .resources.nfts.nfts import NFTsResource, AsyncNFTsResource
     from .resources.coins.coins import CoinsResource, AsyncCoinsResource
     from .resources.token_lists import TokenListsResource, AsyncTokenListsResource
@@ -222,6 +224,12 @@ class Coingecko(SyncAPIClient):
         from .resources.global_ import GlobalResource
 
         return GlobalResource(self)
+
+    @cached_property
+    def insights(self) -> InsightsResource:
+        from .resources.insights import InsightsResource
+
+        return InsightsResource(self)
 
     @cached_property
     def key(self) -> KeyResource:
@@ -554,6 +562,12 @@ class AsyncCoingecko(AsyncAPIClient):
         return AsyncGlobalResource(self)
 
     @cached_property
+    def insights(self) -> AsyncInsightsResource:
+        from .resources.insights import AsyncInsightsResource
+
+        return AsyncInsightsResource(self)
+
+    @cached_property
     def key(self) -> AsyncKeyResource:
         from .resources.key import AsyncKeyResource
 
@@ -798,6 +812,12 @@ class CoingeckoWithRawResponse:
         return GlobalResourceWithRawResponse(self._client.global_)
 
     @cached_property
+    def insights(self) -> insights.InsightsResourceWithRawResponse:
+        from .resources.insights import InsightsResourceWithRawResponse
+
+        return InsightsResourceWithRawResponse(self._client.insights)
+
+    @cached_property
     def key(self) -> key.KeyResourceWithRawResponse:
         from .resources.key import KeyResourceWithRawResponse
 
@@ -899,6 +919,12 @@ class AsyncCoingeckoWithRawResponse:
         from .resources.global_ import AsyncGlobalResourceWithRawResponse
 
         return AsyncGlobalResourceWithRawResponse(self._client.global_)
+
+    @cached_property
+    def insights(self) -> insights.AsyncInsightsResourceWithRawResponse:
+        from .resources.insights import AsyncInsightsResourceWithRawResponse
+
+        return AsyncInsightsResourceWithRawResponse(self._client.insights)
 
     @cached_property
     def key(self) -> key.AsyncKeyResourceWithRawResponse:
@@ -1004,6 +1030,12 @@ class CoingeckoWithStreamedResponse:
         return GlobalResourceWithStreamingResponse(self._client.global_)
 
     @cached_property
+    def insights(self) -> insights.InsightsResourceWithStreamingResponse:
+        from .resources.insights import InsightsResourceWithStreamingResponse
+
+        return InsightsResourceWithStreamingResponse(self._client.insights)
+
+    @cached_property
     def key(self) -> key.KeyResourceWithStreamingResponse:
         from .resources.key import KeyResourceWithStreamingResponse
 
@@ -1105,6 +1137,12 @@ class AsyncCoingeckoWithStreamedResponse:
         from .resources.global_ import AsyncGlobalResourceWithStreamingResponse
 
         return AsyncGlobalResourceWithStreamingResponse(self._client.global_)
+
+    @cached_property
+    def insights(self) -> insights.AsyncInsightsResourceWithStreamingResponse:
+        from .resources.insights import AsyncInsightsResourceWithStreamingResponse
+
+        return AsyncInsightsResourceWithStreamingResponse(self._client.insights)
 
     @cached_property
     def key(self) -> key.AsyncKeyResourceWithStreamingResponse:

@@ -58,6 +58,9 @@ class DataAttributes(BaseModel):
     address: str
     """Token contract address"""
 
+    banner_image_url: Optional[str] = None
+    """Token banner image URL"""
+
     categories: List[str]
     """Token categories"""
 
@@ -69,6 +72,12 @@ class DataAttributes(BaseModel):
 
     description: Optional[str] = None
     """Token description"""
+
+    developer_address: Optional[str] = None
+    """Developer wallet address"""
+
+    developer_holding_percentage: Optional[str] = None
+    """Developer holding as a percentage of total supply"""
 
     discord_url: Optional[str] = None
     """Discord URL"""

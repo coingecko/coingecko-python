@@ -80,6 +80,14 @@ from .entities import (
     EntitiesResourceWithStreamingResponse,
     AsyncEntitiesResourceWithStreamingResponse,
 )
+from .insights import (
+    InsightsResource,
+    AsyncInsightsResource,
+    InsightsResourceWithRawResponse,
+    AsyncInsightsResourceWithRawResponse,
+    InsightsResourceWithStreamingResponse,
+    AsyncInsightsResourceWithStreamingResponse,
+)
 from .exchanges import (
     ExchangesResource,
     AsyncExchangesResource,
@@ -172,6 +180,12 @@ __all__ = [
     "AsyncGlobalResourceWithRawResponse",
     "GlobalResourceWithStreamingResponse",
     "AsyncGlobalResourceWithStreamingResponse",
+    "InsightsResource",
+    "AsyncInsightsResource",
+    "InsightsResourceWithRawResponse",
+    "AsyncInsightsResourceWithRawResponse",
+    "InsightsResourceWithStreamingResponse",
+    "AsyncInsightsResourceWithStreamingResponse",
     "KeyResource",
     "AsyncKeyResource",
     "KeyResourceWithRawResponse",

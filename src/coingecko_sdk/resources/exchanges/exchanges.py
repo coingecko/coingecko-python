@@ -171,7 +171,7 @@ class ExchangesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetListResponse:
         """
-        To query all the exchanges with ID and name
+        To query all the supported exchanges with ID and name
 
         Args:
           status: Filter by status of exchanges. Default: `active`
@@ -329,7 +329,7 @@ class AsyncExchangesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetListResponse:
         """
-        To query all the exchanges with ID and name
+        To query all the supported exchanges with ID and name
 
         Args:
           status: Filter by status of exchanges. Default: `active`

@@ -72,6 +72,14 @@ from .market_chart import (
     MarketChartResourceWithStreamingResponse,
     AsyncMarketChartResourceWithStreamingResponse,
 )
+from .supply_breakdown import (
+    SupplyBreakdownResource,
+    AsyncSupplyBreakdownResource,
+    SupplyBreakdownResourceWithRawResponse,
+    AsyncSupplyBreakdownResourceWithRawResponse,
+    SupplyBreakdownResourceWithStreamingResponse,
+    AsyncSupplyBreakdownResourceWithStreamingResponse,
+)
 from .top_gainers_losers import (
     TopGainersLosersResource,
     AsyncTopGainersLosersResource,
@@ -146,6 +154,12 @@ __all__ = [
     "AsyncOhlcResourceWithRawResponse",
     "OhlcResourceWithStreamingResponse",
     "AsyncOhlcResourceWithStreamingResponse",
+    "SupplyBreakdownResource",
+    "AsyncSupplyBreakdownResource",
+    "SupplyBreakdownResourceWithRawResponse",
+    "AsyncSupplyBreakdownResourceWithRawResponse",
+    "SupplyBreakdownResourceWithStreamingResponse",
+    "AsyncSupplyBreakdownResourceWithStreamingResponse",
     "TickersResource",
     "AsyncTickersResource",
     "TickersResourceWithRawResponse",

@@ -49,7 +49,13 @@ class TopTradersResource(SyncAPIResource):
         *,
         network_id: str,
         include_address_label: bool | Omit = omit,
-        sort: Literal["realized_pnl_usd_desc", "unrealized_pnl_usd_desc", "total_buy_usd_desc", "total_sell_usd_desc"]
+        sort: Literal[
+            "realized_pnl_usd_desc",
+            "unrealized_pnl_usd_desc",
+            "total_buy_usd_desc",
+            "total_sell_usd_desc",
+            "token_balance_desc",
+        ]
         | Omit = omit,
         traders: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -132,7 +138,13 @@ class AsyncTopTradersResource(AsyncAPIResource):
         *,
         network_id: str,
         include_address_label: bool | Omit = omit,
-        sort: Literal["realized_pnl_usd_desc", "unrealized_pnl_usd_desc", "total_buy_usd_desc", "total_sell_usd_desc"]
+        sort: Literal[
+            "realized_pnl_usd_desc",
+            "unrealized_pnl_usd_desc",
+            "total_buy_usd_desc",
+            "total_sell_usd_desc",
+            "token_balance_desc",
+        ]
         | Omit = omit,
         traders: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.

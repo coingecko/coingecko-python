@@ -560,6 +560,9 @@ class CoinGetIDResponse(BaseModel):
     genesis_date: Optional[str] = None
     """Genesis date"""
 
+    has_supply_breakdown: bool
+    """Whether detailed supply breakdown data is available via /coins/supply_breakdown"""
+
     hashing_algorithm: Optional[str] = None
     """Blockchain hashing algorithm"""
 

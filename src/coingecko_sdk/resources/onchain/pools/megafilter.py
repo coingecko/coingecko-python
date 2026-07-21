@@ -57,6 +57,8 @@ class MegafilterResource(SyncAPIResource):
         fdv_usd_min: float | Omit = omit,
         h24_volume_usd_max: float | Omit = omit,
         h24_volume_usd_min: float | Omit = omit,
+        holder_count_max: int | Omit = omit,
+        holder_count_min: int | Omit = omit,
         include: str | Omit = omit,
         include_unknown_honeypot_tokens: bool | Omit = omit,
         networks: str | Omit = omit,
@@ -99,6 +101,8 @@ class MegafilterResource(SyncAPIResource):
             "pool_created_at_desc",
         ]
         | Omit = omit,
+        top_10_holders_percentage_max: float | Omit = omit,
+        top_10_holders_percentage_min: float | Omit = omit,
         tx_count_duration: Literal["5m", "1h", "6h", "24h"] | Omit = omit,
         tx_count_max: int | Omit = omit,
         tx_count_min: int | Omit = omit,
@@ -136,6 +140,10 @@ class MegafilterResource(SyncAPIResource):
           h24_volume_usd_max: Maximum 24hr volume in USD.
 
           h24_volume_usd_min: Minimum 24hr volume in USD.
+
+          holder_count_max: Maximum holder count.
+
+          holder_count_min: Minimum holder count.
 
           include:
               Attributes to include, comma-separated if more than one. Available values:
@@ -175,6 +183,10 @@ class MegafilterResource(SyncAPIResource):
 
           sort: Sort the pools by field. Default: `h6_trending`
 
+          top_10_holders_percentage_max: Maximum top 10 holders percentage.
+
+          top_10_holders_percentage_min: Minimum top 10 holders percentage.
+
           tx_count_duration: Duration for transaction count metric. Default: `24h`
 
           tx_count_max: Maximum transaction count.
@@ -209,6 +221,8 @@ class MegafilterResource(SyncAPIResource):
                         "fdv_usd_min": fdv_usd_min,
                         "h24_volume_usd_max": h24_volume_usd_max,
                         "h24_volume_usd_min": h24_volume_usd_min,
+                        "holder_count_max": holder_count_max,
+                        "holder_count_min": holder_count_min,
                         "include": include,
                         "include_unknown_honeypot_tokens": include_unknown_honeypot_tokens,
                         "networks": networks,
@@ -226,6 +240,8 @@ class MegafilterResource(SyncAPIResource):
                         "sells_max": sells_max,
                         "sells_min": sells_min,
                         "sort": sort,
+                        "top_10_holders_percentage_max": top_10_holders_percentage_max,
+                        "top_10_holders_percentage_min": top_10_holders_percentage_min,
                         "tx_count_duration": tx_count_duration,
                         "tx_count_max": tx_count_max,
                         "tx_count_min": tx_count_min,
@@ -271,6 +287,8 @@ class AsyncMegafilterResource(AsyncAPIResource):
         fdv_usd_min: float | Omit = omit,
         h24_volume_usd_max: float | Omit = omit,
         h24_volume_usd_min: float | Omit = omit,
+        holder_count_max: int | Omit = omit,
+        holder_count_min: int | Omit = omit,
         include: str | Omit = omit,
         include_unknown_honeypot_tokens: bool | Omit = omit,
         networks: str | Omit = omit,
@@ -313,6 +331,8 @@ class AsyncMegafilterResource(AsyncAPIResource):
             "pool_created_at_desc",
         ]
         | Omit = omit,
+        top_10_holders_percentage_max: float | Omit = omit,
+        top_10_holders_percentage_min: float | Omit = omit,
         tx_count_duration: Literal["5m", "1h", "6h", "24h"] | Omit = omit,
         tx_count_max: int | Omit = omit,
         tx_count_min: int | Omit = omit,
@@ -350,6 +370,10 @@ class AsyncMegafilterResource(AsyncAPIResource):
           h24_volume_usd_max: Maximum 24hr volume in USD.
 
           h24_volume_usd_min: Minimum 24hr volume in USD.
+
+          holder_count_max: Maximum holder count.
+
+          holder_count_min: Minimum holder count.
 
           include:
               Attributes to include, comma-separated if more than one. Available values:
@@ -389,6 +413,10 @@ class AsyncMegafilterResource(AsyncAPIResource):
 
           sort: Sort the pools by field. Default: `h6_trending`
 
+          top_10_holders_percentage_max: Maximum top 10 holders percentage.
+
+          top_10_holders_percentage_min: Minimum top 10 holders percentage.
+
           tx_count_duration: Duration for transaction count metric. Default: `24h`
 
           tx_count_max: Maximum transaction count.
@@ -423,6 +451,8 @@ class AsyncMegafilterResource(AsyncAPIResource):
                         "fdv_usd_min": fdv_usd_min,
                         "h24_volume_usd_max": h24_volume_usd_max,
                         "h24_volume_usd_min": h24_volume_usd_min,
+                        "holder_count_max": holder_count_max,
+                        "holder_count_min": holder_count_min,
                         "include": include,
                         "include_unknown_honeypot_tokens": include_unknown_honeypot_tokens,
                         "networks": networks,
@@ -440,6 +470,8 @@ class AsyncMegafilterResource(AsyncAPIResource):
                         "sells_max": sells_max,
                         "sells_min": sells_min,
                         "sort": sort,
+                        "top_10_holders_percentage_max": top_10_holders_percentage_max,
+                        "top_10_holders_percentage_min": top_10_holders_percentage_min,
                         "tx_count_duration": tx_count_duration,
                         "tx_count_max": tx_count_max,
                         "tx_count_min": tx_count_min,

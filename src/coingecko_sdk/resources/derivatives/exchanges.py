@@ -155,7 +155,7 @@ class ExchangesResource(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetListResponse:
-        """To query all the derivatives exchanges with ID and name on CoinGecko"""
+        """To query all the supported derivatives exchanges with ID and name on CoinGecko"""
         return self._get(
             "/derivatives/exchanges/list",
             options=make_request_options(
@@ -297,7 +297,7 @@ class AsyncExchangesResource(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ExchangeGetListResponse:
-        """To query all the derivatives exchanges with ID and name on CoinGecko"""
+        """To query all the supported derivatives exchanges with ID and name on CoinGecko"""
         return await self._get(
             "/derivatives/exchanges/list",
             options=make_request_options(

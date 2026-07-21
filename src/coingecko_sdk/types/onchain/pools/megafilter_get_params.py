@@ -47,6 +47,12 @@ class MegafilterGetParams(TypedDict, total=False):
     h24_volume_usd_min: float
     """Minimum 24hr volume in USD."""
 
+    holder_count_max: int
+    """Maximum holder count."""
+
+    holder_count_min: int
+    """Minimum holder count."""
+
     include: str
     """Attributes to include, comma-separated if more than one.
 
@@ -130,6 +136,12 @@ class MegafilterGetParams(TypedDict, total=False):
         "pool_created_at_desc",
     ]
     """Sort the pools by field. Default: `h6_trending`"""
+
+    top_10_holders_percentage_max: float
+    """Maximum top 10 holders percentage."""
+
+    top_10_holders_percentage_min: float
+    """Minimum top 10 holders percentage."""
 
     tx_count_duration: Literal["5m", "1h", "6h", "24h"]
     """Duration for transaction count metric. Default: `24h`"""

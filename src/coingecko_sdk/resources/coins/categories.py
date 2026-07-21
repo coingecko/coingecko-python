@@ -100,7 +100,7 @@ class CategoriesResource(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CategoryGetListResponse:
-        """To query all the coins categories on CoinGecko"""
+        """To query all the supported coins categories on CoinGecko"""
         return self._get(
             "/coins/categories/list",
             options=make_request_options(
@@ -186,7 +186,7 @@ class AsyncCategoriesResource(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CategoryGetListResponse:
-        """To query all the coins categories on CoinGecko"""
+        """To query all the supported coins categories on CoinGecko"""
         return await self._get(
             "/coins/categories/list",
             options=make_request_options(
