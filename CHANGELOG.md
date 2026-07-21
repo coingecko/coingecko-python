@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.1.0](https://github.com/coingecko/coingecko-python/compare/v3.0.0...v3.1.0) (2026-07-21)
+
+
+### Features
+
+* Latest endpoints release + Enterprise tools deprecation ([4234929](https://github.com/coingecko/coingecko-python/commit/42349296ad2772732d24da91a6e673554ede292e))
+
+
+### Bug Fixes
+
+* patched yml file to ensure it'll trigger the ff to main repo automatically ([c9c1ea6](https://github.com/coingecko/coingecko-python/commit/c9c1ea62aaabb553e3aa6ed3ab3b71402ab4b83a))
+
+
+### Chores
+
+* add stlc promote/back-sync/trunk-lock workflows ([a0e414f](https://github.com/coingecko/coingecko-python/commit/a0e414fdaae0ac10bd2398774f3476b3a2a974aa))
+* drop stlc workflow YAMLs from .prettierignore (prettier-clean, exemption unnecessary) ([b476cc4](https://github.com/coingecko/coingecko-python/commit/b476cc4135fdb3b05a51834251eeb334bd531298))
+* migrate config repo to stlc workspace + generate workflows ([cac4968](https://github.com/coingecko/coingecko-python/commit/cac4968bf897dbfc7d4df1e684bea15457f6610d))
+
 ## 3.0.0 (2026-05-28)
 
 Full Changelog: [v2.0.1...v3.0.0](https://github.com/coingecko/coingecko-python/compare/v2.0.1...v3.0.0)
