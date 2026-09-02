@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.0](https://github.com/coingecko/coingecko-python/compare/v3.1.0...v4.0.0) (2026-09-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* Release of RWA endpoints
+
+### Features
+
+* Release of RWA endpoints ([8298a11](https://github.com/coingecko/coingecko-python/commit/8298a1130adb4edb7f986c2a953942f45aba0ae3))
+
 ## [3.1.0](https://github.com/coingecko/coingecko-python/compare/v3.0.0...v3.1.0) (2026-07-21)
 
 
