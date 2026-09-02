@@ -9,10 +9,18 @@ __all__ = ["CoinGetIDParams"]
 
 class CoinGetIDParams(TypedDict, total=False):
     community_data: bool
-    """Include community data. Default: true"""
+    """Include community data.
+
+    Deprecated: has no effect as of 28 August 2026; the `community_data` object is
+    no longer returned.
+    """
 
     developer_data: bool
-    """Include developer data. Default: true"""
+    """Include developer data.
+
+    Deprecated: has no effect as of 28 August 2026; the `developer_data` object is
+    no longer returned.
+    """
 
     dex_pair_format: Literal["contract_address", "symbol"]
     """Set to `symbol` to display DEX pair base and target as symbols.

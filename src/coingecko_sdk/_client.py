@@ -41,6 +41,7 @@ if TYPE_CHECKING:
         news,
         nfts,
         ping,
+        rwas,
         coins,
         search,
         simple,
@@ -61,6 +62,7 @@ if TYPE_CHECKING:
     from .resources.entities import EntitiesResource, AsyncEntitiesResource
     from .resources.insights import InsightsResource, AsyncInsightsResource
     from .resources.nfts.nfts import NFTsResource, AsyncNFTsResource
+    from .resources.rwas.rwas import RwasResource, AsyncRwasResource
     from .resources.coins.coins import CoinsResource, AsyncCoinsResource
     from .resources.token_lists import TokenListsResource, AsyncTokenListsResource
     from .resources.search.search import SearchResource, AsyncSearchResource
@@ -266,6 +268,12 @@ class Coingecko(SyncAPIClient):
         from .resources.public_treasury import PublicTreasuryResource
 
         return PublicTreasuryResource(self)
+
+    @cached_property
+    def rwas(self) -> RwasResource:
+        from .resources.rwas import RwasResource
+
+        return RwasResource(self)
 
     @cached_property
     def search(self) -> SearchResource:
@@ -604,6 +612,12 @@ class AsyncCoingecko(AsyncAPIClient):
         return AsyncPublicTreasuryResource(self)
 
     @cached_property
+    def rwas(self) -> AsyncRwasResource:
+        from .resources.rwas import AsyncRwasResource
+
+        return AsyncRwasResource(self)
+
+    @cached_property
     def search(self) -> AsyncSearchResource:
         from .resources.search import AsyncSearchResource
 
@@ -854,6 +868,12 @@ class CoingeckoWithRawResponse:
         return PublicTreasuryResourceWithRawResponse(self._client.public_treasury)
 
     @cached_property
+    def rwas(self) -> rwas.RwasResourceWithRawResponse:
+        from .resources.rwas import RwasResourceWithRawResponse
+
+        return RwasResourceWithRawResponse(self._client.rwas)
+
+    @cached_property
     def search(self) -> search.SearchResourceWithRawResponse:
         from .resources.search import SearchResourceWithRawResponse
 
@@ -961,6 +981,12 @@ class AsyncCoingeckoWithRawResponse:
         from .resources.public_treasury import AsyncPublicTreasuryResourceWithRawResponse
 
         return AsyncPublicTreasuryResourceWithRawResponse(self._client.public_treasury)
+
+    @cached_property
+    def rwas(self) -> rwas.AsyncRwasResourceWithRawResponse:
+        from .resources.rwas import AsyncRwasResourceWithRawResponse
+
+        return AsyncRwasResourceWithRawResponse(self._client.rwas)
 
     @cached_property
     def search(self) -> search.AsyncSearchResourceWithRawResponse:
@@ -1072,6 +1098,12 @@ class CoingeckoWithStreamedResponse:
         return PublicTreasuryResourceWithStreamingResponse(self._client.public_treasury)
 
     @cached_property
+    def rwas(self) -> rwas.RwasResourceWithStreamingResponse:
+        from .resources.rwas import RwasResourceWithStreamingResponse
+
+        return RwasResourceWithStreamingResponse(self._client.rwas)
+
+    @cached_property
     def search(self) -> search.SearchResourceWithStreamingResponse:
         from .resources.search import SearchResourceWithStreamingResponse
 
@@ -1179,6 +1211,12 @@ class AsyncCoingeckoWithStreamedResponse:
         from .resources.public_treasury import AsyncPublicTreasuryResourceWithStreamingResponse
 
         return AsyncPublicTreasuryResourceWithStreamingResponse(self._client.public_treasury)
+
+    @cached_property
+    def rwas(self) -> rwas.AsyncRwasResourceWithStreamingResponse:
+        from .resources.rwas import AsyncRwasResourceWithStreamingResponse
+
+        return AsyncRwasResourceWithStreamingResponse(self._client.rwas)
 
     @cached_property
     def search(self) -> search.AsyncSearchResourceWithStreamingResponse:

@@ -19,7 +19,7 @@ class NewsGetParams(TypedDict, total=False):
         "es",
         "vi",
         "fr",
-        "pt-br",
+        "pt",
         "ar",
         "bg",
         "cs",

@@ -32,6 +32,14 @@ from .ping import (
     PingResourceWithStreamingResponse,
     AsyncPingResourceWithStreamingResponse,
 )
+from .rwas import (
+    RwasResource,
+    AsyncRwasResource,
+    RwasResourceWithRawResponse,
+    AsyncRwasResourceWithRawResponse,
+    RwasResourceWithStreamingResponse,
+    AsyncRwasResourceWithStreamingResponse,
+)
 from .coins import (
     CoinsResource,
     AsyncCoinsResource,
@@ -222,6 +230,12 @@ __all__ = [
     "AsyncPublicTreasuryResourceWithRawResponse",
     "PublicTreasuryResourceWithStreamingResponse",
     "AsyncPublicTreasuryResourceWithStreamingResponse",
+    "RwasResource",
+    "AsyncRwasResource",
+    "RwasResourceWithRawResponse",
+    "AsyncRwasResourceWithRawResponse",
+    "RwasResourceWithStreamingResponse",
+    "AsyncRwasResourceWithStreamingResponse",
     "SearchResource",
     "AsyncSearchResource",
     "SearchResourceWithRawResponse",

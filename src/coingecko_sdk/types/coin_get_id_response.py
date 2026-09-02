@@ -12,9 +12,6 @@ __all__ = [
     "LinksReposURL",
     "StatusUpdate",
     "CategoriesDetail",
-    "CommunityData",
-    "DeveloperData",
-    "DeveloperDataCodeAdditionsDeletions4Weeks",
     "IcoData",
     "MarketData",
     "MarketDataRoi",
@@ -119,70 +116,6 @@ class CategoriesDetail(BaseModel):
 
     name: Optional[str] = None
     """Category name"""
-
-
-class CommunityData(BaseModel):
-    """Community data"""
-
-    facebook_likes: Optional[float] = None
-    """Facebook likes"""
-
-    reddit_accounts_active_48h: Optional[float] = None
-    """Reddit active accounts in 48 hours"""
-
-    reddit_average_comments_48h: Optional[float] = None
-    """Reddit average comments in 48 hours"""
-
-    reddit_average_posts_48h: Optional[float] = None
-    """Reddit average posts in 48 hours"""
-
-    reddit_subscribers: Optional[float] = None
-    """Reddit subscribers"""
-
-    telegram_channel_user_count: Optional[float] = None
-    """Telegram channel user count"""
-
-
-class DeveloperDataCodeAdditionsDeletions4Weeks(BaseModel):
-    """Code additions and deletions in 4 weeks"""
-
-    additions: Optional[float] = None
-
-    deletions: Optional[float] = None
-
-
-class DeveloperData(BaseModel):
-    """Developer data"""
-
-    closed_issues: Optional[float] = None
-    """Repository closed issues"""
-
-    code_additions_deletions_4_weeks: Optional[DeveloperDataCodeAdditionsDeletions4Weeks] = None
-    """Code additions and deletions in 4 weeks"""
-
-    commit_count_4_weeks: Optional[float] = None
-    """Repository commit count in 4 weeks"""
-
-    forks: Optional[float] = None
-    """Repository forks"""
-
-    last_4_weeks_commit_activity_series: Optional[List[float]] = None
-    """Repository last 4 weeks commit activity series"""
-
-    pull_request_contributors: Optional[float] = None
-    """Repository pull request contributors"""
-
-    pull_requests_merged: Optional[float] = None
-    """Repository pull requests merged"""
-
-    stars: Optional[float] = None
-    """Repository stars"""
-
-    subscribers: Optional[float] = None
-    """Repository subscribers"""
-
-    total_issues: Optional[float] = None
-    """Repository total issues"""
 
 
 class IcoData(BaseModel):
@@ -613,12 +546,6 @@ class CoinGetIDResponse(BaseModel):
 
     categories_details: Optional[List[CategoriesDetail]] = None
     """Detailed coin categories"""
-
-    community_data: Optional[CommunityData] = None
-    """Community data"""
-
-    developer_data: Optional[DeveloperData] = None
-    """Developer data"""
 
     ico_data: Optional[IcoData] = None
     """ICO data"""

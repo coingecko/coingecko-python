@@ -1,0 +1,23 @@
+# File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
+
+from __future__ import annotations
+
+from typing_extensions import Literal, TypedDict
+
+__all__ = ["MarketChartGetParams"]
+
+
+class MarketChartGetParams(TypedDict, total=False):
+    days: str
+    """Data up to number of days ago.
+
+    You may use any integer or `max` for number of days. Default: 1
+    """
+
+    interval: Literal["5m", "hourly", "daily"]
+    """Data interval, leave empty for auto granularity."""
+
+    precision: Literal[
+        "full", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"
+    ]
+    """Decimal place for currency price value."""

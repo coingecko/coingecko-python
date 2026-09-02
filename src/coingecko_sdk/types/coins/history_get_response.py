@@ -4,75 +4,7 @@ from typing import Dict, Optional
 
 from ..._models import BaseModel
 
-__all__ = [
-    "HistoryGetResponse",
-    "CommunityData",
-    "DeveloperData",
-    "DeveloperDataCodeAdditionsDeletions4Weeks",
-    "Image",
-    "MarketData",
-    "PublicInterestStats",
-]
-
-
-class CommunityData(BaseModel):
-    """Community engagement data"""
-
-    facebook_likes: Optional[float] = None
-    """Number of Facebook likes"""
-
-    reddit_accounts_active_48h: Optional[float] = None
-    """Active Reddit accounts in 48 hours"""
-
-    reddit_average_comments_48h: Optional[float] = None
-    """Average Reddit comments in 48 hours"""
-
-    reddit_average_posts_48h: Optional[float] = None
-    """Average Reddit posts in 48 hours"""
-
-    reddit_subscribers: Optional[float] = None
-    """Number of Reddit subscribers"""
-
-
-class DeveloperDataCodeAdditionsDeletions4Weeks(BaseModel):
-    """Code additions and deletions in the last 4 weeks"""
-
-    additions: Optional[float] = None
-    """Lines added"""
-
-    deletions: Optional[float] = None
-    """Lines deleted"""
-
-
-class DeveloperData(BaseModel):
-    """Developer activity data"""
-
-    closed_issues: Optional[float] = None
-    """Closed issues"""
-
-    code_additions_deletions_4_weeks: Optional[DeveloperDataCodeAdditionsDeletions4Weeks] = None
-    """Code additions and deletions in the last 4 weeks"""
-
-    commit_count_4_weeks: Optional[float] = None
-    """Commit count in the last 4 weeks"""
-
-    forks: Optional[float] = None
-    """Repository forks"""
-
-    pull_request_contributors: Optional[float] = None
-    """Pull request contributors"""
-
-    pull_requests_merged: Optional[float] = None
-    """Pull requests merged"""
-
-    stars: Optional[float] = None
-    """Repository stars"""
-
-    subscribers: Optional[float] = None
-    """Repository subscribers"""
-
-    total_issues: Optional[float] = None
-    """Total issues"""
+__all__ = ["HistoryGetResponse", "Image", "MarketData", "PublicInterestStats"]
 
 
 class Image(BaseModel):
@@ -111,12 +43,6 @@ class PublicInterestStats(BaseModel):
 class HistoryGetResponse(BaseModel):
     id: str
     """Coin ID"""
-
-    community_data: CommunityData
-    """Community engagement data"""
-
-    developer_data: DeveloperData
-    """Developer activity data"""
 
     image: Image
     """Coin image URLs"""

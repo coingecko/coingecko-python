@@ -759,6 +759,57 @@ Methods:
 - <code title="get /public_treasury/{entity_id}/{coin_id}/holding_chart">client.public_treasury.<a href="./src/coingecko_sdk/resources/public_treasury.py">get_holding_chart</a>(coin_id, \*, entity_id, \*\*<a href="src/coingecko_sdk/types/public_treasury_get_holding_chart_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/public_treasury_get_holding_chart_response.py">PublicTreasuryGetHoldingChartResponse</a></code>
 - <code title="get /public_treasury/{entity_id}/transaction_history">client.public_treasury.<a href="./src/coingecko_sdk/resources/public_treasury.py">get_transaction_history</a>(entity_id, \*\*<a href="src/coingecko_sdk/types/public_treasury_get_transaction_history_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/public_treasury_get_transaction_history_response.py">PublicTreasuryGetTransactionHistoryResponse</a></code>
 
+# Rwas
+
+Types:
+
+```python
+from coingecko_sdk.types import RwaGetIDResponse, RwaGetListResponse, RwaGetMarketsResponse
+```
+
+Methods:
+
+- <code title="get /rwas/{id}">client.rwas.<a href="./src/coingecko_sdk/resources/rwas/rwas.py">get_id</a>(id, \*\*<a href="src/coingecko_sdk/types/rwa_get_id_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/rwa_get_id_response.py">RwaGetIDResponse</a></code>
+- <code title="get /rwas/list">client.rwas.<a href="./src/coingecko_sdk/resources/rwas/rwas.py">get_list</a>(\*\*<a href="src/coingecko_sdk/types/rwa_get_list_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/rwa_get_list_response.py">RwaGetListResponse</a></code>
+- <code title="get /rwas/markets">client.rwas.<a href="./src/coingecko_sdk/resources/rwas/rwas.py">get_markets</a>(\*\*<a href="src/coingecko_sdk/types/rwa_get_markets_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/rwa_get_markets_response.py">RwaGetMarketsResponse</a></code>
+
+## Issuers
+
+Types:
+
+```python
+from coingecko_sdk.types.rwas import IssuerGetIDResponse, IssuerGetListResponse
+```
+
+Methods:
+
+- <code title="get /rwas/issuers/{id}">client.rwas.issuers.<a href="./src/coingecko_sdk/resources/rwas/issuers.py">get_id</a>(id) -> <a href="./src/coingecko_sdk/types/rwas/issuer_get_id_response.py">IssuerGetIDResponse</a></code>
+- <code title="get /rwas/issuers/list">client.rwas.issuers.<a href="./src/coingecko_sdk/resources/rwas/issuers.py">get_list</a>() -> <a href="./src/coingecko_sdk/types/rwas/issuer_get_list_response.py">IssuerGetListResponse</a></code>
+
+## MarketChart
+
+Types:
+
+```python
+from coingecko_sdk.types.rwas import MarketChartGetResponse
+```
+
+Methods:
+
+- <code title="get /rwas/{id}/market_chart">client.rwas.market_chart.<a href="./src/coingecko_sdk/resources/rwas/market_chart.py">get</a>(id, \*\*<a href="src/coingecko_sdk/types/rwas/market_chart_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/rwas/market_chart_get_response.py">MarketChartGetResponse</a></code>
+
+## Tickers
+
+Types:
+
+```python
+from coingecko_sdk.types.rwas import TickerGetResponse
+```
+
+Methods:
+
+- <code title="get /rwas/{id}/tickers">client.rwas.tickers.<a href="./src/coingecko_sdk/resources/rwas/tickers.py">get</a>(id, \*\*<a href="src/coingecko_sdk/types/rwas/ticker_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/rwas/ticker_get_response.py">TickerGetResponse</a></code>
+
 # Search
 
 Types:

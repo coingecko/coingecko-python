@@ -212,9 +212,11 @@ class CoinsResource(SyncAPIResource):
         based on a particular coin ID
 
         Args:
-          community_data: Include community data. Default: true
+          community_data: Include community data. Deprecated: has no effect as of 28 August 2026; the
+              `community_data` object is no longer returned.
 
-          developer_data: Include developer data. Default: true
+          developer_data: Include developer data. Deprecated: has no effect as of 28 August 2026; the
+              `developer_data` object is no longer returned.
 
           dex_pair_format:
               Set to `symbol` to display DEX pair base and target as symbols. Default:
@@ -358,9 +360,11 @@ class AsyncCoinsResource(AsyncAPIResource):
         based on a particular coin ID
 
         Args:
-          community_data: Include community data. Default: true
+          community_data: Include community data. Deprecated: has no effect as of 28 August 2026; the
+              `community_data` object is no longer returned.
 
-          developer_data: Include developer data. Default: true
+          developer_data: Include developer data. Deprecated: has no effect as of 28 August 2026; the
+              `developer_data` object is no longer returned.
 
           dex_pair_format:
               Set to `symbol` to display DEX pair base and target as symbols. Default:
