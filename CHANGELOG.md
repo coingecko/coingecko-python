@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.1.0](https://github.com/coingecko/coingecko-python/compare/v4.0.0...v4.1.0) (2026-09-17)
+
+
+### Features
+
+* Release new wallet endpoints + other minor fixes ([76aeb65](https://github.com/coingecko/coingecko-python/commit/76aeb65b0b9650409fabd4bd73fbfee5a02939c2))
+
 ## [4.0.0](https://github.com/coingecko/coingecko-python/compare/v3.1.0...v4.0.0) (2026-09-02)
 
 
