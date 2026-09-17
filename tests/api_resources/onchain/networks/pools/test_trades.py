@@ -9,7 +9,10 @@ import pytest
 
 from tests.utils import assert_matches_type
 from coingecko_sdk import Coingecko, AsyncCoingecko
-from coingecko_sdk.types.onchain.networks.pools import TradeGetResponse
+from coingecko_sdk.types.onchain.networks.pools import (
+    TradeGetResponse,
+    TradeGetRangeResponse,
+)
 
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 
@@ -33,7 +36,10 @@ class TestTrades:
             pool_address="pool_address",
             network="network",
             token="token",
+            cursor="cursor",
+            per_page=0,
             trade_volume_in_usd_greater_than=0,
+            trading_period="1d",
         )
         assert_matches_type(TradeGetResponse, trade, path=["response"])
 
@@ -80,6 +86,83 @@ class TestTrades:
                 network="network",
             )
 
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_method_get_range(self, client: Coingecko) -> None:
+        trade = client.onchain.networks.pools.trades.get_range(
+            pool_address="pool_address",
+            network="network",
+            from_="from",
+            to="to",
+        )
+        assert_matches_type(TradeGetRangeResponse, trade, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_method_get_range_with_all_params(self, client: Coingecko) -> None:
+        trade = client.onchain.networks.pools.trades.get_range(
+            pool_address="pool_address",
+            network="network",
+            from_="from",
+            to="to",
+            token="token",
+            cursor="cursor",
+            per_page=0,
+            trade_volume_in_usd_greater_than=0,
+        )
+        assert_matches_type(TradeGetRangeResponse, trade, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_raw_response_get_range(self, client: Coingecko) -> None:
+        response = client.onchain.networks.pools.trades.with_raw_response.get_range(
+            pool_address="pool_address",
+            network="network",
+            from_="from",
+            to="to",
+        )
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        trade = response.parse()
+        assert_matches_type(TradeGetRangeResponse, trade, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_streaming_response_get_range(self, client: Coingecko) -> None:
+        with client.onchain.networks.pools.trades.with_streaming_response.get_range(
+            pool_address="pool_address",
+            network="network",
+            from_="from",
+            to="to",
+        ) as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            trade = response.parse()
+            assert_matches_type(TradeGetRangeResponse, trade, path=["response"])
+
+        assert cast(Any, response.is_closed) is True
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_path_params_get_range(self, client: Coingecko) -> None:
+        with pytest.raises(ValueError, match=r"Expected a non-empty value for `network` but received ''"):
+            client.onchain.networks.pools.trades.with_raw_response.get_range(
+                pool_address="pool_address",
+                network="",
+                from_="from",
+                to="to",
+            )
+
+        with pytest.raises(ValueError, match=r"Expected a non-empty value for `pool_address` but received ''"):
+            client.onchain.networks.pools.trades.with_raw_response.get_range(
+                pool_address="",
+                network="network",
+                from_="from",
+                to="to",
+            )
+
 
 class TestAsyncTrades:
     parametrize = pytest.mark.parametrize(
@@ -102,7 +185,10 @@ class TestAsyncTrades:
             pool_address="pool_address",
             network="network",
             token="token",
+            cursor="cursor",
+            per_page=0,
             trade_volume_in_usd_greater_than=0,
+            trading_period="1d",
         )
         assert_matches_type(TradeGetResponse, trade, path=["response"])
 
@@ -147,4 +233,81 @@ class TestAsyncTrades:
             await async_client.onchain.networks.pools.trades.with_raw_response.get(
                 pool_address="",
                 network="network",
+            )
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_method_get_range(self, async_client: AsyncCoingecko) -> None:
+        trade = await async_client.onchain.networks.pools.trades.get_range(
+            pool_address="pool_address",
+            network="network",
+            from_="from",
+            to="to",
+        )
+        assert_matches_type(TradeGetRangeResponse, trade, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_method_get_range_with_all_params(self, async_client: AsyncCoingecko) -> None:
+        trade = await async_client.onchain.networks.pools.trades.get_range(
+            pool_address="pool_address",
+            network="network",
+            from_="from",
+            to="to",
+            token="token",
+            cursor="cursor",
+            per_page=0,
+            trade_volume_in_usd_greater_than=0,
+        )
+        assert_matches_type(TradeGetRangeResponse, trade, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_raw_response_get_range(self, async_client: AsyncCoingecko) -> None:
+        response = await async_client.onchain.networks.pools.trades.with_raw_response.get_range(
+            pool_address="pool_address",
+            network="network",
+            from_="from",
+            to="to",
+        )
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        trade = await response.parse()
+        assert_matches_type(TradeGetRangeResponse, trade, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_streaming_response_get_range(self, async_client: AsyncCoingecko) -> None:
+        async with async_client.onchain.networks.pools.trades.with_streaming_response.get_range(
+            pool_address="pool_address",
+            network="network",
+            from_="from",
+            to="to",
+        ) as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            trade = await response.parse()
+            assert_matches_type(TradeGetRangeResponse, trade, path=["response"])
+
+        assert cast(Any, response.is_closed) is True
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_path_params_get_range(self, async_client: AsyncCoingecko) -> None:
+        with pytest.raises(ValueError, match=r"Expected a non-empty value for `network` but received ''"):
+            await async_client.onchain.networks.pools.trades.with_raw_response.get_range(
+                pool_address="pool_address",
+                network="",
+                from_="from",
+                to="to",
+            )
+
+        with pytest.raises(ValueError, match=r"Expected a non-empty value for `pool_address` but received ''"):
+            await async_client.onchain.networks.pools.trades.with_raw_response.get_range(
+                pool_address="",
+                network="network",
+                from_="from",
+                to="to",
             )

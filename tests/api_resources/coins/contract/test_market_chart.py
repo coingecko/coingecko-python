@@ -39,7 +39,7 @@ class TestMarketChart:
             id="id",
             days="days",
             vs_currency="vs_currency",
-            interval="5m",
+            interval="1m",
             precision="full",
         )
         assert_matches_type(MarketChartGetResponse, market_chart, path=["response"])
@@ -116,7 +116,7 @@ class TestMarketChart:
             from_="from",
             to="to",
             vs_currency="vs_currency",
-            interval="5m",
+            interval="1m",
             precision="full",
         )
         assert_matches_type(MarketChartGetRangeResponse, market_chart, path=["response"])
@@ -201,7 +201,7 @@ class TestAsyncMarketChart:
             id="id",
             days="days",
             vs_currency="vs_currency",
-            interval="5m",
+            interval="1m",
             precision="full",
         )
         assert_matches_type(MarketChartGetResponse, market_chart, path=["response"])
@@ -278,7 +278,7 @@ class TestAsyncMarketChart:
             from_="from",
             to="to",
             vs_currency="vs_currency",
-            interval="5m",
+            interval="1m",
             precision="full",
         )
         assert_matches_type(MarketChartGetRangeResponse, market_chart, path=["response"])

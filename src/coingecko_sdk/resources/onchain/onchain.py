@@ -44,6 +44,14 @@ from .tokens.tokens import (
     TokensResourceWithStreamingResponse,
     AsyncTokensResourceWithStreamingResponse,
 )
+from .wallets.wallets import (
+    WalletsResource,
+    AsyncWalletsResource,
+    WalletsResourceWithRawResponse,
+    AsyncWalletsResourceWithRawResponse,
+    WalletsResourceWithStreamingResponse,
+    AsyncWalletsResourceWithStreamingResponse,
+)
 from .networks.networks import (
     NetworksResource,
     AsyncNetworksResource,
@@ -80,6 +88,10 @@ class OnchainResource(SyncAPIResource):
     @cached_property
     def tokens(self) -> TokensResource:
         return TokensResource(self._client)
+
+    @cached_property
+    def wallets(self) -> WalletsResource:
+        return WalletsResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> OnchainResourceWithRawResponse:
@@ -125,6 +137,10 @@ class AsyncOnchainResource(AsyncAPIResource):
     @cached_property
     def tokens(self) -> AsyncTokensResource:
         return AsyncTokensResource(self._client)
+
+    @cached_property
+    def wallets(self) -> AsyncWalletsResource:
+        return AsyncWalletsResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> AsyncOnchainResourceWithRawResponse:
@@ -174,6 +190,10 @@ class OnchainResourceWithRawResponse:
     def tokens(self) -> TokensResourceWithRawResponse:
         return TokensResourceWithRawResponse(self._onchain.tokens)
 
+    @cached_property
+    def wallets(self) -> WalletsResourceWithRawResponse:
+        return WalletsResourceWithRawResponse(self._onchain.wallets)
+
 
 class AsyncOnchainResourceWithRawResponse:
     def __init__(self, onchain: AsyncOnchainResource) -> None:
@@ -202,6 +222,10 @@ class AsyncOnchainResourceWithRawResponse:
     @cached_property
     def tokens(self) -> AsyncTokensResourceWithRawResponse:
         return AsyncTokensResourceWithRawResponse(self._onchain.tokens)
+
+    @cached_property
+    def wallets(self) -> AsyncWalletsResourceWithRawResponse:
+        return AsyncWalletsResourceWithRawResponse(self._onchain.wallets)
 
 
 class OnchainResourceWithStreamingResponse:
@@ -232,6 +256,10 @@ class OnchainResourceWithStreamingResponse:
     def tokens(self) -> TokensResourceWithStreamingResponse:
         return TokensResourceWithStreamingResponse(self._onchain.tokens)
 
+    @cached_property
+    def wallets(self) -> WalletsResourceWithStreamingResponse:
+        return WalletsResourceWithStreamingResponse(self._onchain.wallets)
+
 
 class AsyncOnchainResourceWithStreamingResponse:
     def __init__(self, onchain: AsyncOnchainResource) -> None:
@@ -260,3 +288,7 @@ class AsyncOnchainResourceWithStreamingResponse:
     @cached_property
     def tokens(self) -> AsyncTokensResourceWithStreamingResponse:
         return AsyncTokensResourceWithStreamingResponse(self._onchain.tokens)
+
+    @cached_property
+    def wallets(self) -> AsyncWalletsResourceWithStreamingResponse:
+        return AsyncWalletsResourceWithStreamingResponse(self._onchain.wallets)

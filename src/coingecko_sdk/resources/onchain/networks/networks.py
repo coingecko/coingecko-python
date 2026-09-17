@@ -55,6 +55,14 @@ from .trending_pools import (
     AsyncTrendingPoolsResourceWithStreamingResponse,
 )
 from ...._base_client import make_request_options
+from .wallets.wallets import (
+    WalletsResource,
+    AsyncWalletsResource,
+    WalletsResourceWithRawResponse,
+    AsyncWalletsResourceWithRawResponse,
+    WalletsResourceWithStreamingResponse,
+    AsyncWalletsResourceWithStreamingResponse,
+)
 from ....types.onchain import network_get_params
 from ....types.onchain.network_get_response import NetworkGetResponse
 
@@ -81,6 +89,10 @@ class NetworksResource(SyncAPIResource):
     @cached_property
     def trending_pools(self) -> TrendingPoolsResource:
         return TrendingPoolsResource(self._client)
+
+    @cached_property
+    def wallets(self) -> WalletsResource:
+        return WalletsResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> NetworksResourceWithRawResponse:
@@ -159,6 +171,10 @@ class AsyncNetworksResource(AsyncAPIResource):
     @cached_property
     def trending_pools(self) -> AsyncTrendingPoolsResource:
         return AsyncTrendingPoolsResource(self._client)
+
+    @cached_property
+    def wallets(self) -> AsyncWalletsResource:
+        return AsyncWalletsResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> AsyncNetworksResourceWithRawResponse:
@@ -245,6 +261,10 @@ class NetworksResourceWithRawResponse:
     def trending_pools(self) -> TrendingPoolsResourceWithRawResponse:
         return TrendingPoolsResourceWithRawResponse(self._networks.trending_pools)
 
+    @cached_property
+    def wallets(self) -> WalletsResourceWithRawResponse:
+        return WalletsResourceWithRawResponse(self._networks.wallets)
+
 
 class AsyncNetworksResourceWithRawResponse:
     def __init__(self, networks: AsyncNetworksResource) -> None:
@@ -273,6 +293,10 @@ class AsyncNetworksResourceWithRawResponse:
     @cached_property
     def trending_pools(self) -> AsyncTrendingPoolsResourceWithRawResponse:
         return AsyncTrendingPoolsResourceWithRawResponse(self._networks.trending_pools)
+
+    @cached_property
+    def wallets(self) -> AsyncWalletsResourceWithRawResponse:
+        return AsyncWalletsResourceWithRawResponse(self._networks.wallets)
 
 
 class NetworksResourceWithStreamingResponse:
@@ -303,6 +327,10 @@ class NetworksResourceWithStreamingResponse:
     def trending_pools(self) -> TrendingPoolsResourceWithStreamingResponse:
         return TrendingPoolsResourceWithStreamingResponse(self._networks.trending_pools)
 
+    @cached_property
+    def wallets(self) -> WalletsResourceWithStreamingResponse:
+        return WalletsResourceWithStreamingResponse(self._networks.wallets)
+
 
 class AsyncNetworksResourceWithStreamingResponse:
     def __init__(self, networks: AsyncNetworksResource) -> None:
@@ -331,3 +359,7 @@ class AsyncNetworksResourceWithStreamingResponse:
     @cached_property
     def trending_pools(self) -> AsyncTrendingPoolsResourceWithStreamingResponse:
         return AsyncTrendingPoolsResourceWithStreamingResponse(self._networks.trending_pools)
+
+    @cached_property
+    def wallets(self) -> AsyncWalletsResourceWithStreamingResponse:
+        return AsyncWalletsResourceWithStreamingResponse(self._networks.wallets)

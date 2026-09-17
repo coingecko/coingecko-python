@@ -85,6 +85,7 @@ class RwasResource(SyncAPIResource):
         self,
         id: str,
         *,
+        perps_market_data: bool | Omit = omit,
         sparkline: bool | Omit = omit,
         tokenized_market_data: bool | Omit = omit,
         tokens: bool | Omit = omit,
@@ -100,6 +101,8 @@ class RwasResource(SyncAPIResource):
         RWA ID
 
         Args:
+          perps_market_data: Include perpetuals market data. Default: false
+
           sparkline: Include sparkline 7-day data. Default: false
 
           tokenized_market_data: Include tokenized market data. Default: false
@@ -125,6 +128,7 @@ class RwasResource(SyncAPIResource):
                 timeout=timeout,
                 query=maybe_transform(
                     {
+                        "perps_market_data": perps_market_data,
                         "sparkline": sparkline,
                         "tokenized_market_data": tokenized_market_data,
                         "tokens": tokens,
@@ -319,6 +323,7 @@ class AsyncRwasResource(AsyncAPIResource):
         self,
         id: str,
         *,
+        perps_market_data: bool | Omit = omit,
         sparkline: bool | Omit = omit,
         tokenized_market_data: bool | Omit = omit,
         tokens: bool | Omit = omit,
@@ -334,6 +339,8 @@ class AsyncRwasResource(AsyncAPIResource):
         RWA ID
 
         Args:
+          perps_market_data: Include perpetuals market data. Default: false
+
           sparkline: Include sparkline 7-day data. Default: false
 
           tokenized_market_data: Include tokenized market data. Default: false
@@ -359,6 +366,7 @@ class AsyncRwasResource(AsyncAPIResource):
                 timeout=timeout,
                 query=await async_maybe_transform(
                     {
+                        "perps_market_data": perps_market_data,
                         "sparkline": sparkline,
                         "tokenized_market_data": tokenized_market_data,
                         "tokens": tokens,

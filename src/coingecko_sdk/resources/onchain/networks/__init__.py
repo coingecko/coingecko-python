@@ -24,6 +24,14 @@ from .tokens import (
     TokensResourceWithStreamingResponse,
     AsyncTokensResourceWithStreamingResponse,
 )
+from .wallets import (
+    WalletsResource,
+    AsyncWalletsResource,
+    WalletsResourceWithRawResponse,
+    AsyncWalletsResourceWithRawResponse,
+    WalletsResourceWithStreamingResponse,
+    AsyncWalletsResourceWithStreamingResponse,
+)
 from .networks import (
     NetworksResource,
     AsyncNetworksResource,
@@ -80,6 +88,12 @@ __all__ = [
     "AsyncTrendingPoolsResourceWithRawResponse",
     "TrendingPoolsResourceWithStreamingResponse",
     "AsyncTrendingPoolsResourceWithStreamingResponse",
+    "WalletsResource",
+    "AsyncWalletsResource",
+    "WalletsResourceWithRawResponse",
+    "AsyncWalletsResourceWithRawResponse",
+    "WalletsResourceWithStreamingResponse",
+    "AsyncWalletsResourceWithStreamingResponse",
     "NetworksResource",
     "AsyncNetworksResource",
     "NetworksResourceWithRawResponse",

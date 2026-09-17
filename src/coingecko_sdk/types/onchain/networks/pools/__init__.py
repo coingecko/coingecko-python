@@ -6,6 +6,8 @@ from .info_get_params import InfoGetParams as InfoGetParams
 from .trade_get_params import TradeGetParams as TradeGetParams
 from .info_get_response import InfoGetResponse as InfoGetResponse
 from .trade_get_response import TradeGetResponse as TradeGetResponse
+from .trade_get_range_params import TradeGetRangeParams as TradeGetRangeParams
+from .trade_get_range_response import TradeGetRangeResponse as TradeGetRangeResponse
 from .multi_get_addresses_params import MultiGetAddressesParams as MultiGetAddressesParams
 from .ohlcv_get_timeframe_params import OhlcvGetTimeframeParams as OhlcvGetTimeframeParams
 from .multi_get_addresses_response import MultiGetAddressesResponse as MultiGetAddressesResponse

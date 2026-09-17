@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing_extensions import Literal
+
 import httpx
 
 from ....._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
@@ -15,8 +17,9 @@ from ....._response import (
     async_to_streamed_response_wrapper,
 )
 from ....._base_client import make_request_options
-from .....types.onchain.networks.tokens import trade_get_params
+from .....types.onchain.networks.tokens import trade_get_params, trade_get_range_params
 from .....types.onchain.networks.tokens.trade_get_response import TradeGetResponse
+from .....types.onchain.networks.tokens.trade_get_range_response import TradeGetRangeResponse
 
 __all__ = ["TradesResource", "AsyncTradesResource"]
 
@@ -46,7 +49,10 @@ class TradesResource(SyncAPIResource):
         token_address: str,
         *,
         network: str,
+        cursor: str | Omit = omit,
+        per_page: int | Omit = omit,
         trade_volume_in_usd_greater_than: float | Omit = omit,
+        trading_period: Literal["1d", "7d", "30d"] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -55,11 +61,17 @@ class TradesResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TradeGetResponse:
         """
-        To query the last 300 trades in the past 24 hours, across all pools, based on
-        the provided token contract address on a network
+        To query the trades, across all pools, based on the provided token contract
+        address on a network
 
         Args:
+          cursor: Cursor from the previous response, passed back unchanged to fetch the next page.
+
+          per_page: Total results per page. Default value: 300 Valid values: 1...300
+
           trade_volume_in_usd_greater_than: Filter trades by trade volume in USD greater than this value. Default value: 0
+
+          trading_period: Lookback period for trades. Default: `1d`
 
           extra_headers: Send extra headers
 
@@ -85,11 +97,87 @@ class TradesResource(SyncAPIResource):
                 extra_body=extra_body,
                 timeout=timeout,
                 query=maybe_transform(
-                    {"trade_volume_in_usd_greater_than": trade_volume_in_usd_greater_than},
+                    {
+                        "cursor": cursor,
+                        "per_page": per_page,
+                        "trade_volume_in_usd_greater_than": trade_volume_in_usd_greater_than,
+                        "trading_period": trading_period,
+                    },
                     trade_get_params.TradeGetParams,
                 ),
             ),
             cast_to=TradeGetResponse,
+        )
+
+    def get_range(
+        self,
+        token_address: str,
+        *,
+        network: str,
+        from_: str,
+        to: str,
+        cursor: str | Omit = omit,
+        per_page: int | Omit = omit,
+        trade_volume_in_usd_greater_than: float | Omit = omit,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> TradeGetRangeResponse:
+        """
+        To query the trades, across all pools, within a range of timestamp based on the
+        provided token contract address on a network
+
+        Args:
+          from_: Starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **Use ISO date string for best compatibility.**
+
+          to: Ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **Use ISO date string for best compatibility.**
+
+          cursor: Cursor from the previous response, passed back unchanged to fetch the next page.
+
+          per_page: Total results per page. Default value: 100 Valid values: 1...300
+
+          trade_volume_in_usd_greater_than: Filter trades by trade volume in USD greater than this value. Default value: 0
+
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        if not network:
+            raise ValueError(f"Expected a non-empty value for `network` but received {network!r}")
+        if not token_address:
+            raise ValueError(f"Expected a non-empty value for `token_address` but received {token_address!r}")
+        return self._get(
+            path_template(
+                "/onchain/networks/{network}/tokens/{token_address}/trades/range",
+                network=network,
+                token_address=token_address,
+            ),
+            options=make_request_options(
+                extra_headers=extra_headers,
+                extra_query=extra_query,
+                extra_body=extra_body,
+                timeout=timeout,
+                query=maybe_transform(
+                    {
+                        "from_": from_,
+                        "to": to,
+                        "cursor": cursor,
+                        "per_page": per_page,
+                        "trade_volume_in_usd_greater_than": trade_volume_in_usd_greater_than,
+                    },
+                    trade_get_range_params.TradeGetRangeParams,
+                ),
+            ),
+            cast_to=TradeGetRangeResponse,
         )
 
 
@@ -118,7 +206,10 @@ class AsyncTradesResource(AsyncAPIResource):
         token_address: str,
         *,
         network: str,
+        cursor: str | Omit = omit,
+        per_page: int | Omit = omit,
         trade_volume_in_usd_greater_than: float | Omit = omit,
+        trading_period: Literal["1d", "7d", "30d"] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -127,11 +218,17 @@ class AsyncTradesResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> TradeGetResponse:
         """
-        To query the last 300 trades in the past 24 hours, across all pools, based on
-        the provided token contract address on a network
+        To query the trades, across all pools, based on the provided token contract
+        address on a network
 
         Args:
+          cursor: Cursor from the previous response, passed back unchanged to fetch the next page.
+
+          per_page: Total results per page. Default value: 300 Valid values: 1...300
+
           trade_volume_in_usd_greater_than: Filter trades by trade volume in USD greater than this value. Default value: 0
+
+          trading_period: Lookback period for trades. Default: `1d`
 
           extra_headers: Send extra headers
 
@@ -157,11 +254,87 @@ class AsyncTradesResource(AsyncAPIResource):
                 extra_body=extra_body,
                 timeout=timeout,
                 query=await async_maybe_transform(
-                    {"trade_volume_in_usd_greater_than": trade_volume_in_usd_greater_than},
+                    {
+                        "cursor": cursor,
+                        "per_page": per_page,
+                        "trade_volume_in_usd_greater_than": trade_volume_in_usd_greater_than,
+                        "trading_period": trading_period,
+                    },
                     trade_get_params.TradeGetParams,
                 ),
             ),
             cast_to=TradeGetResponse,
+        )
+
+    async def get_range(
+        self,
+        token_address: str,
+        *,
+        network: str,
+        from_: str,
+        to: str,
+        cursor: str | Omit = omit,
+        per_page: int | Omit = omit,
+        trade_volume_in_usd_greater_than: float | Omit = omit,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> TradeGetRangeResponse:
+        """
+        To query the trades, across all pools, within a range of timestamp based on the
+        provided token contract address on a network
+
+        Args:
+          from_: Starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **Use ISO date string for best compatibility.**
+
+          to: Ending date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
+              timestamp. **Use ISO date string for best compatibility.**
+
+          cursor: Cursor from the previous response, passed back unchanged to fetch the next page.
+
+          per_page: Total results per page. Default value: 100 Valid values: 1...300
+
+          trade_volume_in_usd_greater_than: Filter trades by trade volume in USD greater than this value. Default value: 0
+
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        if not network:
+            raise ValueError(f"Expected a non-empty value for `network` but received {network!r}")
+        if not token_address:
+            raise ValueError(f"Expected a non-empty value for `token_address` but received {token_address!r}")
+        return await self._get(
+            path_template(
+                "/onchain/networks/{network}/tokens/{token_address}/trades/range",
+                network=network,
+                token_address=token_address,
+            ),
+            options=make_request_options(
+                extra_headers=extra_headers,
+                extra_query=extra_query,
+                extra_body=extra_body,
+                timeout=timeout,
+                query=await async_maybe_transform(
+                    {
+                        "from_": from_,
+                        "to": to,
+                        "cursor": cursor,
+                        "per_page": per_page,
+                        "trade_volume_in_usd_greater_than": trade_volume_in_usd_greater_than,
+                    },
+                    trade_get_range_params.TradeGetRangeParams,
+                ),
+            ),
+            cast_to=TradeGetRangeResponse,
         )
 
 
@@ -172,6 +345,9 @@ class TradesResourceWithRawResponse:
         self.get = to_raw_response_wrapper(
             trades.get,
         )
+        self.get_range = to_raw_response_wrapper(
+            trades.get_range,
+        )
 
 
 class AsyncTradesResourceWithRawResponse:
@@ -180,6 +356,9 @@ class AsyncTradesResourceWithRawResponse:
 
         self.get = async_to_raw_response_wrapper(
             trades.get,
+        )
+        self.get_range = async_to_raw_response_wrapper(
+            trades.get_range,
         )
 
 
@@ -190,6 +369,9 @@ class TradesResourceWithStreamingResponse:
         self.get = to_streamed_response_wrapper(
             trades.get,
         )
+        self.get_range = to_streamed_response_wrapper(
+            trades.get_range,
+        )
 
 
 class AsyncTradesResourceWithStreamingResponse:
@@ -198,4 +380,7 @@ class AsyncTradesResourceWithStreamingResponse:
 
         self.get = async_to_streamed_response_wrapper(
             trades.get,
+        )
+        self.get_range = async_to_streamed_response_wrapper(
+            trades.get_range,
         )

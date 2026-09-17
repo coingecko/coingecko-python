@@ -526,12 +526,13 @@ Methods:
 Types:
 
 ```python
-from coingecko_sdk.types.onchain.networks.pools import TradeGetResponse
+from coingecko_sdk.types.onchain.networks.pools import TradeGetResponse, TradeGetRangeResponse
 ```
 
 Methods:
 
 - <code title="get /onchain/networks/{network}/pools/{pool_address}/trades">client.onchain.networks.pools.trades.<a href="./src/coingecko_sdk/resources/onchain/networks/pools/trades.py">get</a>(pool_address, \*, network, \*\*<a href="src/coingecko_sdk/types/onchain/networks/pools/trade_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/networks/pools/trade_get_response.py">TradeGetResponse</a></code>
+- <code title="get /onchain/networks/{network}/pools/{pool_address}/trades/range">client.onchain.networks.pools.trades.<a href="./src/coingecko_sdk/resources/onchain/networks/pools/trades.py">get_range</a>(pool_address, \*, network, \*\*<a href="src/coingecko_sdk/types/onchain/networks/pools/trade_get_range_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/networks/pools/trade_get_range_response.py">TradeGetRangeResponse</a></code>
 
 ### Tokens
 
@@ -634,12 +635,13 @@ Methods:
 Types:
 
 ```python
-from coingecko_sdk.types.onchain.networks.tokens import TradeGetResponse
+from coingecko_sdk.types.onchain.networks.tokens import TradeGetResponse, TradeGetRangeResponse
 ```
 
 Methods:
 
 - <code title="get /onchain/networks/{network}/tokens/{token_address}/trades">client.onchain.networks.tokens.trades.<a href="./src/coingecko_sdk/resources/onchain/networks/tokens/trades.py">get</a>(token_address, \*, network, \*\*<a href="src/coingecko_sdk/types/onchain/networks/tokens/trade_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/networks/tokens/trade_get_response.py">TradeGetResponse</a></code>
+- <code title="get /onchain/networks/{network}/tokens/{token_address}/trades/range">client.onchain.networks.tokens.trades.<a href="./src/coingecko_sdk/resources/onchain/networks/tokens/trades.py">get_range</a>(token_address, \*, network, \*\*<a href="src/coingecko_sdk/types/onchain/networks/tokens/trade_get_range_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/networks/tokens/trade_get_range_response.py">TradeGetRangeResponse</a></code>
 
 ### TrendingPools
 
@@ -656,6 +658,20 @@ Methods:
 
 - <code title="get /onchain/networks/trending_pools">client.onchain.networks.trending_pools.<a href="./src/coingecko_sdk/resources/onchain/networks/trending_pools.py">get</a>(\*\*<a href="src/coingecko_sdk/types/onchain/networks/trending_pool_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/networks/trending_pool_get_response.py">TrendingPoolGetResponse</a></code>
 - <code title="get /onchain/networks/{network}/trending_pools">client.onchain.networks.trending_pools.<a href="./src/coingecko_sdk/resources/onchain/networks/trending_pools.py">get_network</a>(network, \*\*<a href="src/coingecko_sdk/types/onchain/networks/trending_pool_get_network_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/networks/trending_pool_get_network_response.py">TrendingPoolGetNetworkResponse</a></code>
+
+### Wallets
+
+#### Transfers
+
+Types:
+
+```python
+from coingecko_sdk.types.onchain.networks.wallets import TransferGetResponse
+```
+
+Methods:
+
+- <code title="get /onchain/networks/{network}/wallets/{address}/transfers">client.onchain.networks.wallets.transfers.<a href="./src/coingecko_sdk/resources/onchain/networks/wallets/transfers.py">get</a>(address, \*, network, \*\*<a href="src/coingecko_sdk/types/onchain/networks/wallets/transfer_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/networks/wallets/transfer_get_response.py">TransferGetResponse</a></code>
 
 ## Pools
 
@@ -713,7 +729,29 @@ Methods:
 
 - <code title="get /onchain/simple/networks/{network}/token_price/{addresses}">client.onchain.simple.networks.token_price.<a href="./src/coingecko_sdk/resources/onchain/simple/networks/token_price.py">get_addresses</a>(addresses, \*, network, \*\*<a href="src/coingecko_sdk/types/onchain/simple/networks/token_price_get_addresses_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/simple/networks/token_price_get_addresses_response.py">TokenPriceGetAddressesResponse</a></code>
 
+### TokenPrice
+
+Types:
+
+```python
+from coingecko_sdk.types.onchain.simple import TokenPriceGetMultiResponse
+```
+
+Methods:
+
+- <code title="get /onchain/simple/token_price/multi">client.onchain.simple.token_price.<a href="./src/coingecko_sdk/resources/onchain/simple/token_price.py">get_multi</a>(\*\*<a href="src/coingecko_sdk/types/onchain/simple/token_price_get_multi_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/simple/token_price_get_multi_response.py">TokenPriceGetMultiResponse</a></code>
+
 ## Tokens
+
+Types:
+
+```python
+from coingecko_sdk.types.onchain import TokenGetMultiResponse
+```
+
+Methods:
+
+- <code title="get /onchain/tokens/multi">client.onchain.tokens.<a href="./src/coingecko_sdk/resources/onchain/tokens/tokens.py">get_multi</a>(\*\*<a href="src/coingecko_sdk/types/onchain/token_get_multi_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/token_get_multi_response.py">TokenGetMultiResponse</a></code>
 
 ### InfoRecentlyUpdated
 
@@ -726,6 +764,20 @@ from coingecko_sdk.types.onchain.tokens import InfoRecentlyUpdatedGetResponse
 Methods:
 
 - <code title="get /onchain/tokens/info_recently_updated">client.onchain.tokens.info_recently_updated.<a href="./src/coingecko_sdk/resources/onchain/tokens/info_recently_updated.py">get</a>(\*\*<a href="src/coingecko_sdk/types/onchain/tokens/info_recently_updated_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/tokens/info_recently_updated_get_response.py">InfoRecentlyUpdatedGetResponse</a></code>
+
+## Wallets
+
+### Balances
+
+Types:
+
+```python
+from coingecko_sdk.types.onchain.wallets import BalanceGetResponse
+```
+
+Methods:
+
+- <code title="get /onchain/wallets/{address}/balances">client.onchain.wallets.balances.<a href="./src/coingecko_sdk/resources/onchain/wallets/balances.py">get</a>(address, \*\*<a href="src/coingecko_sdk/types/onchain/wallets/balance_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/wallets/balance_get_response.py">BalanceGetResponse</a></code>
 
 # Ping
 

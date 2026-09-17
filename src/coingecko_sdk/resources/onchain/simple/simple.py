@@ -3,6 +3,14 @@
 from __future__ import annotations
 
 from ...._compat import cached_property
+from .token_price import (
+    TokenPriceResource,
+    AsyncTokenPriceResource,
+    TokenPriceResourceWithRawResponse,
+    AsyncTokenPriceResourceWithRawResponse,
+    TokenPriceResourceWithStreamingResponse,
+    AsyncTokenPriceResourceWithStreamingResponse,
+)
 from ...._resource import SyncAPIResource, AsyncAPIResource
 from .networks.networks import (
     NetworksResource,
@@ -20,6 +28,10 @@ class SimpleResource(SyncAPIResource):
     @cached_property
     def networks(self) -> NetworksResource:
         return NetworksResource(self._client)
+
+    @cached_property
+    def token_price(self) -> TokenPriceResource:
+        return TokenPriceResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> SimpleResourceWithRawResponse:
@@ -45,6 +57,10 @@ class AsyncSimpleResource(AsyncAPIResource):
     @cached_property
     def networks(self) -> AsyncNetworksResource:
         return AsyncNetworksResource(self._client)
+
+    @cached_property
+    def token_price(self) -> AsyncTokenPriceResource:
+        return AsyncTokenPriceResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> AsyncSimpleResourceWithRawResponse:
@@ -74,6 +90,10 @@ class SimpleResourceWithRawResponse:
     def networks(self) -> NetworksResourceWithRawResponse:
         return NetworksResourceWithRawResponse(self._simple.networks)
 
+    @cached_property
+    def token_price(self) -> TokenPriceResourceWithRawResponse:
+        return TokenPriceResourceWithRawResponse(self._simple.token_price)
+
 
 class AsyncSimpleResourceWithRawResponse:
     def __init__(self, simple: AsyncSimpleResource) -> None:
@@ -82,6 +102,10 @@ class AsyncSimpleResourceWithRawResponse:
     @cached_property
     def networks(self) -> AsyncNetworksResourceWithRawResponse:
         return AsyncNetworksResourceWithRawResponse(self._simple.networks)
+
+    @cached_property
+    def token_price(self) -> AsyncTokenPriceResourceWithRawResponse:
+        return AsyncTokenPriceResourceWithRawResponse(self._simple.token_price)
 
 
 class SimpleResourceWithStreamingResponse:
@@ -92,6 +116,10 @@ class SimpleResourceWithStreamingResponse:
     def networks(self) -> NetworksResourceWithStreamingResponse:
         return NetworksResourceWithStreamingResponse(self._simple.networks)
 
+    @cached_property
+    def token_price(self) -> TokenPriceResourceWithStreamingResponse:
+        return TokenPriceResourceWithStreamingResponse(self._simple.token_price)
+
 
 class AsyncSimpleResourceWithStreamingResponse:
     def __init__(self, simple: AsyncSimpleResource) -> None:
@@ -100,3 +128,7 @@ class AsyncSimpleResourceWithStreamingResponse:
     @cached_property
     def networks(self) -> AsyncNetworksResourceWithStreamingResponse:
         return AsyncNetworksResourceWithStreamingResponse(self._simple.networks)
+
+    @cached_property
+    def token_price(self) -> AsyncTokenPriceResourceWithStreamingResponse:
+        return AsyncTokenPriceResourceWithStreamingResponse(self._simple.token_price)

@@ -9,10 +9,12 @@ from .._models import BaseModel
 __all__ = [
     "RwaGetIDResponse",
     "Image",
+    "PerpsMarketData",
     "TokenizedMarketData",
     "TokenizedMarketDataSparklineIn7d",
     "Token",
     "TokenIssuerDetails",
+    "TokenPerpsMarketData",
 ]
 
 
@@ -27,6 +29,16 @@ class Image(BaseModel):
 
     thumb: Optional[str] = None
     """Thumbnail image URL"""
+
+
+class PerpsMarketData(BaseModel):
+    """Aggregated perpetuals market data"""
+
+    open_interest_24h: Optional[float] = None
+    """24-hour perpetuals open interest in target currency"""
+
+    volume_24h: Optional[float] = None
+    """24-hour perpetuals trading volume in target currency"""
 
 
 class TokenizedMarketDataSparklineIn7d(BaseModel):
@@ -104,6 +116,16 @@ class TokenIssuerDetails(BaseModel):
     """Issuer name"""
 
 
+class TokenPerpsMarketData(BaseModel):
+    """Perpetuals market data of the token"""
+
+    open_interest_24h: Optional[float] = None
+    """24-hour perpetuals open interest in target currency"""
+
+    volume_24h: Optional[float] = None
+    """24-hour perpetuals trading volume in target currency"""
+
+
 class Token(BaseModel):
     id: Optional[str] = None
     """Token ID"""
@@ -113,6 +135,9 @@ class Token(BaseModel):
 
     name: Optional[str] = None
     """Token name"""
+
+    perps_market_data: Optional[TokenPerpsMarketData] = None
+    """Perpetuals market data of the token"""
 
     platforms: Optional[Dict[str, str]] = None
     """Token asset platform and contract address"""
@@ -142,6 +167,9 @@ class RwaGetIDResponse(BaseModel):
 
     web_slug: str
     """RWA web slug"""
+
+    perps_market_data: Optional[PerpsMarketData] = None
+    """Aggregated perpetuals market data"""
 
     tokenized_market_data: Optional[TokenizedMarketData] = None
     """Aggregated tokenized market data"""

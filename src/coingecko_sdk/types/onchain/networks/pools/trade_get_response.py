@@ -1,10 +1,10 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List
+from typing import List, Optional
 
 from ....._models import BaseModel
 
-__all__ = ["TradeGetResponse", "Data", "DataAttributes"]
+__all__ = ["TradeGetResponse", "Data", "DataAttributes", "Meta"]
 
 
 class DataAttributes(BaseModel):
@@ -61,5 +61,12 @@ class Data(BaseModel):
     """Resource type"""
 
 
+class Meta(BaseModel):
+    next_cursor: Optional[str] = None
+    """Cursor for the next page, null when there are no further pages"""
+
+
 class TradeGetResponse(BaseModel):
     data: List[Data]
+
+    meta: Optional[Meta] = None

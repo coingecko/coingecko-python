@@ -40,6 +40,14 @@ from .onchain import (
     OnchainResourceWithStreamingResponse,
     AsyncOnchainResourceWithStreamingResponse,
 )
+from .wallets import (
+    WalletsResource,
+    AsyncWalletsResource,
+    WalletsResourceWithRawResponse,
+    AsyncWalletsResourceWithRawResponse,
+    WalletsResourceWithStreamingResponse,
+    AsyncWalletsResourceWithStreamingResponse,
+)
 from .networks import (
     NetworksResource,
     AsyncNetworksResource,
@@ -94,6 +102,12 @@ __all__ = [
     "AsyncTokensResourceWithRawResponse",
     "TokensResourceWithStreamingResponse",
     "AsyncTokensResourceWithStreamingResponse",
+    "WalletsResource",
+    "AsyncWalletsResource",
+    "WalletsResourceWithRawResponse",
+    "AsyncWalletsResourceWithRawResponse",
+    "WalletsResourceWithStreamingResponse",
+    "AsyncWalletsResourceWithStreamingResponse",
     "OnchainResource",
     "AsyncOnchainResource",
     "OnchainResourceWithRawResponse",

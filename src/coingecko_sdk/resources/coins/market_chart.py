@@ -50,7 +50,7 @@ class MarketChartResource(SyncAPIResource):
         *,
         days: str,
         vs_currency: str,
-        interval: Literal["5m", "hourly", "daily"] | Omit = omit,
+        interval: Literal["1m", "5m", "hourly", "daily"] | Omit = omit,
         precision: Literal[
             "full",
             "0",
@@ -133,7 +133,7 @@ class MarketChartResource(SyncAPIResource):
         from_: str,
         to: str,
         vs_currency: str,
-        interval: Literal["5m", "hourly", "daily"] | Omit = omit,
+        interval: Literal["1m", "5m", "hourly", "daily"] | Omit = omit,
         precision: Literal[
             "full",
             "0",
@@ -240,7 +240,7 @@ class AsyncMarketChartResource(AsyncAPIResource):
         *,
         days: str,
         vs_currency: str,
-        interval: Literal["5m", "hourly", "daily"] | Omit = omit,
+        interval: Literal["1m", "5m", "hourly", "daily"] | Omit = omit,
         precision: Literal[
             "full",
             "0",
@@ -323,7 +323,7 @@ class AsyncMarketChartResource(AsyncAPIResource):
         from_: str,
         to: str,
         vs_currency: str,
-        interval: Literal["5m", "hourly", "daily"] | Omit = omit,
+        interval: Literal["1m", "5m", "hourly", "daily"] | Omit = omit,
         precision: Literal[
             "full",
             "0",

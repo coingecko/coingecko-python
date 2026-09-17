@@ -5,7 +5,20 @@ from datetime import datetime
 
 from ..._models import BaseModel
 
-__all__ = ["IssuerGetIDResponse", "Token"]
+__all__ = ["IssuerGetIDResponse", "Image", "Token"]
+
+
+class Image(BaseModel):
+    """Issuer image URLs"""
+
+    large: Optional[str] = None
+    """Large image URL"""
+
+    small: Optional[str] = None
+    """Small image URL"""
+
+    thumb: Optional[str] = None
+    """Thumbnail image URL"""
 
 
 class Token(BaseModel):
@@ -40,6 +53,9 @@ class IssuerGetIDResponse(BaseModel):
 
     volume_24h: Optional[float] = None
     """24-hour issuer trading volume in USD"""
+
+    image: Optional[Image] = None
+    """Issuer image URLs"""
 
     tokens: Optional[List[Token]] = None
     """Tokens issued by this issuer"""

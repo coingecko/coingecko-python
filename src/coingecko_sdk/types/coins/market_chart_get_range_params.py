@@ -29,7 +29,7 @@ class MarketChartGetRangeParams(TypedDict, total=False):
     [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
     """
 
-    interval: Literal["5m", "hourly", "daily"]
+    interval: Literal["1m", "5m", "hourly", "daily"]
     """Data interval, leave empty for auto granularity."""
 
     precision: Literal[

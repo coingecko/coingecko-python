@@ -16,6 +16,14 @@ from .networks import (
     NetworksResourceWithStreamingResponse,
     AsyncNetworksResourceWithStreamingResponse,
 )
+from .token_price import (
+    TokenPriceResource,
+    AsyncTokenPriceResource,
+    TokenPriceResourceWithRawResponse,
+    AsyncTokenPriceResourceWithRawResponse,
+    TokenPriceResourceWithStreamingResponse,
+    AsyncTokenPriceResourceWithStreamingResponse,
+)
 
 __all__ = [
     "NetworksResource",
@@ -24,6 +32,12 @@ __all__ = [
     "AsyncNetworksResourceWithRawResponse",
     "NetworksResourceWithStreamingResponse",
     "AsyncNetworksResourceWithStreamingResponse",
+    "TokenPriceResource",
+    "AsyncTokenPriceResource",
+    "TokenPriceResourceWithRawResponse",
+    "AsyncTokenPriceResourceWithRawResponse",
+    "TokenPriceResourceWithStreamingResponse",
+    "AsyncTokenPriceResourceWithStreamingResponse",
     "SimpleResource",
     "AsyncSimpleResource",
     "SimpleResourceWithRawResponse",

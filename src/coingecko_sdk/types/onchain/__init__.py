@@ -6,5 +6,7 @@ from .network_get_params import NetworkGetParams as NetworkGetParams
 from .category_get_params import CategoryGetParams as CategoryGetParams
 from .network_get_response import NetworkGetResponse as NetworkGetResponse
 from .category_get_response import CategoryGetResponse as CategoryGetResponse
+from .token_get_multi_params import TokenGetMultiParams as TokenGetMultiParams
+from .token_get_multi_response import TokenGetMultiResponse as TokenGetMultiResponse
 from .category_get_pools_params import CategoryGetPoolsParams as CategoryGetPoolsParams
 from .category_get_pools_response import CategoryGetPoolsResponse as CategoryGetPoolsResponse

@@ -34,6 +34,7 @@ class TestRwas:
     def test_method_get_id_with_all_params(self, client: Coingecko) -> None:
         rwa = client.rwas.get_id(
             id="id",
+            perps_market_data=True,
             sparkline=True,
             tokenized_market_data=True,
             tokens=True,
@@ -175,6 +176,7 @@ class TestAsyncRwas:
     async def test_method_get_id_with_all_params(self, async_client: AsyncCoingecko) -> None:
         rwa = await async_client.rwas.get_id(
             id="id",
+            perps_market_data=True,
             sparkline=True,
             tokenized_market_data=True,
             tokens=True,

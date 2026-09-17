@@ -8,6 +8,9 @@ __all__ = ["RwaGetIDParams"]
 
 
 class RwaGetIDParams(TypedDict, total=False):
+    perps_market_data: bool
+    """Include perpetuals market data. Default: false"""
+
     sparkline: bool
     """Include sparkline 7-day data. Default: false"""
 
