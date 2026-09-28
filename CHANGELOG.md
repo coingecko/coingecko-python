@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.2.0](https://github.com/coingecko/coingecko-python/compare/v4.1.0...v4.2.0) (2026-09-28)
+
+
+### Features
+
+* Release new wallet PnL and trade endpoint ([f80e3be](https://github.com/coingecko/coingecko-python/commit/f80e3be424d32e150f27c6c6818ef587d7d918a6))
+
 ## [4.1.0](https://github.com/coingecko/coingecko-python/compare/v4.0.0...v4.1.0) (2026-09-17)
 
 
