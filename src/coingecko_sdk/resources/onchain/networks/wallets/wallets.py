@@ -2,6 +2,14 @@
 
 from __future__ import annotations
 
+from .trades import (
+    TradesResource,
+    AsyncTradesResource,
+    TradesResourceWithRawResponse,
+    AsyncTradesResourceWithRawResponse,
+    TradesResourceWithStreamingResponse,
+    AsyncTradesResourceWithStreamingResponse,
+)
 from .transfers import (
     TransfersResource,
     AsyncTransfersResource,
@@ -17,6 +25,10 @@ __all__ = ["WalletsResource", "AsyncWalletsResource"]
 
 
 class WalletsResource(SyncAPIResource):
+    @cached_property
+    def trades(self) -> TradesResource:
+        return TradesResource(self._client)
+
     @cached_property
     def transfers(self) -> TransfersResource:
         return TransfersResource(self._client)
@@ -42,6 +54,10 @@ class WalletsResource(SyncAPIResource):
 
 
 class AsyncWalletsResource(AsyncAPIResource):
+    @cached_property
+    def trades(self) -> AsyncTradesResource:
+        return AsyncTradesResource(self._client)
+
     @cached_property
     def transfers(self) -> AsyncTransfersResource:
         return AsyncTransfersResource(self._client)
@@ -71,6 +87,10 @@ class WalletsResourceWithRawResponse:
         self._wallets = wallets
 
     @cached_property
+    def trades(self) -> TradesResourceWithRawResponse:
+        return TradesResourceWithRawResponse(self._wallets.trades)
+
+    @cached_property
     def transfers(self) -> TransfersResourceWithRawResponse:
         return TransfersResourceWithRawResponse(self._wallets.transfers)
 
@@ -78,6 +98,10 @@ class WalletsResourceWithRawResponse:
 class AsyncWalletsResourceWithRawResponse:
     def __init__(self, wallets: AsyncWalletsResource) -> None:
         self._wallets = wallets
+
+    @cached_property
+    def trades(self) -> AsyncTradesResourceWithRawResponse:
+        return AsyncTradesResourceWithRawResponse(self._wallets.trades)
 
     @cached_property
     def transfers(self) -> AsyncTransfersResourceWithRawResponse:
@@ -89,6 +113,10 @@ class WalletsResourceWithStreamingResponse:
         self._wallets = wallets
 
     @cached_property
+    def trades(self) -> TradesResourceWithStreamingResponse:
+        return TradesResourceWithStreamingResponse(self._wallets.trades)
+
+    @cached_property
     def transfers(self) -> TransfersResourceWithStreamingResponse:
         return TransfersResourceWithStreamingResponse(self._wallets.transfers)
 
@@ -96,6 +124,10 @@ class WalletsResourceWithStreamingResponse:
 class AsyncWalletsResourceWithStreamingResponse:
     def __init__(self, wallets: AsyncWalletsResource) -> None:
         self._wallets = wallets
+
+    @cached_property
+    def trades(self) -> AsyncTradesResourceWithStreamingResponse:
+        return AsyncTradesResourceWithStreamingResponse(self._wallets.trades)
 
     @cached_property
     def transfers(self) -> AsyncTransfersResourceWithStreamingResponse:

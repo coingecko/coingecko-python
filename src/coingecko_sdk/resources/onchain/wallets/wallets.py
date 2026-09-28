@@ -2,6 +2,14 @@
 
 from __future__ import annotations
 
+from .pnl import (
+    PnlResource,
+    AsyncPnlResource,
+    PnlResourceWithRawResponse,
+    AsyncPnlResourceWithRawResponse,
+    PnlResourceWithStreamingResponse,
+    AsyncPnlResourceWithStreamingResponse,
+)
 from .balances import (
     BalancesResource,
     AsyncBalancesResource,
@@ -20,6 +28,10 @@ class WalletsResource(SyncAPIResource):
     @cached_property
     def balances(self) -> BalancesResource:
         return BalancesResource(self._client)
+
+    @cached_property
+    def pnl(self) -> PnlResource:
+        return PnlResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> WalletsResourceWithRawResponse:
@@ -45,6 +57,10 @@ class AsyncWalletsResource(AsyncAPIResource):
     @cached_property
     def balances(self) -> AsyncBalancesResource:
         return AsyncBalancesResource(self._client)
+
+    @cached_property
+    def pnl(self) -> AsyncPnlResource:
+        return AsyncPnlResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> AsyncWalletsResourceWithRawResponse:
@@ -74,6 +90,10 @@ class WalletsResourceWithRawResponse:
     def balances(self) -> BalancesResourceWithRawResponse:
         return BalancesResourceWithRawResponse(self._wallets.balances)
 
+    @cached_property
+    def pnl(self) -> PnlResourceWithRawResponse:
+        return PnlResourceWithRawResponse(self._wallets.pnl)
+
 
 class AsyncWalletsResourceWithRawResponse:
     def __init__(self, wallets: AsyncWalletsResource) -> None:
@@ -82,6 +102,10 @@ class AsyncWalletsResourceWithRawResponse:
     @cached_property
     def balances(self) -> AsyncBalancesResourceWithRawResponse:
         return AsyncBalancesResourceWithRawResponse(self._wallets.balances)
+
+    @cached_property
+    def pnl(self) -> AsyncPnlResourceWithRawResponse:
+        return AsyncPnlResourceWithRawResponse(self._wallets.pnl)
 
 
 class WalletsResourceWithStreamingResponse:
@@ -92,6 +116,10 @@ class WalletsResourceWithStreamingResponse:
     def balances(self) -> BalancesResourceWithStreamingResponse:
         return BalancesResourceWithStreamingResponse(self._wallets.balances)
 
+    @cached_property
+    def pnl(self) -> PnlResourceWithStreamingResponse:
+        return PnlResourceWithStreamingResponse(self._wallets.pnl)
+
 
 class AsyncWalletsResourceWithStreamingResponse:
     def __init__(self, wallets: AsyncWalletsResource) -> None:
@@ -100,3 +128,7 @@ class AsyncWalletsResourceWithStreamingResponse:
     @cached_property
     def balances(self) -> AsyncBalancesResourceWithStreamingResponse:
         return AsyncBalancesResourceWithStreamingResponse(self._wallets.balances)
+
+    @cached_property
+    def pnl(self) -> AsyncPnlResourceWithStreamingResponse:
+        return AsyncPnlResourceWithStreamingResponse(self._wallets.pnl)

@@ -661,6 +661,18 @@ Methods:
 
 ### Wallets
 
+#### Trades
+
+Types:
+
+```python
+from coingecko_sdk.types.onchain.networks.wallets import TradeGetResponse
+```
+
+Methods:
+
+- <code title="get /onchain/networks/{network}/wallets/{address}/trades">client.onchain.networks.wallets.trades.<a href="./src/coingecko_sdk/resources/onchain/networks/wallets/trades.py">get</a>(address, \*, network, \*\*<a href="src/coingecko_sdk/types/onchain/networks/wallets/trade_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/networks/wallets/trade_get_response.py">TradeGetResponse</a></code>
+
 #### Transfers
 
 Types:
@@ -778,6 +790,18 @@ from coingecko_sdk.types.onchain.wallets import BalanceGetResponse
 Methods:
 
 - <code title="get /onchain/wallets/{address}/balances">client.onchain.wallets.balances.<a href="./src/coingecko_sdk/resources/onchain/wallets/balances.py">get</a>(address, \*\*<a href="src/coingecko_sdk/types/onchain/wallets/balance_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/wallets/balance_get_response.py">BalanceGetResponse</a></code>
+
+### Pnl
+
+Types:
+
+```python
+from coingecko_sdk.types.onchain.wallets import PnlGetResponse
+```
+
+Methods:
+
+- <code title="get /onchain/wallets/{address}/pnl">client.onchain.wallets.pnl.<a href="./src/coingecko_sdk/resources/onchain/wallets/pnl.py">get</a>(address, \*\*<a href="src/coingecko_sdk/types/onchain/wallets/pnl_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/wallets/pnl_get_response.py">PnlGetResponse</a></code>
 
 # Ping
 
