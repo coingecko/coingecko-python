@@ -11,6 +11,7 @@ __all__ = [
     "DataAttributesGtScoreDetails",
     "DataAttributesHolders",
     "DataAttributesImage",
+    "DataAttributesLaunchpadDetails",
     "DataRelationships",
     "DataRelationshipsPool",
     "DataRelationshipsPoolData",
@@ -57,6 +58,18 @@ class DataAttributesImage(BaseModel):
     small: Optional[str] = None
 
     thumb: Optional[str] = None
+
+
+class DataAttributesLaunchpadDetails(BaseModel):
+    """Launchpad details for pump-style tokens"""
+
+    completed: Optional[bool] = None
+
+    completed_at: Optional[str] = None
+
+    graduation_percentage: Optional[float] = None
+
+    migrated_destination_pool_address: Optional[str] = None
 
 
 class DataAttributes(BaseModel):
@@ -137,6 +150,9 @@ class DataAttributes(BaseModel):
 
     zora_url: Optional[str] = None
     """Zora URL"""
+
+    launchpad_details: Optional[DataAttributesLaunchpadDetails] = None
+    """Launchpad details for pump-style tokens"""
 
 
 class DataRelationshipsPoolData(BaseModel):

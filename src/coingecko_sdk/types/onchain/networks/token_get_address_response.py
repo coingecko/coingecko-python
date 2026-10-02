@@ -133,6 +133,12 @@ class IncludedAttributesVolumeUsd(BaseModel):
 class IncludedAttributes(BaseModel):
     address: Optional[str] = None
 
+    base_token_balance: Optional[str] = None
+    """Base token balance in pool"""
+
+    base_token_liquidity_usd: Optional[str] = None
+    """Base token liquidity in USD"""
+
     base_token_price_native_currency: Optional[str] = None
 
     base_token_price_quote_token: Optional[str] = None
@@ -150,6 +156,12 @@ class IncludedAttributes(BaseModel):
     pool_created_at: Optional[str] = None
 
     price_change_percentage: Optional[IncludedAttributesPriceChangePercentage] = None
+
+    quote_token_balance: Optional[str] = None
+    """Quote token balance in pool"""
+
+    quote_token_liquidity_usd: Optional[str] = None
+    """Quote token liquidity in USD"""
 
     quote_token_price_base_token: Optional[str] = None
 

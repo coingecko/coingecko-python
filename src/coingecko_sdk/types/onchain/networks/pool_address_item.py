@@ -17,6 +17,7 @@ __all__ = [
     "AttributesTransactionsM5",
     "AttributesVolumeUsd",
     "AttributesBuyVolumeUsd",
+    "AttributesLaunchpadDetails",
     "AttributesNetBuyVolumeUsd",
     "AttributesSellVolumeUsd",
     "Relationships",
@@ -153,6 +154,18 @@ class AttributesBuyVolumeUsd(BaseModel):
     m5: Optional[str] = None
 
 
+class AttributesLaunchpadDetails(BaseModel):
+    """Launchpad details for bonding curve pools"""
+
+    completed: Optional[bool] = None
+
+    completed_at: Optional[str] = None
+
+    graduation_percentage: Optional[float] = None
+
+    migrated_destination_pool_address: Optional[str] = None
+
+
 class AttributesNetBuyVolumeUsd(BaseModel):
     """Net buy volume in USD over various timeframes"""
 
@@ -201,7 +214,7 @@ class Attributes(BaseModel):
     fdv_usd: Optional[str] = None
     """Fully diluted valuation in USD"""
 
-    locked_liquidity_percentage: str
+    locked_liquidity_percentage: Optional[str] = None
     """Locked liquidity percentage"""
 
     market_cap_usd: Optional[str] = None
@@ -213,7 +226,7 @@ class Attributes(BaseModel):
     pool_created_at: str
     """Pool creation timestamp"""
 
-    pool_fee_percentage: str
+    pool_fee_percentage: Optional[str] = None
     """Pool fee percentage"""
 
     pool_name: str
@@ -248,6 +261,9 @@ class Attributes(BaseModel):
 
     buy_volume_usd: Optional[AttributesBuyVolumeUsd] = None
     """Buy volume in USD over various timeframes"""
+
+    launchpad_details: Optional[AttributesLaunchpadDetails] = None
+    """Launchpad details for bonding curve pools"""
 
     net_buy_volume_usd: Optional[AttributesNetBuyVolumeUsd] = None
     """Net buy volume in USD over various timeframes"""
