@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.2.1](https://github.com/coingecko/coingecko-python/compare/v4.2.0...v4.2.1) (2026-10-02)
+
+
+### Bug Fixes
+
+* Add missing launchpad_details fields ([0076d8f](https://github.com/coingecko/coingecko-python/commit/0076d8f556eb29cb7362a3689628d4ed69c91b17))
+
 ## [4.2.0](https://github.com/coingecko/coingecko-python/compare/v4.1.0...v4.2.0) (2026-09-28)
 
 
