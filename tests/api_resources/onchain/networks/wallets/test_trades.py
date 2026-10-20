@@ -35,6 +35,7 @@ class TestTrades:
             token="token",
             cursor="cursor",
             from_="from",
+            include_anomalous=True,
             per_page=0,
             to="to",
         )
@@ -107,6 +108,7 @@ class TestAsyncTrades:
             token="token",
             cursor="cursor",
             from_="from",
+            include_anomalous=True,
             per_page=0,
             to="to",
         )

@@ -20,6 +20,9 @@ class DataAttributes(BaseModel):
     from_token_amount: str
     """Amount of token sent"""
 
+    is_anomalous: bool
+    """Whether the trade is flagged as anomalous"""
+
     kind: str
     """Trade kind (buy or sell)"""
 

@@ -89,6 +89,15 @@ class MegafilterGetParams(TypedDict, total=False):
     price_change_percentage_min: float
     """Minimum price change percentage."""
 
+    quote_token_addresses: str
+    """
+    Filter pools whose quote token is one of these token addresses, comma-separated
+    if more than one. Maximum: 50 addresses
+    """
+
+    quote_token_preset: Literal["rwa_stock"]
+    """Filter pools whose quote token belongs to a preset group."""
+
     reserve_in_usd_max: float
     """Maximum reserve in USD."""
 

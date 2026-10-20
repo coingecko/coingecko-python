@@ -49,6 +49,7 @@ class TradesResource(SyncAPIResource):
         token: str | Omit = omit,
         cursor: str | Omit = omit,
         from_: str | Omit = omit,
+        include_anomalous: bool | Omit = omit,
         per_page: int | Omit = omit,
         to: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -70,6 +71,8 @@ class TradesResource(SyncAPIResource):
           from_: Starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
               timestamp. **Use ISO date string for best compatibility.** Must be provided
               together with `to`.
+
+          include_anomalous: Include trades flagged as anomalous. Default: `false`
 
           per_page: Total results per page. Default value: 100 Valid values: 1...300
 
@@ -101,6 +104,7 @@ class TradesResource(SyncAPIResource):
                         "token": token,
                         "cursor": cursor,
                         "from_": from_,
+                        "include_anomalous": include_anomalous,
                         "per_page": per_page,
                         "to": to,
                     },
@@ -139,6 +143,7 @@ class AsyncTradesResource(AsyncAPIResource):
         token: str | Omit = omit,
         cursor: str | Omit = omit,
         from_: str | Omit = omit,
+        include_anomalous: bool | Omit = omit,
         per_page: int | Omit = omit,
         to: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -160,6 +165,8 @@ class AsyncTradesResource(AsyncAPIResource):
           from_: Starting date in ISO date string (`YYYY-MM-DD` or `YYYY-MM-DDTHH:MM`) or UNIX
               timestamp. **Use ISO date string for best compatibility.** Must be provided
               together with `to`.
+
+          include_anomalous: Include trades flagged as anomalous. Default: `false`
 
           per_page: Total results per page. Default value: 100 Valid values: 1...300
 
@@ -191,6 +198,7 @@ class AsyncTradesResource(AsyncAPIResource):
                         "token": token,
                         "cursor": cursor,
                         "from_": from_,
+                        "include_anomalous": include_anomalous,
                         "per_page": per_page,
                         "to": to,
                     },

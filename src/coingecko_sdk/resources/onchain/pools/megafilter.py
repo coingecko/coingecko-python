@@ -68,6 +68,8 @@ class MegafilterResource(SyncAPIResource):
         price_change_percentage_duration: Literal["5m", "1h", "6h", "24h"] | Omit = omit,
         price_change_percentage_max: float | Omit = omit,
         price_change_percentage_min: float | Omit = omit,
+        quote_token_addresses: str | Omit = omit,
+        quote_token_preset: Literal["rwa_stock"] | Omit = omit,
         reserve_in_usd_max: float | Omit = omit,
         reserve_in_usd_min: float | Omit = omit,
         sell_tax_percentage_max: float | Omit = omit,
@@ -166,6 +168,11 @@ class MegafilterResource(SyncAPIResource):
           price_change_percentage_max: Maximum price change percentage.
 
           price_change_percentage_min: Minimum price change percentage.
+
+          quote_token_addresses: Filter pools whose quote token is one of these token addresses, comma-separated
+              if more than one. Maximum: 50 addresses
+
+          quote_token_preset: Filter pools whose quote token belongs to a preset group.
 
           reserve_in_usd_max: Maximum reserve in USD.
 
@@ -232,6 +239,8 @@ class MegafilterResource(SyncAPIResource):
                         "price_change_percentage_duration": price_change_percentage_duration,
                         "price_change_percentage_max": price_change_percentage_max,
                         "price_change_percentage_min": price_change_percentage_min,
+                        "quote_token_addresses": quote_token_addresses,
+                        "quote_token_preset": quote_token_preset,
                         "reserve_in_usd_max": reserve_in_usd_max,
                         "reserve_in_usd_min": reserve_in_usd_min,
                         "sell_tax_percentage_max": sell_tax_percentage_max,
@@ -298,6 +307,8 @@ class AsyncMegafilterResource(AsyncAPIResource):
         price_change_percentage_duration: Literal["5m", "1h", "6h", "24h"] | Omit = omit,
         price_change_percentage_max: float | Omit = omit,
         price_change_percentage_min: float | Omit = omit,
+        quote_token_addresses: str | Omit = omit,
+        quote_token_preset: Literal["rwa_stock"] | Omit = omit,
         reserve_in_usd_max: float | Omit = omit,
         reserve_in_usd_min: float | Omit = omit,
         sell_tax_percentage_max: float | Omit = omit,
@@ -397,6 +408,11 @@ class AsyncMegafilterResource(AsyncAPIResource):
 
           price_change_percentage_min: Minimum price change percentage.
 
+          quote_token_addresses: Filter pools whose quote token is one of these token addresses, comma-separated
+              if more than one. Maximum: 50 addresses
+
+          quote_token_preset: Filter pools whose quote token belongs to a preset group.
+
           reserve_in_usd_max: Maximum reserve in USD.
 
           reserve_in_usd_min: Minimum reserve in USD.
@@ -462,6 +478,8 @@ class AsyncMegafilterResource(AsyncAPIResource):
                         "price_change_percentage_duration": price_change_percentage_duration,
                         "price_change_percentage_max": price_change_percentage_max,
                         "price_change_percentage_min": price_change_percentage_min,
+                        "quote_token_addresses": quote_token_addresses,
+                        "quote_token_preset": quote_token_preset,
                         "reserve_in_usd_max": reserve_in_usd_max,
                         "reserve_in_usd_min": reserve_in_usd_min,
                         "sell_tax_percentage_max": sell_tax_percentage_max,

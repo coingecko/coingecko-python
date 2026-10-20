@@ -51,6 +51,7 @@ class TradesResource(SyncAPIResource):
         network: str,
         token: str | Omit = omit,
         cursor: str | Omit = omit,
+        include_anomalous: bool | Omit = omit,
         per_page: int | Omit = omit,
         trade_volume_in_usd_greater_than: float | Omit = omit,
         trading_period: Literal["1d", "7d", "30d"] | Omit = omit,
@@ -69,6 +70,8 @@ class TradesResource(SyncAPIResource):
               `quote`, or token address. Default: `base`
 
           cursor: Cursor from the previous response, passed back unchanged to fetch the next page.
+
+          include_anomalous: Include trades flagged as anomalous. Default: `false`
 
           per_page: Total results per page. Default value: 300 Valid values: 1...300
 
@@ -101,6 +104,7 @@ class TradesResource(SyncAPIResource):
                     {
                         "token": token,
                         "cursor": cursor,
+                        "include_anomalous": include_anomalous,
                         "per_page": per_page,
                         "trade_volume_in_usd_greater_than": trade_volume_in_usd_greater_than,
                         "trading_period": trading_period,
@@ -120,6 +124,7 @@ class TradesResource(SyncAPIResource):
         to: str,
         token: str | Omit = omit,
         cursor: str | Omit = omit,
+        include_anomalous: bool | Omit = omit,
         per_page: int | Omit = omit,
         trade_volume_in_usd_greater_than: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -144,6 +149,8 @@ class TradesResource(SyncAPIResource):
               `quote`, or token address. Default: `base`
 
           cursor: Cursor from the previous response, passed back unchanged to fetch the next page.
+
+          include_anomalous: Include trades flagged as anomalous. Default: `false`
 
           per_page: Total results per page. Default value: 100 Valid values: 1...300
 
@@ -178,6 +185,7 @@ class TradesResource(SyncAPIResource):
                         "to": to,
                         "token": token,
                         "cursor": cursor,
+                        "include_anomalous": include_anomalous,
                         "per_page": per_page,
                         "trade_volume_in_usd_greater_than": trade_volume_in_usd_greater_than,
                     },
@@ -215,6 +223,7 @@ class AsyncTradesResource(AsyncAPIResource):
         network: str,
         token: str | Omit = omit,
         cursor: str | Omit = omit,
+        include_anomalous: bool | Omit = omit,
         per_page: int | Omit = omit,
         trade_volume_in_usd_greater_than: float | Omit = omit,
         trading_period: Literal["1d", "7d", "30d"] | Omit = omit,
@@ -233,6 +242,8 @@ class AsyncTradesResource(AsyncAPIResource):
               `quote`, or token address. Default: `base`
 
           cursor: Cursor from the previous response, passed back unchanged to fetch the next page.
+
+          include_anomalous: Include trades flagged as anomalous. Default: `false`
 
           per_page: Total results per page. Default value: 300 Valid values: 1...300
 
@@ -265,6 +276,7 @@ class AsyncTradesResource(AsyncAPIResource):
                     {
                         "token": token,
                         "cursor": cursor,
+                        "include_anomalous": include_anomalous,
                         "per_page": per_page,
                         "trade_volume_in_usd_greater_than": trade_volume_in_usd_greater_than,
                         "trading_period": trading_period,
@@ -284,6 +296,7 @@ class AsyncTradesResource(AsyncAPIResource):
         to: str,
         token: str | Omit = omit,
         cursor: str | Omit = omit,
+        include_anomalous: bool | Omit = omit,
         per_page: int | Omit = omit,
         trade_volume_in_usd_greater_than: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -308,6 +321,8 @@ class AsyncTradesResource(AsyncAPIResource):
               `quote`, or token address. Default: `base`
 
           cursor: Cursor from the previous response, passed back unchanged to fetch the next page.
+
+          include_anomalous: Include trades flagged as anomalous. Default: `false`
 
           per_page: Total results per page. Default value: 100 Valid values: 1...300
 
@@ -342,6 +357,7 @@ class AsyncTradesResource(AsyncAPIResource):
                         "to": to,
                         "token": token,
                         "cursor": cursor,
+                        "include_anomalous": include_anomalous,
                         "per_page": per_page,
                         "trade_volume_in_usd_greater_than": trade_volume_in_usd_greater_than,
                     },

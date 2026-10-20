@@ -91,7 +91,10 @@ class TokenPriceResource(SyncAPIResource):
 
           vs_currencies: Target currency of coins, comma-separated if querying more than 1 currency.
               \\**refers to
-              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies)
+              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
+
+              For the complete list of fiat currencies supported by this endpoint, see
+              [Fiat Currencies Support List](/docs/fiat-currencies-support).
 
           include_24hr_change: Include 24-hour change percentage. Default: false
 
@@ -205,7 +208,10 @@ class AsyncTokenPriceResource(AsyncAPIResource):
 
           vs_currencies: Target currency of coins, comma-separated if querying more than 1 currency.
               \\**refers to
-              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies)
+              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
+
+              For the complete list of fiat currencies supported by this endpoint, see
+              [Fiat Currencies Support List](/docs/fiat-currencies-support).
 
           include_24hr_change: Include 24-hour change percentage. Default: false
 

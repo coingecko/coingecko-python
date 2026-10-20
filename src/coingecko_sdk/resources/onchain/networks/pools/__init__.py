@@ -40,6 +40,14 @@ from .trades import (
     TradesResourceWithStreamingResponse,
     AsyncTradesResourceWithStreamingResponse,
 )
+from .liquidity_events import (
+    LiquidityEventsResource,
+    AsyncLiquidityEventsResource,
+    LiquidityEventsResourceWithRawResponse,
+    AsyncLiquidityEventsResourceWithRawResponse,
+    LiquidityEventsResourceWithStreamingResponse,
+    AsyncLiquidityEventsResourceWithStreamingResponse,
+)
 
 __all__ = [
     "InfoResource",
@@ -48,6 +56,12 @@ __all__ = [
     "AsyncInfoResourceWithRawResponse",
     "InfoResourceWithStreamingResponse",
     "AsyncInfoResourceWithStreamingResponse",
+    "LiquidityEventsResource",
+    "AsyncLiquidityEventsResource",
+    "LiquidityEventsResourceWithRawResponse",
+    "AsyncLiquidityEventsResourceWithRawResponse",
+    "LiquidityEventsResourceWithStreamingResponse",
+    "AsyncLiquidityEventsResourceWithStreamingResponse",
     "MultiResource",
     "AsyncMultiResource",
     "MultiResourceWithRawResponse",

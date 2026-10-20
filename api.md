@@ -497,6 +497,18 @@ Methods:
 
 - <code title="get /onchain/networks/{network}/pools/{pool_address}/info">client.onchain.networks.pools.info.<a href="./src/coingecko_sdk/resources/onchain/networks/pools/info.py">get</a>(pool_address, \*, network, \*\*<a href="src/coingecko_sdk/types/onchain/networks/pools/info_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/networks/pools/info_get_response.py">InfoGetResponse</a></code>
 
+#### LiquidityEvents
+
+Types:
+
+```python
+from coingecko_sdk.types.onchain.networks.pools import LiquidityEventGetResponse
+```
+
+Methods:
+
+- <code title="get /onchain/networks/{network}/pools/{pool_address}/liquidity_events">client.onchain.networks.pools.liquidity_events.<a href="./src/coingecko_sdk/resources/onchain/networks/pools/liquidity_events.py">get</a>(pool_address, \*, network, \*\*<a href="src/coingecko_sdk/types/onchain/networks/pools/liquidity_event_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/onchain/networks/pools/liquidity_event_get_response.py">LiquidityEventGetResponse</a></code>
+
 #### Multi
 
 Types:

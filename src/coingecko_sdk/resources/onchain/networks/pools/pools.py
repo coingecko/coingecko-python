@@ -49,6 +49,14 @@ from ....._response import (
     async_to_streamed_response_wrapper,
 )
 from ....._base_client import make_request_options
+from .liquidity_events import (
+    LiquidityEventsResource,
+    AsyncLiquidityEventsResource,
+    LiquidityEventsResourceWithRawResponse,
+    AsyncLiquidityEventsResourceWithRawResponse,
+    LiquidityEventsResourceWithStreamingResponse,
+    AsyncLiquidityEventsResourceWithStreamingResponse,
+)
 from .....types.onchain.networks import pool_get_params, pool_get_address_params
 from .....types.onchain.networks.pool_get_response import PoolGetResponse
 from .....types.onchain.networks.pool_get_address_response import PoolGetAddressResponse
@@ -60,6 +68,10 @@ class PoolsResource(SyncAPIResource):
     @cached_property
     def info(self) -> InfoResource:
         return InfoResource(self._client)
+
+    @cached_property
+    def liquidity_events(self) -> LiquidityEventsResource:
+        return LiquidityEventsResource(self._client)
 
     @cached_property
     def multi(self) -> MultiResource:
@@ -215,6 +227,10 @@ class AsyncPoolsResource(AsyncAPIResource):
     @cached_property
     def info(self) -> AsyncInfoResource:
         return AsyncInfoResource(self._client)
+
+    @cached_property
+    def liquidity_events(self) -> AsyncLiquidityEventsResource:
+        return AsyncLiquidityEventsResource(self._client)
 
     @cached_property
     def multi(self) -> AsyncMultiResource:
@@ -382,6 +398,10 @@ class PoolsResourceWithRawResponse:
         return InfoResourceWithRawResponse(self._pools.info)
 
     @cached_property
+    def liquidity_events(self) -> LiquidityEventsResourceWithRawResponse:
+        return LiquidityEventsResourceWithRawResponse(self._pools.liquidity_events)
+
+    @cached_property
     def multi(self) -> MultiResourceWithRawResponse:
         return MultiResourceWithRawResponse(self._pools.multi)
 
@@ -408,6 +428,10 @@ class AsyncPoolsResourceWithRawResponse:
     @cached_property
     def info(self) -> AsyncInfoResourceWithRawResponse:
         return AsyncInfoResourceWithRawResponse(self._pools.info)
+
+    @cached_property
+    def liquidity_events(self) -> AsyncLiquidityEventsResourceWithRawResponse:
+        return AsyncLiquidityEventsResourceWithRawResponse(self._pools.liquidity_events)
 
     @cached_property
     def multi(self) -> AsyncMultiResourceWithRawResponse:
@@ -438,6 +462,10 @@ class PoolsResourceWithStreamingResponse:
         return InfoResourceWithStreamingResponse(self._pools.info)
 
     @cached_property
+    def liquidity_events(self) -> LiquidityEventsResourceWithStreamingResponse:
+        return LiquidityEventsResourceWithStreamingResponse(self._pools.liquidity_events)
+
+    @cached_property
     def multi(self) -> MultiResourceWithStreamingResponse:
         return MultiResourceWithStreamingResponse(self._pools.multi)
 
@@ -464,6 +492,10 @@ class AsyncPoolsResourceWithStreamingResponse:
     @cached_property
     def info(self) -> AsyncInfoResourceWithStreamingResponse:
         return AsyncInfoResourceWithStreamingResponse(self._pools.info)
+
+    @cached_property
+    def liquidity_events(self) -> AsyncLiquidityEventsResourceWithStreamingResponse:
+        return AsyncLiquidityEventsResourceWithStreamingResponse(self._pools.liquidity_events)
 
     @cached_property
     def multi(self) -> AsyncMultiResourceWithStreamingResponse:

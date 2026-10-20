@@ -92,7 +92,10 @@ class PriceResource(SyncAPIResource):
         Args:
           vs_currencies: Target currency of coins, comma-separated if querying more than 1 currency.
               \\**refers to
-              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies)
+              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
+
+              For the complete list of fiat currencies supported by this endpoint, see
+              [Fiat Currencies Support List](/docs/fiat-currencies-support).
 
           ids: Coins' IDs, comma-separated if querying more than 1 coin. \\**refers to
               [`/coins/list`](/reference/coins-list)
@@ -218,7 +221,10 @@ class AsyncPriceResource(AsyncAPIResource):
         Args:
           vs_currencies: Target currency of coins, comma-separated if querying more than 1 currency.
               \\**refers to
-              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies)
+              [`/simple/supported_vs_currencies`](/reference/simple-supported-currencies).
+
+              For the complete list of fiat currencies supported by this endpoint, see
+              [Fiat Currencies Support List](/docs/fiat-currencies-support).
 
           ids: Coins' IDs, comma-separated if querying more than 1 coin. \\**refers to
               [`/coins/list`](/reference/coins-list)

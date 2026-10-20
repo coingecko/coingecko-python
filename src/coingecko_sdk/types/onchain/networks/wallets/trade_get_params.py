@@ -30,6 +30,9 @@ class TradeGetParams(TypedDict, total=False):
     together with `to`.
     """
 
+    include_anomalous: bool
+    """Include trades flagged as anomalous. Default: `false`"""
+
     per_page: int
     """Total results per page. Default value: 100 Valid values: 1...300"""
 

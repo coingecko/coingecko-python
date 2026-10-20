@@ -29,6 +29,9 @@ class TradeGetRangeParams(TypedDict, total=False):
     Cursor from the previous response, passed back unchanged to fetch the next page.
     """
 
+    include_anomalous: bool
+    """Include trades flagged as anomalous. Default: `false`"""
+
     per_page: int
     """Total results per page. Default value: 100 Valid values: 1...300"""
 

@@ -37,6 +37,7 @@ class TestTrades:
             network="network",
             token="token",
             cursor="cursor",
+            include_anomalous=True,
             per_page=0,
             trade_volume_in_usd_greater_than=0,
             trading_period="1d",
@@ -107,6 +108,7 @@ class TestTrades:
             to="to",
             token="token",
             cursor="cursor",
+            include_anomalous=True,
             per_page=0,
             trade_volume_in_usd_greater_than=0,
         )
@@ -186,6 +188,7 @@ class TestAsyncTrades:
             network="network",
             token="token",
             cursor="cursor",
+            include_anomalous=True,
             per_page=0,
             trade_volume_in_usd_greater_than=0,
             trading_period="1d",
@@ -256,6 +259,7 @@ class TestAsyncTrades:
             to="to",
             token="token",
             cursor="cursor",
+            include_anomalous=True,
             per_page=0,
             trade_volume_in_usd_greater_than=0,
         )

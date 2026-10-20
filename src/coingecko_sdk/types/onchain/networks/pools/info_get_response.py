@@ -130,6 +130,9 @@ class DataAttributes(BaseModel):
     is_honeypot: Union[bool, str]
     """Whether the token is a honeypot (boolean or 'unknown')"""
 
+    is_nsfw: bool
+    """Whether the token's name or symbol matches the GeckoTerminal NSFW keyword list"""
+
     mint_authority: Optional[str] = None
     """Mint authority status"""
 

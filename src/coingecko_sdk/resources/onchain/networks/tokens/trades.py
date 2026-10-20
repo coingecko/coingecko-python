@@ -50,6 +50,7 @@ class TradesResource(SyncAPIResource):
         *,
         network: str,
         cursor: str | Omit = omit,
+        include_anomalous: bool | Omit = omit,
         per_page: int | Omit = omit,
         trade_volume_in_usd_greater_than: float | Omit = omit,
         trading_period: Literal["1d", "7d", "30d"] | Omit = omit,
@@ -66,6 +67,8 @@ class TradesResource(SyncAPIResource):
 
         Args:
           cursor: Cursor from the previous response, passed back unchanged to fetch the next page.
+
+          include_anomalous: Include trades flagged as anomalous. Default: `false`
 
           per_page: Total results per page. Default value: 300 Valid values: 1...300
 
@@ -99,6 +102,7 @@ class TradesResource(SyncAPIResource):
                 query=maybe_transform(
                     {
                         "cursor": cursor,
+                        "include_anomalous": include_anomalous,
                         "per_page": per_page,
                         "trade_volume_in_usd_greater_than": trade_volume_in_usd_greater_than,
                         "trading_period": trading_period,
@@ -117,6 +121,7 @@ class TradesResource(SyncAPIResource):
         from_: str,
         to: str,
         cursor: str | Omit = omit,
+        include_anomalous: bool | Omit = omit,
         per_page: int | Omit = omit,
         trade_volume_in_usd_greater_than: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -138,6 +143,8 @@ class TradesResource(SyncAPIResource):
               timestamp. **Use ISO date string for best compatibility.**
 
           cursor: Cursor from the previous response, passed back unchanged to fetch the next page.
+
+          include_anomalous: Include trades flagged as anomalous. Default: `false`
 
           per_page: Total results per page. Default value: 100 Valid values: 1...300
 
@@ -171,6 +178,7 @@ class TradesResource(SyncAPIResource):
                         "from_": from_,
                         "to": to,
                         "cursor": cursor,
+                        "include_anomalous": include_anomalous,
                         "per_page": per_page,
                         "trade_volume_in_usd_greater_than": trade_volume_in_usd_greater_than,
                     },
@@ -207,6 +215,7 @@ class AsyncTradesResource(AsyncAPIResource):
         *,
         network: str,
         cursor: str | Omit = omit,
+        include_anomalous: bool | Omit = omit,
         per_page: int | Omit = omit,
         trade_volume_in_usd_greater_than: float | Omit = omit,
         trading_period: Literal["1d", "7d", "30d"] | Omit = omit,
@@ -223,6 +232,8 @@ class AsyncTradesResource(AsyncAPIResource):
 
         Args:
           cursor: Cursor from the previous response, passed back unchanged to fetch the next page.
+
+          include_anomalous: Include trades flagged as anomalous. Default: `false`
 
           per_page: Total results per page. Default value: 300 Valid values: 1...300
 
@@ -256,6 +267,7 @@ class AsyncTradesResource(AsyncAPIResource):
                 query=await async_maybe_transform(
                     {
                         "cursor": cursor,
+                        "include_anomalous": include_anomalous,
                         "per_page": per_page,
                         "trade_volume_in_usd_greater_than": trade_volume_in_usd_greater_than,
                         "trading_period": trading_period,
@@ -274,6 +286,7 @@ class AsyncTradesResource(AsyncAPIResource):
         from_: str,
         to: str,
         cursor: str | Omit = omit,
+        include_anomalous: bool | Omit = omit,
         per_page: int | Omit = omit,
         trade_volume_in_usd_greater_than: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -295,6 +308,8 @@ class AsyncTradesResource(AsyncAPIResource):
               timestamp. **Use ISO date string for best compatibility.**
 
           cursor: Cursor from the previous response, passed back unchanged to fetch the next page.
+
+          include_anomalous: Include trades flagged as anomalous. Default: `false`
 
           per_page: Total results per page. Default value: 100 Valid values: 1...300
 
@@ -328,6 +343,7 @@ class AsyncTradesResource(AsyncAPIResource):
                         "from_": from_,
                         "to": to,
                         "cursor": cursor,
+                        "include_anomalous": include_anomalous,
                         "per_page": per_page,
                         "trade_volume_in_usd_greater_than": trade_volume_in_usd_greater_than,
                     },
