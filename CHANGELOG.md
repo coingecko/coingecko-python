@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.3.0](https://github.com/coingecko/coingecko-python/compare/v4.2.1...v4.3.0) (2026-10-20)
+
+
+### Features
+
+* New liquidity_event, NSFW filter, pools-megafilter params, anomalous trades ([daa29b3](https://github.com/coingecko/coingecko-python/commit/daa29b33de0389cb13b47f5590be18181447ac0c))
+
 ## [4.2.1](https://github.com/coingecko/coingecko-python/compare/v4.2.0...v4.2.1) (2026-10-02)
 
 
