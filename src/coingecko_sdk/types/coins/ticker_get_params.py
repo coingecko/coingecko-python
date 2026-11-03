@@ -26,8 +26,8 @@ class TickerGetParams(TypedDict, total=False):
     include_exchange_logo: bool
     """Include exchange logo. Default: false"""
 
-    order: Literal["trust_score_desc", "trust_score_asc", "volume_desc", "volume_asc"]
-    """Sort the order of responses. Default: trust_score_desc"""
+    order: Literal["last_traded_at_desc", "last_traded_at_asc", "volume_desc", "volume_asc"]
+    """Sort the order of responses. Default: volume_desc"""
 
     page: int
     """Page through results"""

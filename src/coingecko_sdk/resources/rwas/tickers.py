@@ -76,7 +76,7 @@ class TickersResource(SyncAPIResource):
 
           issuer_ids: Issuer ID. \\**refers to [`/rwas/issuers/list`](/reference/rwas-issuers-list)
 
-          order: Sort the order of responses. Default: last_traded_at_desc
+          order: Sort the order of responses. Default: volume_desc
 
           page: Page through results
 
@@ -166,7 +166,7 @@ class AsyncTickersResource(AsyncAPIResource):
 
           issuer_ids: Issuer ID. \\**refers to [`/rwas/issuers/list`](/reference/rwas-issuers-list)
 
-          order: Sort the order of responses. Default: last_traded_at_desc
+          order: Sort the order of responses. Default: volume_desc
 
           page: Page through results
 

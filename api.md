@@ -286,12 +286,13 @@ Methods:
 Types:
 
 ```python
-from coingecko_sdk.types import GlobalGetResponse
+from coingecko_sdk.types import GlobalGetResponse, GlobalGetFearAndGreedChartResponse
 ```
 
 Methods:
 
 - <code title="get /global">client.global*.<a href="./src/coingecko_sdk/resources/global*/global\_.py">get</a>() -> <a href="./src/coingecko_sdk/types/global_get_response.py">GlobalGetResponse</a></code>
+- <code title="get /global/fear_and_greed_chart">client.global*.<a href="./src/coingecko_sdk/resources/global*/global\_.py">get_fear_and_greed_chart</a>(\*\*<a href="src/coingecko_sdk/types/global_get_fear_and_greed_chart_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/global_get_fear_and_greed_chart_response.py">GlobalGetFearAndGreedChartResponse</a></code>
 
 ## DecentralizedFinanceDefi
 

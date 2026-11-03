@@ -1,10 +1,21 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Dict
+from typing import Dict, Optional
+from typing_extensions import Literal
 
 from .._models import BaseModel
 
-__all__ = ["GlobalGetResponse", "Data"]
+__all__ = ["GlobalGetResponse", "Data", "DataFearAndGreedIndex"]
+
+
+class DataFearAndGreedIndex(BaseModel):
+    """Crypto Fear & Greed Index"""
+
+    sentiment: Literal["extreme_fear", "fear", "neutral", "greed", "extreme_greed"]
+    """Sentiment label based on the index value"""
+
+    value: int
+    """Crypto Fear & Greed Index value"""
 
 
 class Data(BaseModel):
@@ -40,6 +51,9 @@ class Data(BaseModel):
 
     volume_change_percentage_24h_usd: float
     """Volume change percentage in 24 hours in USD"""
+
+    fear_and_greed_index: Optional[DataFearAndGreedIndex] = None
+    """Crypto Fear & Greed Index"""
 
 
 class GlobalGetResponse(BaseModel):

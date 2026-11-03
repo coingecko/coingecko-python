@@ -19,7 +19,7 @@ __all__ = [
 
 
 class Image(BaseModel):
-    """Image URLs of the token with the largest market cap"""
+    """Image URLs of one of the RWA's tokens"""
 
     large: Optional[str] = None
     """Large image URL"""
@@ -154,7 +154,7 @@ class RwaGetIDResponse(BaseModel):
     """RWA asset type"""
 
     image: Image
-    """Image URLs of the token with the largest market cap"""
+    """Image URLs of one of the RWA's tokens"""
 
     last_updated: datetime
     """Last updated timestamp"""

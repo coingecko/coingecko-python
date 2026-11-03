@@ -27,7 +27,7 @@ class TickerGetParams(TypedDict, total=False):
     """Issuer ID. \\**refers to [`/rwas/issuers/list`](/reference/rwas-issuers-list)"""
 
     order: Literal["last_traded_at_desc", "last_traded_at_asc", "volume_desc", "volume_asc"]
-    """Sort the order of responses. Default: last_traded_at_desc"""
+    """Sort the order of responses. Default: volume_desc"""
 
     page: int
     """Page through results"""

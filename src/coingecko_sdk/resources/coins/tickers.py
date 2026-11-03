@@ -51,7 +51,7 @@ class TickersResource(SyncAPIResource):
         dex_pair_format: Literal["contract_address", "symbol"] | Omit = omit,
         exchange_ids: str | Omit = omit,
         include_exchange_logo: bool | Omit = omit,
-        order: Literal["trust_score_desc", "trust_score_asc", "volume_desc", "volume_asc"] | Omit = omit,
+        order: Literal["last_traded_at_desc", "last_traded_at_asc", "volume_desc", "volume_asc"] | Omit = omit,
         page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -76,7 +76,7 @@ class TickersResource(SyncAPIResource):
 
           include_exchange_logo: Include exchange logo. Default: false
 
-          order: Sort the order of responses. Default: trust_score_desc
+          order: Sort the order of responses. Default: volume_desc
 
           page: Page through results
 
@@ -141,7 +141,7 @@ class AsyncTickersResource(AsyncAPIResource):
         dex_pair_format: Literal["contract_address", "symbol"] | Omit = omit,
         exchange_ids: str | Omit = omit,
         include_exchange_logo: bool | Omit = omit,
-        order: Literal["trust_score_desc", "trust_score_asc", "volume_desc", "volume_asc"] | Omit = omit,
+        order: Literal["last_traded_at_desc", "last_traded_at_asc", "volume_desc", "volume_asc"] | Omit = omit,
         page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -166,7 +166,7 @@ class AsyncTickersResource(AsyncAPIResource):
 
           include_exchange_logo: Include exchange logo. Default: false
 
-          order: Sort the order of responses. Default: trust_score_desc
+          order: Sort the order of responses. Default: volume_desc
 
           page: Page through results
 

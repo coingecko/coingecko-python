@@ -16,10 +16,10 @@ class KeyGetResponse(BaseModel):
     """Rate limit per minute configured for this API key"""
 
     current_remaining_monthly_calls: int
-    """Remaining API call credits this month"""
+    """Remaining API call credits this month for the account, across all API keys"""
 
     current_total_monthly_calls: int
-    """Total API calls made this month"""
+    """Total API calls made this month for the account, across all API keys"""
 
     monthly_call_credit: int
     """Total monthly API call credits for the plan"""

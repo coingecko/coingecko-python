@@ -40,8 +40,12 @@ from .token_list_get_all_json_response import TokenListGetAllJsonResponse as Tok
 from .public_treasury_get_coin_id_params import PublicTreasuryGetCoinIDParams as PublicTreasuryGetCoinIDParams
 from .public_treasury_get_coin_id_response import PublicTreasuryGetCoinIDResponse as PublicTreasuryGetCoinIDResponse
 from .public_treasury_get_entity_id_params import PublicTreasuryGetEntityIDParams as PublicTreasuryGetEntityIDParams
+from .global_get_fear_and_greed_chart_params import GlobalGetFearAndGreedChartParams as GlobalGetFearAndGreedChartParams
 from .public_treasury_get_entity_id_response import (
     PublicTreasuryGetEntityIDResponse as PublicTreasuryGetEntityIDResponse,
+)
+from .global_get_fear_and_greed_chart_response import (
+    GlobalGetFearAndGreedChartResponse as GlobalGetFearAndGreedChartResponse,
 )
 from .public_treasury_get_holding_chart_params import (
     PublicTreasuryGetHoldingChartParams as PublicTreasuryGetHoldingChartParams,

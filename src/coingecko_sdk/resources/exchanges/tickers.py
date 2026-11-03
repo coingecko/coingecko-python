@@ -54,8 +54,8 @@ class TickersResource(SyncAPIResource):
         order: Literal[
             "market_cap_asc",
             "market_cap_desc",
-            "trust_score_desc",
-            "trust_score_asc",
+            "last_traded_at_desc",
+            "last_traded_at_asc",
             "volume_desc",
             "volume_asc",
             "base_target",
@@ -85,7 +85,7 @@ class TickersResource(SyncAPIResource):
 
           include_exchange_logo: Include exchange logo. Default: false
 
-          order: Sort the order of responses. Default: `trust_score_desc`
+          order: Sort the order of responses. Default: `volume_desc`
 
           page: Page through results.
 
@@ -153,8 +153,8 @@ class AsyncTickersResource(AsyncAPIResource):
         order: Literal[
             "market_cap_asc",
             "market_cap_desc",
-            "trust_score_desc",
-            "trust_score_asc",
+            "last_traded_at_desc",
+            "last_traded_at_asc",
             "volume_desc",
             "volume_asc",
             "base_target",
@@ -184,7 +184,7 @@ class AsyncTickersResource(AsyncAPIResource):
 
           include_exchange_logo: Include exchange logo. Default: false
 
-          order: Sort the order of responses. Default: `trust_score_desc`
+          order: Sort the order of responses. Default: `volume_desc`
 
           page: Page through results.
 

@@ -2,9 +2,13 @@
 
 from __future__ import annotations
 
+from typing_extensions import Literal
+
 import httpx
 
+from ...types import global_get_fear_and_greed_chart_params
 from ..._types import Body, Query, Headers, NotGiven, not_given
+from ..._utils import maybe_transform, async_maybe_transform
 from ..._compat import cached_property
 from ..._resource import SyncAPIResource, AsyncAPIResource
 from ..._response import (
@@ -31,6 +35,7 @@ from .decentralized_finance_defi import (
     AsyncDecentralizedFinanceDefiResourceWithStreamingResponse,
 )
 from ...types.global_get_response import GlobalGetResponse
+from ...types.global_get_fear_and_greed_chart_response import GlobalGetFearAndGreedChartResponse
 
 __all__ = ["GlobalResource", "AsyncGlobalResource"]
 
@@ -85,6 +90,45 @@ class GlobalResource(SyncAPIResource):
             cast_to=GlobalGetResponse,
         )
 
+    def get_fear_and_greed_chart(
+        self,
+        *,
+        days: Literal["1", "7", "14", "30", "90", "180", "365", "max"],
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> GlobalGetFearAndGreedChartResponse:
+        """
+        To query historical fear and greed data by number of days away from now
+
+        Args:
+          days: Data up to number of days ago.
+
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        return self._get(
+            "/global/fear_and_greed_chart",
+            options=make_request_options(
+                extra_headers=extra_headers,
+                extra_query=extra_query,
+                extra_body=extra_body,
+                timeout=timeout,
+                query=maybe_transform(
+                    {"days": days}, global_get_fear_and_greed_chart_params.GlobalGetFearAndGreedChartParams
+                ),
+            ),
+            cast_to=GlobalGetFearAndGreedChartResponse,
+        )
+
 
 class AsyncGlobalResource(AsyncAPIResource):
     @cached_property
@@ -136,6 +180,45 @@ class AsyncGlobalResource(AsyncAPIResource):
             cast_to=GlobalGetResponse,
         )
 
+    async def get_fear_and_greed_chart(
+        self,
+        *,
+        days: Literal["1", "7", "14", "30", "90", "180", "365", "max"],
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> GlobalGetFearAndGreedChartResponse:
+        """
+        To query historical fear and greed data by number of days away from now
+
+        Args:
+          days: Data up to number of days ago.
+
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        return await self._get(
+            "/global/fear_and_greed_chart",
+            options=make_request_options(
+                extra_headers=extra_headers,
+                extra_query=extra_query,
+                extra_body=extra_body,
+                timeout=timeout,
+                query=await async_maybe_transform(
+                    {"days": days}, global_get_fear_and_greed_chart_params.GlobalGetFearAndGreedChartParams
+                ),
+            ),
+            cast_to=GlobalGetFearAndGreedChartResponse,
+        )
+
 
 class GlobalResourceWithRawResponse:
     def __init__(self, global_: GlobalResource) -> None:
@@ -143,6 +226,9 @@ class GlobalResourceWithRawResponse:
 
         self.get = to_raw_response_wrapper(
             global_.get,
+        )
+        self.get_fear_and_greed_chart = to_raw_response_wrapper(
+            global_.get_fear_and_greed_chart,
         )
 
     @cached_property
@@ -161,6 +247,9 @@ class AsyncGlobalResourceWithRawResponse:
         self.get = async_to_raw_response_wrapper(
             global_.get,
         )
+        self.get_fear_and_greed_chart = async_to_raw_response_wrapper(
+            global_.get_fear_and_greed_chart,
+        )
 
     @cached_property
     def decentralized_finance_defi(self) -> AsyncDecentralizedFinanceDefiResourceWithRawResponse:
@@ -178,6 +267,9 @@ class GlobalResourceWithStreamingResponse:
         self.get = to_streamed_response_wrapper(
             global_.get,
         )
+        self.get_fear_and_greed_chart = to_streamed_response_wrapper(
+            global_.get_fear_and_greed_chart,
+        )
 
     @cached_property
     def decentralized_finance_defi(self) -> DecentralizedFinanceDefiResourceWithStreamingResponse:
@@ -194,6 +286,9 @@ class AsyncGlobalResourceWithStreamingResponse:
 
         self.get = async_to_streamed_response_wrapper(
             global_.get,
+        )
+        self.get_fear_and_greed_chart = async_to_streamed_response_wrapper(
+            global_.get_fear_and_greed_chart,
         )
 
     @cached_property
