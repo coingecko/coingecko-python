@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.0](https://github.com/coingecko/coingecko-python/compare/v4.3.0...v5.0.0) (2026-11-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* New fear-n-greed endpoint, and other Oct improvements
+
+### Features
+
+* New fear-n-greed endpoint, and other Oct improvements ([1e26153](https://github.com/coingecko/coingecko-python/commit/1e26153ccb16688dc00a3c213bac50077a08844d))
+
 ## [4.3.0](https://github.com/coingecko/coingecko-python/compare/v4.2.1...v4.3.0) (2026-10-20)
 
 
