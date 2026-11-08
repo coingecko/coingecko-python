@@ -1,5 +1,5 @@
 import json
-from typing import Any, List, Union, cast
+from typing import Any, Dict, List, Union, cast
 from typing_extensions import Annotated
 
 import httpx
@@ -275,3 +275,50 @@ async def test_async_response_parse_expect_model_union_non_json_content(async_cl
     obj = await response.parse(to=cast(Any, Union[CustomModel, OtherModel]))
     assert isinstance(obj, str)
     assert obj == "foo"
+
+
+@pytest.mark.parametrize("client", [False, True], indirect=True)
+@pytest.mark.parametrize(
+    "content_type",
+    ["application/json", "Application/JSON", "APPLICATION/JSON; charset=utf-8", "application/problem+JSON"],
+)
+@pytest.mark.parametrize(
+    "cast_to, data",
+    [(Dict[str, str], {"foo": "bar"}), (List[str], ["foo", "bar"])],
+)
+def test_response_parse_json_content_type_case(client: Coingecko, content_type: str, cast_to: Any, data: Any) -> None:
+    response = APIResponse(
+        raw=httpx.Response(200, json=data, headers={"Content-Type": content_type}),
+        client=client,
+        stream=False,
+        stream_cls=None,
+        cast_to=cast_to,
+        options=FinalRequestOptions.construct(method="get", url="/foo"),
+    )
+
+    assert response.parse() == data
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("async_client", [False, True], indirect=True)
+@pytest.mark.parametrize(
+    "content_type",
+    ["application/json", "Application/JSON", "APPLICATION/JSON; charset=utf-8", "application/problem+JSON"],
+)
+@pytest.mark.parametrize(
+    "cast_to, data",
+    [(Dict[str, str], {"foo": "bar"}), (List[str], ["foo", "bar"])],
+)
+async def test_async_response_parse_json_content_type_case(
+    async_client: AsyncCoingecko, content_type: str, cast_to: Any, data: Any
+) -> None:
+    response = AsyncAPIResponse(
+        raw=httpx.Response(200, json=data, headers={"Content-Type": content_type}),
+        client=async_client,
+        stream=False,
+        stream_cls=None,
+        cast_to=cast_to,
+        options=FinalRequestOptions.construct(method="get", url="/foo"),
+    )
+
+    assert await response.parse() == data
