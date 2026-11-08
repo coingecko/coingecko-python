@@ -387,7 +387,7 @@ class Coingecko(SyncAPIClient):
         return self.__class__(
             pro_api_key=pro_api_key or self.pro_api_key,
             demo_api_key=demo_api_key or self.demo_api_key,
-            base_url=base_url or self.base_url,
+            base_url=base_url or (None if environment is not None else self.base_url),
             environment=environment or self._environment,
             timeout=self.timeout if isinstance(timeout, NotGiven) else timeout,
             http_client=http_client,
@@ -729,7 +729,7 @@ class AsyncCoingecko(AsyncAPIClient):
         return self.__class__(
             pro_api_key=pro_api_key or self.pro_api_key,
             demo_api_key=demo_api_key or self.demo_api_key,
-            base_url=base_url or self.base_url,
+            base_url=base_url or (None if environment is not None else self.base_url),
             environment=environment or self._environment,
             timeout=self.timeout if isinstance(timeout, NotGiven) else timeout,
             http_client=http_client,
