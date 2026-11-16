@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.1.0](https://github.com/coingecko/coingecko-python/compare/v5.0.0...v5.1.0) (2026-11-16)
+
+
+### Features
+
+* New derivative underlying endpoints ([7e06af8](https://github.com/coingecko/coingecko-python/commit/7e06af8ffd7d54f7d82cd7acbd21dde40e110551))
+
 ## [5.0.0](https://github.com/coingecko/coingecko-python/compare/v4.3.0...v5.0.0) (2026-11-03)
 
 
