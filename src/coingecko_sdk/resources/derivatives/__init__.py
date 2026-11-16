@@ -16,6 +16,14 @@ from .derivatives import (
     DerivativesResourceWithStreamingResponse,
     AsyncDerivativesResourceWithStreamingResponse,
 )
+from .underlyings import (
+    UnderlyingsResource,
+    AsyncUnderlyingsResource,
+    UnderlyingsResourceWithRawResponse,
+    AsyncUnderlyingsResourceWithRawResponse,
+    UnderlyingsResourceWithStreamingResponse,
+    AsyncUnderlyingsResourceWithStreamingResponse,
+)
 
 __all__ = [
     "ExchangesResource",
@@ -24,6 +32,12 @@ __all__ = [
     "AsyncExchangesResourceWithRawResponse",
     "ExchangesResourceWithStreamingResponse",
     "AsyncExchangesResourceWithStreamingResponse",
+    "UnderlyingsResource",
+    "AsyncUnderlyingsResource",
+    "UnderlyingsResourceWithRawResponse",
+    "AsyncUnderlyingsResourceWithRawResponse",
+    "UnderlyingsResourceWithStreamingResponse",
+    "AsyncUnderlyingsResourceWithStreamingResponse",
     "DerivativesResource",
     "AsyncDerivativesResource",
     "DerivativesResourceWithRawResponse",

@@ -218,6 +218,19 @@ Methods:
 - <code title="get /derivatives/exchanges/{id}">client.derivatives.exchanges.<a href="./src/coingecko_sdk/resources/derivatives/exchanges.py">get_id</a>(id, \*\*<a href="src/coingecko_sdk/types/derivatives/exchange_get_id_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/derivatives/exchange_get_id_response.py">ExchangeGetIDResponse</a></code>
 - <code title="get /derivatives/exchanges/list">client.derivatives.exchanges.<a href="./src/coingecko_sdk/resources/derivatives/exchanges.py">get_list</a>() -> <a href="./src/coingecko_sdk/types/derivatives/exchange_get_list_response.py">ExchangeGetListResponse</a></code>
 
+## Underlyings
+
+Types:
+
+```python
+from coingecko_sdk.types.derivatives import UnderlyingGetResponse, UnderlyingGetListResponse
+```
+
+Methods:
+
+- <code title="get /derivatives/underlyings">client.derivatives.underlyings.<a href="./src/coingecko_sdk/resources/derivatives/underlyings.py">get</a>(\*\*<a href="src/coingecko_sdk/types/derivatives/underlying_get_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/derivatives/underlying_get_response.py">UnderlyingGetResponse</a></code>
+- <code title="get /derivatives/underlyings/list">client.derivatives.underlyings.<a href="./src/coingecko_sdk/resources/derivatives/underlyings.py">get_list</a>(\*\*<a href="src/coingecko_sdk/types/derivatives/underlying_get_list_params.py">params</a>) -> <a href="./src/coingecko_sdk/types/derivatives/underlying_get_list_response.py">UnderlyingGetListResponse</a></code>
+
 # Entities
 
 Types:

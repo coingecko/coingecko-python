@@ -27,7 +27,11 @@ class OhlcvGetTimeframeParams(TypedDict, total=False):
     """
 
     before_timestamp: int
-    """Return OHLCV data before this timestamp (integer seconds since epoch)."""
+    """
+    Return OHLCV data up to and including the candle that contains this timestamp
+    (integer seconds since epoch). That candle covers its full interval, so it may
+    include trades after this timestamp.
+    """
 
     currency: Literal["usd", "token"]
     """Return OHLCV in USD or quote token. Default: `usd`"""

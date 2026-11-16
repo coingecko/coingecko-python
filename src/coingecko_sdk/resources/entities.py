@@ -58,7 +58,7 @@ class EntitiesResource(SyncAPIResource):
     ) -> EntityGetListResponse:
         """
         To query all the supported entities on CoinGecko with entity ID, name, symbol,
-        and country
+        country, and FIGI
 
         Args:
           entity_type: Filter by entity type.
@@ -130,7 +130,7 @@ class AsyncEntitiesResource(AsyncAPIResource):
     ) -> EntityGetListResponse:
         """
         To query all the supported entities on CoinGecko with entity ID, name, symbol,
-        and country
+        country, and FIGI
 
         Args:
           entity_type: Filter by entity type.

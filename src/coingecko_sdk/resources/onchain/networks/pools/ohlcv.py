@@ -74,7 +74,9 @@ class OhlcvResource(SyncAPIResource):
               values (hour): `1`, `4`, `12` Available values (minute): `1`, `5`, `15`
               Available values (second): `1`, `15`, `30` Default value: 1
 
-          before_timestamp: Return OHLCV data before this timestamp (integer seconds since epoch).
+          before_timestamp: Return OHLCV data up to and including the candle that contains this timestamp
+              (integer seconds since epoch). That candle covers its full interval, so it may
+              include trades after this timestamp.
 
           currency: Return OHLCV in USD or quote token. Default: `usd`
 
@@ -175,7 +177,9 @@ class AsyncOhlcvResource(AsyncAPIResource):
               values (hour): `1`, `4`, `12` Available values (minute): `1`, `5`, `15`
               Available values (second): `1`, `15`, `30` Default value: 1
 
-          before_timestamp: Return OHLCV data before this timestamp (integer seconds since epoch).
+          before_timestamp: Return OHLCV data up to and including the candle that contains this timestamp
+              (integer seconds since epoch). That candle covers its full interval, so it may
+              include trades after this timestamp.
 
           currency: Return OHLCV in USD or quote token. Default: `usd`
 

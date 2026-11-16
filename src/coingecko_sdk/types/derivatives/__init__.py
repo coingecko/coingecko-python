@@ -4,6 +4,10 @@ from __future__ import annotations
 
 from .exchange_get_params import ExchangeGetParams as ExchangeGetParams
 from .exchange_get_response import ExchangeGetResponse as ExchangeGetResponse
+from .underlying_get_params import UnderlyingGetParams as UnderlyingGetParams
 from .exchange_get_id_params import ExchangeGetIDParams as ExchangeGetIDParams
+from .underlying_get_response import UnderlyingGetResponse as UnderlyingGetResponse
 from .exchange_get_id_response import ExchangeGetIDResponse as ExchangeGetIDResponse
 from .exchange_get_list_response import ExchangeGetListResponse as ExchangeGetListResponse
+from .underlying_get_list_params import UnderlyingGetListParams as UnderlyingGetListParams
+from .underlying_get_list_response import UnderlyingGetListResponse as UnderlyingGetListResponse

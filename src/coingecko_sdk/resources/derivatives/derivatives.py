@@ -21,6 +21,14 @@ from ..._response import (
     async_to_raw_response_wrapper,
     async_to_streamed_response_wrapper,
 )
+from .underlyings import (
+    UnderlyingsResource,
+    AsyncUnderlyingsResource,
+    UnderlyingsResourceWithRawResponse,
+    AsyncUnderlyingsResourceWithRawResponse,
+    UnderlyingsResourceWithStreamingResponse,
+    AsyncUnderlyingsResourceWithStreamingResponse,
+)
 from ..._base_client import make_request_options
 from ...types.derivative_get_response import DerivativeGetResponse
 
@@ -31,6 +39,10 @@ class DerivativesResource(SyncAPIResource):
     @cached_property
     def exchanges(self) -> ExchangesResource:
         return ExchangesResource(self._client)
+
+    @cached_property
+    def underlyings(self) -> UnderlyingsResource:
+        return UnderlyingsResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> DerivativesResourceWithRawResponse:
@@ -75,6 +87,10 @@ class AsyncDerivativesResource(AsyncAPIResource):
     @cached_property
     def exchanges(self) -> AsyncExchangesResource:
         return AsyncExchangesResource(self._client)
+
+    @cached_property
+    def underlyings(self) -> AsyncUnderlyingsResource:
+        return AsyncUnderlyingsResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> AsyncDerivativesResourceWithRawResponse:
@@ -127,6 +143,10 @@ class DerivativesResourceWithRawResponse:
     def exchanges(self) -> ExchangesResourceWithRawResponse:
         return ExchangesResourceWithRawResponse(self._derivatives.exchanges)
 
+    @cached_property
+    def underlyings(self) -> UnderlyingsResourceWithRawResponse:
+        return UnderlyingsResourceWithRawResponse(self._derivatives.underlyings)
+
 
 class AsyncDerivativesResourceWithRawResponse:
     def __init__(self, derivatives: AsyncDerivativesResource) -> None:
@@ -139,6 +159,10 @@ class AsyncDerivativesResourceWithRawResponse:
     @cached_property
     def exchanges(self) -> AsyncExchangesResourceWithRawResponse:
         return AsyncExchangesResourceWithRawResponse(self._derivatives.exchanges)
+
+    @cached_property
+    def underlyings(self) -> AsyncUnderlyingsResourceWithRawResponse:
+        return AsyncUnderlyingsResourceWithRawResponse(self._derivatives.underlyings)
 
 
 class DerivativesResourceWithStreamingResponse:
@@ -153,6 +177,10 @@ class DerivativesResourceWithStreamingResponse:
     def exchanges(self) -> ExchangesResourceWithStreamingResponse:
         return ExchangesResourceWithStreamingResponse(self._derivatives.exchanges)
 
+    @cached_property
+    def underlyings(self) -> UnderlyingsResourceWithStreamingResponse:
+        return UnderlyingsResourceWithStreamingResponse(self._derivatives.underlyings)
+
 
 class AsyncDerivativesResourceWithStreamingResponse:
     def __init__(self, derivatives: AsyncDerivativesResource) -> None:
@@ -165,3 +193,7 @@ class AsyncDerivativesResourceWithStreamingResponse:
     @cached_property
     def exchanges(self) -> AsyncExchangesResourceWithStreamingResponse:
         return AsyncExchangesResourceWithStreamingResponse(self._derivatives.exchanges)
+
+    @cached_property
+    def underlyings(self) -> AsyncUnderlyingsResourceWithStreamingResponse:
+        return AsyncUnderlyingsResourceWithStreamingResponse(self._derivatives.underlyings)

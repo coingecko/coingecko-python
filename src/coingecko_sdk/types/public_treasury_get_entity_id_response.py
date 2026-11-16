@@ -117,3 +117,6 @@ class PublicTreasuryGetEntityIDResponse(BaseModel):
 
     website_url: str
     """Official website URL"""
+
+    figi: Optional[str] = None
+    """Financial Instrument Global Identifier (FIGI) of the entity"""
