@@ -376,6 +376,20 @@ You can also customize the client on a per-request basis by using `with_options(
 client.with_options(http_client=DefaultHttpxClient(...))
 ```
 
+### Switching environments
+
+Use `with_options(environment=...)` to select the Pro or Demo API URL without
+changing the original client. An explicit `base_url` takes precedence over the
+selected environment. API keys are not converted; provide the key for the target
+environment when needed. This also works with `AsyncCoingecko`.
+
+```python
+demo_client = client.with_options(
+    environment="demo",
+    demo_api_key=os.environ["COINGECKO_DEMO_API_KEY"],
+)
+```
+
 ### Managing HTTP resources
 
 By default the library closes underlying HTTP connections whenever the client is [garbage collected](https://docs.python.org/3/reference/datamodel.html#object.__del__). You can manually close the client using the `.close()` method if desired, or with a context manager that closes when exiting.

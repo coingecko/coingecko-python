@@ -140,6 +140,29 @@ class TestCoingecko:
         assert copied.pro_api_key == "another My Pro API Key"
         assert client.pro_api_key == "My Pro API Key"
 
+    @pytest.mark.parametrize(
+        "source,target,url_override,expected",
+        [
+            ("pro", "demo", None, "https://api.coingecko.com/api/v3/"),
+            ("demo", "pro", None, "https://pro-api.coingecko.com/api/v3/"),
+            ("pro", "demo", "https://custom.example/api/", "https://custom.example/api/"),
+        ],
+    )
+    def test_copy_environment(
+        self,
+        monkeypatch: pytest.MonkeyPatch,
+        source: Literal["pro", "demo"],
+        target: Literal["pro", "demo"],
+        url_override: str | None,
+        expected: str,
+    ) -> None:
+        monkeypatch.delenv("COINGECKO_BASE_URL", raising=False)
+        with Coingecko(pro_api_key=pro_api_key, environment=source) as original:
+            original_url = original.base_url
+            copied = original.with_options(environment=target, base_url=url_override)
+            assert str(copied.base_url) == expected
+            assert original.base_url == original_url
+
     def test_copy_default_options(self, client: Coingecko) -> None:
         # options that have a default are overridden correctly
         copied = client.copy(max_retries=7)
@@ -1099,6 +1122,29 @@ class TestAsyncCoingecko:
         copied = async_client.copy(pro_api_key="another My Pro API Key")
         assert copied.pro_api_key == "another My Pro API Key"
         assert async_client.pro_api_key == "My Pro API Key"
+
+    @pytest.mark.parametrize(
+        "source,target,url_override,expected",
+        [
+            ("pro", "demo", None, "https://api.coingecko.com/api/v3/"),
+            ("demo", "pro", None, "https://pro-api.coingecko.com/api/v3/"),
+            ("pro", "demo", "https://custom.example/api/", "https://custom.example/api/"),
+        ],
+    )
+    async def test_copy_environment(
+        self,
+        monkeypatch: pytest.MonkeyPatch,
+        source: Literal["pro", "demo"],
+        target: Literal["pro", "demo"],
+        url_override: str | None,
+        expected: str,
+    ) -> None:
+        monkeypatch.delenv("COINGECKO_BASE_URL", raising=False)
+        async with AsyncCoingecko(pro_api_key=pro_api_key, environment=source) as original:
+            original_url = original.base_url
+            copied = original.with_options(environment=target, base_url=url_override)
+            assert str(copied.base_url) == expected
+            assert original.base_url == original_url
 
     def test_copy_default_options(self, async_client: AsyncCoingecko) -> None:
         # options that have a default are overridden correctly
