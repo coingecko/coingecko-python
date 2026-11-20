@@ -128,6 +128,8 @@ Nested request parameters are [TypedDicts](https://docs.python.org/3/library/typ
 
 Typed requests and responses provide autocomplete and documentation within your editor. If you would like to see type errors in VS Code to help catch bugs earlier, set `python.analysis.typeCheckingMode` to `basic`.
 
+JSON response media types are matched case-insensitively, so `Application/JSON` is parsed in the same way as `application/json`, including for dictionary and list responses.
+
 ## Handling errors
 
 When the library is unable to connect to the API (for example, due to network connection problems or a timeout), a subclass of `coingecko_sdk.APIConnectionError` is raised.
